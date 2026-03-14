@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>平成 西暦 変換 — Heisei Year Calculator | JapanCalc</title>
+  <meta name="description" content="Convert Heisei (平成) years to Western calendar years instantly. Heisei 1 = 1989, Heisei 31 = 2019. Free Japanese era converter tool.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://japancalc.com/date-calendar/era-converter/heisei/">
+  <link rel="alternate" hreflang="en" href="https://japancalc.com/date-calendar/era-converter/heisei/">
+  <link rel="alternate" hreflang="ja" href="https://japancalc.com/ja/date-calendar/era-converter/heisei/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/date-calendar/era-converter/heisei/">
+  <meta property="og:title" content="平成 西暦 変換 — Heisei Year Calculator">
+  <meta property="og:description" content="Convert Heisei (平成) years to Western calendar years instantly. Heisei 1 = 1989, Heisei 31 = 2019.">
+  <meta property="og:url" content="https://japancalc.com/date-calendar/era-converter/heisei/">
+  <meta property="og:image" content="https://japancalc.com/assets/og/era-converter-heisei.png">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/assets/css/main.min.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://japancalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Date & Calendar", "item": "https://japancalc.com/date-calendar/" },
+      { "@type": "ListItem", "position": 3, "name": "Era Converter", "item": "https://japancalc.com/date-calendar/era-converter/" },
+      { "@type": "ListItem", "position": 4, "name": "Heisei (平成)", "item": "https://japancalc.com/date-calendar/era-converter/heisei/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert Heisei to Western year?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To convert a Heisei year to the Western (Gregorian) calendar, simply add 1988 to the Heisei year number. For example, Heisei 20 equals 1988 + 20 = 2008. This formula works for every year of the Heisei era, from Heisei 1 (1989) through Heisei 31 (2019). Use the converter tool above for instant results with optional month and day precision."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When did the Heisei era end?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Heisei era ended on April 30, 2019, when Emperor Akihito formally abdicated the Chrysanthemum Throne. This was the first abdication by a Japanese emperor in over 200 years, since Emperor K\u014Dkaku stepped down in 1817. The following day, May 1, 2019, marked the beginning of the Reiwa era under Emperor Naruhito. The year 2019 is therefore split between Heisei 31 (January 1 through April 30) and Reiwa 1 (May 1 through December 31)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Heisei 31 in Western calendar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Heisei 31 corresponds to the year 2019 in the Western calendar. However, Heisei 31 covers only the first four months of 2019, from January 1 to April 30. On May 1, 2019, the Reiwa era began following Emperor Akihito's abdication. So while 1988 + 31 = 2019 is correct, any date after April 30, 2019 should properly be expressed as Reiwa 1 rather than Heisei 31."
+        }
+      }
+    ]
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+  <style>
+    :root {
+      --primary: #1A3A5C;
+      --accent: #0B6E5F;
+      --bg: #FFFFFF;
+      --bg-alt: #F8F9FA;
+      --text: #1A1A1A;
+      --muted: #6B7280;
+      --border: #E5E7EB;
+      --success: #065F46;
+      --radius: 8px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.12);
+      --max-width: 1100px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Inter", system-ui, -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Nav */
+    .site-nav { background: var(--primary); color: #fff; padding: 0.75rem 1rem; }
+    .nav-inner { max-width: var(--max-width); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+    .nav-logo { font-size: 1.25rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-links { display: flex; gap: 1.25rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
+    .nav-links a:hover { color: #fff; text-decoration: none; }
+    .lang-toggle { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 0.3rem 0.75rem; border-radius: var(--radius); cursor: pointer; font-size: 0.85rem; }
+    .lang-toggle:hover { background: rgba(255,255,255,0.25); }
+    .hamburger { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+
+    /* Breadcrumb */
+    .breadcrumb { max-width: var(--max-width); margin: 0.75rem auto; padding: 0 1rem; font-size: 0.85rem; color: var(--muted); }
+    .breadcrumb a { color: var(--muted); }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.35rem; }
+
+    /* Ad zones */
+    .ad-zone { text-align: center; overflow: hidden; }
+    .ad-atf { min-height: 90px; max-width: 728px; margin: 0 auto 1rem; }
+    .ad-btf { min-height: 250px; margin: 2rem 0; }
+    .ad-sidebar { min-height: 600px; position: sticky; top: 1rem; }
+
+    /* Page layout */
+    .page-layout { max-width: var(--max-width); margin: 0 auto; padding: 0 1rem 2rem; display: flex; gap: 2.5rem; }
+    .content { flex: 1; min-width: 0; }
+    .sidebar { width: 200px; flex-shrink: 0; }
+
+    /* Tool header */
+    .content h1 { font-size: 1.75rem; color: var(--primary); margin-bottom: 0.25rem; }
+    .tool-subtitle { color: var(--muted); font-size: 1rem; margin-bottom: 0.75rem; }
+    .tool-desc { color: var(--text); margin-bottom: 1.5rem; font-size: 0.95rem; }
+
+    /* Tool box */
+    .tool-box { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow); margin-bottom: 2rem; }
+
+    /* Form elements */
+    .form-group { margin-bottom: 1rem; }
+    .form-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .form-row .form-group { flex: 1; min-width: 120px; }
+    label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 0.3rem; font-weight: 500; }
+    select, input[type="text"], input[type="number"] {
+      width: 100%; height: 44px; padding: 0 0.75rem; border: 1px solid var(--border);
+      border-radius: var(--radius); font-size: 1rem; font-family: inherit;
+      color: var(--text); background: var(--bg); transition: border-color 0.2s;
+    }
+    select:focus, input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(11,110,95,0.15); }
+    .era-fixed { background: var(--bg-alt); color: var(--primary); font-weight: 600; pointer-events: none; }
+    .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.25rem; border: none; border-radius: var(--radius); font-size: 0.95rem; font-family: inherit; cursor: pointer; font-weight: 500; transition: background 0.2s; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #095a4d; }
+    .btn-sm { padding: 0.35rem 0.75rem; font-size: 0.82rem; }
+    .btn-outline { background: var(--bg); border: 1px solid var(--border); color: var(--text); }
+    .btn-outline:hover { background: var(--bg-alt); }
+
+    /* Result box */
+    .result-box { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-top: 1rem; display: none; }
+    .result-box.visible { display: block; }
+    .result-primary { font-size: 2rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
+    .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; font-size: 0.9rem; }
+    .result-grid dt { color: var(--muted); font-size: 0.8rem; }
+    .result-grid dd { color: var(--text); font-weight: 500; margin-bottom: 0.5rem; }
+    .result-actions { display: flex; gap: 0.5rem; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
+    .result-note { margin-top: 0.75rem; padding: 0.6rem 0.75rem; background: #fef3cd; border-radius: var(--radius); font-size: 0.85rem; color: #856404; }
+    .error-msg { color: #dc3545; font-size: 0.9rem; margin-top: 0.5rem; padding: 0.5rem 0.75rem; background: #fff5f5; border-radius: var(--radius); }
+    .copied-toast { color: var(--success); font-size: 0.82rem; font-weight: 500; }
+
+    /* Pre-filled example */
+    .example-box { background: #e6f4f1; border: 1px solid var(--accent); border-radius: var(--radius); padding: 0.75rem 1rem; margin-bottom: 1rem; font-size: 0.95rem; color: var(--accent); font-weight: 500; }
+
+    /* Quick reference table */
+    .quick-ref { margin-bottom: 2rem; }
+    .quick-ref h2 { font-size: 1.2rem; color: var(--primary); margin-bottom: 0.75rem; }
+    .ref-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .ref-table th { background: var(--primary); color: #fff; padding: 0.5rem 0.75rem; text-align: left; font-weight: 500; }
+    .ref-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); }
+    .ref-table tr:nth-child(even) td { background: var(--bg-alt); }
+    .ref-table a { font-weight: 500; }
+
+    /* SEO content */
+    .seo-content { margin-bottom: 2rem; }
+    .seo-content h2 { font-size: 1.25rem; color: var(--primary); margin: 1.5rem 0 0.75rem; }
+    .seo-content p { margin-bottom: 1rem; color: var(--text); font-size: 0.95rem; }
+
+    /* FAQ */
+    .faq { margin-bottom: 2rem; }
+    .faq h2 { font-size: 1.25rem; color: var(--primary); margin-bottom: 1rem; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 0.75rem; overflow: hidden; }
+    .faq-item h3 { font-size: 0.95rem; padding: 0.75rem 1rem; background: var(--bg-alt); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: var(--primary); }
+    .faq-item h3::after { content: "+"; font-size: 1.2rem; color: var(--muted); transition: transform 0.2s; }
+    .faq-item.open h3::after { content: "\2212"; }
+    .faq-answer { padding: 0 1rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
+    .faq-item.open .faq-answer { max-height: 300px; padding: 0.75rem 1rem; }
+    .faq-answer p { font-size: 0.9rem; color: var(--text); line-height: 1.65; }
+
+    /* Related tools */
+    .related-tools { margin-bottom: 2rem; }
+    .related-tools h2 { font-size: 1.25rem; color: var(--primary); margin-bottom: 1rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .related-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; transition: box-shadow 0.2s; }
+    .related-card:hover { box-shadow: var(--shadow); }
+    .related-card h3 { font-size: 0.95rem; color: var(--primary); margin-bottom: 0.25rem; }
+    .related-card p { font-size: 0.82rem; color: var(--muted); }
+
+    /* Footer */
+    .site-footer { background: var(--bg-alt); border-top: 1px solid var(--border); padding: 1.5rem 1rem; margin-top: 2rem; font-size: 0.85rem; color: var(--muted); }
+    .footer-inner { max-width: var(--max-width); margin: 0 auto; }
+    .footer-links { display: flex; gap: 1.5rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy { margin-bottom: 0.25rem; }
+    .footer-source { font-size: 0.8rem; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar { display: none; }
+      .page-layout { flex-direction: column; }
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; width: 100%; }
+      .content h1 { font-size: 1.4rem; }
+      .result-grid { grid-template-columns: 1fr; }
+      .form-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">JapanCalc</a>
+      <button class="hamburger" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
+        <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
+        <li><a href="/language-tools/">Language Tools</a></li>
+      </ul>
+      <a href="/ja/date-calendar/era-converter/heisei/" class="lang-toggle" aria-label="Switch to Japanese">EN | &#26085;&#26412;&#35486;</a>
+    </div>
+  </nav>
+  <div class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span>&#8250;</span><a href="/date-calendar/">Date &amp; Calendar</a><span>&#8250;</span><a href="/date-calendar/era-converter/">Era Converter</a><span>&#8250;</span><strong>Heisei (&#24179;&#25104;)</strong>
+  </div>
+
+  <div class="ad-zone ad-atf" style="min-height:90px;max-width:728px;margin:0 auto 1rem">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="SLOT_ATF_HEISEI" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  </div>
+
+  <div class="page-layout">
+    <main class="content">
+      <h1>&#24179;&#25104; &#8594; &#35199;&#26278;&#22793;&#25563; | Heisei to Western Year Converter</h1>
+      <p class="tool-subtitle">&#24179;&#25104;&#24180;&#12363;&#12425;&#35199;&#26278;&#12408;&#21363;&#24231;&#12395;&#22793;&#25563; | Convert Heisei era dates instantly</p>
+      <p class="tool-desc">Convert any Heisei (&#24179;&#25104;) era year to the Western Gregorian calendar. The Heisei era spans from 1989 to 2019, covering 31 years of Japanese history under Emperor Akihito. Enter a Heisei year below for an instant conversion.</p>
+
+      <div class="tool-box">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="era-select">Japanese Era</label>
+            <select id="era-select" class="era-fixed" aria-label="Heisei era selected">
+              <option value="heisei" selected>&#24179;&#25104; Heisei (1989&#8211;2019)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="era-year">Heisei Year (&#24180;)</label>
+            <input type="number" id="era-year" placeholder="e.g. 31" min="1" max="31" inputmode="numeric" autocomplete="off" value="31">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="era-month">Month (optional)</label>
+            <select id="era-month">
+              <option value="">&#8212; Month &#8212;</option>
+              <option value="1">1&#26376; (January)</option>
+              <option value="2">2&#26376; (February)</option>
+              <option value="3">3&#26376; (March)</option>
+              <option value="4">4&#26376; (April)</option>
+              <option value="5">5&#26376; (May)</option>
+              <option value="6">6&#26376; (June)</option>
+              <option value="7">7&#26376; (July)</option>
+              <option value="8">8&#26376; (August)</option>
+              <option value="9">9&#26376; (September)</option>
+              <option value="10">10&#26376; (October)</option>
+              <option value="11">11&#26376; (November)</option>
+              <option value="12">12&#26376; (December)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="era-day">Day (optional)</label>
+            <select id="era-day">
+              <option value="">&#8212; Day &#8212;</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-primary" id="btn-convert" type="button">Convert &#8594;</button>
+
+        <div class="example-box" id="example-box">&#9989; Pre-filled example: &#24179;&#25104;31&#24180; = 2019 (Western calendar)</div>
+
+        <div class="result-box" id="result-box" aria-live="polite">
+          <div class="result-primary" id="r-year"></div>
+          <dl class="result-grid">
+            <dt>Full Date</dt><dd id="r-date">&#8212;</dd>
+            <dt>Day of Week</dt><dd id="r-dow">&#8212;</dd>
+            <dt>Japanese Notation</dt><dd id="r-jp">&#8212;</dd>
+            <dt>English Notation</dt><dd id="r-en">&#8212;</dd>
+          </dl>
+          <div class="result-actions">
+            <button class="btn btn-sm btn-outline" id="btn-copy" type="button" aria-label="Copy result to clipboard">Copy</button>
+          </div>
+          <div class="result-note" id="r-note" style="display:none"></div>
+        </div>
+        <div id="error-box"></div>
+      </div>
+
+      <!-- Quick Reference Table -->
+      <section class="quick-ref">
+        <h2>Heisei to Western Year &#8212; Quick Reference Table</h2>
+        <table class="ref-table">
+          <thead><tr><th>Heisei Year (&#24179;&#25104;)</th><th>Western Year</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>&#24179;&#25104;1&#24180; (&#20803;&#24180;)</td><td>1989</td><td>Era began Jan 8</td></tr>
+            <tr><td>&#24179;&#25104;5&#24180;</td><td>1993</td><td></td></tr>
+            <tr><td>&#24179;&#25104;10&#24180;</td><td>1998</td><td></td></tr>
+            <tr><td>&#24179;&#25104;15&#24180;</td><td>2003</td><td></td></tr>
+            <tr><td>&#24179;&#25104;20&#24180;</td><td>2008</td><td></td></tr>
+            <tr><td>&#24179;&#25104;25&#24180;</td><td>2013</td><td></td></tr>
+            <tr><td>&#24179;&#25104;30&#24180;</td><td>2018</td><td></td></tr>
+            <tr><td>&#24179;&#25104;31&#24180;</td><td>2019</td><td>Only Jan 1&#8211;Apr 30; then Reiwa</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- BTF Ad Zone -->
+      <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="SLOT_BTF_HEISEI" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      </div>
+
+      <!-- Editorial Content -->
+      <article class="seo-content">
+        <h2>About the Heisei Era (&#24179;&#25104;&#26178;&#20195;)</h2>
+        <p>The Heisei era (&#24179;&#25104;, meaning "achieving peace") lasted 31 years from January 8, 1989 to April 30, 2019, under the reign of Emperor Akihito. The era began during the peak of Japan's economic bubble, which burst spectacularly in the early 1990s, leading to what economists call the "Lost Decade" of economic stagnation. Despite economic challenges, the Heisei period saw Japan emerge as a global leader in technology, with the rise of the internet, mobile phones, and Japanese pop culture's worldwide expansion.</p>
+        <p>The Heisei era was also shaped by significant natural disasters, including the Great Hanshin Earthquake of 1995 and the devastating 2011 Tohoku earthquake and tsunami. The era ended uniquely in Japanese history when Emperor Akihito abdicated on April 30, 2019, the first abdication in over 200 years. His son, Emperor Naruhito, ascended the throne on May 1, 2019, beginning the Reiwa era. To convert any Heisei year to the Western calendar, use the formula: Heisei year + 1988 = Western year. For example, Heisei 15 equals 2003, and Heisei 30 equals 2018.</p>
+      </article>
+
+      <!-- FAQ -->
+      <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <h3 onclick="this.parentElement.classList.toggle('open')">How do I convert Heisei to Western year?</h3>
+          <div class="faq-answer">
+            <p>To convert a Heisei year to the Western (Gregorian) calendar, simply add 1988 to the Heisei year number. For example, Heisei 20 equals 1988 + 20 = 2008. This formula works for every year of the Heisei era, from Heisei 1 (1989) through Heisei 31 (2019). Use the converter tool above for instant results with optional month and day precision.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 onclick="this.parentElement.classList.toggle('open')">When did the Heisei era end?</h3>
+          <div class="faq-answer">
+            <p>The Heisei era ended on April 30, 2019, when Emperor Akihito formally abdicated the Chrysanthemum Throne. This was the first abdication by a Japanese emperor in over 200 years, making it a historic event in Japan's imperial history. The following day, May 1, 2019, marked the beginning of the Reiwa era under Emperor Naruhito, his eldest son.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 onclick="this.parentElement.classList.toggle('open')">What is Heisei 31 in Western calendar?</h3>
+          <div class="faq-answer">
+            <p>Heisei 31 corresponds to the year 2019 in the Western calendar. However, Heisei 31 covers only the first four months of 2019, from January 1 to April 30. On May 1, 2019, the Reiwa era began following Emperor Akihito's abdication. So while 1988 + 31 = 2019 is correct, any date after April 30, 2019 should be expressed as Reiwa 1 rather than Heisei 31.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Tools -->
+      <section class="related-tools">
+        <h2>Related Tools</h2>
+        <div class="related-grid">
+          <a class="related-card" href="/date-calendar/era-converter/">
+            <h3>Japanese Era Converter</h3>
+            <p>Convert between all Japanese eras and Western calendar dates.</p>
+          </a>
+          <a class="related-card" href="/date-calendar/era-converter/showa/">
+            <h3>Showa Converter</h3>
+            <p>Convert Showa (&#26157;&#21644;) years to Western calendar. 1926&#8211;1989.</p>
+          </a>
+          <a class="related-card" href="/date-calendar/era-converter/reiwa-7/">
+            <h3>Reiwa 7 (2025)</h3>
+            <p>Current year details: Reiwa 7 = 2025 in Western calendar.</p>
+          </a>
+          <a class="related-card" href="/date-calendar/era-converter/reiwa-6/">
+            <h3>Reiwa 6 (2024)</h3>
+            <p>Reiwa 6 = 2024 in the Western Gregorian calendar.</p>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="ad-zone ad-sidebar">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="SLOT_SIDE_HEISEI" data-ad-format="vertical" data-full-width-responsive="false"></ins>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/date-calendar/">Date &amp; Calendar</a>
+        <a href="/tax-finance/">Tax &amp; Finance</a>
+        <a href="/language-tools/">Language Tools</a>
+        <a href="/about/">About</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/contact/">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 JapanCalc. All rights reserved.</p>
+      <p class="footer-source">Data sourced from official Japanese government publications. Not affiliated with any government agency.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    'use strict';
+
+    var ERA_CONFIG = {
+      reiwa:  { kanji: '\u4EE4\u548C', english: 'Reiwa',  offset: 2018, start: { y:2019, m:5,  d:1  }, end: null },
+      heisei: { kanji: '\u5E73\u6210', english: 'Heisei', offset: 1988, start: { y:1989, m:1,  d:8  }, end: { y:2019, m:4, d:30 } },
+      showa:  { kanji: '\u662D\u548C', english: 'Showa',  offset: 1925, start: { y:1926, m:12, d:25 }, end: { y:1989, m:1, d:7  } },
+      taisho: { kanji: '\u5927\u6B63', english: 'Taisho', offset: 1911, start: { y:1912, m:7,  d:30 }, end: { y:1926, m:12, d:24 } },
+      meiji:  { kanji: '\u660E\u6CBB', english: 'Meiji',  offset: 1867, start: { y:1868, m:1,  d:25 }, end: { y:1912, m:7, d:29 } }
+    };
+
+    var DAYS_OF_WEEK = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+    var eraYear = document.getElementById('era-year');
+    var eraMonth = document.getElementById('era-month');
+    var eraDay = document.getElementById('era-day');
+    var btnConvert = document.getElementById('btn-convert');
+    var resultBox = document.getElementById('result-box');
+    var exampleBox = document.getElementById('example-box');
+    var errorBox = document.getElementById('error-box');
+    var btnCopy = document.getElementById('btn-copy');
+
+    // Populate days
+    function populateDays() {
+      var m = parseInt(eraMonth.value) || 0;
+      var y = parseInt(eraYear.value) || 1;
+      var westYear = y + 1988;
+      var maxDay = m ? new Date(westYear, m, 0).getDate() : 31;
+      var current = eraDay.value;
+      eraDay.innerHTML = '<option value="">\u2014 Day \u2014</option>';
+      for (var i = 1; i <= maxDay; i++) {
+        eraDay.innerHTML += '<option value="' + i + '"' + (String(i) === current ? ' selected' : '') + '>' + i + '</option>';
+      }
+    }
+
+    eraMonth.addEventListener('change', populateDays);
+    eraYear.addEventListener('input', populateDays);
+    populateDays();
+
+    function clearError() { errorBox.innerHTML = ''; }
+    function showError(msg) { errorBox.innerHTML = '<div class="error-msg">' + msg + '</div>'; resultBox.classList.remove('visible'); }
+
+    function convert() {
+      clearError();
+      exampleBox.style.display = 'none';
+      var yearVal = parseInt(eraYear.value);
+      if (isNaN(yearVal) || yearVal < 1 || yearVal > 31) {
+        showError('Please enter a valid Heisei year between 1 and 31.');
+        return;
+      }
+      var era = ERA_CONFIG.heisei;
+      var westYear = yearVal + era.offset;
+      var month = parseInt(eraMonth.value) || 0;
+      var day = parseInt(eraDay.value) || 0;
+
+      // Validate date within era boundaries
+      if (month && day) {
+        var inputDate = new Date(westYear, month - 1, day);
+        var eraStart = new Date(era.start.y, era.start.m - 1, era.start.d);
+        var eraEnd = new Date(era.end.y, era.end.m - 1, era.end.d);
+        if (inputDate < eraStart || inputDate > eraEnd) {
+          showError('This date falls outside the Heisei era (Jan 8, 1989 \u2013 Apr 30, 2019).');
+          return;
+        }
+      }
+
+      // Display results
+      document.getElementById('r-year').textContent = westYear;
+      if (month && day) {
+        var dateObj = new Date(westYear, month - 1, day);
+        document.getElementById('r-date').textContent = MONTHS[month - 1] + ' ' + day + ', ' + westYear;
+        document.getElementById('r-dow').textContent = DAYS_OF_WEEK[dateObj.getDay()];
+      } else if (month) {
+        document.getElementById('r-date').textContent = MONTHS[month - 1] + ' ' + westYear;
+        document.getElementById('r-dow').textContent = '\u2014';
+      } else {
+        document.getElementById('r-date').textContent = westYear;
+        document.getElementById('r-dow').textContent = '\u2014';
+      }
+      document.getElementById('r-jp').textContent = '\u5E73\u6210' + yearVal + '\u5E74' + (month ? month + '\u6708' : '') + (day ? day + '\u65E5' : '');
+      document.getElementById('r-en').textContent = 'Heisei ' + yearVal + (month ? ', ' + MONTHS[month - 1] : '') + (day ? ' ' + day : '') + ', ' + westYear;
+
+      // Note for transition years
+      var noteEl = document.getElementById('r-note');
+      if (yearVal === 1) {
+        noteEl.textContent = 'Note: Heisei 1 began on January 8, 1989. Dates January 1\u20137 fall in the Showa era (Showa 64).';
+        noteEl.style.display = 'block';
+      } else if (yearVal === 31) {
+        noteEl.textContent = 'Note: Heisei 31 lasted only January 1 through April 30, 2019. From May 1, the Reiwa era began.';
+        noteEl.style.display = 'block';
+      } else {
+        noteEl.style.display = 'none';
+      }
+
+      resultBox.classList.add('visible');
+    }
+
+    btnConvert.addEventListener('click', convert);
+    eraYear.addEventListener('keydown', function(e) { if (e.key === 'Enter') convert(); });
+
+    // Copy button
+    btnCopy.addEventListener('click', function() {
+      var text = document.getElementById('r-en').textContent;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(function() {
+          btnCopy.textContent = 'Copied!';
+          btnCopy.classList.add('copied-toast');
+          setTimeout(function() { btnCopy.textContent = 'Copy'; btnCopy.classList.remove('copied-toast'); }, 2000);
+        });
+      }
+    });
+
+    // Lazy load BTF ads
+    if ('IntersectionObserver' in window) {
+      var adObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var adEl = entry.target.querySelector('.adsbygoogle');
+            if (adEl && !adEl.dataset.adLoaded) {
+              adEl.dataset.adLoaded = 'true';
+              try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+            }
+            adObserver.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '200px' });
+      document.querySelectorAll('[data-lazy-ad]').forEach(function(el) { adObserver.observe(el); });
+    }
+
+    // Load ATF ad
+    try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+  })();
+  </script>
+</body>
+</html>
