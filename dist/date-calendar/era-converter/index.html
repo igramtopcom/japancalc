@@ -538,11 +538,11 @@
     "use strict";
 
     var ERA_CONFIG = [
-      { id:"reiwa",  kanji:"\u4ee4\u548c", romaji:"Reiwa",  start:new Date("2019-05-01"), end:null, offset:2018 },
-      { id:"heisei", kanji:"\u5e73\u6210", romaji:"Heisei", start:new Date("1989-01-08"), end:new Date("2019-04-30"), offset:1988 },
-      { id:"showa",  kanji:"\u662d\u548c", romaji:"Showa",  start:new Date("1926-12-25"), end:new Date("1989-01-07"), offset:1925 },
-      { id:"taisho", kanji:"\u5927\u6b63", romaji:"Taisho", start:new Date("1912-07-30"), end:new Date("1926-12-24"), offset:1911 },
-      { id:"meiji",  kanji:"\u660e\u6cbb", romaji:"Meiji",  start:new Date("1868-01-25"), end:new Date("1912-07-29"), offset:1867 }
+      { id:"reiwa",  kanji:"\u4ee4\u548c", romaji:"Reiwa",  start:new Date(2019,4,1),  end:null,                  offset:2018 },
+      { id:"heisei", kanji:"\u5e73\u6210", romaji:"Heisei", start:new Date(1989,0,8),  end:new Date(2019,3,30),   offset:1988 },
+      { id:"showa",  kanji:"\u662d\u548c", romaji:"Showa",  start:new Date(1926,11,25),end:new Date(1989,0,7),    offset:1925 },
+      { id:"taisho", kanji:"\u5927\u6b63", romaji:"Taisho", start:new Date(1912,6,30), end:new Date(1926,11,24),  offset:1911 },
+      { id:"meiji",  kanji:"\u660e\u6cbb", romaji:"Meiji",  start:new Date(1868,0,25), end:new Date(1912,6,29),   offset:1867 }
     ];
 
     var DOW_EN = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -617,7 +617,7 @@
         var testDate = new Date(year, month - 1, day);
         for (var i = 0; i < ERA_CONFIG.length; i++) {
           var era = ERA_CONFIG[i];
-          var eEnd = era.end || new Date("2099-12-31");
+          var eEnd = era.end || new Date(2099,11,31);
           if (testDate >= era.start && testDate <= eEnd) {
             var eraYear = year - era.offset;
             return {
