@@ -1,0 +1,54 @@
+{
+  "eras": [
+    {
+      "id": "reiwa",
+      "kanji": "令和",
+      "romaji": "Reiwa",
+      "startGregorian": 2019,
+      "startDate": "2019-05-01",
+      "endDate": null,
+      "offset": 2018,
+      "description": "Beautiful Harmony"
+    },
+    {
+      "id": "heisei",
+      "kanji": "平成",
+      "romaji": "Heisei",
+      "startGregorian": 1989,
+      "startDate": "1989-01-08",
+      "endDate": "2019-04-30",
+      "offset": 1988,
+      "description": "Achieving Peace"
+    },
+    {
+      "id": "showa",
+      "kanji": "昭和",
+      "romaji": "Showa",
+      "startGregorian": 1926,
+      "startDate": "1926-12-25",
+      "endDate": "1989-01-07",
+      "offset": 1925,
+      "description": "Radiant Japan"
+    },
+    {
+      "id": "taisho",
+      "kanji": "大正",
+      "romaji": "Taisho",
+      "startGregorian": 1912,
+      "startDate": "1912-07-30",
+      "endDate": "1926-12-24",
+      "offset": 1911,
+      "description": "Great Righteousness"
+    },
+    {
+      "id": "meiji",
+      "kanji": "明治",
+      "romaji": "Meiji",
+      "startGregorian": 1868,
+      "startDate": "1868-01-25",
+      "endDate": "1912-07-29",
+      "offset": 1867,
+      "description": "Enlightened Rule"
+    }
+  ]
+}
