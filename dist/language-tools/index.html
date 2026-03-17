@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japanese Language Tools: 日本語ツール | JapanCalc</title>
-  <meta name="description" content="Free Japanese language tools. Romaji converter, furigana generator, kanji number converter and more. For Japanese learners and residents. Bilingual EN/JP, no login.">
+  <title>日本語ツール: ローマ字・ふりがな・漢数字 | JapanCalc</title>
+  <meta name="description" content="ローマ字変換、ふりがな生成、漢数字変換など無料の日本語ツール。ログイン不要。">
   <link rel="canonical" href="https://japancalc.com/language-tools/">
-  <link rel="alternate" hreflang="en"        href="https://japancalc.com/language-tools/">
-  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/language-tools/">
+  
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/language-tools/">
+  
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/language-tools/">
   <link rel="alternate" hreflang="x-default" href="https://japancalc.com/language-tools/">
-  <meta property="og:title"       content="Japanese Language Tools: 日本語ツール | JapanCalc">
+  <meta property="og:title"       content="日本語ツール: ローマ字・ふりがな・漢数字 | JapanCalc">
   <meta property="og:url"         content="https://japancalc.com/language-tools/">
   <meta property="og:type"        content="website">
   <meta name="robots" content="index, follow">
@@ -28,9 +30,9 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home",
-        "item": "https://japancalc.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Language Tools",
-        "item": "https://japancalc.com/language-tools/" }
+        "item": "https://japancalc.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "言語ツール",
+        "item": "https://japancalc.com/en/language-tools/" }
     ]
   }
   </script>
@@ -78,19 +80,22 @@
   }
 </style>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="nav-logo">JapanCalc</a>
   <ul class="nav-links" id="nav-links-menu">
-    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
-    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
-            onclick="window.location.href='/ja'+window.location.pathname">日本語</button>
-    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+    <a id="lang-toggle" href="/en/language-tools/" class="lang-toggle" lang="ja"
+       title="このページを日本語で表示"
+       aria-label="Switch to Japanese">
+      日本語
+    </a>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -102,9 +107,9 @@
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
-    <li><a href="/">Home</a></li>
+    <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li aria-current="page">Language Tools</li>
+    <li aria-current="page">言語ツール</li>
   </ol>
 </nav>
 
@@ -118,9 +123,9 @@
 
 <main class="content page-wrapper" id="main-content">
 
-  <h1>Japanese Language Tools</h1>
+  <h1>日本語ツール</h1>
   <p class="tool-desc">
-    Free tools for Japanese language learners and readers. Convert between
+    日本語学習・生活に役立つ無料ツール and readers. Convert between
     romaji and Japanese scripts, add furigana to kanji text, convert numbers
     to kanji format, and more. All tools work in your browser &#x2014; no signup.
   </p>
@@ -129,28 +134,28 @@
 
     <a href="/language-tools/romaji-converter/" class="tool-card">
       <div class="tool-card-icon">&#x1F524;</div>
-      <div class="tool-card-name">Romaji Converter</div>
+      <div class="tool-card-name">ローマ字変換</div>
       <div class="tool-card-jp">ローマ字変換</div>
       <div class="tool-card-desc">Convert hiragana / katakana to romaji</div>
     </a>
 
     <a href="/language-tools/furigana-generator/" class="tool-card">
       <div class="tool-card-icon">&#x1F4D6;</div>
-      <div class="tool-card-name">Furigana Generator</div>
+      <div class="tool-card-name">ふりがな生成</div>
       <div class="tool-card-jp">ふりがな生成</div>
       <div class="tool-card-desc">Add furigana readings to kanji text</div>
     </a>
 
     <a href="/language-tools/kanji-numbers/" class="tool-card">
       <div class="tool-card-icon">&#x1F522;</div>
-      <div class="tool-card-name">Kanji Number Converter</div>
+      <div class="tool-card-name">漢数字変換</div>
       <div class="tool-card-jp">漢数字変換</div>
       <div class="tool-card-desc">Convert numbers to kanji and back</div>
     </a>
 
     <a href="/language-tools/measurement-converter/" class="tool-card">
       <div class="tool-card-icon">&#x1F4CF;</div>
-      <div class="tool-card-name">Measurement Converter</div>
+      <div class="tool-card-name">単位変換</div>
       <div class="tool-card-jp">単位変換</div>
       <div class="tool-card-desc">Height, weight &amp; sizes for Japanese forms</div>
     </a>
@@ -166,7 +171,7 @@
   </div>
 
   <article class="seo-content">
-    <h2>Japanese Language Tools for Learners and Residents</h2>
+    <h2>Japanese 言語ツール for Learners and Residents</h2>
     <p>
       Whether you are learning Japanese or navigating life in Japan as a
       foreign resident, these tools help bridge the language gap. From
@@ -213,10 +218,10 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <ul class="footer-links">
-      <li><a href="/about/">About</a></li>
-      <li><a href="/privacy/">Privacy Policy</a></li>
-      <li><a href="/terms/">Terms of Use</a></li>
-      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
   </div>
@@ -259,5 +264,35 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  var toggleMobile = document.getElementById('lang-toggle-mobile');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+    if (toggleMobile) {
+      toggleMobile.href = jpPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+    if (toggleMobile) {
+      toggleMobile.href = enPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  }
+})();
+</script>
 </body>
 </html>

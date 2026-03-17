@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japan Salary Calculator: 手取り計算 Take-home Pay | JapanCalc</title>
-  <meta name="description" content="Calculate your Japan take-home salary (手取り) after tax and social insurance. Income tax, resident tax, pension, and health insurance deductions. Free 給与計算 tool.">
+  <title>手取り計算ツール: 給与・手取り計算 | JapanCalc</title>
+  <meta name="description" content="月収から手取り給与を計算。所得税・住民税・社会保険料の控除内訳を表示。無料の給与計算ツール。">
   <link rel="canonical" href="https://japancalc.com/tax-finance/salary-calculator/">
-  <link rel="alternate" hreflang="en"        href="https://japancalc.com/tax-finance/salary-calculator/">
-  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/tax-finance/salary-calculator/">
+  
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/tax-finance/salary-calculator/">
+  
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/tax-finance/salary-calculator/">
   <link rel="alternate" hreflang="x-default" href="https://japancalc.com/tax-finance/salary-calculator/">
-  <meta property="og:title"       content="Japan Salary Calculator: 手取り計算 Take-home Pay | JapanCalc">
-  <meta property="og:description" content="Calculate your Japan take-home salary (手取り) after tax and social insurance. Income tax, resident tax, pension, and health insurance deductions. Free 給与計算 tool.">
+  <meta property="og:title"       content="手取り計算ツール: 給与・手取り計算 | JapanCalc">
+  <meta property="og:description" content="月収から手取り給与を計算。所得税・住民税・社会保険料の控除内訳を表示。無料の給与計算ツール。">
   <meta property="og:url"         content="https://japancalc.com/tax-finance/salary-calculator/">
   <meta property="og:type"        content="website">
   <meta name="robots" content="index, follow">
@@ -27,8 +29,8 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Japan Salary Calculator &#x2014; &#x624B;&#x53D6;&#x308A;&#x8A08;&#x7B97;",
-    "url": "https://japancalc.com/tax-finance/salary-calculator/",
+    "name": "Japan 手取り計算ツール &#x2014; &#x624B;&#x53D6;&#x308A;&#x8A08;&#x7B97;",
+    "url": "https://japancalc.com/en/tax-finance/salary-calculator/",
     "description": "Calculate Japan take-home salary (&#x624B;&#x53D6;&#x308A;) after income tax, resident tax, and social insurance deductions. FY2025 rates. Free, browser-based, no login required.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
@@ -46,11 +48,11 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home",
-        "item": "https://japancalc.com/" },
+        "item": "https://japancalc.com/en/" },
       { "@type": "ListItem", "position": 2, "name": "Tax & Finance",
-        "item": "https://japancalc.com/tax-finance/" },
-      { "@type": "ListItem", "position": 3, "name": "Japan Salary Calculator",
-        "item": "https://japancalc.com/tax-finance/salary-calculator/" }
+        "item": "https://japancalc.com/en/tax-finance/" },
+      { "@type": "ListItem", "position": 3, "name": "Japan 手取り計算ツール",
+        "item": "https://japancalc.com/en/tax-finance/salary-calculator/" }
     ]
   }
   </script>
@@ -197,19 +199,22 @@
   }
 </style>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="nav-logo">JapanCalc</a>
   <ul class="nav-links" id="nav-links-menu">
-    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
-    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
-            onclick="window.location.href='/ja'+window.location.pathname">&#x65E5;&#x672C;&#x8A9E;</button>
-    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+    <a id="lang-toggle" href="/en/tax-finance/salary-calculator/" class="lang-toggle" lang="ja"
+       title="このページを日本語で表示"
+       aria-label="Switch to Japanese">
+      日本語
+    </a>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -221,11 +226,11 @@
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
-    <li><a href="/">Home</a></li>
+    <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li aria-current="page">Japan Salary Calculator</li>
+    <li aria-current="page">給与・手取り計算ツール</li>
   </ol>
 </nav>
 
@@ -240,19 +245,19 @@
 <div class="page-layout">
   <main class="content" id="main-content">
 
-    <h1>Japan Salary Calculator &#x2014; &#x624B;&#x53D6;&#x308A;&#x8A08;&#x7B97;</h1>
-    <p class="tool-subtitle">&#x624B;&#x53D6;&#x308A;&#x7D66;&#x4E0E;&#x8A08;&#x7B97;&#x30C4;&#x30FC;&#x30EB; &#x2014; Calculate take-home pay after tax and social insurance</p>
+    <h1>Japan 手取り計算ツール &#x2014; &#x624B;&#x53D6;&#x308A;&#x8A08;&#x7B97;</h1>
+    <p class="tool-subtitle">&#x624B;&#x53D6;&#x308A;&#x7D66;&#x4E0E;&#x8A08;&#x7B97;&#x30C4;&#x30FC;&#x30EB; &#x2014; 手取り給与を計算する after tax and social insurance</p>
     <p class="tool-desc">
       Calculate your Japan take-home salary (&#x624B;&#x53D6;&#x308A;) from your gross monthly pay.
       Shows all deductions including income tax (&#x6240;&#x5F97;&#x7A0E;), resident tax (&#x4F4F;&#x6C11;&#x7A0E;),
       health insurance (&#x5065;&#x5EB7;&#x4FDD;&#x967A;), pension (&#x539A;&#x751F;&#x5E74;&#x91D1;), and employment insurance
-      (&#x96C7;&#x7528;&#x4FDD;&#x967A;). Based on FY2025 rates. Free, no login required.
+      (&#x96C7;&#x7528;&#x4FDD;&#x967A;). Based on FY2025 rates. 無料、ログイン不要。
     </p>
 
     <div class="tool-box" id="tool-main">
       <div class="form-group">
         <label class="form-label" for="gross-input">
-          Monthly Gross Salary &#x2014; &#x6708;&#x53CE;&#xFF08;&#x984D;&#x9762;&#xFF09; &#xA5;
+          月収（額面） &#x2014; &#x6708;&#x53CE;&#xFF08;&#x984D;&#x9762;&#xFF09; &#xA5;
         </label>
         <input type="number" class="form-input" id="gross-input"
                min="0" max="10000000" step="1000"
@@ -262,7 +267,7 @@
 
       <div class="form-group">
         <label class="form-label" for="bonus-input">
-          Annual Bonus (optional) &#x2014; &#x5E74;&#x9593;&#x30DC;&#x30FC;&#x30CA;&#x30B9; &#xA5;
+          年間ボーナス（任意） &#x2014; &#x5E74;&#x9593;&#x30DC;&#x30FC;&#x30CA;&#x30B9; &#xA5;
         </label>
         <input type="number" class="form-input" id="bonus-input"
                min="0" step="10000"
@@ -273,7 +278,7 @@
       </div>
 
       <div class="btn-row">
-        <button class="btn btn-primary" id="calculate-btn">Calculate Take-home Pay</button>
+        <button class="btn btn-primary" id="calculate-btn">手取りを計算する</button>
       </div>
 
       <div class="result-box" id="salary-result" aria-live="polite">
@@ -304,18 +309,18 @@
           <span class="deduction-row-value" id="r-incometax"></span>
           <span class="deduction-row-label">Resident Tax (&#x4F4F;&#x6C11;&#x7A0E;) *</span>
           <span class="deduction-row-value" id="r-residenttax"></span>
-          <span class="deduction-row-label deduction-total">Total Deductions</span>
+          <span class="deduction-row-label deduction-total">控除合計</span>
           <span class="deduction-row-value deduction-total" id="r-total-ded"></span>
         </div>
 
         <div class="annual-section">
           <h3>Annual Figures</h3>
           <div class="deduction-grid">
-            <span class="deduction-row-label">Annual Gross</span>
+            <span class="deduction-row-label">年収（額面）</span>
             <span class="deduction-row-value" id="r-annual-gross"></span>
             <span class="deduction-row-label">Annual Take-home (est.)</span>
             <span class="deduction-row-value" id="r-annual-net"></span>
-            <span class="deduction-row-label">Taxable Income</span>
+            <span class="deduction-row-label">課税所得</span>
             <span class="deduction-row-value" id="r-annual-taxable"></span>
           </div>
         </div>
@@ -439,7 +444,7 @@
     </section>
 
     <section class="related-tools">
-      <h2>Related Tools</h2>
+      <h2>関連ツール</h2>
       <div class="cards-grid">
         <a href="/tax-finance/consumption-tax/" class="tool-card">
           <div class="tool-card-icon">&#x1F9FE;</div>
@@ -479,10 +484,10 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <ul class="footer-links">
-      <li><a href="/about/">About</a></li>
-      <li><a href="/privacy/">Privacy Policy</a></li>
-      <li><a href="/terms/">Terms of Use</a></li>
-      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
     <p class="footer-attribution">Tax rates sourced from National Tax Agency Japan (FY2025). Last updated: March 2025</p>
@@ -632,5 +637,35 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  var toggleMobile = document.getElementById('lang-toggle-mobile');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+    if (toggleMobile) {
+      toggleMobile.href = jpPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+    if (toggleMobile) {
+      toggleMobile.href = enPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  }
+})();
+</script>
 </body>
 </html>

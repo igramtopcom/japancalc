@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japan Measurement Converter: Height &amp; Weight | JapanCalc</title>
-  <meta name="description" content="Convert height, weight, clothing and shoe sizes for Japanese forms. cm to feet/inches, kg to lbs, US/EU to Japan sizes. Free measurement converter for Japan.">
+  <title>単位変換ツール: 身長・体重・サイズ | JapanCalc</title>
+  <meta name="description" content="身長（cm↔フィート）、体重（kg↔ポンド）、服・靴のサイズを日本式に変換。日本の書類に対応。">
   <link rel="canonical" href="https://japancalc.com/language-tools/measurement-converter/">
-  <link rel="alternate" hreflang="en"        href="https://japancalc.com/language-tools/measurement-converter/">
-  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/language-tools/measurement-converter/">
+  
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/language-tools/measurement-converter/">
+  
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/language-tools/measurement-converter/">
   <link rel="alternate" hreflang="x-default" href="https://japancalc.com/language-tools/measurement-converter/">
-  <meta property="og:title"       content="Japan Measurement Converter: Height &amp; Weight | JapanCalc">
-  <meta property="og:description" content="Convert height, weight, clothing and shoe sizes for Japanese forms. cm to feet/inches, kg to lbs, US/EU to Japan sizes. Free measurement converter for Japan.">
+  <meta property="og:title"       content="単位変換ツール: 身長・体重・サイズ | JapanCalc">
+  <meta property="og:description" content="身長（cm↔フィート）、体重（kg↔ポンド）、服・靴のサイズを日本式に変換。日本の書類に対応。">
   <meta property="og:url"         content="https://japancalc.com/language-tools/measurement-converter/">
   <meta property="og:type"        content="website">
   <meta name="robots" content="index, follow">
@@ -27,8 +29,8 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Japan Measurement Converter",
-    "url": "https://japancalc.com/language-tools/measurement-converter/",
+    "name": "Japan 単位変換ツール",
+    "url": "https://japancalc.com/en/language-tools/measurement-converter/",
     "description": "Convert height, weight, clothing sizes, and shoe sizes for Japanese forms. cm to feet/inches, kg to lbs, US/EU to Japan sizes. Free, browser-based.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
@@ -46,11 +48,11 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home",
-        "item": "https://japancalc.com/" },
+        "item": "https://japancalc.com/en/" },
       { "@type": "ListItem", "position": 2, "name": "Language Tools",
-        "item": "https://japancalc.com/language-tools/" },
-      { "@type": "ListItem", "position": 3, "name": "Japan Measurement Converter",
-        "item": "https://japancalc.com/language-tools/measurement-converter/" }
+        "item": "https://japancalc.com/en/language-tools/" },
+      { "@type": "ListItem", "position": 3, "name": "Japan 単位変換ツール",
+        "item": "https://japancalc.com/en/language-tools/measurement-converter/" }
     ]
   }
   </script>
@@ -240,19 +242,22 @@
   }
 </style>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="nav-logo">JapanCalc</a>
   <ul class="nav-links" id="nav-links-menu">
-    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
-    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
-            onclick="window.location.href='/ja'+window.location.pathname">&#x65E5;&#x672C;&#x8A9E;</button>
-    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+    <a id="lang-toggle" href="/en/language-tools/measurement-converter/" class="lang-toggle" lang="ja"
+       title="このページを日本語で表示"
+       aria-label="Switch to Japanese">
+      日本語
+    </a>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -264,11 +269,11 @@
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
-    <li><a href="/">Home</a></li>
+    <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li aria-current="page">Japan Measurement Converter</li>
+    <li aria-current="page">日本向け単位変換ツール</li>
   </ol>
 </nav>
 
@@ -285,12 +290,12 @@
 <div class="page-layout">
   <main class="content" id="main-content">
 
-    <h1>Japan Measurement Converter &#x2014; Height, Weight &amp; Sizes</h1>
-    <p class="tool-subtitle">&#x65E5;&#x672C;&#x5411;&#x3051;&#x5358;&#x4F4D;&#x5909;&#x63DB;&#x30C4;&#x30FC;&#x30EB; &#x2014; Convert measurements for Japanese forms</p>
+    <h1>Japan 単位変換ツール &#x2014; Height, Weight &amp; Sizes</h1>
+    <p class="tool-subtitle">&#x65E5;&#x672C;&#x5411;&#x3051;&#x5358;&#x4F4D;&#x5909;&#x63DB;&#x30C4;&#x30FC;&#x30EB; &#x2014; 日本の書類に必要な単位を変換</p>
     <p class="tool-desc">
       Convert height, weight, clothing sizes, shoe sizes, temperature, and
       ring sizes to Japanese format. Essential for filling out Japanese
-      government forms, medical records, and shopping. Free, no login required.
+      government forms, medical records, and shopping. 無料、ログイン不要。
     </p>
 
     <!-- TOOL INTERFACE -->
@@ -349,7 +354,7 @@
           <div class="result-box" id="height-result">
             <div class="measure-primary" id="r-height-primary"></div>
             <div class="measure-grid">
-              <span class="measure-label">Centimetres</span>
+              <span class="measure-label">センチメートル</span>
               <span class="measure-value" id="r-height-cm"></span>
               <span class="measure-label">Feet &amp; Inches</span>
               <span class="measure-value" id="r-height-ftin"></span>
@@ -357,7 +362,7 @@
               <span class="measure-value" id="r-height-in"></span>
             </div>
             <div class="btn-row">
-              <button class="btn btn-secondary" id="height-copy-btn" data-copy="">Copy</button>
+              <button class="btn btn-secondary" id="height-copy-btn" data-copy="">コピー</button>
             </div>
           </div>
         </div>
@@ -395,7 +400,7 @@
               <input type="number" class="form-input" id="weight-stone" min="0" placeholder="11">
             </div>
             <div class="form-group">
-              <label class="form-label" for="weight-stone-lbs">Pounds</label>
+              <label class="form-label" for="weight-stone-lbs">ポンド</label>
               <input type="number" class="form-input" id="weight-stone-lbs"
                      min="0" max="13" placeholder="0">
             </div>
@@ -414,15 +419,15 @@
           <div class="result-box" id="weight-result">
             <div class="measure-primary" id="r-weight-primary"></div>
             <div class="measure-grid">
-              <span class="measure-label">Kilograms</span>
+              <span class="measure-label">キログラム</span>
               <span class="measure-value" id="r-weight-kg"></span>
-              <span class="measure-label">Pounds</span>
+              <span class="measure-label">ポンド</span>
               <span class="measure-value" id="r-weight-lbs"></span>
               <span class="measure-label">Stone</span>
               <span class="measure-value" id="r-weight-stone"></span>
             </div>
             <div class="btn-row">
-              <button class="btn btn-secondary" id="weight-copy-btn" data-copy="">Copy</button>
+              <button class="btn btn-secondary" id="weight-copy-btn" data-copy="">コピー</button>
             </div>
           </div>
         </div>
@@ -442,7 +447,7 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="temp-input">Temperature</label>
+          <label class="form-label" for="temp-input">温度・体温</label>
           <input type="number" class="form-input" id="temp-input"
                  step="0.1" placeholder="98.6">
         </div>
@@ -457,7 +462,7 @@
               <span class="measure-value" id="r-temp-f"></span>
             </div>
             <div class="temp-ref">
-              Body temperature reference: 36&#x2013;37&#x00B0;C (96.8&#x2013;98.6&#x00B0;F) = normal
+              体温の目安: 36&#x2013;37&#x00B0;C (96.8&#x2013;98.6&#x00B0;F) = normal
             </div>
           </div>
         </div>
@@ -478,7 +483,7 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label" for="clothing-from">Your Size System</label>
+            <label class="form-label" for="clothing-from">お持ちのサイズ</label>
             <select class="form-select" id="clothing-from">
               <option value="us">US</option>
               <option value="eu">EU</option>
@@ -487,7 +492,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label class="form-label" for="clothing-size">Your Size</label>
+            <label class="form-label" for="clothing-size">サイズを入力</label>
             <input type="text" class="form-input" id="clothing-size"
                    placeholder="e.g. M or 11">
           </div>
@@ -526,8 +531,8 @@
           <div class="form-group">
             <label class="form-label" for="shoe-gender">Gender</label>
             <select class="form-select" id="shoe-gender">
-              <option value="women">Women's</option>
-              <option value="men">Men's</option>
+              <option value="women">レディース</option>
+              <option value="men">メンズ</option>
             </select>
           </div>
           <div class="form-group">
@@ -665,7 +670,7 @@
 
     <!-- SEO Content -->
     <article class="seo-content">
-      <h2>Why You Need a Measurement Converter for Japan (&#x65E5;&#x672C;&#x306E;&#x5358;&#x4F4D;&#x5909;&#x63DB;)</h2>
+      <h2>Why You Need a 単位変換ツール for Japan (&#x65E5;&#x672C;&#x306E;&#x5358;&#x4F4D;&#x5909;&#x63DB;)</h2>
       <p>
         Japan uses the metric system exclusively for official measurements,
         which can be a challenge for visitors and residents from countries
@@ -802,7 +807,7 @@
 
     <!-- Related Tools -->
     <section class="related-tools">
-      <h2>Related Tools</h2>
+      <h2>関連ツール</h2>
       <div class="cards-grid">
         <a href="/language-tools/romaji-converter/" class="tool-card">
           <div class="tool-card-icon">&#x1F524;</div>
@@ -845,10 +850,10 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <ul class="footer-links">
-      <li><a href="/about/">About</a></li>
-      <li><a href="/privacy/">Privacy Policy</a></li>
-      <li><a href="/terms/">Terms of Use</a></li>
-      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">
       &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
@@ -1119,5 +1124,35 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  var toggleMobile = document.getElementById('lang-toggle-mobile');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+    if (toggleMobile) {
+      toggleMobile.href = jpPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+    if (toggleMobile) {
+      toggleMobile.href = enPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  }
+})();
+</script>
 </body>
 </html>

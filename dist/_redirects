@@ -1,29 +1,3 @@
-# Bilingual redirect — EN pages moved to /en/ prefix
-# Old root paths → new /en/ paths
-
-/date-calendar/                              /en/date-calendar/                              301
-/date-calendar/era-converter/                /en/date-calendar/era-converter/                301
-/date-calendar/era-converter/reiwa-7/        /en/date-calendar/era-converter/reiwa-7/        301
-/date-calendar/era-converter/reiwa-6/        /en/date-calendar/era-converter/reiwa-6/        301
-/date-calendar/era-converter/reiwa-5/        /en/date-calendar/era-converter/reiwa-5/        301
-/date-calendar/era-converter/reiwa-4/        /en/date-calendar/era-converter/reiwa-4/        301
-/date-calendar/era-converter/reiwa-3/        /en/date-calendar/era-converter/reiwa-3/        301
-/date-calendar/era-converter/showa/          /en/date-calendar/era-converter/showa/          301
-/date-calendar/era-converter/heisei/         /en/date-calendar/era-converter/heisei/         301
-/date-calendar/age-calculator/               /en/date-calendar/age-calculator/               301
-/date-calendar/zodiac/                       /en/date-calendar/zodiac/                       301
-/date-calendar/holiday-checker/              /en/date-calendar/holiday-checker/              301
-/date-calendar/travel-budget/                /en/date-calendar/travel-budget/                301
-/tax-finance/                                /en/tax-finance/                                301
-/tax-finance/consumption-tax/                /en/tax-finance/consumption-tax/                301
-/tax-finance/salary-calculator/              /en/tax-finance/salary-calculator/              301
-/tax-finance/work-hours/                     /en/tax-finance/work-hours/                     301
-/tax-finance/withholding-tax/                /en/tax-finance/withholding-tax/                301
-/language-tools/                             /en/language-tools/                             301
-/language-tools/romaji-converter/            /en/language-tools/romaji-converter/            301
-/language-tools/furigana-generator/          /en/language-tools/furigana-generator/          301
-/language-tools/kanji-numbers/               /en/language-tools/kanji-numbers/               301
-/language-tools/measurement-converter/       /en/language-tools/measurement-converter/       301
-/about/                                      /en/about/                                      301
-/privacy/                                    /en/privacy/                                    301
-/terms/                                      /en/terms/                                      301
+# Bilingual site — JP pages at root, EN pages at /en/
+# Root paths now serve JP content directly.
+# No redirects needed — both JP (root) and EN (/en/) pages exist.

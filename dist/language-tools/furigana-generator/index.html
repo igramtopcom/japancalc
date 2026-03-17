@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Furigana Generator: Add Readings to Kanji | JapanCalc</title>
-  <meta name="description" content="Add furigana (ふりがな) readings to Japanese kanji text instantly. Free online furigana generator, paste any Japanese text and get ruby annotations. No login required.">
+  <title>ふりがな生成ツール: 漢字にふりがなを追加 | JapanCalc</title>
+  <meta name="description" content="漢字テキストにふりがなを自動で追加。HTML（rubyタグ）・括弧表記・プレビュー表示に対応。無料。">
   <link rel="canonical" href="https://japancalc.com/language-tools/furigana-generator/">
-  <link rel="alternate" hreflang="en"        href="https://japancalc.com/language-tools/furigana-generator/">
-  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/language-tools/furigana-generator/">
+  
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/language-tools/furigana-generator/">
+  
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/language-tools/furigana-generator/">
   <link rel="alternate" hreflang="x-default" href="https://japancalc.com/language-tools/furigana-generator/">
-  <meta property="og:title"       content="Furigana Generator: Add Readings to Kanji | JapanCalc">
-  <meta property="og:description" content="Add furigana (ふりがな) readings to Japanese kanji text instantly. Free online furigana generator, paste any Japanese text and get ruby annotations. No login required.">
+  <meta property="og:title"       content="ふりがな生成ツール: 漢字にふりがなを追加 | JapanCalc">
+  <meta property="og:description" content="漢字テキストにふりがなを自動で追加。HTML（rubyタグ）・括弧表記・プレビュー表示に対応。無料。">
   <meta property="og:url"         content="https://japancalc.com/language-tools/furigana-generator/">
   <meta property="og:type"        content="website">
   <meta name="robots" content="index, follow">
@@ -28,7 +30,7 @@
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Furigana Generator \u2014 Add Readings to Kanji",
-    "url": "https://japancalc.com/language-tools/furigana-generator/",
+    "url": "https://japancalc.com/en/language-tools/furigana-generator/",
     "description": "Add furigana (\u3075\u308a\u304c\u306a) phonetic readings to Japanese kanji text. Powered by kuromoji Japanese morphological analysis. Free, browser-based, no login required.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
@@ -46,11 +48,11 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home",
-        "item": "https://japancalc.com/" },
+        "item": "https://japancalc.com/en/" },
       { "@type": "ListItem", "position": 2, "name": "Language Tools",
-        "item": "https://japancalc.com/language-tools/" },
+        "item": "https://japancalc.com/en/language-tools/" },
       { "@type": "ListItem", "position": 3, "name": "Furigana Generator",
-        "item": "https://japancalc.com/language-tools/furigana-generator/" }
+        "item": "https://japancalc.com/en/language-tools/furigana-generator/" }
     ]
   }
   </script>
@@ -238,19 +240,22 @@
   }
 </style>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="nav-logo">JapanCalc</a>
   <ul class="nav-links" id="nav-links-menu">
-    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
-    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
-            onclick="window.location.href='/ja'+window.location.pathname">&#x65E5;&#x672C;&#x8A9E;</button>
-    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+    <a id="lang-toggle" href="/en/language-tools/furigana-generator/" class="lang-toggle" lang="ja"
+       title="このページを日本語で表示"
+       aria-label="Switch to Japanese">
+      日本語
+    </a>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -262,11 +267,11 @@
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
-    <li><a href="/">Home</a></li>
+    <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li aria-current="page">Furigana Generator</li>
+    <li aria-current="page">ふりがな生成ツール</li>
   </ol>
 </nav>
 
@@ -295,20 +300,20 @@
       <div class="loading-banner" id="loading-banner">
         <div class="loading-spinner"></div>
         <div>
-          <strong>Loading Japanese dictionary&#x2026;</strong>
+          <strong>日本語辞書を読み込み中&#x2026;</strong>
           <span class="text-muted" style="font-size:0.85rem; display:block;">
-            First load takes 5&#x2013;10 seconds. Cached for future visits.
+            初回は5&#x2013;10 seconds. Cached for future visits.
           </span>
         </div>
       </div>
 
       <div class="ready-banner" id="ready-banner" style="display:none;">
-        &#x2713; Dictionary loaded &#x2014; ready to generate furigana
+        &#x2713; 辞書の読み込み完了 &#x2014; ready to generate furigana
       </div>
 
       <div class="form-group" id="input-group">
         <label class="form-label" for="jp-input">
-          Japanese Text Input (&#x65E5;&#x672C;&#x8A9E;&#x30C6;&#x30AD;&#x30B9;&#x30C8;)
+          日本語テキストを入力 (&#x65E5;&#x672C;&#x8A9E;&#x30C6;&#x30AD;&#x30B9;&#x30C8;)
         </label>
         <textarea class="form-input romaji-textarea" id="jp-input"
                   rows="5"
@@ -322,7 +327,7 @@
       </div>
 
       <div class="sample-row">
-        <span class="text-muted" style="font-size:0.8rem;">Try a sample:</span>
+        <span class="text-muted" style="font-size:0.8rem;">サンプルを試す:</span>
         <button class="btn btn-secondary" style="font-size:0.8rem; height:32px; padding:0 0.75rem;"
                 disabled>&#x6771;&#x4EAC;</button>
         <button class="btn btn-secondary" style="font-size:0.8rem; height:32px; padding:0 0.75rem;"
@@ -336,14 +341,14 @@
         <div class="passthrough-group">
           <label class="form-label" style="margin-bottom:0.3rem;">Output format:</label>
           <select class="form-select" id="output-format" style="height:36px; font-size:0.875rem;" disabled>
-            <option value="preview">Preview (rendered furigana)</option>
-            <option value="html">HTML (ruby tags)</option>
-            <option value="bracket">Bracket notation text[&#x3088;&#x307F;]</option>
+            <option value="preview">プレビュー（ふりがな表示）</option>
+            <option value="html">HTML（rubyタグ）</option>
+            <option value="bracket">括弧表記 text[&#x3088;&#x307F;]</option>
           </select>
         </div>
         <label class="rate-option" style="align-self:flex-end; margin-bottom:0.25rem;">
           <input type="checkbox" id="opt-kanji-only" checked disabled>
-          <span>Kanji only</span>
+          <span>漢字のみ</span>
         </label>
       </div>
 
@@ -351,7 +356,7 @@
         <button class="btn btn-primary" id="generate-btn" disabled>
           Generate Furigana
         </button>
-        <button class="btn btn-secondary" id="clear-btn" disabled>Clear</button>
+        <button class="btn btn-secondary" id="clear-btn" disabled>クリア</button>
       </div>
 
       <div role="region" aria-live="polite">
@@ -374,8 +379,8 @@
           </div>
 
           <div class="btn-row">
-            <button class="btn btn-secondary" id="copy-btn">Copy</button>
-            <button class="btn btn-secondary" id="copy-html-btn">Copy HTML</button>
+            <button class="btn btn-secondary" id="copy-btn">コピー</button>
+            <button class="btn btn-secondary" id="copy-html-btn">HTMLをコピー</button>
           </div>
         </div>
       </div>
@@ -383,14 +388,14 @@
 
     <!-- Quick Reference Table -->
     <div class="quick-ref" style="overflow-x:auto;">
-      <h2>Furigana Examples (&#x3075;&#x308A;&#x304C;&#x306A;&#x4F8B;&#x6587;)</h2>
+      <h2>ふりがな例文 (&#x3075;&#x308A;&#x304C;&#x306A;&#x4F8B;&#x6587;)</h2>
       <table>
         <thead>
           <tr>
             <th>Kanji</th>
             <th>With Furigana</th>
-            <th>Reading</th>
-            <th>Meaning</th>
+            <th>読み方</th>
+            <th>意味</th>
           </tr>
         </thead>
         <tbody>
@@ -422,7 +427,7 @@
         the correct hiragana readings above them. To use it, wait for the
         dictionary to finish loading (shown by the status indicator), then
         paste or type Japanese text into the input box and click
-        <em>Generate Furigana</em>. The tool analyses the text in context,
+        <em>ふりがなを生成する</em>. The tool analyses the text in context,
         so it can correctly distinguish between kanji that have multiple
         readings &#x2014; for example &#x65E5; can be read as &#x306B;&#x3061; or &#x3072; depending on context.
       </p>
@@ -483,7 +488,7 @@
     </section>
 
     <section class="related-tools">
-      <h2>Related Tools</h2>
+      <h2>関連ツール</h2>
       <div class="cards-grid">
         <a href="/language-tools/romaji-converter/" class="tool-card">
           <div class="tool-card-icon">&#x1F524;</div>
@@ -523,10 +528,10 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <ul class="footer-links">
-      <li><a href="/about/">About</a></li>
-      <li><a href="/privacy/">Privacy Policy</a></li>
-      <li><a href="/terms/">Terms of Use</a></li>
-      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
     <p class="footer-attribution">Powered by kuromoji Japanese morphological analysis. Last updated: March 2025</p>
@@ -720,5 +725,35 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  var toggleMobile = document.getElementById('lang-toggle-mobile');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+    if (toggleMobile) {
+      toggleMobile.href = jpPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+    if (toggleMobile) {
+      toggleMobile.href = enPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  }
+})();
+</script>
 </body>
 </html>

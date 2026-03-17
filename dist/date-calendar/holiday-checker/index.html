@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japan Public Holiday Checker: 祝日確認 | JapanCalc</title>
-  <meta name="description" content="Check if any date is a Japanese public holiday. Full list of Japan holidays 2023-2026 including substitute holidays (振替休日). Free 祝日チェッカー, no login.">
+  <title>祝日チェッカー: 日本の祝日確認 | JapanCalc</title>
+  <meta name="description" content="日本の祝日・振替休日・国民の休日を確認できる無料ツール。2023〜2026年対応。ログイン不要。">
   <link rel="canonical" href="https://japancalc.com/date-calendar/holiday-checker/">
-  <link rel="alternate" hreflang="en"        href="https://japancalc.com/date-calendar/holiday-checker/">
-  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/date-calendar/holiday-checker/">
+  
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/date-calendar/holiday-checker/">
+  
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/date-calendar/holiday-checker/">
   <link rel="alternate" hreflang="x-default" href="https://japancalc.com/date-calendar/holiday-checker/">
-  <meta property="og:title"       content="Japan Public Holiday Checker: 祝日確認 | JapanCalc">
-  <meta property="og:description" content="Check if any date is a Japanese public holiday. Full list of Japan holidays 2023-2026 including substitute holidays (振替休日). Free 祝日チェッカー, no login.">
+  <meta property="og:title"       content="祝日チェッカー: 日本の祝日確認 | JapanCalc">
+  <meta property="og:description" content="日本の祝日・振替休日・国民の休日を確認できる無料ツール。2023〜2026年対応。ログイン不要。">
   <meta property="og:url"         content="https://japancalc.com/date-calendar/holiday-checker/">
   <meta property="og:type"        content="website">
   <meta name="robots" content="index, follow">
@@ -28,8 +30,8 @@
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Japan Public Holiday Checker &#x2014; &#x795D;&#x65E5;&#x30C1;&#x30A7;&#x30C3;&#x30AB;&#x30FC;",
-    "url": "https://japancalc.com/date-calendar/holiday-checker/",
-    "description": "Check if any date is a Japanese public holiday. Covers 2023&#x2013;2026 including substitute holidays and bridge days. Free, browser-based, no login required.",
+    "url": "https://japancalc.com/en/date-calendar/holiday-checker/",
+    "description": "日本の祝日・振替休日を調べる. Covers 2023&#x2013;2026 including substitute holidays and bridge days. Free, browser-based, no login required.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
     "browserRequirements": "Requires JavaScript",
@@ -46,11 +48,11 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home",
-        "item": "https://japancalc.com/" },
+        "item": "https://japancalc.com/en/" },
       { "@type": "ListItem", "position": 2, "name": "Date & Calendar",
-        "item": "https://japancalc.com/date-calendar/" },
+        "item": "https://japancalc.com/en/date-calendar/" },
       { "@type": "ListItem", "position": 3, "name": "Japan Public Holiday Checker",
-        "item": "https://japancalc.com/date-calendar/holiday-checker/" }
+        "item": "https://japancalc.com/en/date-calendar/holiday-checker/" }
     ]
   }
   </script>
@@ -199,19 +201,22 @@
   }
 </style>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="nav-logo">JapanCalc</a>
   <ul class="nav-links" id="nav-links-menu">
-    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
-    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
-            onclick="window.location.href='/ja'+window.location.pathname">&#x65E5;&#x672C;&#x8A9E;</button>
-    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+    <a id="lang-toggle" href="/en/date-calendar/holiday-checker/" class="lang-toggle" lang="ja"
+       title="このページを日本語で表示"
+       aria-label="Switch to Japanese">
+      日本語
+    </a>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -223,11 +228,11 @@
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
-    <li><a href="/">Home</a></li>
+    <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li aria-current="page">Japan Public Holiday Checker</li>
+    <li aria-current="page">日本の祝日チェッカー</li>
   </ol>
 </nav>
 
@@ -242,12 +247,12 @@
 <div class="page-layout">
   <main class="content" id="main-content">
 
-    <h1>Japan Public Holiday Checker</h1>
+    <h1>日本の祝日チェッカー</h1>
     <p class="tool-subtitle">&#x65E5;&#x672C;&#x306E;&#x795D;&#x65E5;&#x30C1;&#x30A7;&#x30C3;&#x30AB;&#x30FC; &#x2014; Check if a date is a Japanese public holiday</p>
     <p class="tool-desc">
       Check whether any date is a Japanese public holiday (&#x795D;&#x65E5;), substitute
       holiday (&#x632F;&#x66FF;&#x4F11;&#x65E5;), or regular working day. Covers 2023&#x2013;2026 including
-      Golden Week, Silver Week, and all substitute holidays. Free, no login required.
+      Golden Week, Silver Week, and all substitute holidays. 無料、ログイン不要。
     </p>
 
     <div class="tool-box" id="tool-main">
@@ -270,11 +275,11 @@
             <div class="holiday-name-jp" id="r-name-jp"></div>
             <div class="holiday-name-en" id="r-name-en"></div>
             <div class="result-grid">
-              <div><span class="result-item-label">Date</span>
+              <div><span class="result-item-label">日付</span>
                    <span class="result-item-value" id="r-date"></span></div>
-              <div><span class="result-item-label">Day</span>
+              <div><span class="result-item-label">曜日</span>
                    <span class="result-item-value" id="r-dow"></span></div>
-              <div><span class="result-item-label">Type</span>
+              <div><span class="result-item-label">種類</span>
                    <span class="result-item-value" id="r-type"></span></div>
               <div><span class="result-item-label">Note</span>
                    <span class="result-item-value" id="r-note"></span></div>
@@ -331,14 +336,14 @@
             <option value="12">December</option>
           </select>
         </div>
-        <button class="btn btn-primary" id="month-lookup-btn">View Holidays</button>
+        <button class="btn btn-primary" id="month-lookup-btn">祝日を表示する</button>
         <div id="month-result" aria-live="polite"></div>
       </div>
     </div>
 
     <!-- Quick Reference Table (JS-rendered) -->
     <div class="quick-ref" style="overflow-x:auto;">
-      <h2 id="quick-ref-heading">Japan Public Holidays — 祝日一覧</h2>
+      <h2 id="quick-ref-heading">祝日一覧 — 祝日一覧</h2>
       <div id="quick-ref-table-wrap"></div>
     </div>
 
@@ -423,7 +428,7 @@
     </section>
 
     <section class="related-tools">
-      <h2>Related Tools</h2>
+      <h2>関連ツール</h2>
       <div class="cards-grid">
         <a href="/date-calendar/era-converter/" class="tool-card">
           <div class="tool-card-icon">&#x1F4C5;</div>
@@ -463,10 +468,10 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <ul class="footer-links">
-      <li><a href="/about/">About</a></li>
-      <li><a href="/privacy/">Privacy Policy</a></li>
-      <li><a href="/terms/">Terms of Use</a></li>
-      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
     <p class="footer-attribution">Holiday data sourced from Cabinet Office of Japan. Last updated: March 2025</p>
@@ -556,7 +561,7 @@ function runCheckDate(dateStr) {
     document.getElementById('r-dow-no').textContent  = DAY_NAMES[d.getDay()];
     var next = getNextHoliday(dateStr);
     var hint = next
-      ? 'Next holiday: ' + next.nameEN + ' on ' + next.date + ' (in ' + next.daysUntil + ' day' + (next.daysUntil !== 1 ? 's' : '') + ')'
+      ? '次の祝日: ' + next.nameEN + ' on ' + next.date + ' (in ' + next.daysUntil + ' day' + (next.daysUntil !== 1 ? 's' : '') + ')'
       : '';
     document.getElementById('r-next-hint').textContent = hint;
     document.getElementById('holiday-yes-box').style.display = 'none';
@@ -652,7 +657,7 @@ function renderQuickRefTable() {
   const heading = document.getElementById('quick-ref-heading');
   if (heading) {
     heading.textContent =
-      'Japan Public Holidays ' + year + ' — ' + year + '年 祝日一覧';
+      '祝日一覧 ' + year + ' — ' + year + '年 祝日一覧';
   }
 
   const wrap = document.getElementById('quick-ref-table-wrap');
@@ -699,11 +704,11 @@ function renderQuickRefTable() {
     <table>
       <thead>
         <tr>
-          <th>Date</th>
-          <th>Day</th>
+          <th>日付</th>
+          <th>曜日</th>
           <th>Japanese</th>
           <th>English</th>
-          <th>Type</th>
+          <th>種類</th>
         </tr>
       </thead>
       <tbody>${rows}</tbody>
@@ -744,5 +749,35 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  var toggleMobile = document.getElementById('lang-toggle-mobile');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+    if (toggleMobile) {
+      toggleMobile.href = jpPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+    if (toggleMobile) {
+      toggleMobile.href = enPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  }
+})();
+</script>
 </body>
 </html>

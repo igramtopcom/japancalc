@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japan Withholding Tax Calculator: 源泉徴収計算 | JapanCalc</title>
-  <meta name="description" content="Calculate Japan withholding tax (源泉徴収) on freelance fees, interest, and dividends. Instant 源泉徴収計算 for invoices. NTA rates updated annually. Free, no login.">
+  <title>源泉徴収計算ツール: フリーランス報酬 | JapanCalc</title>
+  <meta name="description" content="フリーランス報酬の源泉徴収税額を瞬時に計算。請求書への記載金額も確認できます。無料。">
   <link rel="canonical" href="https://japancalc.com/tax-finance/withholding-tax/">
-  <link rel="alternate" hreflang="en"        href="https://japancalc.com/tax-finance/withholding-tax/">
-  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/tax-finance/withholding-tax/">
+  
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/tax-finance/withholding-tax/">
+  
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/tax-finance/withholding-tax/">
   <link rel="alternate" hreflang="x-default" href="https://japancalc.com/tax-finance/withholding-tax/">
-  <meta property="og:title"       content="Japan Withholding Tax Calculator: 源泉徴収計算 | JapanCalc">
-  <meta property="og:description" content="Calculate Japan withholding tax (源泉徴収) on freelance fees, interest, and dividends. Instant 源泉徴収計算 for invoices. NTA rates updated annually. Free, no login.">
+  <meta property="og:title"       content="源泉徴収計算ツール: フリーランス報酬 | JapanCalc">
+  <meta property="og:description" content="フリーランス報酬の源泉徴収税額を瞬時に計算。請求書への記載金額も確認できます。無料。">
   <meta property="og:url"         content="https://japancalc.com/tax-finance/withholding-tax/">
   <meta property="og:type"        content="website">
   <meta name="robots" content="index, follow">
@@ -27,8 +29,8 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Japan Withholding Tax Calculator \u2014 \u6e90\u6cc9\u5fb4\u53ce\u8a08\u7b97",
-    "url": "https://japancalc.com/tax-finance/withholding-tax/",
+    "name": "Japan 源泉徴収計算ツール \u2014 \u6e90\u6cc9\u5fb4\u53ce\u8a08\u7b97",
+    "url": "https://japancalc.com/en/tax-finance/withholding-tax/",
     "description": "Calculate Japan withholding tax (\u6e90\u6cc9\u5fb4\u53ce) on freelance professional fees, interest income, and dividends. FY2025 NTA rates. Free, browser-based, no login required.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
@@ -46,11 +48,11 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home",
-        "item": "https://japancalc.com/" },
+        "item": "https://japancalc.com/en/" },
       { "@type": "ListItem", "position": 2, "name": "Tax & Finance",
-        "item": "https://japancalc.com/tax-finance/" },
-      { "@type": "ListItem", "position": 3, "name": "Japan Withholding Tax Calculator",
-        "item": "https://japancalc.com/tax-finance/withholding-tax/" }
+        "item": "https://japancalc.com/en/tax-finance/" },
+      { "@type": "ListItem", "position": 3, "name": "Japan 源泉徴収計算ツール",
+        "item": "https://japancalc.com/en/tax-finance/withholding-tax/" }
     ]
   }
   </script>
@@ -182,19 +184,22 @@
   }
 </style>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="nav-logo">JapanCalc</a>
   <ul class="nav-links" id="nav-links-menu">
-    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
-    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
-            onclick="window.location.href='/ja'+window.location.pathname">&#x65E5;&#x672C;&#x8A9E;</button>
-    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+    <a id="lang-toggle" href="/en/tax-finance/withholding-tax/" class="lang-toggle" lang="ja"
+       title="このページを日本語で表示"
+       aria-label="Switch to Japanese">
+      日本語
+    </a>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -206,11 +211,11 @@
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
-    <li><a href="/">Home</a></li>
+    <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li aria-current="page">Withholding Tax Calculator</li>
+    <li aria-current="page">源泉徴収計算ツール</li>
   </ol>
 </nav>
 
@@ -225,13 +230,13 @@
 <div class="page-layout">
   <main class="content" id="main-content">
 
-    <h1>Japan Withholding Tax Calculator &#x2014; &#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x8A08;&#x7B97;</h1>
-    <p class="tool-subtitle">&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x8A08;&#x7B97;&#x30C4;&#x30FC;&#x30EB; &#x2014; Calculate withholding tax on freelance fees and invoices</p>
+    <h1>Japan 源泉徴収計算ツール &#x2014; &#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x8A08;&#x7B97;</h1>
+    <p class="tool-subtitle">&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x8A08;&#x7B97;&#x30C4;&#x30FC;&#x30EB; &#x2014; フリーランス報酬の源泉徴収を計算 and invoices</p>
     <p class="tool-desc">
       Calculate Japan withholding tax (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;) on freelance professional fees,
       interest income, and dividends. Enter your invoice amount to see the
       withholding deduction and net payment instantly. Based on FY2025 NTA rates.
-      Free, no login required.
+      無料、ログイン不要。
     </p>
 
     <div class="tool-box" id="tool-main">
@@ -245,7 +250,7 @@
       <div class="tool-panel active" id="panel-fee" role="tabpanel">
         <div class="form-group">
           <label class="form-label" for="fee-amount">
-            Invoice Amount &#x2014; &#x8ACB;&#x6C42;&#x91D1;&#x984D; (&#x7A0E;&#x629C;) &#xA5;
+            請求金額 &#x2014; &#x8ACB;&#x6C42;&#x91D1;&#x984D; (&#x7A0E;&#x629C;) &#xA5;
           </label>
           <input type="number" class="form-input" id="fee-amount"
                  min="0" step="1000" placeholder="e.g. 500000">
@@ -256,7 +261,7 @@
         </div>
 
         <div class="btn-row">
-          <button class="btn btn-primary" id="fee-calc-btn">Calculate Withholding</button>
+          <button class="btn btn-primary" id="fee-calc-btn">源泉徴収額を計算する</button>
         </div>
 
         <div class="result-box" id="fee-result" aria-live="polite">
@@ -288,7 +293,7 @@
           <div class="split-notice" id="split-notice" style="display:none;"></div>
 
           <div class="btn-row" style="margin-top:1rem;">
-            <button class="btn btn-secondary" id="copy-invoice-btn">Copy Invoice Line</button>
+            <button class="btn btn-secondary" id="copy-invoice-btn">請求書用テキストをコピー</button>
             <button class="btn btn-secondary" id="share-btn">Share</button>
           </div>
         </div>
@@ -326,12 +331,12 @@
 
         <div class="result-box" id="income-result" aria-live="polite">
           <div class="withholding-primary" id="r-income-wh"></div>
-          <div class="result-secondary">Withholding Tax</div>
+          <div class="result-secondary">源泉徴収税額</div>
 
           <div class="income-grid">
             <span class="row-label">Gross Amount</span>
             <span class="row-value" id="r-income-gross"></span>
-            <span class="row-label">Withholding Tax</span>
+            <span class="row-label">源泉徴収税額</span>
             <span class="row-value" style="color:#DC2626;" id="r-income-wh2"></span>
             <span class="row-label" style="font-weight:700;">Net Amount</span>
             <span class="row-value" style="font-weight:700;" id="r-income-net"></span>
@@ -342,10 +347,10 @@
 
     <!-- Quick Reference Table -->
     <div class="quick-ref" style="overflow-x:auto;">
-      <h2>Withholding Tax Reference Table &#x2014; &#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x65E9;&#x898B;&#x8868; (FY2025)</h2>
+      <h2>源泉徴収 早見表 &#x2014; &#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x65E9;&#x898B;&#x8868; (FY2025)</h2>
       <table>
         <thead>
-          <tr><th>Invoice Amount</th><th>Withholding Tax</th><th>Net Payment</th><th>Rate</th></tr>
+          <tr><th>請求金額（税抜）</th><th>源泉徴収税額</th><th>振込金額（手取り）</th><th>Rate</th></tr>
         </thead>
         <tbody>
           <tr><td>&#xA5;50,000</td><td>&#xA5;5,105</td><td>&#xA5;44,895</td><td>10.21%</td></tr>
@@ -444,7 +449,7 @@
     </section>
 
     <section class="related-tools">
-      <h2>Related Tools</h2>
+      <h2>関連ツール</h2>
       <div class="cards-grid">
         <a href="/tax-finance/salary-calculator/" class="tool-card">
           <div class="tool-card-icon">&#x1F4B4;</div>
@@ -484,10 +489,10 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <ul class="footer-links">
-      <li><a href="/about/">About</a></li>
-      <li><a href="/privacy/">Privacy Policy</a></li>
-      <li><a href="/terms/">Terms of Use</a></li>
-      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
     <p class="footer-attribution">Withholding tax rates sourced from National Tax Agency Japan (NTA), FY2025. Last updated: March 2025</p>
@@ -617,7 +622,7 @@ document.getElementById('income-calc-btn').addEventListener('click', computeInco
 document.querySelectorAll('input[name="income-type"]')
   .forEach(function(r) { r.addEventListener('change', computeIncome); });
 
-// Copy Invoice Line
+// 請求書用テキストをコピー
 document.getElementById('copy-invoice-btn').addEventListener('click', function() {
   var amount = parseFloat(document.getElementById('fee-amount').value) || 0;
   if (!amount) return;
@@ -625,7 +630,7 @@ document.getElementById('copy-invoice-btn').addEventListener('click', function()
   if (!r.error) navigator.clipboard.writeText(formatInvoiceLine(r)).then(function() {
     var btn = document.getElementById('copy-invoice-btn');
     btn.textContent = 'Copied! \u2713';
-    setTimeout(function() { btn.textContent = 'Copy Invoice Line'; }, 2000);
+    setTimeout(function() { btn.textContent = '請求書用テキストをコピー'; }, 2000);
   });
 });
 
@@ -670,5 +675,35 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  var toggleMobile = document.getElementById('lang-toggle-mobile');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+    if (toggleMobile) {
+      toggleMobile.href = jpPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+    if (toggleMobile) {
+      toggleMobile.href = enPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  }
+})();
+</script>
 </body>
 </html>

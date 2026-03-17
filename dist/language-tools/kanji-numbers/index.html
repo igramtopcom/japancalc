@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kanji Number Converter: 漢数字変換 Arabic to Kanji | JapanCalc</title>
-  <meta name="description" content="Convert numbers to Japanese kanji (漢数字) and back. Supports standard kanji, formal daiji (大字) for documents, and mixed notation. Free 漢数字変換ツール.">
+  <title>漢数字変換ツール: 数字↔漢数字・大字 | JapanCalc</title>
+  <meta name="description" content="算用数字と漢数字・大字（正式な漢数字）を相互変換。混合表記にも対応。無料、ログイン不要。">
   <link rel="canonical" href="https://japancalc.com/language-tools/kanji-numbers/">
-  <link rel="alternate" hreflang="en"        href="https://japancalc.com/language-tools/kanji-numbers/">
-  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/language-tools/kanji-numbers/">
+  
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/language-tools/kanji-numbers/">
+  
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/language-tools/kanji-numbers/">
   <link rel="alternate" hreflang="x-default" href="https://japancalc.com/language-tools/kanji-numbers/">
-  <meta property="og:title"       content="Kanji Number Converter: 漢数字変換 Arabic to Kanji | JapanCalc">
-  <meta property="og:description" content="Convert numbers to Japanese kanji (漢数字) and back. Supports standard kanji, formal daiji (大字) for documents, and mixed notation. Free 漢数字変換ツール.">
+  <meta property="og:title"       content="漢数字変換ツール: 数字↔漢数字・大字 | JapanCalc">
+  <meta property="og:description" content="算用数字と漢数字・大字（正式な漢数字）を相互変換。混合表記にも対応。無料、ログイン不要。">
   <meta property="og:url"         content="https://japancalc.com/language-tools/kanji-numbers/">
   <meta property="og:type"        content="website">
   <meta name="robots" content="index, follow">
@@ -28,7 +30,7 @@
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Kanji Number Converter \u2014 \u6f22\u6570\u5b57\u5909\u63db",
-    "url": "https://japancalc.com/language-tools/kanji-numbers/",
+    "url": "https://japancalc.com/en/language-tools/kanji-numbers/",
     "description": "Convert Arabic numbers to Japanese kanji notation (\u6f22\u6570\u5b57) and back. Supports standard kanji, formal daiji for legal documents, and mixed notation. Free, browser-based.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
@@ -46,11 +48,11 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home",
-        "item": "https://japancalc.com/" },
+        "item": "https://japancalc.com/en/" },
       { "@type": "ListItem", "position": 2, "name": "Language Tools",
-        "item": "https://japancalc.com/language-tools/" },
+        "item": "https://japancalc.com/en/language-tools/" },
       { "@type": "ListItem", "position": 3, "name": "Kanji Number Converter",
-        "item": "https://japancalc.com/language-tools/kanji-numbers/" }
+        "item": "https://japancalc.com/en/language-tools/kanji-numbers/" }
     ]
   }
   </script>
@@ -184,19 +186,22 @@
   }
 </style>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="nav-logo">JapanCalc</a>
   <ul class="nav-links" id="nav-links-menu">
-    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
-    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
-            onclick="window.location.href='/ja'+window.location.pathname">&#x65E5;&#x672C;&#x8A9E;</button>
-    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+    <a id="lang-toggle" href="/en/language-tools/kanji-numbers/" class="lang-toggle" lang="ja"
+       title="このページを日本語で表示"
+       aria-label="Switch to Japanese">
+      日本語
+    </a>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -208,11 +213,11 @@
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
-    <li><a href="/">Home</a></li>
+    <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li aria-current="page">Kanji Number Converter</li>
+    <li aria-current="page">漢数字変換ツール</li>
   </ol>
 </nav>
 
@@ -230,11 +235,11 @@
   <main class="content" id="main-content">
 
     <h1>Kanji Number Converter &#x2014; &#x6F22;&#x6570;&#x5B57;&#x5909;&#x63DB;</h1>
-    <p class="tool-subtitle">&#x6F22;&#x6570;&#x5B57;&#x5909;&#x63DB;&#x30C4;&#x30FC;&#x30EB; &#x2014; Convert between Arabic numbers and Japanese kanji</p>
+    <p class="tool-subtitle">&#x6F22;&#x6570;&#x5B57;&#x5909;&#x63DB;&#x30C4;&#x30FC;&#x30EB; &#x2014; 算用数字と漢数字を相互変換</p>
     <p class="tool-desc">
       Convert Arabic numbers to Japanese kanji notation (&#x6F22;&#x6570;&#x5B57;) and back.
       Supports standard kanji, formal daiji (&#x5927;&#x5B57;) for legal and financial
-      documents, and mixed notation. Free, no login required.
+      documents, and mixed notation. 無料、ログイン不要。
     </p>
 
     <!-- TOOL INTERFACE -->
@@ -282,7 +287,7 @@
         <!-- Currency option -->
         <label class="rate-option" style="margin-bottom:1rem; display:inline-flex;">
           <input type="checkbox" id="opt-currency">
-          <span>Append &#x5186; (yen)</span>
+          <span>円を付ける &#x5186; (yen)</span>
         </label>
 
         <div aria-live="polite" aria-atomic="true">
@@ -334,7 +339,7 @@
     </div><!-- /tool-box -->
 
     <!-- Quick Reference Table -->
-    <h2>Kanji Number Reference Table &#x2014; &#x6F22;&#x6570;&#x5B57; &#x65E9;&#x898B;&#x8868;</h2>
+    <h2>漢数字 早見表 &#x2014; &#x6F22;&#x6570;&#x5B57; &#x65E9;&#x898B;&#x8868;</h2>
     <div class="quick-ref">
       <table>
         <thead>
@@ -342,7 +347,7 @@
             <th>Arabic</th>
             <th>Standard (&#x666E;&#x901A;)</th>
             <th>Daiji (&#x5927;&#x5B57;)</th>
-            <th>Reading</th>
+            <th>読み方</th>
           </tr>
         </thead>
         <tbody>
@@ -494,7 +499,7 @@
 
     <!-- Related Tools -->
     <section class="related-tools">
-      <h2>Related Tools</h2>
+      <h2>関連ツール</h2>
       <div class="cards-grid">
         <a href="/language-tools/romaji-converter/" class="tool-card">
           <div class="tool-card-icon">&#x1F524;</div>
@@ -537,10 +542,10 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <ul class="footer-links">
-      <li><a href="/about/">About</a></li>
-      <li><a href="/privacy/">Privacy Policy</a></li>
-      <li><a href="/terms/">Terms of Use</a></li>
-      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">
       &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
@@ -726,5 +731,35 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  var toggleMobile = document.getElementById('lang-toggle-mobile');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+    if (toggleMobile) {
+      toggleMobile.href = jpPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+    if (toggleMobile) {
+      toggleMobile.href = enPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  }
+})();
+</script>
 </body>
 </html>

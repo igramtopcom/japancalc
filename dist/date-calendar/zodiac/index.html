@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japanese Zodiac Calculator: 干支 計算 | JapanCalc</title>
-  <meta name="description" content="Find your Japanese zodiac sign (干支, eto) by year or date of birth. Traits, lucky colors, compatible signs and more. Free 干支計算ツール, no login required.">
+  <title>干支計算ツール: 生まれ年の干支を調べる | JapanCalc</title>
+  <meta name="description" content="生まれ年の干支（えと）を調べる無料ツール。性格・特徴・ラッキーカラー・相性も確認できます。">
   <link rel="canonical" href="https://japancalc.com/date-calendar/zodiac/">
-  <link rel="alternate" hreflang="en"        href="https://japancalc.com/date-calendar/zodiac/">
-  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/date-calendar/zodiac/">
+  
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/date-calendar/zodiac/">
+  
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/date-calendar/zodiac/">
   <link rel="alternate" hreflang="x-default" href="https://japancalc.com/date-calendar/zodiac/">
-  <meta property="og:title"       content="Japanese Zodiac Calculator: 干支 計算 | JapanCalc">
-  <meta property="og:description" content="Find your Japanese zodiac sign (干支, eto) by year or date of birth. Traits, lucky colors, compatible signs and more. Free 干支計算ツール, no login required.">
+  <meta property="og:title"       content="干支計算ツール: 生まれ年の干支を調べる | JapanCalc">
+  <meta property="og:description" content="生まれ年の干支（えと）を調べる無料ツール。性格・特徴・ラッキーカラー・相性も確認できます。">
   <meta property="og:url"         content="https://japancalc.com/date-calendar/zodiac/">
   <meta property="og:type"        content="website">
   <meta name="robots" content="index, follow">
@@ -28,8 +30,8 @@
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Japanese Zodiac Calculator &#x2014; 干支 計算",
-    "url": "https://japancalc.com/date-calendar/zodiac/",
-    "description": "Find your Japanese zodiac sign (干支, eto) by year or date of birth. Shows traits, lucky colors, and compatible signs. Free, browser-based, no login required.",
+    "url": "https://japancalc.com/en/date-calendar/zodiac/",
+    "description": "生まれ年の干支を調べる (干支, eto) by year or date of birth. Shows traits, lucky colors, and compatible signs. Free, browser-based, no login required.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
     "browserRequirements": "Requires JavaScript",
@@ -46,11 +48,11 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home",
-        "item": "https://japancalc.com/" },
+        "item": "https://japancalc.com/en/" },
       { "@type": "ListItem", "position": 2, "name": "Date & Calendar",
-        "item": "https://japancalc.com/date-calendar/" },
+        "item": "https://japancalc.com/en/date-calendar/" },
       { "@type": "ListItem", "position": 3, "name": "Japanese Zodiac Calculator",
-        "item": "https://japancalc.com/date-calendar/zodiac/" }
+        "item": "https://japancalc.com/en/date-calendar/zodiac/" }
     ]
   }
   </script>
@@ -153,25 +155,33 @@
   }
 </style>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="nav-logo">JapanCalc</a>
 
   <ul class="nav-links" id="nav-links-menu">
-    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
-    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
+
+    <li class="mobile-lang-section">
+      <hr style="border-color: rgba(255,255,255,0.2); margin: 0.75rem 0;">
+      <a id="lang-toggle-mobile" href="/en/date-calendar/zodiac/" class="lang-toggle lang-toggle-mobile"
+         lang="en" title="View this page in English">
+        🌐 English
+      </a>
+    </li>
   </ul>
 
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="nav-lang-toggle"
-            aria-label="Switch to Japanese"
-            onclick="window.location.href='/ja'+window.location.pathname">
+    <a id="lang-toggle" href="/en/date-calendar/zodiac/" class="lang-toggle" lang="ja"
+       title="このページを日本語で表示"
+       aria-label="Switch to Japanese">
       日本語
-    </button>
+    </a>
     <button class="nav-hamburger"
-            aria-label="Open menu"
+            aria-label="メニューを開く"
             aria-expanded="false"
             aria-controls="nav-links-menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -185,11 +195,11 @@
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
-    <li><a href="/">Home</a></li>
+    <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li aria-current="page">Japanese Zodiac Calculator</li>
+    <li aria-current="page">干支計算ツール</li>
   </ol>
 </nav>
 
@@ -210,9 +220,9 @@
     <h1>Japanese Zodiac Calculator &#x2014; 干支 計算</h1>
     <p class="tool-subtitle">干支計算ツール &#x2014; Find your eto (干支) animal sign</p>
     <p class="tool-desc">
-      Find your Japanese zodiac sign (干支, eto) by entering your birth year or
+      生まれ年の干支を調べる (干支, eto) by entering your birth year or
       date of birth. Discover your animal sign, element, personality traits,
-      lucky colors, and compatible signs. Free, no login required.
+      lucky colors, and compatible signs. 無料、ログイン不要。
     </p>
 
     <!-- TOOL INTERFACE -->
@@ -251,7 +261,7 @@
           <div class="result-animal-jp" id="r-kanji"></div>
 
           <div class="result-grid" style="margin-top:1rem;">
-            <div><span class="result-item-label">Year</span><br><span class="result-item-value" id="r-year"></span></div>
+            <div><span class="result-item-label">年</span><br><span class="result-item-value" id="r-year"></span></div>
             <div><span class="result-item-label">Element</span><br><span class="result-item-value" id="r-element"></span></div>
             <div><span class="result-item-label">Japanese</span><br><span class="result-item-value" id="r-japanese"></span></div>
             <div><span class="result-item-label">Next occurrence</span><br><span class="result-item-value" id="r-next"></span></div>
@@ -285,9 +295,9 @@
       <table>
         <thead>
           <tr>
-            <th>Year</th>
-            <th>Animal</th>
-            <th>Kanji</th>
+            <th>年</th>
+            <th>干支</th>
+            <th>漢字</th>
             <th>Element</th>
           </tr>
         </thead>
@@ -464,7 +474,7 @@
 
     <!-- Related Tools -->
     <section class="related-tools">
-      <h2>Related Tools</h2>
+      <h2>関連ツール</h2>
       <div class="cards-grid">
         <a href="/date-calendar/age-calculator/" class="tool-card">
           <div class="tool-card-icon">&#x1F382;</div>
@@ -506,10 +516,10 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <ul class="footer-links">
-      <li><a href="/about/">About</a></li>
-      <li><a href="/privacy/">Privacy Policy</a></li>
-      <li><a href="/terms/">Terms of Use</a></li>
-      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">
       &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
@@ -684,5 +694,35 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  var toggleMobile = document.getElementById('lang-toggle-mobile');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+    if (toggleMobile) {
+      toggleMobile.href = jpPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+    if (toggleMobile) {
+      toggleMobile.href = enPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  }
+})();
+</script>
 </body>
 </html>

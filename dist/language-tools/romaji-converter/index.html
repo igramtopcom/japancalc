@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Romaji Converter: Japanese to Romaji | JapanCalc</title>
-  <meta name="description" content="Convert Japanese hiragana and katakana to romaji instantly. Hepburn romanization system. Free online ローマ字変換ツール, no login required.">
+  <title>ローマ字変換ツール: ひらがな・カタカナ→ローマ字 | JapanCalc</title>
+  <meta name="description" content="ひらがな・カタカナをヘボン式ローマ字に瞬時に変換。無料のローマ字変換ツール、ログイン不要。">
   <link rel="canonical" href="https://japancalc.com/language-tools/romaji-converter/">
-  <link rel="alternate" hreflang="en"        href="https://japancalc.com/language-tools/romaji-converter/">
-  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/language-tools/romaji-converter/">
+  
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/language-tools/romaji-converter/">
+  
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/language-tools/romaji-converter/">
   <link rel="alternate" hreflang="x-default" href="https://japancalc.com/language-tools/romaji-converter/">
-  <meta property="og:title"       content="Romaji Converter: Japanese to Romaji | JapanCalc">
-  <meta property="og:description" content="Convert Japanese hiragana and katakana to romaji instantly. Hepburn romanization system. Free online ローマ字変換ツール, no login required.">
+  <meta property="og:title"       content="ローマ字変換ツール: ひらがな・カタカナ→ローマ字 | JapanCalc">
+  <meta property="og:description" content="ひらがな・カタカナをヘボン式ローマ字に瞬時に変換。無料のローマ字変換ツール、ログイン不要。">
   <meta property="og:url"         content="https://japancalc.com/language-tools/romaji-converter/">
   <meta property="og:type"        content="website">
   <meta name="robots" content="index, follow">
@@ -28,7 +30,7 @@
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Romaji Converter &#x2014; Japanese to Romaji",
-    "url": "https://japancalc.com/language-tools/romaji-converter/",
+    "url": "https://japancalc.com/en/language-tools/romaji-converter/",
     "description": "Convert Japanese hiragana and katakana text to romaji using the Hepburn romanization system. Free, browser-based, no login required.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
@@ -46,11 +48,11 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home",
-        "item": "https://japancalc.com/" },
+        "item": "https://japancalc.com/en/" },
       { "@type": "ListItem", "position": 2, "name": "Language Tools",
-        "item": "https://japancalc.com/language-tools/" },
+        "item": "https://japancalc.com/en/language-tools/" },
       { "@type": "ListItem", "position": 3, "name": "Romaji Converter",
-        "item": "https://japancalc.com/language-tools/romaji-converter/" }
+        "item": "https://japancalc.com/en/language-tools/romaji-converter/" }
     ]
   }
   </script>
@@ -199,19 +201,22 @@
   }
 </style>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="nav-logo">JapanCalc</a>
   <ul class="nav-links" id="nav-links-menu">
-    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
-    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
-            onclick="window.location.href='/ja'+window.location.pathname">&#x65E5;&#x672C;&#x8A9E;</button>
-    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+    <a id="lang-toggle" href="/en/language-tools/romaji-converter/" class="lang-toggle" lang="ja"
+       title="このページを日本語で表示"
+       aria-label="Switch to Japanese">
+      日本語
+    </a>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -223,11 +228,11 @@
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
-    <li><a href="/">Home</a></li>
+    <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li aria-current="page">Romaji Converter</li>
+    <li aria-current="page">ローマ字変換ツール</li>
   </ol>
 </nav>
 
@@ -243,11 +248,11 @@
   <main class="content" id="main-content">
 
     <h1>Romaji Converter &#x2014; Japanese to Romaji</h1>
-    <p class="tool-subtitle">&#x30ED;&#x30FC;&#x30DE;&#x5B57;&#x5909;&#x63DB;&#x30C4;&#x30FC;&#x30EB; &#x2014; Convert hiragana and katakana to romaji</p>
+    <p class="tool-subtitle">&#x30ED;&#x30FC;&#x30DE;&#x5B57;&#x5909;&#x63DB;&#x30C4;&#x30FC;&#x30EB; &#x2014; ひらがな・カタカナをローマ字に変換</p>
     <p class="tool-desc">
       Convert Japanese hiragana (&#x3072;&#x3089;&#x304C;&#x306A;) and katakana (&#x30AB;&#x30BF;&#x30AB;&#x30CA;) to romaji
       using the Hepburn romanization system (&#x30D8;&#x30DC;&#x30F3;&#x5F0F;) &#x2014; the standard used in
-      Japanese passports and official documents. Free, no login required.
+      Japanese passports and official documents. 無料、ログイン不要。
     </p>
 
     <div class="tool-box" id="tool-main">
@@ -275,17 +280,17 @@ e.g. &#x304A;&#x306F;&#x3088;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;"
         <!-- Options row -->
         <div class="options-row">
           <label class="rate-option">
-            <input type="checkbox" id="opt-capitalize"> Capitalize first letter
+            <input type="checkbox" id="opt-capitalize"> 先頭文字を大文字にする
           </label>
           <label class="rate-option">
-            <input type="checkbox" id="opt-uppercase"> ALL UPPERCASE
+            <input type="checkbox" id="opt-uppercase"> すべて大文字
           </label>
           <div class="passthrough-group">
             <label class="form-label" style="margin-bottom:0.3rem;">Kanji handling:</label>
             <select class="form-select" id="opt-passthrough" style="height:36px; font-size:0.875rem;">
-              <option value="keep">Keep as-is</option>
+              <option value="keep">そのまま</option>
               <option value="bracket">Show in [brackets]</option>
-              <option value="remove">Remove</option>
+              <option value="remove">削除</option>
             </select>
           </div>
         </div>
@@ -305,7 +310,7 @@ e.g. &#x304A;&#x306F;&#x3088;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;"
 
           <div class="btn-row">
             <button class="btn btn-secondary" id="romaji-copy-btn">Copy</button>
-            <button class="btn btn-secondary" id="romaji-clear-btn">Clear</button>
+            <button class="btn btn-secondary" id="romaji-clear-btn">クリア</button>
           </div>
         </div>
       </div>
@@ -344,7 +349,7 @@ e.g. &#x304A;&#x306F;&#x3088;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;"
 
     <!-- Quick Reference Table -->
     <div class="quick-ref" style="overflow-x:auto;">
-      <h2>Hepburn Romanization Chart (&#x30D8;&#x30DC;&#x30F3;&#x5F0F;&#x30ED;&#x30FC;&#x30DE;&#x5B57; &#x4E00;&#x89A7;)</h2>
+      <h2>ヘボン式ローマ字 一覧 (&#x30D8;&#x30DC;&#x30F3;&#x5F0F;&#x30ED;&#x30FC;&#x30DE;&#x5B57; &#x4E00;&#x89A7;)</h2>
       <table>
         <thead>
           <tr><th>Hiragana</th><th>Romaji</th><th>Katakana</th><th>Romaji</th><th>Note</th></tr>
@@ -441,7 +446,7 @@ e.g. &#x304A;&#x306F;&#x3088;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;"
     </section>
 
     <section class="related-tools">
-      <h2>Related Tools</h2>
+      <h2>関連ツール</h2>
       <div class="cards-grid">
         <a href="/date-calendar/era-converter/" class="tool-card">
           <div class="tool-card-icon">&#x1F4C5;</div>
@@ -481,10 +486,10 @@ e.g. &#x304A;&#x306F;&#x3088;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;"
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <ul class="footer-links">
-      <li><a href="/about/">About</a></li>
-      <li><a href="/privacy/">Privacy Policy</a></li>
-      <li><a href="/terms/">Terms of Use</a></li>
-      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
     <p class="footer-attribution">Romanization based on Hepburn system (&#x30D8;&#x30DC;&#x30F3;&#x5F0F;). Last updated: March 2025</p>
@@ -616,5 +621,35 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  var toggleMobile = document.getElementById('lang-toggle-mobile');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+    if (toggleMobile) {
+      toggleMobile.href = jpPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+    if (toggleMobile) {
+      toggleMobile.href = enPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  }
+})();
+</script>
 </body>
 </html>

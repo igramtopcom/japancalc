@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japan Travel Budget Calculator: 旅行予算計算 | JapanCalc</title>
-  <meta name="description" content="Estimate your Japan travel budget by trip style, duration, and number of travellers. Daily cost breakdown for budget, mid-range, and luxury trips. Free trip cost calculator.">
+  <title>日本旅行予算計算ツール | JapanCalc</title>
+  <meta name="description" content="旅行スタイル・日数・人数で日本旅行の費用を見積もる無料ツール。節約・標準・高級プランに対応。">
   <link rel="canonical" href="https://japancalc.com/date-calendar/travel-budget/">
-  <link rel="alternate" hreflang="en"        href="https://japancalc.com/date-calendar/travel-budget/">
-  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/date-calendar/travel-budget/">
+  
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/date-calendar/travel-budget/">
+  
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/date-calendar/travel-budget/">
   <link rel="alternate" hreflang="x-default" href="https://japancalc.com/date-calendar/travel-budget/">
-  <meta property="og:title"       content="Japan Travel Budget Calculator: 旅行予算計算 | JapanCalc">
-  <meta property="og:description" content="Estimate your Japan travel budget by trip style, duration, and number of travellers. Daily cost breakdown for budget, mid-range, and luxury trips. Free trip cost calculator.">
+  <meta property="og:title"       content="日本旅行予算計算ツール | JapanCalc">
+  <meta property="og:description" content="旅行スタイル・日数・人数で日本旅行の費用を見積もる無料ツール。節約・標準・高級プランに対応。">
   <meta property="og:url"         content="https://japancalc.com/date-calendar/travel-budget/">
   <meta property="og:type"        content="website">
   <meta name="robots" content="index, follow">
@@ -28,7 +30,7 @@
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Japan Travel Budget Calculator",
-    "url": "https://japancalc.com/date-calendar/travel-budget/",
+    "url": "https://japancalc.com/en/date-calendar/travel-budget/",
     "description": "Estimate Japan travel costs by trip style, duration, and number of travellers. Daily cost breakdown for budget, mid-range, and luxury trips. Free, browser-based.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
@@ -46,11 +48,11 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home",
-        "item": "https://japancalc.com/" },
+        "item": "https://japancalc.com/en/" },
       { "@type": "ListItem", "position": 2, "name": "Date & Calendar",
-        "item": "https://japancalc.com/date-calendar/" },
+        "item": "https://japancalc.com/en/date-calendar/" },
       { "@type": "ListItem", "position": 3, "name": "Japan Travel Budget Calculator",
-        "item": "https://japancalc.com/date-calendar/travel-budget/" }
+        "item": "https://japancalc.com/en/date-calendar/travel-budget/" }
     ]
   }
   </script>
@@ -227,19 +229,22 @@
   }
 </style>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="nav-logo">JapanCalc</a>
   <ul class="nav-links" id="nav-links-menu">
-    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
-    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
-            onclick="window.location.href='/ja'+window.location.pathname">&#x65E5;&#x672C;&#x8A9E;</button>
-    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+    <a id="lang-toggle" href="/en/date-calendar/travel-budget/" class="lang-toggle" lang="ja"
+       title="このページを日本語で表示"
+       aria-label="Switch to Japanese">
+      日本語
+    </a>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -251,11 +256,11 @@
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
-    <li><a href="/">Home</a></li>
+    <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li aria-current="page">Japan Travel Budget Calculator</li>
+    <li aria-current="page">日本旅行予算計算ツール</li>
   </ol>
 </nav>
 
@@ -270,13 +275,13 @@
 <div class="page-layout">
   <main class="content" id="main-content">
 
-    <h1>Japan Travel Budget Calculator</h1>
-    <p class="tool-subtitle">&#x65E5;&#x672C;&#x65C5;&#x884C;&#x4E88;&#x7B97;&#x8A08;&#x7B97;&#x30C4;&#x30FC;&#x30EB; &#x2014; Estimate your Japan trip cost</p>
+    <h1>日本旅行予算計算ツール</h1>
+    <p class="tool-subtitle">&#x65E5;&#x672C;&#x65C5;&#x884C;&#x4E88;&#x7B97;&#x8A08;&#x7B97;&#x30C4;&#x30FC;&#x30EB; &#x2014; 日本旅行の費用を見積もる</p>
     <p class="tool-desc">
       Estimate how much your Japan trip will cost based on your travel style,
       duration, and group size. Shows daily cost breakdown for accommodation,
       food, transport, and activities &#x2014; plus optional one-time costs like the
-      JR Pass. Free, no login required.
+      JR Pass. 無料、ログイン不要。
     </p>
 
     <div class="tool-box" id="tool-main">
@@ -286,19 +291,19 @@
         <div class="style-selector" id="style-selector">
           <button class="style-btn" data-style="budget">
             <span class="style-icon">&#x1F392;</span>
-            <span class="style-name">Budget</span>
+            <span class="style-name">節約旅行</span>
             <span class="style-jp">&#x7BC0;&#x7D04;&#x65C5;&#x884C;</span>
             <span class="style-price">~&#xA5;8,500/day</span>
           </button>
           <button class="style-btn active" data-style="midrange">
             <span class="style-icon">&#x1F3E8;</span>
-            <span class="style-name">Mid-range</span>
+            <span class="style-name">標準旅行</span>
             <span class="style-jp">&#x6A19;&#x6E96;&#x65C5;&#x884C;</span>
             <span class="style-price">~&#xA5;22,000/day</span>
           </button>
           <button class="style-btn" data-style="luxury">
             <span class="style-icon">&#x1F3EF;</span>
-            <span class="style-name">Luxury</span>
+            <span class="style-name">高級旅行</span>
             <span class="style-jp">&#x9AD8;&#x7D1A;&#x65C5;&#x884C;</span>
             <span class="style-price">~&#xA5;61,000/day</span>
           </button>
@@ -344,31 +349,31 @@
       </div>
 
       <div class="form-group">
-        <label class="form-label">Optional One-time Costs (&#x8FFD;&#x52A0;&#x8CBB;&#x7528;)</label>
+        <label class="form-label">追加費用（任意） (&#x8FFD;&#x52A0;&#x8CBB;&#x7528;)</label>
         <div class="one-time-grid" id="one-time-costs">
           <label class="one-time-item">
             <input type="checkbox" name="onetimecost" value="icsuica">
-            <span class="one-time-name">IC Card (Suica/Pasmo)</span>
+            <span class="one-time-name">ICカード（Suica/Pasmo）</span>
             <span class="one-time-price">&#xA5;1,000</span>
-            <span class="one-time-note text-muted">per person</span>
+            <span class="one-time-note text-muted">1人あたり</span>
           </label>
           <label class="one-time-item">
             <input type="checkbox" name="onetimecost" value="tokyoSubway">
             <span class="one-time-name">Tokyo Subway 72h pass</span>
             <span class="one-time-price">&#xA5;1,500</span>
-            <span class="one-time-note text-muted">per person</span>
+            <span class="one-time-note text-muted">1人あたり</span>
           </label>
           <label class="one-time-item">
             <input type="checkbox" name="onetimecost" value="jrPass7">
-            <span class="one-time-name">JR Pass 7-day</span>
+            <span class="one-time-name">JRパス 7日間</span>
             <span class="one-time-price">&#xA5;50,000</span>
-            <span class="one-time-note text-muted">per person</span>
+            <span class="one-time-note text-muted">1人あたり</span>
           </label>
           <label class="one-time-item">
             <input type="checkbox" name="onetimecost" value="jrPass14">
-            <span class="one-time-name">JR Pass 14-day</span>
+            <span class="one-time-name">JRパス 14日間</span>
             <span class="one-time-price">&#xA5;80,000</span>
-            <span class="one-time-note text-muted">per person</span>
+            <span class="one-time-note text-muted">1人あたり</span>
           </label>
           <label class="one-time-item">
             <input type="checkbox" name="onetimecost" value="nrtToTokyo">
@@ -386,7 +391,7 @@
       </div>
 
       <div class="btn-row">
-        <button class="btn btn-primary" id="calculate-btn">Calculate Budget</button>
+        <button class="btn btn-primary" id="calculate-btn">予算を計算する</button>
       </div>
 
       <div role="region" aria-live="polite">
@@ -403,37 +408,37 @@
 
           <div style="margin-bottom:0.75rem;">
             <div class="budget-bar-row" id="bar-accommodation">
-              <span class="budget-bar-label">Accommodation</span>
+              <span class="budget-bar-label">宿泊費</span>
               <div class="budget-bar-track"><div class="budget-bar-fill" style="width:0%"></div></div>
               <span class="budget-bar-amount"></span>
               <span class="budget-bar-pct"></span>
             </div>
             <div class="budget-bar-row" id="bar-food">
-              <span class="budget-bar-label">Food</span>
+              <span class="budget-bar-label">食費</span>
               <div class="budget-bar-track"><div class="budget-bar-fill" style="width:0%"></div></div>
               <span class="budget-bar-amount"></span>
               <span class="budget-bar-pct"></span>
             </div>
             <div class="budget-bar-row" id="bar-transport">
-              <span class="budget-bar-label">Transport</span>
+              <span class="budget-bar-label">交通費</span>
               <div class="budget-bar-track"><div class="budget-bar-fill" style="width:0%"></div></div>
               <span class="budget-bar-amount"></span>
               <span class="budget-bar-pct"></span>
             </div>
             <div class="budget-bar-row" id="bar-activities">
-              <span class="budget-bar-label">Activities</span>
+              <span class="budget-bar-label">観光・アクティビティ</span>
               <div class="budget-bar-track"><div class="budget-bar-fill" style="width:0%"></div></div>
               <span class="budget-bar-amount"></span>
               <span class="budget-bar-pct"></span>
             </div>
             <div class="budget-bar-row" id="bar-misc">
-              <span class="budget-bar-label">Misc</span>
+              <span class="budget-bar-label">その他</span>
               <div class="budget-bar-track"><div class="budget-bar-fill" style="width:0%"></div></div>
               <span class="budget-bar-amount"></span>
               <span class="budget-bar-pct"></span>
             </div>
             <div class="budget-total-row">
-              <span>Daily total</span>
+              <span>1日あたり</span>
               <span id="r-daily-total"></span>
             </div>
           </div>
@@ -461,11 +466,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Accommodation</td><td>&#xA5;3,500</td><td>&#xA5;10,000</td><td>&#xA5;30,000</td></tr>
-          <tr><td>Food</td><td>&#xA5;2,000</td><td>&#xA5;5,000</td><td>&#xA5;15,000</td></tr>
-          <tr><td>Transport</td><td>&#xA5;1,500</td><td>&#xA5;2,500</td><td>&#xA5;5,000</td></tr>
-          <tr><td>Activities</td><td>&#xA5;1,000</td><td>&#xA5;3,000</td><td>&#xA5;8,000</td></tr>
-          <tr><td>Misc</td><td>&#xA5;500</td><td>&#xA5;1,500</td><td>&#xA5;3,000</td></tr>
+          <tr><td>宿泊費</td><td>&#xA5;3,500</td><td>&#xA5;10,000</td><td>&#xA5;30,000</td></tr>
+          <tr><td>食費</td><td>&#xA5;2,000</td><td>&#xA5;5,000</td><td>&#xA5;15,000</td></tr>
+          <tr><td>交通費</td><td>&#xA5;1,500</td><td>&#xA5;2,500</td><td>&#xA5;5,000</td></tr>
+          <tr><td>観光・アクティビティ</td><td>&#xA5;1,000</td><td>&#xA5;3,000</td><td>&#xA5;8,000</td></tr>
+          <tr><td>その他</td><td>&#xA5;500</td><td>&#xA5;1,500</td><td>&#xA5;3,000</td></tr>
           <tr style="font-weight:700;"><td>Daily Total</td><td>&#xA5;8,500</td><td>&#xA5;22,000</td><td>&#xA5;61,000</td></tr>
         </tbody>
       </table>
@@ -554,7 +559,7 @@
     </section>
 
     <section class="related-tools">
-      <h2>Related Tools</h2>
+      <h2>関連ツール</h2>
       <div class="cards-grid">
         <a href="/tax-finance/consumption-tax/" class="tool-card">
           <div class="tool-card-icon">&#x1F9FE;</div>
@@ -594,10 +599,10 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <ul class="footer-links">
-      <li><a href="/about/">About</a></li>
-      <li><a href="/privacy/">Privacy Policy</a></li>
-      <li><a href="/terms/">Terms of Use</a></li>
-      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
     <p class="footer-attribution">Cost estimates based on approximate FY2025 Japan travel prices. Exchange rates indicative only. Last updated: March 2025</p>
@@ -800,5 +805,35 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  var toggleMobile = document.getElementById('lang-toggle-mobile');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+    if (toggleMobile) {
+      toggleMobile.href = jpPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+    if (toggleMobile) {
+      toggleMobile.href = enPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  }
+})();
+</script>
 </body>
 </html>

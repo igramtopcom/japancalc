@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japan Date &amp; Calendar Tools: 日付・カレンダー | JapanCalc</title>
-  <meta name="description" content="Free Japanese date and calendar tools. Era date converter, age calculator, zodiac calculator, public holiday checker and more. Bilingual EN/JP, no login.">
+  <title>日付・カレンダーツール | JapanCalc</title>
+  <meta name="description" content="無料の日付・カレンダー関連ツール。和暦西暦変換、年齢計算、干支計算、祝日チェックなど。ログイン不要。">
   <link rel="canonical" href="https://japancalc.com/date-calendar/">
-  <link rel="alternate" hreflang="en"        href="https://japancalc.com/date-calendar/">
-  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/date-calendar/">
+  
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/date-calendar/">
+  
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/date-calendar/">
   <link rel="alternate" hreflang="x-default" href="https://japancalc.com/date-calendar/">
-  <meta property="og:title"       content="Japan Date &amp; Calendar Tools: 日付・カレンダー | JapanCalc">
+  <meta property="og:title"       content="日付・カレンダーツール | JapanCalc">
   <meta property="og:url"         content="https://japancalc.com/date-calendar/">
   <meta property="og:type"        content="website">
   <meta name="robots" content="index, follow">
@@ -28,9 +30,9 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home",
-        "item": "https://japancalc.com/" },
+        "item": "https://japancalc.com/en/" },
       { "@type": "ListItem", "position": 2, "name": "Date & Calendar",
-        "item": "https://japancalc.com/date-calendar/" }
+        "item": "https://japancalc.com/en/date-calendar/" }
     ]
   }
   </script>
@@ -79,19 +81,22 @@
   }
 </style>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="nav-logo">JapanCalc</a>
   <ul class="nav-links" id="nav-links-menu">
-    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
-    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
-            onclick="window.location.href='/ja'+window.location.pathname">日本語</button>
-    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+    <a id="lang-toggle" href="/en/date-calendar/" class="lang-toggle" lang="ja"
+       title="このページを日本語で表示"
+       aria-label="Switch to Japanese">
+      日本語
+    </a>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -103,9 +108,9 @@
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
-    <li><a href="/">Home</a></li>
+    <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li aria-current="page">Date &amp; Calendar</li>
+    <li aria-current="page">日付・カレンダー</li>
   </ol>
 </nav>
 
@@ -120,7 +125,7 @@
 
 <main class="content page-wrapper" id="main-content">
 
-  <h1>Japan Date &amp; Calendar Tools</h1>
+  <h1>日付・カレンダーツール</h1>
   <p class="tool-desc">
     Free tools for Japanese date conversion, age calculation, and calendar
     lookups. Convert between Japanese era years (和暦) and Western calendar,
@@ -131,7 +136,7 @@
 
     <a href="/date-calendar/era-converter/" class="tool-card">
       <div class="tool-card-icon">&#x1F4C5;</div>
-      <div class="tool-card-name">Era Date Converter</div>
+      <div class="tool-card-name">和暦・西暦変換</div>
       <div class="tool-card-jp">和暦 西暦 変換</div>
       <div class="tool-card-desc">Convert Reiwa, Heisei, Showa, Taisho, Meiji years</div>
     </a>
@@ -159,21 +164,21 @@
 
     <a href="/date-calendar/age-calculator/" class="tool-card">
       <div class="tool-card-icon">&#x1F382;</div>
-      <div class="tool-card-name">Japanese Age Calculator</div>
+      <div class="tool-card-name">年齢計算</div>
       <div class="tool-card-jp">年齢計算 満年齢</div>
-      <div class="tool-card-desc">Calculate 満年齢 and 数え年</div>
+      <div class="tool-card-desc">満年齢・数え年を計算</div>
     </a>
 
     <a href="/date-calendar/zodiac/" class="tool-card">
       <div class="tool-card-icon">&#x1F409;</div>
-      <div class="tool-card-name">Japanese Zodiac Calculator</div>
+      <div class="tool-card-name">干支計算</div>
       <div class="tool-card-jp">干支 計算</div>
       <div class="tool-card-desc">Find your eto animal sign and traits</div>
     </a>
 
     <a href="/date-calendar/holiday-checker/" class="tool-card">
       <div class="tool-card-icon">&#x1F3EE;</div>
-      <div class="tool-card-name">Japan Holiday Checker</div>
+      <div class="tool-card-name">祝日チェッカー</div>
       <div class="tool-card-jp">祝日チェッカー</div>
       <div class="tool-card-desc">Check if a date is a Japanese public holiday</div>
     </a>
@@ -197,7 +202,7 @@
   </div>
 
   <article class="seo-content">
-    <h2>Japanese Date &amp; Calendar Tools (日付・カレンダーツール)</h2>
+    <h2>Japanese 日付・カレンダーツール (日付・カレンダーツール)</h2>
     <p>
       Japan uses a dual calendar system &#x2014; the Western Gregorian calendar
       alongside the traditional imperial era calendar (元号, geng&#x14D;). Official
@@ -207,7 +212,7 @@
       your age the Japanese way, and look up calendar information quickly.
     </p>
 
-    <h2>About Japanese Era Years (元号)</h2>
+    <h2>日本の元号について (元号)</h2>
     <p>
       The current era is Reiwa (令和), which started May 1, 2019. Before
       Reiwa was Heisei (平成, 1989&#x2013;2019) and Showa (昭和, 1926&#x2013;1989). Each
@@ -219,7 +224,7 @@
   </article>
 
   <section class="related-tools">
-    <h2>Other Tool Categories</h2>
+    <h2>その他のカテゴリ</h2>
     <div class="cards-grid">
       <a href="/tax-finance/" class="tool-card">
         <div class="tool-card-icon">&#x1F4B4;</div>
@@ -228,7 +233,7 @@
       </a>
       <a href="/language-tools/" class="tool-card">
         <div class="tool-card-icon">&#x1F524;</div>
-        <div class="tool-card-name">Language Tools</div>
+        <div class="tool-card-name">言語ツール</div>
         <div class="tool-card-jp">言語ツール</div>
       </a>
       <a href="/" class="tool-card">
@@ -244,10 +249,10 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <ul class="footer-links">
-      <li><a href="/about/">About</a></li>
-      <li><a href="/privacy/">Privacy Policy</a></li>
-      <li><a href="/terms/">Terms of Use</a></li>
-      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
   </div>
@@ -291,5 +296,35 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  var toggleMobile = document.getElementById('lang-toggle-mobile');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+    if (toggleMobile) {
+      toggleMobile.href = jpPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+    if (toggleMobile) {
+      toggleMobile.href = enPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  }
+})();
+</script>
 </body>
 </html>

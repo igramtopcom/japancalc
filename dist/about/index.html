@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About JapanCalc: Free Japanese Calculator Tools</title>
-  <meta name="description" content="JapanCalc provides free bilingual Japanese calculator and converter tools for foreign residents, tourists, and Japanese language learners. No login, no data collection.">
+  <title>JapanCalcについて: 無料日本語計算ツール</title>
+  <meta name="description" content="JapanCalcは在日外国人・旅行者・日本語学習者向けの無料日本語計算・変換ツールです。">
   <link rel="canonical" href="https://japancalc.com/about/">
-  <link rel="alternate" hreflang="en"        href="https://japancalc.com/about/">
-  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/about/">
+  
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/about/">
+  
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/about/">
   <link rel="alternate" hreflang="x-default" href="https://japancalc.com/about/">
-  <meta property="og:title"       content="About JapanCalc: Free Japanese Calculator Tools">
+  <meta property="og:title"       content="JapanCalcについて: 無料日本語計算ツール">
   <meta property="og:url"         content="https://japancalc.com/about/">
   <meta property="og:type"        content="website">
   <meta name="robots" content="index, follow">
@@ -28,9 +30,9 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home",
-        "item": "https://japancalc.com/" },
+        "item": "https://japancalc.com/en/" },
       { "@type": "ListItem", "position": 2, "name": "About",
-        "item": "https://japancalc.com/about/" }
+        "item": "https://japancalc.com/en/about/" }
     ]
   }
   </script>
@@ -80,19 +82,22 @@
   }
 </style>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="nav-logo">JapanCalc</a>
   <ul class="nav-links" id="nav-links-menu">
-    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
-    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
-            onclick="window.location.href='/ja'+window.location.pathname">&#x65E5;&#x672C;&#x8A9E;</button>
-    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+    <a id="lang-toggle" href="/en/about/" class="lang-toggle" lang="ja"
+       title="このページを日本語で表示"
+       aria-label="Switch to Japanese">
+      日本語
+    </a>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -104,9 +109,9 @@
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
-    <li><a href="/">Home</a></li>
+    <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li aria-current="page">About</li>
+    <li aria-current="page">JapanCalcについて</li>
   </ol>
 </nav>
 
@@ -114,9 +119,9 @@
 
 <div class="static-content page-wrapper">
 
-  <h1>About JapanCalc</h1>
+  <h1>JapanCalcについて</h1>
 
-  <h2>What is JapanCalc?</h2>
+  <h2>JapanCalcとは？</h2>
   <p>
     JapanCalc is a free collection of bilingual (English + Japanese) online
     calculators and converter tools for anyone who interacts with Japanese
@@ -130,7 +135,7 @@
     you.
   </p>
 
-  <h2>Our Tools</h2>
+  <h2>ツール一覧</h2>
   <p>
     JapanCalc currently offers the following free tools:
   </p>
@@ -145,7 +150,7 @@
     romaji converter, furigana generator, and more.
   </p>
 
-  <h2>How It Works</h2>
+  <h2>仕組み</h2>
   <p>
     Every JapanCalc tool is 100% client-side. When you enter a date, price,
     or year into a calculator, all computation happens in your browser using
@@ -157,7 +162,7 @@
     global content delivery network for fast load times worldwide.
   </p>
 
-  <h2>Data Sources</h2>
+  <h2>データソース</h2>
   <p>
     JapanCalc uses official data sources for all calculations:
   </p>
@@ -171,7 +176,7 @@
     legal matters, always verify with the relevant Japanese authority.
   </p>
 
-  <h2>Contact</h2>
+  <h2>お問い合わせ</h2>
   <p>
     Questions, feedback, or data corrections:
     <a href="mailto:hello@japancalc.com">hello@japancalc.com</a>
@@ -184,10 +189,10 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <ul class="footer-links">
-      <li><a href="/about/">About</a></li>
-      <li><a href="/privacy/">Privacy Policy</a></li>
-      <li><a href="/terms/">Terms of Use</a></li>
-      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
   </div>
@@ -207,5 +212,35 @@
 })();
 </script>
 
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  var toggleMobile = document.getElementById('lang-toggle-mobile');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+    if (toggleMobile) {
+      toggleMobile.href = jpPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+    if (toggleMobile) {
+      toggleMobile.href = enPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  }
+})();
+</script>
 </body>
 </html>

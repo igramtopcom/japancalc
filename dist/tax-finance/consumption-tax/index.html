@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japan Consumption Tax Calculator: 消費税計算 | JapanCalc</title>
-  <meta name="description" content="Calculate Japanese consumption tax instantly. Add or remove 10% standard rate or 8% reduced rate (食品・新聞). Free 消費税計算ツール, no login required.">
+  <title>消費税計算ツール: 税込・税抜変換 | JapanCalc</title>
+  <meta name="description" content="消費税（10%・8%）の税込・税抜価格を瞬時に計算。軽減税率にも対応。無料、ログイン不要。">
   <link rel="canonical" href="https://japancalc.com/tax-finance/consumption-tax/">
-  <link rel="alternate" hreflang="en"        href="https://japancalc.com/tax-finance/consumption-tax/">
-  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/tax-finance/consumption-tax/">
+  
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/tax-finance/consumption-tax/">
+  
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/tax-finance/consumption-tax/">
   <link rel="alternate" hreflang="x-default" href="https://japancalc.com/tax-finance/consumption-tax/">
-  <meta property="og:title"       content="Japan Consumption Tax Calculator: 消費税計算 | JapanCalc">
-  <meta property="og:description" content="Calculate Japanese consumption tax instantly. Add or remove 10% standard rate or 8% reduced rate (食品・新聞). Free 消費税計算ツール, no login required.">
+  <meta property="og:title"       content="消費税計算ツール: 税込・税抜変換 | JapanCalc">
+  <meta property="og:description" content="消費税（10%・8%）の税込・税抜価格を瞬時に計算。軽減税率にも対応。無料、ログイン不要。">
   <meta property="og:url"         content="https://japancalc.com/tax-finance/consumption-tax/">
   <meta property="og:image"       content="https://japancalc.com/assets/og/consumption-tax.png">
   <meta property="og:type"        content="website">
@@ -29,8 +31,8 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Japan Consumption Tax Calculator — 消費税計算",
-    "url": "https://japancalc.com/tax-finance/consumption-tax/",
+    "name": "Japan 消費税計算ツール — 消費税計算",
+    "url": "https://japancalc.com/en/tax-finance/consumption-tax/",
     "description": "Calculate Japanese consumption tax instantly. Add or remove 10% standard rate or 8% reduced rate from any price. Free, browser-based, no login required.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
@@ -59,19 +61,19 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://japancalc.com/"
+        "item": "https://japancalc.com/en/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Tax & Finance",
-        "item": "https://japancalc.com/tax-finance/"
+        "item": "https://japancalc.com/en/tax-finance/"
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Japan Consumption Tax Calculator",
-        "item": "https://japancalc.com/tax-finance/consumption-tax/"
+        "name": "Japan 消費税計算ツール",
+        "item": "https://japancalc.com/en/tax-finance/consumption-tax/"
       }
     ]
   }
@@ -103,7 +105,7 @@
         "name": "How do I remove consumption tax from a price in Japan?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "To extract the pre-tax price from a tax-inclusive amount, divide by 1.10 for the standard rate (or 1.08 for the reduced rate), then round down (floor) per National Tax Agency guidelines. For example, ¥1,100 ÷ 1.10 = ¥1,000 pre-tax. The Remove Tax tab in the calculator above handles this automatically."
+          "text": "To extract the pre-tax price from a tax-inclusive amount, divide by 1.10 for the standard rate (or 1.08 for the reduced rate), then round down (floor) per National Tax Agency guidelines. For example, ¥1,100 ÷ 1.10 = ¥1,000 pre-tax. The 税込 → 税抜 tab in the calculator above handles this automatically."
         }
       },
       {
@@ -179,25 +181,33 @@
   }
 </style>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="nav-logo">JapanCalc</a>
 
   <ul class="nav-links" id="nav-links-menu">
-    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
-    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
-    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
+
+    <li class="mobile-lang-section">
+      <hr style="border-color: rgba(255,255,255,0.2); margin: 0.75rem 0;">
+      <a id="lang-toggle-mobile" href="/en/tax-finance/consumption-tax/" class="lang-toggle lang-toggle-mobile"
+         lang="en" title="View this page in English">
+        🌐 English
+      </a>
+    </li>
   </ul>
 
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="nav-lang-toggle"
-            aria-label="Switch to Japanese"
-            onclick="window.location.href='/ja'+window.location.pathname">
+    <a id="lang-toggle" href="/en/tax-finance/consumption-tax/" class="lang-toggle" lang="ja"
+       title="このページを日本語で表示"
+       aria-label="Switch to Japanese">
       日本語
-    </button>
+    </a>
     <button class="nav-hamburger"
-            aria-label="Open menu"
+            aria-label="メニューを開く"
             aria-expanded="false"
             aria-controls="nav-links-menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -211,11 +221,11 @@
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
-    <li><a href="/">Home</a></li>
+    <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li aria-current="page">Consumption Tax Calculator</li>
+    <li aria-current="page">消費税計算ツール</li>
   </ol>
 </nav>
 
@@ -234,12 +244,12 @@
   <main class="content" id="main-content">
 
     <!-- Page Header -->
-    <h1>Japan Consumption Tax Calculator</h1>
+    <h1>消費税計算ツール</h1>
     <p class="tool-subtitle">消費税計算ツール — 税込・税抜・消費税額を計算</p>
     <p class="tool-desc">
       Calculate Japanese consumption tax (消費税) instantly. Add 10% standard rate
       or 8% reduced rate tax to any price, or extract the pre-tax price from a
-      tax-inclusive amount. Free, no login required.
+      tax-inclusive amount. 無料、ログイン不要。
     </p>
 
     <!-- TOOL INTERFACE -->
@@ -248,12 +258,12 @@
       <!-- Tab Bar -->
       <div class="tool-tabs" role="tablist">
         <button class="tool-tab active" role="tab" aria-selected="true"
-                data-panel="panel-add-tax" id="tab-add-tax">Add Tax (税抜 &#x2192; 税込)</button>
+                data-panel="panel-add-tax" id="tab-add-tax">税抜 → 税込 (税抜 &#x2192; 税込)</button>
         <button class="tool-tab" role="tab" aria-selected="false"
-                data-panel="panel-remove-tax" id="tab-remove-tax">Remove Tax (税込 &#x2192; 税抜)</button>
+                data-panel="panel-remove-tax" id="tab-remove-tax">税込 → 税抜 (税込 &#x2192; 税抜)</button>
       </div>
 
-      <!-- Tab 1: Add Tax -->
+      <!-- Tab 1: 税抜 → 税込 -->
       <div class="tool-panel active" role="tabpanel" id="panel-add-tax" aria-labelledby="tab-add-tax">
         <div class="form-group">
           <label class="form-label" for="tab1-amount">Pre-tax Amount (税抜金額) — &#x00A5;</label>
@@ -292,7 +302,7 @@
         </div>
       </div>
 
-      <!-- Tab 2: Remove Tax -->
+      <!-- Tab 2: 税込 → 税抜 -->
       <div class="tool-panel" role="tabpanel" id="panel-remove-tax" aria-labelledby="tab-remove-tax">
         <div class="form-group">
           <label class="form-label" for="tab2-amount">Tax-inclusive Amount (税込金額) — &#x00A5;</label>
@@ -375,16 +385,16 @@
 
     <!-- SEO Content Placeholder -->
     <article class="seo-content" id="seo-content">
-      <h2>How to Use the Japan Consumption Tax Calculator</h2>
+      <h2>How to Use the Japan 消費税計算ツール</h2>
       <p>
         This consumption tax calculator (消費税計算ツール) handles both directions of
         Japanese tax calculation. To add tax to a pre-tax price, use the
-        <strong>Add Tax</strong> tab — enter the price before tax and select either
+        <strong>税抜 → 税込</strong> tab — enter the price before tax and select either
         the 10% standard rate or the 8% reduced rate. The calculator instantly shows
         the tax amount and the final tax-inclusive price (税込価格).
       </p>
       <p>
-        To work backwards from a tax-inclusive price, use the <strong>Remove Tax</strong>
+        To work backwards from a tax-inclusive price, use the <strong>税込 → 税抜</strong>
         tab. Enter the price as displayed on the receipt or price tag, and the
         calculator extracts the original pre-tax amount using the National Tax Agency's
         official rounding method (round down / floor). This is useful when you need
@@ -473,7 +483,7 @@
               To extract the pre-tax price from a tax-inclusive amount, divide by
               1.10 for the standard rate (or 1.08 for the reduced rate), then
               round down (floor) per National Tax Agency guidelines. For example,
-              ¥1,100 ÷ 1.10 = ¥1,000 pre-tax. The Remove Tax tab in the
+              ¥1,100 ÷ 1.10 = ¥1,000 pre-tax. The 税込 → 税抜 tab in the
               calculator above handles this automatically.
             </span>
           </div>
@@ -518,7 +528,7 @@
 
     <!-- Related Tools -->
     <section class="related-tools">
-      <h2>Related Tools</h2>
+      <h2>関連ツール</h2>
       <div class="cards-grid">
         <a href="/date-calendar/era-converter/" class="tool-card">
           <div class="tool-card-icon">&#x1F4C5;</div>
@@ -561,10 +571,10 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <ul class="footer-links">
-      <li><a href="/about/">About</a></li>
-      <li><a href="/privacy/">Privacy Policy</a></li>
-      <li><a href="/terms/">Terms of Use</a></li>
-      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">
       &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
@@ -613,7 +623,7 @@ document.querySelectorAll('.tool-tab').forEach(tab => {
   });
 });
 
-// ── Tab 1: Add Tax
+// ── Tab 1: 税抜 → 税込
 function computeTab1() {
   const amountStr = document.getElementById('tab1-amount').value;
   const rate = document.querySelector('input[name="tab1-rate"]:checked').value;
@@ -650,7 +660,7 @@ function computeTab1() {
     gtag('event', 'tool_used', { tool_name: 'jct_calculator', mode: 'add_tax', language: 'en' });
 }
 
-// ── Tab 2: Remove Tax
+// ── Tab 2: 税込 → 税抜
 function computeTab2() {
   const amountStr = document.getElementById('tab2-amount').value;
   const rate = document.querySelector('input[name="tab2-rate"]:checked').value;
@@ -778,5 +788,35 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  var toggleMobile = document.getElementById('lang-toggle-mobile');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+    if (toggleMobile) {
+      toggleMobile.href = jpPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+    if (toggleMobile) {
+      toggleMobile.href = enPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  }
+})();
+</script>
 </body>
 </html>
