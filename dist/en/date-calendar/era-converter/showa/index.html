@@ -153,14 +153,22 @@
     <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
     <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
     <li><a href="/en/language-tools/">Language Tools</a></li>
+
+    <li class="mobile-lang-section">
+      <hr style="border-color: rgba(255,255,255,0.2); margin: 0.75rem 0;">
+      <a id="lang-toggle-mobile" href="/" class="lang-toggle lang-toggle-mobile"
+         lang="ja" title="このページを日本語で表示">
+        🌐 日本語
+      </a>
+    </li>
   </ul>
 
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="nav-lang-toggle"
-            aria-label="Switch to Japanese"
-            onclick="window.location.href=window.location.pathname.replace('/en/','/')">
+    <a id="lang-toggle" href="/" class="lang-toggle" lang="ja"
+       title="このページを日本語で表示"
+       aria-label="Switch to Japanese">
       日本語
-    </button>
+    </a>
     <button class="nav-hamburger"
             aria-label="Open menu"
             aria-expanded="false"
@@ -655,5 +663,36 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  var toggleMobile = document.getElementById('lang-toggle-mobile');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+    if (toggleMobile) {
+      toggleMobile.href = jpPath;
+      toggleMobile.textContent = '🌐 日本語';
+    }
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+    if (toggleMobile) {
+      toggleMobile.href = enPath;
+      toggleMobile.textContent = '🌐 English';
+    }
+  }
+})();
+</script>
 </body>
 </html>

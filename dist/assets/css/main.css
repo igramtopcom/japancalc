@@ -176,20 +176,49 @@ nav.site-nav {
   color: white;
 }
 
-.nav-lang-toggle {
+.nav-lang-toggle,
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
   background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius);
+  padding: 0.3rem 0.75rem;
+  border-radius: 99px;
   cursor: pointer;
   font-size: 0.85rem;
+  font-weight: 500;
   text-decoration: none;
+  transition: background 0.15s;
+  white-space: nowrap;
 }
 
-.nav-lang-toggle:hover {
+.nav-lang-toggle:hover,
+.lang-toggle:hover {
   background: rgba(255, 255, 255, 0.25);
   color: white;
+}
+
+.lang-toggle-mobile {
+  display: block;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  color: white;
+  text-decoration: none;
+  border: none;
+  background: none;
+}
+
+.lang-toggle-mobile:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-lang-section {
+  display: none;
+}
+
+nav.site-nav.nav-open .mobile-lang-section {
+  display: block;
 }
 
 .breadcrumb {
