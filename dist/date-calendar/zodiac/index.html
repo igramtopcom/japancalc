@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japanese Zodiac Calculator &#x2014; 干支 計算 | JapanCalc</title>
+  <meta name="description" content="Find your Japanese zodiac sign (干支, eto) by year or date of birth. Traits, lucky colors, compatible signs and more. Free 干支計算ツール &#x2014; no login required.">
+  <link rel="canonical" href="https://japancalc.com/date-calendar/zodiac/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/date-calendar/zodiac/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/date-calendar/zodiac/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/date-calendar/zodiac/">
+  <meta property="og:title"       content="Japanese Zodiac Calculator &#x2014; 干支 計算 | JapanCalc">
+  <meta property="og:description" content="Find your Japanese zodiac sign (干支) by year or birth date. Free, no login.">
+  <meta property="og:url"         content="https://japancalc.com/date-calendar/zodiac/">
+  <meta property="og:type"        content="website">
+  <meta name="robots" content="index, follow">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Japanese Zodiac Calculator &#x2014; 干支 計算",
+    "url": "https://japancalc.com/date-calendar/zodiac/",
+    "description": "Find your Japanese zodiac sign (干支, eto) by year or date of birth. Shows traits, lucky colors, and compatible signs. Free, browser-based, no login required.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",
+        "item": "https://japancalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Date & Calendar",
+        "item": "https://japancalc.com/date-calendar/" },
+      { "@type": "ListItem", "position": 3, "name": "Japanese Zodiac Calculator",
+        "item": "https://japancalc.com/date-calendar/zodiac/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the Japanese zodiac (干支)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Japanese zodiac (干支, eto) is a 12-year cycle where each year is associated with an animal sign. The 12 animals are: Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, and Pig. Unlike the Chinese zodiac which follows the lunar calendar, the Japanese eto uses the solar calendar &#x2014; each new zodiac year begins on January 1."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What zodiac sign is 2025 in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2025 is the Year of the Snake (巳年, mi-doshi) in the Japanese zodiac. People born in Snake years are said to be wise, intuitive, elegant, and cautious. Other recent Snake years include 2013 and 2001. The next Snake year after 2025 will be 2037."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I find my Japanese zodiac sign?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To find your Japanese zodiac sign, enter your birth year (or date of birth) in the calculator above. Your zodiac sign is determined by the year you were born &#x2014; the 12-year cycle repeats, so if you were born in 1990 (Horse year), the same sign returns every 12 years: 2002, 2014, 2026, and so on."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Japanese and Chinese zodiac?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Japanese zodiac (干支, eto) and Chinese zodiac share the same 12 animals, but differ in one important way: the Japanese eto uses the solar calendar, so a new zodiac year begins on January 1. The Chinese zodiac follows the lunar calendar, so the new year begins in late January or February. This means people born in January or early February may have different signs depending on which system is used."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What zodiac sign is compatible with the Snake (2025)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In the Japanese zodiac tradition, the Snake (巳) is most compatible with the Ox (丑) and Rooster (酉). These three signs form a compatible trio in the eto tradition. Snake is said to have a more challenging relationship with signs such as the Tiger and Pig. Use the zodiac calculator above to find compatibility for any birth year."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <style>
+  .trait-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  .result-animal-emoji {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .result-animal-jp {
+    font-size: 1.5rem;
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+  .compatibility-section {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+  .quick-ref { overflow-x: auto; }
+  </style>
+</head>
+<body>
+
+<!-- NAV PARTIAL -->
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo">JapanCalc</a>
+
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/language-tools/">Language Tools</a></li>
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <button class="nav-lang-toggle"
+            aria-label="Switch to Japanese"
+            onclick="window.location.href='/ja'+window.location.pathname">
+      日本語
+    </button>
+    <button class="nav-hamburger"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">Japanese Zodiac Calculator</li>
+  </ol>
+</nav>
+
+<!-- ATF Ad Zone -->
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_ZODIAC"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<!-- PAGE LAYOUT -->
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <!-- Page Header -->
+    <h1>Japanese Zodiac Calculator &#x2014; 干支 計算</h1>
+    <p class="tool-subtitle">干支計算ツール &#x2014; Find your eto (干支) animal sign</p>
+    <p class="tool-desc">
+      Find your Japanese zodiac sign (干支, eto) by entering your birth year or
+      date of birth. Discover your animal sign, element, personality traits,
+      lucky colors, and compatible signs. Free, no login required.
+    </p>
+
+    <!-- TOOL INTERFACE -->
+    <div class="tool-box" id="tool-main">
+      <!-- Tab bar -->
+      <div class="tool-tabs" role="tablist">
+        <button class="tool-tab active" role="tab" aria-selected="true" data-panel="panel-year">By Birth Year (生まれ年)</button>
+        <button class="tool-tab" role="tab" aria-selected="false" data-panel="panel-dob">By Date of Birth (生年月日)</button>
+      </div>
+
+      <!-- Tab 1 — By Year -->
+      <div class="tool-panel active" id="panel-year">
+        <div class="form-group">
+          <label class="form-label" for="year-input">Birth Year (生まれ年)</label>
+          <input type="number" class="form-input" id="year-input"
+                 min="1868" max="2100" placeholder="e.g. 1990">
+        </div>
+      </div>
+
+      <!-- Tab 2 — By DOB -->
+      <div class="tool-panel" id="panel-dob">
+        <div class="form-group">
+          <label class="form-label" for="dob-input">Date of Birth (生年月日)</label>
+          <input type="date" class="form-input" id="dob-input"
+                 min="1868-01-25">
+        </div>
+      </div>
+
+      <div class="form-error" id="result-error"></div>
+
+      <!-- Result Box -->
+      <div aria-live="polite" aria-atomic="true">
+        <div class="result-box" id="result-box">
+          <div class="result-animal-emoji" id="r-emoji"></div>
+          <div class="result-primary" id="r-english"></div>
+          <div class="result-animal-jp" id="r-kanji"></div>
+
+          <div class="result-grid" style="margin-top:1rem;">
+            <div><span class="result-item-label">Year</span><br><span class="result-item-value" id="r-year"></span></div>
+            <div><span class="result-item-label">Element</span><br><span class="result-item-value" id="r-element"></span></div>
+            <div><span class="result-item-label">Japanese</span><br><span class="result-item-value" id="r-japanese"></span></div>
+            <div><span class="result-item-label">Next occurrence</span><br><span class="result-item-value" id="r-next"></span></div>
+            <div><span class="result-item-label">Previous</span><br><span class="result-item-value" id="r-prev"></span></div>
+          </div>
+
+          <h3>Personality Traits</h3>
+          <div class="trait-chips" id="r-traits"></div>
+
+          <h3>Lucky Colors</h3>
+          <div class="trait-chips" id="r-colors"></div>
+
+          <div class="compatibility-section">
+            <h3>Compatible Signs &#x2713;</h3>
+            <p id="r-compatible"></p>
+            <h3>Challenging Signs &#x2717;</h3>
+            <p id="r-avoid"></p>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-secondary" id="copy-btn">Copy</button>
+            <button class="btn btn-secondary" id="share-btn">Share</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- /tool-box -->
+
+    <!-- Quick Reference Table -->
+    <h2>Japanese Zodiac Year Chart 2020&#x2013;2043 (干支 早見表)</h2>
+    <div class="quick-ref">
+      <table>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Animal</th>
+            <th>Kanji</th>
+            <th>Element</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>2020</td><td>Rat</td><td>子</td><td>Metal</td></tr>
+          <tr><td>2021</td><td>Ox</td><td>丑</td><td>Metal</td></tr>
+          <tr><td>2022</td><td>Tiger</td><td>寅</td><td>Water</td></tr>
+          <tr><td>2023</td><td>Rabbit</td><td>卯</td><td>Water</td></tr>
+          <tr><td>2024</td><td>Dragon</td><td>辰</td><td>Wood</td></tr>
+          <tr><td>2025</td><td>Snake</td><td>巳</td><td>Wood</td></tr>
+          <tr><td>2026</td><td>Horse</td><td>午</td><td>Fire</td></tr>
+          <tr><td>2027</td><td>Goat</td><td>未</td><td>Fire</td></tr>
+          <tr><td>2028</td><td>Monkey</td><td>申</td><td>Earth</td></tr>
+          <tr><td>2029</td><td>Rooster</td><td>酉</td><td>Earth</td></tr>
+          <tr><td>2030</td><td>Dog</td><td>戌</td><td>Metal</td></tr>
+          <tr><td>2031</td><td>Pig</td><td>亥</td><td>Metal</td></tr>
+          <tr><td>2032</td><td>Rat</td><td>子</td><td>Water</td></tr>
+          <tr><td>2033</td><td>Ox</td><td>丑</td><td>Water</td></tr>
+          <tr><td>2034</td><td>Tiger</td><td>寅</td><td>Wood</td></tr>
+          <tr><td>2035</td><td>Rabbit</td><td>卯</td><td>Wood</td></tr>
+          <tr><td>2036</td><td>Dragon</td><td>辰</td><td>Fire</td></tr>
+          <tr><td>2037</td><td>Snake</td><td>巳</td><td>Fire</td></tr>
+          <tr><td>2038</td><td>Horse</td><td>午</td><td>Earth</td></tr>
+          <tr><td>2039</td><td>Goat</td><td>未</td><td>Earth</td></tr>
+          <tr><td>2040</td><td>Monkey</td><td>申</td><td>Metal</td></tr>
+          <tr><td>2041</td><td>Rooster</td><td>酉</td><td>Metal</td></tr>
+          <tr><td>2042</td><td>Dog</td><td>戌</td><td>Water</td></tr>
+          <tr><td>2043</td><td>Pig</td><td>亥</td><td>Water</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BTF Ad Zone -->
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_ZODIAC"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <!-- SEO Content -->
+    <article class="seo-content">
+      <h2>About the Japanese Zodiac (干支 / Eto)</h2>
+      <p>
+        The Japanese zodiac (干支, eto) is a 12-year cycle in which each year
+        is represented by one of twelve animals: Rat (子), Ox (丑), Tiger (寅),
+        Rabbit (卯), Dragon (辰), Snake (巳), Horse (午), Goat (未), Monkey (申),
+        Rooster (酉), Dog (戌), and Pig (亥). The cycle then repeats from the
+        beginning. Your zodiac sign is determined entirely by your birth year &#x2014;
+        everyone born in the same year shares the same sign.
+      </p>
+      <p>
+        In Japan, the zodiac is used in everyday culture &#x2014; on New Year's cards
+        (年賀状, nengajo), decorations, fortune-telling, and personality
+        descriptions. The year's zodiac animal is prominently featured on
+        official Japan Post stamps and across media each January.
+      </p>
+
+      <h2>Japanese vs Chinese Zodiac &#x2014; Key Difference</h2>
+      <p>
+        While Japan and China share the same 12 animal signs, there is one
+        important difference: the Japanese eto uses the <strong>solar
+        calendar</strong>, so each new zodiac year begins on <strong>January
+        1</strong>. The Chinese zodiac follows the lunar calendar, meaning
+        the new year starts in late January or February. For people born in
+        January or early February, the two systems may give different results.
+        This calculator uses the Japanese solar method &#x2014; January 1 is always
+        the start of the new zodiac year.
+      </p>
+      <p>
+        To calculate your Japanese age alongside your zodiac sign, use the
+        <a href="/date-calendar/age-calculator/">Japanese age calculator</a>.
+        To convert your birth year between era and Western formats, see the
+        <a href="/date-calendar/era-converter/">era date converter</a>.
+      </p>
+    </article>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq-section"
+      itemscope itemtype="https://schema.org/FAQPage">
+      <h2>Frequently Asked Questions</h2>
+      <ul class="faq-list">
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What is the Japanese zodiac (干支)?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              The Japanese zodiac (干支, eto) is a 12-year cycle where each year
+              is associated with an animal sign. The 12 animals are: Rat, Ox,
+              Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog,
+              and Pig. Unlike the Chinese zodiac which follows the lunar calendar,
+              the Japanese eto uses the solar calendar &#x2014; each new zodiac year
+              begins on January 1.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What zodiac sign is 2025 in Japan?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              2025 is the Year of the Snake (巳年, mi-doshi) in the Japanese
+              zodiac. People born in Snake years are said to be wise, intuitive,
+              elegant, and cautious. Other recent Snake years include 2013 and
+              2001. The next Snake year after 2025 will be 2037.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            How do I find my Japanese zodiac sign?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              To find your Japanese zodiac sign, enter your birth year (or date
+              of birth) in the calculator above. Your zodiac sign is determined
+              by the year you were born &#x2014; the 12-year cycle repeats, so if you
+              were born in 1990 (Horse year), the same sign returns every 12
+              years: 2002, 2014, 2026, and so on.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What is the difference between Japanese and Chinese zodiac?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              The Japanese zodiac (干支, eto) and Chinese zodiac share the same
+              12 animals, but differ in one important way: the Japanese eto uses
+              the solar calendar, so a new zodiac year begins on January 1. The
+              Chinese zodiac follows the lunar calendar, so the new year begins
+              in late January or February. This means people born in January or
+              early February may have different signs depending on which system
+              is used.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What zodiac sign is compatible with the Snake (2025)?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              In the Japanese zodiac tradition, the Snake (巳) is most compatible
+              with the Ox (丑) and Rooster (酉). These three signs form a
+              compatible trio in the eto tradition. Snake is said to have a more
+              challenging relationship with signs such as the Tiger and Pig. Use
+              the zodiac calculator above to find compatibility for any birth year.
+            </span>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/date-calendar/age-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F382;</div>
+          <div class="tool-card-name">Japanese Age Calculator</div>
+          <div class="tool-card-jp">年齢計算</div>
+        </a>
+        <a href="/date-calendar/era-converter/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4C5;</div>
+          <div class="tool-card-name">Era Date Converter</div>
+          <div class="tool-card-jp">和暦 西暦 変換</div>
+        </a>
+        <a href="/tax-finance/consumption-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F9FE;</div>
+          <div class="tool-card-name">Consumption Tax Calculator</div>
+          <div class="tool-card-jp">消費税計算</div>
+        </a>
+        <a href="/date-calendar/" class="tool-card">
+          <div class="tool-card-icon">&#x1F5D3;&#xFE0F;</div>
+          <div class="tool-card-name">All Date &amp; Calendar Tools</div>
+          <div class="tool-card-jp">日付・カレンダーツール</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_ZODIAC"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div><!-- /page-layout -->
+
+<!-- FOOTER PARTIAL -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/about/">About</a></li>
+      <li><a href="/privacy/">Privacy Policy</a></li>
+      <li><a href="/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">
+      &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
+    </p>
+    <p class="footer-attribution">Zodiac data based on traditional Japanese eto system. Last updated: March 2025</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import { getZodiacByYear, getZodiacByDOB } from '/assets/js/zodiac.js';
+
+const ANIMAL_EMOJI = {
+  rat:'\uD83D\uDC2D', ox:'\uD83D\uDC02', tiger:'\uD83D\uDC2F', rabbit:'\uD83D\uDC30', dragon:'\uD83D\uDC32',
+  snake:'\uD83D\uDC0D', horse:'\uD83D\uDC34', goat:'\uD83D\uDC11', monkey:'\uD83D\uDC35',
+  rooster:'\uD83D\uDC13', dog:'\uD83D\uDC15', pig:'\uD83D\uDC37'
+};
+
+function renderResult(result) {
+  if (result.error) {
+    document.getElementById('result-error').textContent = result.error;
+    document.getElementById('result-error').classList.add('visible');
+    document.getElementById('result-box').classList.remove('visible');
+    return;
+  }
+  document.getElementById('result-error').classList.remove('visible');
+
+  // Primary
+  document.getElementById('r-emoji').textContent    = ANIMAL_EMOJI[result.id] || '\uD83D\uDD2E';
+  document.getElementById('r-english').textContent  = result.english;
+  document.getElementById('r-kanji').textContent    = `${result.kanji} (${result.romaji})`;
+  document.getElementById('r-year').textContent     = result.year;
+  document.getElementById('r-element').textContent  = result.element;
+  document.getElementById('r-japanese').textContent = result.japanese;
+  document.getElementById('r-next').textContent     = result.nextOccurrence;
+  document.getElementById('r-prev').textContent     = result.prevOccurrence;
+
+  // Traits — render as chips
+  const traitsEl = document.getElementById('r-traits');
+  traitsEl.innerHTML = result.traits
+    .map(t => `<span class="chip">${t}</span>`).join('');
+
+  // Lucky colors
+  const colorsEl = document.getElementById('r-colors');
+  colorsEl.innerHTML = result.luckyColors
+    .map(c => `<span class="chip">${c}</span>`).join('');
+
+  // Compatibility
+  document.getElementById('r-compatible').textContent = result.compatible.join(', ');
+  document.getElementById('r-avoid').textContent      = result.avoid.join(', ');
+
+  document.getElementById('result-box').classList.add('visible');
+
+  // Share URL
+  const url = new URL(window.location.href);
+  url.searchParams.set('year', result.year);
+  document.getElementById('share-btn').dataset.url = url.toString();
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'zodiac_calculator', language: 'en' });
+}
+
+// Tab 1 — by year
+document.getElementById('year-input').addEventListener('input', () => {
+  const year = parseInt(document.getElementById('year-input').value);
+  if (!year) return;
+  renderResult(getZodiacByYear(year));
+});
+
+// Tab 2 — by DOB
+document.getElementById('dob-input').addEventListener('change', () => {
+  const dob = document.getElementById('dob-input').value;
+  if (!dob) return;
+  renderResult(getZodiacByDOB(dob));
+});
+
+// Tab switching
+document.querySelectorAll('.tool-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tool-tab').forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    document.querySelectorAll('.tool-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+  });
+});
+
+// Copy button
+document.getElementById('copy-btn').addEventListener('click', () => {
+  const eng   = document.getElementById('r-english').textContent;
+  const kanji = document.getElementById('r-kanji').textContent;
+  const year  = document.getElementById('r-year').textContent;
+  const elem  = document.getElementById('r-element').textContent;
+  navigator.clipboard.writeText(`${year}: ${eng} ${kanji} \u2014 ${elem} element`)
+    .then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = 'Copied! \u2713';
+      setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+    });
+});
+
+// Share button
+document.getElementById('share-btn').addEventListener('click', () => {
+  const url = document.getElementById('share-btn').dataset.url || window.location.href;
+  navigator.clipboard.writeText(url).then(() => {
+    const btn = document.getElementById('share-btn');
+    btn.textContent = 'Link copied!';
+    setTimeout(() => { btn.textContent = 'Share'; }, 2000);
+  });
+});
+
+// Init from URL params
+const p = new URLSearchParams(window.location.search);
+if (p.get('year')) {
+  document.getElementById('year-input').value = p.get('year');
+  renderResult(getZodiacByYear(parseInt(p.get('year'))));
+} else if (p.get('dob')) {
+  // Switch to tab 2
+  document.querySelectorAll('.tool-tab')[1].click();
+  document.getElementById('dob-input').value = p.get('dob');
+  renderResult(getZodiacByDOB(p.get('dob')));
+}
+</script>
+
+<!-- Lazy ad loader -->
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(zone => {
+    const ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(z => observer.observe(z));
+  }
+});
+</script>
+
+</body>
+</html>
