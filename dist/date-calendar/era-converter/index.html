@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japanese Era Date Converter — 和暦 西暦 変換 | JapanCalc</title>
+  <meta name="description" content="Placeholder — will be replaced in T-06">
+  <link rel="canonical" href="https://japancalc.com/date-calendar/era-converter/">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+<!-- NAV PARTIAL (from src/_templates/nav.html) -->
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo">JapanCalc</a>
+
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/language-tools/">Language Tools</a></li>
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <button class="nav-lang-toggle"
+            aria-label="Switch to Japanese"
+            onclick="window.location.href='/ja'+window.location.pathname">
+      日本語
+    </button>
+    <button class="nav-hamburger"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><span class="breadcrumb-sep">›</span></li>
+    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
+    <li><span class="breadcrumb-sep">›</span></li>
+    <li aria-current="page">Era Date Converter</li>
+  </ol>
+</nav>
+
+<!-- ATF Ad Zone -->
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <!-- AdSense ATF — wired in T-07 -->
+</div>
+
+<!-- PAGE LAYOUT -->
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <!-- Page Header -->
+    <h1>Japanese Era Date Converter</h1>
+    <p class="tool-subtitle">和暦・西暦変換ツール — Convert Reiwa, Heisei, Showa and more</p>
+    <p class="tool-desc">
+      Instantly convert between Japanese era years (和暦) and the Western
+      Gregorian calendar. Supports Reiwa (令和), Heisei (平成), Showa (昭和),
+      Taisho (大正), and Meiji (明治). Free, no login required.
+    </p>
+
+    <!-- Keyword chips -->
+    <div class="chip-row">
+      <span class="chip chip-primary">era converter</span>
+      <span class="chip">和暦 西暦 変換</span>
+      <span class="chip">令和 西暦</span>
+      <span class="chip">KD 8</span>
+    </div>
+
+    <!-- TOOL INTERFACE -->
+    <div class="tool-box" id="tool-main">
+
+      <!-- Tab Bar -->
+      <div class="tool-tabs" role="tablist">
+        <button class="tool-tab active" role="tab" aria-selected="true"
+                aria-controls="panel-era-to-greg" id="tab-era-to-greg">Era → Gregorian</button>
+        <button class="tool-tab" role="tab" aria-selected="false"
+                aria-controls="panel-greg-to-era" id="tab-greg-to-era">Gregorian → Era</button>
+        <button class="tool-tab" role="tab" aria-selected="false"
+                aria-controls="panel-reference" id="tab-reference">Era Reference</button>
+      </div>
+
+      <!-- Tab 1: Era to Gregorian -->
+      <div class="tool-panel active" role="tabpanel" id="panel-era-to-greg" aria-labelledby="tab-era-to-greg">
+        <div class="form-group">
+          <label class="form-label" for="tab1-era">Era (元号)</label>
+          <select class="form-select" id="tab1-era">
+            <!-- Populated by JS from getEraList() -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="tab1-year">Era Year (年)</label>
+          <input type="text" class="form-input" id="tab1-year" placeholder="e.g. 7 or 元" inputmode="numeric">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="tab1-month">Month (optional)</label>
+          <input type="number" class="form-input" id="tab1-month" min="1" max="12" placeholder="MM (optional)">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="tab1-day">Day (optional)</label>
+          <input type="number" class="form-input" id="tab1-day" min="1" max="31" placeholder="DD (optional)">
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" id="tab1-convert">Convert</button>
+        </div>
+
+        <div aria-live="polite" aria-atomic="true">
+          <div class="result-box hidden" id="tab1-result"></div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Gregorian to Era -->
+      <div class="tool-panel" role="tabpanel" id="panel-greg-to-era" aria-labelledby="tab-greg-to-era">
+        <div class="form-group">
+          <label class="form-label" for="tab2-year">Western Year (西暦)</label>
+          <input type="number" class="form-input" id="tab2-year" min="1868" max="2099" placeholder="e.g. 2025">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="tab2-month">Month (optional)</label>
+          <input type="number" class="form-input" id="tab2-month" min="1" max="12" placeholder="MM (optional)">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="tab2-day">Day (optional)</label>
+          <input type="number" class="form-input" id="tab2-day" min="1" max="31" placeholder="DD (optional)">
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" id="tab2-convert">Convert</button>
+        </div>
+
+        <div aria-live="polite" aria-atomic="true">
+          <div class="result-box hidden" id="tab2-result"></div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Era Reference Table -->
+      <div class="tool-panel" role="tabpanel" id="panel-reference" aria-labelledby="tab-reference">
+        <div class="quick-ref">
+          <table>
+            <thead>
+              <tr>
+                <th>Era (元号)</th>
+                <th>Romaji</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Years</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>令和</td><td>Reiwa</td><td>2019</td><td>Present</td><td>1–</td></tr>
+              <tr><td>平成</td><td>Heisei</td><td>1989</td><td>2019</td><td>1–31</td></tr>
+              <tr><td>昭和</td><td>Showa</td><td>1926</td><td>1989</td><td>1–64</td></tr>
+              <tr><td>大正</td><td>Taisho</td><td>1912</td><td>1926</td><td>1–15</td></tr>
+              <tr><td>明治</td><td>Meiji</td><td>1868</td><td>1912</td><td>1–45</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tool-desc" style="margin-top:1rem;">
+          <strong>Conversion formulas:</strong><br>
+          Reiwa year + 2018 = Western year<br>
+          Heisei year + 1988 = Western year<br>
+          Showa year + 1925 = Western year<br>
+          Taisho year + 1911 = Western year<br>
+          Meiji year + 1867 = Western year
+        </div>
+      </div>
+
+    </div><!-- /tool-box -->
+
+    <!-- Quick Reference Table -->
+    <h2>Quick Reference: Reiwa Year Chart (令和 西暦 一覧)</h2>
+    <div class="quick-ref">
+      <table>
+        <thead>
+          <tr>
+            <th>Reiwa (令和)</th>
+            <th>Western Year</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>令和1年 (元年)</td><td>2019</td><td>Era started May 1</td></tr>
+          <tr><td>令和2年</td><td>2020</td><td></td></tr>
+          <tr><td>令和3年</td><td>2021</td><td></td></tr>
+          <tr><td>令和4年</td><td>2022</td><td></td></tr>
+          <tr><td>令和5年</td><td>2023</td><td></td></tr>
+          <tr><td>令和6年</td><td>2024</td><td></td></tr>
+          <tr><td>令和7年</td><td>2025</td><td>Current year</td></tr>
+          <tr><td>令和8年</td><td>2026</td><td></td></tr>
+          <tr><td>令和9年</td><td>2027</td><td></td></tr>
+          <tr><td>令和10年</td><td>2028</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BTF Ad Zone -->
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <!-- AdSense BTF — wired in T-07 -->
+    </div>
+
+    <!-- SEO Content Placeholder -->
+    <article class="seo-content" id="seo-content">
+      <!-- SEO editorial content — added in T-06 -->
+    </article>
+
+    <!-- FAQ Placeholder -->
+    <section class="faq" id="faq-section"
+      itemscope itemtype="https://schema.org/FAQPage">
+      <!-- FAQ content — added in T-06 -->
+    </section>
+
+    <!-- Related Tools -->
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/tax-finance/consumption-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F9FE;</div>
+          <div class="tool-card-name">Consumption Tax Calculator</div>
+          <div class="tool-card-jp">消費税計算</div>
+        </a>
+        <a href="/date-calendar/age-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F382;</div>
+          <div class="tool-card-name">Japanese Age Calculator</div>
+          <div class="tool-card-jp">年齢計算</div>
+        </a>
+        <a href="/date-calendar/zodiac/" class="tool-card">
+          <div class="tool-card-icon">&#x1F409;</div>
+          <div class="tool-card-name">Japanese Zodiac Calculator</div>
+          <div class="tool-card-jp">干支 計算</div>
+        </a>
+        <a href="/date-calendar/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4C5;</div>
+          <div class="tool-card-name">All Date &amp; Calendar Tools</div>
+          <div class="tool-card-jp">日付・カレンダーツール</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <!-- AdSense Sidebar — wired in T-07 -->
+    </div>
+  </aside>
+</div><!-- /page-layout -->
+
+<!-- FOOTER PARTIAL -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/about/">About</a></li>
+      <li><a href="/privacy/">Privacy Policy</a></li>
+      <li><a href="/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">
+      &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
+    </p>
+    <p class="footer-attribution">
+      Date data sourced from Japan Cabinet Office.
+      Tax rates from National Tax Agency Japan.
+    </p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import { eraToGregorian, gregorianToEra, getEraList } from '/assets/js/era.js';
+
+// ============ POPULATE ERA DROPDOWN ============
+var eraSelect = document.getElementById('tab1-era');
+getEraList().forEach(function(era) {
+  var opt = document.createElement('option');
+  opt.value = era.id;
+  opt.textContent = era.romaji + ' (' + era.kanji + ')';
+  if (era.active) opt.selected = true;
+  eraSelect.appendChild(opt);
+});
+
+// ============ TAB SWITCHING ============
+var tabs = document.querySelectorAll('.tool-tab');
+var panels = document.querySelectorAll('.tool-panel');
+
+tabs.forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    tabs.forEach(function(t) {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    panels.forEach(function(p) {
+      p.classList.remove('active');
+    });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    var panel = document.getElementById(tab.getAttribute('aria-controls'));
+    panel.classList.add('active');
+  });
+});
+
+// ============ HELPERS ============
+function escapeHtml(str) {
+  var div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function copyToClipboard(text, btn) {
+  navigator.clipboard.writeText(text).then(function() {
+    var original = btn.textContent;
+    btn.textContent = 'Copied! \u2713';
+    btn.classList.add('btn-success');
+    setTimeout(function() {
+      btn.textContent = original;
+      btn.classList.remove('btn-success');
+    }, 2000);
+  });
+}
+
+function fireGA4() {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'tool_used', { tool_name: 'era_converter', language: 'en' });
+  }
+}
+
+// ============ TAB 1: ERA → GREGORIAN ============
+var t1Era = document.getElementById('tab1-era');
+var t1Year = document.getElementById('tab1-year');
+var t1Month = document.getElementById('tab1-month');
+var t1Day = document.getElementById('tab1-day');
+var t1Result = document.getElementById('tab1-result');
+
+function computeTab1() {
+  var yearVal = t1Year.value.trim();
+  if (!yearVal) { t1Result.classList.add('hidden'); t1Result.innerHTML = ''; return; }
+
+  var eraId = t1Era.value;
+  var month = t1Month.value ? parseInt(t1Month.value, 10) : null;
+  var day = t1Day.value ? parseInt(t1Day.value, 10) : null;
+
+  var r = eraToGregorian(eraId, yearVal, month, day);
+
+  if (r.error) {
+    t1Result.classList.remove('hidden');
+    t1Result.innerHTML = '<p class="form-error visible">' + escapeHtml(r.error) + '</p>';
+    return;
+  }
+
+  var html = '<div class="result-primary">' + escapeHtml(String(r.gregorianYear)) + '</div>';
+  html += '<div class="result-grid">';
+  html += '<div><span class="result-item-label">Western Year</span><br><span class="result-item-value">' + r.gregorianYear + '</span></div>';
+  html += '<div><span class="result-item-label">Japanese</span><br><span class="result-item-value">' + escapeHtml(r.jpNotation) + '</span></div>';
+  html += '<div><span class="result-item-label">English</span><br><span class="result-item-value">' + escapeHtml(r.enNotation) + '</span></div>';
+  if (r.fullDate) {
+    html += '<div><span class="result-item-label">Full Date</span><br><span class="result-item-value">' + escapeHtml(r.fullDate) + '</span></div>';
+    html += '<div><span class="result-item-label">Day of Week</span><br><span class="result-item-value">' + escapeHtml(r.dayOfWeek) + '</span></div>';
+  }
+  html += '</div>';
+  html += '<div class="btn-row">';
+  html += '<button class="btn btn-secondary" id="tab1-copy">Copy</button>';
+  html += '<button class="btn btn-secondary" id="tab1-share">Share</button>';
+  html += '</div>';
+
+  t1Result.classList.remove('hidden');
+  t1Result.innerHTML = html;
+
+  var copyText = r.gregorianYear + ' (' + r.jpNotation + ')';
+  document.getElementById('tab1-copy').addEventListener('click', function() {
+    copyToClipboard(copyText, this);
+  });
+  document.getElementById('tab1-share').addEventListener('click', function() {
+    var params = '?tab=1&era=' + eraId + '&year=' + encodeURIComponent(yearVal);
+    if (month) params += '&month=' + month;
+    if (day) params += '&day=' + day;
+    var shareUrl = location.origin + location.pathname + params;
+    copyToClipboard(shareUrl, this);
+  });
+
+  fireGA4();
+}
+
+[t1Era, t1Year, t1Month, t1Day].forEach(function(el) {
+  el.addEventListener('input', computeTab1);
+  el.addEventListener('change', computeTab1);
+});
+document.getElementById('tab1-convert').addEventListener('click', computeTab1);
+
+// ============ TAB 2: GREGORIAN → ERA ============
+var t2Year = document.getElementById('tab2-year');
+var t2Month = document.getElementById('tab2-month');
+var t2Day = document.getElementById('tab2-day');
+var t2Result = document.getElementById('tab2-result');
+
+function computeTab2() {
+  var yearVal = t2Year.value.trim();
+  if (!yearVal) { t2Result.classList.add('hidden'); t2Result.innerHTML = ''; return; }
+
+  var year = parseInt(yearVal, 10);
+  var month = t2Month.value ? parseInt(t2Month.value, 10) : null;
+  var day = t2Day.value ? parseInt(t2Day.value, 10) : null;
+
+  var r = gregorianToEra(year, month, day);
+
+  if (r.error) {
+    t2Result.classList.remove('hidden');
+    t2Result.innerHTML = '<p class="form-error visible">' + escapeHtml(r.error) + '</p>';
+    return;
+  }
+
+  var html = '';
+
+  if (r.dualEra) {
+    html += '<div class="result-primary">' + escapeHtml(String(r.year)) + ' — Dual Era Year</div>';
+    html += '<p class="text-muted" style="margin:0.5rem 0 1rem;">' + escapeHtml(r.note) + '</p>';
+    html += '<div class="result-grid">';
+    r.eras.forEach(function(e) {
+      html += '<div style="border:1px solid var(--color-border);border-radius:var(--radius);padding:1rem;">';
+      html += '<span class="result-item-label">' + escapeHtml(e.eraRomaji) + ' (' + escapeHtml(e.eraKanji) + ')</span><br>';
+      html += '<span class="result-item-value">' + escapeHtml(e.jpNotation) + '</span>';
+      html += '</div>';
+    });
+    html += '</div>';
+  } else {
+    html += '<div class="result-primary">' + escapeHtml(r.jpNotation) + '</div>';
+    html += '<div class="result-grid">';
+    html += '<div><span class="result-item-label">Era (元号)</span><br><span class="result-item-value">' + escapeHtml(r.eraRomaji) + ' (' + escapeHtml(r.eraKanji) + ')</span></div>';
+    html += '<div><span class="result-item-label">Era Year</span><br><span class="result-item-value">' + r.eraYear + '</span></div>';
+    html += '<div><span class="result-item-label">Western Year</span><br><span class="result-item-value">' + year + '</span></div>';
+    html += '<div><span class="result-item-label">Era Period</span><br><span class="result-item-value">' + r.eraStart + ' – ' + r.eraEnd + '</span></div>';
+    if (r.fullDate) {
+      html += '<div><span class="result-item-label">Full Date</span><br><span class="result-item-value">' + escapeHtml(r.fullDate) + '</span></div>';
+      html += '<div><span class="result-item-label">Day of Week</span><br><span class="result-item-value">' + escapeHtml(r.dayOfWeek) + '</span></div>';
+    }
+    html += '</div>';
+    html += '<div class="btn-row">';
+    html += '<button class="btn btn-secondary" id="tab2-copy">Copy</button>';
+    html += '<button class="btn btn-secondary" id="tab2-share">Share</button>';
+    html += '</div>';
+  }
+
+  t2Result.classList.remove('hidden');
+  t2Result.innerHTML = html;
+
+  if (!r.dualEra) {
+    var copyText = r.jpNotation + ' = ' + year;
+    document.getElementById('tab2-copy').addEventListener('click', function() {
+      copyToClipboard(copyText, this);
+    });
+    document.getElementById('tab2-share').addEventListener('click', function() {
+      var params = '?tab=2&year=' + year;
+      if (month) params += '&month=' + month;
+      if (day) params += '&day=' + day;
+      var shareUrl = location.origin + location.pathname + params;
+      copyToClipboard(shareUrl, this);
+    });
+  }
+
+  fireGA4();
+}
+
+[t2Year, t2Month, t2Day].forEach(function(el) {
+  el.addEventListener('input', computeTab2);
+  el.addEventListener('change', computeTab2);
+});
+document.getElementById('tab2-convert').addEventListener('click', computeTab2);
+
+// ============ INIT FROM URL PARAMS ============
+(function initFromParams() {
+  var p = new URLSearchParams(location.search);
+  var tabNum = p.get('tab');
+
+  if (tabNum === '2') {
+    document.getElementById('tab-greg-to-era').click();
+    if (p.get('year')) t2Year.value = p.get('year');
+    if (p.get('month')) t2Month.value = p.get('month');
+    if (p.get('day')) t2Day.value = p.get('day');
+    if (p.get('year')) computeTab2();
+  } else if (tabNum === '3') {
+    document.getElementById('tab-reference').click();
+  } else {
+    if (p.get('era')) t1Era.value = p.get('era');
+    if (p.get('year')) t1Year.value = p.get('year');
+    if (p.get('month')) t1Month.value = p.get('month');
+    if (p.get('day')) t1Day.value = p.get('day');
+    if (p.get('year')) computeTab1();
+  }
+})();
+</script>
+
+</body>
+</html>
