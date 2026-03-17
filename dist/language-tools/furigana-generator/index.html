@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furigana Generator &#x2014; Add Readings to Kanji | JapanCalc</title>
+  <meta name="description" content="Add furigana (&#x3075;&#x308A;&#x304C;&#x306A;) readings to Japanese kanji text instantly. Free online furigana generator &#x2014; paste any Japanese text and get ruby annotations. No login required.">
+  <link rel="canonical" href="https://japancalc.com/language-tools/furigana-generator/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/language-tools/furigana-generator/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/language-tools/furigana-generator/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/language-tools/furigana-generator/">
+  <meta property="og:title"       content="Furigana Generator &#x2014; Add Readings to Kanji | JapanCalc">
+  <meta property="og:description" content="Add furigana readings to Japanese kanji text. Free, no login.">
+  <meta property="og:url"         content="https://japancalc.com/language-tools/furigana-generator/">
+  <meta property="og:type"        content="website">
+  <meta name="robots" content="index, follow">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P9TH5C7P9H');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Furigana Generator \u2014 Add Readings to Kanji",
+    "url": "https://japancalc.com/language-tools/furigana-generator/",
+    "description": "Add furigana (\u3075\u308a\u304c\u306a) phonetic readings to Japanese kanji text. Powered by kuromoji Japanese morphological analysis. Free, browser-based, no login required.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",
+        "item": "https://japancalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Language Tools",
+        "item": "https://japancalc.com/language-tools/" },
+      { "@type": "ListItem", "position": 3, "name": "Furigana Generator",
+        "item": "https://japancalc.com/language-tools/furigana-generator/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is furigana?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Furigana (\u3075\u308a\u304c\u306a) are small phonetic characters printed above or beside kanji to show their pronunciation. They use hiragana script and are commonly used in children\u2019s books, educational materials, manga, and any text where the reader may not know how to read certain kanji. The HTML equivalent of furigana is the ruby annotation tag: <ruby>\u6f22\u5b57<rt>\u304b\u3093\u3058</rt></ruby>."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the furigana generator work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This furigana generator uses kuromoji, a Japanese morphological analysis engine, to tokenize your input text and identify kanji along with their readings. The tool adds hiragana furigana above each kanji character using HTML ruby annotations. Simply paste or type Japanese text into the input box and click Generate Furigana. The tool works entirely in your browser \u2014 no text is sent to any server."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I copy the furigana output to use in my documents?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The furigana generator provides three output formats: HTML (ruby tags for use in web pages), plain text with readings in brackets (e.g. \u6771\u4eac[\u3068\u3046\u304d\u3087\u3046]), and rendered preview showing furigana above kanji. You can copy any format using the Copy button. The HTML format is compatible with most word processors and web editors that support ruby annotations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the furigana readings always accurate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The furigana generator is highly accurate for standard Japanese text, as it uses context-aware morphological analysis to determine the correct reading. However, like all automated tools, it may occasionally produce incorrect readings for unusual kanji combinations, proper nouns, or highly specialized vocabulary. Always review the output when accuracy is critical, such as for educational materials or publications."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between furigana and romaji?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Furigana uses hiragana characters (the Japanese phonetic script) to show how kanji are read, and is primarily used within Japanese text for Japanese readers who may not know certain kanji. Romaji uses the Latin alphabet to represent Japanese sounds and is used for non-Japanese readers or for romanizing Japanese text. For romaji conversion, use the JapanCalc Romaji Converter tool."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <style>
+  .loading-banner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .loading-spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--color-border);
+    border-top-color: var(--color-accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .ready-banner {
+    background: #F0FDF4;
+    border: 1px solid #86EFAC;
+    border-radius: var(--radius);
+    padding: 0.6rem 1rem;
+    font-size: 0.875rem;
+    color: #065F46;
+    margin-bottom: 1.25rem;
+  }
+  .furigana-preview {
+    font-size: 1.5rem;
+    line-height: 2.5;
+    padding: 1rem;
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    margin-bottom: 0.75rem;
+    word-break: break-word;
+  }
+  .furigana-preview ruby { font-size: 1.5rem; }
+  .furigana-preview rt {
+    font-size: 0.5em;
+    color: var(--color-accent);
+    font-family: var(--font-sans);
+  }
+  .furigana-code {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    margin-bottom: 0.75rem;
+  }
+  .furigana-bracket {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    word-break: break-word;
+    margin-bottom: 0.75rem;
+  }
+  .furigana-output-label {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.35rem;
+  }
+  .furigana-stats {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+  }
+  .sample-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 0.75rem;
+  }
+  .options-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+  }
+  .romaji-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    font-family: var(--font-sans);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    resize: vertical;
+    line-height: 1.6;
+  }
+  .romaji-textarea:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(11,110,95,0.15);
+    outline: none;
+  }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo">JapanCalc</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/language-tools/">Language Tools</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
+            onclick="window.location.href='/ja'+window.location.pathname">&#x65E5;&#x672C;&#x8A9E;</button>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/language-tools/">Language Tools</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">Furigana Generator</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_FURIGANA"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>Furigana Generator &#x2014; Add Readings to Kanji</h1>
+    <p class="tool-subtitle">&#x3075;&#x308A;&#x304C;&#x306A;&#x751F;&#x6210;&#x30C4;&#x30FC;&#x30EB; &#x2014; Add hiragana readings above kanji characters</p>
+    <p class="tool-desc">
+      Paste or type Japanese text to add furigana (&#x3075;&#x308A;&#x304C;&#x306A;) readings above kanji
+      automatically. Powered by kuromoji Japanese morphological analysis.
+      Output in HTML ruby format, bracket notation, or rendered preview.
+      Free, no login, runs entirely in your browser.
+    </p>
+
+    <div class="tool-box" id="tool-main">
+
+      <div class="loading-banner" id="loading-banner">
+        <div class="loading-spinner"></div>
+        <div>
+          <strong>Loading Japanese dictionary&#x2026;</strong>
+          <span class="text-muted" style="font-size:0.85rem; display:block;">
+            First load takes 5&#x2013;10 seconds. Cached for future visits.
+          </span>
+        </div>
+      </div>
+
+      <div class="ready-banner" id="ready-banner" style="display:none;">
+        &#x2713; Dictionary loaded &#x2014; ready to generate furigana
+      </div>
+
+      <div class="form-group" id="input-group">
+        <label class="form-label" for="jp-input">
+          Japanese Text Input (&#x65E5;&#x672C;&#x8A9E;&#x30C6;&#x30AD;&#x30B9;&#x30C8;)
+        </label>
+        <textarea class="form-input romaji-textarea" id="jp-input"
+                  rows="5"
+                  placeholder="&#x65E5;&#x672C;&#x8A9E;&#x306E;&#x30C6;&#x30AD;&#x30B9;&#x30C8;&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x2026;
+&#x4F8B;: &#x6771;&#x4EAC;&#x306F;&#x65E5;&#x672C;&#x306E;&#x9996;&#x90FD;&#x3067;&#x3059;&#x3002;"
+                  aria-describedby="input-hint"
+                  disabled></textarea>
+        <span id="input-hint" class="text-muted" style="font-size:0.8rem;">
+          Input is enabled once the dictionary has loaded.
+        </span>
+      </div>
+
+      <div class="sample-row">
+        <span class="text-muted" style="font-size:0.8rem;">Try a sample:</span>
+        <button class="btn btn-secondary" style="font-size:0.8rem; height:32px; padding:0 0.75rem;"
+                disabled>&#x6771;&#x4EAC;</button>
+        <button class="btn btn-secondary" style="font-size:0.8rem; height:32px; padding:0 0.75rem;"
+                disabled>&#x65E5;&#x672C;&#x8A9E;</button>
+        <button class="btn btn-secondary" style="font-size:0.8rem; height:32px; padding:0 0.75rem;"
+                disabled>&#x5929;&#x6C17;</button>
+      </div>
+
+      <!-- Options row -->
+      <div class="options-row" style="margin-top:1rem;">
+        <div class="passthrough-group">
+          <label class="form-label" style="margin-bottom:0.3rem;">Output format:</label>
+          <select class="form-select" id="output-format" style="height:36px; font-size:0.875rem;" disabled>
+            <option value="preview">Preview (rendered furigana)</option>
+            <option value="html">HTML (ruby tags)</option>
+            <option value="bracket">Bracket notation text[&#x3088;&#x307F;]</option>
+          </select>
+        </div>
+        <label class="rate-option" style="align-self:flex-end; margin-bottom:0.25rem;">
+          <input type="checkbox" id="opt-kanji-only" checked disabled>
+          <span>Kanji only</span>
+        </label>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" id="generate-btn" disabled>
+          Generate Furigana
+        </button>
+        <button class="btn btn-secondary" id="clear-btn" disabled>Clear</button>
+      </div>
+
+      <div role="region" aria-live="polite">
+        <div class="result-box" id="furigana-result">
+          <div class="furigana-preview" id="furigana-preview"></div>
+
+          <div id="html-output-section" style="display:none;">
+            <div class="furigana-output-label">HTML Output (copy for web use):</div>
+            <pre class="furigana-code" id="furigana-code"></pre>
+          </div>
+
+          <div id="bracket-output-section" style="display:none;">
+            <div class="furigana-output-label">Bracket Notation:</div>
+            <div class="furigana-bracket" id="furigana-bracket"></div>
+          </div>
+
+          <div class="furigana-stats" id="furigana-stats">
+            <span id="stat-kanji">&#x2014; kanji</span> &#xB7;
+            <span id="stat-tokens">&#x2014; tokens</span>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-secondary" id="copy-btn">Copy</button>
+            <button class="btn btn-secondary" id="copy-html-btn">Copy HTML</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Reference Table -->
+    <div class="quick-ref" style="overflow-x:auto;">
+      <h2>Furigana Examples (&#x3075;&#x308A;&#x304C;&#x306A;&#x4F8B;&#x6587;)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Kanji</th>
+            <th>With Furigana</th>
+            <th>Reading</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>&#x6771;&#x4EAC;</td><td><ruby>&#x6771;&#x4EAC;<rt>&#x3068;&#x3046;&#x304D;&#x3087;&#x3046;</rt></ruby></td><td>t&#x14D;ky&#x14D;</td><td>Tokyo</td></tr>
+          <tr><td>&#x65E5;&#x672C;&#x8A9E;</td><td><ruby>&#x65E5;&#x672C;&#x8A9E;<rt>&#x306B;&#x307B;&#x3093;&#x3054;</rt></ruby></td><td>nihongo</td><td>Japanese language</td></tr>
+          <tr><td>&#x52C9;&#x5F37;</td><td><ruby>&#x52C9;&#x5F37;<rt>&#x3079;&#x3093;&#x304D;&#x3087;&#x3046;</rt></ruby></td><td>benky&#x14D;</td><td>Study</td></tr>
+          <tr><td>&#x5B66;&#x6821;</td><td><ruby>&#x5B66;&#x6821;<rt>&#x304C;&#x3063;&#x3053;&#x3046;</rt></ruby></td><td>gakk&#x14D;</td><td>School</td></tr>
+          <tr><td>&#x98DF;&#x3079;&#x7269;</td><td><ruby>&#x98DF;<rt>&#x305F;</rt></ruby>&#x3079;<ruby>&#x7269;<rt>&#x3082;&#x306E;</rt></ruby></td><td>tabemono</td><td>Food</td></tr>
+          <tr><td>&#x65B0;&#x805E;</td><td><ruby>&#x65B0;&#x805E;<rt>&#x3057;&#x3093;&#x3076;&#x3093;</rt></ruby></td><td>shinbun</td><td>Newspaper</td></tr>
+          <tr><td>&#x96FB;&#x8ECA;</td><td><ruby>&#x96FB;&#x8ECA;<rt>&#x3067;&#x3093;&#x3057;&#x3083;</rt></ruby></td><td>densha</td><td>Train</td></tr>
+          <tr><td>&#x56F3;&#x66F8;&#x9928;</td><td><ruby>&#x56F3;&#x66F8;&#x9928;<rt>&#x3068;&#x3057;&#x3087;&#x304B;&#x3093;</rt></ruby></td><td>toshokan</td><td>Library</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_FURIGANA"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="seo-content">
+      <h2>How to Use the Furigana Generator (&#x3075;&#x308A;&#x304C;&#x306A;&#x751F;&#x6210;&#x306E;&#x4F7F;&#x3044;&#x65B9;)</h2>
+      <p>
+        This furigana generator uses <strong>kuromoji</strong>, a Japanese
+        morphological analysis engine, to identify kanji in your text and add
+        the correct hiragana readings above them. To use it, wait for the
+        dictionary to finish loading (shown by the status indicator), then
+        paste or type Japanese text into the input box and click
+        <em>Generate Furigana</em>. The tool analyses the text in context,
+        so it can correctly distinguish between kanji that have multiple
+        readings &#x2014; for example &#x65E5; can be read as &#x306B;&#x3061; or &#x3072; depending on context.
+      </p>
+      <p>
+        Choose from three output formats: <strong>Preview</strong> shows
+        rendered furigana above kanji as it would appear to a reader.
+        <strong>HTML</strong> gives you the raw ruby tag markup to paste
+        directly into a website or document. <strong>Bracket</strong> notation
+        writes the reading in square brackets after each word &#x2014; useful for
+        plain text contexts like email or spreadsheets.
+      </p>
+
+      <h2>What is Furigana? (&#x3075;&#x308A;&#x304C;&#x306A;&#x3068;&#x306F;)</h2>
+      <p>
+        Furigana (&#x3075;&#x308A;&#x304C;&#x306A;) are small hiragana characters placed above or beside
+        kanji to indicate their pronunciation. They are widely used in Japanese
+        children&#x2019;s books, educational materials, manga, and public signage to
+        make kanji accessible to readers who may not know all the readings.
+        In HTML, furigana is implemented using the <code>&lt;ruby&gt;</code>
+        and <code>&lt;rt&gt;</code> tags, which are supported by all modern
+        browsers.
+      </p>
+      <p>
+        Unlike furigana, <a href="/language-tools/romaji-converter/">romaji</a>
+        transcribes Japanese sounds into the Latin alphabet for non-Japanese
+        readers. For era date conversion and other Japanese calendar tools,
+        see the <a href="/date-calendar/">date and calendar tools</a>.
+      </p>
+    </article>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary>What is furigana?</summary>
+        <p>Furigana (&#x3075;&#x308A;&#x304C;&#x306A;) are small phonetic characters printed above or beside kanji to show their pronunciation. They use hiragana script and are commonly used in children&#x2019;s books, educational materials, manga, and any text where the reader may not know how to read certain kanji. The HTML equivalent of furigana is the ruby annotation tag: <code>&lt;ruby&gt;&#x6F22;&#x5B57;&lt;rt&gt;&#x304B;&#x3093;&#x3058;&lt;/rt&gt;&lt;/ruby&gt;</code>.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How does the furigana generator work?</summary>
+        <p>This furigana generator uses kuromoji, a Japanese morphological analysis engine, to tokenize your input text and identify kanji along with their readings. The tool adds hiragana furigana above each kanji character using HTML ruby annotations. Simply paste or type Japanese text into the input box and click Generate Furigana. The tool works entirely in your browser &#x2014; no text is sent to any server.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I copy the furigana output to use in my documents?</summary>
+        <p>Yes. The furigana generator provides three output formats: HTML (ruby tags for use in web pages), plain text with readings in brackets (e.g. &#x6771;&#x4EAC;[&#x3068;&#x3046;&#x304D;&#x3087;&#x3046;]), and rendered preview showing furigana above kanji. You can copy any format using the Copy button. The HTML format is compatible with most word processors and web editors that support ruby annotations.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Are the furigana readings always accurate?</summary>
+        <p>The furigana generator is highly accurate for standard Japanese text, as it uses context-aware morphological analysis to determine the correct reading. However, like all automated tools, it may occasionally produce incorrect readings for unusual kanji combinations, proper nouns, or highly specialized vocabulary. Always review the output when accuracy is critical, such as for educational materials or publications.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the difference between furigana and romaji?</summary>
+        <p>Furigana uses hiragana characters (the Japanese phonetic script) to show how kanji are read, and is primarily used within Japanese text for Japanese readers who may not know certain kanji. Romaji uses the Latin alphabet to represent Japanese sounds and is used for non-Japanese readers or for romanizing Japanese text. For romaji conversion, use the JapanCalc <a href="/language-tools/romaji-converter/">Romaji Converter</a> tool.</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/language-tools/romaji-converter/" class="tool-card">
+          <div class="tool-card-icon">&#x1F524;</div>
+          <div class="tool-card-name">Romaji Converter</div>
+          <div class="tool-card-jp">&#x30ED;&#x30FC;&#x30DE;&#x5B57;&#x5909;&#x63DB;</div>
+        </a>
+        <a href="/date-calendar/era-converter/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4C5;</div>
+          <div class="tool-card-name">Era Date Converter</div>
+          <div class="tool-card-jp">&#x548C;&#x66A6; &#x897F;&#x66A6; &#x5909;&#x63DB;</div>
+        </a>
+        <a href="/date-calendar/age-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F382;</div>
+          <div class="tool-card-name">Japanese Age Calculator</div>
+          <div class="tool-card-jp">&#x5E74;&#x9F62;&#x8A08;&#x7B97;</div>
+        </a>
+        <a href="/language-tools/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4D6;</div>
+          <div class="tool-card-name">All Language Tools</div>
+          <div class="tool-card-jp">&#x8A00;&#x8A9E;&#x30C4;&#x30FC;&#x30EB;</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_FURIGANA"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/about/">About</a></li>
+      <li><a href="/privacy/">Privacy Policy</a></li>
+      <li><a href="/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+    <p class="footer-attribution">Powered by kuromoji Japanese morphological analysis. Last updated: March 2025</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import { initKuromoji, generateFurigana, isReady } from '/assets/js/furigana.js';
+
+// -- Loading state
+const loadingBanner = document.getElementById('loading-banner');
+const readyBanner   = document.getElementById('ready-banner');
+const inputIds = ['jp-input', 'output-format', 'opt-kanji-only',
+                'generate-btn', 'clear-btn'];
+
+function setReady() {
+  loadingBanner.style.display = 'none';
+  readyBanner.style.display   = 'block';
+  inputIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.disabled = false;
+  });
+  // Enable sample buttons
+  document.querySelectorAll('.sample-row button').forEach(b => b.disabled = false);
+}
+
+// Init kuromoji on page load
+initKuromoji()
+  .then(setReady)
+  .catch(err => {
+    loadingBanner.innerHTML = '<span style="color:var(--color-error)">' +
+      '\u26A0 Failed to load dictionary. Please refresh and try again. ' +
+      '(' + (err.message || 'Network error') + ')' +
+      '</span>';
+  });
+
+// -- Generate furigana
+function run() {
+  if (!isReady()) return;
+  const text       = document.getElementById('jp-input').value;
+  const format     = document.getElementById('output-format').value;
+  const kanjiOnly  = document.getElementById('opt-kanji-only').checked;
+  const resultEl   = document.getElementById('furigana-result');
+
+  if (!text.trim()) { resultEl.classList.remove('visible'); return; }
+
+  // Always generate HTML format for preview + stats
+  const htmlResult = generateFurigana(text, { format: 'html', onlyKanji: kanjiOnly });
+  if (htmlResult.error) {
+    resultEl.classList.remove('visible');
+    return;
+  }
+
+  // Stats
+  document.getElementById('stat-kanji').textContent  = htmlResult.kanjiCount + ' kanji';
+  document.getElementById('stat-tokens').textContent = htmlResult.tokenCount + ' tokens';
+
+  // Show correct output section based on format
+  const previewEl  = document.getElementById('furigana-preview');
+  const htmlSec    = document.getElementById('html-output-section');
+  const bracketSec = document.getElementById('bracket-output-section');
+
+  if (format === 'preview') {
+    previewEl.innerHTML       = htmlResult.output;
+    previewEl.style.display   = 'block';
+    htmlSec.style.display     = 'none';
+    bracketSec.style.display  = 'none';
+  } else if (format === 'html') {
+    previewEl.style.display   = 'none';
+    document.getElementById('furigana-code').textContent = htmlResult.output;
+    htmlSec.style.display     = 'block';
+    bracketSec.style.display  = 'none';
+  } else {
+    // bracket
+    const bracketResult = generateFurigana(text, { format: 'html', style: 'bracket', onlyKanji: kanjiOnly });
+    previewEl.style.display   = 'none';
+    htmlSec.style.display     = 'none';
+    document.getElementById('furigana-bracket').textContent = bracketResult.output;
+    bracketSec.style.display  = 'block';
+  }
+
+  // Store HTML output for "Copy HTML" button
+  document.getElementById('copy-html-btn').dataset.html = htmlResult.output;
+
+  resultEl.classList.add('visible');
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'furigana_generator', language: 'en' });
+}
+
+// -- Event listeners
+document.getElementById('generate-btn').addEventListener('click', run);
+document.getElementById('jp-input').addEventListener('input', () => {
+  clearTimeout(window._furiganaTimer);
+  window._furiganaTimer = setTimeout(run, 300);
+});
+document.getElementById('output-format').addEventListener('change', run);
+document.getElementById('opt-kanji-only').addEventListener('change', run);
+
+// -- Clear
+document.getElementById('clear-btn').addEventListener('click', () => {
+  document.getElementById('jp-input').value = '';
+  document.getElementById('furigana-result').classList.remove('visible');
+});
+
+// -- Sample fill
+window.setSample = function(text) {
+  if (!isReady()) return;
+  document.getElementById('jp-input').value = text;
+  run();
+};
+
+// Wire sample buttons
+var sampleTexts = [
+  '\u6771\u4EAC\u306F\u65E5\u672C\u306E\u9996\u90FD\u3067\u3059\u3002',
+  '\u65E5\u672C\u8A9E\u3092\u52C9\u5F37\u3057\u3066\u3044\u307E\u3059\u3002',
+  '\u4ECA\u65E5\u306E\u5929\u6C17\u306F\u6674\u308C\u3067\u3059\u3002'
+];
+document.querySelectorAll('.sample-row button').forEach(function(btn, i) {
+  btn.addEventListener('click', function() { setSample(sampleTexts[i]); });
+});
+
+// -- Copy buttons
+document.getElementById('copy-btn').addEventListener('click', () => {
+  const format    = document.getElementById('output-format').value;
+  const resultEl  = document.getElementById('furigana-result');
+  if (!resultEl.classList.contains('visible')) return;
+
+  let text = '';
+  if (format === 'html') {
+    text = document.getElementById('furigana-code').textContent;
+  } else if (format === 'bracket') {
+    text = document.getElementById('furigana-bracket').textContent;
+  } else {
+    text = document.getElementById('copy-html-btn').dataset.html || '';
+  }
+
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('copy-btn');
+    btn.textContent = 'Copied! \u2713';
+    setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+  });
+});
+
+document.getElementById('copy-html-btn').addEventListener('click', () => {
+  const html = document.getElementById('copy-html-btn').dataset.html || '';
+  if (!html) return;
+  navigator.clipboard.writeText(html).then(() => {
+    const btn = document.getElementById('copy-html-btn');
+    btn.textContent = 'Copied! \u2713';
+    setTimeout(() => { btn.textContent = 'Copy HTML'; }, 2000);
+  });
+});
+</script>
+
+<!-- Lazy ad loader -->
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(function(zone) {
+    var ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(function(z) { observer.observe(z); });
+  }
+});
+</script>
+
+</body>
+</html>

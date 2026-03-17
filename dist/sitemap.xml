@@ -139,6 +139,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Language tools — Phase 3 -->
+  <url>
+    <loc>https://japancalc.com/language-tools/furigana-generator/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Static pages -->
   <url>
     <loc>https://japancalc.com/about/</loc>
