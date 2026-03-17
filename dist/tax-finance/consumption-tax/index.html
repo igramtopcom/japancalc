@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japan Consumption Tax Calculator — 消費税計算 | JapanCalc</title>
+  <meta name="description" content="Placeholder — will be replaced in T-17">
+  <link rel="canonical" href="https://japancalc.com/tax-finance/consumption-tax/">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <style>
+  .rate-toggle {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .rate-option {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .rate-option:has(input:checked) {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+  }
+  .rate-option input[type="radio"] {
+    display: none;
+  }
+  .quick-ref {
+    overflow-x: auto;
+  }
+  </style>
+</head>
+<body>
+
+<!-- NAV PARTIAL (from src/_templates/nav.html) -->
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo">JapanCalc</a>
+
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/language-tools/">Language Tools</a></li>
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <button class="nav-lang-toggle"
+            aria-label="Switch to Japanese"
+            onclick="window.location.href='/ja'+window.location.pathname">
+      日本語
+    </button>
+    <button class="nav-hamburger"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">Consumption Tax Calculator</li>
+  </ol>
+</nav>
+
+<!-- ATF Ad Zone -->
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <!-- AdSense ATF — wired in T-18 -->
+</div>
+
+<!-- PAGE LAYOUT -->
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <!-- Page Header -->
+    <h1>Japan Consumption Tax Calculator</h1>
+    <p class="tool-subtitle">消費税計算ツール — 税込・税抜・消費税額を計算</p>
+    <p class="tool-desc">
+      Calculate Japanese consumption tax (消費税) instantly. Add 10% standard rate
+      or 8% reduced rate tax to any price, or extract the pre-tax price from a
+      tax-inclusive amount. Free, no login required.
+    </p>
+
+    <!-- TOOL INTERFACE -->
+    <div class="tool-box" id="tool-main">
+
+      <!-- Tab Bar -->
+      <div class="tool-tabs" role="tablist">
+        <button class="tool-tab active" role="tab" aria-selected="true"
+                data-panel="panel-add-tax" id="tab-add-tax">Add Tax (税抜 &#x2192; 税込)</button>
+        <button class="tool-tab" role="tab" aria-selected="false"
+                data-panel="panel-remove-tax" id="tab-remove-tax">Remove Tax (税込 &#x2192; 税抜)</button>
+      </div>
+
+      <!-- Tab 1: Add Tax -->
+      <div class="tool-panel active" role="tabpanel" id="panel-add-tax" aria-labelledby="tab-add-tax">
+        <div class="form-group">
+          <label class="form-label" for="tab1-amount">Pre-tax Amount (税抜金額) — &#x00A5;</label>
+          <input type="number" class="form-input" id="tab1-amount" min="0" placeholder="e.g. 1000">
+          <p class="form-error" id="tab1-error"></p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Tax Rate</label>
+          <div class="rate-toggle" role="group" aria-label="Tax rate">
+            <label class="rate-option">
+              <input type="radio" name="tab1-rate" value="standard" checked>
+              <span>10% Standard</span>
+            </label>
+            <label class="rate-option">
+              <input type="radio" name="tab1-rate" value="reduced">
+              <span>8% Reduced</span>
+            </label>
+          </div>
+        </div>
+
+        <div aria-live="polite" aria-atomic="true">
+          <div class="result-box" id="tab1-result">
+            <div class="result-primary" id="tab1-r-inclusive"></div>
+            <div class="result-grid">
+              <div><span class="result-item-label">Pre-tax Amount</span><br><span class="result-item-value" id="tab1-r-pretax"></span></div>
+              <div><span class="result-item-label" id="tab1-r-ratelabel">Tax Amount (10%)</span><br><span class="result-item-value" id="tab1-r-tax"></span></div>
+              <div><span class="result-item-label">Tax-inclusive</span><br><span class="result-item-value" id="tab1-r-total"></span></div>
+            </div>
+            <p class="result-formula"><strong>Formula:</strong> <code id="tab1-r-formula"></code></p>
+            <div class="btn-row">
+              <button class="btn btn-secondary" id="tab1-copy-btn">Copy</button>
+              <button class="btn btn-secondary" id="tab1-share-btn">Share</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Remove Tax -->
+      <div class="tool-panel" role="tabpanel" id="panel-remove-tax" aria-labelledby="tab-remove-tax">
+        <div class="form-group">
+          <label class="form-label" for="tab2-amount">Tax-inclusive Amount (税込金額) — &#x00A5;</label>
+          <input type="number" class="form-input" id="tab2-amount" min="0" placeholder="e.g. 1100">
+          <p class="form-error" id="tab2-error"></p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Tax Rate</label>
+          <div class="rate-toggle" role="group" aria-label="Tax rate">
+            <label class="rate-option">
+              <input type="radio" name="tab2-rate" value="standard" checked>
+              <span>10% Standard</span>
+            </label>
+            <label class="rate-option">
+              <input type="radio" name="tab2-rate" value="reduced">
+              <span>8% Reduced</span>
+            </label>
+          </div>
+        </div>
+
+        <div aria-live="polite" aria-atomic="true">
+          <div class="result-box" id="tab2-result">
+            <div class="result-primary" id="tab2-r-pretax"></div>
+            <div class="result-grid">
+              <div><span class="result-item-label">Tax-inclusive</span><br><span class="result-item-value" id="tab2-r-inclusive"></span></div>
+              <div><span class="result-item-label" id="tab2-r-ratelabel">Tax Amount (10%)</span><br><span class="result-item-value" id="tab2-r-tax"></span></div>
+              <div><span class="result-item-label">Pre-tax Amount</span><br><span class="result-item-value" id="tab2-r-total"></span></div>
+            </div>
+            <p class="result-formula"><strong>Formula:</strong> <code id="tab2-r-formula"></code></p>
+            <div class="btn-row">
+              <button class="btn btn-secondary" id="tab2-copy-btn">Copy</button>
+              <button class="btn btn-secondary" id="tab2-share-btn">Share</button>
+            </div>
+          </div>
+        </div>
+        <p class="text-muted" style="font-size:0.8rem; margin-top:0.5rem;">
+          <small>* Pre-tax amount rounded down (floor) per NTA guidelines.</small>
+        </p>
+      </div>
+
+    </div><!-- /tool-box -->
+
+    <!-- Quick Reference Table -->
+    <h2>Quick Reference: Common Prices with Tax (消費税 早見表)</h2>
+    <div class="quick-ref">
+      <table>
+        <thead>
+          <tr>
+            <th>Pre-tax (税抜)</th>
+            <th>+10% Tax</th>
+            <th>Total (税込)</th>
+            <th>+8% Tax</th>
+            <th>Total (税込)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>&#x00A5;100</td><td>&#x00A5;10</td><td>&#x00A5;110</td><td>&#x00A5;8</td><td>&#x00A5;108</td></tr>
+          <tr><td>&#x00A5;500</td><td>&#x00A5;50</td><td>&#x00A5;550</td><td>&#x00A5;40</td><td>&#x00A5;540</td></tr>
+          <tr><td>&#x00A5;1,000</td><td>&#x00A5;100</td><td>&#x00A5;1,100</td><td>&#x00A5;80</td><td>&#x00A5;1,080</td></tr>
+          <tr><td>&#x00A5;3,000</td><td>&#x00A5;300</td><td>&#x00A5;3,300</td><td>&#x00A5;240</td><td>&#x00A5;3,240</td></tr>
+          <tr><td>&#x00A5;5,000</td><td>&#x00A5;500</td><td>&#x00A5;5,500</td><td>&#x00A5;400</td><td>&#x00A5;5,400</td></tr>
+          <tr><td>&#x00A5;10,000</td><td>&#x00A5;1,000</td><td>&#x00A5;11,000</td><td>&#x00A5;800</td><td>&#x00A5;10,800</td></tr>
+          <tr><td>&#x00A5;30,000</td><td>&#x00A5;3,000</td><td>&#x00A5;33,000</td><td>&#x00A5;2,400</td><td>&#x00A5;32,400</td></tr>
+          <tr><td>&#x00A5;50,000</td><td>&#x00A5;5,000</td><td>&#x00A5;55,000</td><td>&#x00A5;4,000</td><td>&#x00A5;54,000</td></tr>
+          <tr><td>&#x00A5;100,000</td><td>&#x00A5;10,000</td><td>&#x00A5;110,000</td><td>&#x00A5;8,000</td><td>&#x00A5;108,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BTF Ad Zone -->
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <!-- AdSense BTF — wired in T-18 -->
+    </div>
+
+    <!-- SEO Content Placeholder -->
+    <article class="seo-content" id="seo-content">
+      <!-- SEO editorial content — added in T-17 -->
+    </article>
+
+    <!-- FAQ Placeholder -->
+    <section class="faq" id="faq-section"
+      itemscope itemtype="https://schema.org/FAQPage">
+      <!-- FAQ content — added in T-17 -->
+    </section>
+
+    <!-- Related Tools -->
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/date-calendar/era-converter/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4C5;</div>
+          <div class="tool-card-name">Era Date Converter</div>
+          <div class="tool-card-jp">和暦 西暦 変換</div>
+        </a>
+        <a href="/date-calendar/age-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F382;</div>
+          <div class="tool-card-name">Japanese Age Calculator</div>
+          <div class="tool-card-jp">年齢計算</div>
+        </a>
+        <a href="/date-calendar/zodiac/" class="tool-card">
+          <div class="tool-card-icon">&#x1F409;</div>
+          <div class="tool-card-name">Japanese Zodiac Calculator</div>
+          <div class="tool-card-jp">干支 計算</div>
+        </a>
+        <a href="/tax-finance/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4B4;</div>
+          <div class="tool-card-name">All Tax &amp; Finance Tools</div>
+          <div class="tool-card-jp">税金・財務ツール</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <!-- AdSense Sidebar — wired in T-18 -->
+    </div>
+  </aside>
+</div><!-- /page-layout -->
+
+<!-- FOOTER PARTIAL -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/about/">About</a></li>
+      <li><a href="/privacy/">Privacy Policy</a></li>
+      <li><a href="/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">
+      &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
+    </p>
+    <p class="footer-attribution">
+      Tax rates from National Tax Agency Japan.
+    </p>
+    <p class="footer-attribution">Last updated: March 2025</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import { addTax, removeTax, formatJPY, validateAmount } from '/assets/js/jct.js';
+
+// ── State
+const state = {
+  tab1: { amount: '', rate: 'standard' },
+  tab2: { amount: '', rate: 'standard' }
+};
+
+// ── Tab switching
+document.querySelectorAll('.tool-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tool-tab').forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    document.querySelectorAll('.tool-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+  });
+});
+
+// ── Tab 1: Add Tax
+function computeTab1() {
+  const amountStr = document.getElementById('tab1-amount').value;
+  const rate = document.querySelector('input[name="tab1-rate"]:checked').value;
+  const errorEl = document.getElementById('tab1-error');
+  const resultBox = document.getElementById('tab1-result');
+
+  const validation = validateAmount(amountStr);
+  if (amountStr === '') { resultBox.classList.remove('visible'); errorEl.classList.remove('visible'); return; }
+  if (!validation.valid) {
+    errorEl.textContent = validation.error;
+    errorEl.classList.add('visible');
+    resultBox.classList.remove('visible');
+    return;
+  }
+  errorEl.classList.remove('visible');
+
+  const result = addTax(validation.value, rate);
+  document.getElementById('tab1-r-inclusive').textContent = formatJPY(result.inclusive);
+  document.getElementById('tab1-r-pretax').textContent    = formatJPY(result.preTax);
+  document.getElementById('tab1-r-tax').textContent       = formatJPY(result.taxAmount);
+  document.getElementById('tab1-r-ratelabel').textContent = 'Tax Amount (' + result.ratePercent + '%)';
+  document.getElementById('tab1-r-total').textContent     = formatJPY(result.inclusive);
+  document.getElementById('tab1-r-formula').textContent   = result.formula;
+  resultBox.classList.add('visible');
+
+  // Share URL
+  const url = new URL(window.location.href);
+  url.searchParams.set('tab', '1');
+  url.searchParams.set('amount', amountStr);
+  url.searchParams.set('rate', rate);
+  document.getElementById('tab1-share-btn').dataset.url = url.toString();
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'jct_calculator', mode: 'add_tax', language: 'en' });
+}
+
+// ── Tab 2: Remove Tax
+function computeTab2() {
+  const amountStr = document.getElementById('tab2-amount').value;
+  const rate = document.querySelector('input[name="tab2-rate"]:checked').value;
+  const errorEl = document.getElementById('tab2-error');
+  const resultBox = document.getElementById('tab2-result');
+
+  const validation = validateAmount(amountStr);
+  if (amountStr === '') { resultBox.classList.remove('visible'); errorEl.classList.remove('visible'); return; }
+  if (!validation.valid) {
+    errorEl.textContent = validation.error;
+    errorEl.classList.add('visible');
+    resultBox.classList.remove('visible');
+    return;
+  }
+  errorEl.classList.remove('visible');
+
+  const result = removeTax(validation.value, rate);
+  document.getElementById('tab2-r-pretax').textContent    = formatJPY(result.preTax);
+  document.getElementById('tab2-r-inclusive').textContent = formatJPY(result.inclusive);
+  document.getElementById('tab2-r-tax').textContent       = formatJPY(result.taxAmount);
+  document.getElementById('tab2-r-ratelabel').textContent = 'Tax Amount (' + result.ratePercent + '%)';
+  document.getElementById('tab2-r-total').textContent     = formatJPY(result.preTax);
+  document.getElementById('tab2-r-formula').textContent   = result.formula;
+  resultBox.classList.add('visible');
+
+  const url = new URL(window.location.href);
+  url.searchParams.set('tab', '2');
+  url.searchParams.set('amount', amountStr);
+  url.searchParams.set('rate', rate);
+  document.getElementById('tab2-share-btn').dataset.url = url.toString();
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'jct_calculator', mode: 'remove_tax', language: 'en' });
+}
+
+// ── Event listeners
+document.getElementById('tab1-amount').addEventListener('input', computeTab1);
+document.querySelectorAll('input[name="tab1-rate"]').forEach(r => r.addEventListener('change', computeTab1));
+document.getElementById('tab2-amount').addEventListener('input', computeTab2);
+document.querySelectorAll('input[name="tab2-rate"]').forEach(r => r.addEventListener('change', computeTab2));
+
+// ── Copy buttons
+function setupCopy(btnId, getTextFn) {
+  document.getElementById(btnId).addEventListener('click', () => {
+    navigator.clipboard.writeText(getTextFn()).then(() => {
+      const btn = document.getElementById(btnId);
+      const orig = btn.textContent;
+      btn.textContent = 'Copied! \u2713';
+      setTimeout(() => { btn.textContent = orig; }, 2000);
+    });
+  });
+}
+setupCopy('tab1-copy-btn', () => {
+  const inc = document.getElementById('tab1-r-inclusive').textContent;
+  const tax = document.getElementById('tab1-r-tax').textContent;
+  return `${inc} (tax: ${tax})`;
+});
+setupCopy('tab2-copy-btn', () => {
+  const pre = document.getElementById('tab2-r-pretax').textContent;
+  const tax = document.getElementById('tab2-r-tax').textContent;
+  return `${pre} (tax: ${tax})`;
+});
+
+// ── Share buttons
+['tab1-share-btn', 'tab2-share-btn'].forEach(id => {
+  document.getElementById(id).addEventListener('click', () => {
+    const url = document.getElementById(id).dataset.url || window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+      const btn = document.getElementById(id);
+      const orig = btn.textContent;
+      btn.textContent = 'Link copied!';
+      setTimeout(() => { btn.textContent = orig; }, 2000);
+    });
+  });
+});
+
+// ── Init from URL params
+function initFromParams() {
+  const p = new URLSearchParams(window.location.search);
+  const tab   = p.get('tab');
+  const amount = p.get('amount');
+  const rate   = p.get('rate');
+
+  if (tab === '2') {
+    document.querySelectorAll('.tool-tab')[1].click();
+    if (amount) document.getElementById('tab2-amount').value = amount;
+    if (rate) {
+      const r = document.querySelector(`input[name="tab2-rate"][value="${rate}"]`);
+      if (r) r.checked = true;
+    }
+    if (amount) computeTab2();
+  } else {
+    if (amount) document.getElementById('tab1-amount').value = amount;
+    if (rate) {
+      const r = document.querySelector(`input[name="tab1-rate"][value="${rate}"]`);
+      if (r) r.checked = true;
+    }
+    if (amount) computeTab1();
+  }
+}
+initFromParams();
+</script>
+
+<!-- Lazy ad loader (same as era converter) -->
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(zone => {
+    const ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(z => observer.observe(z));
+  }
+});
+</script>
+
+</body>
+</html>
