@@ -214,8 +214,11 @@
   </style>
 <!-- TODO: Remove this block when AdSense is approved — revert when ads go live -->
 <style>
-.ad-zone { min-height: 0 !important; }
-.ad-atf, .ad-btf { margin: 0 !important; }
+.ad-zone {
+  display: none !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+}
 .cards-grid {
   grid-template-columns: repeat(4, 1fr) !important;
 }
@@ -473,7 +476,7 @@
   </section>
 
   <!-- BTF Ad Zone -->
-  <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+  <div class="ad-zone ad-btf" data-lazy-ad="true" style="margin:0;">
     <ins class="adsbygoogle" style="display:block"
          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
          data-ad-slot="SLOT_BTF_HOME"
