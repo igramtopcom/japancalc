@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "fiscalYear": "FY2025",
+    "lastUpdated": "2025-03",
+    "source": "National Tax Agency Japan",
+    "sourceUrl": "https://www.nta.go.jp",
+    "note": "Verify all rates annually. Social insurance rates vary by prefecture and employer size — these are standard Tokyo Metropolitan rates."
+  },
+  "consumptionTax": {
+    "standardRate": 0.10,
+    "reducedRate": 0.08,
+    "reducedRateItems": [
+      "Food and non-alcoholic beverages (takeout and delivery only, not restaurant dining)",
+      "Newspaper subscriptions (twice-weekly or more, contracted)"
+    ],
+    "roundingRule": "floor",
+    "roundingNote": "When extracting pre-tax price from inclusive price: use Math.floor(inclusive / (1 + rate)). When adding tax: use Math.round(preTax * rate).",
+    "effectiveDate": "2019-10-01"
+  },
+  "socialInsurance": {
+    "healthInsuranceRate": 0.0500,
+    "pensionRate": 0.0915,
+    "employmentRate": 0.0060,
+    "pensionBaseCap": 650000,
+    "notes": {
+      "healthInsurance": "Employee share 5.0% — Tokyo rate. Varies by health insurance society.",
+      "pension": "Employee share 9.15% of standard monthly remuneration (標準報酬月額).",
+      "employment": "Employee share 0.6% (general industry).",
+      "pensionBaseCap": "Pension premium is capped at standard monthly remuneration of ¥650,000."
+    }
+  },
+  "incomeTax": {
+    "basicDeduction": 480000,
+    "reconstructionSurtax": 0.021,
+    "reconstructionSurtaxNote": "2.1% of base income tax. Applied until 2037.",
+    "brackets": [
+      { "min": 0,        "max": 1950000,  "rate": 0.05, "deduction": 0 },
+      { "min": 1950000,  "max": 3300000,  "rate": 0.10, "deduction": 97500 },
+      { "min": 3300000,  "max": 6950000,  "rate": 0.20, "deduction": 427500 },
+      { "min": 6950000,  "max": 9000000,  "rate": 0.23, "deduction": 636000 },
+      { "min": 9000000,  "max": 18000000, "rate": 0.33, "deduction": 1536000 },
+      { "min": 18000000, "max": 40000000, "rate": 0.40, "deduction": 2796000 },
+      { "min": 40000000, "max": null,     "rate": 0.45, "deduction": 4796000 }
+    ]
+  },
+  "residentTax": {
+    "rate": 0.10,
+    "perCapita": 5000,
+    "note": "Flat 10% of taxable income plus ¥5,000 per-capita levy (annual). Based on prior year income — calculator uses current year as estimate."
+  },
+  "employmentIncomeDeduction": [
+    { "incomeMax": 1625000,  "deduction": 550000,  "formula": null },
+    { "incomeMax": 1800000,  "deduction": null,     "formula": "income * 0.4 - 100000" },
+    { "incomeMax": 3600000,  "deduction": null,     "formula": "income * 0.3 + 80000" },
+    { "incomeMax": 6600000,  "deduction": null,     "formula": "income * 0.2 + 440000" },
+    { "incomeMax": 8500000,  "deduction": null,     "formula": "income * 0.1 + 1100000" },
+    { "incomeMax": null,     "deduction": 1950000,  "formula": null }
+  ]
+}
