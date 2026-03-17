@@ -502,7 +502,7 @@
       <li class="faq-item" itemscope itemprop="mainEntity"
           itemtype="https://schema.org/Question">
         <div class="faq-question" itemprop="name">
-          What zodiac sign is <span id="faq-zodiac-year">2025</span> in Japan?
+          <span id="faq-zodiac-question">What zodiac sign is 2025 in Japan?</span>
         </div>
         <div class="faq-answer" itemscope itemprop="acceptedAnswer"
              itemtype="https://schema.org/Answer">
@@ -566,8 +566,8 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
   var el = document.getElementById('faq-zodiac-answer');
   if (!el) return;
   var year   = new Date().getFullYear();
-  var qEl = document.getElementById('faq-zodiac-year');
-  if (qEl) qEl.textContent = year;
+  var qEl = document.getElementById('faq-zodiac-question');
+  if (qEl) qEl.textContent = 'What zodiac sign is ' + year + ' in Japan?';
   var animal = ZODIAC[year % 12];
   el.textContent =
     year + ' is the Year of the ' + animal.en + ' (' + animal.kanji + '\u5E74) in the Japanese zodiac. ' +
