@@ -4,9 +4,119 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Japan Consumption Tax Calculator — 消費税計算 | JapanCalc</title>
-  <meta name="description" content="Placeholder — will be replaced in T-17">
+  <meta name="description" content="Calculate Japanese consumption tax instantly. Add or remove 10% standard rate or 8% reduced rate (食品・新聞). Free 消費税計算ツール — no login required.">
   <link rel="canonical" href="https://japancalc.com/tax-finance/consumption-tax/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/tax-finance/consumption-tax/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/tax-finance/consumption-tax/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/tax-finance/consumption-tax/">
+  <meta property="og:title"       content="Japan Consumption Tax Calculator — 消費税計算 | JapanCalc">
+  <meta property="og:description" content="Add or remove Japanese consumption tax instantly. 10% standard, 8% reduced rate. Free, no login.">
+  <meta property="og:url"         content="https://japancalc.com/tax-finance/consumption-tax/">
+  <meta property="og:image"       content="https://japancalc.com/assets/og/consumption-tax.png">
+  <meta property="og:type"        content="website">
+  <meta name="robots" content="index, follow">
   <link rel="stylesheet" href="/assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Japan Consumption Tax Calculator — 消費税計算",
+    "url": "https://japancalc.com/tax-finance/consumption-tax/",
+    "description": "Calculate Japanese consumption tax instantly. Add or remove 10% standard rate or 8% reduced rate from any price. Free, browser-based, no login required.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "JapanCalc",
+      "url": "https://japancalc.com"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://japancalc.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tax & Finance",
+        "item": "https://japancalc.com/tax-finance/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Japan Consumption Tax Calculator",
+        "item": "https://japancalc.com/tax-finance/consumption-tax/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Japan's consumption tax rate in 2025?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Japan's standard consumption tax rate is 10% as of 2025. A reduced rate of 8% applies to food and non-alcoholic beverages (takeout and delivery only, not restaurant dining) and certain newspaper subscriptions. The consumption tax (消費税) is similar to VAT and is included in the shelf price at most Japanese retailers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate tax-inclusive price in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To calculate the tax-inclusive price in Japan, multiply the pre-tax price by 1.10 for the standard 10% rate, or by 1.08 for the reduced 8% rate. For example, ¥1,000 × 1.10 = ¥1,100 (tax-inclusive). The tax amount alone is ¥100. Use the consumption tax calculator above to compute any amount instantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I remove consumption tax from a price in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To extract the pre-tax price from a tax-inclusive amount, divide by 1.10 for the standard rate (or 1.08 for the reduced rate), then round down (floor) per National Tax Agency guidelines. For example, ¥1,100 ÷ 1.10 = ¥1,000 pre-tax. The Remove Tax tab in the calculator above handles this automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What items have the 8% reduced consumption tax rate in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 8% reduced consumption tax rate in Japan applies to food and non-alcoholic beverages purchased for takeout or delivery (not restaurant or cafe dining-in), and to newspaper subscriptions issued at least twice a week under a contract. Alcohol, restaurant meals, and most other goods and services are subject to the standard 10% rate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When did Japan's consumption tax become 10%?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Japan's consumption tax increased to 10% on October 1, 2019. The tax was originally introduced at 3% in 1989, raised to 5% in 1997, increased to 8% in April 2014, and raised to the current 10% in October 2019. At the same time, the 8% reduced rate was introduced for food and certain newspapers."
+        }
+      }
+    ]
+  }
+  </script>
 
   <style>
   .rate-toggle {
@@ -242,13 +352,145 @@
 
     <!-- SEO Content Placeholder -->
     <article class="seo-content" id="seo-content">
-      <!-- SEO editorial content — added in T-17 -->
+      <h2>How to Use the Japan Consumption Tax Calculator</h2>
+      <p>
+        This consumption tax calculator (消費税計算ツール) handles both directions of
+        Japanese tax calculation. To add tax to a pre-tax price, use the
+        <strong>Add Tax</strong> tab — enter the price before tax and select either
+        the 10% standard rate or the 8% reduced rate. The calculator instantly shows
+        the tax amount and the final tax-inclusive price (税込価格).
+      </p>
+      <p>
+        To work backwards from a tax-inclusive price, use the <strong>Remove Tax</strong>
+        tab. Enter the price as displayed on the receipt or price tag, and the
+        calculator extracts the original pre-tax amount using the National Tax Agency's
+        official rounding method (round down / floor). This is useful when you need
+        to verify the breakdown of a price you have already paid.
+      </p>
+
+      <h2>Japan Consumption Tax Rates Explained (消費税率)</h2>
+      <p>
+        Japan currently has two consumption tax rates. The <strong>standard rate of
+        10%</strong> applies to the vast majority of goods and services — clothing,
+        electronics, household goods, restaurant meals, and most retail purchases.
+        The <strong>reduced rate of 8%</strong> applies specifically to food and
+        non-alcoholic beverages sold for takeout or delivery (not for dining in),
+        and to qualifying newspaper subscriptions.
+      </p>
+      <p>
+        A practical example: buying a bento box at a convenience store to take away
+        is taxed at 8%, but eating the same meal at a table inside the store is
+        taxed at 10%. Alcohol in all forms is subject to the standard 10% rate
+        regardless of where it is consumed.
+      </p>
+      <p>
+        Japan's consumption tax (消費税) was introduced at 3% in 1989, rose to 5%
+        in 1997, to 8% in April 2014, and to the current 10% in October 2019. Tax
+        is generally included in displayed prices (<em>zei-komi</em> / 税込) at
+        Japanese retailers, though some business-to-business transactions show
+        pre-tax prices (<em>zei-nuki</em> / 税抜).
+      </p>
+      <p>
+        <small>
+          Tax rates sourced from the
+          <a href="https://www.nta.go.jp" target="_blank" rel="noopener">
+            National Tax Agency Japan (NTA)</a>.
+        </small>
+      </p>
     </article>
 
     <!-- FAQ Placeholder -->
     <section class="faq" id="faq-section"
       itemscope itemtype="https://schema.org/FAQPage">
-      <!-- FAQ content — added in T-17 -->
+      <h2>Frequently Asked Questions</h2>
+      <ul class="faq-list">
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What is Japan's consumption tax rate in 2025?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              Japan's standard consumption tax rate is 10% as of 2025. A reduced
+              rate of 8% applies to food and non-alcoholic beverages (takeout and
+              delivery only, not restaurant dining) and certain newspaper
+              subscriptions. The consumption tax (消費税) is similar to VAT and is
+              included in the shelf price at most Japanese retailers.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            How do I calculate tax-inclusive price in Japan?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              To calculate the tax-inclusive price in Japan, multiply the pre-tax
+              price by 1.10 for the standard 10% rate, or by 1.08 for the reduced
+              8% rate. For example, ¥1,000 × 1.10 = ¥1,100 (tax-inclusive). The
+              tax amount alone is ¥100. Use the consumption tax calculator above
+              to compute any amount instantly.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            How do I remove consumption tax from a price in Japan?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              To extract the pre-tax price from a tax-inclusive amount, divide by
+              1.10 for the standard rate (or 1.08 for the reduced rate), then
+              round down (floor) per National Tax Agency guidelines. For example,
+              ¥1,100 ÷ 1.10 = ¥1,000 pre-tax. The Remove Tax tab in the
+              calculator above handles this automatically.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What items have the 8% reduced consumption tax rate in Japan?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              The 8% reduced consumption tax rate in Japan applies to food and
+              non-alcoholic beverages purchased for takeout or delivery (not
+              restaurant or cafe dining-in), and to newspaper subscriptions issued
+              at least twice a week under a contract. Alcohol, restaurant meals,
+              and most other goods and services are subject to the standard 10% rate.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            When did Japan's consumption tax become 10%?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              Japan's consumption tax increased to 10% on October 1, 2019. The
+              tax was originally introduced at 3% in 1989, raised to 5% in 1997,
+              increased to 8% in April 2014, and raised to the current 10% in
+              October 2019. At the same time, the 8% reduced rate was introduced
+              for food and certain newspapers.
+            </span>
+          </div>
+        </li>
+
+      </ul>
     </section>
 
     <!-- Related Tools -->
@@ -300,10 +542,7 @@
     <p class="footer-copy">
       &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
     </p>
-    <p class="footer-attribution">
-      Tax rates from National Tax Agency Japan.
-    </p>
-    <p class="footer-attribution">Last updated: March 2025</p>
+    <p class="footer-attribution">Tax rates from National Tax Agency Japan. Last updated: March 2025</p>
   </div>
 </footer>
 
