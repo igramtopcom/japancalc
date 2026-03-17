@@ -104,6 +104,40 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://japancalc.com/tax-finance/salary-calculator/</loc>
+    <lastmod>2025-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://japancalc.com/tax-finance/work-hours/</loc>
+    <lastmod>2025-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://japancalc.com/tax-finance/withholding-tax/</loc>
+    <lastmod>2025-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Language tools -->
+  <url>
+    <loc>https://japancalc.com/language-tools/romaji-converter/</loc>
+    <lastmod>2025-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Date tools — Phase 2 -->
+  <url>
+    <loc>https://japancalc.com/date-calendar/holiday-checker/</loc>
+    <lastmod>2025-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Static pages -->
   <url>
