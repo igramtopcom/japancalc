@@ -4,9 +4,119 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Japanese Era Date Converter — 和暦 西暦 変換 | JapanCalc</title>
-  <meta name="description" content="Placeholder — will be replaced in T-06">
+  <meta name="description" content="Convert Japanese era years to Western calendar instantly. Supports Reiwa (令和), Heisei (平成), Showa (昭和) and more. Free era date converter — no login required.">
   <link rel="canonical" href="https://japancalc.com/date-calendar/era-converter/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/date-calendar/era-converter/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/date-calendar/era-converter/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/date-calendar/era-converter/">
+  <meta property="og:title"       content="Japanese Era Date Converter — 和暦 西暦 変換 | JapanCalc">
+  <meta property="og:description" content="Convert Japanese era years to Western calendar instantly. Supports Reiwa, Heisei, Showa and more. Free, no login.">
+  <meta property="og:url"         content="https://japancalc.com/date-calendar/era-converter/">
+  <meta property="og:image"       content="https://japancalc.com/assets/og/era-converter.png">
+  <meta property="og:type"        content="website">
+  <meta name="robots" content="index, follow">
   <link rel="stylesheet" href="/assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Japanese Era Date Converter",
+    "url": "https://japancalc.com/date-calendar/era-converter/",
+    "description": "Convert Japanese era years (Reiwa, Heisei, Showa, Taisho, Meiji) to Western calendar dates instantly. Free, browser-based, no login required.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "JapanCalc",
+      "url": "https://japancalc.com"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://japancalc.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Date & Calendar",
+        "item": "https://japancalc.com/date-calendar/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Japanese Era Date Converter",
+        "item": "https://japancalc.com/date-calendar/era-converter/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What year is Reiwa 7 in the Western calendar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Reiwa 7 is 2025 in the Western (Gregorian) calendar. The Reiwa era began on May 1, 2019, so to convert any Reiwa year to a Western year, simply add 2018. For example: Reiwa 7 + 2018 = 2025. Use the Japanese era date converter above to convert any Reiwa date instantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the current Japanese era?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The current Japanese era is Reiwa (令和), which began on May 1, 2019, when Emperor Naruhito ascended to the Chrysanthemum Throne. The word Reiwa means 'Beautiful Harmony'. As of 2025, Japan is in Reiwa 7 (令和7年)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I convert Showa to Western year?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To convert a Showa year to a Western year, add 1925 to the Showa year number. For example, Showa 64 = 1925 + 64 = 1989. The Showa era ran from December 25, 1926 to January 7, 1989, spanning the reign of Emperor Hirohito. Use the era converter above for instant conversions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What year did the Heisei era start and end?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Heisei era (平成) started on January 8, 1989, the day after Emperor Hirohito passed away, and ended on April 30, 2019, when Emperor Akihito abdicated. Heisei lasted 31 years. To convert Heisei to Western year, add 1988 to the Heisei year number."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is 元年 (gannen) in Japanese era dates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "元年 (gannen) means 'year one' — the first year of a new Japanese era. When a new era begins, the first year is written as 元年 rather than 1年. For example, the first year of Reiwa is written 令和元年, which corresponds to 2019. This converter accepts both '元' and '1' as inputs for the first year of any era."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -83,14 +193,6 @@
       Gregorian calendar. Supports Reiwa (令和), Heisei (平成), Showa (昭和),
       Taisho (大正), and Meiji (明治). Free, no login required.
     </p>
-
-    <!-- Keyword chips -->
-    <div class="chip-row">
-      <span class="chip chip-primary">era converter</span>
-      <span class="chip">和暦 西暦 変換</span>
-      <span class="chip">令和 西暦</span>
-      <span class="chip">KD 8</span>
-    </div>
 
     <!-- TOOL INTERFACE -->
     <div class="tool-box" id="tool-main">
@@ -231,13 +333,124 @@
 
     <!-- SEO Content Placeholder -->
     <article class="seo-content" id="seo-content">
-      <!-- SEO editorial content — added in T-06 -->
+      <h2>How to Use the Japanese Era Date Converter</h2>
+      <p>
+        The Japanese era date converter lets you switch between the traditional
+        Japanese calendar system (和暦, <em>wareki</em>) and the Western Gregorian
+        calendar in seconds. To convert an era year to a Western year, select the
+        era name from the dropdown — Reiwa (令和), Heisei (平成), Showa (昭和),
+        Taisho (大正), or Meiji (明治) — then enter the era year number. The result
+        appears instantly, with the full Japanese notation and English equivalent.
+      </p>
+      <p>
+        To go the other direction, use the <strong>Gregorian → Era</strong> tab.
+        Enter a Western year (and optionally a month and day) to find the
+        corresponding Japanese era year. For dates in transition years like 2019
+        or 1989, entering the month and day ensures you get the correct era.
+      </p>
+
+      <h2>Why Japan Uses the Era Calendar System (元号)</h2>
+      <p>
+        Japan's era system, known as <em>gengō</em> (元号), has been in use for
+        over 1,300 years. Each era is named at the start of a new emperor's reign
+        and carries a meaning — Reiwa (令和) means "Beautiful Harmony", Heisei
+        (平成) means "Achieving Peace", and Showa (昭和) means "Radiant Japan".
+      </p>
+      <p>
+        The era calendar remains in everyday use across Japan today. Government
+        documents, official paperwork, bank forms, and driver's licenses all use
+        the Japanese era year alongside or instead of the Western year. For foreign
+        residents and visitors, knowing how to convert between the two systems is
+        a practical necessity. The current era, Reiwa, began on May 1, 2019, and
+        all dates from that day onward are counted from Reiwa 1 (令和元年).
+      </p>
+      <p>
+        <small>
+          Era date information sourced from the
+          <a href="https://www8.cao.go.jp/chosei/gengou/gaiyou.html"
+             target="_blank" rel="noopener">Japan Cabinet Office</a>.
+        </small>
+      </p>
     </article>
 
     <!-- FAQ Placeholder -->
     <section class="faq" id="faq-section"
       itemscope itemtype="https://schema.org/FAQPage">
-      <!-- FAQ content — added in T-06 -->
+      <h2>Frequently Asked Questions</h2>
+      <ul class="faq-list">
+
+        <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What year is Reiwa 7 in the Western calendar?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              Reiwa 7 is 2025 in the Western (Gregorian) calendar. The Reiwa era
+              began on May 1, 2019, so to convert any Reiwa year to a Western year,
+              simply add 2018. For example: Reiwa 7 + 2018 = 2025. Use the Japanese
+              era date converter above to convert any Reiwa date instantly.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What is the current Japanese era?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              The current Japanese era is Reiwa (令和), which began on May 1, 2019,
+              when Emperor Naruhito ascended to the Chrysanthemum Throne. The word
+              Reiwa means "Beautiful Harmony". As of 2025, Japan is in Reiwa 7
+              (令和7年).
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            How do I convert Showa to Western year?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              To convert a Showa year to a Western year, add 1925 to the Showa year
+              number. For example, Showa 64 = 1925 + 64 = 1989. The Showa era ran
+              from December 25, 1926 to January 7, 1989, spanning the reign of
+              Emperor Hirohito. Use the era converter above for instant conversions.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What year did the Heisei era start and end?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              The Heisei era (平成) started on January 8, 1989, the day after Emperor
+              Hirohito passed away, and ended on April 30, 2019, when Emperor Akihito
+              abdicated. Heisei lasted 31 years. To convert Heisei to Western year,
+              add 1988 to the Heisei year number.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What is 元年 (gannen) in Japanese era dates?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              元年 (gannen) means "year one" — the first year of a new Japanese era.
+              When a new era begins, the first year is written as 元年 rather than
+              1年. For example, the first year of Reiwa is written 令和元年, which
+              corresponds to 2019. This converter accepts both "元" and "1" as inputs
+              for the first year of any era.
+            </span>
+          </div>
+        </li>
+
+      </ul>
     </section>
 
     <!-- Related Tools -->
@@ -293,6 +506,7 @@
       Date data sourced from Japan Cabinet Office.
       Tax rates from National Tax Agency Japan.
     </p>
+    <p class="footer-attribution">Last updated: March 2025</p>
   </div>
 </footer>
 
