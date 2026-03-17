@@ -117,6 +117,12 @@
     ]
   }
   </script>
+
+  <!-- Google AdSense — async, non-blocking -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous">
+  </script>
 </head>
 <body>
 
@@ -178,7 +184,13 @@
 
 <!-- ATF Ad Zone -->
 <div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
-  <!-- AdSense ATF — wired in T-07 -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_ERA"
+       data-ad-format="auto"
+       data-full-width-responsive="true">
+  </ins>
 </div>
 
 <!-- PAGE LAYOUT -->
@@ -328,7 +340,13 @@
 
     <!-- BTF Ad Zone -->
     <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
-      <!-- AdSense BTF — wired in T-07 -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_ERA"
+           data-ad-format="auto"
+           data-full-width-responsive="true">
+      </ins>
     </div>
 
     <!-- SEO Content Placeholder -->
@@ -485,7 +503,12 @@
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
-      <!-- AdSense Sidebar — wired in T-07 -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_ERA"
+           data-ad-format="auto">
+      </ins>
     </div>
   </aside>
 </div><!-- /page-layout -->
@@ -747,6 +770,30 @@ document.getElementById('tab2-convert').addEventListener('click', computeTab2);
     if (p.get('year')) computeTab1();
   }
 })();
+</script>
+
+<script defer>
+/* ads.js — inline until build pipeline extracts it */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(zone => {
+    const ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(z => observer.observe(z));
+  }
+});
 </script>
 
 </body>
