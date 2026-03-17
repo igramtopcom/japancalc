@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://japancalc.com/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Category pages -->
+  <url>
+    <loc>https://japancalc.com/date-calendar/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://japancalc.com/tax-finance/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://japancalc.com/language-tools/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Era converter — main -->
+  <url>
+    <loc>https://japancalc.com/date-calendar/era-converter/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Era converter — specific-year subpages -->
+  <url>
+    <loc>https://japancalc.com/date-calendar/era-converter/reiwa-7/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://japancalc.com/date-calendar/era-converter/reiwa-6/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://japancalc.com/date-calendar/era-converter/reiwa-5/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://japancalc.com/date-calendar/era-converter/reiwa-4/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://japancalc.com/date-calendar/era-converter/reiwa-3/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Era converter — dedicated era pages -->
+  <url>
+    <loc>https://japancalc.com/date-calendar/era-converter/showa/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://japancalc.com/date-calendar/era-converter/heisei/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Other date tools -->
+  <url>
+    <loc>https://japancalc.com/date-calendar/age-calculator/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://japancalc.com/date-calendar/zodiac/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Tax tools -->
+  <url>
+    <loc>https://japancalc.com/tax-finance/consumption-tax/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Static pages -->
+  <url>
+    <loc>https://japancalc.com/about/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://japancalc.com/privacy/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://japancalc.com/terms/</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
