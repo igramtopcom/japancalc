@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "lastUpdated": "2025-03",
+    "source": "Japan Cabinet Office",
+    "sourceUrl": "https://www8.cao.go.jp/chosei/gengou/gaiyou.html",
+    "currentEraId": "reiwa",
+    "note": "endDate is the last day the era was active. startDate is the first day the new era began."
+  },
+  "eras": [
+    {
+      "id": "reiwa",
+      "kanji": "令和",
+      "romaji": "Reiwa",
+      "english": "Beautiful Harmony",
+      "startGregorian": 2019,
+      "startDate": "2019-05-01",
+      "endDate": null,
+      "offset": 2018,
+      "gannenYear": 1,
+      "active": true
+    },
+    {
+      "id": "heisei",
+      "kanji": "平成",
+      "romaji": "Heisei",
+      "english": "Achieving Peace",
+      "startGregorian": 1989,
+      "startDate": "1989-01-08",
+      "endDate": "2019-04-30",
+      "offset": 1988,
+      "gannenYear": 1,
+      "active": false
+    },
+    {
+      "id": "showa",
+      "kanji": "昭和",
+      "romaji": "Showa",
+      "english": "Radiant Japan",
+      "startGregorian": 1926,
+      "startDate": "1926-12-25",
+      "endDate": "1989-01-07",
+      "offset": 1925,
+      "gannenYear": 1,
+      "active": false
+    },
+    {
+      "id": "taisho",
+      "kanji": "大正",
+      "romaji": "Taisho",
+      "english": "Great Righteousness",
+      "startGregorian": 1912,
+      "startDate": "1912-07-30",
+      "endDate": "1926-12-24",
+      "offset": 1911,
+      "gannenYear": 1,
+      "active": false
+    },
+    {
+      "id": "meiji",
+      "kanji": "明治",
+      "romaji": "Meiji",
+      "english": "Enlightened Rule",
+      "startGregorian": 1868,
+      "startDate": "1868-01-25",
+      "endDate": "1912-07-29",
+      "offset": 1867,
+      "gannenYear": 1,
+      "active": false
+    }
+  ]
+}
