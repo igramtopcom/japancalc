@@ -650,6 +650,13 @@ if (p.get('year')) {
   document.querySelectorAll('.tool-tab')[1].click();
   document.getElementById('dob-input').value = p.get('dob');
   renderResult(getZodiacByDOB(p.get('dob')));
+} else {
+  // Default to current year
+  const yearInput = document.getElementById('year-input');
+  if (yearInput && !yearInput.value) {
+    yearInput.value = new Date().getFullYear();
+    renderResult(getZodiacByYear(new Date().getFullYear()));
+  }
 }
 </script>
 

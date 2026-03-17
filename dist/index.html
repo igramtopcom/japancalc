@@ -506,13 +506,7 @@
         </div>
         <div class="faq-answer" itemscope itemprop="acceptedAnswer"
              itemtype="https://schema.org/Answer">
-          <span itemprop="text">
-            2025 is the Year of the Snake (巳年) in the Japanese zodiac.
-            The Japanese zodiac uses a 12-year cycle with animals including
-            Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey,
-            Rooster, Dog, and Pig. Use the Japanese zodiac calculator on
-            JapanCalc to find any year's sign.
-          </span>
+          <p id="faq-zodiac-answer" itemprop="text"></p>
         </div>
       </li>
 
@@ -526,7 +520,7 @@
           <span itemprop="text">
             The current Japanese era is Reiwa (令和), which began on May 1,
             2019, when Emperor Naruhito ascended to the Chrysanthemum
-            Throne. As of 2025, Japan is in Reiwa 7 (令和7年). Use the free
+            Throne. <span id="faq-era-current"></span> Use the free
             era date converter on JapanCalc to convert any Japanese era
             date to Western calendar.
           </span>
@@ -556,6 +550,38 @@
 
 <script>
 document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+
+<script>
+// Fix 2: Dynamic zodiac FAQ answer
+(function updateZodiacFAQ() {
+  var ZODIAC = [
+    { en: 'Monkey',  kanji: '申' }, { en: 'Rooster', kanji: '酉' },
+    { en: 'Dog',     kanji: '戌' }, { en: 'Pig',     kanji: '亥' },
+    { en: 'Rat',     kanji: '子' }, { en: 'Ox',      kanji: '丑' },
+    { en: 'Tiger',   kanji: '寅' }, { en: 'Rabbit',  kanji: '卯' },
+    { en: 'Dragon',  kanji: '辰' }, { en: 'Snake',   kanji: '巳' },
+    { en: 'Horse',   kanji: '午' }, { en: 'Goat',    kanji: '未' }
+  ];
+  var el = document.getElementById('faq-zodiac-answer');
+  if (!el) return;
+  var year   = new Date().getFullYear();
+  var animal = ZODIAC[year % 12];
+  el.textContent =
+    year + ' is the Year of the ' + animal.en + ' (' + animal.kanji + '\u5E74) in the Japanese zodiac. ' +
+    'The Japanese zodiac uses a 12-year cycle with animals including Rat, Ox, Tiger, Rabbit, ' +
+    'Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, and Pig. ' +
+    'Use the Japanese zodiac calculator on JapanCalc to find any year\'s sign.';
+})();
+
+// Fix 3: Dynamic current era FAQ answer
+(function updateEraFAQ() {
+  var el = document.getElementById('faq-era-current');
+  if (!el) return;
+  var year    = new Date().getFullYear();
+  var reiwaYr = year - 2018;
+  el.textContent = 'As of ' + year + ', Japan is in Reiwa ' + reiwaYr + ' (\u4EE4\u548C' + reiwaYr + '\u5E74).';
+})();
 </script>
 
 <script>

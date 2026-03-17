@@ -520,6 +520,7 @@
         Costs in major cities (Tokyo, Osaka, Kyoto) tend to be higher than
         regional Japan. Exchange rates are indicative only &#x2014; check current
         rates before travel using a reliable financial source.
+        <span id="fx-stale-warning" style="display:none; color:var(--color-warning);"></span>
       </p>
     </article>
 
@@ -604,6 +605,18 @@
 </footer>
 
 <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function checkRateStaleness() {
+  var el = document.getElementById('fx-stale-warning');
+  if (!el) return;
+  var now = new Date();
+  var monthsOld = (now.getFullYear() - 2025) * 12 + (now.getMonth() + 1 - 3);
+  if (monthsOld > 12) {
+    el.textContent = ' Exchange rates may be outdated \u2014 verify before travel.';
+    el.style.display = 'inline';
+  }
+})();
+</script>
 <script>
 (function() {
   var btn = document.querySelector('.nav-hamburger');

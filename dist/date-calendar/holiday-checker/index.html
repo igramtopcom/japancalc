@@ -309,6 +309,10 @@
             <option value="2024">2024</option>
             <option value="2023">2023</option>
           </select>
+          <p class="text-muted" style="font-size:0.8rem; margin-top:0.25rem;">
+            Holiday data available: 2023–2026.
+            <span id="holiday-data-note"></span>
+          </p>
         </div>
         <div class="form-group">
           <label class="form-label" for="month-month">Month</label>
@@ -500,6 +504,17 @@
 </footer>
 
 <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function checkHolidayDataRange() {
+  var el = document.getElementById('holiday-data-note');
+  if (!el) return;
+  var year = new Date().getFullYear();
+  if (year > 2026) {
+    el.textContent = ' \u26A0 Data for ' + year + ' not yet available \u2014 check back soon.';
+    el.style.color = 'var(--color-warning)';
+  }
+})();
+</script>
 <script>
 (function() {
   var btn = document.querySelector('.nav-hamburger');

@@ -338,13 +338,30 @@
           <tr><td>令和4年</td><td>2022</td><td></td></tr>
           <tr><td>令和5年</td><td>2023</td><td></td></tr>
           <tr><td>令和6年</td><td>2024</td><td></td></tr>
-          <tr><td>令和7年</td><td>2025</td><td>Current year</td></tr>
+          <tr><td>令和7年</td><td>2025</td><td></td></tr>
           <tr><td>令和8年</td><td>2026</td><td></td></tr>
           <tr><td>令和9年</td><td>2027</td><td></td></tr>
           <tr><td>令和10年</td><td>2028</td><td></td></tr>
         </tbody>
       </table>
     </div>
+
+    <script>
+    (function markCurrentReiwaYear() {
+      var currentYear = new Date().getFullYear();
+      var cells = document.querySelectorAll('.quick-ref table td');
+      cells.forEach(function(td) {
+        if (td.textContent.trim() === String(currentYear)) {
+          var row  = td.closest('tr');
+          var note = row ? row.querySelector('td:last-child') : null;
+          if (note) {
+            note.textContent = 'Current year';
+            row.style.fontWeight = '600';
+          }
+        }
+      });
+    })();
+    </script>
 
     <!-- BTF Ad Zone -->
     <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
