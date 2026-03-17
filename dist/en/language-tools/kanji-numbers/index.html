@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanji Number Converter: 漢数字変換 Arabic to Kanji | JapanCalc</title>
+  <meta name="description" content="Convert numbers to Japanese kanji (漢数字) and back. Supports standard kanji, formal daiji (大字) for documents, and mixed notation. Free 漢数字変換ツール.">
+  <link rel="canonical" href="https://japancalc.com/en/language-tools/kanji-numbers/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/language-tools/kanji-numbers/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/language-tools/kanji-numbers/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/language-tools/kanji-numbers/">
+  <meta property="og:title"       content="Kanji Number Converter: 漢数字変換 Arabic to Kanji | JapanCalc">
+  <meta property="og:description" content="Convert numbers to Japanese kanji (漢数字) and back. Supports standard kanji, formal daiji (大字) for documents, and mixed notation. Free 漢数字変換ツール.">
+  <meta property="og:url"         content="https://japancalc.com/en/language-tools/kanji-numbers/">
+  <meta property="og:type"        content="website">
+  <meta name="robots" content="index, follow">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Kanji Number Converter \u2014 \u6f22\u6570\u5b57\u5909\u63db",
+    "url": "https://japancalc.com/en/language-tools/kanji-numbers/",
+    "description": "Convert Arabic numbers to Japanese kanji notation (\u6f22\u6570\u5b57) and back. Supports standard kanji, formal daiji for legal documents, and mixed notation. Free, browser-based.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",
+        "item": "https://japancalc.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Language Tools",
+        "item": "https://japancalc.com/en/language-tools/" },
+      { "@type": "ListItem", "position": 3, "name": "Kanji Number Converter",
+        "item": "https://japancalc.com/en/language-tools/kanji-numbers/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you write numbers in Japanese kanji?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Japanese numbers use kanji characters: \u4e00 (1), \u4e8c (2), \u4e09 (3), \u56db (4), \u4e94 (5), \u516d (6), \u4e03 (7), \u516b (8), \u4e5d (9), \u5341 (10), \u767e (100), \u5343 (1,000), \u4e07 (10,000), \u5104 (100,000,000). Larger numbers are formed by combining these: \u5341\u4e00 (11), \u767e\u4e8c\u5341\u4e09 (123), \u5343\u4e8c\u767e\u4e09\u5341\u56db (1,234), \u4e00\u4e07 (10,000). Note that \u5341, \u767e, and \u5343 do not need a leading \u4e00 \u2014 just \u5341 not \u4e00\u5341."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is daiji (\u5927\u5b57) and when is it used?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Daiji (\u5927\u5b57) are formal kanji numerals used in legal and financial documents in Japan to prevent tampering or fraud. The daiji characters are: \u58f1 (1), \u5f10 (2), \u53c2 (3), \u56db (4), \u4f0d (5), \u62fe (10), \u767e (100), \u5343 (1,000), \u4e07 (10,000). They are used on checks (\u5c0f\u5207\u624b), promissory notes, contracts, and official government documents. The converter above can output numbers in daiji format."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between \u4e07 and \u5104?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In the Japanese number system, \u4e07 (man) represents 10,000 (ten thousand) and \u5104 (oku) represents 100,000,000 (one hundred million). Unlike the Western system which groups by thousands (thousand, million, billion), Japanese groups by ten-thousands: \u4e00\u4e07 = 10,000; \u5341\u4e07 = 100,000; \u767e\u4e07 = 1,000,000; \u4e00\u5343\u4e07 = 10,000,000; \u4e00\u5104 = 100,000,000."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you read large numbers in Japanese?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Large Japanese numbers are read in groups of four digits using the units \u4e07 (10,000), \u5104 (100 million), and \u5146 (1 trillion). For example: 12,345 is read as \u4e00\u4e07\u4e8c\u5343\u4e09\u767e\u56db\u5341\u4e94 (ichi-man ni-sen san-byaku yon-juu go); 100,000,000 is \u4e00\u5104 (ichi-oku). The key difference from English is that Japanese counts in groups of 10,000 rather than 1,000."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is mixed kanji notation (\u6df7\u5408\u8868\u8a18)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mixed notation (\u6df7\u5408\u8868\u8a18) combines Arabic numerals with kanji unit markers for readability in everyday Japanese text. For example, 12,345 is written as 1\u4e072345 and 100,000,000 as 1\u5104. This is commonly used in Japanese newspapers, business documents, and everyday writing where fully written kanji numbers would be harder to read at a glance."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <style>
+  .rate-toggle {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .rate-option {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .rate-option:has(input:checked) {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+  }
+  .rate-option input[type="radio"] {
+    display: none;
+  }
+  .kanji-primary {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    word-break: break-all;
+  }
+  .kanji-reading {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-sans);
+    margin-bottom: 1rem;
+  }
+  .kanji-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 0.4rem 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .kanji-row-label { color: var(--color-text-muted); }
+  .kanji-row-value { font-family: var(--font-mono); font-weight: 500; word-break: break-all; }
+  .quick-ref { overflow-x: auto; }
+  @media (max-width: 600px) {
+    .kanji-primary { font-size: 1.8rem; }
+    .kanji-grid { grid-template-columns: 120px 1fr; gap: 0.3rem 0.5rem; font-size: 0.85rem; }
+  }
+  </style>
+</head>
+<body>
+
+<!-- NAV PARTIAL -->
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/en/" class="nav-logo">JapanCalc</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
+            onclick="window.location.href=window.location.pathname.replace('/en/','/')">&#x65E5;&#x672C;&#x8A9E;</button>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/en/">Home</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">Kanji Number Converter</li>
+  </ol>
+</nav>
+
+<!-- ATF Ad Zone -->
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_KANJI"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<!-- PAGE LAYOUT -->
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>Kanji Number Converter &#x2014; &#x6F22;&#x6570;&#x5B57;&#x5909;&#x63DB;</h1>
+    <p class="tool-subtitle">&#x6F22;&#x6570;&#x5B57;&#x5909;&#x63DB;&#x30C4;&#x30FC;&#x30EB; &#x2014; Convert between Arabic numbers and Japanese kanji</p>
+    <p class="tool-desc">
+      Convert Arabic numbers to Japanese kanji notation (&#x6F22;&#x6570;&#x5B57;) and back.
+      Supports standard kanji, formal daiji (&#x5927;&#x5B57;) for legal and financial
+      documents, and mixed notation. Free, no login required.
+    </p>
+
+    <!-- TOOL INTERFACE -->
+    <div class="tool-box" id="tool-main">
+
+      <!-- Tab Bar -->
+      <div class="tool-tabs" role="tablist">
+        <button class="tool-tab active" role="tab" aria-selected="true"
+                data-panel="panel-to-kanji" id="tab-to-kanji">Arabic &#x2192; Kanji (&#x6570;&#x5B57;&#x2192;&#x6F22;&#x6570;&#x5B57;)</button>
+        <button class="tool-tab" role="tab" aria-selected="false"
+                data-panel="panel-from-kanji" id="tab-from-kanji">Kanji &#x2192; Arabic (&#x6F22;&#x6570;&#x5B57;&#x2192;&#x6570;&#x5B57;)</button>
+      </div>
+
+      <!-- Tab 1: Arabic to Kanji -->
+      <div class="tool-panel active" role="tabpanel" id="panel-to-kanji" aria-labelledby="tab-to-kanji">
+        <div class="form-group">
+          <label class="form-label" for="arabic-input">
+            Number (&#x6570;&#x5B57;) &#x2014; Enter any number up to 9,999,999,999,999
+          </label>
+          <input type="number" class="form-input" id="arabic-input"
+                 min="0" max="9999999999999" step="1"
+                 placeholder="e.g. 1234">
+          <div class="form-error" id="arabic-error"></div>
+        </div>
+
+        <!-- Style selector -->
+        <div class="form-group">
+          <label class="form-label">Output Style (&#x8868;&#x8A18;&#x30B9;&#x30BF;&#x30A4;&#x30EB;)</label>
+          <div class="rate-toggle" role="group">
+            <label class="rate-option">
+              <input type="radio" name="kanji-style" value="standard" checked>
+              <span>Standard (&#x666E;&#x901A;)</span>
+            </label>
+            <label class="rate-option">
+              <input type="radio" name="kanji-style" value="daiji">
+              <span>Formal / Daiji (&#x5927;&#x5B57;)</span>
+            </label>
+            <label class="rate-option">
+              <input type="radio" name="kanji-style" value="mixed">
+              <span>Mixed (&#x6DF7;&#x5408;)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Currency option -->
+        <label class="rate-option" style="margin-bottom:1rem; display:inline-flex;">
+          <input type="checkbox" id="opt-currency">
+          <span>Append &#x5186; (yen)</span>
+        </label>
+
+        <div aria-live="polite" aria-atomic="true">
+          <div class="result-box" id="arabic-result">
+            <div class="kanji-primary" id="r-primary"></div>
+            <div class="kanji-grid">
+              <span class="kanji-row-label">Standard (&#x666E;&#x901A;)</span>
+              <span class="kanji-row-value" id="r-standard"></span>
+              <span class="kanji-row-label">Daiji (&#x5927;&#x5B57;)</span>
+              <span class="kanji-row-value" id="r-daiji"></span>
+              <span class="kanji-row-label">Mixed (&#x6DF7;&#x5408;)</span>
+              <span class="kanji-row-value" id="r-mixed"></span>
+              <span class="kanji-row-label">Reading (&#x8AAD;&#x307F;&#x65B9;)</span>
+              <span class="kanji-row-value" id="r-reading"></span>
+              <span class="kanji-row-label" id="r-yen-row-label" style="display:none;">With yen (&#x5186;)</span>
+              <span class="kanji-row-value" id="r-yen" style="display:none;"></span>
+            </div>
+            <div class="btn-row">
+              <button class="btn btn-secondary" id="to-copy-btn">Copy</button>
+              <button class="btn btn-secondary" id="to-share-btn">Share</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Kanji to Arabic -->
+      <div class="tool-panel" role="tabpanel" id="panel-from-kanji" aria-labelledby="tab-from-kanji">
+        <div class="form-group">
+          <label class="form-label" for="kanji-input">
+            Kanji Number (&#x6F22;&#x6570;&#x5B57;) &#x2014; Enter kanji number
+          </label>
+          <input type="text" class="form-input" id="kanji-input"
+                 placeholder="e.g. &#x5343;&#x4E8C;&#x767E;&#x4E09;&#x5341;&#x56DB; or &#x4E00;&#x4E07;&#x4E8C;&#x5343;&#x4E09;&#x767E;&#x56DB;&#x5341;&#x4E94;"
+                 style="font-size:1.1rem;">
+          <span class="text-muted" style="font-size:0.8rem;">
+            Accepts standard kanji, daiji (&#x5927;&#x5B57;), and mixed notation (1&#x4E07;2345)
+          </span>
+          <div class="form-error" id="kanji-error"></div>
+        </div>
+
+        <div aria-live="polite" aria-atomic="true">
+          <div class="result-box" id="kanji-result">
+            <div class="kanji-primary" id="r-arabic"></div>
+            <div class="kanji-reading" id="r-reading2"></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /tool-box -->
+
+    <!-- Quick Reference Table -->
+    <h2>Kanji Number Reference Table &#x2014; &#x6F22;&#x6570;&#x5B57; &#x65E9;&#x898B;&#x8868;</h2>
+    <div class="quick-ref">
+      <table>
+        <thead>
+          <tr>
+            <th>Arabic</th>
+            <th>Standard (&#x666E;&#x901A;)</th>
+            <th>Daiji (&#x5927;&#x5B57;)</th>
+            <th>Reading</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>&#x96F6;</td><td>&#x96F6;</td><td>&#x308C;&#x3044;</td></tr>
+          <tr><td>1</td><td>&#x4E00;</td><td>&#x58F1;</td><td>&#x3044;&#x3061;</td></tr>
+          <tr><td>2</td><td>&#x4E8C;</td><td>&#x5F10;</td><td>&#x306B;</td></tr>
+          <tr><td>3</td><td>&#x4E09;</td><td>&#x53C2;</td><td>&#x3055;&#x3093;</td></tr>
+          <tr><td>4</td><td>&#x56DB;</td><td>&#x56DB;</td><td>&#x3057; / &#x3088;&#x3093;</td></tr>
+          <tr><td>5</td><td>&#x4E94;</td><td>&#x4F0D;</td><td>&#x3054;</td></tr>
+          <tr><td>6</td><td>&#x516D;</td><td>&#x516D;</td><td>&#x308D;&#x304F;</td></tr>
+          <tr><td>7</td><td>&#x4E03;</td><td>&#x4E03;</td><td>&#x3057;&#x3061; / &#x306A;&#x306A;</td></tr>
+          <tr><td>8</td><td>&#x516B;</td><td>&#x516B;</td><td>&#x306F;&#x3061;</td></tr>
+          <tr><td>9</td><td>&#x4E5D;</td><td>&#x4E5D;</td><td>&#x304F; / &#x304D;&#x3085;&#x3046;</td></tr>
+          <tr><td>10</td><td>&#x5341;</td><td>&#x62FE;</td><td>&#x3058;&#x3085;&#x3046;</td></tr>
+          <tr><td>11</td><td>&#x5341;&#x4E00;</td><td>&#x62FE;&#x58F1;</td><td>&#x3058;&#x3085;&#x3046;&#x3044;&#x3061;</td></tr>
+          <tr><td>20</td><td>&#x4E8C;&#x5341;</td><td>&#x5F10;&#x62FE;</td><td>&#x306B;&#x3058;&#x3085;&#x3046;</td></tr>
+          <tr><td>30</td><td>&#x4E09;&#x5341;</td><td>&#x53C2;&#x62FE;</td><td>&#x3055;&#x3093;&#x3058;&#x3085;&#x3046;</td></tr>
+          <tr><td>100</td><td>&#x767E;</td><td>&#x767E;</td><td>&#x3072;&#x3083;&#x304F;</td></tr>
+          <tr><td>1,000</td><td>&#x5343;</td><td>&#x5343;</td><td>&#x305B;&#x3093;</td></tr>
+          <tr><td>10,000</td><td>&#x4E00;&#x4E07;</td><td>&#x58F1;&#x4E07;</td><td>&#x3044;&#x3061;&#x307E;&#x3093;</td></tr>
+          <tr><td>100,000,000</td><td>&#x4E00;&#x5104;</td><td>&#x58F1;&#x5104;</td><td>&#x3044;&#x3061;&#x304A;&#x304F;</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BTF Ad Zone -->
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_KANJI"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <!-- SEO Content -->
+    <article class="seo-content">
+      <h2>How Japanese Kanji Numbers Work (&#x6F22;&#x6570;&#x5B57;&#x306E;&#x4ED5;&#x7D44;&#x307F;)</h2>
+      <p>
+        Japanese uses two parallel number systems: Arabic numerals (1, 2, 3)
+        for everyday use, and kanji numerals (&#x4E00;, &#x4E8C;, &#x4E09;) for formal writing,
+        classical texts, and certain official documents. The kanji number
+        system uses place-value notation: <strong>&#x5341;</strong> (10),
+        <strong>&#x767E;</strong> (100), <strong>&#x5343;</strong> (1,000), and
+        <strong>&#x4E07;</strong> (10,000) as place markers, combined with digit
+        kanji. One important rule: &#x5341;, &#x767E;, and &#x5343; do not take a leading &#x4E00; &#x2014;
+        you write &#x5341; for 10, not &#x4E00;&#x5341;. However, &#x4E07; and above do take &#x4E00; &#x2014;
+        so 10,000 is &#x4E00;&#x4E07;.
+      </p>
+      <p>
+        Japan groups large numbers in units of 10,000 (&#x56DB;&#x6841;&#x533A;&#x5207;&#x308A;) rather than
+        1,000 as in English. This means 100,000 is &#x5341;&#x4E07; (ten-man), 1,000,000
+        is &#x767E;&#x4E07; (hundred-man), and 100,000,000 is &#x4E00;&#x5104; (one-oku). This grouping
+        is fundamental to reading prices, statistics, and financial figures in
+        Japanese.
+      </p>
+
+      <h2>Daiji (&#x5927;&#x5B57;) &#x2014; Formal Kanji Numbers for Documents</h2>
+      <p>
+        Daiji (&#x5927;&#x5B57;) are complex kanji variants used specifically in financial
+        and legal documents to prevent fraud. Because standard kanji numbers
+        like &#x4E00;, &#x4E8C;, &#x4E09; can be altered easily (adding strokes to change the
+        numeral), daiji uses more complex forms: &#x58F1; (1), &#x5F10; (2), &#x53C2; (3),
+        &#x4F0D; (5), &#x62FE; (10). You will find daiji on Japanese bank checks
+        (&#x5C0F;&#x5207;&#x624B;), promissory notes (&#x7D04;&#x675F;&#x624B;&#x5F62;), contracts, and some government
+        forms. The converter above can output any number in daiji format.
+      </p>
+      <p>
+        For reading Japanese numbers aloud, see the reading column in the
+        reference table below. Note that some numbers have two readings:
+        4 can be &#x3057; or &#x3088;&#x3093;, and 7 can be &#x3057;&#x3061; or &#x306A;&#x306A;, depending on context.
+        For converting Japanese text including kanji, use the
+        <a href="/en/language-tools/romaji-converter/">romaji converter</a>.
+      </p>
+    </article>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq-section"
+      itemscope itemtype="https://schema.org/FAQPage">
+      <h2>Frequently Asked Questions</h2>
+      <ul class="faq-list">
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            How do you write numbers in Japanese kanji?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              Japanese numbers use kanji characters: &#x4E00; (1), &#x4E8C; (2), &#x4E09; (3), &#x56DB; (4), &#x4E94; (5), &#x516D; (6), &#x4E03; (7), &#x516B; (8), &#x4E5D; (9), &#x5341; (10), &#x767E; (100), &#x5343; (1,000), &#x4E07; (10,000), &#x5104; (100,000,000). Larger numbers are formed by combining these: &#x5341;&#x4E00; (11), &#x767E;&#x4E8C;&#x5341;&#x4E09; (123), &#x5343;&#x4E8C;&#x767E;&#x4E09;&#x5341;&#x56DB; (1,234), &#x4E00;&#x4E07; (10,000). Note that &#x5341;, &#x767E;, and &#x5343; do not need a leading &#x4E00; &#x2014; just &#x5341; not &#x4E00;&#x5341;.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What is daiji (&#x5927;&#x5B57;) and when is it used?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              Daiji (&#x5927;&#x5B57;) are formal kanji numerals used in legal and financial documents in Japan to prevent tampering or fraud. The daiji characters are: &#x58F1; (1), &#x5F10; (2), &#x53C2; (3), &#x56DB; (4), &#x4F0D; (5), &#x62FE; (10), &#x767E; (100), &#x5343; (1,000), &#x4E07; (10,000). They are used on checks (&#x5C0F;&#x5207;&#x624B;), promissory notes, contracts, and official government documents.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What is the difference between &#x4E07; and &#x5104;?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              In the Japanese number system, &#x4E07; (man) represents 10,000 (ten thousand) and &#x5104; (oku) represents 100,000,000 (one hundred million). Unlike the Western system which groups by thousands, Japanese groups by ten-thousands: &#x4E00;&#x4E07; = 10,000; &#x5341;&#x4E07; = 100,000; &#x767E;&#x4E07; = 1,000,000; &#x4E00;&#x5343;&#x4E07; = 10,000,000; &#x4E00;&#x5104; = 100,000,000.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            How do you read large numbers in Japanese?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              Large Japanese numbers are read in groups of four digits using the units &#x4E07; (10,000), &#x5104; (100 million), and &#x5146; (1 trillion). For example: 12,345 is read as &#x4E00;&#x4E07;&#x4E8C;&#x5343;&#x4E09;&#x767E;&#x56DB;&#x5341;&#x4E94; (ichi-man ni-sen san-byaku yon-juu go). The key difference from English is that Japanese counts in groups of 10,000 rather than 1,000.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What is mixed kanji notation (&#x6DF7;&#x5408;&#x8868;&#x8A18;)?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              Mixed notation (&#x6DF7;&#x5408;&#x8868;&#x8A18;) combines Arabic numerals with kanji unit markers for readability in everyday Japanese text. For example, 12,345 is written as 1&#x4E07;2345 and 100,000,000 as 1&#x5104;. This is commonly used in Japanese newspapers, business documents, and everyday writing where fully written kanji numbers would be harder to read at a glance.
+            </span>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/en/language-tools/romaji-converter/" class="tool-card">
+          <div class="tool-card-icon">&#x1F524;</div>
+          <div class="tool-card-name">Romaji Converter</div>
+          <div class="tool-card-jp">&#x30ED;&#x30FC;&#x30DE;&#x5B57;&#x5909;&#x63DB;</div>
+        </a>
+        <a href="/en/language-tools/furigana-generator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4D6;</div>
+          <div class="tool-card-name">Furigana Generator</div>
+          <div class="tool-card-jp">&#x3075;&#x308A;&#x304C;&#x306A;&#x751F;&#x6210;</div>
+        </a>
+        <a href="/en/tax-finance/consumption-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F9FE;</div>
+          <div class="tool-card-name">Consumption Tax Calculator</div>
+          <div class="tool-card-jp">&#x6D88;&#x8CBB;&#x7A0E;&#x8A08;&#x7B97;</div>
+        </a>
+        <a href="/en/language-tools/" class="tool-card">
+          <div class="tool-card-icon">&#x1F233;</div>
+          <div class="tool-card-name">All Language Tools</div>
+          <div class="tool-card-jp">&#x8A00;&#x8A9E;&#x30C4;&#x30FC;&#x30EB;</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_KANJI"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div><!-- /page-layout -->
+
+<!-- FOOTER PARTIAL -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/en/about/">About</a></li>
+      <li><a href="/en/privacy/">Privacy Policy</a></li>
+      <li><a href="/en/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">
+      &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
+    </p>
+    <p class="footer-attribution">Japanese kanji number system reference. Last updated: March 2025</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import { toKanjiNumber, fromKanjiNumber, numberToReading } from '/assets/js/kanji-numbers.js';
+
+// ── Tab switching
+document.querySelectorAll('.tool-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tool-tab').forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    document.querySelectorAll('.tool-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+  });
+});
+
+// ── Tab 1: Arabic → Kanji (live)
+function computeToKanji() {
+  const val      = document.getElementById('arabic-input').value;
+  const style    = document.querySelector('input[name="kanji-style"]:checked').value;
+  const currency = document.getElementById('opt-currency').checked;
+  const errorEl  = document.getElementById('arabic-error');
+  const resultEl = document.getElementById('arabic-result');
+
+  if (!val) { resultEl.classList.remove('visible'); return; }
+
+  const r = toKanjiNumber(Number(val), { style, currency });
+  if (r.error) {
+    errorEl.textContent = r.error;
+    errorEl.classList.add('visible');
+    resultEl.classList.remove('visible');
+    return;
+  }
+  errorEl.classList.remove('visible');
+
+  // Primary shows selected style
+  const primary = style === 'daiji' ? r.daiji
+                : style === 'mixed' ? r.mixed
+                : r.output;
+  document.getElementById('r-primary').textContent    = primary;
+  document.getElementById('r-standard').textContent   = r.output;
+  document.getElementById('r-daiji').textContent      = r.daiji;
+  document.getElementById('r-mixed').textContent      = r.mixed;
+  document.getElementById('r-reading').textContent    = r.reading || '\u2014';
+
+  // Yen row
+  const yenLabel = document.getElementById('r-yen-row-label');
+  const yenValue = document.getElementById('r-yen');
+  if (currency) {
+    yenLabel.style.display = '';
+    yenValue.style.display = '';
+    yenValue.textContent = r.withYen;
+  } else {
+    yenLabel.style.display = 'none';
+    yenValue.style.display = 'none';
+  }
+
+  resultEl.classList.add('visible');
+
+  // Share URL
+  const url = new URL(window.location.href);
+  url.searchParams.set('n', val);
+  url.searchParams.set('style', style);
+  document.getElementById('to-share-btn').dataset.url = url.toString();
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'kanji_number_converter', mode: 'to_kanji', language: 'en' });
+}
+
+// ── Tab 2: Kanji → Arabic (live)
+function computeFromKanji() {
+  const val     = document.getElementById('kanji-input').value;
+  const errorEl = document.getElementById('kanji-error');
+  const resultEl= document.getElementById('kanji-result');
+
+  if (!val.trim()) { resultEl.classList.remove('visible'); return; }
+
+  const r = fromKanjiNumber(val);
+  if (r.error) {
+    errorEl.textContent = r.error;
+    errorEl.classList.add('visible');
+    resultEl.classList.remove('visible');
+    return;
+  }
+  errorEl.classList.remove('visible');
+
+  document.getElementById('r-arabic').textContent  = r.output.toLocaleString('ja-JP');
+  const reading = numberToReading(r.output);
+  document.getElementById('r-reading2').textContent = reading ? 'Reading: ' + reading : '';
+
+  resultEl.classList.add('visible');
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'kanji_number_converter', mode: 'from_kanji', language: 'en' });
+}
+
+// ── Event listeners
+document.getElementById('arabic-input').addEventListener('input', computeToKanji);
+document.querySelectorAll('input[name="kanji-style"]').forEach(r => r.addEventListener('change', computeToKanji));
+document.getElementById('opt-currency').addEventListener('change', computeToKanji);
+document.getElementById('kanji-input').addEventListener('input', computeFromKanji);
+
+// ── Copy (Tab 1)
+document.getElementById('to-copy-btn').addEventListener('click', () => {
+  const text = document.getElementById('r-primary').textContent;
+  if (!text) return;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('to-copy-btn');
+    btn.textContent = 'Copied! \u2713';
+    setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+  });
+});
+
+// ── Share (Tab 1)
+document.getElementById('to-share-btn').addEventListener('click', () => {
+  const url = document.getElementById('to-share-btn').dataset.url || window.location.href;
+  navigator.clipboard.writeText(url).then(() => {
+    const btn = document.getElementById('to-share-btn');
+    btn.textContent = 'Link copied!';
+    setTimeout(() => { btn.textContent = 'Share'; }, 2000);
+  });
+});
+
+// ── Init from URL params
+const p = new URLSearchParams(window.location.search);
+if (p.get('n')) {
+  document.getElementById('arabic-input').value = p.get('n');
+  if (p.get('style')) {
+    const r = document.querySelector('input[name="kanji-style"][value="' + p.get('style') + '"]');
+    if (r) r.checked = true;
+  }
+  computeToKanji();
+}
+</script>
+
+<!-- Lazy ad loader -->
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(zone => {
+    const ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(z => observer.observe(z));
+  }
+});
+</script>
+
+</body>
+</html>

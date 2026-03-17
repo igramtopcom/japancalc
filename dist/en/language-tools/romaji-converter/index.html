@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romaji Converter: Japanese to Romaji | JapanCalc</title>
+  <meta name="description" content="Convert Japanese hiragana and katakana to romaji instantly. Hepburn romanization system. Free online ローマ字変換ツール, no login required.">
+  <link rel="canonical" href="https://japancalc.com/en/language-tools/romaji-converter/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/language-tools/romaji-converter/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/language-tools/romaji-converter/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/language-tools/romaji-converter/">
+  <meta property="og:title"       content="Romaji Converter: Japanese to Romaji | JapanCalc">
+  <meta property="og:description" content="Convert Japanese hiragana and katakana to romaji instantly. Hepburn romanization system. Free online ローマ字変換ツール, no login required.">
+  <meta property="og:url"         content="https://japancalc.com/en/language-tools/romaji-converter/">
+  <meta property="og:type"        content="website">
+  <meta name="robots" content="index, follow">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Romaji Converter &#x2014; Japanese to Romaji",
+    "url": "https://japancalc.com/en/language-tools/romaji-converter/",
+    "description": "Convert Japanese hiragana and katakana text to romaji using the Hepburn romanization system. Free, browser-based, no login required.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",
+        "item": "https://japancalc.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Language Tools",
+        "item": "https://japancalc.com/en/language-tools/" },
+      { "@type": "ListItem", "position": 3, "name": "Romaji Converter",
+        "item": "https://japancalc.com/en/language-tools/romaji-converter/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is romaji?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Romaji (&#x30ED;&#x30FC;&#x30DE;&#x5B57;) is the romanization of Japanese &#x2014; the representation of Japanese sounds using the Latin alphabet. It is used to help non-Japanese readers pronounce Japanese words, to write Japanese on keyboards that lack Japanese input, and in official documents like passports. The most widely used system is Hepburn romanization (&#x30D8;&#x30DC;&#x30F3;&#x5F0F;), which is what this converter uses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Hepburn romanization?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hepburn romanization (&#x30D8;&#x30DC;&#x30F3;&#x5F0F;&#x30ED;&#x30FC;&#x30DE;&#x5B57;) is the most internationally recognized system for converting Japanese to the Latin alphabet. It was developed by James Curtis Hepburn in the 1860s and is used in Japanese passports, official documents, and most English-language references to Japanese. Key features include: &#x3057; = shi, &#x3061; = chi, &#x3064; = tsu, &#x3075; = fu, &#x3058; = ji."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can this converter handle kanji?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This romaji converter handles hiragana (&#x3072;&#x3089;&#x304C;&#x306A;) and katakana (&#x30AB;&#x30BF;&#x30AB;&#x30CA;) only. Kanji (&#x6F22;&#x5B57;) cannot be automatically converted to romaji without knowing the correct reading, as most kanji have multiple possible pronunciations (readings). Kanji in the input will be kept as-is, removed, or shown in brackets depending on the option selected."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between hiragana and katakana?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hiragana (&#x3072;&#x3089;&#x304C;&#x306A;) and katakana (&#x30AB;&#x30BF;&#x30AB;&#x30CA;) are both Japanese syllabic scripts with the same sounds, but different shapes. Hiragana is used for native Japanese words and grammatical elements. Katakana is used mainly for foreign loanwords, onomatopoeia, and emphasis. Both can be converted to romaji using this tool."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I type Japanese characters to use this converter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To type Japanese characters, enable a Japanese input method (IME) on your device. On Windows, use the Language Bar to switch to Japanese input. On Mac, go to System Preferences > Keyboard > Input Sources and add Japanese. On mobile, add a Japanese keyboard in your device settings. Once enabled, type romaji and the IME will convert it to hiragana or katakana automatically."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <style>
+  .romaji-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    font-family: var(--font-sans);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    resize: vertical;
+    line-height: 1.6;
+  }
+  .romaji-textarea:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(11,110,95,0.15);
+    outline: none;
+  }
+  .romaji-output {
+    font-size: 1.3rem;
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+    font-weight: 600;
+    min-height: 2rem;
+    word-break: break-word;
+    margin-bottom: 0.75rem;
+  }
+  .romaji-output-label {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.35rem;
+  }
+  .options-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+  }
+  .script-badges {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+  .script-badge {
+    font-size: 0.72rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 99px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-alt);
+    color: var(--color-text-muted);
+  }
+  .kanji-warning {
+    font-size: 0.85rem;
+    color: var(--color-warning);
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: #FFFBEB;
+    border-radius: var(--radius);
+    border: 1px solid #FCD34D;
+  }
+  .kana-converter-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  @media (max-width: 768px) {
+    .kana-converter-grid { grid-template-columns: 1fr; }
+  }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/en/" class="nav-logo">JapanCalc</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
+            onclick="window.location.href=window.location.pathname.replace('/en/','/')">&#x65E5;&#x672C;&#x8A9E;</button>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/en/">Home</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">Romaji Converter</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_ROMAJI"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>Romaji Converter &#x2014; Japanese to Romaji</h1>
+    <p class="tool-subtitle">&#x30ED;&#x30FC;&#x30DE;&#x5B57;&#x5909;&#x63DB;&#x30C4;&#x30FC;&#x30EB; &#x2014; Convert hiragana and katakana to romaji</p>
+    <p class="tool-desc">
+      Convert Japanese hiragana (&#x3072;&#x3089;&#x304C;&#x306A;) and katakana (&#x30AB;&#x30BF;&#x30AB;&#x30CA;) to romaji
+      using the Hepburn romanization system (&#x30D8;&#x30DC;&#x30F3;&#x5F0F;) &#x2014; the standard used in
+      Japanese passports and official documents. Free, no login required.
+    </p>
+
+    <div class="tool-box" id="tool-main">
+      <div class="tool-tabs">
+        <button class="tool-tab active" data-panel="panel-romaji">Japanese &#x2192; Romaji</button>
+        <button class="tool-tab" data-panel="panel-kana">Hiragana &#x2194; Katakana</button>
+      </div>
+
+      <!-- Tab 1: Japanese to Romaji -->
+      <div class="tool-panel active" id="panel-romaji">
+        <div class="form-group">
+          <label class="form-label" for="jp-input">
+            Japanese Text (&#x3072;&#x3089;&#x304C;&#x306A;&#x30FB;&#x30AB;&#x30BF;&#x30AB;&#x30CA;)
+          </label>
+          <textarea class="form-input romaji-textarea" id="jp-input"
+                    rows="4"
+                    placeholder="Type or paste Japanese text here...
+e.g. &#x304A;&#x306F;&#x3088;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;"
+                    aria-describedby="jp-hint"></textarea>
+          <span id="jp-hint" class="text-muted" style="font-size:0.8rem;">
+            Supports hiragana and katakana. Kanji will be passed through unchanged.
+          </span>
+        </div>
+
+        <!-- Options row -->
+        <div class="options-row">
+          <label class="rate-option">
+            <input type="checkbox" id="opt-capitalize"> Capitalize first letter
+          </label>
+          <label class="rate-option">
+            <input type="checkbox" id="opt-uppercase"> ALL UPPERCASE
+          </label>
+          <div class="passthrough-group">
+            <label class="form-label" style="margin-bottom:0.3rem;">Kanji handling:</label>
+            <select class="form-select" id="opt-passthrough" style="height:36px; font-size:0.875rem;">
+              <option value="keep">Keep as-is</option>
+              <option value="bracket">Show in [brackets]</option>
+              <option value="remove">Remove</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="result-box" id="romaji-result">
+          <div class="romaji-output-label">Romaji Output:</div>
+          <div class="romaji-output" id="romaji-output"></div>
+
+          <!-- Script detection badges -->
+          <div class="script-badges" id="script-badges"></div>
+
+          <!-- Kanji warning -->
+          <div class="kanji-warning" id="kanji-warning" style="display:none;">
+            &#x26A0; Input contains kanji &#x2014; kanji cannot be automatically romanized.
+            Use the kanji handling option above to keep, bracket, or remove them.
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-secondary" id="romaji-copy-btn">Copy</button>
+            <button class="btn btn-secondary" id="romaji-clear-btn">Clear</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Hiragana ↔ Katakana -->
+      <div class="tool-panel" id="panel-kana">
+        <div class="kana-converter-grid">
+          <!-- Hiragana → Katakana -->
+          <div class="kana-section">
+            <label class="form-label" for="hira-input">
+              Hiragana &#x2192; Katakana
+            </label>
+            <textarea class="form-input romaji-textarea" id="hira-input"
+                      rows="3" placeholder="&#x3072;&#x3089;&#x304C;&#x306A;"></textarea>
+            <div class="result-box visible" id="kata-output-box" style="margin-top:0.75rem;">
+              <div class="romaji-output-label">Katakana:</div>
+              <div class="romaji-output" id="kata-output"></div>
+            </div>
+          </div>
+
+          <!-- Katakana → Hiragana -->
+          <div class="kana-section">
+            <label class="form-label" for="kata-input">
+              Katakana &#x2192; Hiragana
+            </label>
+            <textarea class="form-input romaji-textarea" id="kata-input"
+                      rows="3" placeholder="&#x30AB;&#x30BF;&#x30AB;&#x30CA;"></textarea>
+            <div class="result-box visible" id="hira-output-box" style="margin-top:0.75rem;">
+              <div class="romaji-output-label">Hiragana:</div>
+              <div class="romaji-output" id="hira-output"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Reference Table -->
+    <div class="quick-ref" style="overflow-x:auto;">
+      <h2>Hepburn Romanization Chart (&#x30D8;&#x30DC;&#x30F3;&#x5F0F;&#x30ED;&#x30FC;&#x30DE;&#x5B57; &#x4E00;&#x89A7;)</h2>
+      <table>
+        <thead>
+          <tr><th>Hiragana</th><th>Romaji</th><th>Katakana</th><th>Romaji</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>&#x3042; &#x3044; &#x3046; &#x3048; &#x304A;</td><td>a i u e o</td><td>&#x30A2; &#x30A4; &#x30A6; &#x30A8; &#x30AA;</td><td>a i u e o</td><td>Vowels</td></tr>
+          <tr><td>&#x304B; &#x304D; &#x304F; &#x3051; &#x3053;</td><td>ka ki ku ke ko</td><td>&#x30AB; &#x30AD; &#x30AF; &#x30B1; &#x30B3;</td><td>ka ki ku ke ko</td><td></td></tr>
+          <tr><td>&#x3055; &#x3057; &#x3059; &#x305B; &#x305D;</td><td>sa <strong>shi</strong> su se so</td><td>&#x30B5; &#x30B7; &#x30B9; &#x30BB; &#x30BD;</td><td>sa <strong>shi</strong> su se so</td><td>&#x3057;=shi</td></tr>
+          <tr><td>&#x305F; &#x3061; &#x3064; &#x3066; &#x3068;</td><td>ta <strong>chi</strong> <strong>tsu</strong> te to</td><td>&#x30BF; &#x30C1; &#x30C4; &#x30C6; &#x30C8;</td><td>ta <strong>chi</strong> <strong>tsu</strong> te to</td><td>&#x3061;=chi, &#x3064;=tsu</td></tr>
+          <tr><td>&#x306A; &#x306B; &#x306C; &#x306D; &#x306E;</td><td>na ni nu ne no</td><td>&#x30CA; &#x30CB; &#x30CC; &#x30CD; &#x30CE;</td><td>na ni nu ne no</td><td></td></tr>
+          <tr><td>&#x306F; &#x3072; &#x3075; &#x3078; &#x307B;</td><td>ha hi <strong>fu</strong> he ho</td><td>&#x30CF; &#x30D2; &#x30D5; &#x30D8; &#x30DB;</td><td>ha hi <strong>fu</strong> he ho</td><td>&#x3075;=fu</td></tr>
+          <tr><td>&#x307E; &#x307F; &#x3080; &#x3081; &#x3082;</td><td>ma mi mu me mo</td><td>&#x30DE; &#x30DF; &#x30E0; &#x30E1; &#x30E2;</td><td>ma mi mu me mo</td><td></td></tr>
+          <tr><td>&#x3089; &#x308A; &#x308B; &#x308C; &#x308D;</td><td>ra ri ru re ro</td><td>&#x30E9; &#x30EA; &#x30EB; &#x30EC; &#x30ED;</td><td>ra ri ru re ro</td><td></td></tr>
+          <tr><td>&#x304D;&#x3083; &#x304D;&#x3085; &#x304D;&#x3087;</td><td>kya kyu kyo</td><td>&#x3057;&#x3083; &#x3057;&#x3085; &#x3057;&#x3087;</td><td>sha shu sho</td><td>Digraphs</td></tr>
+          <tr><td>&#x3061;&#x3083; &#x3061;&#x3085; &#x3061;&#x3087;</td><td>cha chu cho</td><td>&#x306B;&#x3083; &#x306B;&#x3085; &#x306B;&#x3087;</td><td>nya nyu nyo</td><td></td></tr>
+          <tr><td>&#x3063;</td><td>doubles next</td><td>&#x3093;</td><td>n (n&#x2019; before vowel)</td><td>Special</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_ROMAJI"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="seo-content">
+      <h2>How to Use the Romaji Converter (&#x30ED;&#x30FC;&#x30DE;&#x5B57;&#x5909;&#x63DB;&#x306E;&#x4F7F;&#x3044;&#x65B9;)</h2>
+      <p>
+        This romaji converter uses the <strong>Hepburn romanization system</strong>
+        (&#x30D8;&#x30DC;&#x30F3;&#x5F0F;&#x30ED;&#x30FC;&#x30DE;&#x5B57;) to convert Japanese hiragana and katakana to the Latin
+        alphabet. Simply type or paste Japanese text into the input box and the
+        romaji output appears instantly &#x2014; no button press needed. The tool handles
+        all standard hiragana and katakana, including compound sounds (digraphs)
+        like &#x3057;&#x3083; (sha), &#x3061;&#x3085; (chu), and special characters like &#x3063; (double
+        consonant) and &#x3093; (n).
+      </p>
+      <p>
+        For kanji characters (&#x6F22;&#x5B57;), the converter cannot determine the correct
+        reading automatically &#x2014; use the kanji handling option to keep them as-is,
+        show them in brackets, or remove them from the output. If you need full
+        text including kanji to be romanized, you will need a dictionary-based
+        tool that can look up kanji readings.
+      </p>
+
+      <h2>About Hepburn Romanization (&#x30D8;&#x30DC;&#x30F3;&#x5F0F;&#x30ED;&#x30FC;&#x30DE;&#x5B57;)</h2>
+      <p>
+        Hepburn romanization was developed by American missionary James Curtis
+        Hepburn in the 1860s and published in his Japanese-English dictionary.
+        It is the most widely used romanization system internationally and is
+        the standard for Japanese passports (&#x65C5;&#x5238;), driving licences, and most
+        English-language Japanese references. Key Hepburn conventions include:
+        &#x3057; is written <em>shi</em> (not si), &#x3061; is <em>chi</em> (not ti),
+        &#x3064; is <em>tsu</em> (not tu), &#x3075; is <em>fu</em> (not hu), and
+        &#x3058; is <em>ji</em> (not zi).
+      </p>
+      <p>
+        Alternative systems include Nihon-shiki and Kunrei-shiki romanization,
+        which are used in some academic and government contexts in Japan. This
+        converter uses Hepburn as it best reflects how Japanese sounds are
+        perceived by English speakers.
+      </p>
+    </article>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary>What is romaji?</summary>
+        <p>Romaji (&#x30ED;&#x30FC;&#x30DE;&#x5B57;) is the romanization of Japanese &#x2014; the representation of Japanese sounds using the Latin alphabet. It is used to help non-Japanese readers pronounce Japanese words, to write Japanese on keyboards that lack Japanese input, and in official documents like passports. The most widely used system is Hepburn romanization (&#x30D8;&#x30DC;&#x30F3;&#x5F0F;), which is what this converter uses.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is Hepburn romanization?</summary>
+        <p>Hepburn romanization (&#x30D8;&#x30DC;&#x30F3;&#x5F0F;&#x30ED;&#x30FC;&#x30DE;&#x5B57;) is the most internationally recognized system for converting Japanese to the Latin alphabet. It was developed by James Curtis Hepburn in the 1860s and is used in Japanese passports, official documents, and most English-language references to Japanese. Key features include: &#x3057; = shi, &#x3061; = chi, &#x3064; = tsu, &#x3075; = fu, &#x3058; = ji.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can this converter handle kanji?</summary>
+        <p>This romaji converter handles hiragana (&#x3072;&#x3089;&#x304C;&#x306A;) and katakana (&#x30AB;&#x30BF;&#x30AB;&#x30CA;) only. Kanji (&#x6F22;&#x5B57;) cannot be automatically converted to romaji without knowing the correct reading, as most kanji have multiple possible pronunciations (readings). Kanji in the input will be kept as-is, removed, or shown in brackets depending on the option selected.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the difference between hiragana and katakana?</summary>
+        <p>Hiragana (&#x3072;&#x3089;&#x304C;&#x306A;) and katakana (&#x30AB;&#x30BF;&#x30AB;&#x30CA;) are both Japanese syllabic scripts with the same sounds, but different shapes. Hiragana is used for native Japanese words and grammatical elements. Katakana is used mainly for foreign loanwords, onomatopoeia, and emphasis. Both can be converted to romaji using this tool.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I type Japanese characters to use this converter?</summary>
+        <p>To type Japanese characters, enable a Japanese input method (IME) on your device. On Windows, use the Language Bar to switch to Japanese input. On Mac, go to System Preferences > Keyboard > Input Sources and add Japanese. On mobile, add a Japanese keyboard in your device settings. Once enabled, type romaji and the IME will convert it to hiragana or katakana automatically.</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/en/date-calendar/era-converter/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4C5;</div>
+          <div class="tool-card-name">Era Date Converter</div>
+          <div class="tool-card-jp">&#x548C;&#x66A6; &#x897F;&#x66A6; &#x5909;&#x63DB;</div>
+        </a>
+        <a href="/en/date-calendar/age-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F382;</div>
+          <div class="tool-card-name">Japanese Age Calculator</div>
+          <div class="tool-card-jp">&#x5E74;&#x9F62;&#x8A08;&#x7B97;</div>
+        </a>
+        <a href="/en/date-calendar/zodiac/" class="tool-card">
+          <div class="tool-card-icon">&#x1F409;</div>
+          <div class="tool-card-name">Japanese Zodiac Calculator</div>
+          <div class="tool-card-jp">&#x5E72;&#x652F; &#x8A08;&#x7B97;</div>
+        </a>
+        <a href="/en/language-tools/" class="tool-card">
+          <div class="tool-card-icon">&#x1F524;</div>
+          <div class="tool-card-name">All Language Tools</div>
+          <div class="tool-card-jp">&#x8A00;&#x8A9E;&#x30C4;&#x30FC;&#x30EB;</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_ROMAJI"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/en/about/">About</a></li>
+      <li><a href="/en/privacy/">Privacy Policy</a></li>
+      <li><a href="/en/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+    <p class="footer-attribution">Romanization based on Hepburn system (&#x30D8;&#x30DC;&#x30F3;&#x5F0F;). Last updated: March 2025</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import { toRomaji, toHiragana, toKatakana, detectScript } from '/assets/js/romaji.js';
+
+// Tab switching
+document.querySelectorAll('.tool-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.tool-tab, .tool-panel')
+      .forEach(function(el) { el.classList.remove('active'); });
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+  });
+});
+
+// Tab 1: Japanese → Romaji (live conversion)
+function runRomaji() {
+  var text        = document.getElementById('jp-input').value;
+  var capitalize  = document.getElementById('opt-capitalize').checked;
+  var uppercase   = document.getElementById('opt-uppercase').checked;
+  var passthrough = document.getElementById('opt-passthrough').value;
+
+  if (!text) {
+    document.getElementById('romaji-output').textContent = '';
+    document.getElementById('script-badges').innerHTML   = '';
+    document.getElementById('kanji-warning').style.display = 'none';
+    document.getElementById('romaji-result').classList.remove('visible');
+    return;
+  }
+
+  var result = toRomaji(text, { capitalizeFirst: capitalize, uppercaseAll: uppercase, passthrough: passthrough });
+  document.getElementById('romaji-output').textContent = result.output || '';
+  document.getElementById('romaji-result').classList.add('visible');
+
+  // Script badges
+  var detected = detectScript(text);
+  var badges   = [];
+  if (detected.hasHiragana) badges.push('Hiragana');
+  if (detected.hasKatakana) badges.push('Katakana');
+  if (detected.hasKanji)    badges.push('Kanji');
+  if (detected.hasLatin)    badges.push('Latin');
+  document.getElementById('script-badges').innerHTML =
+    badges.map(function(b) { return '<span class="script-badge">' + b + '</span>'; }).join('');
+
+  // Kanji warning
+  document.getElementById('kanji-warning').style.display =
+    result.hasKanji ? 'block' : 'none';
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'romaji_converter', language: 'en' });
+}
+
+document.getElementById('jp-input').addEventListener('input', runRomaji);
+document.getElementById('opt-capitalize').addEventListener('change', runRomaji);
+document.getElementById('opt-uppercase').addEventListener('change', runRomaji);
+document.getElementById('opt-passthrough').addEventListener('change', runRomaji);
+
+// Tab 2: Hiragana ↔ Katakana (live)
+document.getElementById('hira-input').addEventListener('input', function(e) {
+  document.getElementById('kata-output').textContent = toKatakana(e.target.value);
+});
+document.getElementById('kata-input').addEventListener('input', function(e) {
+  document.getElementById('hira-output').textContent = toHiragana(e.target.value);
+});
+
+// Copy button
+document.getElementById('romaji-copy-btn').addEventListener('click', function() {
+  var text = document.getElementById('romaji-output').textContent;
+  if (!text) return;
+  navigator.clipboard.writeText(text).then(function() {
+    var btn = document.getElementById('romaji-copy-btn');
+    btn.textContent = 'Copied! \u2713';
+    setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+  });
+});
+
+// Clear button
+document.getElementById('romaji-clear-btn').addEventListener('click', function() {
+  document.getElementById('jp-input').value = '';
+  runRomaji();
+});
+
+// Init from URL params
+var p = new URLSearchParams(window.location.search);
+if (p.get('text')) {
+  document.getElementById('jp-input').value = decodeURIComponent(p.get('text'));
+  runRomaji();
+}
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(function(zone) {
+    var ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(function(z) { observer.observe(z); });
+  }
+});
+</script>
+
+</body>
+</html>

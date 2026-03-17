@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japanese Age Calculator: 年齢計算 満年齢 | JapanCalc</title>
+  <meta name="description" content="Calculate your Japanese age (満年齢) and traditional counting age (数え年) instantly. Find your birth era, zodiac sign, and more. Free 年齢計算 tool.">
+  <link rel="canonical" href="https://japancalc.com/en/date-calendar/age-calculator/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/date-calendar/age-calculator/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/date-calendar/age-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/date-calendar/age-calculator/">
+  <meta property="og:title"       content="Japanese Age Calculator: 年齢計算 満年齢 | JapanCalc">
+  <meta property="og:description" content="Calculate your Japanese age (満年齢) and traditional counting age (数え年) instantly. Find your birth era, zodiac sign, and more. Free 年齢計算 tool.">
+  <meta property="og:url"         content="https://japancalc.com/en/date-calendar/age-calculator/">
+  <meta property="og:type"        content="website">
+  <meta name="robots" content="index, follow">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Japanese Age Calculator — 年齢計算",
+    "url": "https://japancalc.com/en/date-calendar/age-calculator/",
+    "description": "Calculate Japanese age (満年齢) and traditional counting age (数え年) from date of birth. Free, browser-based, no login required.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",
+        "item": "https://japancalc.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Date & Calendar",
+        "item": "https://japancalc.com/en/date-calendar/" },
+      { "@type": "ListItem", "position": 3, "name": "Japanese Age Calculator",
+        "item": "https://japancalc.com/en/date-calendar/age-calculator/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is 満年齢 (man-nenrei) in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "満年齢 (man-nenrei) is the official Japanese age system, equivalent to the Western method of counting age. A person's age is 0 at birth and increases by 1 on each birthday. It has been the legal standard in Japan since 1902 and is used for all official documents, contracts, and government purposes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is 数え年 (kazoedoshi) and how is it calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "数え年 (kazoedoshi) is the traditional Japanese age counting system. A person is considered age 1 at birth, and age increases by 1 every January 1st regardless of birthday. To calculate kazoedoshi: subtract the birth year from the current year, then add 1. For example, someone born in 2000 is kazoedoshi age 26 in 2025."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate my age for Japanese government forms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Japanese government forms and official documents use 満年齢 (man-nenrei), which is the same as the Western age system. Enter your date of birth in the calculator above to find your current 満年齢. The age shown is valid for any official Japanese document, visa application, or government paperwork."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the special age milestones in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Japan has several traditional age milestones: 還暦 (kanreki) at age 60 marks a full zodiac cycle; 古稀 (koki) at 70; 喜寿 (kiju) at 77; 傘寿 (sanju) at 80; 米寿 (beiju) at 88; 白寿 (hakuju) at 99; and 百寿 (hyakuju) at 100. These are celebrated with special ceremonies and are important cultural events in Japanese society."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What Japanese era was I born in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Japan uses imperial era years (元号, gengō) alongside the Western calendar. The current era is Reiwa (令和), which started May 1, 2019. Before that was Heisei (平成, 1989–2019), Showa (昭和, 1926–1989), Taisho (大正, 1912–1926), and Meiji (明治, 1868–1912). Enter your date of birth in the Japanese age calculator above to find your birth era instantly."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <style>
+  .birthday-banner {
+    background: #FEF3C7;
+    border: 1px solid #F59E0B;
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
+  }
+  </style>
+</head>
+<body>
+
+<!-- NAV PARTIAL -->
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/en/" class="nav-logo">JapanCalc</a>
+
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <button class="nav-lang-toggle"
+            aria-label="Switch to Japanese"
+            onclick="window.location.href=window.location.pathname.replace('/en/','/')">
+      日本語
+    </button>
+    <button class="nav-hamburger"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/en/">Home</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">Japanese Age Calculator</li>
+  </ol>
+</nav>
+
+<!-- ATF Ad Zone -->
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_AGE"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<!-- PAGE LAYOUT -->
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <!-- Page Header -->
+    <h1>Japanese Age Calculator &#x2014; 年齢計算</h1>
+    <p class="tool-subtitle">満年齢・数え年計算ツール &#x2014; Calculate 満年齢 and 数え年</p>
+    <p class="tool-desc">
+      Calculate your Japanese age (満年齢) &#x2014; the official age used on all Japanese
+      government forms and documents. Also shows traditional counting age (数え年),
+      your birth era, and days until your next birthday. Free, no login required.
+    </p>
+
+    <!-- TOOL INTERFACE -->
+    <div class="tool-box" id="tool-main">
+      <div class="form-group">
+        <label class="form-label" for="dob-input">Date of Birth (生年月日)</label>
+        <input type="date" class="form-input" id="dob-input"
+               min="1868-01-25"
+               aria-describedby="dob-hint">
+        <span id="dob-hint" class="text-muted" style="font-size:0.8rem;">
+          Enter your date of birth to calculate your Japanese age
+        </span>
+        <div class="form-error" id="dob-error"></div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" id="calculate-btn">Calculate Age</button>
+      </div>
+
+      <div aria-live="polite" aria-atomic="true">
+        <div class="result-box" id="result-box">
+          <div class="birthday-banner" id="birthday-banner" style="display:none;">&#x1F389; Happy Birthday! お誕生日おめでとうございます！</div>
+          <div class="result-primary" id="r-primary"></div>
+          <p class="text-muted" id="r-description" style="margin:0.25rem 0 1rem;"></p>
+          <div class="result-grid">
+            <div><span class="result-item-label">満年齢 (Official)</span><br><span class="result-item-value" id="r-mannenrei"></span></div>
+            <div><span class="result-item-label">数え年 (Traditional)</span><br><span class="result-item-value" id="r-kazoedoshi"></span></div>
+            <div><span class="result-item-label">Age Breakdown</span><br><span class="result-item-value" id="r-breakdown"></span></div>
+            <div><span class="result-item-label">Birth Era</span><br><span class="result-item-value" id="r-birthera"></span></div>
+            <div><span class="result-item-label">Born on</span><br><span class="result-item-value" id="r-bornonday"></span></div>
+            <div><span class="result-item-label">Next Birthday</span><br><span class="result-item-value" id="r-nextbirthday"></span></div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-secondary" id="copy-btn">Copy</button>
+            <button class="btn btn-secondary" id="share-btn">Share</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- /tool-box -->
+
+    <!-- Quick Reference Table -->
+    <h2>Japanese Age Milestones (年齢の節目)</h2>
+    <div class="quick-ref">
+      <table>
+        <thead>
+          <tr>
+            <th>Age</th>
+            <th>Japanese</th>
+            <th>Reading</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>20</td><td>成人</td><td>seijin</td><td>Coming of age &#x2014; adult in Japan</td></tr>
+          <tr><td>60</td><td>還暦</td><td>kanreki</td><td>Full zodiac cycle complete</td></tr>
+          <tr><td>70</td><td>古稀</td><td>koki</td><td>Rare to reach 70 (from Chinese poetry)</td></tr>
+          <tr><td>77</td><td>喜寿</td><td>kiju</td><td>Joy of 77</td></tr>
+          <tr><td>80</td><td>傘寿</td><td>sanju</td><td>80th year</td></tr>
+          <tr><td>88</td><td>米寿</td><td>beiju</td><td>Rice celebration</td></tr>
+          <tr><td>90</td><td>卒寿</td><td>sotsuju</td><td>Graduation age</td></tr>
+          <tr><td>99</td><td>白寿</td><td>hakuju</td><td>White longevity</td></tr>
+          <tr><td>100</td><td>百寿</td><td>hyakuju</td><td>100 years</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BTF Ad Zone -->
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_AGE"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <!-- SEO Content -->
+    <article class="seo-content">
+      <h2>How to Calculate Japanese Age (満年齢の計算方法)</h2>
+      <p>
+        The Japanese age calculator uses your date of birth to compute your
+        current 満年齢 (man-nenrei) &#x2014; the official Japanese age used on all
+        government forms, visa applications, contracts, and official documents
+        in Japan. 満年齢 works exactly like the Western age system: you are 0
+        at birth and your age increases by 1 on each birthday.
+      </p>
+      <p>
+        The calculator also shows your 数え年 (kazoedoshi) &#x2014; the traditional
+        Japanese counting age. In this older system, everyone is born age 1
+        and gains a year on January 1st, not on their birthday. While
+        kazoedoshi is rarely used in official contexts today, it still appears
+        in traditional ceremonies, Buddhist rituals, and some regional customs.
+      </p>
+
+      <h2>Understanding Your Japanese Birth Era (生まれた元号)</h2>
+      <p>
+        Japan counts years using both the Western calendar and the imperial
+        era system (元号, geng&#x14D;). The calculator shows which era you were
+        born in &#x2014; whether Reiwa (令和, 2019&#x2013;present), Heisei (平成, 1989&#x2013;2019),
+        Showa (昭和, 1926&#x2013;1989), Taisho (大正, 1912&#x2013;1926), or Meiji (明治,
+        1868&#x2013;1912). This is useful when filling out Japanese forms that ask
+        for your birth year in era format.
+      </p>
+      <p>
+        To convert between era years and Western years, use the
+        <a href="/en/date-calendar/era-converter/">Japanese era date converter</a>.
+        To find your Japanese zodiac sign, try the
+        <a href="/en/date-calendar/zodiac/">Japanese zodiac calculator</a>.
+      </p>
+      <p>
+        <small>Age calculation follows Japanese law (年齢のとなえ方に関する法律,
+        1902). Era data sourced from the
+        <a href="https://www8.cao.go.jp/chosei/gengou/gaiyou.html"
+           target="_blank" rel="noopener">Japan Cabinet Office</a>.
+        </small>
+      </p>
+    </article>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq-section"
+      itemscope itemtype="https://schema.org/FAQPage">
+      <h2>Frequently Asked Questions</h2>
+      <ul class="faq-list">
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What is 満年齢 (man-nenrei) in Japan?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              満年齢 (man-nenrei) is the official Japanese age system, equivalent
+              to the Western method of counting age. A person's age is 0 at birth
+              and increases by 1 on each birthday. It has been the legal standard
+              in Japan since 1902 and is used for all official documents, contracts,
+              and government purposes.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What is 数え年 (kazoedoshi) and how is it calculated?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              数え年 (kazoedoshi) is the traditional Japanese age counting system.
+              A person is considered age 1 at birth, and age increases by 1 every
+              January 1st regardless of birthday. To calculate kazoedoshi: subtract
+              the birth year from the current year, then add 1. For example, someone
+              born in 2000 is kazoedoshi age 26 in 2025.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            How do I calculate my age for Japanese government forms?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              Japanese government forms and official documents use 満年齢
+              (man-nenrei), which is the same as the Western age system. Enter
+              your date of birth in the calculator above to find your current
+              満年齢. The age shown is valid for any official Japanese document,
+              visa application, or government paperwork.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What are the special age milestones in Japan?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              Japan has several traditional age milestones: 還暦 (kanreki) at
+              age 60 marks a full zodiac cycle; 古稀 (koki) at 70; 喜寿 (kiju)
+              at 77; 傘寿 (sanju) at 80; 米寿 (beiju) at 88; 白寿 (hakuju) at
+              99; and 百寿 (hyakuju) at 100. These are celebrated with special
+              ceremonies and are important cultural events in Japanese society.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What Japanese era was I born in?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              Japan uses imperial era years (元号, geng&#x14D;) alongside the
+              Western calendar. The current era is Reiwa (令和), which started
+              May 1, 2019. Before that was Heisei (平成, 1989&#x2013;2019), Showa
+              (昭和, 1926&#x2013;1989), Taisho (大正, 1912&#x2013;1926), and Meiji
+              (明治, 1868&#x2013;1912). Enter your date of birth in the Japanese age
+              calculator above to find your birth era instantly.
+            </span>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/en/date-calendar/era-converter/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4C5;</div>
+          <div class="tool-card-name">Era Date Converter</div>
+          <div class="tool-card-jp">和暦 西暦 変換</div>
+        </a>
+        <a href="/en/date-calendar/zodiac/" class="tool-card">
+          <div class="tool-card-icon">&#x1F409;</div>
+          <div class="tool-card-name">Japanese Zodiac Calculator</div>
+          <div class="tool-card-jp">干支 計算</div>
+        </a>
+        <a href="/en/tax-finance/consumption-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F9FE;</div>
+          <div class="tool-card-name">Consumption Tax Calculator</div>
+          <div class="tool-card-jp">消費税計算</div>
+        </a>
+        <a href="/en/date-calendar/" class="tool-card">
+          <div class="tool-card-icon">&#x1F5D3;&#xFE0F;</div>
+          <div class="tool-card-name">All Date &amp; Calendar Tools</div>
+          <div class="tool-card-jp">日付・カレンダーツール</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_AGE"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div><!-- /page-layout -->
+
+<!-- FOOTER PARTIAL -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/en/about/">About</a></li>
+      <li><a href="/en/privacy/">Privacy Policy</a></li>
+      <li><a href="/en/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">
+      &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
+    </p>
+    <p class="footer-attribution">Age calculation per Japanese law (1902). Era data from Japan Cabinet Office. Last updated: March 2025</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import { calculateAge, getAgeDescription, validateDOB } from '/assets/js/age.js';
+
+// Set max date on input to today
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('dob-input').setAttribute('max', today);
+
+function compute() {
+  const dobStr = document.getElementById('dob-input').value;
+  const errorEl = document.getElementById('dob-error');
+  const resultBox = document.getElementById('result-box');
+
+  const validation = validateDOB(dobStr);
+  if (!dobStr) { resultBox.classList.remove('visible'); errorEl.classList.remove('visible'); return; }
+  if (!validation.valid) {
+    errorEl.textContent = validation.error;
+    errorEl.classList.add('visible');
+    resultBox.classList.remove('visible');
+    return;
+  }
+  errorEl.classList.remove('visible');
+
+  const result = calculateAge(dobStr, today);
+  if (result.error) {
+    errorEl.textContent = result.error;
+    errorEl.classList.add('visible');
+    resultBox.classList.remove('visible');
+    return;
+  }
+
+  // Populate result fields
+  document.getElementById('r-primary').textContent       = `${result.manNenrei} years old`;
+  document.getElementById('r-description').textContent   = getAgeDescription(result.manNenrei);
+  document.getElementById('r-mannenrei').textContent     = `${result.manNenrei} years`;
+  document.getElementById('r-kazoedoshi').textContent    = `${result.kazoedoshi} years`;
+  document.getElementById('r-breakdown').textContent     = `${result.years}y ${result.months}m ${result.days}d`;
+  document.getElementById('r-birthera').textContent      = result.birthEra;
+  document.getElementById('r-bornonday').textContent     = `${result.birthDayOfWeek}, ${result.dobFormatted}`;
+  document.getElementById('r-nextbirthday').textContent  =
+    `${result.nextBirthdayFormatted} (in ${result.daysUntilBirthday} days)`;
+
+  // Birthday banner
+  const banner = document.getElementById('birthday-banner');
+  if (result.isBirthdayToday) {
+    banner.style.display = 'block';
+  } else {
+    banner.style.display = 'none';
+  }
+
+  resultBox.classList.add('visible');
+
+  // Share URL
+  const url = new URL(window.location.href);
+  url.searchParams.set('dob', dobStr);
+  document.getElementById('share-btn').dataset.url = url.toString();
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'age_calculator', language: 'en' });
+}
+
+// Event listeners
+document.getElementById('dob-input').addEventListener('change', compute);
+document.getElementById('calculate-btn').addEventListener('click', compute);
+
+// Copy button
+document.getElementById('copy-btn').addEventListener('click', () => {
+  const age  = document.getElementById('r-mannenrei').textContent;
+  const era  = document.getElementById('r-birthera').textContent;
+  const kaz  = document.getElementById('r-kazoedoshi').textContent;
+  const text = `\u6E80\u5E74\u9F62: ${age}, \u6570\u3048\u5E74: ${kaz} (${era})`;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('copy-btn');
+    btn.textContent = 'Copied! \u2713';
+    setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+  });
+});
+
+// Share button
+document.getElementById('share-btn').addEventListener('click', () => {
+  const url = document.getElementById('share-btn').dataset.url || window.location.href;
+  navigator.clipboard.writeText(url).then(() => {
+    const btn = document.getElementById('share-btn');
+    btn.textContent = 'Link copied!';
+    setTimeout(() => { btn.textContent = 'Share'; }, 2000);
+  });
+});
+
+// Init from URL params
+const p = new URLSearchParams(window.location.search);
+if (p.get('dob')) {
+  document.getElementById('dob-input').value = p.get('dob');
+  compute();
+}
+</script>
+
+<!-- Lazy ad loader -->
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(zone => {
+    const ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(z => observer.observe(z));
+  }
+});
+</script>
+
+</body>
+</html>

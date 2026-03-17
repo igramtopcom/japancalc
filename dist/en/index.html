@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JapanCalc: Free Japanese Calculators &amp; Converters</title>
+  <meta name="description" content="Free Japanese calculator and converter tools. Era date converter, consumption tax calculator, age calculator, zodiac calculator and more. Bilingual EN/JP, no login required.">
+  <link rel="canonical" href="https://japancalc.com/en/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/">
+  <meta property="og:title"       content="JapanCalc: Free Japanese Calculators &amp; Converters">
+  <meta property="og:description" content="Free Japanese calculator and converter tools. Era date converter, consumption tax calculator, age calculator, zodiac calculator and more. Bilingual EN/JP, no login required.">
+  <meta property="og:url"         content="https://japancalc.com/en/">
+  <meta property="og:type"        content="website">
+  <meta name="robots" content="index, follow">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "JapanCalc",
+    "url": "https://japancalc.com/",
+    "description": "Free Japanese calculator and converter tools. Era dates, consumption tax, age, zodiac and more.",
+    "inLanguage": ["en", "ja"],
+    "publisher": {
+      "@type": "Organization",
+      "name": "JapanCalc",
+      "url": "https://japancalc.com"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What year is Reiwa 7?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Reiwa 7 is 2025 in the Western calendar. The Reiwa era began on May 1, 2019, so to convert any Reiwa year to Western year, add 2018. Use the free Japanese era date converter on JapanCalc to convert any era year instantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Japan's consumption tax rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Japan's standard consumption tax rate is 10%. A reduced rate of 8% applies to food and non-alcoholic beverages for takeout or delivery, and certain newspaper subscriptions. Use the free consumption tax calculator on JapanCalc to add or remove tax from any price instantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is \u6e80\u5e74\u9f62 (man-nenrei) in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\u6e80\u5e74\u9f62 (man-nenrei) is the official Japanese age system, equivalent to the Western method. Age is 0 at birth and increases by 1 on each birthday. It is used on all Japanese official documents and forms. Use the Japanese age calculator on JapanCalc to calculate your \u6e80\u5e74\u9f62 instantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What zodiac sign is 2025 in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2025 is the Year of the Snake (\u5df3\u5e74) in the Japanese zodiac. The Japanese zodiac uses a 12-year cycle with animals including Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, and Pig. Use the Japanese zodiac calculator on JapanCalc to find any year's sign."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the current Japanese era?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The current Japanese era is Reiwa (\u4ee4\u548c), which began on May 1, 2019, when Emperor Naruhito ascended to the Chrysanthemum Throne. As of 2025, Japan is in Reiwa 7 (\u4ee4\u548c7\u5e74). Use the free era date converter on JapanCalc to convert any Japanese era date to Western calendar."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <style>
+  .hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0B6E5F 100%);
+    color: white;
+    padding: 3rem 1rem 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .hero h1 {
+    color: white;
+    font-size: 2.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .hero-subtitle {
+    color: rgba(255,255,255,0.85);
+    font-size: 1.05rem;
+    max-width: 640px;
+    margin-bottom: 2rem;
+  }
+  .stats-bar {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+  }
+  .stat-item { text-align: center; }
+  .stat-number {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    font-family: var(--font-mono);
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .tool-search {
+    max-width: 480px;
+  }
+  .tool-search .form-input {
+    background: rgba(255,255,255,0.95);
+    border: none;
+    font-size: 1rem;
+  }
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 1.625rem; }
+    .stats-bar { gap: 1rem; }
+    .stat-number { font-size: 1.4rem; }
+  }
+  .category-section { margin-bottom: 3rem; }
+  .category-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .category-header h2 { margin: 0; }
+  .category-jp {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+    margin-left: 0.5rem;
+  }
+  .view-all-link {
+    font-size: 0.875rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .view-all-link:hover { text-decoration: underline; }
+  .tool-card-desc {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: 0.25rem;
+  }
+  .tool-card--upcoming {
+    opacity: 0.7;
+    cursor: default;
+    pointer-events: auto;
+  }
+  .badge-upcoming {
+    display: inline-block;
+    font-size: 0.65rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    padding: 0.1rem 0.4rem;
+    border-radius: 99px;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+    font-weight: 400;
+  }
+  .popular-lookups { margin-bottom: 3rem; }
+  .lookup-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+  .lookup-item {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 99px;
+    font-size: 0.875rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .lookup-item:hover {
+    background: var(--color-border);
+    text-decoration: none;
+  }
+  </style>
+<!-- TODO: Remove this block when AdSense is approved — revert when ads go live -->
+<style>
+.ad-zone {
+  display: none !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+}
+.cards-grid {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+@media (max-width: 1024px) {
+  .cards-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV PARTIAL -->
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/en/" class="nav-logo">JapanCalc</a>
+
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <button class="nav-lang-toggle"
+            aria-label="Switch to Japanese"
+            onclick="window.location.href=window.location.pathname.replace('/en/','/')">
+      日本語
+    </button>
+    <button class="nav-hamburger"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ATF Ad Zone -->
+<div class="ad-zone ad-atf" style="margin:0 auto 0;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_HOME"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero" id="main-content">
+  <div class="page-wrapper">
+    <h1>Free Japanese Calculators &amp; Converters</h1>
+    <p class="hero-subtitle">
+      無料日本語計算機・変換ツール &#x2014; Instantly convert era dates, calculate
+      consumption tax, find your Japanese age and zodiac sign.
+      100% free, no login required.
+    </p>
+
+    <!-- Stats bar -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-number" id="tool-count">17</span>
+        <span class="stat-label">Free Tools</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Browser-based</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">EN/JP</span>
+        <span class="stat-label">Bilingual</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">0</span>
+        <span class="stat-label">Login Required</span>
+      </div>
+    </div>
+
+    <!-- Tool search -->
+    <div class="tool-search">
+      <label for="tool-search-input" class="sr-only">Search tools</label>
+      <input type="search" id="tool-search-input" class="form-input"
+             placeholder="Search tools... e.g. era, tax, age, zodiac"
+             aria-label="Search calculator tools"
+             autocomplete="off">
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main class="content page-wrapper">
+
+  <!-- Category 1 — Date & Calendar -->
+  <section class="category-section" id="date-calendar">
+    <div class="category-header">
+      <h2>Date &amp; Calendar Tools <span class="category-jp">日付・カレンダー</span></h2>
+      <a href="/en/date-calendar/" class="view-all-link">View all &#x2192;</a>
+    </div>
+    <div class="cards-grid" id="date-cards">
+
+      <!-- Row 1 -->
+      <a href="/en/date-calendar/era-converter/" class="tool-card" data-search="era converter 和暦 西暦 変換 reiwa heisei showa">
+        <div class="tool-card-icon">📅</div>
+        <div class="tool-card-name">Era Date Converter</div>
+        <div class="tool-card-jp">和暦 西暦 変換</div>
+        <div class="tool-card-desc">Convert Reiwa, Heisei, Showa years</div>
+      </a>
+
+      <a href="/en/date-calendar/era-converter/reiwa-7/" class="tool-card" data-search="reiwa 7 令和7年 2025">
+        <div class="tool-card-icon">🗓️</div>
+        <div class="tool-card-name">Reiwa 7 = 2025</div>
+        <div class="tool-card-jp">令和7年 西暦</div>
+        <div class="tool-card-desc">Full Reiwa 7 calendar reference</div>
+      </a>
+
+      <a href="/en/date-calendar/era-converter/reiwa-6/" class="tool-card" data-search="reiwa 6 令和6年 2024">
+        <div class="tool-card-icon">🗓️</div>
+        <div class="tool-card-name">Reiwa 6 = 2024</div>
+        <div class="tool-card-jp">令和6年 西暦</div>
+        <div class="tool-card-desc">Full Reiwa 6 calendar reference</div>
+      </a>
+
+      <a href="/en/date-calendar/era-converter/reiwa-5/" class="tool-card" data-search="reiwa 5 令和5年 2023">
+        <div class="tool-card-icon">🗓️</div>
+        <div class="tool-card-name">Reiwa 5 = 2023</div>
+        <div class="tool-card-jp">令和5年 西暦</div>
+        <div class="tool-card-desc">Full Reiwa 5 calendar reference</div>
+      </a>
+
+      <!-- Row 2 -->
+      <a href="/en/date-calendar/age-calculator/" class="tool-card" data-search="age calculator 年齢計算 man-nenrei kazoedoshi">
+        <div class="tool-card-icon">🎂</div>
+        <div class="tool-card-name">Japanese Age Calculator</div>
+        <div class="tool-card-jp">年齢計算 満年齢</div>
+        <div class="tool-card-desc">Calculate 満年齢 and 数え年</div>
+      </a>
+
+      <a href="/en/date-calendar/zodiac/" class="tool-card" data-search="zodiac eto 干支 計算 animal sign">
+        <div class="tool-card-icon">🐉</div>
+        <div class="tool-card-name">Japanese Zodiac Calculator</div>
+        <div class="tool-card-jp">干支 計算</div>
+        <div class="tool-card-desc">Find your eto animal sign</div>
+      </a>
+
+      <a href="/en/date-calendar/holiday-checker/" class="tool-card" data-search="holiday checker 祝日 national holiday">
+        <div class="tool-card-icon">🏮</div>
+        <div class="tool-card-name">Japan Holiday Checker</div>
+        <div class="tool-card-jp">祝日チェッカー</div>
+        <div class="tool-card-desc">Check any date for public holidays</div>
+      </a>
+
+      <a href="/en/date-calendar/travel-budget/" class="tool-card" data-search="travel budget 旅行予算 trip cost">
+        <div class="tool-card-icon">✈️</div>
+        <div class="tool-card-name">Travel Budget Calculator</div>
+        <div class="tool-card-jp">旅行予算計算</div>
+        <div class="tool-card-desc">Estimate your Japan trip costs</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Category 2 — Tax & Finance -->
+  <section class="category-section" id="tax-finance">
+    <div class="category-header">
+      <h2>Tax &amp; Finance Tools <span class="category-jp">税金・財務</span></h2>
+      <a href="/en/tax-finance/" class="view-all-link">View all &#x2192;</a>
+    </div>
+    <div class="cards-grid" id="tax-cards">
+
+      <a href="/en/tax-finance/consumption-tax/" class="tool-card" data-search="consumption tax 消費税計算 jct 10% 8%">
+        <div class="tool-card-icon">&#x1F9FE;</div>
+        <div class="tool-card-name">Consumption Tax Calculator</div>
+        <div class="tool-card-jp">消費税計算</div>
+        <div class="tool-card-desc">Add or remove 10% / 8% tax</div>
+      </a>
+
+      <a href="/en/tax-finance/salary-calculator/" class="tool-card" data-search="salary take home 手取り計算">
+        <div class="tool-card-icon">💴</div>
+        <div class="tool-card-name">Salary Calculator</div>
+        <div class="tool-card-jp">手取り計算</div>
+        <div class="tool-card-desc">Estimate net take-home pay</div>
+      </a>
+
+      <a href="/en/tax-finance/work-hours/" class="tool-card" data-search="work hours overtime 残業時間 労働時間">
+        <div class="tool-card-icon">⏱️</div>
+        <div class="tool-card-name">Work Hours Calculator</div>
+        <div class="tool-card-jp">残業時間計算</div>
+        <div class="tool-card-desc">Calculate overtime and work hours</div>
+      </a>
+
+      <a href="/en/tax-finance/withholding-tax/" class="tool-card" data-search="withholding tax 源泉徴収 gensen choshu">
+        <div class="tool-card-icon">🧮</div>
+        <div class="tool-card-name">Withholding Tax Calculator</div>
+        <div class="tool-card-jp">源泉徴収計算</div>
+        <div class="tool-card-desc">Calculate income tax withholding</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Category 3 — Language Tools -->
+  <section class="category-section" id="language-tools">
+    <div class="category-header">
+      <h2>Language Tools <span class="category-jp">言語ツール</span></h2>
+      <a href="/en/language-tools/" class="view-all-link">View all &#x2192;</a>
+    </div>
+    <div class="cards-grid" id="lang-cards">
+
+      <a href="/en/language-tools/romaji-converter/" class="tool-card" data-search="romaji converter hiragana katakana ローマ字変換">
+        <div class="tool-card-icon">&#x1F524;</div>
+        <div class="tool-card-name">Romaji Converter</div>
+        <div class="tool-card-jp">ローマ字変換</div>
+        <div class="tool-card-desc">Convert Japanese to romaji</div>
+      </a>
+
+      <a href="/en/language-tools/furigana-generator/" class="tool-card" data-search="furigana generator kanji reading ふりがな生成">
+        <div class="tool-card-icon">📖</div>
+        <div class="tool-card-name">Furigana Generator</div>
+        <div class="tool-card-jp">ふりがな生成</div>
+        <div class="tool-card-desc">Add furigana to kanji text</div>
+      </a>
+
+      <a href="/en/language-tools/kanji-numbers/" class="tool-card" data-search="kanji numbers converter 漢数字 変換">
+        <div class="tool-card-icon">🔢</div>
+        <div class="tool-card-name">Kanji Number Converter</div>
+        <div class="tool-card-jp">漢数字変換</div>
+        <div class="tool-card-desc">Convert between Arabic and kanji numbers</div>
+      </a>
+
+      <a href="/en/language-tools/measurement-converter/" class="tool-card" data-search="measurement converter 単位変換 tsubo shaku">
+        <div class="tool-card-icon">📐</div>
+        <div class="tool-card-name">Measurement Converter</div>
+        <div class="tool-card-jp">単位変換</div>
+        <div class="tool-card-desc">Convert Japanese and metric units</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- BTF Ad Zone -->
+  <div class="ad-zone ad-btf" data-lazy-ad="true" style="margin:0;">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="SLOT_BTF_HOME"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+
+  <!-- Popular Lookups -->
+  <section class="popular-lookups">
+    <h2>Popular Lookups</h2>
+    <div class="lookup-grid">
+      <a href="/en/date-calendar/era-converter/reiwa-7/" class="lookup-item">令和7年 &#x2192; 2025</a>
+      <a href="/en/date-calendar/era-converter/reiwa-6/" class="lookup-item">令和6年 &#x2192; 2024</a>
+      <a href="/en/date-calendar/era-converter/reiwa-5/" class="lookup-item">令和5年 &#x2192; 2023</a>
+      <a href="/en/date-calendar/era-converter/reiwa-4/" class="lookup-item">令和4年 &#x2192; 2022</a>
+      <a href="/en/date-calendar/era-converter/reiwa-3/" class="lookup-item">令和3年 &#x2192; 2021</a>
+      <a href="/en/date-calendar/era-converter/showa/"   class="lookup-item">昭和 &#x2192; 西暦変換</a>
+      <a href="/en/date-calendar/era-converter/heisei/"  class="lookup-item">平成 &#x2192; 西暦変換</a>
+      <a href="/en/tax-finance/consumption-tax/"          class="lookup-item">消費税 10% 計算</a>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq" itemscope itemtype="https://schema.org/FAQPage">
+    <h2>Frequently Asked Questions</h2>
+    <ul class="faq-list">
+
+      <li class="faq-item" itemscope itemprop="mainEntity"
+          itemtype="https://schema.org/Question">
+        <div class="faq-question" itemprop="name">
+          What year is Reiwa 7?
+        </div>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+             itemtype="https://schema.org/Answer">
+          <span itemprop="text">
+            Reiwa 7 is 2025 in the Western calendar. The Reiwa era began on
+            May 1, 2019, so to convert any Reiwa year to Western year, add
+            2018. Use the free Japanese era date converter on JapanCalc to
+            convert any era year instantly.
+          </span>
+        </div>
+      </li>
+
+      <li class="faq-item" itemscope itemprop="mainEntity"
+          itemtype="https://schema.org/Question">
+        <div class="faq-question" itemprop="name">
+          What is Japan's consumption tax rate?
+        </div>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+             itemtype="https://schema.org/Answer">
+          <span itemprop="text">
+            Japan's standard consumption tax rate is 10%. A reduced rate of
+            8% applies to food and non-alcoholic beverages for takeout or
+            delivery, and certain newspaper subscriptions. Use the free
+            consumption tax calculator on JapanCalc to add or remove tax
+            from any price instantly.
+          </span>
+        </div>
+      </li>
+
+      <li class="faq-item" itemscope itemprop="mainEntity"
+          itemtype="https://schema.org/Question">
+        <div class="faq-question" itemprop="name">
+          What is 満年齢 (man-nenrei) in Japan?
+        </div>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+             itemtype="https://schema.org/Answer">
+          <span itemprop="text">
+            満年齢 (man-nenrei) is the official Japanese age system,
+            equivalent to the Western method. Age is 0 at birth and
+            increases by 1 on each birthday. It is used on all Japanese
+            official documents and forms. Use the Japanese age calculator
+            on JapanCalc to calculate your 満年齢 instantly.
+          </span>
+        </div>
+      </li>
+
+      <li class="faq-item" itemscope itemprop="mainEntity"
+          itemtype="https://schema.org/Question">
+        <div class="faq-question" itemprop="name">
+          <span id="faq-zodiac-question">What zodiac sign is 2025 in Japan?</span>
+        </div>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+             itemtype="https://schema.org/Answer">
+          <p id="faq-zodiac-answer" itemprop="text"></p>
+        </div>
+      </li>
+
+      <li class="faq-item" itemscope itemprop="mainEntity"
+          itemtype="https://schema.org/Question">
+        <div class="faq-question" itemprop="name">
+          What is the current Japanese era?
+        </div>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+             itemtype="https://schema.org/Answer">
+          <span itemprop="text">
+            The current Japanese era is Reiwa (令和), which began on May 1,
+            2019, when Emperor Naruhito ascended to the Chrysanthemum
+            Throne. <span id="faq-era-current"></span> Use the free
+            era date converter on JapanCalc to convert any Japanese era
+            date to Western calendar.
+          </span>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+</main>
+
+<!-- FOOTER PARTIAL -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/en/about/">About</a></li>
+      <li><a href="/en/privacy/">Privacy Policy</a></li>
+      <li><a href="/en/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">
+      &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
+    </p>
+    <p class="footer-attribution">Date data sourced from Japan Cabinet Office. Tax rates from National Tax Agency Japan.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+
+<script>
+// Fix 2: Dynamic zodiac FAQ answer
+(function updateZodiacFAQ() {
+  var ZODIAC = [
+    { en: 'Monkey',  kanji: '申' }, { en: 'Rooster', kanji: '酉' },
+    { en: 'Dog',     kanji: '戌' }, { en: 'Pig',     kanji: '亥' },
+    { en: 'Rat',     kanji: '子' }, { en: 'Ox',      kanji: '丑' },
+    { en: 'Tiger',   kanji: '寅' }, { en: 'Rabbit',  kanji: '卯' },
+    { en: 'Dragon',  kanji: '辰' }, { en: 'Snake',   kanji: '巳' },
+    { en: 'Horse',   kanji: '午' }, { en: 'Goat',    kanji: '未' }
+  ];
+  var el = document.getElementById('faq-zodiac-answer');
+  if (!el) return;
+  var year   = new Date().getFullYear();
+  var qEl = document.getElementById('faq-zodiac-question');
+  if (qEl) qEl.textContent = 'What zodiac sign is ' + year + ' in Japan?';
+  var animal = ZODIAC[year % 12];
+  el.textContent =
+    year + ' is the Year of the ' + animal.en + ' (' + animal.kanji + '\u5E74) in the Japanese zodiac. ' +
+    'The Japanese zodiac uses a 12-year cycle with animals including Rat, Ox, Tiger, Rabbit, ' +
+    'Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, and Pig. ' +
+    'Use the Japanese zodiac calculator on JapanCalc to find any year\'s sign.';
+})();
+
+// Fix 3: Dynamic current era FAQ answer
+(function updateEraFAQ() {
+  var el = document.getElementById('faq-era-current');
+  if (!el) return;
+  var year    = new Date().getFullYear();
+  var reiwaYr = year - 2018;
+  el.textContent = 'As of ' + year + ', Japan is in Reiwa ' + reiwaYr + ' (\u4EE4\u548C' + reiwaYr + '\u5E74).';
+})();
+</script>
+
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script>
+// Real-time tool search
+const searchInput = document.getElementById('tool-search-input');
+const allCards    = document.querySelectorAll('.tool-card');
+
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.toLowerCase().trim();
+  allCards.forEach(card => {
+    const searchData = (card.dataset.search || '') + ' ' +
+                       (card.querySelector('.tool-card-name')?.textContent || '') + ' ' +
+                       (card.querySelector('.tool-card-jp')?.textContent || '');
+    card.style.display = (!q || searchData.toLowerCase().includes(q)) ? '' : 'none';
+  });
+});
+</script>
+
+<!-- Lazy ad loader -->
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(zone => {
+    const ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(z => observer.observe(z));
+  }
+});
+</script>
+
+</body>
+</html>

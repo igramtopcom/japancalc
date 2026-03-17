@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japan Withholding Tax Calculator: 源泉徴収計算 | JapanCalc</title>
+  <meta name="description" content="Calculate Japan withholding tax (源泉徴収) on freelance fees, interest, and dividends. Instant 源泉徴収計算 for invoices. NTA rates updated annually. Free, no login.">
+  <link rel="canonical" href="https://japancalc.com/en/tax-finance/withholding-tax/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/tax-finance/withholding-tax/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/tax-finance/withholding-tax/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/tax-finance/withholding-tax/">
+  <meta property="og:title"       content="Japan Withholding Tax Calculator: 源泉徴収計算 | JapanCalc">
+  <meta property="og:description" content="Calculate Japan withholding tax (源泉徴収) on freelance fees, interest, and dividends. Instant 源泉徴収計算 for invoices. NTA rates updated annually. Free, no login.">
+  <meta property="og:url"         content="https://japancalc.com/en/tax-finance/withholding-tax/">
+  <meta property="og:type"        content="website">
+  <meta name="robots" content="index, follow">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Japan Withholding Tax Calculator \u2014 \u6e90\u6cc9\u5fb4\u53ce\u8a08\u7b97",
+    "url": "https://japancalc.com/en/tax-finance/withholding-tax/",
+    "description": "Calculate Japan withholding tax (\u6e90\u6cc9\u5fb4\u53ce) on freelance professional fees, interest income, and dividends. FY2025 NTA rates. Free, browser-based, no login required.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",
+        "item": "https://japancalc.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Tax & Finance",
+        "item": "https://japancalc.com/en/tax-finance/" },
+      { "@type": "ListItem", "position": 3, "name": "Japan Withholding Tax Calculator",
+        "item": "https://japancalc.com/en/tax-finance/withholding-tax/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is withholding tax (\u6e90\u6cc9\u5fb4\u53ce) in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Withholding tax (\u6e90\u6cc9\u5fb4\u53ce, gensen ch\u014dsh\u016b) in Japan is income tax deducted at the source of payment before the recipient receives funds. For freelance and professional service fees, the payer (client) deducts the withholding tax from the invoice amount and pays it directly to the tax office on behalf of the recipient. The recipient then claims the withheld amount as a credit when filing their annual income tax return."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much withholding tax is deducted from freelance fees in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For freelance and professional fees in Japan, the withholding tax rate is 10.21% (including the 2.1% reconstruction surtax) for payments up to \u00a51,000,000. For payments exceeding \u00a51,000,000 in a single payment, the rate is \u00a5102,100 flat on the first million, plus 20.42% on the amount above \u00a51,000,000. For example, a \u00a5500,000 invoice would have \u00a551,050 withheld, leaving a net payment of \u00a5448,950."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is responsible for withholding tax in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Japan, the payer (client or employer) is responsible for calculating and withholding the tax from the payment, and remitting it to the tax office. As a freelancer or contractor, you issue an invoice for the full gross amount. The client deducts the withholding tax and pays you the net amount. The withheld tax is credited against your annual income tax liability when you file your tax return (\u78ba\u5b9a\u7533\u544a)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does withholding tax apply to all freelance work in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Withholding tax applies to specific types of professional fees defined in Article 204 of the Income Tax Act, including: writing, design, photography, translation, and other creative work; legal, accounting, and consulting services; and entertainment and talent fees. Not all freelance payments require withholding \u2014 for example, payments from individuals (not businesses) for personal services are generally exempt. When in doubt, consult a tax professional or the National Tax Agency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I claim back withheld tax in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To claim back withheld tax in Japan, you must file an annual income tax return (\u78ba\u5b9a\u7533\u544a, kakutei shinkoku) between February 16 and March 15 of the following year. On your return, you declare all income and claim the withheld amounts as a tax credit. If the total tax withheld exceeds your actual tax liability, you will receive a refund. Keep all payment slips showing withholding amounts (\u6e90\u6cc9\u5fb4\u53ce\u7968) as you will need them for your return."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <style>
+  .invoice-box {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+  }
+  .invoice-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem 0;
+  }
+  .invoice-row.total {
+    border-top: 1px solid var(--color-border);
+    margin-top: 0.4rem;
+    padding-top: 0.6rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--color-accent);
+  }
+  .invoice-row .label { color: var(--color-text-muted); }
+  .invoice-row .value-negative { color: #DC2626; font-weight: 600; }
+  .split-notice {
+    font-size: 0.85rem;
+    color: var(--color-warning);
+    background: #FFFBEB;
+    border: 1px solid #FCD34D;
+    border-radius: var(--radius);
+    padding: 0.6rem 0.9rem;
+    margin-top: 0.75rem;
+  }
+  .withholding-primary {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #DC2626;
+    font-family: var(--font-mono);
+  }
+  .income-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.4rem 1rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  .income-grid .row-label { color: var(--color-text); }
+  .income-grid .row-value {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    text-align: right;
+    white-space: nowrap;
+  }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/en/" class="nav-logo">JapanCalc</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
+            onclick="window.location.href=window.location.pathname.replace('/en/','/')">&#x65E5;&#x672C;&#x8A9E;</button>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/en/">Home</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">Withholding Tax Calculator</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_WITHHOLDING"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>Japan Withholding Tax Calculator &#x2014; &#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x8A08;&#x7B97;</h1>
+    <p class="tool-subtitle">&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x8A08;&#x7B97;&#x30C4;&#x30FC;&#x30EB; &#x2014; Calculate withholding tax on freelance fees and invoices</p>
+    <p class="tool-desc">
+      Calculate Japan withholding tax (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;) on freelance professional fees,
+      interest income, and dividends. Enter your invoice amount to see the
+      withholding deduction and net payment instantly. Based on FY2025 NTA rates.
+      Free, no login required.
+    </p>
+
+    <div class="tool-box" id="tool-main">
+      <!-- Tab bar -->
+      <div class="tool-tabs" role="tablist">
+        <button class="tool-tab active" data-panel="panel-fee" role="tab" aria-selected="true">Professional Fees (&#x5831;&#x916C;)</button>
+        <button class="tool-tab" data-panel="panel-income" role="tab" aria-selected="false">Interest &amp; Dividends (&#x5229;&#x5B50;&#x30FB;&#x914D;&#x5F53;)</button>
+      </div>
+
+      <!-- Tab 1 — Professional Fees -->
+      <div class="tool-panel active" id="panel-fee" role="tabpanel">
+        <div class="form-group">
+          <label class="form-label" for="fee-amount">
+            Invoice Amount &#x2014; &#x8ACB;&#x6C42;&#x91D1;&#x984D; (&#x7A0E;&#x629C;) &#xA5;
+          </label>
+          <input type="number" class="form-input" id="fee-amount"
+                 min="0" step="1000" placeholder="e.g. 500000">
+          <span class="text-muted" style="font-size:0.8rem;">
+            Enter the gross invoice amount before withholding
+          </span>
+          <div class="form-error" id="fee-error"></div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" id="fee-calc-btn">Calculate Withholding</button>
+        </div>
+
+        <div class="result-box" id="fee-result" aria-live="polite">
+          <div class="withholding-primary" id="r-withholding"></div>
+          <div class="result-secondary">Withholding Tax (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x7A0E;)</div>
+
+          <div class="invoice-box">
+            <div class="invoice-row">
+              <span class="label">Invoice (&#x8ACB;&#x6C42;&#x91D1;&#x984D;)</span>
+              <span id="r-gross"></span>
+            </div>
+            <div class="invoice-row">
+              <span class="label">Withholding (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;)</span>
+              <span class="value-negative" id="r-wh-value"></span>
+            </div>
+            <div class="invoice-row total">
+              <span>Net Payment (&#x632F;&#x8FBC;&#x91D1;&#x984D;)</span>
+              <span id="r-net"></span>
+            </div>
+          </div>
+
+          <div style="font-size:0.85rem; color:var(--color-text-muted); margin:0.5rem 0;">
+            Rate applied: <strong id="r-rate-info"></strong>
+          </div>
+          <div style="font-size:0.85rem; color:var(--color-text-muted);">
+            Formula: <span id="r-formula"></span>
+          </div>
+
+          <div class="split-notice" id="split-notice" style="display:none;"></div>
+
+          <div class="btn-row" style="margin-top:1rem;">
+            <button class="btn btn-secondary" id="copy-invoice-btn">Copy Invoice Line</button>
+            <button class="btn btn-secondary" id="share-btn">Share</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2 — Interest & Dividends -->
+      <div class="tool-panel" id="panel-income" role="tabpanel">
+        <div class="form-group">
+          <label class="form-label" for="income-amount">Amount &#xA5;</label>
+          <input type="number" class="form-input" id="income-amount"
+                 min="0" step="1000" placeholder="e.g. 100000">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Income Type</label>
+          <div class="rate-toggle" role="group">
+            <label class="rate-option">
+              <input type="radio" name="income-type" value="interest" checked>
+              <span>Interest (&#x5229;&#x5B50;) 15.21%</span>
+            </label>
+            <label class="rate-option">
+              <input type="radio" name="income-type" value="dividend_listed">
+              <span>Dividend &#x2014; Listed (&#x4E0A;&#x5834;) 10.21%</span>
+            </label>
+            <label class="rate-option">
+              <input type="radio" name="income-type" value="dividend_unlisted">
+              <span>Dividend &#x2014; Unlisted (&#x975E;&#x4E0A;&#x5834;) 20.42%</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" id="income-calc-btn">Calculate</button>
+        </div>
+
+        <div class="result-box" id="income-result" aria-live="polite">
+          <div class="withholding-primary" id="r-income-wh"></div>
+          <div class="result-secondary">Withholding Tax</div>
+
+          <div class="income-grid">
+            <span class="row-label">Gross Amount</span>
+            <span class="row-value" id="r-income-gross"></span>
+            <span class="row-label">Withholding Tax</span>
+            <span class="row-value" style="color:#DC2626;" id="r-income-wh2"></span>
+            <span class="row-label" style="font-weight:700;">Net Amount</span>
+            <span class="row-value" style="font-weight:700;" id="r-income-net"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Reference Table -->
+    <div class="quick-ref" style="overflow-x:auto;">
+      <h2>Withholding Tax Reference Table &#x2014; &#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x65E9;&#x898B;&#x8868; (FY2025)</h2>
+      <table>
+        <thead>
+          <tr><th>Invoice Amount</th><th>Withholding Tax</th><th>Net Payment</th><th>Rate</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>&#xA5;50,000</td><td>&#xA5;5,105</td><td>&#xA5;44,895</td><td>10.21%</td></tr>
+          <tr><td>&#xA5;100,000</td><td>&#xA5;10,210</td><td>&#xA5;89,790</td><td>10.21%</td></tr>
+          <tr><td>&#xA5;200,000</td><td>&#xA5;20,420</td><td>&#xA5;179,580</td><td>10.21%</td></tr>
+          <tr><td>&#xA5;300,000</td><td>&#xA5;30,630</td><td>&#xA5;269,370</td><td>10.21%</td></tr>
+          <tr><td>&#xA5;500,000</td><td>&#xA5;51,050</td><td>&#xA5;448,950</td><td>10.21%</td></tr>
+          <tr><td>&#xA5;800,000</td><td>&#xA5;81,680</td><td>&#xA5;718,320</td><td>10.21%</td></tr>
+          <tr><td>&#xA5;1,000,000</td><td>&#xA5;102,100</td><td>&#xA5;897,900</td><td>10.21%</td></tr>
+          <tr><td>&#xA5;1,500,000</td><td>&#xA5;204,200</td><td>&#xA5;1,295,800</td><td>Split*</td></tr>
+          <tr><td>&#xA5;2,000,000</td><td>&#xA5;306,300</td><td>&#xA5;1,693,700</td><td>Split*</td></tr>
+          <tr><td>&#xA5;3,000,000</td><td>&#xA5;510,500</td><td>&#xA5;2,489,500</td><td>Split*</td></tr>
+        </tbody>
+      </table>
+      <p class="text-muted">
+        <small>Professional fee withholding rate: 10.21% (&#x2264;&#xA5;1,000,000) / split rate (&gt;&#xA5;1,000,000).
+        *Split: &#xA5;102,100 on first &#xA5;1,000,000 + 20.42% on amount above.
+        Includes 2.1% reconstruction surtax.
+        Source: <a href="https://www.nta.go.jp" target="_blank" rel="noopener">NTA Japan</a>.</small>
+      </p>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_WITHHOLDING"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="seo-content">
+      <h2>How Withholding Tax Works for Freelancers in Japan (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x306E;&#x4ED5;&#x7D44;&#x307F;)</h2>
+      <p>
+        When a Japanese business pays a freelancer or independent contractor for
+        professional services, they are legally required to deduct withholding tax
+        (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x7A0E;) from the payment before transferring funds. The withholding
+        rate for most professional fees is <strong>10.21%</strong> &#x2014; this includes
+        the base 10% income tax rate plus the 2.1% reconstruction surtax (&#x5FA9;&#x8208;&#x7279;&#x5225;
+        &#x6240;&#x5F97;&#x7A0E;) that applies until 2037.
+      </p>
+      <p>
+        For example, if you invoice a client for &#xA5;500,000, the client will deduct
+        &#xA5;51,050 (10.21%) and transfer &#xA5;448,950 to your account. They then pay the
+        &#xA5;51,050 to the tax office on your behalf. When you file your annual tax
+        return (&#x78BA;&#x5B9A;&#x7533;&#x544A;), you declare the full &#xA5;500,000 as income and claim the
+        &#xA5;51,050 as a tax credit against your total tax liability.
+      </p>
+
+      <h2>When Does the Split Rate Apply? (100&#x4E07;&#x5186;&#x8D85;&#x306E;&#x5834;&#x5408;)</h2>
+      <p>
+        For a single payment exceeding &#xA5;1,000,000, a split withholding rate applies.
+        The first &#xA5;1,000,000 is taxed at 10.21%, resulting in a flat deduction of
+        &#xA5;102,100. The amount above &#xA5;1,000,000 is taxed at <strong>20.42%</strong>.
+        So for a &#xA5;1,500,000 invoice: &#xA5;102,100 + (&#xA5;500,000 &#xD7; 20.42%) = &#xA5;204,200
+        total withholding, leaving &#xA5;1,295,800 net payment.
+      </p>
+      <p>
+        Note that the threshold applies per payment &#x2014; not per month or per year.
+        A series of &#xA5;500,000 invoices each uses the 10.21% rate, even if the
+        annual total exceeds &#xA5;1,000,000. For salary withholding and other
+        deductions, see the
+        <a href="/en/tax-finance/salary-calculator/">Japan salary calculator</a>.
+        Tax rates sourced from the
+        <a href="https://www.nta.go.jp" target="_blank" rel="noopener">
+        National Tax Agency Japan (NTA)</a>.
+      </p>
+    </article>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary>What is withholding tax (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;) in Japan?</summary>
+        <p>Withholding tax (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;, gensen ch&#x14D;sh&#x16B;) in Japan is income tax deducted at the source of payment before the recipient receives funds. For freelance and professional service fees, the payer (client) deducts the withholding tax from the invoice amount and pays it directly to the tax office on behalf of the recipient. The recipient then claims the withheld amount as a credit when filing their annual income tax return.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How much withholding tax is deducted from freelance fees in Japan?</summary>
+        <p>For freelance and professional fees in Japan, the withholding tax rate is 10.21% (including the 2.1% reconstruction surtax) for payments up to &#xA5;1,000,000. For payments exceeding &#xA5;1,000,000 in a single payment, the rate is &#xA5;102,100 flat on the first million, plus 20.42% on the amount above &#xA5;1,000,000. For example, a &#xA5;500,000 invoice would have &#xA5;51,050 withheld, leaving a net payment of &#xA5;448,950.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Who is responsible for withholding tax in Japan?</summary>
+        <p>In Japan, the payer (client or employer) is responsible for calculating and withholding the tax from the payment, and remitting it to the tax office. As a freelancer or contractor, you issue an invoice for the full gross amount. The client deducts the withholding tax and pays you the net amount. The withheld tax is credited against your annual income tax liability when you file your tax return (&#x78BA;&#x5B9A;&#x7533;&#x544A;).</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does withholding tax apply to all freelance work in Japan?</summary>
+        <p>Withholding tax applies to specific types of professional fees defined in Article 204 of the Income Tax Act, including: writing, design, photography, translation, and other creative work; legal, accounting, and consulting services; and entertainment and talent fees. Not all freelance payments require withholding &#x2014; for example, payments from individuals (not businesses) for personal services are generally exempt. When in doubt, consult a tax professional or the National Tax Agency.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I claim back withheld tax in Japan?</summary>
+        <p>To claim back withheld tax in Japan, you must file an annual income tax return (&#x78BA;&#x5B9A;&#x7533;&#x544A;, kakutei shinkoku) between February 16 and March 15 of the following year. On your return, you declare all income and claim the withheld amounts as a tax credit. If the total tax withheld exceeds your actual tax liability, you will receive a refund. Keep all payment slips showing withholding amounts (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x7968;) as you will need them for your return.</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/en/tax-finance/salary-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4B4;</div>
+          <div class="tool-card-name">Salary Calculator</div>
+          <div class="tool-card-jp">&#x624B;&#x53D6;&#x308A;&#x8A08;&#x7B97;</div>
+        </a>
+        <a href="/en/tax-finance/consumption-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F9FE;</div>
+          <div class="tool-card-name">Consumption Tax Calculator</div>
+          <div class="tool-card-jp">&#x6D88;&#x8CBB;&#x7A0E;&#x8A08;&#x7B97;</div>
+        </a>
+        <a href="/en/tax-finance/work-hours/" class="tool-card">
+          <div class="tool-card-icon">&#x23F1;&#xFE0F;</div>
+          <div class="tool-card-name">Overtime Calculator</div>
+          <div class="tool-card-jp">&#x6B8B;&#x696D;&#x4EE3;&#x8A08;&#x7B97;</div>
+        </a>
+        <a href="/en/tax-finance/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4BC;</div>
+          <div class="tool-card-name">All Tax &amp; Finance Tools</div>
+          <div class="tool-card-jp">&#x7A0E;&#x91D1;&#x30FB;&#x8CA1;&#x52D9;&#x30C4;&#x30FC;&#x30EB;</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_WITHHOLDING"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/en/about/">About</a></li>
+      <li><a href="/en/privacy/">Privacy Policy</a></li>
+      <li><a href="/en/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+    <p class="footer-attribution">Withholding tax rates sourced from National Tax Agency Japan (NTA), FY2025. Last updated: March 2025</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import {
+  calculateWithholdingFee,
+  calculateWithholdingInterest,
+  calculateWithholdingDividend,
+  formatInvoiceLine
+} from '/assets/js/withholding.js';
+
+function formatJPY(n) {
+  return '\u00A5' + Math.round(n).toLocaleString('ja-JP');
+}
+
+// ── Tab switching
+document.querySelectorAll('.tool-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.tool-tab, .tool-panel')
+      .forEach(function(el) { el.classList.remove('active'); });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+    document.querySelectorAll('.tool-tab').forEach(function(t) {
+      if (t !== tab) t.setAttribute('aria-selected', 'false');
+    });
+  });
+});
+
+// ── Tab 1: Professional Fee
+function computeFee() {
+  var amtStr  = document.getElementById('fee-amount').value;
+  var errorEl = document.getElementById('fee-error');
+  var resultEl = document.getElementById('fee-result');
+
+  if (!amtStr) { resultEl.classList.remove('visible'); return; }
+
+  var amount = parseFloat(amtStr);
+  var r = calculateWithholdingFee(amount);
+
+  if (r.error) {
+    errorEl.textContent = r.error;
+    errorEl.classList.add('visible');
+    resultEl.classList.remove('visible');
+    return;
+  }
+  errorEl.classList.remove('visible');
+
+  document.getElementById('r-withholding').textContent = '-' + formatJPY(r.withholdingTax);
+  document.getElementById('r-gross').textContent       = formatJPY(r.grossAmount);
+  document.getElementById('r-wh-value').textContent    = '-' + formatJPY(r.withholdingTax);
+  document.getElementById('r-net').textContent         = formatJPY(r.netPayment);
+  document.getElementById('r-rate-info').textContent   = r.rateLabel;
+  document.getElementById('r-formula').textContent     = r.formula;
+
+  // Split rate notice
+  var splitNotice = document.getElementById('split-notice');
+  splitNotice.style.display = r.splitApplied ? 'block' : 'none';
+  if (r.splitApplied) {
+    splitNotice.textContent =
+      '\u26A0 Split rate applied: \u00A5102,100 (10.21% on first \u00A51,000,000) + 20.42% on \u00A5' +
+      (amount - 1000000).toLocaleString('ja-JP') + ' above threshold';
+  }
+
+  resultEl.classList.add('visible');
+
+  // Share URL
+  var url = new URL(window.location.href.split('?')[0]);
+  url.searchParams.set('amount', amount);
+  document.getElementById('share-btn').dataset.url = url.toString();
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'withholding_calculator', mode: 'fee', language: 'en' });
+}
+
+// ── Tab 2: Interest & Dividend
+function computeIncome() {
+  var amtStr = document.getElementById('income-amount').value;
+  var type   = document.querySelector('input[name="income-type"]:checked').value;
+  var resultEl = document.getElementById('income-result');
+
+  if (!amtStr) { resultEl.classList.remove('visible'); return; }
+
+  var amount = parseFloat(amtStr);
+  var r;
+  if (type === 'interest') {
+    r = calculateWithholdingInterest(amount);
+  } else {
+    r = calculateWithholdingDividend(amount, type === 'dividend_listed');
+  }
+
+  if (r.error) { resultEl.classList.remove('visible'); return; }
+
+  document.getElementById('r-income-wh').textContent   = '-' + formatJPY(r.withholdingTax);
+  document.getElementById('r-income-gross').textContent = formatJPY(r.grossAmount);
+  document.getElementById('r-income-wh2').textContent  = '-' + formatJPY(r.withholdingTax) + ' (' + r.ratePercent + ')';
+  document.getElementById('r-income-net').textContent  = formatJPY(r.netPayment);
+
+  resultEl.classList.add('visible');
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'withholding_calculator', mode: type, language: 'en' });
+}
+
+// Event listeners
+document.getElementById('fee-amount').addEventListener('input', computeFee);
+document.getElementById('fee-calc-btn').addEventListener('click', computeFee);
+document.getElementById('income-amount').addEventListener('input', computeIncome);
+document.getElementById('income-calc-btn').addEventListener('click', computeIncome);
+document.querySelectorAll('input[name="income-type"]')
+  .forEach(function(r) { r.addEventListener('change', computeIncome); });
+
+// Copy Invoice Line
+document.getElementById('copy-invoice-btn').addEventListener('click', function() {
+  var amount = parseFloat(document.getElementById('fee-amount').value) || 0;
+  if (!amount) return;
+  var r = calculateWithholdingFee(amount);
+  if (!r.error) navigator.clipboard.writeText(formatInvoiceLine(r)).then(function() {
+    var btn = document.getElementById('copy-invoice-btn');
+    btn.textContent = 'Copied! \u2713';
+    setTimeout(function() { btn.textContent = 'Copy Invoice Line'; }, 2000);
+  });
+});
+
+// Share
+document.getElementById('share-btn').addEventListener('click', function() {
+  var url = document.getElementById('share-btn').dataset.url || window.location.href;
+  navigator.clipboard.writeText(url).then(function() {
+    var btn = document.getElementById('share-btn');
+    btn.textContent = 'Link copied!';
+    setTimeout(function() { btn.textContent = 'Share'; }, 2000);
+  });
+});
+
+// Init from URL params
+var p = new URLSearchParams(window.location.search);
+if (p.get('amount')) {
+  document.getElementById('fee-amount').value = p.get('amount');
+  computeFee();
+}
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(function(zone) {
+    var ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(function(z) { observer.observe(z); });
+  }
+});
+</script>
+
+</body>
+</html>

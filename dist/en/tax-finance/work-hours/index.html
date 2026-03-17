@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japan Overtime Calculator: 残業代計算 | JapanCalc</title>
+  <meta name="description" content="Calculate Japan overtime pay (残業代) based on Labor Standards Act rates. Monthly and daily OT calculator: 1.25x standard, 1.35x holiday, 1.5x late night. Free 残業計算ツール.">
+  <link rel="canonical" href="https://japancalc.com/en/tax-finance/work-hours/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/tax-finance/work-hours/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/tax-finance/work-hours/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/tax-finance/work-hours/">
+  <meta property="og:title"       content="Japan Overtime Calculator: 残業代計算 | JapanCalc">
+  <meta property="og:description" content="Calculate Japan overtime pay (残業代) based on Labor Standards Act rates. Monthly and daily OT calculator: 1.25x standard, 1.35x holiday, 1.5x late night. Free 残業計算ツール.">
+  <meta property="og:url"         content="https://japancalc.com/en/tax-finance/work-hours/">
+  <meta property="og:type"        content="website">
+  <meta name="robots" content="index, follow">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Japan Overtime Calculator \u2014 \u6b8b\u696d\u4ee3\u8a08\u7b97",
+    "url": "https://japancalc.com/en/tax-finance/work-hours/",
+    "description": "Calculate Japan overtime pay (\u6b8b\u696d\u4ee3) based on Labor Standards Act rates. Monthly OT, daily OT, late night and holiday work. Free, browser-based, no login.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",
+        "item": "https://japancalc.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Tax & Finance",
+        "item": "https://japancalc.com/en/tax-finance/" },
+      { "@type": "ListItem", "position": 3, "name": "Japan Overtime Calculator",
+        "item": "https://japancalc.com/en/tax-finance/work-hours/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the overtime pay rate in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Japan, overtime pay rates are set by the Labor Standards Act (\u52b4\u50cd\u57fa\u6e96\u6cd5). Standard overtime (work beyond 8 hours/day or 40 hours/week) is paid at 1.25\u00d7 the regular hourly rate. Late-night work (22:00\u201305:00) adds an additional 1.25\u00d7 premium. Holiday work on statutory holidays is paid at 1.35\u00d7. If overtime hours exceed 60 per month, the rate increases to 1.50\u00d7 for all companies as of April 2023."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate my hourly rate from monthly salary in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To calculate your base hourly rate from a monthly salary in Japan, divide your monthly gross salary by your scheduled working hours per month. For example, if your monthly salary is \u00a5300,000 and you work 160 hours per month (8 hours \u00d7 20 days), your hourly rate is \u00a5300,000 \u00f7 160 = \u00a51,875. This is the base rate used to calculate overtime pay."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What counts as overtime in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Japan, overtime (\u6642\u9593\u5916\u52b4\u50cd) is work that exceeds the statutory limits of 8 hours per day or 40 hours per week, as defined by the Labor Standards Act (\u52b4\u50cd\u57fa\u6e96\u6cd5). Work between 22:00 and 05:00 is classified as late-night work (\u6df1\u591c\u52b4\u50cd) and carries an additional premium regardless of whether total hours exceed the statutory limit. Work on statutory holidays (\u6cd5\u5b9a\u4f11\u65e5, typically one day per week) is classified as holiday work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the 36 Agreement (\u4e09\u516d\u5354\u5b9a) in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 36 Agreement (\u4e09\u516d\u5354\u5b9a, san-roku ky\u014dtei) is a written agreement between an employer and employee representatives that allows overtime work beyond the statutory 8h/day, 40h/week limits. Without a 36 Agreement, employers cannot legally require employees to work overtime. The agreement must be filed with the Labor Standards Inspection Office. Under 2019 Work Style Reform rules, monthly overtime is capped at 45 hours (100 hours in special cases)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the 1.5\u00d7 overtime rate for over 60 hours apply to all companies in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes \u2014 as of April 1, 2023, the 1.5\u00d7 overtime pay rate for monthly overtime exceeding 60 hours applies to all companies in Japan, including small and medium-sized enterprises (\u4e2d\u5c0f\u4f01\u696d). Previously, this rule applied only to large companies. The change was part of Japan\u2019s Work Style Reform (\u50cd\u304d\u65b9\u6539\u9769) legislation."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <style>
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  @media (max-width: 768px) {
+    .form-row { grid-template-columns: 1fr; }
+  }
+  .over60-notice {
+    background: #FFFBEB;
+    border: 1px solid #FCD34D;
+    border-radius: var(--radius);
+    padding: 0.6rem 0.9rem;
+    font-size: 0.85rem;
+    color: var(--color-warning);
+    margin-top: 0.75rem;
+  }
+  .ot-breakdown-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.4rem 1rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  .ot-row-label { color: var(--color-text); }
+  .ot-row-value {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .ot-row-total {
+    border-top: 2px solid var(--color-border);
+    padding-top: 0.5rem;
+    font-weight: 700;
+  }
+  .total-pay-box {
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    margin: 0.75rem 0;
+    font-size: 0.95rem;
+    text-align: center;
+    border: 1px solid var(--color-border);
+  }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/en/" class="nav-logo">JapanCalc</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
+            onclick="window.location.href=window.location.pathname.replace('/en/','/')">&#x65E5;&#x672C;&#x8A9E;</button>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/en/">Home</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">Japan Overtime Calculator</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_WORKHOURS"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>Japan Overtime Pay Calculator &#x2014; &#x6B8B;&#x696D;&#x4EE3;&#x8A08;&#x7B97;</h1>
+    <p class="tool-subtitle">&#x6B8B;&#x696D;&#x4EE3;&#x8A08;&#x7B97;&#x30C4;&#x30FC;&#x30EB; &#x2014; Calculate overtime pay per Japan Labor Standards Act</p>
+    <p class="tool-desc">
+      Calculate your Japan overtime pay (&#x6B8B;&#x696D;&#x4EE3;) based on Labor Standards Act
+      (&#x52B4;&#x50CD;&#x57FA;&#x6E96;&#x6CD5;) rates. Enter your monthly salary and overtime hours to see
+      your total pay including standard overtime, late-night work, and holiday
+      work premiums. Free, no login required.
+    </p>
+
+    <div class="tool-box" id="tool-main">
+      <!-- Tab bar -->
+      <div class="tool-tabs" role="tablist">
+        <button class="tool-tab active" data-panel="panel-monthly" role="tab" aria-selected="true">Monthly OT (&#x6708;&#x9593;&#x6B8B;&#x696D;)</button>
+        <button class="tool-tab" data-panel="panel-daily" role="tab" aria-selected="false">Daily OT (&#x65E5;&#x5225;&#x6B8B;&#x696D;)</button>
+      </div>
+
+      <!-- Tab 1 — Monthly Overtime -->
+      <div class="tool-panel active" id="panel-monthly" role="tabpanel">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="monthly-gross">
+              Monthly Gross Salary &#x2014; &#x6708;&#x53CE;&#xFF08;&#x984D;&#x9762;&#xFF09; &#xA5;
+            </label>
+            <input type="number" class="form-input" id="monthly-gross"
+                   min="0" step="1000" placeholder="e.g. 300000">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="monthly-hours">
+              Scheduled Hours/Month &#x2014; &#x6708;&#x306E;&#x6240;&#x5B9A;&#x52B4;&#x50CD;&#x6642;&#x9593;
+            </label>
+            <input type="number" class="form-input" id="monthly-hours"
+                   min="1" max="300" value="160" placeholder="160">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="ot-hours">
+              Overtime Hours &#x2014; &#x6642;&#x9593;&#x5916;&#x52B4;&#x50CD;&#x6642;&#x9593;
+            </label>
+            <input type="number" class="form-input" id="ot-hours"
+                   min="0" step="0.5" placeholder="e.g. 20">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="late-hours">
+              Late Night Hours (22:00&#x2013;05:00) &#x2014; &#x6DF1;&#x591C;&#x52B4;&#x50CD;
+            </label>
+            <input type="number" class="form-input" id="late-hours"
+                   min="0" step="0.5" placeholder="0" value="0">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="holiday-hours">
+              Statutory Holiday Hours &#x2014; &#x6CD5;&#x5B9A;&#x4F11;&#x65E5;&#x52B4;&#x50CD;
+            </label>
+            <input type="number" class="form-input" id="holiday-hours"
+                   min="0" step="0.5" placeholder="0" value="0">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Company Size &#x2014; &#x4F1A;&#x793E;&#x898F;&#x6A21;</label>
+            <div class="rate-toggle" role="group">
+              <label class="rate-option">
+                <input type="radio" name="company-size" value="large" checked>
+                <span>Large (&#x5927;&#x4F01;&#x696D;)</span>
+              </label>
+              <label class="rate-option">
+                <input type="radio" name="company-size" value="small">
+                <span>SME (&#x4E2D;&#x5C0F;&#x4F01;&#x696D;)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-error" id="monthly-error"></div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="monthly-calc-btn">Calculate Overtime Pay</button>
+        </div>
+
+        <div class="result-box" id="monthly-result" aria-live="polite">
+          <div class="result-primary" id="r-ot-total"></div>
+          <div class="result-secondary">Total Overtime Pay (&#x6B8B;&#x696D;&#x4EE3;)</div>
+
+          <div class="total-pay-box">
+            Base Salary + OT = <strong id="r-total-pay"></strong>
+          </div>
+
+          <div class="ot-breakdown-grid">
+            <span class="ot-row-label">Hourly Rate (&#x6642;&#x7D66;)</span>
+            <span class="ot-row-value" id="r-hourly"></span>
+            <span class="ot-row-label">Overtime (<span id="r-ot-hrs-label">0</span>h &#xD7; 1.25&#xD7;)</span>
+            <span class="ot-row-value" id="r-ot-pay"></span>
+            <span class="ot-row-label">Late Night (<span id="r-late-hrs-label">0</span>h &#xD7; 1.25&#xD7;)</span>
+            <span class="ot-row-value" id="r-late-pay"></span>
+            <span class="ot-row-label">Holiday Work (<span id="r-hol-hrs-label">0</span>h &#xD7; 1.35&#xD7;)</span>
+            <span class="ot-row-value" id="r-hol-pay"></span>
+            <span class="ot-row-label ot-row-total">Total OT Pay</span>
+            <span class="ot-row-value ot-row-total" id="r-ot-total-grid"></span>
+            <span class="ot-row-label ot-row-total">Total Monthly Pay</span>
+            <span class="ot-row-value ot-row-total" id="r-total-pay-grid"></span>
+          </div>
+
+          <div class="over60-notice" id="over60-notice" style="display:none;">
+            &#x26A0; Over 60h/month: hours above 60 calculated at 1.5&#xD7; rate
+          </div>
+
+          <div class="btn-row" style="margin-top:1rem;">
+            <button class="btn btn-secondary" id="monthly-copy-btn">Copy Summary</button>
+            <button class="btn btn-secondary" id="monthly-share-btn">Share</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2 — Daily Overtime -->
+      <div class="tool-panel" id="panel-daily" role="tabpanel">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="daily-rate">
+              Hourly Rate &#x2014; &#x6642;&#x7D66; &#xA5;
+              <span class="text-muted" style="font-size:0.8rem;">
+                (or calculate from monthly salary above)
+              </span>
+            </label>
+            <input type="number" class="form-input" id="daily-rate"
+                   min="0" step="1" placeholder="e.g. 1875">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="daily-hours">
+              Total Hours Worked Today &#x2014; &#x672C;&#x65E5;&#x306E;&#x52B4;&#x50CD;&#x6642;&#x9593;
+            </label>
+            <input type="number" class="form-input" id="daily-hours"
+                   min="0" max="24" step="0.5" placeholder="e.g. 10">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="daily-late">
+              Of which late night hours (22:00&#x2013;05:00) &#x2014; &#x6DF1;&#x591C;&#x6642;&#x9593;&#x6570;
+            </label>
+            <input type="number" class="form-input" id="daily-late"
+                   min="0" step="0.5" value="0" placeholder="0">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Holiday? &#x2014; &#x6CD5;&#x5B9A;&#x4F11;&#x65E5;</label>
+            <div class="rate-toggle" role="group">
+              <label class="rate-option">
+                <input type="radio" name="is-holiday" value="no" checked>
+                <span>Regular day</span>
+              </label>
+              <label class="rate-option">
+                <input type="radio" name="is-holiday" value="yes">
+                <span>Holiday (&#x6CD5;&#x5B9A;&#x4F11;&#x65E5;)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" id="daily-calc-btn">Calculate Daily Pay</button>
+        </div>
+
+        <div class="result-box" id="daily-result" aria-live="polite">
+          <div class="result-primary" id="r-daily-total"></div>
+          <div class="result-secondary">Total Day&#x2019;s Pay</div>
+
+          <div class="ot-breakdown-grid">
+            <span class="ot-row-label">Regular Pay (<span id="r-daily-reg-hrs">8</span>h)</span>
+            <span class="ot-row-value" id="r-daily-regular"></span>
+            <span class="ot-row-label">Overtime Pay (<span id="r-daily-ot-hrs">0</span>h &#xD7; 1.25&#xD7;)</span>
+            <span class="ot-row-value" id="r-daily-ot"></span>
+            <span class="ot-row-label">Late Night Premium (<span id="r-daily-late-hrs">0</span>h &#xD7; 0.25&#xD7;)</span>
+            <span class="ot-row-value" id="r-daily-late"></span>
+            <span class="ot-row-label ot-row-total">Total</span>
+            <span class="ot-row-value ot-row-total" id="r-daily-total-grid"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Reference Table -->
+    <div class="quick-ref" style="overflow-x:auto;">
+      <h2>Japan Overtime Pay Rate Reference (&#x6B8B;&#x696D;&#x4EE3;&#x5272;&#x5897;&#x7387; &#x4E00;&#x89A7;)</h2>
+      <table>
+        <thead>
+          <tr><th>Situation</th><th>Japanese</th><th>Rate</th><th>Example (&#xA5;1,875/h)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Standard overtime (&gt;8h/day or &gt;40h/week)</td><td>&#x666E;&#x901A;&#x6B8B;&#x696D;</td><td>1.25&#xD7;</td><td>&#xA5;2,344/h</td></tr>
+          <tr><td>Late-night work only (22:00&#x2013;05:00)</td><td>&#x6DF1;&#x591C;&#x52B4;&#x50CD;</td><td>1.25&#xD7;</td><td>&#xA5;2,344/h</td></tr>
+          <tr><td>Overtime + late night</td><td>&#x6DF1;&#x591C;&#x6B8B;&#x696D;</td><td>1.50&#xD7;</td><td>&#xA5;2,813/h</td></tr>
+          <tr><td>Statutory holiday work</td><td>&#x4F11;&#x65E5;&#x52B4;&#x50CD;</td><td>1.35&#xD7;</td><td>&#xA5;2,531/h</td></tr>
+          <tr><td>Holiday + late night</td><td>&#x4F11;&#x65E5;&#x6DF1;&#x591C;&#x52B4;&#x50CD;</td><td>1.60&#xD7;</td><td>&#xA5;3,000/h</td></tr>
+          <tr><td>Over 60h/month (all companies, from Apr 2023)</td><td>&#x9577;&#x6642;&#x9593;&#x6B8B;&#x696D;</td><td>1.50&#xD7;</td><td>&#xA5;2,813/h</td></tr>
+        </tbody>
+      </table>
+      <p class="text-muted">
+        <small>* Based on &#xA5;1,875/h hourly rate (&#xA5;300,000 monthly &#xF7; 160 hours).
+        Rates per Japan Labor Standards Act (&#x52B4;&#x50CD;&#x57FA;&#x6E96;&#x6CD5;).</small>
+      </p>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_WORKHOURS"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="seo-content">
+      <h2>How Japan Overtime Pay Works (&#x6B8B;&#x696D;&#x4EE3;&#x306E;&#x8A08;&#x7B97;&#x65B9;&#x6CD5;)</h2>
+      <p>
+        Japan&#x2019;s overtime pay system is governed by the Labor Standards Act
+        (&#x52B4;&#x50CD;&#x57FA;&#x6E96;&#x6CD5;). The legal limit for regular work is 8 hours per day and
+        40 hours per week. Any work beyond these limits must be compensated at
+        a <strong>minimum of 1.25&#xD7; the regular hourly rate</strong>. Your
+        hourly rate is calculated by dividing your monthly salary by your
+        scheduled monthly working hours &#x2014; typically 160&#x2013;176 hours depending on
+        your contract.
+      </p>
+      <p>
+        Late-night work between 22:00 and 05:00 carries an additional premium,
+        bringing the effective rate to <strong>1.50&#xD7;</strong> when combined with
+        overtime. Work on statutory holidays (&#x6CD5;&#x5B9A;&#x4F11;&#x65E5; &#x2014; generally one day per
+        week guaranteed by law) is paid at <strong>1.35&#xD7;</strong>, or
+        <strong>1.60&#xD7;</strong> if it also falls in late-night hours. Since April
+        2023, overtime exceeding 60 hours per month must be paid at
+        <strong>1.50&#xD7;</strong> for all companies.
+      </p>
+
+      <h2>36 Agreement and Overtime Caps (&#x4E09;&#x516D;&#x5354;&#x5B9A;)</h2>
+      <p>
+        To legally require overtime work, employers must have a written
+        <strong>36 Agreement</strong> (&#x4E09;&#x516D;&#x5354;&#x5B9A;, san-roku ky&#x14D;tei) in place,
+        filed with the Labor Standards Inspection Office. Under Japan&#x2019;s 2019
+        Work Style Reform rules, standard overtime is capped at 45 hours/month
+        and 360 hours/year. In special circumstances (&#x7E41;&#x5FD9;&#x671F;), this can be
+        extended to 100 hours/month and 720 hours/year, but 80h/month average
+        and 100h single-month caps apply.
+      </p>
+      <p>
+        If your employer requires overtime without a valid 36 Agreement, or
+        does not pay the correct overtime premiums, you may report this to
+        the nearest Labor Standards Inspection Office (&#x52B4;&#x50CD;&#x57FA;&#x6E96;&#x76E3;&#x7763;&#x7F72;). For
+        salary calculations including all deductions, use the
+        <a href="/en/tax-finance/salary-calculator/">Japan salary calculator</a>.
+      </p>
+      <p>
+        <small>Overtime rates per Japan Labor Standards Act (&#x52B4;&#x50CD;&#x57FA;&#x6E96;&#x6CD5; &#x7B2C;37&#x6761;).
+          Work Style Reform rules effective April 2019 (large companies) and
+          April 2020 (SMEs).
+        </small>
+      </p>
+    </article>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary>What is the overtime pay rate in Japan?</summary>
+        <p>In Japan, overtime pay rates are set by the Labor Standards Act (&#x52B4;&#x50CD;&#x57FA;&#x6E96;&#x6CD5;). Standard overtime (work beyond 8 hours/day or 40 hours/week) is paid at 1.25&#xD7; the regular hourly rate. Late-night work (22:00&#x2013;05:00) adds an additional 1.25&#xD7; premium. Holiday work on statutory holidays is paid at 1.35&#xD7;. If overtime hours exceed 60 per month, the rate increases to 1.50&#xD7; for all companies as of April 2023.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I calculate my hourly rate from monthly salary in Japan?</summary>
+        <p>To calculate your base hourly rate from a monthly salary in Japan, divide your monthly gross salary by your scheduled working hours per month. For example, if your monthly salary is &#xA5;300,000 and you work 160 hours per month (8 hours &#xD7; 20 days), your hourly rate is &#xA5;300,000 &#xF7; 160 = &#xA5;1,875. This is the base rate used to calculate overtime pay.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What counts as overtime in Japan?</summary>
+        <p>In Japan, overtime (&#x6642;&#x9593;&#x5916;&#x52B4;&#x50CD;) is work that exceeds the statutory limits of 8 hours per day or 40 hours per week, as defined by the Labor Standards Act (&#x52B4;&#x50CD;&#x57FA;&#x6E96;&#x6CD5;). Work between 22:00 and 05:00 is classified as late-night work (&#x6DF1;&#x591C;&#x52B4;&#x50CD;) and carries an additional premium regardless of whether total hours exceed the statutory limit. Work on statutory holidays (&#x6CD5;&#x5B9A;&#x4F11;&#x65E5;, typically one day per week) is classified as holiday work.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the 36 Agreement (&#x4E09;&#x516D;&#x5354;&#x5B9A;) in Japan?</summary>
+        <p>The 36 Agreement (&#x4E09;&#x516D;&#x5354;&#x5B9A;, san-roku ky&#x14D;tei) is a written agreement between an employer and employee representatives that allows overtime work beyond the statutory 8h/day, 40h/week limits. Without a 36 Agreement, employers cannot legally require employees to work overtime. The agreement must be filed with the Labor Standards Inspection Office. Under 2019 Work Style Reform rules, monthly overtime is capped at 45 hours (100 hours in special cases).</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does the 1.5&#xD7; overtime rate for over 60 hours apply to all companies in Japan?</summary>
+        <p>Yes &#x2014; as of April 1, 2023, the 1.5&#xD7; overtime pay rate for monthly overtime exceeding 60 hours applies to all companies in Japan, including small and medium-sized enterprises (&#x4E2D;&#x5C0F;&#x4F01;&#x696D;). Previously, this rule applied only to large companies. The change was part of Japan&#x2019;s Work Style Reform (&#x50CD;&#x304D;&#x65B9;&#x6539;&#x9769;) legislation.</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/en/tax-finance/salary-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4B4;</div>
+          <div class="tool-card-name">Salary Calculator</div>
+          <div class="tool-card-jp">&#x624B;&#x53D6;&#x308A;&#x8A08;&#x7B97;</div>
+        </a>
+        <a href="/en/tax-finance/consumption-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F9FE;</div>
+          <div class="tool-card-name">Consumption Tax Calculator</div>
+          <div class="tool-card-jp">&#x6D88;&#x8CBB;&#x7A0E;&#x8A08;&#x7B97;</div>
+        </a>
+        <a href="/en/date-calendar/age-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F382;</div>
+          <div class="tool-card-name">Japanese Age Calculator</div>
+          <div class="tool-card-jp">&#x5E74;&#x9F62;&#x8A08;&#x7B97;</div>
+        </a>
+        <a href="/en/tax-finance/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4BC;</div>
+          <div class="tool-card-name">All Tax &amp; Finance Tools</div>
+          <div class="tool-card-jp">&#x7A0E;&#x91D1;&#x30FB;&#x8CA1;&#x52D9;&#x30C4;&#x30FC;&#x30EB;</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_WORKHOURS"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/en/about/">About</a></li>
+      <li><a href="/en/privacy/">Privacy Policy</a></li>
+      <li><a href="/en/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+    <p class="footer-attribution">Overtime rates per Japan Labor Standards Act (&#x52B4;&#x50CD;&#x57FA;&#x6E96;&#x6CD5;). Last updated: March 2025</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import {
+  calculateHourlyRate, calculateMonthlyOT,
+  calculateDailyOT, formatOTSummary
+} from '/assets/js/workhours.js';
+
+function formatJPY(n) {
+  return '\u00A5' + Math.round(n).toLocaleString('ja-JP');
+}
+
+// ── Tab switching
+document.querySelectorAll('.tool-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.tool-tab, .tool-panel')
+      .forEach(function(el) { el.classList.remove('active'); });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+    // Update other tabs
+    document.querySelectorAll('.tool-tab').forEach(function(t) {
+      if (t !== tab) t.setAttribute('aria-selected', 'false');
+    });
+  });
+});
+
+// ── Tab 1: Monthly OT
+function computeMonthly() {
+  var gross   = parseFloat(document.getElementById('monthly-gross').value) || 0;
+  var hours   = parseFloat(document.getElementById('monthly-hours').value) || 160;
+  var otHours = parseFloat(document.getElementById('ot-hours').value)      || 0;
+  var lateHrs = parseFloat(document.getElementById('late-hours').value)    || 0;
+  var holHrs  = parseFloat(document.getElementById('holiday-hours').value) || 0;
+  var isLarge = document.querySelector('input[name="company-size"]:checked').value === 'large';
+  var errorEl = document.getElementById('monthly-error');
+  var resultEl = document.getElementById('monthly-result');
+
+  if (!gross) { resultEl.classList.remove('visible'); return; }
+
+  var r = calculateMonthlyOT({
+    monthlyGross: gross, monthlyHours: hours,
+    overtimeHours: otHours, lateNightHours: lateHrs,
+    holidayHours: holHrs, isLargeCompany: isLarge
+  });
+
+  if (r.error) {
+    errorEl.textContent = r.error;
+    errorEl.classList.add('visible');
+    resultEl.classList.remove('visible');
+    return;
+  }
+  errorEl.classList.remove('visible');
+
+  document.getElementById('r-ot-total').textContent    = formatJPY(r.totalOTPay);
+  document.getElementById('r-total-pay').textContent   = formatJPY(r.totalPay);
+  document.getElementById('r-hourly').textContent      = formatJPY(r.hourlyRate);
+  document.getElementById('r-ot-pay').textContent      = formatJPY(r.overtimePay);
+  document.getElementById('r-late-pay').textContent    = r.lateNightPay > 0 ? formatJPY(r.lateNightPay) : '\u2014';
+  document.getElementById('r-hol-pay').textContent     = r.holidayPay   > 0 ? formatJPY(r.holidayPay)   : '\u2014';
+  document.getElementById('r-ot-total-grid').textContent   = formatJPY(r.totalOTPay);
+  document.getElementById('r-total-pay-grid').textContent  = formatJPY(r.totalPay);
+
+  // Update hour labels
+  document.getElementById('r-ot-hrs-label').textContent   = otHours;
+  document.getElementById('r-late-hrs-label').textContent  = lateHrs;
+  document.getElementById('r-hol-hrs-label').textContent   = holHrs;
+
+  // Over-60h notice
+  document.getElementById('over60-notice').style.display =
+    r.over60Applied ? 'block' : 'none';
+
+  resultEl.classList.add('visible');
+
+  // Share URL
+  var url = new URL(window.location.href.split('?')[0]);
+  url.searchParams.set('gross', gross);
+  url.searchParams.set('ot', otHours);
+  document.getElementById('monthly-share-btn').dataset.url = url.toString();
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'work_hours_calculator', mode: 'monthly', language: 'en' });
+}
+
+// ── Tab 2: Daily OT
+function computeDaily() {
+  var rate      = parseFloat(document.getElementById('daily-rate').value)  || 0;
+  var totalHrs  = parseFloat(document.getElementById('daily-hours').value) || 0;
+  var lateHrs   = parseFloat(document.getElementById('daily-late').value)  || 0;
+  var isHoliday = document.querySelector('input[name="is-holiday"]:checked').value === 'yes';
+  var resultEl  = document.getElementById('daily-result');
+
+  if (!rate || !totalHrs) { resultEl.classList.remove('visible'); return; }
+
+  var r = calculateDailyOT({ hourlyRate: rate, regularHours: totalHrs,
+                              lateNightHours: lateHrs, isHoliday: isHoliday });
+  if (r.error) { resultEl.classList.remove('visible'); return; }
+
+  var regHrs = isHoliday ? 0 : Math.min(totalHrs, 8);
+  var otHrs  = isHoliday ? 0 : Math.max(0, totalHrs - 8);
+
+  document.getElementById('r-daily-total').textContent      = formatJPY(r.totalPay);
+  document.getElementById('r-daily-regular').textContent    = isHoliday ? '\u2014' : formatJPY(r.regularPay);
+  document.getElementById('r-daily-ot').textContent         = r.overtimePay > 0 ? formatJPY(r.overtimePay) : '\u2014';
+  document.getElementById('r-daily-late').textContent       = r.lateNightPay > 0 ? formatJPY(r.lateNightPay) : '\u2014';
+  document.getElementById('r-daily-total-grid').textContent = formatJPY(r.totalPay);
+
+  // Update hour labels
+  document.getElementById('r-daily-reg-hrs').textContent  = isHoliday ? '0' : regHrs;
+  document.getElementById('r-daily-ot-hrs').textContent   = otHrs;
+  document.getElementById('r-daily-late-hrs').textContent  = lateHrs;
+
+  resultEl.classList.add('visible');
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'work_hours_calculator', mode: 'daily', language: 'en' });
+}
+
+// Event listeners — Monthly
+['monthly-gross','monthly-hours','ot-hours','late-hours','holiday-hours']
+  .forEach(function(id) { document.getElementById(id).addEventListener('input', computeMonthly); });
+document.querySelectorAll('input[name="company-size"]')
+  .forEach(function(r) { r.addEventListener('change', computeMonthly); });
+document.getElementById('monthly-calc-btn').addEventListener('click', computeMonthly);
+
+// Event listeners — Daily
+['daily-rate','daily-hours','daily-late']
+  .forEach(function(id) { document.getElementById(id).addEventListener('input', computeDaily); });
+document.querySelectorAll('input[name="is-holiday"]')
+  .forEach(function(r) { r.addEventListener('change', computeDaily); });
+document.getElementById('daily-calc-btn').addEventListener('click', computeDaily);
+
+// Copy
+document.getElementById('monthly-copy-btn').addEventListener('click', function() {
+  var gross   = parseFloat(document.getElementById('monthly-gross').value) || 0;
+  var hours   = parseFloat(document.getElementById('monthly-hours').value) || 160;
+  var otHours = parseFloat(document.getElementById('ot-hours').value)      || 0;
+  var lateHrs = parseFloat(document.getElementById('late-hours').value)    || 0;
+  var holHrs  = parseFloat(document.getElementById('holiday-hours').value) || 0;
+  var isLarge = document.querySelector('input[name="company-size"]:checked').value === 'large';
+  var r = calculateMonthlyOT({ monthlyGross: gross, monthlyHours: hours,
+    overtimeHours: otHours, lateNightHours: lateHrs, holidayHours: holHrs, isLargeCompany: isLarge });
+  if (!r.error) navigator.clipboard.writeText(formatOTSummary(r)).then(function() {
+    var btn = document.getElementById('monthly-copy-btn');
+    btn.textContent = 'Copied! \u2713';
+    setTimeout(function() { btn.textContent = 'Copy Summary'; }, 2000);
+  });
+});
+
+// Share
+document.getElementById('monthly-share-btn').addEventListener('click', function() {
+  var url = document.getElementById('monthly-share-btn').dataset.url || window.location.href;
+  navigator.clipboard.writeText(url).then(function() {
+    var btn = document.getElementById('monthly-share-btn');
+    btn.textContent = 'Link copied!';
+    setTimeout(function() { btn.textContent = 'Share'; }, 2000);
+  });
+});
+
+// Init from URL params
+var p = new URLSearchParams(window.location.search);
+if (p.get('gross')) {
+  document.getElementById('monthly-gross').value = p.get('gross');
+  if (p.get('ot')) document.getElementById('ot-hours').value = p.get('ot');
+  computeMonthly();
+}
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(function(zone) {
+    var ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(function(z) { observer.observe(z); });
+  }
+});
+</script>
+
+</body>
+</html>
