@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japan Salary Calculator &#x2014; &#x624B;&#x53D6;&#x308A;&#x8A08;&#x7B97; Take-home Pay | JapanCalc</title>
+  <meta name="description" content="Calculate your Japan take-home salary (&#x624B;&#x53D6;&#x308A;) after tax and social insurance. Income tax, resident tax, pension, health insurance deductions. Free &#x7D66;&#x4E0E;&#x8A08;&#x7B97; tool &#x2014; FY2025.">
+  <link rel="canonical" href="https://japancalc.com/tax-finance/salary-calculator/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/tax-finance/salary-calculator/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/tax-finance/salary-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/tax-finance/salary-calculator/">
+  <meta property="og:title"       content="Japan Salary Calculator &#x2014; &#x624B;&#x53D6;&#x308A;&#x8A08;&#x7B97; | JapanCalc">
+  <meta property="og:description" content="Calculate Japan take-home pay after all deductions. FY2025 rates. Free, no login.">
+  <meta property="og:url"         content="https://japancalc.com/tax-finance/salary-calculator/">
+  <meta property="og:type"        content="website">
+  <meta name="robots" content="index, follow">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Japan Salary Calculator &#x2014; &#x624B;&#x53D6;&#x308A;&#x8A08;&#x7B97;",
+    "url": "https://japancalc.com/tax-finance/salary-calculator/",
+    "description": "Calculate Japan take-home salary (&#x624B;&#x53D6;&#x308A;) after income tax, resident tax, and social insurance deductions. FY2025 rates. Free, browser-based, no login required.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",
+        "item": "https://japancalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tax & Finance",
+        "item": "https://japancalc.com/tax-finance/" },
+      { "@type": "ListItem", "position": 3, "name": "Japan Salary Calculator",
+        "item": "https://japancalc.com/tax-finance/salary-calculator/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is &#x624B;&#x53D6;&#x308A; (tedori) in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "&#x624B;&#x53D6;&#x308A; (tedori) is the Japanese term for take-home pay &#x2014; the net salary you actually receive after all deductions. Deductions from a Japanese salary include income tax (&#x6240;&#x5F97;&#x7A0E;), resident tax (&#x4F4F;&#x6C11;&#x7A0E;), health insurance (&#x5065;&#x5EB7;&#x4FDD;&#x967A;), pension (&#x539A;&#x751F;&#x5E74;&#x91D1;), and employment insurance (&#x96C7;&#x7528;&#x4FDD;&#x967A;). The difference between gross salary (&#x984D;&#x9762;) and take-home pay (&#x624B;&#x53D6;&#x308A;) in Japan is typically 20&#x2013;30% depending on income level."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much is deducted from salary in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For a typical monthly salary of &#xA5;300,000 in Japan, total deductions are approximately &#xA5;65,000&#x2013;&#xA5;75,000, leaving a take-home of around &#xA5;225,000&#x2013;&#xA5;235,000. Deductions include: health insurance (~5% of gross), pension (~9.15% of gross, capped at &#xA5;650,000 standard remuneration), employment insurance (~0.6%), income tax (varies by income), and resident tax (~10% of taxable income, paid from the following year)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between income tax and resident tax in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Income tax (&#x6240;&#x5F97;&#x7A0E;, shotokuzei) is a national tax withheld monthly from your salary by your employer, calculated on your current year's income. Resident tax (&#x4F4F;&#x6C11;&#x7A0E;, juminzei) is a local tax paid to your municipality, calculated on the previous year's income and deducted monthly from June. New residents in Japan typically do not pay resident tax in their first year of employment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this salary calculator accurate for all workers in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This calculator provides a reliable estimate for full-time employees (&#x6B63;&#x793E;&#x54E1;) enrolled in shakai hoken (&#x793E;&#x4F1A;&#x4FDD;&#x967A; &#x2014; company social insurance). Results may vary for: part-time workers (&#x30A2;&#x30EB;&#x30D0;&#x30A4;&#x30C8;&#x30FB;&#x30D1;&#x30FC;&#x30C8;) who may be in different insurance schemes, self-employed (freelancers), workers with dependents (the number of dependents affects income tax withholding), and workers in certain industries with different health insurance rates. Always verify with your employer's HR or a tax professional for official figures."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is shakai hoken (&#x793E;&#x4F1A;&#x4FDD;&#x967A;) in Japan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Shakai hoken (&#x793E;&#x4F1A;&#x4FDD;&#x967A;) is Japan's social insurance system, which all full-time employees are required to join. It consists of three components deducted from your salary: health insurance (&#x5065;&#x5EB7;&#x4FDD;&#x967A;, kenko hoken) at approximately 5% of gross salary, pension insurance (&#x539A;&#x751F;&#x5E74;&#x91D1;&#x4FDD;&#x967A;, kosei nenkin hoken) at 9.15% of gross salary up to a monthly cap, and employment insurance (&#x96C7;&#x7528;&#x4FDD;&#x967A;, koyo hoken) at 0.6%. Both the employee and employer pay these premiums &#x2014; this calculator shows the employee's share only."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <style>
+  .deduction-bar-wrap {
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid var(--color-border);
+  }
+  .deduction-bar {
+    height: 20px;
+    background: var(--color-border);
+    border-radius: 99px;
+    overflow: hidden;
+    margin: 0.5rem 0;
+  }
+  .deduction-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+    border-radius: 99px;
+    transition: width 0.4s ease;
+  }
+  .deduction-bar-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+  .deduction-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.4rem 1rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  .deduction-row-label { color: var(--color-text); }
+  .deduction-row-value {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .deduction-total {
+    border-top: 2px solid var(--color-border);
+    padding-top: 0.5rem;
+    font-weight: 700;
+  }
+  .salary-disclaimer {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+    border-left: 3px solid var(--color-warning);
+  }
+  .annual-section {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.875rem;
+  }
+  .annual-section h3 {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo">JapanCalc</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/language-tools/">Language Tools</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <button class="nav-lang-toggle" aria-label="Switch to Japanese"
+            onclick="window.location.href='/ja'+window.location.pathname">&#x65E5;&#x672C;&#x8A9E;</button>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">Japan Salary Calculator</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_SALARY"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>Japan Salary Calculator &#x2014; &#x624B;&#x53D6;&#x308A;&#x8A08;&#x7B97;</h1>
+    <p class="tool-subtitle">&#x624B;&#x53D6;&#x308A;&#x7D66;&#x4E0E;&#x8A08;&#x7B97;&#x30C4;&#x30FC;&#x30EB; &#x2014; Calculate take-home pay after tax and social insurance</p>
+    <p class="tool-desc">
+      Calculate your Japan take-home salary (&#x624B;&#x53D6;&#x308A;) from your gross monthly pay.
+      Shows all deductions including income tax (&#x6240;&#x5F97;&#x7A0E;), resident tax (&#x4F4F;&#x6C11;&#x7A0E;),
+      health insurance (&#x5065;&#x5EB7;&#x4FDD;&#x967A;), pension (&#x539A;&#x751F;&#x5E74;&#x91D1;), and employment insurance
+      (&#x96C7;&#x7528;&#x4FDD;&#x967A;). Based on FY2025 rates. Free, no login required.
+    </p>
+
+    <div class="tool-box" id="tool-main">
+      <div class="form-group">
+        <label class="form-label" for="gross-input">
+          Monthly Gross Salary &#x2014; &#x6708;&#x53CE;&#xFF08;&#x984D;&#x9762;&#xFF09; &#xA5;
+        </label>
+        <input type="number" class="form-input" id="gross-input"
+               min="0" max="10000000" step="1000"
+               placeholder="e.g. 300000">
+        <div class="form-error" id="gross-error"></div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="bonus-input">
+          Annual Bonus (optional) &#x2014; &#x5E74;&#x9593;&#x30DC;&#x30FC;&#x30CA;&#x30B9; &#xA5;
+        </label>
+        <input type="number" class="form-input" id="bonus-input"
+               min="0" step="10000"
+               placeholder="e.g. 600000 (optional)">
+        <span class="text-muted" style="font-size:0.8rem;">
+          Bonus is included in annual income for tax calculation
+        </span>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" id="calculate-btn">Calculate Take-home Pay</button>
+      </div>
+
+      <div class="result-box" id="salary-result" aria-live="polite">
+        <div class="result-primary" id="r-takehome"></div>
+        <div class="result-secondary">Take-home Pay (&#x624B;&#x53D6;&#x308A;)</div>
+        <div style="margin-top:0.5rem; font-size:0.875rem; color:var(--color-text-muted);">
+          Effective deduction rate: <strong id="r-effrate"></strong>
+        </div>
+
+        <div class="deduction-bar-wrap">
+          <div class="deduction-bar-labels">
+            <span>Gross <span id="r-bar-gross"></span></span>
+            <span>Take-home <span id="r-bar-net"></span></span>
+          </div>
+          <div class="deduction-bar">
+            <div class="deduction-bar-fill" id="r-bar-fill" style="width:0%"></div>
+          </div>
+        </div>
+
+        <div class="deduction-grid">
+          <span class="deduction-row-label">Pension (&#x539A;&#x751F;&#x5E74;&#x91D1;)</span>
+          <span class="deduction-row-value" id="r-pension"></span>
+          <span class="deduction-row-label">Health Insurance (&#x5065;&#x4FDD;)</span>
+          <span class="deduction-row-value" id="r-health"></span>
+          <span class="deduction-row-label">Employment Ins. (&#x96C7;&#x7528;&#x4FDD;&#x967A;)</span>
+          <span class="deduction-row-value" id="r-employment"></span>
+          <span class="deduction-row-label">Income Tax (&#x6240;&#x5F97;&#x7A0E;)</span>
+          <span class="deduction-row-value" id="r-incometax"></span>
+          <span class="deduction-row-label">Resident Tax (&#x4F4F;&#x6C11;&#x7A0E;) *</span>
+          <span class="deduction-row-value" id="r-residenttax"></span>
+          <span class="deduction-row-label deduction-total">Total Deductions</span>
+          <span class="deduction-row-value deduction-total" id="r-total-ded"></span>
+        </div>
+
+        <div class="annual-section">
+          <h3>Annual Figures</h3>
+          <div class="deduction-grid">
+            <span class="deduction-row-label">Annual Gross</span>
+            <span class="deduction-row-value" id="r-annual-gross"></span>
+            <span class="deduction-row-label">Annual Take-home (est.)</span>
+            <span class="deduction-row-value" id="r-annual-net"></span>
+            <span class="deduction-row-label">Taxable Income</span>
+            <span class="deduction-row-value" id="r-annual-taxable"></span>
+          </div>
+        </div>
+
+        <div class="salary-disclaimer">
+          * Resident tax is estimated based on current year income.
+          Actual resident tax is calculated by your municipality
+          based on prior year income.
+        </div>
+
+        <div class="btn-row" style="margin-top:1rem;">
+          <button class="btn btn-secondary" id="copy-btn">Copy Breakdown</button>
+          <button class="btn btn-secondary" id="share-btn">Share</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Reference Table -->
+    <div class="quick-ref" style="overflow-x:auto;">
+      <h2>Japan Take-home Salary Reference Table (&#x624B;&#x53D6;&#x308A;&#x65E9;&#x898B;&#x8868;) &#x2014; FY2025</h2>
+      <table>
+        <thead>
+          <tr><th>Monthly Gross</th><th>Take-home</th><th>Deductions</th><th>Effective Rate</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>&#xA5;200,000</td><td>~&#xA5;160,000</td><td>~&#xA5;40,000</td><td>~19.8%</td></tr>
+          <tr><td>&#xA5;250,000</td><td>~&#xA5;199,000</td><td>~&#xA5;51,000</td><td>~20.4%</td></tr>
+          <tr><td>&#xA5;300,000</td><td>~&#xA5;237,000</td><td>~&#xA5;63,000</td><td>~20.9%</td></tr>
+          <tr><td>&#xA5;350,000</td><td>~&#xA5;275,000</td><td>~&#xA5;75,000</td><td>~21.4%</td></tr>
+          <tr><td>&#xA5;400,000</td><td>~&#xA5;312,000</td><td>~&#xA5;88,000</td><td>~22.1%</td></tr>
+          <tr><td>&#xA5;500,000</td><td>~&#xA5;384,000</td><td>~&#xA5;116,000</td><td>~23.3%</td></tr>
+          <tr><td>&#xA5;600,000</td><td>~&#xA5;450,000</td><td>~&#xA5;150,000</td><td>~25.0%</td></tr>
+          <tr><td>&#xA5;800,000</td><td>~&#xA5;582,000</td><td>~&#xA5;218,000</td><td>~27.3%</td></tr>
+        </tbody>
+      </table>
+      <p class="text-muted">
+        <small>* Estimates for single employee with no dependents, FY2025 rates,
+        Tokyo health insurance rates. Resident tax is approximated.
+        Use the calculator above for your specific salary.</small>
+      </p>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_SALARY"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="seo-content">
+      <h2>How Japanese Salary Deductions Work (&#x7D66;&#x4E0E;&#x63A7;&#x9664;&#x306E;&#x4ED5;&#x7D44;&#x307F;)</h2>
+      <p>
+        In Japan, your employer automatically deducts several items from your
+        gross monthly salary (&#x984D;&#x9762;, gakumen) before paying your take-home amount
+        (&#x624B;&#x53D6;&#x308A;, tedori). The main deductions are: <strong>social insurance</strong>
+        (&#x793E;&#x4F1A;&#x4FDD;&#x967A; &#x2014; health insurance, pension, and employment insurance), which
+        together account for roughly 14&#x2013;15% of your gross salary; <strong>income
+        tax</strong> (&#x6240;&#x5F97;&#x7A0E;), which is withheld monthly based on your estimated
+        annual income; and <strong>resident tax</strong> (&#x4F4F;&#x6C11;&#x7A0E;), a local tax paid
+        to your municipality from June of the following year.
+      </p>
+      <p>
+        For a monthly salary of &#xA5;300,000, total deductions are typically around
+        &#xA5;60,000&#x2013;&#xA5;75,000, leaving take-home pay of approximately &#xA5;225,000&#x2013;&#xA5;240,000.
+        Higher salaries face progressively higher income tax rates &#x2014; Japan uses a
+        progressive tax system with rates from 5% to 45%.
+      </p>
+
+      <h2>Understanding Resident Tax (&#x4F4F;&#x6C11;&#x7A0E;) in Japan</h2>
+      <p>
+        Resident tax (&#x4F4F;&#x6C11;&#x7A0E;, juminzei) is often confusing for new employees
+        in Japan because it is calculated based on <strong>the previous year&#x2019;s
+        income</strong> and starts being deducted from your salary in June of the
+        following year. This means workers in their first year of employment in
+        Japan typically pay zero resident tax until June of the next year, when
+        deductions begin.
+      </p>
+      <p>
+        The calculator estimates resident tax based on your current input salary
+        as an approximation. For accurate resident tax figures, check the
+        notification sent by your municipality each May, or consult your
+        employer&#x2019;s HR department.
+      </p>
+      <p>
+        <small>Tax rates sourced from
+          <a href="https://www.nta.go.jp" target="_blank" rel="noopener">
+          National Tax Agency Japan (NTA)</a>.
+          Social insurance rates as of April 2025.
+        </small>
+      </p>
+    </article>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary>What is &#x624B;&#x53D6;&#x308A; (tedori) in Japan?</summary>
+        <p>&#x624B;&#x53D6;&#x308A; (tedori) is the Japanese term for take-home pay &#x2014; the net salary you actually receive after all deductions. Deductions from a Japanese salary include income tax (&#x6240;&#x5F97;&#x7A0E;), resident tax (&#x4F4F;&#x6C11;&#x7A0E;), health insurance (&#x5065;&#x5EB7;&#x4FDD;&#x967A;), pension (&#x539A;&#x751F;&#x5E74;&#x91D1;), and employment insurance (&#x96C7;&#x7528;&#x4FDD;&#x967A;). The difference between gross salary (&#x984D;&#x9762;) and take-home pay (&#x624B;&#x53D6;&#x308A;) in Japan is typically 20&#x2013;30% depending on income level.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How much is deducted from salary in Japan?</summary>
+        <p>For a typical monthly salary of &#xA5;300,000 in Japan, total deductions are approximately &#xA5;65,000&#x2013;&#xA5;75,000, leaving a take-home of around &#xA5;225,000&#x2013;&#xA5;235,000. Deductions include: health insurance (~5% of gross), pension (~9.15% of gross, capped at &#xA5;650,000 standard remuneration), employment insurance (~0.6%), income tax (varies by income), and resident tax (~10% of taxable income, paid from the following year).</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the difference between income tax and resident tax in Japan?</summary>
+        <p>Income tax (&#x6240;&#x5F97;&#x7A0E;, shotokuzei) is a national tax withheld monthly from your salary by your employer, calculated on your current year&#x2019;s income. Resident tax (&#x4F4F;&#x6C11;&#x7A0E;, juminzei) is a local tax paid to your municipality, calculated on the previous year&#x2019;s income and deducted monthly from June. New residents in Japan typically do not pay resident tax in their first year of employment.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is this salary calculator accurate for all workers in Japan?</summary>
+        <p>This calculator provides a reliable estimate for full-time employees (&#x6B63;&#x793E;&#x54E1;) enrolled in shakai hoken (&#x793E;&#x4F1A;&#x4FDD;&#x967A; &#x2014; company social insurance). Results may vary for: part-time workers (&#x30A2;&#x30EB;&#x30D0;&#x30A4;&#x30C8;&#x30FB;&#x30D1;&#x30FC;&#x30C8;) who may be in different insurance schemes, self-employed (freelancers), workers with dependents (the number of dependents affects income tax withholding), and workers in certain industries with different health insurance rates. Always verify with your employer&#x2019;s HR or a tax professional for official figures.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is shakai hoken (&#x793E;&#x4F1A;&#x4FDD;&#x967A;) in Japan?</summary>
+        <p>Shakai hoken (&#x793E;&#x4F1A;&#x4FDD;&#x967A;) is Japan&#x2019;s social insurance system, which all full-time employees are required to join. It consists of three components deducted from your salary: health insurance (&#x5065;&#x5EB7;&#x4FDD;&#x967A;, kenko hoken) at approximately 5% of gross salary, pension insurance (&#x539A;&#x751F;&#x5E74;&#x91D1;&#x4FDD;&#x967A;, kosei nenkin hoken) at 9.15% of gross salary up to a monthly cap, and employment insurance (&#x96C7;&#x7528;&#x4FDD;&#x967A;, koyo hoken) at 0.6%. Both the employee and employer pay these premiums &#x2014; this calculator shows the employee&#x2019;s share only.</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/tax-finance/consumption-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F9FE;</div>
+          <div class="tool-card-name">Consumption Tax Calculator</div>
+          <div class="tool-card-jp">&#x6D88;&#x8CBB;&#x7A0E;&#x8A08;&#x7B97;</div>
+        </a>
+        <a href="/date-calendar/age-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F382;</div>
+          <div class="tool-card-name">Japanese Age Calculator</div>
+          <div class="tool-card-jp">&#x5E74;&#x9F62;&#x8A08;&#x7B97;</div>
+        </a>
+        <a href="/tax-finance/work-hours/" class="tool-card">
+          <div class="tool-card-icon">&#x23F1;&#xFE0F;</div>
+          <div class="tool-card-name">Work Hours Calculator</div>
+          <div class="tool-card-jp">&#x6B8B;&#x696D;&#x4EE3; &#x8A08;&#x7B97;</div>
+        </a>
+        <a href="/tax-finance/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4B4;</div>
+          <div class="tool-card-name">All Tax &amp; Finance Tools</div>
+          <div class="tool-card-jp">&#x7A0E;&#x91D1;&#x30FB;&#x8CA1;&#x52D9;&#x30C4;&#x30FC;&#x30EB;</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_SALARY"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/about/">About</a></li>
+      <li><a href="/privacy/">Privacy Policy</a></li>
+      <li><a href="/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+    <p class="footer-attribution">Tax rates sourced from National Tax Agency Japan (FY2025). Last updated: March 2025</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import { calculateTakeHome, formatBreakdown } from '/assets/js/salary.js';
+
+function formatJPY(n) {
+  return '\u00A5' + Math.round(n).toLocaleString('ja-JP');
+}
+
+function compute() {
+  var grossStr = document.getElementById('gross-input').value;
+  var bonusStr = document.getElementById('bonus-input').value;
+  var errorEl  = document.getElementById('gross-error');
+  var resultEl = document.getElementById('salary-result');
+
+  if (!grossStr) { resultEl.classList.remove('visible'); return; }
+
+  var gross = parseFloat(grossStr);
+  var bonus = parseFloat(bonusStr) || 0;
+
+  if (isNaN(gross) || gross < 0) {
+    errorEl.textContent = 'Please enter a valid positive salary amount.';
+    errorEl.classList.add('visible');
+    resultEl.classList.remove('visible');
+    return;
+  }
+  errorEl.classList.remove('visible');
+
+  var r = calculateTakeHome(gross, { bonus: bonus });
+  if (r.error) {
+    errorEl.textContent = r.error;
+    errorEl.classList.add('visible');
+    resultEl.classList.remove('visible');
+    return;
+  }
+
+  // Primary result
+  document.getElementById('r-takehome').textContent   = formatJPY(r.takeHome);
+  document.getElementById('r-effrate').textContent    = r.effectiveRate;
+
+  // Deduction bar
+  var pct = r.gross > 0 ? ((r.takeHome / r.gross) * 100).toFixed(1) : '0';
+  document.getElementById('r-bar-fill').style.width   = pct + '%';
+  document.getElementById('r-bar-gross').textContent  = formatJPY(r.gross);
+  document.getElementById('r-bar-net').textContent    = formatJPY(r.takeHome);
+
+  // Deduction grid
+  document.getElementById('r-pension').textContent    = formatJPY(r.pension);
+  document.getElementById('r-health').textContent     = formatJPY(r.health);
+  document.getElementById('r-employment').textContent = formatJPY(r.employment);
+  document.getElementById('r-incometax').textContent  = formatJPY(r.incomeTax);
+  document.getElementById('r-residenttax').textContent= formatJPY(r.residentTax);
+  document.getElementById('r-total-ded').textContent  = formatJPY(r.totalDeductions);
+
+  // Annual section
+  document.getElementById('r-annual-gross').textContent   = formatJPY(r.annual.gross);
+  document.getElementById('r-annual-net').textContent     = formatJPY(r.takeHome * 12);
+  document.getElementById('r-annual-taxable').textContent = formatJPY(r.annual.taxableIncome);
+
+  resultEl.classList.add('visible');
+
+  // Share URL
+  var url = new URL(window.location.href);
+  url.searchParams.set('gross', gross);
+  if (bonus) url.searchParams.set('bonus', bonus);
+  document.getElementById('share-btn').dataset.url = url.toString();
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'salary_calculator', language: 'en' });
+}
+
+// Event listeners
+document.getElementById('gross-input').addEventListener('input', compute);
+document.getElementById('bonus-input').addEventListener('input', compute);
+document.getElementById('calculate-btn').addEventListener('click', compute);
+
+// Copy breakdown
+document.getElementById('copy-btn').addEventListener('click', function() {
+  var gross = parseFloat(document.getElementById('gross-input').value) || 0;
+  var bonus = parseFloat(document.getElementById('bonus-input').value) || 0;
+  var r     = calculateTakeHome(gross, { bonus: bonus });
+  if (r.error || !gross) return;
+  navigator.clipboard.writeText(formatBreakdown(r)).then(function() {
+    var btn = document.getElementById('copy-btn');
+    btn.textContent = 'Copied! \u2713';
+    setTimeout(function() { btn.textContent = 'Copy Breakdown'; }, 2000);
+  });
+});
+
+// Share
+document.getElementById('share-btn').addEventListener('click', function() {
+  var url = document.getElementById('share-btn').dataset.url || window.location.href;
+  navigator.clipboard.writeText(url).then(function() {
+    var btn = document.getElementById('share-btn');
+    btn.textContent = 'Link copied!';
+    setTimeout(function() { btn.textContent = 'Share'; }, 2000);
+  });
+});
+
+// Init from URL params
+var p = new URLSearchParams(window.location.search);
+if (p.get('gross')) {
+  document.getElementById('gross-input').value = p.get('gross');
+  if (p.get('bonus')) document.getElementById('bonus-input').value = p.get('bonus');
+  compute();
+}
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(function(zone) {
+    var ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(function(z) { observer.observe(z); });
+  }
+});
+</script>
+
+</body>
+</html>
