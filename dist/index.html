@@ -212,6 +212,10 @@
     text-decoration: none;
   }
   </style>
+<!-- TODO: Remove this block when AdSense is approved -->
+<style>
+.ad-atf { min-height: 0 !important; margin-bottom: 0 !important; }
+</style>
 </head>
 <body>
 
@@ -283,7 +287,7 @@
     <!-- Stats bar -->
     <div class="stats-bar">
       <div class="stat-item">
-        <span class="stat-number" id="tool-count">8</span>
+        <span class="stat-number" id="tool-count">17</span>
         <span class="stat-label">Free Tools</span>
       </div>
       <div class="stat-item">
@@ -343,6 +347,20 @@
         <div class="tool-card-desc">Find your eto animal sign</div>
       </a>
 
+      <a href="/date-calendar/holiday-checker/" class="tool-card" data-search="holiday checker 祝日 national holiday">
+        <div class="tool-card-icon">🏮</div>
+        <div class="tool-card-name">Japan Holiday Checker</div>
+        <div class="tool-card-jp">祝日チェッカー</div>
+        <div class="tool-card-desc">Check if any date is a Japanese public holiday</div>
+      </a>
+
+      <a href="/date-calendar/travel-budget/" class="tool-card" data-search="travel budget 旅行予算 trip cost">
+        <div class="tool-card-icon">✈️</div>
+        <div class="tool-card-name">Travel Budget Calculator</div>
+        <div class="tool-card-jp">旅行予算計算</div>
+        <div class="tool-card-desc">Estimate your Japan trip costs</div>
+      </a>
+
     </div>
   </section>
 
@@ -361,22 +379,25 @@
         <div class="tool-card-desc">Add or remove 10% / 8% tax</div>
       </a>
 
-      <a href="/tax-finance/salary-calculator/" class="tool-card tool-card--upcoming" data-search="salary take home 手取り計算">
-        <div class="tool-card-icon">&#x1F4B4;</div>
-        <div class="tool-card-name">Salary Calculator
-          <span class="badge-upcoming">Coming soon</span>
-        </div>
+      <a href="/tax-finance/salary-calculator/" class="tool-card" data-search="salary take home 手取り計算">
+        <div class="tool-card-icon">💴</div>
+        <div class="tool-card-name">Salary Calculator</div>
         <div class="tool-card-jp">手取り計算</div>
         <div class="tool-card-desc">Estimate net take-home pay</div>
       </a>
 
-      <a href="/tax-finance/" class="tool-card tool-card--upcoming" data-search="withholding tax 源泉徴収">
-        <div class="tool-card-icon">&#x1F4CA;</div>
-        <div class="tool-card-name">More Tools
-          <span class="badge-upcoming">Coming soon</span>
-        </div>
-        <div class="tool-card-jp">税金ツール</div>
-        <div class="tool-card-desc">Work hours, withholding tax</div>
+      <a href="/tax-finance/work-hours/" class="tool-card" data-search="work hours overtime 残業時間 労働時間">
+        <div class="tool-card-icon">⏱️</div>
+        <div class="tool-card-name">Work Hours Calculator</div>
+        <div class="tool-card-jp">残業時間計算</div>
+        <div class="tool-card-desc">Calculate overtime and work hours</div>
+      </a>
+
+      <a href="/tax-finance/withholding-tax/" class="tool-card" data-search="withholding tax 源泉徴収 gensen choshu">
+        <div class="tool-card-icon">🧮</div>
+        <div class="tool-card-name">Withholding Tax Calculator</div>
+        <div class="tool-card-jp">源泉徴収計算</div>
+        <div class="tool-card-desc">Calculate income tax withholding</div>
       </a>
 
     </div>
@@ -390,31 +411,32 @@
     </div>
     <div class="cards-grid" id="lang-cards">
 
-      <a href="/language-tools/romaji-converter/" class="tool-card tool-card--upcoming" data-search="romaji converter hiragana katakana">
+      <a href="/language-tools/romaji-converter/" class="tool-card" data-search="romaji converter hiragana katakana ローマ字変換">
         <div class="tool-card-icon">&#x1F524;</div>
-        <div class="tool-card-name">Romaji Converter
-          <span class="badge-upcoming">Coming soon</span>
-        </div>
+        <div class="tool-card-name">Romaji Converter</div>
         <div class="tool-card-jp">ローマ字変換</div>
         <div class="tool-card-desc">Convert Japanese to romaji</div>
       </a>
 
-      <a href="/language-tools/furigana-generator/" class="tool-card tool-card--upcoming" data-search="furigana generator kanji reading">
-        <div class="tool-card-icon">&#x1F4D6;</div>
-        <div class="tool-card-name">Furigana Generator
-          <span class="badge-upcoming">Coming soon</span>
-        </div>
+      <a href="/language-tools/furigana-generator/" class="tool-card" data-search="furigana generator kanji reading ふりがな生成">
+        <div class="tool-card-icon">📖</div>
+        <div class="tool-card-name">Furigana Generator</div>
         <div class="tool-card-jp">ふりがな生成</div>
         <div class="tool-card-desc">Add furigana to kanji text</div>
       </a>
 
-      <a href="/language-tools/" class="tool-card tool-card--upcoming" data-search="kanji numbers converter">
-        <div class="tool-card-icon">&#x1F233;</div>
-        <div class="tool-card-name">More Tools
-          <span class="badge-upcoming">Coming soon</span>
-        </div>
-        <div class="tool-card-jp">言語ツール</div>
-        <div class="tool-card-desc">Kanji numbers, measurement</div>
+      <a href="/language-tools/kanji-numbers/" class="tool-card" data-search="kanji numbers converter 漢数字 変換">
+        <div class="tool-card-icon">🔢</div>
+        <div class="tool-card-name">Kanji Number Converter</div>
+        <div class="tool-card-jp">漢数字変換</div>
+        <div class="tool-card-desc">Convert between Arabic and kanji numbers</div>
+      </a>
+
+      <a href="/language-tools/measurement-converter/" class="tool-card" data-search="measurement converter 単位変換 tsubo shaku">
+        <div class="tool-card-icon">📐</div>
+        <div class="tool-card-name">Measurement Converter</div>
+        <div class="tool-card-jp">単位変換</div>
+        <div class="tool-card-desc">Convert Japanese and metric units</div>
       </a>
 
     </div>
