@@ -336,40 +336,10 @@
       </div>
     </div>
 
-    <!-- Quick Reference Table -->
+    <!-- Quick Reference Table (JS-rendered) -->
     <div class="quick-ref" style="overflow-x:auto;">
-      <h2>Japan Public Holidays 2025 &#x2014; 2025&#x5E74; &#x795D;&#x65E5;&#x4E00;&#x89A7;</h2>
-      <table>
-        <thead>
-          <tr><th>Date</th><th>Day</th><th>Japanese</th><th>English</th><th>Type</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Jan 1</td><td>Wed</td><td>&#x5143;&#x65E5;</td><td>New Year&#x2019;s Day</td><td>National</td></tr>
-          <tr><td>Jan 13</td><td>Mon</td><td>&#x6210;&#x4EBA;&#x306E;&#x65E5;</td><td>Coming of Age Day</td><td>National</td></tr>
-          <tr><td>Feb 11</td><td>Tue</td><td>&#x5EFA;&#x56FD;&#x8A18;&#x5FF5;&#x306E;&#x65E5;</td><td>National Foundation Day</td><td>National</td></tr>
-          <tr><td>Feb 23</td><td>Sun</td><td>&#x5929;&#x7687;&#x8A95;&#x751F;&#x65E5;</td><td>Emperor&#x2019;s Birthday</td><td>National</td></tr>
-          <tr><td>Feb 24</td><td>Mon</td><td>&#x632F;&#x66FF;&#x4F11;&#x65E5;</td><td>Emperor&#x2019;s Birthday (substitute)</td><td>Substitute</td></tr>
-          <tr><td>Mar 20</td><td>Thu</td><td>&#x6625;&#x5206;&#x306E;&#x65E5;</td><td>Vernal Equinox Day</td><td>National</td></tr>
-          <tr><td>Apr 29</td><td>Tue</td><td>&#x662D;&#x548C;&#x306E;&#x65E5;</td><td>Showa Day</td><td>National</td></tr>
-          <tr><td>May 3</td><td>Sat</td><td>&#x61B2;&#x6CD5;&#x8A18;&#x5FF5;&#x65E5;</td><td>Constitution Memorial Day</td><td>National</td></tr>
-          <tr><td>May 4</td><td>Sun</td><td>&#x307F;&#x3069;&#x308A;&#x306E;&#x65E5;</td><td>Greenery Day</td><td>National</td></tr>
-          <tr><td>May 5</td><td>Mon</td><td>&#x3053;&#x3069;&#x3082;&#x306E;&#x65E5;</td><td>Children&#x2019;s Day</td><td>National</td></tr>
-          <tr><td>May 6</td><td>Tue</td><td>&#x632F;&#x66FF;&#x4F11;&#x65E5;</td><td>Children&#x2019;s Day (substitute)</td><td>Substitute</td></tr>
-          <tr><td>Jul 21</td><td>Mon</td><td>&#x6D77;&#x306E;&#x65E5;</td><td>Marine Day</td><td>National</td></tr>
-          <tr><td>Aug 11</td><td>Mon</td><td>&#x5C71;&#x306E;&#x65E5;</td><td>Mountain Day</td><td>National</td></tr>
-          <tr><td>Sep 15</td><td>Mon</td><td>&#x656C;&#x8001;&#x306E;&#x65E5;</td><td>Respect for the Aged Day</td><td>National</td></tr>
-          <tr><td>Sep 23</td><td>Tue</td><td>&#x79CB;&#x5206;&#x306E;&#x65E5;</td><td>Autumnal Equinox Day</td><td>National</td></tr>
-          <tr><td>Oct 13</td><td>Mon</td><td>&#x30B9;&#x30DD;&#x30FC;&#x30C4;&#x306E;&#x65E5;</td><td>Sports Day</td><td>National</td></tr>
-          <tr><td>Nov 3</td><td>Mon</td><td>&#x6587;&#x5316;&#x306E;&#x65E5;</td><td>Culture Day</td><td>National</td></tr>
-          <tr><td>Nov 23</td><td>Sun</td><td>&#x52E4;&#x52B4;&#x611F;&#x8B1D;&#x306E;&#x65E5;</td><td>Labour Thanksgiving Day</td><td>National</td></tr>
-          <tr><td>Nov 24</td><td>Mon</td><td>&#x632F;&#x66FF;&#x4F11;&#x65E5;</td><td>Labour Thanksgiving Day (substitute)</td><td>Substitute</td></tr>
-        </tbody>
-      </table>
-      <p class="text-muted">
-        <small>Source: <a href="https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html"
-        target="_blank" rel="noopener">Cabinet Office of Japan</a>.
-        Data covers 2023&#x2013;2026. Updated annually.</small>
-      </p>
+      <h2 id="quick-ref-heading">Japan Public Holidays — 祝日一覧</h2>
+      <div id="quick-ref-table-wrap"></div>
     </div>
 
     <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
@@ -530,7 +500,7 @@
 
 <script type="module">
 import {
-  checkDate, getHolidaysForMonth, getNextHoliday, getSupportedYears
+  checkDate, getHolidaysForMonth, getHolidaysForYear, getNextHoliday, getSupportedYears
 } from '/assets/js/holiday.js';
 
 var DAY_NAMES = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -672,6 +642,83 @@ if (p.get('date')) {
   document.getElementById('check-date').value = p.get('date');
   runCheckDate(p.get('date'));
 }
+
+// ── Dynamic quick reference table
+function renderQuickRefTable() {
+  const year = new Date().getFullYear();
+  const supported = [2023, 2024, 2025, 2026];
+
+  // Update heading
+  const heading = document.getElementById('quick-ref-heading');
+  if (heading) {
+    heading.textContent =
+      'Japan Public Holidays ' + year + ' — ' + year + '年 祝日一覧';
+  }
+
+  const wrap = document.getElementById('quick-ref-table-wrap');
+  if (!wrap) return;
+
+  // Get holidays for current year, fall back to latest available year
+  const targetYear = supported.includes(year) ? year : supported[supported.length - 1];
+  const holidays = getHolidaysForYear(targetYear);
+
+  if (!holidays || holidays.length === 0) {
+    wrap.innerHTML = '<p class="text-muted">Holiday data not available for ' + year + '.</p>';
+    return;
+  }
+
+  // Day names
+  const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun',
+                  'Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  const rows = holidays.map(h => {
+    const d = new Date(h.date + 'T00:00:00');
+    const dateStr = MONTHS[d.getMonth()] + ' ' + d.getDate();
+    const dayStr  = DAYS[d.getDay()];
+    const typeLabel = h.type === 'substitute'       ? 'Substitute'
+                    : h.type === 'national_holiday'  ? 'Bridge Day'
+                    : 'National';
+    return `<tr>
+      <td>${dateStr}</td>
+      <td>${dayStr}</td>
+      <td>${h.nameJP}</td>
+      <td>${h.nameEN}</td>
+      <td>${typeLabel}</td>
+    </tr>`;
+  }).join('');
+
+  // Show fallback note if displaying a different year
+  const fallbackNote = targetYear !== year
+    ? `<p class="text-muted" style="font-size:0.8rem; margin-bottom:0.75rem;">
+        ⚠ Holiday data for ${year} is not yet available. Showing ${targetYear} data.
+       </p>`
+    : '';
+
+  wrap.innerHTML = fallbackNote + `
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Day</th>
+          <th>Japanese</th>
+          <th>English</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <p class="text-muted" style="font-size:0.8rem; margin-top:0.75rem;">
+      <small>Source:
+        <a href="https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html"
+           target="_blank" rel="noopener">Cabinet Office of Japan</a>.
+        Data covers 2023–2026. Updated annually.
+      </small>
+    </p>`;
+}
+
+// Render on load
+renderQuickRefTable();
 </script>
 
 <script defer>
