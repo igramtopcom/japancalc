@@ -212,9 +212,16 @@
     text-decoration: none;
   }
   </style>
-<!-- TODO: Remove this block when AdSense is approved -->
+<!-- TODO: Remove this block when AdSense is approved — revert when ads go live -->
 <style>
-.ad-atf { min-height: 0 !important; margin-bottom: 0 !important; }
+.ad-zone { min-height: 0 !important; }
+.ad-atf, .ad-btf { margin: 0 !important; }
+.cards-grid {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+@media (max-width: 1024px) {
+  .cards-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
 </style>
 </head>
 <body>
@@ -266,7 +273,7 @@
 </nav>
 
 <!-- ATF Ad Zone -->
-<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+<div class="ad-zone ad-atf" style="margin:0 auto 0;">
   <ins class="adsbygoogle" style="display:block"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="SLOT_ATF_HOME"
@@ -326,22 +333,45 @@
     </div>
     <div class="cards-grid" id="date-cards">
 
+      <!-- Row 1 -->
       <a href="/date-calendar/era-converter/" class="tool-card" data-search="era converter 和暦 西暦 変換 reiwa heisei showa">
-        <div class="tool-card-icon">&#x1F4C5;</div>
+        <div class="tool-card-icon">📅</div>
         <div class="tool-card-name">Era Date Converter</div>
         <div class="tool-card-jp">和暦 西暦 変換</div>
         <div class="tool-card-desc">Convert Reiwa, Heisei, Showa years</div>
       </a>
 
+      <a href="/date-calendar/era-converter/reiwa-7/" class="tool-card" data-search="reiwa 7 令和7年 2025">
+        <div class="tool-card-icon">🗓️</div>
+        <div class="tool-card-name">Reiwa 7 = 2025</div>
+        <div class="tool-card-jp">令和7年 西暦</div>
+        <div class="tool-card-desc">Full Reiwa 7 calendar reference</div>
+      </a>
+
+      <a href="/date-calendar/era-converter/reiwa-6/" class="tool-card" data-search="reiwa 6 令和6年 2024">
+        <div class="tool-card-icon">🗓️</div>
+        <div class="tool-card-name">Reiwa 6 = 2024</div>
+        <div class="tool-card-jp">令和6年 西暦</div>
+        <div class="tool-card-desc">Full Reiwa 6 calendar reference</div>
+      </a>
+
+      <a href="/date-calendar/era-converter/reiwa-5/" class="tool-card" data-search="reiwa 5 令和5年 2023">
+        <div class="tool-card-icon">🗓️</div>
+        <div class="tool-card-name">Reiwa 5 = 2023</div>
+        <div class="tool-card-jp">令和5年 西暦</div>
+        <div class="tool-card-desc">Full Reiwa 5 calendar reference</div>
+      </a>
+
+      <!-- Row 2 -->
       <a href="/date-calendar/age-calculator/" class="tool-card" data-search="age calculator 年齢計算 man-nenrei kazoedoshi">
-        <div class="tool-card-icon">&#x1F382;</div>
+        <div class="tool-card-icon">🎂</div>
         <div class="tool-card-name">Japanese Age Calculator</div>
         <div class="tool-card-jp">年齢計算 満年齢</div>
         <div class="tool-card-desc">Calculate 満年齢 and 数え年</div>
       </a>
 
       <a href="/date-calendar/zodiac/" class="tool-card" data-search="zodiac eto 干支 計算 animal sign">
-        <div class="tool-card-icon">&#x1F409;</div>
+        <div class="tool-card-icon">🐉</div>
         <div class="tool-card-name">Japanese Zodiac Calculator</div>
         <div class="tool-card-jp">干支 計算</div>
         <div class="tool-card-desc">Find your eto animal sign</div>
@@ -351,7 +381,7 @@
         <div class="tool-card-icon">🏮</div>
         <div class="tool-card-name">Japan Holiday Checker</div>
         <div class="tool-card-jp">祝日チェッカー</div>
-        <div class="tool-card-desc">Check if any date is a Japanese public holiday</div>
+        <div class="tool-card-desc">Check any date for public holidays</div>
       </a>
 
       <a href="/date-calendar/travel-budget/" class="tool-card" data-search="travel budget 旅行予算 trip cost">
