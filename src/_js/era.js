@@ -127,7 +127,7 @@ export function eraToGregorian(eraId, eraYear, month, day) {
     if (month && day) {
       testDate = new Date(gregorianYear, month - 1, day);
     } else {
-      testDate = new Date(gregorianYear, 11, 31);
+      testDate = new Date(gregorianYear, 0, 1);
     }
     if (testDate > endDate) {
       return { error: era.romaji + " " + normalizedYear + " is out of range" };

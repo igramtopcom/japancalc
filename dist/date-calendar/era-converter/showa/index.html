@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Showa to Western Year Converter — 昭和 西暦 変換 | JapanCalc</title>
+  <meta name="description" content="Convert any Showa year (昭和) to Western calendar instantly. Showa 1–64 = 1926–1989. Free Japanese era date converter — no login required.">
+  <link rel="canonical" href="https://japancalc.com/date-calendar/era-converter/showa/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/date-calendar/era-converter/showa/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/ja/date-calendar/era-converter/showa/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/date-calendar/era-converter/showa/">
+  <meta property="og:title"       content="Showa to Western Year — 昭和 西暦 変換 | JapanCalc">
+  <meta property="og:description" content="Convert any Showa year to Western calendar. Showa 1–64 = 1926–1989. Free, no login.">
+  <meta property="og:url"         content="https://japancalc.com/date-calendar/era-converter/showa/">
+  <meta property="og:type"        content="website">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Showa Era Year Converter — 昭和 西暦 変換",
+    "url": "https://japancalc.com/date-calendar/era-converter/showa/",
+    "description": "Convert any Showa year (昭和1年–64年) to Western calendar year 1926–1989. Free, browser-based, no login required.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://japancalc.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Date & Calendar",
+        "item": "https://japancalc.com/date-calendar/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Era Date Converter",
+        "item": "https://japancalc.com/date-calendar/era-converter/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Showa Era (昭和)",
+        "item": "https://japancalc.com/date-calendar/era-converter/showa/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert Showa year to Western year?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To convert any Showa year to a Western year, add 1925 to the Showa year number. For example, Showa 64 + 1925 = 1989, Showa 30 + 1925 = 1955, Showa 1 + 1925 = 1926. The Showa era ran from December 25, 1926 to January 7, 1989."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What years did the Showa era cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Showa era (昭和) ran from December 25, 1926 to January 7, 1989 — a span of 64 years, making it the longest imperial era in Japanese history. Showa 1 corresponds to 1926, and Showa 64 corresponds to 1989. Emperor Hirohito reigned throughout the entire Showa period."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Showa 64 in Western year?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Showa 64 is 1989 in the Western calendar. However, Showa 64 lasted only 7 days — from January 1 to January 7, 1989. Emperor Hirohito passed away on January 7, 1989, and the Heisei era began the following day, January 8, 1989."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Showa 30 in Western year?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Showa 30 is 1955 in the Western calendar. Use the formula: Showa year + 1925 = Western year. So Showa 30 + 1925 = 1955. This formula works for all Showa years from Showa 1 (1926) to Showa 64 (1989)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many years did the Showa era last?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Showa era lasted 64 years, from December 25, 1926 to January 7, 1989. At 64 years, it is the longest imperial era in Japanese recorded history, spanning the reign of Emperor Hirohito through World War II, Japan's postwar recovery, and its economic rise."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- NAV PARTIAL (from src/_templates/nav.html) -->
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo">JapanCalc</a>
+
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/language-tools/">Language Tools</a></li>
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <button class="nav-lang-toggle"
+            aria-label="Switch to Japanese"
+            onclick="window.location.href='/ja'+window.location.pathname">
+      日本語
+    </button>
+    <button class="nav-hamburger"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><span class="breadcrumb-sep">›</span></li>
+    <li><a href="/date-calendar/">Date &amp; Calendar</a></li>
+    <li><span class="breadcrumb-sep">›</span></li>
+    <li><a href="/date-calendar/era-converter/">Era Date Converter</a></li>
+    <li><span class="breadcrumb-sep">›</span></li>
+    <li aria-current="page">Showa Era (昭和)</li>
+  </ol>
+</nav>
+
+<!-- ATF Ad Zone -->
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_SHOWA"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<!-- PAGE LAYOUT -->
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <!-- Page Header -->
+    <h1>Showa to Western Year Converter — 昭和 西暦 変換</h1>
+    <p class="tool-subtitle">昭和を西暦に変換 — Convert Showa years (昭和1年–64年) to 1926–1989</p>
+    <p class="tool-desc">
+      Convert any Showa era year (昭和) to the Western Gregorian calendar instantly.
+      The Showa era ran from 1926 to 1989 — enter any Showa year from 1 to 64 to
+      find the Western equivalent. Free, no login required.
+    </p>
+
+    <!-- TOOL INTERFACE -->
+    <div class="tool-box" id="tool-main">
+      <div class="form-group">
+        <label class="form-label" for="era-select">Era (元号)</label>
+        <select class="form-select" id="era-select">
+          <option value="showa" selected>Showa (昭和) — 1926–1989</option>
+          <option value="reiwa">Reiwa (令和) — 2019–present</option>
+          <option value="heisei">Heisei (平成) — 1989–2019</option>
+          <option value="taisho">Taisho (大正) — 1912–1926</option>
+          <option value="meiji">Meiji (明治) — 1868–1912</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="year-input">Showa Year (昭和 年) — Enter 1 to 64</label>
+        <input type="number" class="form-input era-input" id="year-input"
+               min="1" max="64" placeholder="e.g. 64">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="month-input">Month (optional)</label>
+        <input type="number" class="form-input era-input" id="month-input"
+               min="1" max="12" placeholder="MM">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="day-input">Day (optional)</label>
+        <input type="number" class="form-input era-input" id="day-input"
+               min="1" max="31" placeholder="DD">
+      </div>
+
+      <div aria-live="polite" aria-atomic="true">
+        <p class="form-error" id="result-error" style="display:none;"></p>
+        <div class="result-box" id="result-box">
+          <div class="result-primary" id="r-year"></div>
+          <div class="result-grid">
+            <div><span class="result-item-label">Japanese</span><br><span class="result-item-value" id="r-jp"></span></div>
+            <div><span class="result-item-label">English</span><br><span class="result-item-value" id="r-en"></span></div>
+            <div><span class="result-item-label">Full Date</span><br><span class="result-item-value" id="r-date"></span></div>
+            <div><span class="result-item-label">Day of Week</span><br><span class="result-item-value" id="r-dow"></span></div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-secondary" id="copy-btn">Copy</button>
+            <button class="btn btn-secondary" id="share-btn">Share</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- /tool-box -->
+
+    <!-- Quick Reference Table -->
+    <h2>Complete Showa Year Chart — 昭和 西暦 早見表 (全64年)</h2>
+    <div class="quick-ref">
+      <table>
+        <thead>
+          <tr>
+            <th>Showa (昭和)</th>
+            <th>Western Year</th>
+            <th>Showa (昭和)</th>
+            <th>Western Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>昭和1年</td><td>1926</td><td>昭和33年</td><td>1958</td></tr>
+          <tr><td>昭和2年</td><td>1927</td><td>昭和34年</td><td>1959</td></tr>
+          <tr><td>昭和3年</td><td>1928</td><td>昭和35年</td><td>1960</td></tr>
+          <tr><td>昭和4年</td><td>1929</td><td>昭和36年</td><td>1961</td></tr>
+          <tr><td>昭和5年</td><td>1930</td><td>昭和37年</td><td>1962</td></tr>
+          <tr><td>昭和6年</td><td>1931</td><td>昭和38年</td><td>1963</td></tr>
+          <tr><td>昭和7年</td><td>1932</td><td>昭和39年</td><td>1964</td></tr>
+          <tr><td>昭和8年</td><td>1933</td><td>昭和40年</td><td>1965</td></tr>
+          <tr><td>昭和9年</td><td>1934</td><td>昭和41年</td><td>1966</td></tr>
+          <tr><td>昭和10年</td><td>1935</td><td>昭和42年</td><td>1967</td></tr>
+          <tr><td>昭和11年</td><td>1936</td><td>昭和43年</td><td>1968</td></tr>
+          <tr><td>昭和12年</td><td>1937</td><td>昭和44年</td><td>1969</td></tr>
+          <tr><td>昭和13年</td><td>1938</td><td>昭和45年</td><td>1970</td></tr>
+          <tr><td>昭和14年</td><td>1939</td><td>昭和46年</td><td>1971</td></tr>
+          <tr><td>昭和15年</td><td>1940</td><td>昭和47年</td><td>1972</td></tr>
+          <tr><td>昭和16年</td><td>1941</td><td>昭和48年</td><td>1973</td></tr>
+          <tr><td>昭和17年</td><td>1942</td><td>昭和49年</td><td>1974</td></tr>
+          <tr><td>昭和18年</td><td>1943</td><td>昭和50年</td><td>1975</td></tr>
+          <tr><td>昭和19年</td><td>1944</td><td>昭和51年</td><td>1976</td></tr>
+          <tr><td>昭和20年</td><td>1945</td><td>昭和52年</td><td>1977</td></tr>
+          <tr><td>昭和21年</td><td>1946</td><td>昭和53年</td><td>1978</td></tr>
+          <tr><td>昭和22年</td><td>1947</td><td>昭和54年</td><td>1979</td></tr>
+          <tr><td>昭和23年</td><td>1948</td><td>昭和55年</td><td>1980</td></tr>
+          <tr><td>昭和24年</td><td>1949</td><td>昭和56年</td><td>1981</td></tr>
+          <tr><td>昭和25年</td><td>1950</td><td>昭和57年</td><td>1982</td></tr>
+          <tr><td>昭和26年</td><td>1951</td><td>昭和58年</td><td>1983</td></tr>
+          <tr><td>昭和27年</td><td>1952</td><td>昭和59年</td><td>1984</td></tr>
+          <tr><td>昭和28年</td><td>1953</td><td>昭和60年</td><td>1985</td></tr>
+          <tr><td>昭和29年</td><td>1954</td><td>昭和61年</td><td>1986</td></tr>
+          <tr><td>昭和30年</td><td>1955</td><td>昭和62年</td><td>1987</td></tr>
+          <tr><td>昭和31年</td><td>1956</td><td>昭和63年</td><td>1988</td></tr>
+          <tr><td>昭和32年</td><td>1957</td><td>昭和64年</td><td>1989</td></tr>
+        </tbody>
+      </table>
+      <p class="text-muted">
+        <small>昭和64年 (1989) lasted only 7 days — January 1–7, 1989.
+        The Heisei era began January 8, 1989.</small>
+      </p>
+    </div>
+
+    <!-- BTF Ad Zone -->
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_SHOWA"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <!-- Editorial Content -->
+    <article class="seo-content">
+      <h2>How to Convert Showa Years to Western Years (昭和 西暦 変換方法)</h2>
+      <p>
+        Converting a Showa year (昭和) to the Western Gregorian calendar is
+        straightforward: <strong>add 1925 to the Showa year number</strong>.
+        For example, Showa 30 + 1925 = 1955, and Showa 64 + 1925 = 1989.
+        This formula works for all 64 years of the Showa era. To go the other
+        direction — Western year to Showa — subtract 1925. For instance,
+        1960 − 1925 = Showa 35.
+      </p>
+      <p>
+        The Showa era (昭和, meaning "Radiant Japan") began on December 25,
+        1926, when Emperor Hirohito ascended to the throne following the death
+        of Emperor Taisho. It ended on January 7, 1989, when Emperor Hirohito
+        passed away. The very next day, January 8, 1989, marked the start of
+        the Heisei era.
+      </p>
+
+      <h2>About the Showa Era (昭和時代)</h2>
+      <p>
+        At 64 years, the Showa era is the longest imperial era in Japanese
+        recorded history. It covered one of the most turbulent and
+        transformative periods in Japan's modern history — from the militarist
+        expansion of the 1930s and World War II (Showa 20 = 1945), through
+        the postwar occupation and recovery, to Japan's remarkable economic
+        rise in the 1960s–80s. Many official Japanese documents, historical
+        records, and personal documents from this period use the Showa year
+        system.
+      </p>
+      <p>
+        If you are reading a Japanese document, form, or certificate that
+        shows a year in 昭和 format, use the converter above or the complete
+        reference table to find the Western equivalent instantly. For Heisei
+        era dates, see the
+        <a href="/date-calendar/era-converter/heisei/">Heisei era converter</a>.
+        For current Reiwa dates, use the
+        <a href="/date-calendar/era-converter/">main era date converter</a>.
+      </p>
+      <p>
+        <small>Era date information sourced from the
+          <a href="https://www8.cao.go.jp/chosei/gengou/gaiyou.html"
+             target="_blank" rel="noopener">Japan Cabinet Office</a>.
+        </small>
+      </p>
+    </article>
+
+    <!-- FAQ Section -->
+    <section class="faq" itemscope itemtype="https://schema.org/FAQPage">
+      <h2>Frequently Asked Questions — Showa Era (昭和)</h2>
+      <ul class="faq-list">
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            How do I convert Showa year to Western year?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              To convert any Showa year to a Western year, add 1925 to the Showa
+              year number. For example, Showa 64 + 1925 = 1989, Showa 30 + 1925
+              = 1955, Showa 1 + 1925 = 1926. The Showa era ran from December 25,
+              1926 to January 7, 1989.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What years did the Showa era cover?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              The Showa era (昭和) ran from December 25, 1926 to January 7, 1989
+              — a span of 64 years, making it the longest imperial era in Japanese
+              history. Showa 1 corresponds to 1926, and Showa 64 corresponds to
+              1989. Emperor Hirohito reigned throughout the entire Showa period.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What is Showa 64 in Western year?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              Showa 64 is 1989 in the Western calendar. However, Showa 64 lasted
+              only 7 days — from January 1 to January 7, 1989. Emperor Hirohito
+              passed away on January 7, 1989, and the Heisei era began the
+              following day, January 8, 1989.
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            What is Showa 30 in Western year?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              Showa 30 is 1955 in the Western calendar. Use the formula: Showa
+              year + 1925 = Western year. So Showa 30 + 1925 = 1955. This formula
+              works for all Showa years from Showa 1 (1926) to Showa 64 (1989).
+            </span>
+          </div>
+        </li>
+
+        <li class="faq-item" itemscope itemprop="mainEntity"
+            itemtype="https://schema.org/Question">
+          <div class="faq-question" itemprop="name">
+            How many years did the Showa era last?
+          </div>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+               itemtype="https://schema.org/Answer">
+            <span itemprop="text">
+              The Showa era lasted 64 years, from December 25, 1926 to January 7,
+              1989. At 64 years, it is the longest imperial era in Japanese
+              recorded history, spanning the reign of Emperor Hirohito through
+              World War II, Japan's postwar recovery, and its economic rise.
+            </span>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/date-calendar/era-converter/heisei/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4C5;</div>
+          <div class="tool-card-name">Heisei Era Converter</div>
+          <div class="tool-card-jp">平成 西暦 変換</div>
+        </a>
+        <a href="/date-calendar/era-converter/" class="tool-card">
+          <div class="tool-card-icon">&#x1F504;</div>
+          <div class="tool-card-name">Era Date Converter</div>
+          <div class="tool-card-jp">和暦 西暦 変換</div>
+        </a>
+        <a href="/date-calendar/age-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F382;</div>
+          <div class="tool-card-name">Japanese Age Calculator</div>
+          <div class="tool-card-jp">年齢計算</div>
+        </a>
+        <a href="/tax-finance/consumption-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F9FE;</div>
+          <div class="tool-card-name">Consumption Tax Calculator</div>
+          <div class="tool-card-jp">消費税計算</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_SHOWA"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div><!-- /page-layout -->
+
+<!-- FOOTER PARTIAL -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/about/">About</a></li>
+      <li><a href="/privacy/">Privacy Policy</a></li>
+      <li><a href="/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">
+      &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
+    </p>
+    <p class="footer-attribution">
+      Date data sourced from Japan Cabinet Office.
+      Tax rates from National Tax Agency Japan.
+    </p>
+    <p class="footer-attribution">Last updated: March 2025</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import { eraToGregorian, getDayOfWeek } from '/assets/js/era.js';
+
+const state = { era: 'showa', year: '', month: null, day: null };
+
+function compute() {
+  const { era, year, month, day } = state;
+  const box = document.getElementById('result-box');
+  const errEl = document.getElementById('result-error');
+  if (!year) {
+    box.classList.remove('visible');
+    errEl.style.display = 'none';
+    return;
+  }
+  const result = eraToGregorian(era, year, month, day);
+  if (result.error) {
+    errEl.textContent = result.error;
+    errEl.style.display = '';
+    errEl.classList.add('visible');
+    box.classList.remove('visible');
+    return;
+  }
+  errEl.style.display = 'none';
+  document.getElementById('r-year').textContent = result.gregorianYear;
+  document.getElementById('r-jp').textContent   = result.jpNotation;
+  document.getElementById('r-en').textContent   = result.enNotation;
+  document.getElementById('r-date').textContent  = result.fullDate  || '—';
+  document.getElementById('r-dow').textContent   = result.dayOfWeek || '—';
+  box.classList.add('visible');
+  // Share URL
+  const url = new URL(window.location.href);
+  url.searchParams.set('era',  state.era);
+  url.searchParams.set('year', state.year);
+  if (state.month) url.searchParams.set('month', state.month);
+  else url.searchParams.delete('month');
+  if (state.day)   url.searchParams.set('day',   state.day);
+  else url.searchParams.delete('day');
+  document.getElementById('share-btn').dataset.url = url.toString();
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'era_converter_showa', language: 'en' });
+}
+
+// Era select — update label dynamically
+const eraNames = {
+  reiwa: 'Reiwa Year (令和 年)',
+  heisei: 'Heisei Year (平成 年)',
+  showa: 'Showa Year (昭和 年) — Enter 1 to 64',
+  taisho: 'Taisho Year (大正 年)',
+  meiji: 'Meiji Year (明治 年)'
+};
+
+document.getElementById('era-select').addEventListener('change', (e) => {
+  state.era = e.target.value;
+  document.querySelector('label[for="year-input"]').textContent = eraNames[e.target.value] || 'Era Year';
+  compute();
+});
+
+// Read inputs
+document.querySelectorAll('.era-input').forEach(el => {
+  el.addEventListener('input', () => {
+    state.year  = document.getElementById('year-input').value;
+    state.month = document.getElementById('month-input').value || null;
+    state.day   = document.getElementById('day-input').value   || null;
+    compute();
+  });
+});
+
+// Copy button
+document.getElementById('copy-btn').addEventListener('click', () => {
+  const text = document.getElementById('r-year').textContent + ' (' + document.getElementById('r-jp').textContent + ')';
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('copy-btn');
+    btn.textContent = 'Copied! \u2713';
+    setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+  });
+});
+
+// Share button
+document.getElementById('share-btn').addEventListener('click', () => {
+  const url = document.getElementById('share-btn').dataset.url || window.location.href;
+  navigator.clipboard.writeText(url).then(() => {
+    const btn = document.getElementById('share-btn');
+    btn.textContent = 'Link copied!';
+    setTimeout(() => { btn.textContent = 'Share'; }, 2000);
+  });
+});
+
+// URL params override
+const p = new URLSearchParams(window.location.search);
+if (p.get('era'))   { state.era   = p.get('era');   document.getElementById('era-select').value  = state.era; }
+if (p.get('year'))  { state.year  = p.get('year');  document.getElementById('year-input').value  = state.year; }
+if (p.get('month')) { state.month = p.get('month'); document.getElementById('month-input').value = state.month; }
+if (p.get('day'))   { state.day   = p.get('day');   document.getElementById('day-input').value   = state.day; }
+
+// Compute on load (only shows result if year param present)
+compute();
+</script>
+
+<!-- Lazy ad loader -->
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(zone => {
+    const ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(z => observer.observe(z));
+  }
+});
+</script>
+
+</body>
+</html>
