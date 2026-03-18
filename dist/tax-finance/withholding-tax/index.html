@@ -230,20 +230,18 @@
 <div class="page-layout">
   <main class="content" id="main-content">
 
-    <h1>Japan 源泉徴収計算ツール &#x2014; &#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x8A08;&#x7B97;</h1>
-    <p class="tool-subtitle">&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x8A08;&#x7B97;&#x30C4;&#x30FC;&#x30EB; &#x2014; フリーランス報酬の源泉徴収を計算 and invoices</p>
+    <h1>源泉徴収計算ツール</h1>
+    <p class="tool-subtitle">源泉徴収計算ツール &#x2014; フリーランス報酬の源泉徴収税額を計算</p>
     <p class="tool-desc">
-      Calculate Japan withholding tax (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;) on freelance professional fees,
-      interest income, and dividends. Enter your invoice amount to see the
-      withholding deduction and net payment instantly. Based on FY2025 NTA rates.
+      フリーランス報酬・利子・配当の源泉徴収税額を計算します。請求金額を入力すると源泉徴収額と振込金額が即座に表示されます。2025年度の国税庁税率に対応。
       無料、ログイン不要。
     </p>
 
     <div class="tool-box" id="tool-main">
       <!-- Tab bar -->
       <div class="tool-tabs" role="tablist">
-        <button class="tool-tab active" data-panel="panel-fee" role="tab" aria-selected="true">Professional Fees (&#x5831;&#x916C;)</button>
-        <button class="tool-tab" data-panel="panel-income" role="tab" aria-selected="false">Interest &amp; Dividends (&#x5229;&#x5B50;&#x30FB;&#x914D;&#x5F53;)</button>
+        <button class="tool-tab active" data-panel="panel-fee" role="tab" aria-selected="true">報酬・料金</button>
+        <button class="tool-tab" data-panel="panel-income" role="tab" aria-selected="false">利子・配当</button>
       </div>
 
       <!-- Tab 1 — Professional Fees -->
@@ -253,9 +251,9 @@
             請求金額 &#x2014; &#x8ACB;&#x6C42;&#x91D1;&#x984D; (&#x7A0E;&#x629C;) &#xA5;
           </label>
           <input type="number" class="form-input" id="fee-amount"
-                 min="0" step="1000" placeholder="e.g. 500000">
+                 min="0" step="1000" placeholder="例: 500000">
           <span class="text-muted" style="font-size:0.8rem;">
-            Enter the gross invoice amount before withholding
+            源泉徴収前の請求金額（税抜）を入力
           </span>
           <div class="form-error" id="fee-error"></div>
         </div>
@@ -266,28 +264,28 @@
 
         <div class="result-box" id="fee-result" aria-live="polite">
           <div class="withholding-primary" id="r-withholding"></div>
-          <div class="result-secondary">Withholding Tax (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x7A0E;)</div>
+          <div class="result-secondary">源泉徴収税額</div>
 
           <div class="invoice-box">
             <div class="invoice-row">
-              <span class="label">Invoice (&#x8ACB;&#x6C42;&#x91D1;&#x984D;)</span>
+              <span class="label">請求金額</span>
               <span id="r-gross"></span>
             </div>
             <div class="invoice-row">
-              <span class="label">Withholding (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;)</span>
+              <span class="label">源泉徴収額</span>
               <span class="value-negative" id="r-wh-value"></span>
             </div>
             <div class="invoice-row total">
-              <span>Net Payment (&#x632F;&#x8FBC;&#x91D1;&#x984D;)</span>
+              <span>振込金額</span>
               <span id="r-net"></span>
             </div>
           </div>
 
           <div style="font-size:0.85rem; color:var(--color-text-muted); margin:0.5rem 0;">
-            Rate applied: <strong id="r-rate-info"></strong>
+            適用税率: <strong id="r-rate-info"></strong>
           </div>
           <div style="font-size:0.85rem; color:var(--color-text-muted);">
-            Formula: <span id="r-formula"></span>
+            計算式: <span id="r-formula"></span>
           </div>
 
           <div class="split-notice" id="split-notice" style="display:none;"></div>
@@ -302,31 +300,31 @@
       <!-- Tab 2 — Interest & Dividends -->
       <div class="tool-panel" id="panel-income" role="tabpanel">
         <div class="form-group">
-          <label class="form-label" for="income-amount">Amount &#xA5;</label>
+          <label class="form-label" for="income-amount">金額 &#xA5;</label>
           <input type="number" class="form-input" id="income-amount"
-                 min="0" step="1000" placeholder="e.g. 100000">
+                 min="0" step="1000" placeholder="例: 100000">
         </div>
 
         <div class="form-group">
-          <label class="form-label">Income Type</label>
+          <label class="form-label">所得の種類</label>
           <div class="rate-toggle" role="group">
             <label class="rate-option">
               <input type="radio" name="income-type" value="interest" checked>
-              <span>Interest (&#x5229;&#x5B50;) 15.21%</span>
+              <span>利子 (&#x5229;&#x5B50;) 15.21%</span>
             </label>
             <label class="rate-option">
               <input type="radio" name="income-type" value="dividend_listed">
-              <span>Dividend &#x2014; Listed (&#x4E0A;&#x5834;) 10.21%</span>
+              <span>配当 &#x2014; 上場 (&#x4E0A;&#x5834;) 10.21%</span>
             </label>
             <label class="rate-option">
               <input type="radio" name="income-type" value="dividend_unlisted">
-              <span>Dividend &#x2014; Unlisted (&#x975E;&#x4E0A;&#x5834;) 20.42%</span>
+              <span>配当 &#x2014; 非上場 (&#x975E;&#x4E0A;&#x5834;) 20.42%</span>
             </label>
           </div>
         </div>
 
         <div class="btn-row">
-          <button class="btn btn-primary" id="income-calc-btn">Calculate</button>
+          <button class="btn btn-primary" id="income-calc-btn">計算する</button>
         </div>
 
         <div class="result-box" id="income-result" aria-live="polite">
@@ -334,11 +332,11 @@
           <div class="result-secondary">源泉徴収税額</div>
 
           <div class="income-grid">
-            <span class="row-label">Gross Amount</span>
+            <span class="row-label">総額</span>
             <span class="row-value" id="r-income-gross"></span>
             <span class="row-label">源泉徴収税額</span>
             <span class="row-value" style="color:#DC2626;" id="r-income-wh2"></span>
-            <span class="row-label" style="font-weight:700;">Net Amount</span>
+            <span class="row-label" style="font-weight:700;">手取り額</span>
             <span class="row-value" style="font-weight:700;" id="r-income-net"></span>
           </div>
         </div>
@@ -350,7 +348,7 @@
       <h2>源泉徴収 早見表 &#x2014; &#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x65E9;&#x898B;&#x8868; (FY2025)</h2>
       <table>
         <thead>
-          <tr><th>請求金額（税抜）</th><th>源泉徴収税額</th><th>振込金額（手取り）</th><th>Rate</th></tr>
+          <tr><th>請求金額（税抜）</th><th>源泉徴収税額</th><th>振込金額（手取り）</th><th>税率</th></tr>
         </thead>
         <tbody>
           <tr><td>&#xA5;50,000</td><td>&#xA5;5,105</td><td>&#xA5;44,895</td><td>10.21%</td></tr>
@@ -360,16 +358,13 @@
           <tr><td>&#xA5;500,000</td><td>&#xA5;51,050</td><td>&#xA5;448,950</td><td>10.21%</td></tr>
           <tr><td>&#xA5;800,000</td><td>&#xA5;81,680</td><td>&#xA5;718,320</td><td>10.21%</td></tr>
           <tr><td>&#xA5;1,000,000</td><td>&#xA5;102,100</td><td>&#xA5;897,900</td><td>10.21%</td></tr>
-          <tr><td>&#xA5;1,500,000</td><td>&#xA5;204,200</td><td>&#xA5;1,295,800</td><td>Split*</td></tr>
-          <tr><td>&#xA5;2,000,000</td><td>&#xA5;306,300</td><td>&#xA5;1,693,700</td><td>Split*</td></tr>
-          <tr><td>&#xA5;3,000,000</td><td>&#xA5;510,500</td><td>&#xA5;2,489,500</td><td>Split*</td></tr>
+          <tr><td>&#xA5;1,500,000</td><td>&#xA5;204,200</td><td>&#xA5;1,295,800</td><td>分割*</td></tr>
+          <tr><td>&#xA5;2,000,000</td><td>&#xA5;306,300</td><td>&#xA5;1,693,700</td><td>分割*</td></tr>
+          <tr><td>&#xA5;3,000,000</td><td>&#xA5;510,500</td><td>&#xA5;2,489,500</td><td>分割*</td></tr>
         </tbody>
       </table>
       <p class="text-muted">
-        <small>Professional fee withholding rate: 10.21% (&#x2264;&#xA5;1,000,000) / split rate (&gt;&#xA5;1,000,000).
-        *Split: &#xA5;102,100 on first &#xA5;1,000,000 + 20.42% on amount above.
-        Includes 2.1% reconstruction surtax.
-        Source: <a href="https://www.nta.go.jp" target="_blank" rel="noopener">NTA Japan</a>.</small>
+        <small>報酬の源泉徴収税率: 10.21%（100万円以下）/ 分割税率（100万円超）。*分割: 最初の100万円に102,100円 + 超過分に20.42%。復興特別所得税2.1%を含みます。出典: <a href="https://www.nta.go.jp" target="_blank" rel="noopener">国税庁</a>。</small>
       </p>
     </div>
 
@@ -382,40 +377,21 @@
     </div>
 
     <article class="seo-content">
-      <h2>How Withholding Tax Works for Freelancers in Japan (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x306E;&#x4ED5;&#x7D44;&#x307F;)</h2>
+      <h2>フリーランスの源泉徴収の仕組み</h2>
       <p>
-        When a Japanese business pays a freelancer or independent contractor for
-        professional services, they are legally required to deduct withholding tax
-        (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x7A0E;) from the payment before transferring funds. The withholding
-        rate for most professional fees is <strong>10.21%</strong> &#x2014; this includes
-        the base 10% income tax rate plus the 2.1% reconstruction surtax (&#x5FA9;&#x8208;&#x7279;&#x5225;
-        &#x6240;&#x5F97;&#x7A0E;) that applies until 2037.
+        日本の企業がフリーランスや個人事業主に報酬を支払う際、源泉徴収税を差し引いて振り込むことが法律で義務付けられています。報酬に対する源泉徴収税率は<strong>10.21%</strong>で、これは基本の所得税率10%に2037年まで適用される復興特別所得税2.1%を加えたものです。
       </p>
       <p>
-        For example, if you invoice a client for &#xA5;500,000, the client will deduct
-        &#xA5;51,050 (10.21%) and transfer &#xA5;448,950 to your account. They then pay the
-        &#xA5;51,050 to the tax office on your behalf. When you file your annual tax
-        return (&#x78BA;&#x5B9A;&#x7533;&#x544A;), you declare the full &#xA5;500,000 as income and claim the
-        &#xA5;51,050 as a tax credit against your total tax liability.
+        例えば、クライアントに500,000円を請求した場合、クライアントは51,050円（10.21%）を差し引き、448,950円を振り込みます。差し引かれた51,050円はクライアントが税務署に納付します。確定申告時には500,000円の全額を所得として申告し、51,050円を税額控除として申請します。
       </p>
 
-      <h2>When Does the Split Rate Apply? (100&#x4E07;&#x5186;&#x8D85;&#x306E;&#x5834;&#x5408;)</h2>
+      <h2>分割税率が適用されるのは？（100万円超の場合）</h2>
       <p>
-        For a single payment exceeding &#xA5;1,000,000, a split withholding rate applies.
-        The first &#xA5;1,000,000 is taxed at 10.21%, resulting in a flat deduction of
-        &#xA5;102,100. The amount above &#xA5;1,000,000 is taxed at <strong>20.42%</strong>.
-        So for a &#xA5;1,500,000 invoice: &#xA5;102,100 + (&#xA5;500,000 &#xD7; 20.42%) = &#xA5;204,200
-        total withholding, leaving &#xA5;1,295,800 net payment.
+        1回の支払いが1,000,000円を超える場合、分割税率が適用されます。最初の1,000,000円には10.21%が課税され、102,100円が源泉徴収されます。1,000,000円を超える部分には<strong>20.42%</strong>が課税されます。例えば、1,500,000円の請求の場合、102,100円 +（500,000円 x 20.42%）= 204,200円が源泉徴収され、振込金額は1,295,800円です。
       </p>
       <p>
-        Note that the threshold applies per payment &#x2014; not per month or per year.
-        A series of &#xA5;500,000 invoices each uses the 10.21% rate, even if the
-        annual total exceeds &#xA5;1,000,000. For salary withholding and other
-        deductions, see the
-        <a href="/tax-finance/salary-calculator/">Japan salary calculator</a>.
-        Tax rates sourced from the
-        <a href="https://www.nta.go.jp" target="_blank" rel="noopener">
-        National Tax Agency Japan (NTA)</a>.
+        この基準は1回の支払いごとに適用され、月単位や年単位ではありません。500,000円の請求書を複数回発行した場合、年間合計が1,000,000円を超えてもそれぞれ10.21%が適用されます。給与の源泉徴収やその他の控除については、<a href="/tax-finance/salary-calculator/">手取り計算ツール</a>をご参照ください。
+        税率は<a href="https://www.nta.go.jp" target="_blank" rel="noopener">国税庁（NTA）</a>のデータに基づいています。
       </p>
     </article>
 
@@ -423,28 +399,28 @@
       <h2>よくある質問</h2>
 
       <details class="faq-item">
-        <summary>What is withholding tax (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;) in Japan?</summary>
-        <p>Withholding tax (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;, gensen ch&#x14D;sh&#x16B;) in Japan is income tax deducted at the source of payment before the recipient receives funds. For freelance and professional service fees, the payer (client) deducts the withholding tax from the invoice amount and pays it directly to the tax office on behalf of the recipient. The recipient then claims the withheld amount as a credit when filing their annual income tax return.</p>
+        <summary>源泉徴収とは？</summary>
+        <p>源泉徴収とは、支払い時に所得税を差し引く制度です。フリーランス報酬の場合、支払者（クライアント）が請求金額から源泉徴収税を差し引き、受取人に代わって税務署に納付します。受取人は確定申告時に源泉徴収された金額を税額控除として申請します。</p>
       </details>
 
       <details class="faq-item">
-        <summary>How much withholding tax is deducted from freelance fees in Japan?</summary>
-        <p>For freelance and professional fees in Japan, the withholding tax rate is 10.21% (including the 2.1% reconstruction surtax) for payments up to &#xA5;1,000,000. For payments exceeding &#xA5;1,000,000 in a single payment, the rate is &#xA5;102,100 flat on the first million, plus 20.42% on the amount above &#xA5;1,000,000. For example, a &#xA5;500,000 invoice would have &#xA5;51,050 withheld, leaving a net payment of &#xA5;448,950.</p>
+        <summary>フリーランス報酬の源泉徴収額は？</summary>
+        <p>フリーランス報酬の源泉徴収税率は、1,000,000円以下の場合10.21%（復興特別所得税2.1%を含む）です。1回の支払いが1,000,000円を超える場合、最初の100万円に102,100円（定額）、超過分に20.42%が課税されます。例えば、500,000円の請求では51,050円が源泉徴収され、振込金額は448,950円です。</p>
       </details>
 
       <details class="faq-item">
-        <summary>Who is responsible for withholding tax in Japan?</summary>
-        <p>In Japan, the payer (client or employer) is responsible for calculating and withholding the tax from the payment, and remitting it to the tax office. As a freelancer or contractor, you issue an invoice for the full gross amount. The client deducts the withholding tax and pays you the net amount. The withheld tax is credited against your annual income tax liability when you file your tax return (&#x78BA;&#x5B9A;&#x7533;&#x544A;).</p>
+        <summary>源泉徴収の義務者は誰？</summary>
+        <p>日本では、支払者（クライアントまたは雇用主）が源泉徴収税の計算・天引き・税務署への納付を行う義務を負います。フリーランスとしては、税引前の総額で請求書を発行します。クライアントが源泉徴収税を差し引いて振り込みます。源泉徴収された税額は確定申告時に年間所得税から控除されます。</p>
       </details>
 
       <details class="faq-item">
-        <summary>Does withholding tax apply to all freelance work in Japan?</summary>
-        <p>Withholding tax applies to specific types of professional fees defined in Article 204 of the Income Tax Act, including: writing, design, photography, translation, and other creative work; legal, accounting, and consulting services; and entertainment and talent fees. Not all freelance payments require withholding &#x2014; for example, payments from individuals (not businesses) for personal services are generally exempt. When in doubt, consult a tax professional or the National Tax Agency.</p>
+        <summary>全てのフリーランス報酬に源泉徴収は適用される？</summary>
+        <p>源泉徴収は所得税法第204条で定められた特定の報酬に適用されます。対象には、原稿料・デザイン料・写真撮影料・翻訳料などの創作活動、弁護士・会計士・コンサルタントの報酬、タレント・芸能人の出演料が含まれます。個人（事業者でない）からの支払いは一般的に対象外です。不明な場合は税理士または国税庁にご相談ください。</p>
       </details>
 
       <details class="faq-item">
-        <summary>How do I claim back withheld tax in Japan?</summary>
-        <p>To claim back withheld tax in Japan, you must file an annual income tax return (&#x78BA;&#x5B9A;&#x7533;&#x544A;, kakutei shinkoku) between February 16 and March 15 of the following year. On your return, you declare all income and claim the withheld amounts as a tax credit. If the total tax withheld exceeds your actual tax liability, you will receive a refund. Keep all payment slips showing withholding amounts (&#x6E90;&#x6CC9;&#x5FB4;&#x53CE;&#x7968;) as you will need them for your return.</p>
+        <summary>源泉徴収された税金を取り戻すには？</summary>
+        <p>源泉徴収された税金を取り戻すには、翌年の2月16日〜3月15日の間に確定申告を行う必要があります。確定申告で全ての所得を申告し、源泉徴収された金額を税額控除として申請します。源泉徴収額が実際の税額を超えている場合は還付されます。確定申告に必要な源泉徴収票は全て保管しておいてください。</p>
       </details>
     </section>
 
@@ -463,7 +439,7 @@
         </a>
         <a href="/tax-finance/work-hours/" class="tool-card">
           <div class="tool-card-icon">&#x23F1;&#xFE0F;</div>
-          <div class="tool-card-name">Overtime Calculator</div>
+          <div class="tool-card-name">残業代計算</div>
           <div class="tool-card-jp">&#x6B8B;&#x696D;&#x4EE3;&#x8A08;&#x7B97;</div>
         </a>
         <a href="/tax-finance/" class="tool-card">
@@ -494,8 +470,8 @@
       <li><a href="/terms/">利用規約</a></li>
       <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
-    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
-    <p class="footer-attribution">Withholding tax rates sourced from National Tax Agency Japan (NTA), FY2025. 最終更新: 2025年3月</p>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. 無断転載禁止。</p>
+    <p class="footer-attribution">源泉徴収税率は国税庁（NTA）のデータに基づいています（2025年度）。最終更新: 2025年3月</p>
   </div>
 </footer>
 
@@ -508,7 +484,7 @@
   btn.addEventListener('click', function() {
     var isOpen = nav.classList.toggle('nav-open');
     btn.setAttribute('aria-expanded', String(isOpen));
-    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
   });
 })();
 </script>
@@ -570,8 +546,8 @@ function computeFee() {
   splitNotice.style.display = r.splitApplied ? 'block' : 'none';
   if (r.splitApplied) {
     splitNotice.textContent =
-      '\u26A0 Split rate applied: \u00A5102,100 (10.21% on first \u00A51,000,000) + 20.42% on \u00A5' +
-      (amount - 1000000).toLocaleString('ja-JP') + ' above threshold';
+      '\u26A0 分割税率適用: \u00A5102,100（最初の\u00A51,000,000に10.21%） + 超過分\u00A5' +
+      (amount - 1000000).toLocaleString('ja-JP') + 'に20.42%';
   }
 
   resultEl.classList.add('visible');
@@ -611,7 +587,7 @@ function computeIncome() {
   resultEl.classList.add('visible');
 
   if (typeof gtag !== 'undefined')
-    gtag('event', 'tool_used', { tool_name: 'withholding_calculator', mode: type, language: 'en' });
+    gtag('event', 'tool_used', { tool_name: 'withholding_calculator', mode: type, language: 'ja' });
 }
 
 // Event listeners
@@ -629,7 +605,7 @@ document.getElementById('copy-invoice-btn').addEventListener('click', function()
   var r = calculateWithholdingFee(amount);
   if (!r.error) navigator.clipboard.writeText(formatInvoiceLine(r)).then(function() {
     var btn = document.getElementById('copy-invoice-btn');
-    btn.textContent = 'Copied! \u2713';
+    btn.textContent = 'コピーしました \u2713';
     setTimeout(function() { btn.textContent = '請求書用テキストをコピー'; }, 2000);
   });
 });
@@ -639,8 +615,8 @@ document.getElementById('share-btn').addEventListener('click', function() {
   var url = document.getElementById('share-btn').dataset.url || window.location.href;
   navigator.clipboard.writeText(url).then(function() {
     var btn = document.getElementById('share-btn');
-    btn.textContent = 'Link copied!';
-    setTimeout(function() { btn.textContent = 'Share'; }, 2000);
+    btn.textContent = 'リンクをコピーしました';
+    setTimeout(function() { btn.textContent = '共有'; }, 2000);
   });
 });
 

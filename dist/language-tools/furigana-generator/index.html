@@ -31,7 +31,7 @@
     "@type": "WebApplication",
     "name": "Furigana Generator \u2014 Add Readings to Kanji",
     "url": "https://japancalc.com/en/language-tools/furigana-generator/",
-    "description": "Add furigana (\u3075\u308a\u304c\u306a) phonetic readings to Japanese kanji text. Powered by kuromoji Japanese morphological analysis. Free, browser-based, no login required.",
+    "description": "Add furigana (\u3075\u308a\u304c\u306a) phonetic readings to Japanese kanji text. kuromoji日本語形態素解析搭載。 Free, browser-based, no login required.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
     "browserRequirements": "Requires JavaScript",
@@ -64,42 +64,42 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What is furigana?",
+        "name": "ふりがなとは？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Furigana (\u3075\u308a\u304c\u306a) are small phonetic characters printed above or beside kanji to show their pronunciation. They use hiragana script and are commonly used in children\u2019s books, educational materials, manga, and any text where the reader may not know how to read certain kanji. The HTML equivalent of furigana is the ruby annotation tag: <ruby>\u6f22\u5b57<rt>\u304b\u3093\u3058</rt></ruby>."
+          "text": "ふりがなとは、漢字の上または横に表示される小さなひらがな文字で、読み方を示します。子供向けの本、教育資料、漫画、読み方がわからない漢字を含む文章で広く使われています。HTMLでは<ruby>漢字<rt>かんじ</rt></ruby>のようにrubyアノテーションタグで実装されます。"
         }
       },
       {
         "@type": "Question",
-        "name": "How does the furigana generator work?",
+        "name": "ふりがな生成ツールの仕組みは？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "This furigana generator uses kuromoji, a Japanese morphological analysis engine, to tokenize your input text and identify kanji along with their readings. The tool adds hiragana furigana above each kanji character using HTML ruby annotations. Simply paste or type Japanese text into the input box and click Generate Furigana. The tool works entirely in your browser \u2014 no text is sent to any server."
+          "text": "このふりがな生成ツールは、日本語形態素解析エンジン「kuromoji」を使用して、入力テキストを解析し漢字とその読みを識別します。HTMLのrubyアノテーションで各漢字にふりがなを追加します。ブラウザ内で完結し、テキストはサーバーに送信されません。"
         }
       },
       {
         "@type": "Question",
-        "name": "Can I copy the furigana output to use in my documents?",
+        "name": "ふりがなの出力をコピーして文書に使えますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. The furigana generator provides three output formats: HTML (ruby tags for use in web pages), plain text with readings in brackets (e.g. \u6771\u4eac[\u3068\u3046\u304d\u3087\u3046]), and rendered preview showing furigana above kanji. You can copy any format using the Copy button. The HTML format is compatible with most word processors and web editors that support ruby annotations."
+          "text": "はい、3つの出力形式があります：HTML（rubyタグ）、括弧付きプレーンテキスト（例：東京［とうきょう］）、プレビュー表示。コピーボタンで任意の形式をコピーできます。"
         }
       },
       {
         "@type": "Question",
-        "name": "Are the furigana readings always accurate?",
+        "name": "ふりがなの読みは常に正確ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The furigana generator is highly accurate for standard Japanese text, as it uses context-aware morphological analysis to determine the correct reading. However, like all automated tools, it may occasionally produce incorrect readings for unusual kanji combinations, proper nouns, or highly specialized vocabulary. Always review the output when accuracy is critical, such as for educational materials or publications."
+          "text": "文脈を考慮した形態素解析を使用するため、標準的な日本語テキストに対して高い精度を誇ります。ただし、特殊な漢字の組み合わせ、固有名詞、専門用語では誤った読みが生成される場合があります。教育資料や出版物など正確性が重要な場合は、必ず出力を確認してください。"
         }
       },
       {
         "@type": "Question",
-        "name": "What is the difference between furigana and romaji?",
+        "name": "ふりがなとローマ字の違いは？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Furigana uses hiragana characters (the Japanese phonetic script) to show how kanji are read, and is primarily used within Japanese text for Japanese readers who may not know certain kanji. Romaji uses the Latin alphabet to represent Japanese sounds and is used for non-Japanese readers or for romanizing Japanese text. For romaji conversion, use the JapanCalc Romaji Converter tool."
+          "text": "ふりがなはひらがなで漢字の読み方を示し、主に日本語の文章内で使われます。ローマ字はラテン文字で日本語の音を表し、主に日本語を読めない方向けです。ローマ字変換はJapanCalcのローマ字変換ツールをご利用ください。"
         }
       }
     ]
@@ -286,13 +286,10 @@
 <div class="page-layout">
   <main class="content" id="main-content">
 
-    <h1>Furigana Generator &#x2014; Add Readings to Kanji</h1>
-    <p class="tool-subtitle">&#x3075;&#x308A;&#x304C;&#x306A;&#x751F;&#x6210;&#x30C4;&#x30FC;&#x30EB; &#x2014; Add hiragana readings above kanji characters</p>
+    <h1>ふりがな生成ツール &#x2014; 漢字に読みを追加</h1>
+    <p class="tool-subtitle">&#x3075;&#x308A;&#x304C;&#x306A;&#x751F;&#x6210;&#x30C4;&#x30FC;&#x30EB; &#x2014; 漢字の上にひらがなの読みを表示します</p>
     <p class="tool-desc">
-      Paste or type Japanese text to add furigana (&#x3075;&#x308A;&#x304C;&#x306A;) readings above kanji
-      automatically. Powered by kuromoji Japanese morphological analysis.
-      Output in HTML ruby format, bracket notation, or rendered preview.
-      Free, no login, runs entirely in your browser.
+      日本語テキストを入力または貼り付けるだけで、漢字の上にふりがな（ふりがな）を自動追加。kuromoji形態素解析エンジン搭載。HTML（rubyタグ）、括弧表記、プレビュー表示に対応。無料、ログイン不要、ブラウザ内で完結。
     </p>
 
     <div class="tool-box" id="tool-main">
@@ -302,13 +299,13 @@
         <div>
           <strong>日本語辞書を読み込み中&#x2026;</strong>
           <span class="text-muted" style="font-size:0.85rem; display:block;">
-            初回は5&#x2013;10 seconds. Cached for future visits.
+            初回は5〓10秒かかります。次回以降はキャッシュされます。
           </span>
         </div>
       </div>
 
       <div class="ready-banner" id="ready-banner" style="display:none;">
-        &#x2713; 辞書の読み込み完了 &#x2014; ready to generate furigana
+        &#x2713; 辞書の読み込み完了 &#x2014; ふりがな生成の準備完了
       </div>
 
       <div class="form-group" id="input-group">
@@ -322,7 +319,7 @@
                   aria-describedby="input-hint"
                   disabled></textarea>
         <span id="input-hint" class="text-muted" style="font-size:0.8rem;">
-          Input is enabled once the dictionary has loaded.
+          辞書の読み込みが完了すると入力が有効になります。
         </span>
       </div>
 
@@ -339,7 +336,7 @@
       <!-- Options row -->
       <div class="options-row" style="margin-top:1rem;">
         <div class="passthrough-group">
-          <label class="form-label" style="margin-bottom:0.3rem;">Output format:</label>
+          <label class="form-label" style="margin-bottom:0.3rem;">出力形式：</label>
           <select class="form-select" id="output-format" style="height:36px; font-size:0.875rem;" disabled>
             <option value="preview">プレビュー（ふりがな表示）</option>
             <option value="html">HTML（rubyタグ）</option>
@@ -354,7 +351,7 @@
 
       <div class="btn-row">
         <button class="btn btn-primary" id="generate-btn" disabled>
-          Generate Furigana
+          ふりがなを生成
         </button>
         <button class="btn btn-secondary" id="clear-btn" disabled>クリア</button>
       </div>
@@ -364,18 +361,18 @@
           <div class="furigana-preview" id="furigana-preview"></div>
 
           <div id="html-output-section" style="display:none;">
-            <div class="furigana-output-label">HTML Output (copy for web use):</div>
+            <div class="furigana-output-label">HTML出力（Web用にコピー）：</div>
             <pre class="furigana-code" id="furigana-code"></pre>
           </div>
 
           <div id="bracket-output-section" style="display:none;">
-            <div class="furigana-output-label">Bracket Notation:</div>
+            <div class="furigana-output-label">ブラケット表記：</div>
             <div class="furigana-bracket" id="furigana-bracket"></div>
           </div>
 
           <div class="furigana-stats" id="furigana-stats">
-            <span id="stat-kanji">&#x2014; kanji</span> &#xB7;
-            <span id="stat-tokens">&#x2014; tokens</span>
+            <span id="stat-kanji">&#x2014; 漢字</span> &#xB7;
+            <span id="stat-tokens">&#x2014; トークン</span>
           </div>
 
           <div class="btn-row">
@@ -392,21 +389,21 @@
       <table>
         <thead>
           <tr>
-            <th>Kanji</th>
-            <th>With Furigana</th>
+            <th>漢字</th>
+            <th>ふりがな付き</th>
             <th>読み方</th>
             <th>意味</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>&#x6771;&#x4EAC;</td><td><ruby>&#x6771;&#x4EAC;<rt>&#x3068;&#x3046;&#x304D;&#x3087;&#x3046;</rt></ruby></td><td>t&#x14D;ky&#x14D;</td><td>Tokyo</td></tr>
-          <tr><td>&#x65E5;&#x672C;&#x8A9E;</td><td><ruby>&#x65E5;&#x672C;&#x8A9E;<rt>&#x306B;&#x307B;&#x3093;&#x3054;</rt></ruby></td><td>nihongo</td><td>Japanese language</td></tr>
-          <tr><td>&#x52C9;&#x5F37;</td><td><ruby>&#x52C9;&#x5F37;<rt>&#x3079;&#x3093;&#x304D;&#x3087;&#x3046;</rt></ruby></td><td>benky&#x14D;</td><td>Study</td></tr>
-          <tr><td>&#x5B66;&#x6821;</td><td><ruby>&#x5B66;&#x6821;<rt>&#x304C;&#x3063;&#x3053;&#x3046;</rt></ruby></td><td>gakk&#x14D;</td><td>School</td></tr>
-          <tr><td>&#x98DF;&#x3079;&#x7269;</td><td><ruby>&#x98DF;<rt>&#x305F;</rt></ruby>&#x3079;<ruby>&#x7269;<rt>&#x3082;&#x306E;</rt></ruby></td><td>tabemono</td><td>Food</td></tr>
-          <tr><td>&#x65B0;&#x805E;</td><td><ruby>&#x65B0;&#x805E;<rt>&#x3057;&#x3093;&#x3076;&#x3093;</rt></ruby></td><td>shinbun</td><td>Newspaper</td></tr>
-          <tr><td>&#x96FB;&#x8ECA;</td><td><ruby>&#x96FB;&#x8ECA;<rt>&#x3067;&#x3093;&#x3057;&#x3083;</rt></ruby></td><td>densha</td><td>Train</td></tr>
-          <tr><td>&#x56F3;&#x66F8;&#x9928;</td><td><ruby>&#x56F3;&#x66F8;&#x9928;<rt>&#x3068;&#x3057;&#x3087;&#x304B;&#x3093;</rt></ruby></td><td>toshokan</td><td>Library</td></tr>
+          <tr><td>&#x6771;&#x4EAC;</td><td><ruby>&#x6771;&#x4EAC;<rt>&#x3068;&#x3046;&#x304D;&#x3087;&#x3046;</rt></ruby></td><td>t&#x14D;ky&#x14D;</td><td>東京</td></tr>
+          <tr><td>&#x65E5;&#x672C;&#x8A9E;</td><td><ruby>&#x65E5;&#x672C;&#x8A9E;<rt>&#x306B;&#x307B;&#x3093;&#x3054;</rt></ruby></td><td>nihongo</td><td>日本語</td></tr>
+          <tr><td>&#x52C9;&#x5F37;</td><td><ruby>&#x52C9;&#x5F37;<rt>&#x3079;&#x3093;&#x304D;&#x3087;&#x3046;</rt></ruby></td><td>benky&#x14D;</td><td>勉強</td></tr>
+          <tr><td>&#x5B66;&#x6821;</td><td><ruby>&#x5B66;&#x6821;<rt>&#x304C;&#x3063;&#x3053;&#x3046;</rt></ruby></td><td>gakk&#x14D;</td><td>学校</td></tr>
+          <tr><td>&#x98DF;&#x3079;&#x7269;</td><td><ruby>&#x98DF;<rt>&#x305F;</rt></ruby>&#x3079;<ruby>&#x7269;<rt>&#x3082;&#x306E;</rt></ruby></td><td>tabemono</td><td>食べ物</td></tr>
+          <tr><td>&#x65B0;&#x805E;</td><td><ruby>&#x65B0;&#x805E;<rt>&#x3057;&#x3093;&#x3076;&#x3093;</rt></ruby></td><td>shinbun</td><td>新聞</td></tr>
+          <tr><td>&#x96FB;&#x8ECA;</td><td><ruby>&#x96FB;&#x8ECA;<rt>&#x3067;&#x3093;&#x3057;&#x3083;</rt></ruby></td><td>densha</td><td>電車</td></tr>
+          <tr><td>&#x56F3;&#x66F8;&#x9928;</td><td><ruby>&#x56F3;&#x66F8;&#x9928;<rt>&#x3068;&#x3057;&#x3087;&#x304B;&#x3093;</rt></ruby></td><td>toshokan</td><td>図書館</td></tr>
         </tbody>
       </table>
     </div>
@@ -420,41 +417,20 @@
     </div>
 
     <article class="seo-content">
-      <h2>How to Use the Furigana Generator (&#x3075;&#x308A;&#x304C;&#x306A;&#x751F;&#x6210;&#x306E;&#x4F7F;&#x3044;&#x65B9;)</h2>
+      <h2>ふりがな生成ツールの使い方</h2>
       <p>
-        This furigana generator uses <strong>kuromoji</strong>, a Japanese
-        morphological analysis engine, to identify kanji in your text and add
-        the correct hiragana readings above them. To use it, wait for the
-        dictionary to finish loading (shown by the status indicator), then
-        paste or type Japanese text into the input box and click
-        <em>ふりがなを生成する</em>. The tool analyses the text in context,
-        so it can correctly distinguish between kanji that have multiple
-        readings &#x2014; for example &#x65E5; can be read as &#x306B;&#x3061; or &#x3072; depending on context.
+        このふりがな生成ツールは<strong>kuromoji</strong>（日本語形態素解析エンジン）を使用して、テキスト中の漢字を識別し、正しいひらがなの読みを上に追加します。使い方：辞書の読み込みが完了するまで待ち（ステータス表示で確認）、入力欄に日本語テキストを入力または貼り付け、<em>ふりがなを生成</em>をクリックします。文脈を解析するため、複数の読みがある漢字も正確に判別できます。例えば「日」は文脈によって「にち」や「ひ」と読み分けます。
       </p>
       <p>
-        Choose from three output formats: <strong>Preview</strong> shows
-        rendered furigana above kanji as it would appear to a reader.
-        <strong>HTML</strong> gives you the raw ruby tag markup to paste
-        directly into a website or document. <strong>Bracket</strong> notation
-        writes the reading in square brackets after each word &#x2014; useful for
-        plain text contexts like email or spreadsheets.
+        3つの出力形式から選べます：<strong>プレビュー</strong>は漢字の上にふりがなを表示した読者向けの形式です。<strong>HTML</strong>はウェブサイトや文書に直接貼り付けられるrubyタグのマークアップです。<strong>括弧表記</strong>は各単語の後に読みを角括弧で書き込みます—メールや表計算ソフトなどプレーンテキストの場面で便利です。
       </p>
 
-      <h2>What is Furigana? (&#x3075;&#x308A;&#x304C;&#x306A;&#x3068;&#x306F;)</h2>
+      <h2>ふりがなとは</h2>
       <p>
-        Furigana (&#x3075;&#x308A;&#x304C;&#x306A;) are small hiragana characters placed above or beside
-        kanji to indicate their pronunciation. They are widely used in Japanese
-        children&#x2019;s books, educational materials, manga, and public signage to
-        make kanji accessible to readers who may not know all the readings.
-        In HTML, furigana is implemented using the <code>&lt;ruby&gt;</code>
-        and <code>&lt;rt&gt;</code> tags, which are supported by all modern
-        browsers.
+        ふりがなとは、漢字の上または横に配置される小さなひらがな文字で、漢字の読み方を示します。子供向けの本、教育資料、漫画、公共の案内などで広く使われ、読み方がわからない漢字のアクセシビリティを高めます。HTMLでは<code>&lt;ruby&gt;</code>タグと<code>&lt;rt&gt;</code>タグで実装され、すべてのモダンブラウザでサポートされています。
       </p>
       <p>
-        Unlike furigana, <a href="/language-tools/romaji-converter/">romaji</a>
-        transcribes Japanese sounds into the Latin alphabet for non-Japanese
-        readers. For era date conversion and other Japanese calendar tools,
-        see the <a href="/date-calendar/">date and calendar tools</a>.
+        ふりがなとは異なり、<a href="/language-tools/romaji-converter/">ローマ字</a>は日本語の音をラテン文字に変換したもので、主に日本語を読めない方向けです。元号の日付変換やその他の日本のカレンダーツールは<a href="/date-calendar/">日付・カレンダーツール</a>をご覧ください。
       </p>
     </article>
 
@@ -462,28 +438,28 @@
       <h2>よくある質問</h2>
 
       <details class="faq-item">
-        <summary>What is furigana?</summary>
-        <p>Furigana (&#x3075;&#x308A;&#x304C;&#x306A;) are small phonetic characters printed above or beside kanji to show their pronunciation. They use hiragana script and are commonly used in children&#x2019;s books, educational materials, manga, and any text where the reader may not know how to read certain kanji. The HTML equivalent of furigana is the ruby annotation tag: <code>&lt;ruby&gt;&#x6F22;&#x5B57;&lt;rt&gt;&#x304B;&#x3093;&#x3058;&lt;/rt&gt;&lt;/ruby&gt;</code>.</p>
+        <summary>ふりがなとは？</summary>
+        <p>ふりがなとは、漢字の上または横に表示される小さなひらがな文字で、読み方を示します。子供向けの本、教育資料、漫画、読み方がわからない漢字を含む文章で広く使われています。HTMLでのふりがなは、rubyアノテーションタグで実装されます：<code>&lt;ruby&gt;漢字&lt;rt&gt;かんじ&lt;/rt&gt;&lt;/ruby&gt;</code></p>
       </details>
 
       <details class="faq-item">
-        <summary>How does the furigana generator work?</summary>
-        <p>This furigana generator uses kuromoji, a Japanese morphological analysis engine, to tokenize your input text and identify kanji along with their readings. The tool adds hiragana furigana above each kanji character using HTML ruby annotations. Simply paste or type Japanese text into the input box and click Generate Furigana. The tool works entirely in your browser &#x2014; no text is sent to any server.</p>
+        <summary>ふりがな生成ツールの仕組みは？</summary>
+        <p>このふりがな生成ツールは、日本語形態素解析エンジン「kuromoji」を使用して、入力テキストを解析し漢字とその読みを識別します。HTMLのrubyアノテーションを使って、各漢字の上にひらがなのふりがなを追加します。入力欄に日本語テキストを入力または貼り付け、「ふりがなを生成」をクリックしてください。ブラウザ内で完結し、テキストはサーバーに送信されません。</p>
       </details>
 
       <details class="faq-item">
-        <summary>Can I copy the furigana output to use in my documents?</summary>
-        <p>Yes. The furigana generator provides three output formats: HTML (ruby tags for use in web pages), plain text with readings in brackets (e.g. &#x6771;&#x4EAC;[&#x3068;&#x3046;&#x304D;&#x3087;&#x3046;]), and rendered preview showing furigana above kanji. You can copy any format using the Copy button. The HTML format is compatible with most word processors and web editors that support ruby annotations.</p>
+        <summary>ふりがなの出力をコピーして文書に使えますか？</summary>
+        <p>はい。ふりがな生成ツールは3つの出力形式を提供します：HTML（ウェブページ用のrubyタグ）、括弧付きプレーンテキスト（例：東京［とうきょう］）、漢字の上にふりがなを表示するプレビュー。コピーボタンで任意の形式をコピーできます。HTML形式はrubyアノテーション対応のワープロやウェブエディタで使用できます。</p>
       </details>
 
       <details class="faq-item">
-        <summary>Are the furigana readings always accurate?</summary>
-        <p>The furigana generator is highly accurate for standard Japanese text, as it uses context-aware morphological analysis to determine the correct reading. However, like all automated tools, it may occasionally produce incorrect readings for unusual kanji combinations, proper nouns, or highly specialized vocabulary. Always review the output when accuracy is critical, such as for educational materials or publications.</p>
+        <summary>ふりがなの読みは常に正確ですか？</summary>
+        <p>ふりがな生成ツールは、文脈を考慮した形態素解析を使用するため、標準的な日本語テキストに対して高い精度を誇ります。ただし、すべての自動ツールと同様に、特殊な漢字の組み合わせ、固有名詞、専門用語では誤った読みが生成される場合があります。教育資料や出版物など正確性が重要な場合は、必ず出力を確認してください。</p>
       </details>
 
       <details class="faq-item">
-        <summary>What is the difference between furigana and romaji?</summary>
-        <p>Furigana uses hiragana characters (the Japanese phonetic script) to show how kanji are read, and is primarily used within Japanese text for Japanese readers who may not know certain kanji. Romaji uses the Latin alphabet to represent Japanese sounds and is used for non-Japanese readers or for romanizing Japanese text. For romaji conversion, use the JapanCalc <a href="/language-tools/romaji-converter/">ローマ字変換</a> tool.</p>
+        <summary>ふりがなとローマ字の違いは？</summary>
+        <p>ふりがなはひらがな（日本語の表音文字）を使って漢字の読み方を示し、主に日本語の文章内で読み方がわからない漢字のために使われます。ローマ字はラテン文字で日本語の音を表し、主に日本語を読めない方向けです。ローマ字変換はJapanCalcの<a href="/language-tools/romaji-converter/">ローマ字変換ツール</a>をご利用ください。</p>
       </details>
     </section>
 
@@ -534,7 +510,7 @@
       <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
-    <p class="footer-attribution">Powered by kuromoji Japanese morphological analysis. 最終更新: 2025年3月</p>
+    <p class="footer-attribution">kuromoji日本語形態素解析搭載。 最終更新: 2025年3月</p>
   </div>
 </footer>
 
@@ -685,8 +661,8 @@ document.getElementById('copy-btn').addEventListener('click', () => {
 
   navigator.clipboard.writeText(text).then(() => {
     const btn = document.getElementById('copy-btn');
-    btn.textContent = 'Copied! \u2713';
-    setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+    btn.textContent = 'コピーしました！ \u2713';
+    setTimeout(() => { btn.textContent = 'コピー'; }, 2000);
   });
 });
 
@@ -695,8 +671,8 @@ document.getElementById('copy-html-btn').addEventListener('click', () => {
   if (!html) return;
   navigator.clipboard.writeText(html).then(() => {
     const btn = document.getElementById('copy-html-btn');
-    btn.textContent = 'Copied! \u2713';
-    setTimeout(() => { btn.textContent = 'Copy HTML'; }, 2000);
+    btn.textContent = 'コピーしました！ \u2713';
+    setTimeout(() => { btn.textContent = 'HTMLをコピー'; }, 2000);
   });
 });
 </script>

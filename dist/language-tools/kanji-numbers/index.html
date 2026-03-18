@@ -29,9 +29,9 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Kanji Number Converter \u2014 \u6f22\u6570\u5b57\u5909\u63db",
+    "name": "漢数字変換ツール — 数字と漢数字を変換",
     "url": "https://japancalc.com/en/language-tools/kanji-numbers/",
-    "description": "Convert Arabic numbers to Japanese kanji notation (\u6f22\u6570\u5b57) and back. Supports standard kanji, formal daiji for legal documents, and mixed notation. Free, browser-based.",
+    "description": "アラビア数字と漢数字を相互に変換。普通体、大字（公的文書用）、混合表記に対応。無料、ログイン不要。",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
     "browserRequirements": "Requires JavaScript",
@@ -64,42 +64,42 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How do you write numbers in Japanese kanji?",
+        "name": "漢数字はどのように書きますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Japanese numbers use kanji characters: \u4e00 (1), \u4e8c (2), \u4e09 (3), \u56db (4), \u4e94 (5), \u516d (6), \u4e03 (7), \u516b (8), \u4e5d (9), \u5341 (10), \u767e (100), \u5343 (1,000), \u4e07 (10,000), \u5104 (100,000,000). Larger numbers are formed by combining these: \u5341\u4e00 (11), \u767e\u4e8c\u5341\u4e09 (123), \u5343\u4e8c\u767e\u4e09\u5341\u56db (1,234), \u4e00\u4e07 (10,000). Note that \u5341, \u767e, and \u5343 do not need a leading \u4e00 \u2014 just \u5341 not \u4e00\u5341."
+          "text": "漢数字は以下の漢字を使います：一(1)、二(2)、三(3)、四(4)、五(5)、六(6)、七(7)、八(8)、九(9)、十(10)、百(100)、千(1,000)、万(10,000)、億(100,000,000)。これらを組み合わせて大きな数を作ります：十一(11)、百二十三(123)、千二百三十四(1,234)、一万(10,000)。十、百、千の前には一を付けません。"
         }
       },
       {
         "@type": "Question",
-        "name": "What is daiji (\u5927\u5b57) and when is it used?",
+        "name": "大字とは何ですか？いつ使いますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Daiji (\u5927\u5b57) are formal kanji numerals used in legal and financial documents in Japan to prevent tampering or fraud. The daiji characters are: \u58f1 (1), \u5f10 (2), \u53c2 (3), \u56db (4), \u4f0d (5), \u62fe (10), \u767e (100), \u5343 (1,000), \u4e07 (10,000). They are used on checks (\u5c0f\u5207\u624b), promissory notes, contracts, and official government documents. The converter above can output numbers in daiji format."
+          "text": "大字は、日本の法的・金融文書で改ざんを防ぐために使用される公式な漢数字です。大字の文字：壱(1)、弐(2)、参(3)、四(4)、伍(5)、拾(10)、百(100)、千(1,000)、万(10,000)。小切手、約束手形、契約書、公式文書で使用されます。"
         }
       },
       {
         "@type": "Question",
-        "name": "What is the difference between \u4e07 and \u5104?",
+        "name": "万と億の違いは？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "In the Japanese number system, \u4e07 (man) represents 10,000 (ten thousand) and \u5104 (oku) represents 100,000,000 (one hundred million). Unlike the Western system which groups by thousands (thousand, million, billion), Japanese groups by ten-thousands: \u4e00\u4e07 = 10,000; \u5341\u4e07 = 100,000; \u767e\u4e07 = 1,000,000; \u4e00\u5343\u4e07 = 10,000,000; \u4e00\u5104 = 100,000,000."
+          "text": "日本の数字体系では、万(まん)=10,000、億(おく)=100,000,000です。西洋の1,000単位とは異なり、日本では10,000単位でグループ化します：一万=10,000、十万=100,000、百万=1,000,000、一千万=10,000,000、一億=100,000,000。"
         }
       },
       {
         "@type": "Question",
-        "name": "How do you read large numbers in Japanese?",
+        "name": "日本語で大きな数字はどう読みますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Large Japanese numbers are read in groups of four digits using the units \u4e07 (10,000), \u5104 (100 million), and \u5146 (1 trillion). For example: 12,345 is read as \u4e00\u4e07\u4e8c\u5343\u4e09\u767e\u56db\u5341\u4e94 (ichi-man ni-sen san-byaku yon-juu go); 100,000,000 is \u4e00\u5104 (ichi-oku). The key difference from English is that Japanese counts in groups of 10,000 rather than 1,000."
+          "text": "日本語の大きな数字は、万(10,000)、億(1億)、兆(1兆)の単位を4桁ごとに使って読みます。例：12,345は一万二千三百四十五（いちまんにせんさんびゃくよんじゅうご）と読みます。英語との大きな違いは、1,000単位ではなく10,000単位で数えることです。"
         }
       },
       {
         "@type": "Question",
-        "name": "What is mixed kanji notation (\u6df7\u5408\u8868\u8a18)?",
+        "name": "混合表記とは？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Mixed notation (\u6df7\u5408\u8868\u8a18) combines Arabic numerals with kanji unit markers for readability in everyday Japanese text. For example, 12,345 is written as 1\u4e072345 and 100,000,000 as 1\u5104. This is commonly used in Japanese newspapers, business documents, and everyday writing where fully written kanji numbers would be harder to read at a glance."
+          "text": "混合表記はアラビア数字と漢字の位取り記号を組み合わせたもので、日常的な日本語テキストで読みやすいです。例：12,345は1万2345、100,000,000は1億と書きます。新聞、ビジネス文書、日常的な文章でよく使われます。"
         }
       }
     ]
@@ -234,12 +234,10 @@
 <div class="page-layout">
   <main class="content" id="main-content">
 
-    <h1>Kanji Number Converter &#x2014; &#x6F22;&#x6570;&#x5B57;&#x5909;&#x63DB;</h1>
+    <h1>漢数字変換ツール &#x2014; 数字と漢数字を変換</h1>
     <p class="tool-subtitle">&#x6F22;&#x6570;&#x5B57;&#x5909;&#x63DB;&#x30C4;&#x30FC;&#x30EB; &#x2014; 算用数字と漢数字を相互変換</p>
     <p class="tool-desc">
-      Convert Arabic numbers to Japanese kanji notation (&#x6F22;&#x6570;&#x5B57;) and back.
-      Supports standard kanji, formal daiji (&#x5927;&#x5B57;) for legal and financial
-      documents, and mixed notation. 無料、ログイン不要。
+      アラビア数字と日本の漢数字（漢数字）を相互に変換します。普通体、大字（公的文書用）、混合表記に対応しています。 無料、ログイン不要。
     </p>
 
     <!-- TOOL INTERFACE -->
@@ -248,38 +246,38 @@
       <!-- Tab Bar -->
       <div class="tool-tabs" role="tablist">
         <button class="tool-tab active" role="tab" aria-selected="true"
-                data-panel="panel-to-kanji" id="tab-to-kanji">Arabic &#x2192; Kanji (&#x6570;&#x5B57;&#x2192;&#x6F22;&#x6570;&#x5B57;)</button>
+                data-panel="panel-to-kanji" id="tab-to-kanji">数字 &#x2192; 漢数字</button>
         <button class="tool-tab" role="tab" aria-selected="false"
-                data-panel="panel-from-kanji" id="tab-from-kanji">Kanji &#x2192; Arabic (&#x6F22;&#x6570;&#x5B57;&#x2192;&#x6570;&#x5B57;)</button>
+                data-panel="panel-from-kanji" id="tab-from-kanji">漢数字 &#x2192; 数字</button>
       </div>
 
       <!-- Tab 1: Arabic to Kanji -->
       <div class="tool-panel active" role="tabpanel" id="panel-to-kanji" aria-labelledby="tab-to-kanji">
         <div class="form-group">
           <label class="form-label" for="arabic-input">
-            Number (&#x6570;&#x5B57;) &#x2014; Enter any number up to 9,999,999,999,999
+            数字 &#x2014; 最大9,999,999,999,999まで入力
           </label>
           <input type="number" class="form-input" id="arabic-input"
                  min="0" max="9999999999999" step="1"
-                 placeholder="e.g. 1234">
+                 placeholder="例: 1234">
           <div class="form-error" id="arabic-error"></div>
         </div>
 
         <!-- Style selector -->
         <div class="form-group">
-          <label class="form-label">Output Style (&#x8868;&#x8A18;&#x30B9;&#x30BF;&#x30A4;&#x30EB;)</label>
+          <label class="form-label">表記スタイル</label>
           <div class="rate-toggle" role="group">
             <label class="rate-option">
               <input type="radio" name="kanji-style" value="standard" checked>
-              <span>Standard (&#x666E;&#x901A;)</span>
+              <span>普通</span>
             </label>
             <label class="rate-option">
               <input type="radio" name="kanji-style" value="daiji">
-              <span>Formal / Daiji (&#x5927;&#x5B57;)</span>
+              <span>大字（公的文書用）</span>
             </label>
             <label class="rate-option">
               <input type="radio" name="kanji-style" value="mixed">
-              <span>Mixed (&#x6DF7;&#x5408;)</span>
+              <span>混合</span>
             </label>
           </div>
         </div>
@@ -294,15 +292,15 @@
           <div class="result-box" id="arabic-result">
             <div class="kanji-primary" id="r-primary"></div>
             <div class="kanji-grid">
-              <span class="kanji-row-label">Standard (&#x666E;&#x901A;)</span>
+              <span class="kanji-row-label">普通</span>
               <span class="kanji-row-value" id="r-standard"></span>
-              <span class="kanji-row-label">Daiji (&#x5927;&#x5B57;)</span>
+              <span class="kanji-row-label">大字</span>
               <span class="kanji-row-value" id="r-daiji"></span>
-              <span class="kanji-row-label">Mixed (&#x6DF7;&#x5408;)</span>
+              <span class="kanji-row-label">混合</span>
               <span class="kanji-row-value" id="r-mixed"></span>
-              <span class="kanji-row-label">Reading (&#x8AAD;&#x307F;&#x65B9;)</span>
+              <span class="kanji-row-label">読み方</span>
               <span class="kanji-row-value" id="r-reading"></span>
-              <span class="kanji-row-label" id="r-yen-row-label" style="display:none;">With yen (&#x5186;)</span>
+              <span class="kanji-row-label" id="r-yen-row-label" style="display:none;">円表記</span>
               <span class="kanji-row-value" id="r-yen" style="display:none;"></span>
             </div>
             <div class="btn-row">
@@ -317,13 +315,13 @@
       <div class="tool-panel" role="tabpanel" id="panel-from-kanji" aria-labelledby="tab-from-kanji">
         <div class="form-group">
           <label class="form-label" for="kanji-input">
-            Kanji Number (&#x6F22;&#x6570;&#x5B57;) &#x2014; Enter kanji number
+            漢数字 &#x2014; 漢数字を入力
           </label>
           <input type="text" class="form-input" id="kanji-input"
-                 placeholder="e.g. &#x5343;&#x4E8C;&#x767E;&#x4E09;&#x5341;&#x56DB; or &#x4E00;&#x4E07;&#x4E8C;&#x5343;&#x4E09;&#x767E;&#x56DB;&#x5341;&#x4E94;"
+                 placeholder="例: 千二百三十四 または 一万二千三百四十五"
                  style="font-size:1.1rem;">
           <span class="text-muted" style="font-size:0.8rem;">
-            Accepts standard kanji, daiji (&#x5927;&#x5B57;), and mixed notation (1&#x4E07;2345)
+            普通体、大字、混合表記（1万2345）に対応
           </span>
           <div class="form-error" id="kanji-error"></div>
         </div>
@@ -344,9 +342,9 @@
       <table>
         <thead>
           <tr>
-            <th>Arabic</th>
-            <th>Standard (&#x666E;&#x901A;)</th>
-            <th>Daiji (&#x5927;&#x5B57;)</th>
+            <th>数字</th>
+            <th>普通</th>
+            <th>大字</th>
             <th>読み方</th>
           </tr>
         </thead>
@@ -384,42 +382,20 @@
 
     <!-- SEO Content -->
     <article class="seo-content">
-      <h2>How Japanese Kanji Numbers Work (&#x6F22;&#x6570;&#x5B57;&#x306E;&#x4ED5;&#x7D44;&#x307F;)</h2>
+      <h2>漢数字の仕組み</h2>
       <p>
-        Japanese uses two parallel number systems: Arabic numerals (1, 2, 3)
-        for everyday use, and kanji numerals (&#x4E00;, &#x4E8C;, &#x4E09;) for formal writing,
-        classical texts, and certain official documents. The kanji number
-        system uses place-value notation: <strong>&#x5341;</strong> (10),
-        <strong>&#x767E;</strong> (100), <strong>&#x5343;</strong> (1,000), and
-        <strong>&#x4E07;</strong> (10,000) as place markers, combined with digit
-        kanji. One important rule: &#x5341;, &#x767E;, and &#x5343; do not take a leading &#x4E00; &#x2014;
-        you write &#x5341; for 10, not &#x4E00;&#x5341;. However, &#x4E07; and above do take &#x4E00; &#x2014;
-        so 10,000 is &#x4E00;&#x4E07;.
+        日本語には2つの並行する数字体系があります。日常使いのアラビア数字（1、2、3）と、正式な文書や古典的なテキストで使用される漢数字（一、二、三）です。漢数字は位取り記法を使用し、<strong>十</strong>（10）、<strong>百</strong>（100）、<strong>千</strong>（1,000）、<strong>万</strong>（10,000）を位取り記号として数字の漢字と組み合わせます。重要なルール：十、百、千の前には一を付けません（10は十であり、一十ではありません）。ただし、万以上には一を付けます（10,000は一万）。
       </p>
       <p>
-        Japan groups large numbers in units of 10,000 (&#x56DB;&#x6841;&#x533A;&#x5207;&#x308A;) rather than
-        1,000 as in English. This means 100,000 is &#x5341;&#x4E07; (ten-man), 1,000,000
-        is &#x767E;&#x4E07; (hundred-man), and 100,000,000 is &#x4E00;&#x5104; (one-oku). This grouping
-        is fundamental to reading prices, statistics, and financial figures in
-        Japanese.
+        日本では英語の1,000単位ではなく、10,000単位（四桁区切り）で大きな数字をグループ化します。つまり100,000は十万、1,000,000は百万、100,000,000は一億です。この区切り方は日本語で価格、統計、金融数字を読む際の基本です。
       </p>
 
-      <h2>Daiji (&#x5927;&#x5B57;) &#x2014; Formal Kanji Numbers for Documents</h2>
+      <h2>大字（大字） &#x2014; 公的文書用の漢数字</h2>
       <p>
-        Daiji (&#x5927;&#x5B57;) are complex kanji variants used specifically in financial
-        and legal documents to prevent fraud. Because standard kanji numbers
-        like &#x4E00;, &#x4E8C;, &#x4E09; can be altered easily (adding strokes to change the
-        numeral), daiji uses more complex forms: &#x58F1; (1), &#x5F10; (2), &#x53C2; (3),
-        &#x4F0D; (5), &#x62FE; (10). You will find daiji on Japanese bank checks
-        (&#x5C0F;&#x5207;&#x624B;), promissory notes (&#x7D04;&#x675F;&#x624B;&#x5F62;), contracts, and some government
-        forms. The converter above can output any number in daiji format.
+        大字（大字）は、金融・法的文書で改ざんを防ぐために使用される複雑な漢字の数字です。普通の漢数字（一、二、三）は画数を追加して簡単に改変できるため、大字ではより複雑な形を使用します：壱（1）、弐（2）、参（3）、伍（5）、拾（10）。大字は日本の小切手（小切手）、約束手形（約束手形）、契約書、一部の政府書類に使われます。上の変換ツールで任意の数字を大字形式で出力できます。
       </p>
       <p>
-        For reading Japanese numbers aloud, see the reading column in the
-        reference table below. Note that some numbers have two readings:
-        4 can be &#x3057; or &#x3088;&#x3093;, and 7 can be &#x3057;&#x3061; or &#x306A;&#x306A;, depending on context.
-        For converting Japanese text including kanji, use the
-        <a href="/language-tools/romaji-converter/">romaji converter</a>.
+        日本語での数字の読み方は、下の参照表の読み方の列をご覧ください。一部の数字には2つの読み方があります：4は「し」または「よん」、7は「しち」または「なな」（文脈によります）。漢字を含む日本語テキストの変換には<a href="/language-tools/romaji-converter/">ローマ字変換ツール</a>をご利用ください。
       </p>
     </article>
 
@@ -432,12 +408,12 @@
         <li class="faq-item" itemscope itemprop="mainEntity"
             itemtype="https://schema.org/Question">
           <div class="faq-question" itemprop="name">
-            How do you write numbers in Japanese kanji?
+            漢数字はどのように書きますか？
           </div>
           <div class="faq-answer" itemscope itemprop="acceptedAnswer"
                itemtype="https://schema.org/Answer">
             <span itemprop="text">
-              Japanese numbers use kanji characters: &#x4E00; (1), &#x4E8C; (2), &#x4E09; (3), &#x56DB; (4), &#x4E94; (5), &#x516D; (6), &#x4E03; (7), &#x516B; (8), &#x4E5D; (9), &#x5341; (10), &#x767E; (100), &#x5343; (1,000), &#x4E07; (10,000), &#x5104; (100,000,000). Larger numbers are formed by combining these: &#x5341;&#x4E00; (11), &#x767E;&#x4E8C;&#x5341;&#x4E09; (123), &#x5343;&#x4E8C;&#x767E;&#x4E09;&#x5341;&#x56DB; (1,234), &#x4E00;&#x4E07; (10,000). Note that &#x5341;, &#x767E;, and &#x5343; do not need a leading &#x4E00; &#x2014; just &#x5341; not &#x4E00;&#x5341;.
+              漢数字は以下の漢字を使います：一（1）、二（2）、三（3）、四（4）、五（5）、六（6）、七（7）、八（8）、九（9）、十（10）、百（100）、千（1,000）、万（10,000）、億（100,000,000）。これらを組み合わせて大きな数を作ります：十一（11）、百二十三（123）、千二百三十四（1,234）、一万（10,000）。十、百、千の前には一を付けません（一十ではなく十と書きます）。
             </span>
           </div>
         </li>
@@ -445,12 +421,12 @@
         <li class="faq-item" itemscope itemprop="mainEntity"
             itemtype="https://schema.org/Question">
           <div class="faq-question" itemprop="name">
-            What is daiji (&#x5927;&#x5B57;) and when is it used?
+            大字（大字）とは何ですか？いつ使いますか？
           </div>
           <div class="faq-answer" itemscope itemprop="acceptedAnswer"
                itemtype="https://schema.org/Answer">
             <span itemprop="text">
-              Daiji (&#x5927;&#x5B57;) are formal kanji numerals used in legal and financial documents in Japan to prevent tampering or fraud. The daiji characters are: &#x58F1; (1), &#x5F10; (2), &#x53C2; (3), &#x56DB; (4), &#x4F0D; (5), &#x62FE; (10), &#x767E; (100), &#x5343; (1,000), &#x4E07; (10,000). They are used on checks (&#x5C0F;&#x5207;&#x624B;), promissory notes, contracts, and official government documents.
+              大字（大字）は、日本の法的・金融文書で改ざんを防ぐために使用される公式な漢数字です。大字の文字：壱（1）、弐（2）、参（3）、四（4）、伍（5）、拾（10）、百（100）、千（1,000）、万（10,000）。小切手（小切手）、約束手形、契約書、公式の政府文書で使用されます。
             </span>
           </div>
         </li>
@@ -458,12 +434,12 @@
         <li class="faq-item" itemscope itemprop="mainEntity"
             itemtype="https://schema.org/Question">
           <div class="faq-question" itemprop="name">
-            What is the difference between &#x4E07; and &#x5104;?
+            万と億の違いは何ですか？
           </div>
           <div class="faq-answer" itemscope itemprop="acceptedAnswer"
                itemtype="https://schema.org/Answer">
             <span itemprop="text">
-              In the Japanese number system, &#x4E07; (man) represents 10,000 (ten thousand) and &#x5104; (oku) represents 100,000,000 (one hundred million). Unlike the Western system which groups by thousands, Japanese groups by ten-thousands: &#x4E00;&#x4E07; = 10,000; &#x5341;&#x4E07; = 100,000; &#x767E;&#x4E07; = 1,000,000; &#x4E00;&#x5343;&#x4E07; = 10,000,000; &#x4E00;&#x5104; = 100,000,000.
+              日本の数字体系では、万（まん）は10,000（1万）、億（おく）は100,000,000（1億）を表します。西洋の1,000単位とは異なり、日本では10,000単位でグループ化します：一万 = 10,000、十万 = 100,000、百万 = 1,000,000、一千万 = 10,000,000、一億 = 100,000,000。
             </span>
           </div>
         </li>
@@ -471,12 +447,12 @@
         <li class="faq-item" itemscope itemprop="mainEntity"
             itemtype="https://schema.org/Question">
           <div class="faq-question" itemprop="name">
-            How do you read large numbers in Japanese?
+            日本語で大きな数字はどう読みますか？
           </div>
           <div class="faq-answer" itemscope itemprop="acceptedAnswer"
                itemtype="https://schema.org/Answer">
             <span itemprop="text">
-              Large Japanese numbers are read in groups of four digits using the units &#x4E07; (10,000), &#x5104; (100 million), and &#x5146; (1 trillion). For example: 12,345 is read as &#x4E00;&#x4E07;&#x4E8C;&#x5343;&#x4E09;&#x767E;&#x56DB;&#x5341;&#x4E94; (ichi-man ni-sen san-byaku yon-juu go). The key difference from English is that Japanese counts in groups of 10,000 rather than 1,000.
+              日本語の大きな数字は、万（10,000）、億（1億）、兆（1兆）の単位を使って4桁ごとに読みます。例：12,345は一万二千三百四十五（いちまんにせんさんびゃくよんじゅうご）と読みます。英語との大きな違いは、日本語では1,000単位ではなく10,000単位で数えることです。
             </span>
           </div>
         </li>
@@ -484,12 +460,12 @@
         <li class="faq-item" itemscope itemprop="mainEntity"
             itemtype="https://schema.org/Question">
           <div class="faq-question" itemprop="name">
-            What is mixed kanji notation (&#x6DF7;&#x5408;&#x8868;&#x8A18;)?
+            混合表記（混合表記）とは何ですか？
           </div>
           <div class="faq-answer" itemscope itemprop="acceptedAnswer"
                itemtype="https://schema.org/Answer">
             <span itemprop="text">
-              Mixed notation (&#x6DF7;&#x5408;&#x8868;&#x8A18;) combines Arabic numerals with kanji unit markers for readability in everyday Japanese text. For example, 12,345 is written as 1&#x4E07;2345 and 100,000,000 as 1&#x5104;. This is commonly used in Japanese newspapers, business documents, and everyday writing where fully written kanji numbers would be harder to read at a glance.
+              混合表記（混合表記）はアラビア数字と漢字の位取り記号を組み合わせたもので、日本語の日常的なテキストで読みやすくするために使われます。例：12,345は1万2345、100,000,000は1億と書きます。完全な漢数字よりも一目で読みやすいため、新聞、ビジネス文書、日常的な文章でよく使われます。
             </span>
           </div>
         </li>
@@ -548,9 +524,9 @@
       <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">
-      &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
+      &copy; <span id="footer-year"></span> JapanCalc. 無断転載禁止。
     </p>
-    <p class="footer-attribution">Japanese kanji number system reference. 最終更新: 2025年3月</p>
+    <p class="footer-attribution">日本の漢数字体系リファレンス。 最終更新: 2025年3月</p>
   </div>
 </footer>
 
@@ -566,7 +542,7 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
   btn.addEventListener('click', function() {
     var isOpen = nav.classList.toggle('nav-open');
     btn.setAttribute('aria-expanded', String(isOpen));
-    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
   });
 })();
 </script>
@@ -660,7 +636,7 @@ function computeFromKanji() {
 
   document.getElementById('r-arabic').textContent  = r.output.toLocaleString('ja-JP');
   const reading = numberToReading(r.output);
-  document.getElementById('r-reading2').textContent = reading ? 'Reading: ' + reading : '';
+  document.getElementById('r-reading2').textContent = reading ? '読み方：' + reading : '';
 
   resultEl.classList.add('visible');
 
@@ -680,8 +656,8 @@ document.getElementById('to-copy-btn').addEventListener('click', () => {
   if (!text) return;
   navigator.clipboard.writeText(text).then(() => {
     const btn = document.getElementById('to-copy-btn');
-    btn.textContent = 'Copied! \u2713';
-    setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+    btn.textContent = 'コピーしました！ \u2713';
+    setTimeout(() => { btn.textContent = 'コピー'; }, 2000);
   });
 });
 
@@ -690,8 +666,8 @@ document.getElementById('to-share-btn').addEventListener('click', () => {
   const url = document.getElementById('to-share-btn').dataset.url || window.location.href;
   navigator.clipboard.writeText(url).then(() => {
     const btn = document.getElementById('to-share-btn');
-    btn.textContent = 'Link copied!';
-    setTimeout(() => { btn.textContent = 'Share'; }, 2000);
+    btn.textContent = 'リンクをコピーしました！';
+    setTimeout(() => { btn.textContent = '共有'; }, 2000);
   });
 });
 

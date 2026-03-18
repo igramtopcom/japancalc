@@ -212,8 +212,8 @@
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
     <a id="lang-toggle" href="/en/date-calendar/holiday-checker/" class="lang-toggle" lang="en"
-       title="View this page in English"
-       aria-label="Switch to English">
+       title="このページを英語で表示"
+       aria-label="英語に切り替え">
       日本語
     </a>
     <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
@@ -248,30 +248,28 @@
   <main class="content" id="main-content">
 
     <h1>日本の祝日チェッカー</h1>
-    <p class="tool-subtitle">&#x65E5;&#x672C;&#x306E;&#x795D;&#x65E5;&#x30C1;&#x30A7;&#x30C3;&#x30AB;&#x30FC; &#x2014; Check if a date is a Japanese public holiday</p>
+    <p class="tool-subtitle">&#x65E5;&#x672C;&#x306E;&#x795D;&#x65E5;&#x30C1;&#x30A7;&#x30C3;&#x30AB;&#x30FC; &#x2014; 日付が日本の祝日かどうかを確認</p>
     <p class="tool-desc">
-      Check whether any date is a Japanese public holiday (&#x795D;&#x65E5;), substitute
-      holiday (&#x632F;&#x66FF;&#x4F11;&#x65E5;), or regular working day. Covers 2023&#x2013;2026 including
-      Golden Week, Silver Week, and all substitute holidays. 無料、ログイン不要。
+      任意の日付が日本の祝日・振替休日・平日かを確認できます。2023〜2026年対応。ゴールデンウィーク・シルバーウィーク・全振替休日を含みます。 無料、ログイン不要。
     </p>
 
     <div class="tool-box" id="tool-main">
       <div class="tool-tabs">
-        <button class="tool-tab active" data-panel="panel-check">Check a Date (&#x65E5;&#x4ED8;&#x78BA;&#x8A8D;)</button>
-        <button class="tool-tab" data-panel="panel-month">View by Month (&#x6708;&#x5225;&#x4E00;&#x89A7;)</button>
+        <button class="tool-tab active" data-panel="panel-check">日付を確認</button>
+        <button class="tool-tab" data-panel="panel-month">月別一覧</button>
       </div>
 
       <!-- Tab 1: Check a Date -->
       <div class="tool-panel active" id="panel-check">
         <div class="form-group">
-          <label class="form-label" for="check-date">Date to Check (&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x65E5;&#x4ED8;)</label>
+          <label class="form-label" for="check-date">確認する日付</label>
           <input type="date" class="form-input" id="check-date"
                  min="2023-01-01" max="2026-12-31">
         </div>
 
         <div class="result-box" id="check-result" aria-live="polite" style="display:none;">
           <div class="holiday-result holiday-result--yes" id="holiday-yes-box" style="display:none;">
-            <div class="result-primary">&#x1F38C; Public Holiday</div>
+            <div class="result-primary">&#x1F38C; 祝日</div>
             <div class="holiday-name-jp" id="r-name-jp"></div>
             <div class="holiday-name-en" id="r-name-en"></div>
             <div class="result-grid">
@@ -281,21 +279,20 @@
                    <span class="result-item-value" id="r-dow"></span></div>
               <div><span class="result-item-label">種類</span>
                    <span class="result-item-value" id="r-type"></span></div>
-              <div><span class="result-item-label">Note</span>
+              <div><span class="result-item-label">備考</span>
                    <span class="result-item-value" id="r-note"></span></div>
             </div>
           </div>
           <div class="holiday-result holiday-result--no" id="holiday-no-box" style="display:none;">
-            <div class="result-primary">&#x2713; Working Day</div>
+            <div class="result-primary">&#x2713; 平日</div>
             <p>
-              <span id="r-date-no"></span> (<span id="r-dow-no"></span>) is a regular working day &#x2014;
-              not a Japanese public holiday.
+              <span id="r-date-no"></span>（<span id="r-dow-no"></span>）は通常の営業日です。日本の祝日ではありません。
             </p>
             <p class="next-holiday-hint" id="r-next-hint"></p>
           </div>
           <div class="holiday-result holiday-result--warn" id="holiday-oor-box" style="display:none;">
-            <div class="result-primary">&#x26A0; Out of Range</div>
-            <p>Holiday data is available for 2023&#x2013;2026 only. Please select a date within this range.</p>
+            <div class="result-primary">&#x26A0; 範囲外</div>
+            <p>祝日データは2023〜2026年のみ対応しています。この範囲内の日付を選択してください。</p>
           </div>
           <div class="result-actions" style="margin-top:0.75rem;">
             <button class="btn btn-secondary" id="check-copy-btn">コピー</button>
@@ -307,7 +304,7 @@
       <!-- Tab 2: View by Month -->
       <div class="tool-panel" id="panel-month">
         <div class="form-group">
-          <label class="form-label" for="month-year">Year</label>
+          <label class="form-label" for="month-year">年</label>
           <select class="form-select" id="month-year">
             <option value="2026">2026</option>
             <option value="2025" selected>2025</option>
@@ -315,25 +312,25 @@
             <option value="2023">2023</option>
           </select>
           <p class="text-muted" style="font-size:0.8rem; margin-top:0.25rem;">
-            Holiday data available: 2023–2026.
+            祝日データ対応期間: 2023〜2026年。
             <span id="holiday-data-note"></span>
           </p>
         </div>
         <div class="form-group">
-          <label class="form-label" for="month-month">Month</label>
+          <label class="form-label" for="month-month">月</label>
           <select class="form-select" id="month-month">
-            <option value="1">January</option>
-            <option value="2">February</option>
-            <option value="3">March</option>
-            <option value="4">April</option>
-            <option value="5">May</option>
-            <option value="6">June</option>
-            <option value="7">July</option>
-            <option value="8">August</option>
-            <option value="9">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
+            <option value="1">1月</option>
+            <option value="2">2月</option>
+            <option value="3">3月</option>
+            <option value="4">4月</option>
+            <option value="5">5月</option>
+            <option value="6">6月</option>
+            <option value="7">7月</option>
+            <option value="8">8月</option>
+            <option value="9">9月</option>
+            <option value="10">10月</option>
+            <option value="11">11月</option>
+            <option value="12">12月</option>
           </select>
         </div>
         <button class="btn btn-primary" id="month-lookup-btn">祝日を表示する</button>
@@ -356,45 +353,24 @@
     </div>
 
     <article class="seo-content">
-      <h2>About Japan&#x2019;s Public Holidays (&#x795D;&#x65E5;&#x306B;&#x3064;&#x3044;&#x3066;)</h2>
+      <h2>日本の祝日について</h2>
       <p>
-        Japan currently has 16 national public holidays (&#x56FD;&#x6C11;&#x306E;&#x795D;&#x65E5;) defined by
-        the Act on National Holidays (&#x56FD;&#x6C11;&#x306E;&#x795D;&#x65E5;&#x306B;&#x95A2;&#x3059;&#x308B;&#x6CD5;&#x5F8B;). These include both
-        fixed-date holidays &#x2014; such as New Year&#x2019;s Day (January 1) and Culture
-        Day (November 3) &#x2014; and floating holidays that fall on a specific weekday,
-        such as Coming of Age Day (second Monday of January) and Marine Day
-        (third Monday of July).
+        日本には国民の祝日に関する法律で定められた16の国民の祝日があります。元日（1月1日）や文化の日（11月3日）のような固定日の祝日と、成人の日（1月第2月曜日）や海の日（7月第3月曜日）のような特定の曜日に設定される祝日があります。
       </p>
       <p>
-        Two additional types of holiday can occur each year. A
-        <strong>substitute holiday</strong> (&#x632F;&#x66FF;&#x4F11;&#x65E5;, furikae ky&#x16B;jitsu) is
-        created when a national holiday falls on a Sunday &#x2014; the following Monday
-        becomes a day off instead. A <strong>bridge day</strong> (&#x56FD;&#x6C11;&#x306E;&#x4F11;&#x65E5;,
-        kokumin no ky&#x16B;jitsu) occurs when a regular weekday is sandwiched between
-        two national holidays, automatically making it a holiday too.
+        さらに2種類の休日が毎年発生する可能性があります。<strong>振替休日</strong>は祝日が日曜日に当たった場合、翌月曜日が休日になります。<strong>国民の休日</strong>は、祝日に挟まれた平日が自動的に休日になるものです。
       </p>
 
-      <h2>Golden Week and Silver Week (&#x30B4;&#x30FC;&#x30EB;&#x30C7;&#x30F3;&#x30A6;&#x30A3;&#x30FC;&#x30AF;&#x30FB;&#x30B7;&#x30EB;&#x30D0;&#x30FC;&#x30A6;&#x30A3;&#x30FC;&#x30AF;)</h2>
+      <h2>ゴールデンウィークとシルバーウィーク</h2>
       <p>
-        Japan&#x2019;s most notable holiday clusters are Golden Week and Silver Week.
-        <strong>Golden Week</strong> (&#x30B4;&#x30FC;&#x30EB;&#x30C7;&#x30F3;&#x30A6;&#x30A3;&#x30FC;&#x30AF;) runs from late April
-        to early May, combining Showa Day (April 29), Constitution Memorial Day
-        (May 3), Greenery Day (May 4), and Children&#x2019;s Day (May 5) into Japan&#x2019;s
-        longest public holiday period. Most businesses close and transport is
-        extremely busy during this time.
+        日本で最も有名な連休はゴールデンウィークとシルバーウィークです。<strong>ゴールデンウィーク</strong>は4月下旬〜5月上旬で、昭和の日（4月29日）、憲法記念日（5月3日）、みどりの日（5月4日）、こどもの日（5月5日）が集中する日本最長の連休です。多くの企業が休業し、交通機関は大変混雑します。
       </p>
       <p>
-        <strong>Silver Week</strong> (&#x30B7;&#x30EB;&#x30D0;&#x30FC;&#x30A6;&#x30A3;&#x30FC;&#x30AF;) occurs in September when
-        Respect for the Aged Day, a bridge day, and Autumnal Equinox Day align
-        to create a five-day holiday window. This happens only in certain years &#x2014;
-        most recently in 2026. Use the holiday checker above to verify holiday
-        dates for any year in our supported range.
+        <strong>シルバーウィーク</strong>は9月に敬老の日・国民の休日・秋分の日が重なり5連休になる期間です。特定の年にのみ発生し、直近では2026年に予定されています。上記の祝日チェッカーで対応期間内の祝日を確認できます。
       </p>
       <p>
-        <small>Holiday data sourced from the
-          <a href="https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html"
-             target="_blank" rel="noopener">Cabinet Office of Japan</a>.
-        </small>
+        <small>祝日データは<a href="https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html"
+             target="_blank" rel="noopener">内閣府</a>のデータに基づいています。</small>
       </p>
     </article>
 
@@ -402,28 +378,28 @@
       <h2>よくある質問</h2>
 
       <details class="faq-item">
-        <summary>What are Japan&#x2019;s public holidays in 2025?</summary>
-        <p>Japan has 16 public holidays in 2025, including substitute holidays. Key dates include: New Year&#x2019;s Day (January 1), Coming of Age Day (January 13), National Foundation Day (February 11), Emperor&#x2019;s Birthday (February 23), Vernal Equinox Day (March 20), Showa Day (April 29), Constitution Memorial Day (May 3), Greenery Day (May 4), Children&#x2019;s Day (May 5), Marine Day (July 21), Mountain Day (August 11), Respect for the Aged Day (September 15), Autumnal Equinox Day (September 23), Sports Day (October 13), Culture Day (November 3), and Labour Thanksgiving Day (November 23). Use the holiday checker above to verify any specific date.</p>
+        <summary>2025年の日本の祝日は？</summary>
+        <p>2025年は振替休日を含めて16の祝日があります。主な祝日は、元日（1月1日）、成人の日（1月13日）、建国記念の日（2月11日）、天皇誕生日（2月23日）、春分の日（3月20日）、昭和の日（4月29日）、憲法記念日（5月3日）、みどりの日（5月4日）、こどもの日（5月5日）、海の日（7月21日）、山の日（8月11日）、敬老の日（9月15日）、秋分の日（9月23日）、スポーツの日（10月13日）、文化の日（11月3日）、勤労感謝の日（11月23日）です。</p>
       </details>
 
       <details class="faq-item">
-        <summary>What is a substitute holiday (&#x632F;&#x66FF;&#x4F11;&#x65E5;) in Japan?</summary>
-        <p>A substitute holiday (&#x632F;&#x66FF;&#x4F11;&#x65E5;, furikae ky&#x16B;jitsu) in Japan occurs when a national holiday falls on a Sunday. In this case, the following Monday becomes a public holiday instead. For example, if Children&#x2019;s Day (May 5) falls on a Sunday, Monday May 6 becomes a substitute holiday. This ensures workers always receive their full holiday entitlement.</p>
+        <summary>振替休日とは？</summary>
+        <p>振替休日とは、国民の祝日が日曜日に当たった場合、翌月曜日を休日とする制度です。例えば、こどもの日（5月5日）が日曜日の場合、翌月曜日の5月6日が振替休日になります。これにより、労働者は祝日の休暇を確実に取得できます。</p>
       </details>
 
       <details class="faq-item">
-        <summary>What is Golden Week (&#x30B4;&#x30FC;&#x30EB;&#x30C7;&#x30F3;&#x30A6;&#x30A3;&#x30FC;&#x30AF;) in Japan?</summary>
-        <p>Golden Week (&#x30B4;&#x30FC;&#x30EB;&#x30C7;&#x30F3;&#x30A6;&#x30A3;&#x30FC;&#x30AF;) is Japan&#x2019;s most popular holiday period, running from late April to early May. It clusters four national holidays: Showa Day (April 29), Constitution Memorial Day (May 3), Greenery Day (May 4), and Children&#x2019;s Day (May 5). Many Japanese businesses close for the entire Golden Week period, typically April 29 to May 5 or 6.</p>
+        <summary>ゴールデンウィークとは？</summary>
+        <p>ゴールデンウィークは4月下旬〜5月上旬の日本で最も人気のある連休期間です。昭和の日（4月29日）、憲法記念日（5月3日）、みどりの日（5月4日）、こどもの日（5月5日）の4つの祝日が集中します。多くの企業がゴールデンウィーク期間中（通常4月29日〜5月5日または6日）を休業します。</p>
       </details>
 
       <details class="faq-item">
-        <summary>Are Japanese public holidays the same every year?</summary>
-        <p>Most Japanese national holidays fall on fixed dates or fixed weekday patterns each year. However, Vernal Equinox Day (&#x6625;&#x5206;&#x306E;&#x65E5;) and Autumnal Equinox Day (&#x79CB;&#x5206;&#x306E;&#x65E5;) vary slightly as they depend on astronomical calculations. Additionally, substitute holidays (&#x632F;&#x66FF;&#x4F11;&#x65E5;) and bridge days (&#x56FD;&#x6C11;&#x306E;&#x4F11;&#x65E5;) shift each year depending on which day of the week the holidays fall.</p>
+        <summary>日本の祝日は毎年同じ？</summary>
+        <p>ほとんどの国民の祝日は固定日または特定の曜日パターンで毎年決まっています。ただし、春分の日と秋分の日は天文計算に基づくため、日付が若干変動します。また、振替休日と国民の休日は祝日の曜日によって毎年変わります。</p>
       </details>
 
       <details class="faq-item">
-        <summary>What is &#x56FD;&#x6C11;&#x306E;&#x4F11;&#x65E5; (kokumin no ky&#x16B;jitsu)?</summary>
-        <p>&#x56FD;&#x6C11;&#x306E;&#x4F11;&#x65E5; (kokumin no ky&#x16B;jitsu, National Holiday or Bridge Day) is a special holiday created when a regular weekday falls between two national holidays, making it a three-day holiday weekend. For example, in 2026, September 22 becomes a &#x56FD;&#x6C11;&#x306E;&#x4F11;&#x65E5; because it falls between Respect for the Aged Day (September 21) and Autumnal Equinox Day (September 23). This is sometimes called a &#x2018;sandwich holiday&#x2019;.</p>
+        <summary>国民の休日とは？</summary>
+        <p>国民の休日は、祝日に挟まれた平日が自動的に休日になる制度です。例えば、2026年は9月22日が国民の休日になります。これは敬老の日（9月21日）と秋分の日（9月23日）に挟まれているためです。「サンドイッチの日」とも呼ばれます。</p>
       </details>
     </section>
 
@@ -473,8 +449,8 @@
       <li><a href="/terms/">利用規約</a></li>
       <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
-    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
-    <p class="footer-attribution">Holiday data sourced from Cabinet Office of Japan. 最終更新: 2025年3月</p>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. 無断転載禁止。</p>
+    <p class="footer-attribution">祝日データは内閣府のデータに基づいています。最終更新: 2025年3月</p>
   </div>
 </footer>
 
@@ -485,7 +461,7 @@
   if (!el) return;
   var year = new Date().getFullYear();
   if (year > 2026) {
-    el.textContent = ' \u26A0 Data for ' + year + ' not yet available \u2014 check back soon.';
+    el.textContent = ' \u26A0 ' + year + '年のデータはまだ利用できません。後日ご確認ください。';
     el.style.color = 'var(--color-warning)';
   }
 })();
@@ -498,7 +474,7 @@
   btn.addEventListener('click', function() {
     var isOpen = nav.classList.toggle('nav-open');
     btn.setAttribute('aria-expanded', String(isOpen));
-    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
   });
 })();
 </script>
@@ -508,9 +484,9 @@ import {
   checkDate, getHolidaysForMonth, getHolidaysForYear, getNextHoliday, getSupportedYears
 } from '/assets/js/holiday.js';
 
-var DAY_NAMES = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-var MONTH_NAMES = ['January','February','March','April','May','June',
-                   'July','August','September','October','November','December'];
+var DAY_NAMES = ['日曜日','月曜日','火曜日','水曜日','木曜日','金曜日','土曜日'];
+var MONTH_NAMES = ['1月','2月','3月','4月','5月','6月',
+                   '7月','8月','9月','10月','11月','12月'];
 
 // Tab switching
 document.querySelectorAll('.tool-tab').forEach(function(tab) {
@@ -544,7 +520,7 @@ function runCheckDate(dateStr) {
   }
 
   var d = new Date(dateStr + 'T00:00:00');
-  var formattedDate = d.getDate() + ' ' + MONTH_NAMES[d.getMonth()] + ' ' + d.getFullYear();
+  var formattedDate = d.getFullYear() + '年' + MONTH_NAMES[d.getMonth()] + d.getDate() + '日';
 
   if (result.isHoliday) {
     document.getElementById('r-name-jp').textContent  = result.nameJP;
@@ -561,7 +537,7 @@ function runCheckDate(dateStr) {
     document.getElementById('r-dow-no').textContent  = DAY_NAMES[d.getDay()];
     var next = getNextHoliday(dateStr);
     var hint = next
-      ? '次の祝日: ' + next.nameEN + ' on ' + next.date + ' (in ' + next.daysUntil + ' day' + (next.daysUntil !== 1 ? 's' : '') + ')'
+      ? '次の祝日: ' + next.nameJP + '（' + next.date + '、あと' + next.daysUntil + '日）'
       : '';
     document.getElementById('r-next-hint').textContent = hint;
     document.getElementById('holiday-yes-box').style.display = 'none';
@@ -585,14 +561,14 @@ function runMonthView() {
   var monthName = MONTH_NAMES[month - 1];
 
   if (holidays.length === 0) {
-    resultEl.innerHTML = '<p class="text-muted">No public holidays in ' + monthName + ' ' + year + '.</p>';
+    resultEl.innerHTML = '<p class="text-muted">' + year + '年' + monthName + 'には祝日がありません。</p>';
     return;
   }
 
   var items = holidays.map(function(h) {
     var d = new Date(h.date + 'T00:00:00');
-    var dayLabel = monthName + ' ' + d.getDate() + ' (' + DAY_NAMES[d.getDay()] + ')';
-    var typeBadge = h.type === 'substitute' ? 'Substitute' : h.type === 'national_holiday' ? 'Bridge Day' : 'National';
+    var dayLabel = monthName + d.getDate() + '日（' + DAY_NAMES[d.getDay()] + '）';
+    var typeBadge = h.type === 'substitute' ? '振替' : h.type === 'national_holiday' ? '国民の休日' : '祝日';
     return '<li class="holiday-list-item">' +
       '<span class="holiday-date">' + dayLabel + '</span>' +
       '<span class="holiday-name-jp">' + h.nameJP + '</span>' +
@@ -602,7 +578,7 @@ function runMonthView() {
   }).join('');
 
   resultEl.innerHTML =
-    '<h3 style="margin-bottom:0.75rem;">' + holidays.length + ' holiday' + (holidays.length > 1 ? 's' : '') + ' in ' + monthName + ' ' + year + '</h3>' +
+    '<h3 style="margin-bottom:0.75rem;">' + year + '年' + monthName + 'の祝日: ' + holidays.length + '件</h3>' +
     '<ul class="holiday-list">' + items + '</ul>';
 }
 
@@ -624,20 +600,20 @@ document.getElementById('check-copy-btn').addEventListener('click', function() {
   if (!dateVal) return;
   var res  = checkDate(dateVal);
   var text = res.isHoliday
-    ? dateVal + ': ' + res.nameEN + ' \u2014 Japanese Public Holiday'
-    : dateVal + ': Regular working day';
+    ? dateVal + ': ' + res.nameJP + ' \u2014 日本の祝日'
+    : dateVal + ': 平日（営業日）';
   navigator.clipboard.writeText(text).then(function() {
     var btn = document.getElementById('check-copy-btn');
-    btn.textContent = 'Copied! \u2713';
-    setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+    btn.textContent = 'コピー済み \u2713';
+    setTimeout(function() { btn.textContent = 'コピー'; }, 2000);
   });
 });
 document.getElementById('check-share-btn').addEventListener('click', function() {
   var url = document.getElementById('check-share-btn').dataset.url || window.location.href;
   navigator.clipboard.writeText(url).then(function() {
     var btn = document.getElementById('check-share-btn');
-    btn.textContent = 'Link copied!';
-    setTimeout(function() { btn.textContent = 'Share'; }, 2000);
+    btn.textContent = 'リンクコピー済み!';
+    setTimeout(function() { btn.textContent = '共有'; }, 2000);
   });
 });
 
@@ -668,22 +644,22 @@ function renderQuickRefTable() {
   const holidays = getHolidaysForYear(targetYear);
 
   if (!holidays || holidays.length === 0) {
-    wrap.innerHTML = '<p class="text-muted">Holiday data not available for ' + year + '.</p>';
+    wrap.innerHTML = '<p class="text-muted">' + year + '年の祝日データはありません。</p>';
     return;
   }
 
   // Day names
-  const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun',
-                  'Jul','Aug','Sep','Oct','Nov','Dec'];
+  const DAYS = ['日','月','火','水','木','金','土'];
+  const MONTHS = ['1月','2月','3月','4月','5月','6月',
+                  '7月','8月','9月','10月','11月','12月'];
 
   const rows = holidays.map(h => {
     const d = new Date(h.date + 'T00:00:00');
-    const dateStr = MONTHS[d.getMonth()] + ' ' + d.getDate();
+    const dateStr = (d.getMonth()+1) + '月' + d.getDate() + '日';
     const dayStr  = DAYS[d.getDay()];
-    const typeLabel = h.type === 'substitute'       ? 'Substitute'
-                    : h.type === 'national_holiday'  ? 'Bridge Day'
-                    : 'National';
+    const typeLabel = h.type === 'substitute'       ? '振替'
+                    : h.type === 'national_holiday'  ? '国民の休日'
+                    : '祝日';
     return `<tr>
       <td>${dateStr}</td>
       <td>${dayStr}</td>
@@ -696,7 +672,7 @@ function renderQuickRefTable() {
   // Show fallback note if displaying a different year
   const fallbackNote = targetYear !== year
     ? `<p class="text-muted" style="font-size:0.8rem; margin-bottom:0.75rem;">
-        ⚠ Holiday data for ${year} is not yet available. Showing ${targetYear} data.
+        ⚠ ${year}年の祝日データはまだ利用できません。${targetYear}年のデータを表示しています。
        </p>`
     : '';
 
@@ -706,18 +682,18 @@ function renderQuickRefTable() {
         <tr>
           <th>日付</th>
           <th>曜日</th>
-          <th>Japanese</th>
-          <th>English</th>
+          <th>日本語</th>
+          <th>英語</th>
           <th>種類</th>
         </tr>
       </thead>
       <tbody>${rows}</tbody>
     </table>
     <p class="text-muted" style="font-size:0.8rem; margin-top:0.75rem;">
-      <small>Source:
+      <small>出典:
         <a href="https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html"
-           target="_blank" rel="noopener">Cabinet Office of Japan</a>.
-        Data covers 2023–2026. Updated annually.
+           target="_blank" rel="noopener">内閣府</a>。
+        2023〜2026年対応。毎年更新。
       </small>
     </p>`;
 }
@@ -771,7 +747,7 @@ document.addEventListener('DOMContentLoaded', function() {
     toggle.href = enPath;
     toggle.textContent = 'English';
     toggle.setAttribute('lang', 'en');
-    toggle.setAttribute('title', 'View this page in English');
+    toggle.setAttribute('title', 'このページを英語で表示');
     if (toggleMobile) {
       toggleMobile.href = enPath;
       toggleMobile.textContent = '🌐 English';

@@ -208,7 +208,7 @@
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
     <li><a href="/tax-finance/">税金・財務</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li aria-current="page">Japan Overtime Calculator</li>
+    <li aria-current="page">残業代計算ツール</li>
   </ol>
 </nav>
 
@@ -223,20 +223,17 @@
 <div class="page-layout">
   <main class="content" id="main-content">
 
-    <h1>Japan Overtime Pay Calculator &#x2014; &#x6B8B;&#x696D;&#x4EE3;&#x8A08;&#x7B97;</h1>
-    <p class="tool-subtitle">&#x6B8B;&#x696D;&#x4EE3;&#x8A08;&#x7B97;&#x30C4;&#x30FC;&#x30EB; &#x2014; 残業代を計算する per Japan Labor Standards Act</p>
+    <h1>残業代計算ツール</h1>
+    <p class="tool-subtitle">残業代計算ツール &#x2014; 労働基準法に基づく残業代計算</p>
     <p class="tool-desc">
-      Calculate your Japan overtime pay (&#x6B8B;&#x696D;&#x4EE3;) based on Labor Standards Act
-      (&#x52B4;&#x50CD;&#x57FA;&#x6E96;&#x6CD5;) rates. Enter your monthly salary and overtime hours to see
-      your total pay including standard overtime, late-night work, and holiday
-      work premiums. 無料、ログイン不要。
+      労働基準法に基づく残業代（時間外労働・深夜労働・休日労働）を計算します。月給と残業時間を入力すると、各種割増賃金を含む総支給額が表示されます。 無料、ログイン不要。
     </p>
 
     <div class="tool-box" id="tool-main">
       <!-- Tab bar -->
       <div class="tool-tabs" role="tablist">
-        <button class="tool-tab active" data-panel="panel-monthly" role="tab" aria-selected="true">Monthly OT (&#x6708;&#x9593;&#x6B8B;&#x696D;)</button>
-        <button class="tool-tab" data-panel="panel-daily" role="tab" aria-selected="false">Daily OT (&#x65E5;&#x5225;&#x6B8B;&#x696D;)</button>
+        <button class="tool-tab active" data-panel="panel-monthly" role="tab" aria-selected="true">月間残業</button>
+        <button class="tool-tab" data-panel="panel-daily" role="tab" aria-selected="false">日別残業</button>
       </div>
 
       <!-- Tab 1 — Monthly Overtime -->
@@ -247,7 +244,7 @@
               月収（額面） &#x2014; &#x6708;&#x53CE;&#xFF08;&#x984D;&#x9762;&#xFF09; &#xA5;
             </label>
             <input type="number" class="form-input" id="monthly-gross"
-                   min="0" step="1000" placeholder="e.g. 300000">
+                   min="0" step="1000" placeholder="例: 300000">
           </div>
           <div class="form-group">
             <label class="form-label" for="monthly-hours">
@@ -264,7 +261,7 @@
               時間外労働時間 &#x2014; &#x6642;&#x9593;&#x5916;&#x52B4;&#x50CD;&#x6642;&#x9593;
             </label>
             <input type="number" class="form-input" id="ot-hours"
-                   min="0" step="0.5" placeholder="e.g. 20">
+                   min="0" step="0.5" placeholder="例: 20">
           </div>
           <div class="form-group">
             <label class="form-label" for="late-hours">
@@ -284,15 +281,15 @@
                    min="0" step="0.5" placeholder="0" value="0">
           </div>
           <div class="form-group">
-            <label class="form-label">Company Size &#x2014; &#x4F1A;&#x793E;&#x898F;&#x6A21;</label>
+            <label class="form-label">会社規模</label>
             <div class="rate-toggle" role="group">
               <label class="rate-option">
                 <input type="radio" name="company-size" value="large" checked>
-                <span>Large (&#x5927;&#x4F01;&#x696D;)</span>
+                <span>大企業</span>
               </label>
               <label class="rate-option">
                 <input type="radio" name="company-size" value="small">
-                <span>SME (&#x4E2D;&#x5C0F;&#x4F01;&#x696D;)</span>
+                <span>中小企業</span>
               </label>
             </div>
           </div>
@@ -305,33 +302,33 @@
 
         <div class="result-box" id="monthly-result" aria-live="polite">
           <div class="result-primary" id="r-ot-total"></div>
-          <div class="result-secondary">Total Overtime Pay (&#x6B8B;&#x696D;&#x4EE3;)</div>
+          <div class="result-secondary">残業代合計</div>
 
           <div class="total-pay-box">
-            Base Salary + OT = <strong id="r-total-pay"></strong>
+            基本給 + 残業代 = <strong id="r-total-pay"></strong>
           </div>
 
           <div class="ot-breakdown-grid">
-            <span class="ot-row-label">Hourly Rate (&#x6642;&#x7D66;)</span>
+            <span class="ot-row-label">時給</span>
             <span class="ot-row-value" id="r-hourly"></span>
-            <span class="ot-row-label">Overtime (<span id="r-ot-hrs-label">0</span>h &#xD7; 1.25&#xD7;)</span>
+            <span class="ot-row-label">時間外労働（<span id="r-ot-hrs-label">0</span>時間 x 1.25倍）</span>
             <span class="ot-row-value" id="r-ot-pay"></span>
-            <span class="ot-row-label">Late Night (<span id="r-late-hrs-label">0</span>h &#xD7; 1.25&#xD7;)</span>
+            <span class="ot-row-label">深夜労働（<span id="r-late-hrs-label">0</span>時間 x 1.25倍）</span>
             <span class="ot-row-value" id="r-late-pay"></span>
-            <span class="ot-row-label">Holiday Work (<span id="r-hol-hrs-label">0</span>h &#xD7; 1.35&#xD7;)</span>
+            <span class="ot-row-label">休日労働（<span id="r-hol-hrs-label">0</span>時間 x 1.35倍）</span>
             <span class="ot-row-value" id="r-hol-pay"></span>
-            <span class="ot-row-label ot-row-total">Total OT Pay</span>
+            <span class="ot-row-label ot-row-total">残業代合計</span>
             <span class="ot-row-value ot-row-total" id="r-ot-total-grid"></span>
-            <span class="ot-row-label ot-row-total">Total Monthly Pay</span>
+            <span class="ot-row-label ot-row-total">月間総支給額</span>
             <span class="ot-row-value ot-row-total" id="r-total-pay-grid"></span>
           </div>
 
           <div class="over60-notice" id="over60-notice" style="display:none;">
-            &#x26A0; Over 60h/month: hours above 60 calculated at 1.5&#xD7; rate
+            &#x26A0; 月60時間超過分: 1.5倍の割増率で計算
           </div>
 
           <div class="btn-row" style="margin-top:1rem;">
-            <button class="btn btn-secondary" id="monthly-copy-btn">Copy Summary</button>
+            <button class="btn btn-secondary" id="monthly-copy-btn">概要をコピー</button>
             <button class="btn btn-secondary" id="monthly-share-btn">共有</button>
           </div>
         </div>
@@ -342,33 +339,33 @@
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="daily-rate">
-              Hourly Rate &#x2014; &#x6642;&#x7D66; &#xA5;
+              時給 &#xA5;
               <span class="text-muted" style="font-size:0.8rem;">
-                (or calculate from monthly salary above)
+                （または上記の月給から計算）
               </span>
             </label>
             <input type="number" class="form-input" id="daily-rate"
-                   min="0" step="1" placeholder="e.g. 1875">
+                   min="0" step="1" placeholder="例: 1875">
           </div>
           <div class="form-group">
             <label class="form-label" for="daily-hours">
-              Total Hours Worked Today &#x2014; &#x672C;&#x65E5;&#x306E;&#x52B4;&#x50CD;&#x6642;&#x9593;
+              本日の労働時間
             </label>
             <input type="number" class="form-input" id="daily-hours"
-                   min="0" max="24" step="0.5" placeholder="e.g. 10">
+                   min="0" max="24" step="0.5" placeholder="例: 10">
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="daily-late">
-              Of which late night hours (22:00&#x2013;05:00) &#x2014; &#x6DF1;&#x591C;&#x6642;&#x9593;&#x6570;
+              うち深夜時間数（22:00〜05:00）
             </label>
             <input type="number" class="form-input" id="daily-late"
                    min="0" step="0.5" value="0" placeholder="0">
           </div>
           <div class="form-group">
-            <label class="form-label">Holiday? &#x2014; &#x6CD5;&#x5B9A;&#x4F11;&#x65E5;</label>
+            <label class="form-label">法定休日</label>
             <div class="rate-toggle" role="group">
               <label class="rate-option">
                 <input type="radio" name="is-holiday" value="no" checked>
@@ -376,28 +373,28 @@
               </label>
               <label class="rate-option">
                 <input type="radio" name="is-holiday" value="yes">
-                <span>Holiday (&#x6CD5;&#x5B9A;&#x4F11;&#x65E5;)</span>
+                <span>法定休日</span>
               </label>
             </div>
           </div>
         </div>
 
         <div class="btn-row">
-          <button class="btn btn-primary" id="daily-calc-btn">Calculate Daily Pay</button>
+          <button class="btn btn-primary" id="daily-calc-btn">日別残業代を計算</button>
         </div>
 
         <div class="result-box" id="daily-result" aria-live="polite">
           <div class="result-primary" id="r-daily-total"></div>
-          <div class="result-secondary">Total Day&#x2019;s Pay</div>
+          <div class="result-secondary">本日の総支給額</div>
 
           <div class="ot-breakdown-grid">
-            <span class="ot-row-label">Regular Pay (<span id="r-daily-reg-hrs">8</span>h)</span>
+            <span class="ot-row-label">通常賃金（<span id="r-daily-reg-hrs">8</span>時間）</span>
             <span class="ot-row-value" id="r-daily-regular"></span>
-            <span class="ot-row-label">Overtime Pay (<span id="r-daily-ot-hrs">0</span>h &#xD7; 1.25&#xD7;)</span>
+            <span class="ot-row-label">時間外手当（<span id="r-daily-ot-hrs">0</span>時間 x 1.25倍）</span>
             <span class="ot-row-value" id="r-daily-ot"></span>
-            <span class="ot-row-label">Late Night Premium (<span id="r-daily-late-hrs">0</span>h &#xD7; 0.25&#xD7;)</span>
+            <span class="ot-row-label">深夜手当（<span id="r-daily-late-hrs">0</span>時間 x 0.25倍）</span>
             <span class="ot-row-value" id="r-daily-late"></span>
-            <span class="ot-row-label ot-row-total">Total</span>
+            <span class="ot-row-label ot-row-total">合計</span>
             <span class="ot-row-value ot-row-total" id="r-daily-total-grid"></span>
           </div>
         </div>
@@ -406,23 +403,22 @@
 
     <!-- Quick Reference Table -->
     <div class="quick-ref" style="overflow-x:auto;">
-      <h2>Japan Overtime Pay Rate Reference (&#x6B8B;&#x696D;&#x4EE3;&#x5272;&#x5897;&#x7387; &#x4E00;&#x89A7;)</h2>
+      <h2>残業代割増率一覧</h2>
       <table>
         <thead>
-          <tr><th>Situation</th><th>Japanese</th><th>Rate</th><th>Example (&#xA5;1,875/h)</th></tr>
+          <tr><th>種別</th><th>日本語</th><th>割増率</th><th>例（時給1,875円）</th></tr>
         </thead>
         <tbody>
-          <tr><td>Standard overtime (&gt;8h/day or &gt;40h/week)</td><td>&#x666E;&#x901A;&#x6B8B;&#x696D;</td><td>1.25&#xD7;</td><td>&#xA5;2,344/h</td></tr>
-          <tr><td>Late-night work only (22:00&#x2013;05:00)</td><td>&#x6DF1;&#x591C;&#x52B4;&#x50CD;</td><td>1.25&#xD7;</td><td>&#xA5;2,344/h</td></tr>
-          <tr><td>Overtime + late night</td><td>&#x6DF1;&#x591C;&#x6B8B;&#x696D;</td><td>1.50&#xD7;</td><td>&#xA5;2,813/h</td></tr>
-          <tr><td>Statutory holiday work</td><td>&#x4F11;&#x65E5;&#x52B4;&#x50CD;</td><td>1.35&#xD7;</td><td>&#xA5;2,531/h</td></tr>
-          <tr><td>Holiday + late night</td><td>&#x4F11;&#x65E5;&#x6DF1;&#x591C;&#x52B4;&#x50CD;</td><td>1.60&#xD7;</td><td>&#xA5;3,000/h</td></tr>
-          <tr><td>Over 60h/month (all companies, from Apr 2023)</td><td>&#x9577;&#x6642;&#x9593;&#x6B8B;&#x696D;</td><td>1.50&#xD7;</td><td>&#xA5;2,813/h</td></tr>
+          <tr><td>普通残業（1日8時間超・週40時間超）</td><td>&#x666E;&#x901A;&#x6B8B;&#x696D;</td><td>1.25&#xD7;</td><td>&#xA5;2,344/h</td></tr>
+          <tr><td>深夜労働のみ（22:00〜05:00）</td><td>&#x6DF1;&#x591C;&#x52B4;&#x50CD;</td><td>1.25&#xD7;</td><td>&#xA5;2,344/h</td></tr>
+          <tr><td>残業 + 深夜</td><td>&#x6DF1;&#x591C;&#x6B8B;&#x696D;</td><td>1.50&#xD7;</td><td>&#xA5;2,813/h</td></tr>
+          <tr><td>法定休日労働</td><td>&#x4F11;&#x65E5;&#x52B4;&#x50CD;</td><td>1.35&#xD7;</td><td>&#xA5;2,531/h</td></tr>
+          <tr><td>休日 + 深夜</td><td>&#x4F11;&#x65E5;&#x6DF1;&#x591C;&#x52B4;&#x50CD;</td><td>1.60&#xD7;</td><td>&#xA5;3,000/h</td></tr>
+          <tr><td>月60時間超（全企業、2023年4月〜）</td><td>&#x9577;&#x6642;&#x9593;&#x6B8B;&#x696D;</td><td>1.50&#xD7;</td><td>&#xA5;2,813/h</td></tr>
         </tbody>
       </table>
       <p class="text-muted">
-        <small>* Based on &#xA5;1,875/h hourly rate (&#xA5;300,000 monthly &#xF7; 160 hours).
-        Rates per Japan Labor Standards Act (&#x52B4;&#x50CD;&#x57FA;&#x6E96;&#x6CD5;).</small>
+        <small>※ 時給1,875円（月給300,000円 ÷ 160時間）に基づく計算例です。割増率は労働基準法に基づいています。</small>
       </p>
     </div>
 
@@ -435,48 +431,23 @@
     </div>
 
     <article class="seo-content">
-      <h2>How Japan Overtime Pay Works (&#x6B8B;&#x696D;&#x4EE3;&#x306E;&#x8A08;&#x7B97;&#x65B9;&#x6CD5;)</h2>
+      <h2>日本の残業代の仕組み</h2>
       <p>
-        Japan&#x2019;s overtime pay system is governed by the Labor Standards Act
-        (&#x52B4;&#x50CD;&#x57FA;&#x6E96;&#x6CD5;). The legal limit for regular work is 8 hours per day and
-        40 hours per week. Any work beyond these limits must be compensated at
-        a <strong>minimum of 1.25&#xD7; the regular hourly rate</strong>. Your
-        hourly rate is calculated by dividing your monthly salary by your
-        scheduled monthly working hours &#x2014; typically 160&#x2013;176 hours depending on
-        your contract.
+        日本の残業代制度は労働基準法で定められています。法定労働時間は1日8時間、週40時間です。これを超える労働には<strong>最低1.25倍の割増賃金</strong>が支払われます。時給は月給を月の所定労働時間（通常160〜176時間）で割って算出します。
       </p>
       <p>
-        Late-night work between 22:00 and 05:00 carries an additional premium,
-        bringing the effective rate to <strong>1.50&#xD7;</strong> when combined with
-        overtime. Work on statutory holidays (&#x6CD5;&#x5B9A;&#x4F11;&#x65E5; &#x2014; generally one day per
-        week guaranteed by law) is paid at <strong>1.35&#xD7;</strong>, or
-        <strong>1.60&#xD7;</strong> if it also falls in late-night hours. Since April
-        2023, overtime exceeding 60 hours per month must be paid at
-        <strong>1.50&#xD7;</strong> for all companies.
+        深夜労働（22:00〜05:00）には追加の割増があり、残業と重なると<strong>1.50倍</strong>になります。法定休日の労働は<strong>1.35倍</strong>、深夜と重なる場合は<strong>1.60倍</strong>です。2023年4月以降、月60時間を超える残業は全企業で<strong>1.50倍</strong>の支払いが義務付けられています。
       </p>
 
-      <h2>36 Agreement and Overtime Caps (&#x4E09;&#x516D;&#x5354;&#x5B9A;)</h2>
+      <h2>三六協定と残業上限</h2>
       <p>
-        To legally require overtime work, employers must have a written
-        <strong>36 Agreement</strong> (&#x4E09;&#x516D;&#x5354;&#x5B9A;, san-roku ky&#x14D;tei) in place,
-        filed with the Labor Standards Inspection Office. Under Japan&#x2019;s 2019
-        Work Style Reform rules, standard overtime is capped at 45 hours/month
-        and 360 hours/year. In special circumstances (&#x7E41;&#x5FD9;&#x671F;), this can be
-        extended to 100 hours/month and 720 hours/year, but 80h/month average
-        and 100h single-month caps apply.
+        残業を法的に命じるには、使用者は<strong>三六協定</strong>を締結し、労働基準監督署に届け出る必要があります。2019年の働き方改革関連法により、残業の上限は原則月45時間・年360時間です。特別条項（繁忙期）では月100時間・年720時間まで延長可能ですが、月平均80時間・単月100時間の上限が適用されます。
       </p>
       <p>
-        If your employer requires overtime without a valid 36 Agreement, or
-        does not pay the correct overtime premiums, you may report this to
-        the nearest Labor Standards Inspection Office (&#x52B4;&#x50CD;&#x57FA;&#x6E96;&#x76E3;&#x7763;&#x7F72;). For
-        salary calculations including all deductions, use the
-        <a href="/tax-finance/salary-calculator/">Japan salary calculator</a>.
+        有効な三六協定なしに残業を命じられたり、正しい割増賃金が支払われない場合は、最寄りの労働基準監督署に相談できます。控除を含む給与計算については、<a href="/tax-finance/salary-calculator/">手取り計算ツール</a>をご利用ください。
       </p>
       <p>
-        <small>Overtime rates per Japan Labor Standards Act (&#x52B4;&#x50CD;&#x57FA;&#x6E96;&#x6CD5; &#x7B2C;37&#x6761;).
-          Work Style Reform rules effective April 2019 (large companies) and
-          April 2020 (SMEs).
-        </small>
+        <small>残業代の割増率は労働基準法（第37条）に基づいています。働き方改革関連法は大企業は2019年4月、中小企業は2020年4月から施行されています。</small>
       </p>
     </article>
 
@@ -484,28 +455,28 @@
       <h2>よくある質問</h2>
 
       <details class="faq-item">
-        <summary>What is the overtime pay rate in Japan?</summary>
-        <p>In Japan, overtime pay rates are set by the Labor Standards Act (&#x52B4;&#x50CD;&#x57FA;&#x6E96;&#x6CD5;). Standard overtime (work beyond 8 hours/day or 40 hours/week) is paid at 1.25&#xD7; the regular hourly rate. Late-night work (22:00&#x2013;05:00) adds an additional 1.25&#xD7; premium. Holiday work on statutory holidays is paid at 1.35&#xD7;. If overtime hours exceed 60 per month, the rate increases to 1.50&#xD7; for all companies as of April 2023.</p>
+        <summary>日本の残業代の割増率は？</summary>
+        <p>日本の残業代の割増率は労働基準法で定められています。普通残業（1日8時間超・週40時間超）は時給の1.25倍、深夜労働（22:00〜05:00）はさらに1.25倍の割増、法定休日労働は1.35倍です。2023年4月以降、月60時間を超える残業は全企業で1.50倍に引き上げられました。</p>
       </details>
 
       <details class="faq-item">
-        <summary>How do I calculate my hourly rate from monthly salary in Japan?</summary>
-        <p>To calculate your base hourly rate from a monthly salary in Japan, divide your monthly gross salary by your scheduled working hours per month. For example, if your monthly salary is &#xA5;300,000 and you work 160 hours per month (8 hours &#xD7; 20 days), your hourly rate is &#xA5;300,000 &#xF7; 160 = &#xA5;1,875. This is the base rate used to calculate overtime pay.</p>
+        <summary>月給から時給を計算するには？</summary>
+        <p>月給から基本時給を計算するには、月額総支給額を月の所定労働時間で割ります。例えば、月給300,000円で月160時間勤務（1日8時間 x 20日）の場合、時給は300,000円 / 160 = 1,875円です。この時給が残業代計算の基礎となります。</p>
       </details>
 
       <details class="faq-item">
-        <summary>What counts as overtime in Japan?</summary>
-        <p>In Japan, overtime (&#x6642;&#x9593;&#x5916;&#x52B4;&#x50CD;) is work that exceeds the statutory limits of 8 hours per day or 40 hours per week, as defined by the Labor Standards Act (&#x52B4;&#x50CD;&#x57FA;&#x6E96;&#x6CD5;). Work between 22:00 and 05:00 is classified as late-night work (&#x6DF1;&#x591C;&#x52B4;&#x50CD;) and carries an additional premium regardless of whether total hours exceed the statutory limit. Work on statutory holidays (&#x6CD5;&#x5B9A;&#x4F11;&#x65E5;, typically one day per week) is classified as holiday work.</p>
+        <summary>日本で残業に該当するのは？</summary>
+        <p>日本では、労働基準法で定められた法定労働時間（1日8時間・週40時間）を超える労働が残業（時間外労働）に該当します。22:00〜05:00の労働は深夜労働として、法定労働時間を超えるかどうかに関わらず追加の割増賃金が発生します。法定休日（通常は週1日）の労働は休日労働に分類されます。</p>
       </details>
 
       <details class="faq-item">
-        <summary>What is the 36 Agreement (&#x4E09;&#x516D;&#x5354;&#x5B9A;) in Japan?</summary>
-        <p>The 36 Agreement (&#x4E09;&#x516D;&#x5354;&#x5B9A;, san-roku ky&#x14D;tei) is a written agreement between an employer and employee representatives that allows overtime work beyond the statutory 8h/day, 40h/week limits. Without a 36 Agreement, employers cannot legally require employees to work overtime. The agreement must be filed with the Labor Standards Inspection Office. Under 2019 Work Style Reform rules, monthly overtime is capped at 45 hours (100 hours in special cases).</p>
+        <summary>三六協定とは？</summary>
+        <p>三六協定は、使用者と労働者の代表者が締結する書面による協定で、法定労働時間（1日8時間・週40時間）を超える残業を可能にするものです。三六協定がなければ、使用者は法的に残業を命じることができません。協定は労働基準監督署に届け出る必要があります。2019年の働き方改革により、残業は原則月45時間（特別な場合は100時間）が上限です。</p>
       </details>
 
       <details class="faq-item">
-        <summary>Does the 1.5&#xD7; overtime rate for over 60 hours apply to all companies in Japan?</summary>
-        <p>Yes &#x2014; as of April 1, 2023, the 1.5&#xD7; overtime pay rate for monthly overtime exceeding 60 hours applies to all companies in Japan, including small and medium-sized enterprises (&#x4E2D;&#x5C0F;&#x4F01;&#x696D;). Previously, this rule applied only to large companies. The change was part of Japan&#x2019;s Work Style Reform (&#x50CD;&#x304D;&#x65B9;&#x6539;&#x9769;) legislation.</p>
+        <summary>月60時間超の1.5倍割増は全企業に適用される？</summary>
+        <p>はい。2023年4月1日以降、月60時間を超える残業に対する1.5倍の割増賃金は、中小企業を含む日本の全企業に適用されています。以前は大企業のみに適用されていましたが、働き方改革関連法の一環として全企業に拡大されました。</p>
       </details>
     </section>
 
@@ -555,8 +526,8 @@
       <li><a href="/terms/">利用規約</a></li>
       <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
-    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
-    <p class="footer-attribution">Overtime rates per Japan Labor Standards Act (&#x52B4;&#x50CD;&#x57FA;&#x6E96;&#x6CD5;). 最終更新: 2025年3月</p>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. 無断転載禁止。</p>
+    <p class="footer-attribution">残業代の割増率は労働基準法に基づいています。最終更新: 2025年3月</p>
   </div>
 </footer>
 
@@ -569,7 +540,7 @@
   btn.addEventListener('click', function() {
     var isOpen = nav.classList.toggle('nav-open');
     btn.setAttribute('aria-expanded', String(isOpen));
-    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
   });
 })();
 </script>
@@ -687,7 +658,7 @@ function computeDaily() {
   resultEl.classList.add('visible');
 
   if (typeof gtag !== 'undefined')
-    gtag('event', 'tool_used', { tool_name: 'work_hours_calculator', mode: 'daily', language: 'en' });
+    gtag('event', 'tool_used', { tool_name: 'work_hours_calculator', mode: 'daily', language: 'ja' });
 }
 
 // Event listeners — Monthly
@@ -716,8 +687,8 @@ document.getElementById('monthly-copy-btn').addEventListener('click', function()
     overtimeHours: otHours, lateNightHours: lateHrs, holidayHours: holHrs, isLargeCompany: isLarge });
   if (!r.error) navigator.clipboard.writeText(formatOTSummary(r)).then(function() {
     var btn = document.getElementById('monthly-copy-btn');
-    btn.textContent = 'Copied! \u2713';
-    setTimeout(function() { btn.textContent = 'Copy Summary'; }, 2000);
+    btn.textContent = 'コピーしました \u2713';
+    setTimeout(function() { btn.textContent = '概要をコピー'; }, 2000);
   });
 });
 
@@ -726,8 +697,8 @@ document.getElementById('monthly-share-btn').addEventListener('click', function(
   var url = document.getElementById('monthly-share-btn').dataset.url || window.location.href;
   navigator.clipboard.writeText(url).then(function() {
     var btn = document.getElementById('monthly-share-btn');
-    btn.textContent = 'Link copied!';
-    setTimeout(function() { btn.textContent = 'Share'; }, 2000);
+    btn.textContent = 'リンクをコピーしました';
+    setTimeout(function() { btn.textContent = '共有'; }, 2000);
   });
 });
 
