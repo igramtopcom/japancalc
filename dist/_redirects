@@ -1,3 +1,7 @@
-# Bilingual site — JP pages at root, EN pages at /en/
-# Root paths now serve JP content directly.
-# No redirects needed — both JP (root) and EN (/en/) pages exist.
+# GSC + robots + sitemap
+/googlebe5b00061c51747d.html   /googlebe5b00061c51747d.html   200
+/robots.txt                    /robots.txt                    200
+/sitemap.xml                   /sitemap.xml                   200
+
+# 404 fallback
+/*    /404.html    404
