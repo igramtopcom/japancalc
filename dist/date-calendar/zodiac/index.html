@@ -157,7 +157,7 @@
 
 <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
-<nav class="site-nav" aria-label="Main navigation">
+<nav class="site-nav" aria-label="メインナビゲーション">
   <a href="/" class="nav-logo">JapanCalc</a>
 
   <ul class="nav-links" id="nav-links-menu">
@@ -193,7 +193,7 @@
   </div>
 </nav>
 
-<nav class="breadcrumb" aria-label="Breadcrumb">
+<nav class="breadcrumb" aria-label="パンくずリスト">
   <ol>
     <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
@@ -590,7 +590,7 @@ document.getElementById('copy-btn').addEventListener('click', () => {
   const kanji = document.getElementById('r-kanji').textContent;
   const year  = document.getElementById('r-year').textContent;
   const elem  = document.getElementById('r-element').textContent;
-  navigator.clipboard.writeText(`${year}: ${eng} ${kanji} \u2014 ${elem} element`)
+  navigator.clipboard.writeText(`${year}: ${eng} ${kanji} \u2014 ${elem}行`)
     .then(() => {
       const btn = document.getElementById('copy-btn');
       btn.textContent = 'コピーしました！ \u2713';

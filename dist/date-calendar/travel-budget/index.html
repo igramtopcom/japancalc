@@ -231,7 +231,7 @@
 
 <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
-<nav class="site-nav" aria-label="Main navigation">
+<nav class="site-nav" aria-label="メインナビゲーション">
   <a href="/" class="nav-logo">JapanCalc</a>
   <ul class="nav-links" id="nav-links-menu">
     <li><a href="/date-calendar/">日付・カレンダー</a></li>
@@ -254,7 +254,7 @@
   </div>
 </nav>
 
-<nav class="breadcrumb" aria-label="Breadcrumb">
+<nav class="breadcrumb" aria-label="パンくずリスト">
   <ol>
     <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
@@ -290,19 +290,19 @@
             <span class="style-icon">&#x1F392;</span>
             <span class="style-name">節約旅行</span>
             <span class="style-jp">&#x7BC0;&#x7D04;&#x65C5;&#x884C;</span>
-            <span class="style-price">~&#xA5;8,500/day</span>
+            <span class="style-price">~&#xA5;8,500/日</span>
           </button>
           <button class="style-btn active" data-style="midrange">
             <span class="style-icon">&#x1F3E8;</span>
             <span class="style-name">標準旅行</span>
             <span class="style-jp">&#x6A19;&#x6E96;&#x65C5;&#x884C;</span>
-            <span class="style-price">~&#xA5;22,000/day</span>
+            <span class="style-price">~&#xA5;22,000/日</span>
           </button>
           <button class="style-btn" data-style="luxury">
             <span class="style-icon">&#x1F3EF;</span>
             <span class="style-name">高級旅行</span>
             <span class="style-jp">&#x9AD8;&#x7D1A;&#x65C5;&#x884C;</span>
-            <span class="style-price">~&#xA5;61,000/day</span>
+            <span class="style-price">~&#xA5;61,000/日</span>
           </button>
         </div>
         <p class="style-description text-muted" id="style-desc" style="font-size:0.85rem; margin-top:0.5rem;">
@@ -720,7 +720,8 @@ document.getElementById('copy-btn').addEventListener('click', () => {
   const fx  = document.getElementById('r-total-fx').textContent;
   const days = document.getElementById('trip-days').value;
   const t    = document.getElementById('trip-travellers').value;
-  const text = '日本旅行予算: ' + jpy + ' (' + fx + ')\n' + currentStyle + ' \u00B7 ' + days + '日間 \u00B7 ' + t + '人';
+  const styleNames = { budget: '節約', midrange: '標準', luxury: '高級' };
+  const text = '日本旅行予算: ' + jpy + ' (' + fx + ')\n' + (styleNames[currentStyle] || currentStyle) + ' \u00B7 ' + days + '日間 \u00B7 ' + t + '人';
   navigator.clipboard.writeText(text).then(() => {
     const btn = document.getElementById('copy-btn');
     btn.textContent = 'コピーしました！ \u2713';

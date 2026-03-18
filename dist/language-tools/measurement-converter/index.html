@@ -244,7 +244,7 @@
 
 <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
-<nav class="site-nav" aria-label="Main navigation">
+<nav class="site-nav" aria-label="メインナビゲーション">
   <a href="/" class="nav-logo">JapanCalc</a>
   <ul class="nav-links" id="nav-links-menu">
     <li><a href="/date-calendar/">日付・カレンダー</a></li>
@@ -267,7 +267,7 @@
   </div>
 </nav>
 
-<nav class="breadcrumb" aria-label="Breadcrumb">
+<nav class="breadcrumb" aria-label="パンくずリスト">
   <ol>
     <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
@@ -876,7 +876,7 @@ function computeHeight() {
   document.getElementById('r-height-primary').textContent = r.formatted.cm;
   document.getElementById('r-height-cm').textContent      = r.formatted.cm;
   document.getElementById('r-height-ftin').textContent    = r.feetInches;
-  document.getElementById('r-height-in').textContent      = r.totalInches.toFixed(1) + ' in';
+  document.getElementById('r-height-in').textContent      = r.totalInches.toFixed(1) + ' インチ';
   document.getElementById('height-copy-btn').dataset.copy = r.formatted.cm;
   resultEl.classList.add('visible');
 

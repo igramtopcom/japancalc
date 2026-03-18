@@ -148,7 +148,7 @@
 
 <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
-<nav class="site-nav" aria-label="Main navigation">
+<nav class="site-nav" aria-label="メインナビゲーション">
   <a href="/" class="nav-logo">JapanCalc</a>
 
   <ul class="nav-links" id="nav-links-menu">
@@ -184,7 +184,7 @@
   </div>
 </nav>
 
-<nav class="breadcrumb" aria-label="Breadcrumb">
+<nav class="breadcrumb" aria-label="パンくずリスト">
   <ol>
     <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">›</span></li>
@@ -239,13 +239,13 @@
       <div class="form-group">
         <label class="form-label" for="month-input">月（任意）</label>
         <input type="number" class="form-input era-input" id="month-input"
-               min="1" max="12" placeholder="MM">
+               min="1" max="12" placeholder="月">
       </div>
 
       <div class="form-group">
         <label class="form-label" for="day-input">日（任意）</label>
         <input type="number" class="form-input era-input" id="day-input"
-               min="1" max="31" placeholder="DD">
+               min="1" max="31" placeholder="日">
       </div>
 
       <div aria-live="polite" aria-atomic="true">
@@ -495,7 +495,7 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
   btn.addEventListener('click', function() {
     var isOpen = nav.classList.toggle('nav-open');
     btn.setAttribute('aria-expanded', String(isOpen));
-    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
   });
 })();
 </script>

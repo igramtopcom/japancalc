@@ -242,7 +242,7 @@
 
 <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
-<nav class="site-nav" aria-label="Main navigation">
+<nav class="site-nav" aria-label="メインナビゲーション">
   <a href="/" class="nav-logo">JapanCalc</a>
   <ul class="nav-links" id="nav-links-menu">
     <li><a href="/date-calendar/">日付・カレンダー</a></li>
@@ -265,7 +265,7 @@
   </div>
 </nav>
 
-<nav class="breadcrumb" aria-label="Breadcrumb">
+<nav class="breadcrumb" aria-label="パンくずリスト">
   <ol>
     <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
@@ -523,7 +523,7 @@
   btn.addEventListener('click', function() {
     var isOpen = nav.classList.toggle('nav-open');
     btn.setAttribute('aria-expanded', String(isOpen));
-    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
   });
 })();
 </script>
@@ -553,8 +553,8 @@ initKuromoji()
   .then(setReady)
   .catch(err => {
     loadingBanner.innerHTML = '<span style="color:var(--color-error)">' +
-      '\u26A0 Failed to load dictionary. Please refresh and try again. ' +
-      '(' + (err.message || 'Network error') + ')' +
+      '\u26A0 辞書の読み込みに失敗しました。ページを更新してもう一度お試しください。 ' +
+      '(' + (err.message || 'ネットワークエラー') + ')' +
       '</span>';
   });
 
@@ -576,8 +576,8 @@ function run() {
   }
 
   // Stats
-  document.getElementById('stat-kanji').textContent  = htmlResult.kanjiCount + ' kanji';
-  document.getElementById('stat-tokens').textContent = htmlResult.tokenCount + ' tokens';
+  document.getElementById('stat-kanji').textContent  = htmlResult.kanjiCount + ' 漢字';
+  document.getElementById('stat-tokens').textContent = htmlResult.tokenCount + ' トークン';
 
   // Show correct output section based on format
   const previewEl  = document.getElementById('furigana-preview');

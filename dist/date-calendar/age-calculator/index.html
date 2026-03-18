@@ -141,7 +141,7 @@
 
 <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
-<nav class="site-nav" aria-label="Main navigation">
+<nav class="site-nav" aria-label="メインナビゲーション">
   <a href="/" class="nav-logo">JapanCalc</a>
 
   <ul class="nav-links" id="nav-links-menu">
@@ -177,7 +177,7 @@
   </div>
 </nav>
 
-<nav class="breadcrumb" aria-label="Breadcrumb">
+<nav class="breadcrumb" aria-label="パンくずリスト">
   <ol>
     <li><a href="/">ホーム</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
@@ -446,7 +446,7 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
   btn.addEventListener('click', function() {
     var isOpen = nav.classList.toggle('nav-open');
     btn.setAttribute('aria-expanded', String(isOpen));
-    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
   });
 })();
 </script>
@@ -488,7 +488,9 @@ function compute() {
   document.getElementById('r-kazoedoshi').textContent    = `数え年 ${result.kazoedoshi}歳`;
   document.getElementById('r-breakdown').textContent     = `${result.years}年${result.months}ヶ月${result.days}日`;
   document.getElementById('r-birthera').textContent      = result.birthEra;
-  document.getElementById('r-bornonday').textContent     = `${result.birthDayOfWeek}, ${result.dobFormatted}`;
+  const dayNameMap = { Sunday: '日曜日', Monday: '月曜日', Tuesday: '火曜日', Wednesday: '水曜日', Thursday: '木曜日', Friday: '金曜日', Saturday: '土曜日' };
+  const jpDayName = dayNameMap[result.birthDayOfWeek] || result.birthDayOfWeek;
+  document.getElementById('r-bornonday').textContent     = `${jpDayName}, ${result.dobFormatted}`;
   document.getElementById('r-nextbirthday').textContent  =
     `${result.nextBirthdayFormatted} (あと${result.daysUntilBirthday}日)`;
 
