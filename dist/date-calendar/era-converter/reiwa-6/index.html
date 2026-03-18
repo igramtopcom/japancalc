@@ -148,21 +148,16 @@
     <li><a href="/tax-finance/">税金・財務</a></li>
     <li><a href="/language-tools/">言語ツール</a></li>
 
-    <li class="mobile-lang-section">
-      <hr style="border-color: rgba(255,255,255,0.2); margin: 0.75rem 0;">
-      <a id="lang-toggle-mobile" href="/en/date-calendar/era-converter/reiwa-6/" class="lang-toggle lang-toggle-mobile"
-         lang="en" title="View this page in English">
-        🌐 English
-      </a>
-    </li>
   </ul>
 
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <a id="lang-toggle" href="/en/date-calendar/era-converter/reiwa-6/" class="lang-toggle" lang="en"
-       title="View this page in English"
-       aria-label="Switch to English">
-      English
-    </a>
+    <div class="lang-switcher" role="navigation" aria-label="言語切替">
+      <span class="lang-option lang-active" aria-current="true">JP</span>
+      <span class="lang-sep">·</span>
+      <a class="lang-option lang-inactive" id="lang-toggle"
+         href="/en/date-calendar/era-converter/reiwa-6/" lang="en" title="View in English"
+         aria-label="Switch to English">EN</a>
+    </div>
     <button class="nav-hamburger"
             aria-label="メニューを開く"
             aria-expanded="false"
@@ -552,29 +547,20 @@ document.addEventListener('DOMContentLoaded', () => {
 // T-52: Language toggle — dynamically set JP URL from current /en/ path
 (function() {
   var toggle = document.getElementById('lang-toggle');
-  var toggleMobile = document.getElementById('lang-toggle-mobile');
   if (!toggle) return;
   var path = window.location.pathname;
   if (path.indexOf('/en') === 0) {
     var jpPath = path.replace(/^\/en/, '') || '/';
     toggle.href = jpPath;
-    toggle.textContent = '日本語';
+    toggle.textContent = 'JP';
     toggle.setAttribute('lang', 'ja');
-    toggle.setAttribute('title', 'このページを日本語で表示');
-    if (toggleMobile) {
-      toggleMobile.href = jpPath;
-      toggleMobile.textContent = '🌐 日本語';
-    }
+    toggle.setAttribute('title', '日本語で表示');
   } else {
     var enPath = '/en' + path;
     toggle.href = enPath;
-    toggle.textContent = 'English';
+    toggle.textContent = 'EN';
     toggle.setAttribute('lang', 'en');
-    toggle.setAttribute('title', 'View this page in English');
-    if (toggleMobile) {
-      toggleMobile.href = enPath;
-      toggleMobile.textContent = '🌐 English';
-    }
+    toggle.setAttribute('title', 'View in English');
   }
 })();
 </script>

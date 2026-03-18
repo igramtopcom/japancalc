@@ -176,49 +176,43 @@ nav.site-nav {
   color: white;
 }
 
-.nav-lang-toggle,
-.lang-toggle {
-  display: inline-flex;
+/* Language switcher */
+.lang-switcher {
+  display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: white;
-  padding: 0.3rem 0.75rem;
-  border-radius: 99px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background 0.15s;
-  white-space: nowrap;
+  gap: 0.35rem;
 }
 
-.nav-lang-toggle:hover,
-.lang-toggle:hover {
-  background: rgba(255, 255, 255, 0.25);
-  color: white;
-}
-
-.lang-toggle-mobile {
-  display: block;
-  padding: 0.6rem 1rem;
-  font-size: 0.9rem;
+.lang-option {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   color: white;
   text-decoration: none;
-  border: none;
-  background: none;
+  padding: 0.2rem 0;
+  line-height: 1;
+  transition: opacity 0.15s;
 }
 
-.lang-toggle-mobile:hover {
-  background: rgba(255, 255, 255, 0.1);
+.lang-active {
+  opacity: 1;
+  cursor: default;
+  pointer-events: none;
 }
 
-.mobile-lang-section {
-  display: none;
+.lang-inactive {
+  opacity: 0.45;
 }
 
-nav.site-nav.nav-open .mobile-lang-section {
-  display: block;
+.lang-inactive:hover {
+  opacity: 0.85;
+}
+
+.lang-sep {
+  color: white;
+  opacity: 0.3;
+  font-size: 0.75rem;
+  user-select: none;
 }
 
 .breadcrumb {
@@ -276,6 +270,14 @@ nav.site-nav.nav-open .mobile-lang-section {
 
   .nav-hamburger {
     display: block;
+  }
+
+  .lang-switcher {
+    margin-right: 0.75rem;
+  }
+
+  .lang-option {
+    font-size: 0.75rem;
   }
 
   .nav-mobile-menu[aria-hidden="false"] {
