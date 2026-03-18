@@ -6,9 +6,7 @@
   <title>年齢計算ツール: 満年齢・数え年 | JapanCalc</title>
   <meta name="description" content="生年月日から満年齢・数え年を瞬時に計算。生まれた元号や干支も表示。無料の年齢計算ツール。">
   <link rel="canonical" href="https://japancalc.com/date-calendar/age-calculator/">
-  
   <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/date-calendar/age-calculator/">
-  
   <link rel="alternate" hreflang="ja"        href="https://japancalc.com/date-calendar/age-calculator/">
   <link rel="alternate" hreflang="x-default" href="https://japancalc.com/date-calendar/age-calculator/">
   <meta property="og:title"       content="年齢計算ツール: 満年齢・数え年 | JapanCalc">
@@ -153,7 +151,7 @@
 
     <li class="mobile-lang-section">
       <hr style="border-color: rgba(255,255,255,0.2); margin: 0.75rem 0;">
-      <a id="lang-toggle-mobile" href="/en/date-calendar/age-calculator/" class="lang-toggle lang-toggle-mobile"
+      <a id="lang-toggle-mobile" href="/" class="lang-toggle lang-toggle-mobile"
          lang="en" title="View this page in English">
         🌐 English
       </a>
@@ -161,9 +159,9 @@
   </ul>
 
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <a id="lang-toggle" href="/en/date-calendar/age-calculator/" class="lang-toggle" lang="ja"
-       title="このページを日本語で表示"
-       aria-label="Switch to Japanese">
+    <a id="lang-toggle" href="/" class="lang-toggle" lang="en"
+       title="View this page in English"
+       aria-label="Switch to English">
       日本語
     </a>
     <button class="nav-hamburger"
@@ -185,7 +183,7 @@
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
     <li><a href="/date-calendar/">日付・カレンダー</a></li>
     <li><span class="breadcrumb-sep">&#x203A;</span></li>
-    <li aria-current="page">年齢計算ツール</li>
+    <li aria-current="page">Japanese Age Calculator</li>
   </ol>
 </nav>
 
@@ -203,74 +201,72 @@
   <main class="content" id="main-content">
 
     <!-- Page Header -->
-    <h1>Japanese Age Calculator &#x2014; 年齢計算</h1>
-    <p class="tool-subtitle">満年齢・数え年計算ツール &#x2014; 満年齢・数え年を計算</p>
+    <h1>年齢計算ツール — 満年齢・数え年</h1>
+    <p class="tool-subtitle">満年齢・数え年計算ツール &#x2014; Calculate 満年齢 and 数え年</p>
     <p class="tool-desc">
-      満年齢・数え年を計算 (満年齢) &#x2014; the official age used on all Japanese
-      government forms and documents. Also shows traditional counting age (数え年),
-      your birth era, and days until your next birthday. 無料、ログイン不要。
+      生年月日から満年齢（公式の年齢）と数え年（伝統的な年齢）を計算。生まれた元号や次の誕生日までの日数も表示。無料、ログイン不要。
     </p>
 
     <!-- TOOL INTERFACE -->
     <div class="tool-box" id="tool-main">
       <div class="form-group">
-        <label class="form-label" for="dob-input">Date of Birth (生年月日)</label>
+        <label class="form-label" for="dob-input">生年月日</label>
         <input type="date" class="form-input" id="dob-input"
                min="1868-01-25"
                aria-describedby="dob-hint">
         <span id="dob-hint" class="text-muted" style="font-size:0.8rem;">
-          Enter your date of birth to calculate your Japanese age
+          生年月日を入力してください
         </span>
         <div class="form-error" id="dob-error"></div>
       </div>
 
       <div class="btn-row">
-        <button class="btn btn-primary" id="calculate-btn">年齢を計算する</button>
+        <button class="btn btn-primary" id="calculate-btn">Calculate Age</button>
       </div>
 
       <div aria-live="polite" aria-atomic="true">
         <div class="result-box" id="result-box">
-          <div class="birthday-banner" id="birthday-banner" style="display:none;">&#x1F389; Happy Birthday! お誕生日おめでとうございます！</div>
+          <div class="birthday-banner" id="birthday-banner" style="display:none;">&#x1F389; お誕生日おめでとうございます！</div>
           <div class="result-primary" id="r-primary"></div>
           <p class="text-muted" id="r-description" style="margin:0.25rem 0 1rem;"></p>
           <div class="result-grid">
-            <div><span class="result-item-label">満年齢 (Official)</span><br><span class="result-item-value" id="r-mannenrei"></span></div>
-            <div><span class="result-item-label">数え年 (Traditional)</span><br><span class="result-item-value" id="r-kazoedoshi"></span></div>
-            <div><span class="result-item-label">Age Breakdown</span><br><span class="result-item-value" id="r-breakdown"></span></div>
-            <div><span class="result-item-label">Birth Era</span><br><span class="result-item-value" id="r-birthera"></span></div>
-            <div><span class="result-item-label">Born on</span><br><span class="result-item-value" id="r-bornonday"></span></div>
-            <div><span class="result-item-label">Next Birthday</span><br><span class="result-item-value" id="r-nextbirthday"></span></div>
+            <div><span class="result-item-label">満年齢</span><br><span class="result-item-value" id="r-mannenrei"></span></div>
+            <div><span class="result-item-label">数え年</span><br><span class="result-item-value" id="r-kazoedoshi"></span></div>
+            <div><span class="result-item-label">年齢詳細</span><br><span class="result-item-value" id="r-breakdown"></span></div>
+            <div><span class="result-item-label">生まれた元号</span><br><span class="result-item-value" id="r-birthera"></span></div>
+            <div><span class="result-item-label">生年月日</span><br><span class="result-item-value" id="r-bornonday"></span></div>
+            <div><span class="result-item-label">次の誕生日</span><br><span class="result-item-value" id="r-nextbirthday"></span></div>
           </div>
           <div class="btn-row">
-            <button class="btn btn-secondary" id="copy-btn">Copy</button>
-            <button class="btn btn-secondary" id="share-btn">Share</button>
+            <button class="btn btn-secondary" id="copy-btn">コピー</button>
+            <button class="btn btn-secondary" id="share-btn">共有</button>
           </div>
         </div>
       </div>
     </div><!-- /tool-box -->
 
     <!-- Quick Reference Table -->
-    <h2>Japanese Age Milestones (年齢の節目)</h2>
+    <h2>年齢の節目一覧</h2>
     <div class="quick-ref">
       <table>
         <thead>
           <tr>
-            <th>Age</th>
+            <th>年齢</th>
             <th>Japanese</th>
-            <th>Reading</th>
-            <th>Meaning</th>
+            <th>読み方</th>
+            <th>意味</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>20</td><td>成人</td><td>seijin</td><td>Coming of age &#x2014; adult in Japan</td></tr>
-          <tr><td>60</td><td>還暦</td><td>kanreki</td><td>Full zodiac cycle complete</td></tr>
-          <tr><td>70</td><td>古稀</td><td>koki</td><td>Rare to reach 70 (from Chinese poetry)</td></tr>
-          <tr><td>77</td><td>喜寿</td><td>kiju</td><td>Joy of 77</td></tr>
-          <tr><td>80</td><td>傘寿</td><td>sanju</td><td>80th year</td></tr>
-          <tr><td>88</td><td>米寿</td><td>beiju</td><td>Rice celebration</td></tr>
-          <tr><td>90</td><td>卒寿</td><td>sotsuju</td><td>Graduation age</td></tr>
-          <tr><td>99</td><td>白寿</td><td>hakuju</td><td>White longevity</td></tr>
-          <tr><td>100</td><td>百寿</td><td>hyakuju</td><td>100 years</td></tr>
+          <tr><td>20</td><td>成人</td><td>seijin</td><td>成人式 — 大人</td></tr>
+          <tr><td>60</td><td>還暦</td><td>kanreki</td><td>干支一周</td></tr>
+          <tr><td>70</td><td>古稀</td><td>koki</td><td>「古来稀なり」70歳</td></tr>
+          <tr><td>77</td><td>喜寿</td><td>kiju</td><td>77歳のお祝い</td></tr>
+          <tr><td>80</td><td>傘寿</td><td>sanju</td><td>80歳のお祝い</td></tr>
+          <tr><td>88</td><td>米寿</td><td>beiju</td><td>米の字にちなむ</td></tr>
+          <tr><td>90</td><td>卒寿</td><td>sotsuju</td><td>卒の字にちなむ</td></tr>
+          <tr><td>99</td><td>白寿</td><td>hakuju</td><td>百から一を引くと白</td></tr>
+          <tr><td>100</td><td>百寿</td><td>hyakuju</td><td>100歳のお祝い</td></tr>
         </tbody>
       </table>
     </div>
@@ -286,7 +282,7 @@
 
     <!-- SEO Content -->
     <article class="seo-content">
-      <h2>How to Calculate Japanese Age (満年齢の計算方法)</h2>
+      <h2>満年齢の計算方法</h2>
       <p>
         The Japanese age calculator uses your date of birth to compute your
         current 満年齢 (man-nenrei) &#x2014; the official Japanese age used on all
@@ -302,7 +298,7 @@
         in traditional ceremonies, Buddhist rituals, and some regional customs.
       </p>
 
-      <h2>Understanding Your Japanese Birth Era (生まれた元号)</h2>
+      <h2>生まれた元号について</h2>
       <p>
         Japan counts years using both the Western calendar and the imperial
         era system (元号, geng&#x14D;). The calculator shows which era you were
@@ -329,7 +325,7 @@
     <!-- FAQ Section -->
     <section class="faq" id="faq-section"
       itemscope itemtype="https://schema.org/FAQPage">
-      <h2>Frequently Asked Questions</h2>
+      <h2>よくある質問</h2>
       <ul class="faq-list">
 
         <li class="faq-item" itemscope itemprop="mainEntity"
@@ -427,12 +423,12 @@
       <div class="cards-grid">
         <a href="/date-calendar/era-converter/" class="tool-card">
           <div class="tool-card-icon">&#x1F4C5;</div>
-          <div class="tool-card-name">Era Date Converter</div>
+          <div class="tool-card-name">和暦・西暦変換</div>
           <div class="tool-card-jp">和暦 西暦 変換</div>
         </a>
         <a href="/date-calendar/zodiac/" class="tool-card">
           <div class="tool-card-icon">&#x1F409;</div>
-          <div class="tool-card-name">Japanese Zodiac Calculator</div>
+          <div class="tool-card-name">干支計算</div>
           <div class="tool-card-jp">干支 計算</div>
         </a>
         <a href="/tax-finance/consumption-tax/" class="tool-card">
@@ -473,7 +469,7 @@
     <p class="footer-copy">
       &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
     </p>
-    <p class="footer-attribution">Age calculation per Japanese law (1902). Era data from Japan Cabinet Office. Last updated: March 2025</p>
+    <p class="footer-attribution">Age calculation per Japanese law (1902). Era data from Japan Cabinet Office. 最終更新: 2025年3月</p>
   </div>
 </footer>
 
@@ -525,7 +521,7 @@ function compute() {
   }
 
   // Populate result fields
-  document.getElementById('r-primary').textContent       = `${result.manNenrei} 歳`;
+  document.getElementById('r-primary').textContent       = `${result.manNenrei} years old`;
   document.getElementById('r-description').textContent   = getAgeDescription(result.manNenrei);
   document.getElementById('r-mannenrei').textContent     = `${result.manNenrei} years`;
   document.getElementById('r-kazoedoshi').textContent    = `${result.kazoedoshi} years`;
@@ -551,7 +547,7 @@ function compute() {
   document.getElementById('share-btn').dataset.url = url.toString();
 
   if (typeof gtag !== 'undefined')
-    gtag('event', 'tool_used', { tool_name: 'age_calculator', language: 'en' });
+    gtag('event', 'tool_used', { tool_name: 'age_calculator', language: 'ja' });
 }
 
 // Event listeners
@@ -612,6 +608,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+
 
 <script>
 // T-52: Language toggle — dynamically set JP URL from current /en/ path

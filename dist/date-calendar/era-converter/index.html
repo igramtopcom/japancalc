@@ -172,9 +172,9 @@
   </ul>
 
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <a id="lang-toggle" href="/en/date-calendar/era-converter/" class="lang-toggle" lang="ja"
-       title="このページを日本語で表示"
-       aria-label="Switch to Japanese">
+    <a id="lang-toggle" href="/en/date-calendar/era-converter/" class="lang-toggle" lang="en"
+       title="View this page in English"
+       aria-label="Switch to English">
       日本語
     </a>
     <button class="nav-hamburger"
@@ -196,7 +196,7 @@
     <li><span class="breadcrumb-sep">›</span></li>
     <li><a href="/date-calendar/">日付・カレンダー</a></li>
     <li><span class="breadcrumb-sep">›</span></li>
-    <li aria-current="page">Era Date Converter</li>
+    <li aria-current="page">和暦・西暦変換</li>
   </ol>
 </nav>
 
@@ -219,9 +219,7 @@
     <h1>和暦・西暦変換ツール</h1>
     <p class="tool-subtitle">和暦・西暦変換ツール — 令和・平成・昭和などの和暦を西暦に瞬時に変換</p>
     <p class="tool-desc">
-      Instantly convert between Japanese era years (和暦) and the Western
-      Gregorian calendar. Supports Reiwa (令和), Heisei (平成), Showa (昭和),
-      Taisho (大正), and Meiji (明治). 無料、ログイン不要。
+      和暦（令和・平成・昭和・大正・明治）と西暦を瞬時に相互変換。無料、ログイン不要。
     </p>
 
     <!-- TOOL INTERFACE -->
@@ -247,22 +245,22 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="tab1-year">Era 年</label>
-          <input type="text" class="form-input" id="tab1-year" placeholder="e.g. 7 or 元" inputmode="numeric">
+          <label class="form-label" for="tab1-year">年</label>
+          <input type="text" class="form-input" id="tab1-year" placeholder="例: 7 または 元" inputmode="numeric">
         </div>
 
         <div class="form-group">
           <label class="form-label" for="tab1-month">月（任意）</label>
-          <input type="number" class="form-input" id="tab1-month" min="1" max="12" placeholder="MM (optional)">
+          <input type="number" class="form-input" id="tab1-month" min="1" max="12" placeholder="MM（任意）">
         </div>
 
         <div class="form-group">
           <label class="form-label" for="tab1-day">日（任意）</label>
-          <input type="number" class="form-input" id="tab1-day" min="1" max="31" placeholder="DD (optional)">
+          <input type="number" class="form-input" id="tab1-day" min="1" max="31" placeholder="DD（任意）">
         </div>
 
         <div class="btn-row">
-          <button class="btn btn-primary" id="tab1-convert">Convert</button>
+          <button class="btn btn-primary" id="tab1-convert">変換</button>
         </div>
 
         <div aria-live="polite" aria-atomic="true">
@@ -274,21 +272,21 @@
       <div class="tool-panel" role="tabpanel" id="panel-greg-to-era" aria-labelledby="tab-greg-to-era">
         <div class="form-group">
           <label class="form-label" for="tab2-year">西暦（年）</label>
-          <input type="number" class="form-input" id="tab2-year" min="1868" max="2099" placeholder="e.g. 2025">
+          <input type="number" class="form-input" id="tab2-year" min="1868" max="2099" placeholder="例: 2025">
         </div>
 
         <div class="form-group">
           <label class="form-label" for="tab2-month">月（任意）</label>
-          <input type="number" class="form-input" id="tab2-month" min="1" max="12" placeholder="MM (optional)">
+          <input type="number" class="form-input" id="tab2-month" min="1" max="12" placeholder="MM（任意）">
         </div>
 
         <div class="form-group">
           <label class="form-label" for="tab2-day">日（任意）</label>
-          <input type="number" class="form-input" id="tab2-day" min="1" max="31" placeholder="DD (optional)">
+          <input type="number" class="form-input" id="tab2-day" min="1" max="31" placeholder="DD（任意）">
         </div>
 
         <div class="btn-row">
-          <button class="btn btn-primary" id="tab2-convert">Convert</button>
+          <button class="btn btn-primary" id="tab2-convert">変換</button>
         </div>
 
         <div aria-live="polite" aria-atomic="true">
@@ -303,14 +301,14 @@
             <thead>
               <tr>
                 <th>元号</th>
-                <th>Romaji</th>
-                <th>Start</th>
-                <th>End</th>
-                <th>Years</th>
+                <th>ローマ字</th>
+                <th>開始年</th>
+                <th>終了年</th>
+                <th>年数</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>令和</td><td>Reiwa</td><td>2019</td><td>Present</td><td>1–</td></tr>
+              <tr><td>令和</td><td>Reiwa</td><td>2019</td><td>現在</td><td>1–</td></tr>
               <tr><td>平成</td><td>Heisei</td><td>1989</td><td>2019</td><td>1–31</td></tr>
               <tr><td>昭和</td><td>Showa</td><td>1926</td><td>1989</td><td>1–64</td></tr>
               <tr><td>大正</td><td>Taisho</td><td>1912</td><td>1926</td><td>1–15</td></tr>
@@ -319,12 +317,12 @@
           </table>
         </div>
         <div class="tool-desc" style="margin-top:1rem;">
-          <strong>Conversion formulas:</strong><br>
-          Reiwa year + 2018 = Western year<br>
-          Heisei year + 1988 = Western year<br>
-          Showa year + 1925 = Western year<br>
-          Taisho year + 1911 = Western year<br>
-          Meiji year + 1867 = Western year
+          <strong>変換公式:</strong><br>
+          令和年 + 2018 = 西暦年<br>
+          平成年 + 1988 = 西暦年<br>
+          昭和年 + 1925 = 西暦年<br>
+          大正年 + 1911 = 西暦年<br>
+          明治年 + 1867 = 西暦年
         </div>
       </div>
 
@@ -336,13 +334,13 @@
       <table>
         <thead>
           <tr>
-            <th>Reiwa (令和)</th>
-            <th>Western Year</th>
-            <th>Notes</th>
+            <th>令和</th>
+            <th>西暦</th>
+            <th>備考</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>令和1年 (元年)</td><td>2019</td><td>Era started May 1</td></tr>
+          <tr><td>令和1年 (元年)</td><td>2019</td><td>元号開始 5月1日</td></tr>
           <tr><td>令和2年</td><td>2020</td><td></td></tr>
           <tr><td>令和3年</td><td>2021</td><td></td></tr>
           <tr><td>令和4年</td><td>2022</td><td></td></tr>
@@ -365,7 +363,7 @@
           var row  = td.closest('tr');
           var note = row ? row.querySelector('td:last-child') : null;
           if (note) {
-            note.textContent = 'Current year';
+            note.textContent = '今年';
             row.style.fontWeight = '600';
           }
         }
@@ -386,23 +384,15 @@
 
     <!-- SEO Content Placeholder -->
     <article class="seo-content" id="seo-content">
-      <h2>How to Use the Japanese Era Date Converter</h2>
+      <h2>和暦・西暦変換ツールの使い方</h2>
       <p>
-        The Japanese era date converter lets you switch between the traditional
-        Japanese calendar system (和暦, <em>wareki</em>) and the Western Gregorian
-        calendar in seconds. To convert an era year to a Western year, select the
-        era name from the dropdown — Reiwa (令和), Heisei (平成), Showa (昭和),
-        Taisho (大正), or Meiji (明治) — then enter the era year number. The result
-        appears instantly, with the full Japanese notation and English equivalent.
+        和暦・西暦変換ツールでは、日本の元号（和暦）と西暦を瞬時に相互変換できます。元号を選択し、年数を入力するだけで西暦への変換結果が表示されます。令和・平成・昭和・大正・明治に対応しています。
       </p>
       <p>
-        To go the other direction, use the <strong>西暦→和暦</strong> tab.
-        Enter a Western year (and optionally a month and day) to find the
-        corresponding Japanese era year. For dates in transition years like 2019
-        or 1989, entering the month and day ensures you get the correct era.
+        逆方向の変換は「西暦→和暦」タブを使ってください。西暦年（および任意で月日）を入力すると、対応する和暦が表示されます。2019年や1989年のような元号切り替わり年は、月日も入力すると正確な結果が得られます。
       </p>
 
-      <h2>Why Japan Uses the Era Calendar System (元号)</h2>
+      <h2>日本の元号制度について</h2>
       <p>
         Japan's era system, known as <em>gengō</em> (元号), has been in use for
         over 1,300 years. Each era is named at the start of a new emperor's reign
@@ -517,12 +507,12 @@
         </a>
         <a href="/date-calendar/age-calculator/" class="tool-card">
           <div class="tool-card-icon">&#x1F382;</div>
-          <div class="tool-card-name">Japanese Age Calculator</div>
+          <div class="tool-card-name">年齢計算</div>
           <div class="tool-card-jp">年齢計算</div>
         </a>
         <a href="/date-calendar/zodiac/" class="tool-card">
           <div class="tool-card-icon">&#x1F409;</div>
-          <div class="tool-card-name">Japanese Zodiac Calculator</div>
+          <div class="tool-card-name">干支計算</div>
           <div class="tool-card-jp">干支 計算</div>
         </a>
         <a href="/date-calendar/" class="tool-card">
@@ -561,10 +551,9 @@
       &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
     </p>
     <p class="footer-attribution">
-      Date data sourced from Japan Cabinet Office.
-      Tax rates from National Tax Agency Japan.
+      日付データ: 内閣府。税率: 国税庁。
     </p>
-    <p class="footer-attribution">Last updated: March 2025</p>
+    <p class="footer-attribution">最終更新: 2025年3月</p>
   </div>
 </footer>
 
@@ -677,8 +666,8 @@ function computeTab1() {
   }
   html += '</div>';
   html += '<div class="btn-row">';
-  html += '<button class="btn btn-secondary" id="tab1-copy">Copy</button>';
-  html += '<button class="btn btn-secondary" id="tab1-share">Share</button>';
+  html += '<button class="btn btn-secondary" id="tab1-copy">コピー</button>';
+  html += '<button class="btn btn-secondary" id="tab1-share">共有</button>';
   html += '</div>';
 
   t1Result.classList.remove('hidden');
@@ -753,8 +742,8 @@ function computeTab2() {
     }
     html += '</div>';
     html += '<div class="btn-row">';
-    html += '<button class="btn btn-secondary" id="tab2-copy">Copy</button>';
-    html += '<button class="btn btn-secondary" id="tab2-share">Share</button>';
+    html += '<button class="btn btn-secondary" id="tab2-copy">コピー</button>';
+    html += '<button class="btn btn-secondary" id="tab2-share">共有</button>';
     html += '</div>';
   }
 

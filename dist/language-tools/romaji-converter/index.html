@@ -211,9 +211,9 @@
     <li><a href="/language-tools/">言語ツール</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <a id="lang-toggle" href="/en/language-tools/romaji-converter/" class="lang-toggle" lang="ja"
-       title="このページを日本語で表示"
-       aria-label="Switch to Japanese">
+    <a id="lang-toggle" href="/en/language-tools/romaji-converter/" class="lang-toggle" lang="en"
+       title="View this page in English"
+       aria-label="Switch to English">
       日本語
     </a>
     <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
@@ -269,11 +269,11 @@
           </label>
           <textarea class="form-input romaji-textarea" id="jp-input"
                     rows="4"
-                    placeholder="Type or paste Japanese text here...
+                    placeholder="日本語テキストを入力または貼り付け...
 e.g. &#x304A;&#x306F;&#x3088;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;"
                     aria-describedby="jp-hint"></textarea>
           <span id="jp-hint" class="text-muted" style="font-size:0.8rem;">
-            Supports hiragana and katakana. Kanji will be passed through unchanged.
+            ひらがな・カタカナに対応。漢字はそのまま出力されます。
           </span>
         </div>
 
@@ -286,17 +286,17 @@ e.g. &#x304A;&#x306F;&#x3088;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;"
             <input type="checkbox" id="opt-uppercase"> すべて大文字
           </label>
           <div class="passthrough-group">
-            <label class="form-label" style="margin-bottom:0.3rem;">Kanji handling:</label>
+            <label class="form-label" style="margin-bottom:0.3rem;">漢字の処理:</label>
             <select class="form-select" id="opt-passthrough" style="height:36px; font-size:0.875rem;">
               <option value="keep">そのまま</option>
-              <option value="bracket">Show in [brackets]</option>
+              <option value="bracket">括弧で表示</option>
               <option value="remove">削除</option>
             </select>
           </div>
         </div>
 
         <div class="result-box" id="romaji-result">
-          <div class="romaji-output-label">Romaji Output:</div>
+          <div class="romaji-output-label">ローマ字変換結果:</div>
           <div class="romaji-output" id="romaji-output"></div>
 
           <!-- Script detection badges -->
@@ -309,7 +309,7 @@ e.g. &#x304A;&#x306F;&#x3088;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;"
           </div>
 
           <div class="btn-row">
-            <button class="btn btn-secondary" id="romaji-copy-btn">Copy</button>
+            <button class="btn btn-secondary" id="romaji-copy-btn">コピー</button>
             <button class="btn btn-secondary" id="romaji-clear-btn">クリア</button>
           </div>
         </div>
@@ -326,7 +326,7 @@ e.g. &#x304A;&#x306F;&#x3088;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;"
             <textarea class="form-input romaji-textarea" id="hira-input"
                       rows="3" placeholder="&#x3072;&#x3089;&#x304C;&#x306A;"></textarea>
             <div class="result-box visible" id="kata-output-box" style="margin-top:0.75rem;">
-              <div class="romaji-output-label">Katakana:</div>
+              <div class="romaji-output-label">カタカナ:</div>
               <div class="romaji-output" id="kata-output"></div>
             </div>
           </div>
@@ -339,7 +339,7 @@ e.g. &#x304A;&#x306F;&#x3088;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;"
             <textarea class="form-input romaji-textarea" id="kata-input"
                       rows="3" placeholder="&#x30AB;&#x30BF;&#x30AB;&#x30CA;"></textarea>
             <div class="result-box visible" id="hira-output-box" style="margin-top:0.75rem;">
-              <div class="romaji-output-label">Hiragana:</div>
+              <div class="romaji-output-label">ひらがな:</div>
               <div class="romaji-output" id="hira-output"></div>
             </div>
           </div>
@@ -352,10 +352,10 @@ e.g. &#x304A;&#x306F;&#x3088;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;"
       <h2>ヘボン式ローマ字 一覧 (&#x30D8;&#x30DC;&#x30F3;&#x5F0F;&#x30ED;&#x30FC;&#x30DE;&#x5B57; &#x4E00;&#x89A7;)</h2>
       <table>
         <thead>
-          <tr><th>Hiragana</th><th>Romaji</th><th>Katakana</th><th>Romaji</th><th>Note</th></tr>
+          <tr><th>ひらがな</th><th>ローマ字</th><th>カタカナ</th><th>ローマ字</th><th>備考</th></tr>
         </thead>
         <tbody>
-          <tr><td>&#x3042; &#x3044; &#x3046; &#x3048; &#x304A;</td><td>a i u e o</td><td>&#x30A2; &#x30A4; &#x30A6; &#x30A8; &#x30AA;</td><td>a i u e o</td><td>Vowels</td></tr>
+          <tr><td>&#x3042; &#x3044; &#x3046; &#x3048; &#x304A;</td><td>a i u e o</td><td>&#x30A2; &#x30A4; &#x30A6; &#x30A8; &#x30AA;</td><td>a i u e o</td><td>母音</td></tr>
           <tr><td>&#x304B; &#x304D; &#x304F; &#x3051; &#x3053;</td><td>ka ki ku ke ko</td><td>&#x30AB; &#x30AD; &#x30AF; &#x30B1; &#x30B3;</td><td>ka ki ku ke ko</td><td></td></tr>
           <tr><td>&#x3055; &#x3057; &#x3059; &#x305B; &#x305D;</td><td>sa <strong>shi</strong> su se so</td><td>&#x30B5; &#x30B7; &#x30B9; &#x30BB; &#x30BD;</td><td>sa <strong>shi</strong> su se so</td><td>&#x3057;=shi</td></tr>
           <tr><td>&#x305F; &#x3061; &#x3064; &#x3066; &#x3068;</td><td>ta <strong>chi</strong> <strong>tsu</strong> te to</td><td>&#x30BF; &#x30C1; &#x30C4; &#x30C6; &#x30C8;</td><td>ta <strong>chi</strong> <strong>tsu</strong> te to</td><td>&#x3061;=chi, &#x3064;=tsu</td></tr>
@@ -363,9 +363,9 @@ e.g. &#x304A;&#x306F;&#x3088;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;"
           <tr><td>&#x306F; &#x3072; &#x3075; &#x3078; &#x307B;</td><td>ha hi <strong>fu</strong> he ho</td><td>&#x30CF; &#x30D2; &#x30D5; &#x30D8; &#x30DB;</td><td>ha hi <strong>fu</strong> he ho</td><td>&#x3075;=fu</td></tr>
           <tr><td>&#x307E; &#x307F; &#x3080; &#x3081; &#x3082;</td><td>ma mi mu me mo</td><td>&#x30DE; &#x30DF; &#x30E0; &#x30E1; &#x30E2;</td><td>ma mi mu me mo</td><td></td></tr>
           <tr><td>&#x3089; &#x308A; &#x308B; &#x308C; &#x308D;</td><td>ra ri ru re ro</td><td>&#x30E9; &#x30EA; &#x30EB; &#x30EC; &#x30ED;</td><td>ra ri ru re ro</td><td></td></tr>
-          <tr><td>&#x304D;&#x3083; &#x304D;&#x3085; &#x304D;&#x3087;</td><td>kya kyu kyo</td><td>&#x3057;&#x3083; &#x3057;&#x3085; &#x3057;&#x3087;</td><td>sha shu sho</td><td>Digraphs</td></tr>
+          <tr><td>&#x304D;&#x3083; &#x304D;&#x3085; &#x304D;&#x3087;</td><td>kya kyu kyo</td><td>&#x3057;&#x3083; &#x3057;&#x3085; &#x3057;&#x3087;</td><td>sha shu sho</td><td>拗音</td></tr>
           <tr><td>&#x3061;&#x3083; &#x3061;&#x3085; &#x3061;&#x3087;</td><td>cha chu cho</td><td>&#x306B;&#x3083; &#x306B;&#x3085; &#x306B;&#x3087;</td><td>nya nyu nyo</td><td></td></tr>
-          <tr><td>&#x3063;</td><td>doubles next</td><td>&#x3093;</td><td>n (n&#x2019; before vowel)</td><td>Special</td></tr>
+          <tr><td>&#x3063;</td><td>doubles next</td><td>&#x3093;</td><td>n (n&#x2019; before vowel)</td><td>特殊</td></tr>
         </tbody>
       </table>
     </div>
@@ -417,7 +417,7 @@ e.g. &#x304A;&#x306F;&#x3088;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;"
     </article>
 
     <section class="faq-section">
-      <h2>Frequently Asked Questions</h2>
+      <h2>よくある質問</h2>
 
       <details class="faq-item">
         <summary>What is romaji?</summary>
@@ -492,7 +492,7 @@ e.g. &#x304A;&#x306F;&#x3088;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;"
       <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
-    <p class="footer-attribution">Romanization based on Hepburn system (&#x30D8;&#x30DC;&#x30F3;&#x5F0F;). Last updated: March 2025</p>
+    <p class="footer-attribution">Romanization based on Hepburn system (&#x30D8;&#x30DC;&#x30F3;&#x5F0F;). 最終更新: 2025年3月</p>
   </div>
 </footer>
 
@@ -557,7 +557,7 @@ function runRomaji() {
     result.hasKanji ? 'block' : 'none';
 
   if (typeof gtag !== 'undefined')
-    gtag('event', 'tool_used', { tool_name: 'romaji_converter', language: 'en' });
+    gtag('event', 'tool_used', { tool_name: 'romaji_converter', language: 'ja' });
 }
 
 document.getElementById('jp-input').addEventListener('input', runRomaji);

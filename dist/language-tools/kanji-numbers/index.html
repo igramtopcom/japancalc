@@ -196,9 +196,9 @@
     <li><a href="/language-tools/">言語ツール</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <a id="lang-toggle" href="/en/language-tools/kanji-numbers/" class="lang-toggle" lang="ja"
-       title="このページを日本語で表示"
-       aria-label="Switch to Japanese">
+    <a id="lang-toggle" href="/en/language-tools/kanji-numbers/" class="lang-toggle" lang="en"
+       title="View this page in English"
+       aria-label="Switch to English">
       日本語
     </a>
     <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
@@ -306,8 +306,8 @@
               <span class="kanji-row-value" id="r-yen" style="display:none;"></span>
             </div>
             <div class="btn-row">
-              <button class="btn btn-secondary" id="to-copy-btn">Copy</button>
-              <button class="btn btn-secondary" id="to-share-btn">Share</button>
+              <button class="btn btn-secondary" id="to-copy-btn">コピー</button>
+              <button class="btn btn-secondary" id="to-share-btn">共有</button>
             </div>
           </div>
         </div>
@@ -426,7 +426,7 @@
     <!-- FAQ Section -->
     <section class="faq" id="faq-section"
       itemscope itemtype="https://schema.org/FAQPage">
-      <h2>Frequently Asked Questions</h2>
+      <h2>よくある質問</h2>
       <ul class="faq-list">
 
         <li class="faq-item" itemscope itemprop="mainEntity"
@@ -503,12 +503,12 @@
       <div class="cards-grid">
         <a href="/language-tools/romaji-converter/" class="tool-card">
           <div class="tool-card-icon">&#x1F524;</div>
-          <div class="tool-card-name">Romaji Converter</div>
+          <div class="tool-card-name">ローマ字変換</div>
           <div class="tool-card-jp">&#x30ED;&#x30FC;&#x30DE;&#x5B57;&#x5909;&#x63DB;</div>
         </a>
         <a href="/language-tools/furigana-generator/" class="tool-card">
           <div class="tool-card-icon">&#x1F4D6;</div>
-          <div class="tool-card-name">Furigana Generator</div>
+          <div class="tool-card-name">ふりがな生成</div>
           <div class="tool-card-jp">&#x3075;&#x308A;&#x304C;&#x306A;&#x751F;&#x6210;</div>
         </a>
         <a href="/tax-finance/consumption-tax/" class="tool-card">
@@ -550,7 +550,7 @@
     <p class="footer-copy">
       &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
     </p>
-    <p class="footer-attribution">Japanese kanji number system reference. Last updated: March 2025</p>
+    <p class="footer-attribution">Japanese kanji number system reference. 最終更新: 2025年3月</p>
   </div>
 </footer>
 
@@ -638,7 +638,7 @@ function computeToKanji() {
   document.getElementById('to-share-btn').dataset.url = url.toString();
 
   if (typeof gtag !== 'undefined')
-    gtag('event', 'tool_used', { tool_name: 'kanji_number_converter', mode: 'to_kanji', language: 'en' });
+    gtag('event', 'tool_used', { tool_name: 'kanji_number_converter', mode: 'to_kanji', language: 'ja' });
 }
 
 // ── Tab 2: Kanji → Arabic (live)

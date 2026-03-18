@@ -33,7 +33,7 @@
     "name": "Reiwa 7 in Western Calendar — 令和7年 西暦 2025",
     "url": "https://japancalc.com/en/date-calendar/era-converter/reiwa-7/",
     "description": "令和7年は2025年です in the Western Gregorian calendar.",
-    "inLanguage": "en",
+    "inLanguage": "ja",
     "isPartOf": {
       "@type": "WebSite",
       "name": "JapanCalc",
@@ -82,7 +82,7 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What year is Reiwa 7 in the Western calendar?",
+        "name": "令和7年は西暦何年ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "令和7年は2025年です in the Western Gregorian calendar. The Reiwa era began on May 1, 2019, so Reiwa year 7 plus 2018 equals 2025. Reiwa 7 runs from January 1, 2025 to December 31, 2025."
@@ -90,7 +90,7 @@
       },
       {
         "@type": "Question",
-        "name": "How do I convert Reiwa 7 to a Western year?",
+        "name": "令和7年を西暦に変換するには？",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "To convert Reiwa 7 to a Western year, add 2018 to the Reiwa year number: 7 + 2018 = 2025. This formula works for any Reiwa year. For example, Reiwa 1 + 2018 = 2019, Reiwa 6 + 2018 = 2024, Reiwa 8 + 2018 = 2026."
@@ -98,7 +98,7 @@
       },
       {
         "@type": "Question",
-        "name": "What day of the week is January 1, Reiwa 7?",
+        "name": "令和7年1月1日は何曜日ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "January 1, Reiwa 7 (令和7年1月1日) falls on a Wednesday. In Western calendar terms, this is January 1, 2025. Use the era date converter above to check the day of the week for any Reiwa 7 date."
@@ -150,9 +150,9 @@
   </ul>
 
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <a id="lang-toggle" href="/en/date-calendar/era-converter/reiwa-7/" class="lang-toggle" lang="ja"
-       title="このページを日本語で表示"
-       aria-label="Switch to Japanese">
+    <a id="lang-toggle" href="/en/date-calendar/era-converter/reiwa-7/" class="lang-toggle" lang="en"
+       title="View this page in English"
+       aria-label="Switch to English">
       日本語
     </a>
     <button class="nav-hamburger"
@@ -174,7 +174,7 @@
     <li><span class="breadcrumb-sep">›</span></li>
     <li><a href="/date-calendar/">日付・カレンダー</a></li>
     <li><span class="breadcrumb-sep">›</span></li>
-    <li><a href="/date-calendar/era-converter/">Era Date Converter</a></li>
+    <li><a href="/date-calendar/era-converter/">和暦・西暦変換</a></li>
     <li><span class="breadcrumb-sep">›</span></li>
     <li aria-current="page">Reiwa 7 (令和7年)</li>
   </ol>
@@ -195,18 +195,16 @@
   <main class="content" id="main-content">
 
     <!-- Page Header -->
-    <h1>Reiwa 7 in Western Calendar — 令和7年 西暦</h1>
-    <p class="tool-subtitle">令和7年は西暦何年？ — What year is 令和7年?</p>
+    <h1>令和7年 西暦変換 — 2025年</h1>
+    <p class="tool-subtitle">令和7年は西暦何年？ — 令和7年は2025年です</p>
     <p class="tool-desc">
-      Reiwa 7 (令和7年) is <strong>2025</strong> in the Western Gregorian calendar.
-      Use the converter below to look up any date in Reiwa 7, or
-      <a href="/date-calendar/era-converter/">convert other era years</a>.
+      令和7年は西暦<strong>2025年</strong>です。下の変換ツールで令和7年の任意の日付を確認できます。<a href="/date-calendar/era-converter/">他の元号も変換</a>できます。
     </p>
 
     <!-- TOOL INTERFACE -->
     <div class="tool-box" id="tool-main">
       <div class="form-group">
-        <label class="form-label" for="era-select">Era (元号)</label>
+        <label class="form-label" for="era-select">元号</label>
         <select class="form-select era-input" id="era-select">
           <option value="reiwa" selected>Reiwa (令和)</option>
           <option value="heisei">Heisei (平成)</option>
@@ -217,62 +215,62 @@
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="year-input">Era Year (年)</label>
-        <input type="text" class="form-input era-input" id="year-input" value="7" placeholder="e.g. 7 or 元" inputmode="numeric">
+        <label class="form-label" for="year-input">年</label>
+        <input type="text" class="form-input era-input" id="year-input" value="7" placeholder="例: 7" inputmode="numeric">
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="month-input">Month (optional)</label>
-        <input type="number" class="form-input era-input" id="month-input" min="1" max="12" placeholder="MM (optional)">
+        <label class="form-label" for="month-input">月（任意）</label>
+        <input type="number" class="form-input era-input" id="month-input" min="1" max="12" placeholder="MM">
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="day-input">Day (optional)</label>
-        <input type="number" class="form-input era-input" id="day-input" min="1" max="31" placeholder="DD (optional)">
+        <label class="form-label" for="day-input">日（任意）</label>
+        <input type="number" class="form-input era-input" id="day-input" min="1" max="31" placeholder="DD">
       </div>
 
       <div aria-live="polite" aria-atomic="true">
         <div class="result-box" id="result-box">
           <div class="result-primary" id="r-year"></div>
           <div class="result-grid">
-            <div><span class="result-item-label">Western Year</span><br><span class="result-item-value" id="r-year-val"></span></div>
-            <div><span class="result-item-label">Japanese</span><br><span class="result-item-value" id="r-jp"></span></div>
-            <div><span class="result-item-label">English</span><br><span class="result-item-value" id="r-en"></span></div>
-            <div><span class="result-item-label">Full Date</span><br><span class="result-item-value" id="r-date"></span></div>
+            <div><span class="result-item-label">西暦年</span><br><span class="result-item-value" id="r-year-val"></span></div>
+            <div><span class="result-item-label">和暦表記</span><br><span class="result-item-value" id="r-jp"></span></div>
+            <div><span class="result-item-label">英語表記</span><br><span class="result-item-value" id="r-en"></span></div>
+            <div><span class="result-item-label">日付</span><br><span class="result-item-value" id="r-date"></span></div>
             <div><span class="result-item-label">曜日</span><br><span class="result-item-value" id="r-dow"></span></div>
           </div>
           <div class="btn-row">
-            <button class="btn btn-secondary" id="copy-btn">Copy</button>
-            <button class="btn btn-secondary" id="share-btn">Share</button>
+            <button class="btn btn-secondary" id="copy-btn">コピー</button>
+            <button class="btn btn-secondary" id="share-btn">共有</button>
           </div>
         </div>
       </div>
     </div><!-- /tool-box -->
 
     <!-- Quick Reference Table -->
-    <h2>令和7年カレンダー Reference (令和7年 早見表)</h2>
+    <h2>令和7年 西暦カレンダー早見表</h2>
     <div class="quick-ref">
       <table>
         <thead>
           <tr>
-            <th>Reiwa 7 (令和7年)</th>
-            <th>Western Date</th>
-            <th>Notes</th>
+            <th>令和7年</th>
+            <th>西暦</th>
+            <th>備考</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>令和7年1月1日</td><td>1 January 2025</td><td>Wednesday — New Year's Day</td></tr>
-          <tr><td>令和7年2月1日</td><td>1 February 2025</td><td>Saturday</td></tr>
-          <tr><td>令和7年3月1日</td><td>1 March 2025</td><td>Saturday</td></tr>
-          <tr><td>令和7年4月1日</td><td>1 April 2025</td><td>Tuesday</td></tr>
-          <tr><td>令和7年5月1日</td><td>1 May 2025</td><td>Thursday</td></tr>
-          <tr><td>令和7年6月1日</td><td>1 June 2025</td><td>Sunday</td></tr>
-          <tr><td>令和7年7月1日</td><td>1 July 2025</td><td>Tuesday</td></tr>
-          <tr><td>令和7年8月1日</td><td>1 August 2025</td><td>Friday</td></tr>
-          <tr><td>令和7年9月1日</td><td>1 September 2025</td><td>Monday</td></tr>
-          <tr><td>令和7年10月1日</td><td>1 October 2025</td><td>Wednesday</td></tr>
-          <tr><td>令和7年11月1日</td><td>1 November 2025</td><td>Saturday</td></tr>
-          <tr><td>令和7年12月1日</td><td>1 December 2025</td><td>Monday</td></tr>
+          <tr><td>令和7年1月1日</td><td>2025年1月1日</td><td>水曜日 — 元日</td></tr>
+          <tr><td>令和7年2月1日</td><td>2025年2月1日</td><td>土曜日</td></tr>
+          <tr><td>令和7年3月1日</td><td>2025年3月1日</td><td>土曜日</td></tr>
+          <tr><td>令和7年4月1日</td><td>2025年4月1日</td><td>火曜日</td></tr>
+          <tr><td>令和7年5月1日</td><td>2025年5月1日</td><td>木曜日</td></tr>
+          <tr><td>令和7年6月1日</td><td>2025年6月1日</td><td>日曜日</td></tr>
+          <tr><td>令和7年7月1日</td><td>2025年7月1日</td><td>火曜日</td></tr>
+          <tr><td>令和7年8月1日</td><td>2025年8月1日</td><td>金曜日</td></tr>
+          <tr><td>令和7年9月1日</td><td>2025年9月1日</td><td>月曜日</td></tr>
+          <tr><td>令和7年10月1日</td><td>2025年10月1日</td><td>水曜日</td></tr>
+          <tr><td>令和7年11月1日</td><td>2025年11月1日</td><td>Saturday</td></tr>
+          <tr><td>令和7年12月1日</td><td>2025年12月1日</td><td>月曜日</td></tr>
         </tbody>
       </table>
     </div>
@@ -289,60 +287,43 @@
 
     <!-- Editorial Content -->
     <article class="seo-content">
-      <h2>About Reiwa 7 (令和7年)</h2>
+      <h2>令和7年について</h2>
       <p>
-        Reiwa 7 is the seventh year of the Reiwa era (令和), Japan's current
-        imperial era. In the Western Gregorian calendar, Reiwa 7 corresponds
-        to the full year <strong>2025</strong> — from January 1 to December 31.
-        The Reiwa era began on May 1, 2019, when Emperor Naruhito ascended to
-        the Chrysanthemum Throne following the abdication of Emperor Akihito.
+        令和7年は、日本の現在の元号「令和」の7年目です。西暦では<strong>2025年</strong>（1月1日～12月31日）にあたります。令和は2019年5月1日、徳仁天皇の即位により始まりました。
       </p>
       <p>
-        To convert any Reiwa year to a Western year, use the simple formula:
-        <strong>Reiwa year + 2018 = Western year</strong>. For Reiwa 7:
-        7 + 2018 = 2025. This formula works for all years in the Reiwa era.
+        令和年を西暦に変換する公式: <strong>令和年 + 2018 = 西暦年</strong>。令和7年: 7 + 2018 = 2025。この公式は令和のすべての年に使えます。
       </p>
 
-      <h2>How to Write Reiwa 7 in Japanese (令和7年の書き方)</h2>
+      <h2>令和7年の書き方</h2>
       <p>
-        In Japanese, Reiwa 7 is written as <strong>令和7年</strong> or
-        <strong>令和七年</strong> using kanji numerals. On official documents,
-        forms, and government paperwork in Japan, the era year format is
-        standard. If you are filling out a Japanese form that asks for your
-        birth year or the current year, you may need to write 令和7年 rather
-        than 2025.
+        令和7年は漢数字で<strong>令和七年</strong>とも書きます。官公庁の書類や各種申請書では、西暦（2025年）ではなく和暦（令和7年）で記入することが求められる場合があります。
       </p>
       <p>
-        For other Reiwa years, see:
-        <a href="/date-calendar/era-converter/reiwa-6/">Reiwa 6 (2024)</a>,
-        <a href="/date-calendar/era-converter/reiwa-5/">Reiwa 5 (2023)</a>, or
-        use the <a href="/date-calendar/era-converter/">full era date converter</a>
-        to convert any Japanese era date.
+        他の令和年: <a href="/date-calendar/era-converter/reiwa-6/">令和6年 (2024)</a>、<a href="/date-calendar/era-converter/reiwa-5/">令和5年 (2023)</a>。<a href="/date-calendar/era-converter/">和暦・西暦変換ツール</a>で任意の元号を変換できます。
       </p>
       <p>
-        <small>Era date information sourced from the
+        <small>元号データ:
           <a href="https://www8.cao.go.jp/chosei/gengou/gaiyou.html"
-             target="_blank" rel="noopener">Japan Cabinet Office</a>.
+             target="_blank" rel="noopener">内閣府</a>.
         </small>
       </p>
     </article>
 
     <!-- FAQ Section -->
     <section class="faq" itemscope itemtype="https://schema.org/FAQPage">
-      <h2>Frequently Asked Questions — Reiwa 7</h2>
+      <h2>よくある質問 — 令和7年</h2>
       <ul class="faq-list">
 
         <li class="faq-item" itemscope itemprop="mainEntity"
             itemtype="https://schema.org/Question">
           <div class="faq-question" itemprop="name">
-            What year is Reiwa 7 in the Western calendar?
+            令和7年は西暦何年ですか？
           </div>
           <div class="faq-answer" itemscope itemprop="acceptedAnswer"
                itemtype="https://schema.org/Answer">
             <span itemprop="text">
-              令和7年は2025年です in the Western Gregorian calendar.
-              The Reiwa era began on May 1, 2019, so Reiwa year 7 plus 2018
-              equals 2025. Reiwa 7 runs from January 1, 2025 to December 31, 2025.
+              令和7年は西暦で2025年です。令和は2019年5月1日に始まり、令和7年 + 2018 = 2025年です。令和7年は2025年1月1日から12月31日までです。
             </span>
           </div>
         </li>
@@ -350,15 +331,12 @@
         <li class="faq-item" itemscope itemprop="mainEntity"
             itemtype="https://schema.org/Question">
           <div class="faq-question" itemprop="name">
-            How do I convert Reiwa 7 to a Western year?
+            令和7年を西暦に変換するには？
           </div>
           <div class="faq-answer" itemscope itemprop="acceptedAnswer"
                itemtype="https://schema.org/Answer">
             <span itemprop="text">
-              To convert Reiwa 7 to a Western year, add 2018 to the Reiwa year
-              number: 7 + 2018 = 2025. This formula works for any Reiwa year.
-              For example, Reiwa 1 + 2018 = 2019, Reiwa 6 + 2018 = 2024,
-              Reiwa 8 + 2018 = 2026.
+              令和年に2018を足すと西暦になります: 7 + 2018 = 2025。この公式はすべての令和年に使えます。例: 令和1年 + 2018 = 2019、令和6年 + 2018 = 2024。
             </span>
           </div>
         </li>
@@ -366,15 +344,12 @@
         <li class="faq-item" itemscope itemprop="mainEntity"
             itemtype="https://schema.org/Question">
           <div class="faq-question" itemprop="name">
-            What day of the week is January 1, Reiwa 7?
+            令和7年1月1日は何曜日ですか？
           </div>
           <div class="faq-answer" itemscope itemprop="acceptedAnswer"
                itemtype="https://schema.org/Answer">
             <span itemprop="text">
-              January 1, Reiwa 7 (令和7年1月1日) falls on a Wednesday. In
-              Western calendar terms, this is January 1, 2025. Use the era
-              date converter above to check the day of the week for any
-              Reiwa 7 date.
+              令和7年1月1日（2025年1月1日）は水曜日です。上の変換ツールで令和7年の任意の日付の曜日を確認できます。
             </span>
           </div>
         </li>
@@ -384,26 +359,26 @@
 
     <!-- Related Tools -->
     <section class="related-tools">
-      <h2>Related Era Year Pages</h2>
+      <h2>関連ページ</h2>
       <div class="cards-grid">
         <a href="/date-calendar/era-converter/reiwa-6/" class="tool-card">
           <div class="tool-card-icon">&#x1F4C5;</div>
-          <div class="tool-card-name">Reiwa 6 = 2024</div>
+          <div class="tool-card-name">令和6年 = 2024</div>
           <div class="tool-card-jp">令和6年 西暦</div>
         </a>
         <a href="/date-calendar/era-converter/reiwa-5/" class="tool-card">
           <div class="tool-card-icon">&#x1F4C5;</div>
-          <div class="tool-card-name">Reiwa 5 = 2023</div>
+          <div class="tool-card-name">令和5年 = 2023</div>
           <div class="tool-card-jp">令和5年 西暦</div>
         </a>
         <a href="/date-calendar/era-converter/" class="tool-card">
           <div class="tool-card-icon">&#x1F504;</div>
-          <div class="tool-card-name">Era Date Converter</div>
+          <div class="tool-card-name">和暦・西暦変換</div>
           <div class="tool-card-jp">和暦 西暦 変換</div>
         </a>
         <a href="/date-calendar/age-calculator/" class="tool-card">
           <div class="tool-card-icon">&#x1F382;</div>
-          <div class="tool-card-name">Japanese Age Calculator</div>
+          <div class="tool-card-name">年齢計算</div>
           <div class="tool-card-jp">年齢計算</div>
         </a>
       </div>
@@ -436,10 +411,9 @@
       &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
     </p>
     <p class="footer-attribution">
-      Date data sourced from Japan Cabinet Office.
-      Tax rates from National Tax Agency Japan.
+      日付データ: 内閣府。税率: 国税庁。
     </p>
-    <p class="footer-attribution">Last updated: March 2025</p>
+    <p class="footer-attribution">最終更新: 2025年3月</p>
   </div>
 </footer>
 
@@ -492,7 +466,7 @@ function compute() {
   else url.searchParams.delete('day');
   document.getElementById('share-btn').dataset.url = url.toString();
   if (typeof gtag !== 'undefined')
-    gtag('event', 'tool_used', { tool_name: 'era_converter_reiwa7', language: 'en' });
+    gtag('event', 'tool_used', { tool_name: 'era_converter_reiwa7', language: 'ja' });
 }
 
 // Read inputs

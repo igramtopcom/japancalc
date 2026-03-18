@@ -166,9 +166,9 @@
   </ul>
 
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <a id="lang-toggle" href="/en/date-calendar/era-converter/showa/" class="lang-toggle" lang="ja"
-       title="このページを日本語で表示"
-       aria-label="Switch to Japanese">
+    <a id="lang-toggle" href="/en/date-calendar/era-converter/showa/" class="lang-toggle" lang="en"
+       title="View this page in English"
+       aria-label="Switch to English">
       日本語
     </a>
     <button class="nav-hamburger"
@@ -190,7 +190,7 @@
     <li><span class="breadcrumb-sep">›</span></li>
     <li><a href="/date-calendar/">日付・カレンダー</a></li>
     <li><span class="breadcrumb-sep">›</span></li>
-    <li><a href="/date-calendar/era-converter/">Era Date Converter</a></li>
+    <li><a href="/date-calendar/era-converter/">和暦・西暦変換</a></li>
     <li><span class="breadcrumb-sep">›</span></li>
     <li aria-current="page">昭和 (昭和)</li>
   </ol>
@@ -222,7 +222,7 @@
     <!-- TOOL INTERFACE -->
     <div class="tool-box" id="tool-main">
       <div class="form-group">
-        <label class="form-label" for="era-select">Era (元号)</label>
+        <label class="form-label" for="era-select">元号</label>
         <select class="form-select" id="era-select">
           <option value="showa" selected>Showa (昭和) — 1926–1989</option>
           <option value="reiwa">Reiwa (令和) — 2019–present</option>
@@ -235,17 +235,17 @@
       <div class="form-group">
         <label class="form-label" for="year-input">Showa Year (昭和 年) — Enter 1 to 64</label>
         <input type="number" class="form-input era-input" id="year-input"
-               min="1" max="64" placeholder="e.g. 64">
+               min="1" max="64" placeholder="例: 64">
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="month-input">Month (optional)</label>
+        <label class="form-label" for="month-input">月（任意）</label>
         <input type="number" class="form-input era-input" id="month-input"
                min="1" max="12" placeholder="MM">
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="day-input">Day (optional)</label>
+        <label class="form-label" for="day-input">日（任意）</label>
         <input type="number" class="form-input era-input" id="day-input"
                min="1" max="31" placeholder="DD">
       </div>
@@ -255,14 +255,14 @@
         <div class="result-box" id="result-box">
           <div class="result-primary" id="r-year"></div>
           <div class="result-grid">
-            <div><span class="result-item-label">Japanese</span><br><span class="result-item-value" id="r-jp"></span></div>
-            <div><span class="result-item-label">English</span><br><span class="result-item-value" id="r-en"></span></div>
-            <div><span class="result-item-label">Full Date</span><br><span class="result-item-value" id="r-date"></span></div>
+            <div><span class="result-item-label">和暦表記</span><br><span class="result-item-value" id="r-jp"></span></div>
+            <div><span class="result-item-label">英語表記</span><br><span class="result-item-value" id="r-en"></span></div>
+            <div><span class="result-item-label">日付</span><br><span class="result-item-value" id="r-date"></span></div>
             <div><span class="result-item-label">曜日</span><br><span class="result-item-value" id="r-dow"></span></div>
           </div>
           <div class="btn-row">
-            <button class="btn btn-secondary" id="copy-btn">Copy</button>
-            <button class="btn btn-secondary" id="share-btn">Share</button>
+            <button class="btn btn-secondary" id="copy-btn">コピー</button>
+            <button class="btn btn-secondary" id="share-btn">共有</button>
           </div>
         </div>
       </div>
@@ -275,9 +275,9 @@
         <thead>
           <tr>
             <th>Showa (昭和)</th>
-            <th>Western Year</th>
+            <th>西暦年</th>
             <th>Showa (昭和)</th>
-            <th>Western Year</th>
+            <th>西暦年</th>
           </tr>
         </thead>
         <tbody>
@@ -373,7 +373,7 @@
       <p>
         <small>Era date information sourced from the
           <a href="https://www8.cao.go.jp/chosei/gengou/gaiyou.html"
-             target="_blank" rel="noopener">Japan Cabinet Office</a>.
+             target="_blank" rel="noopener">内閣府</a>.
         </small>
       </p>
     </article>
@@ -476,12 +476,12 @@
         </a>
         <a href="/date-calendar/era-converter/" class="tool-card">
           <div class="tool-card-icon">&#x1F504;</div>
-          <div class="tool-card-name">Era Date Converter</div>
+          <div class="tool-card-name">和暦・西暦変換</div>
           <div class="tool-card-jp">和暦 西暦 変換</div>
         </a>
         <a href="/date-calendar/age-calculator/" class="tool-card">
           <div class="tool-card-icon">&#x1F382;</div>
-          <div class="tool-card-name">Japanese Age Calculator</div>
+          <div class="tool-card-name">年齢計算</div>
           <div class="tool-card-jp">年齢計算</div>
         </a>
         <a href="/tax-finance/consumption-tax/" class="tool-card">
@@ -519,10 +519,9 @@
       &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
     </p>
     <p class="footer-attribution">
-      Date data sourced from Japan Cabinet Office.
-      Tax rates from National Tax Agency Japan.
+      日付データ: 内閣府。税率: 国税庁。
     </p>
-    <p class="footer-attribution">Last updated: March 2025</p>
+    <p class="footer-attribution">最終更新: 2025年3月</p>
   </div>
 </footer>
 
@@ -582,7 +581,7 @@ function compute() {
   else url.searchParams.delete('day');
   document.getElementById('share-btn').dataset.url = url.toString();
   if (typeof gtag !== 'undefined')
-    gtag('event', 'tool_used', { tool_name: 'era_converter_showa', language: 'en' });
+    gtag('event', 'tool_used', { tool_name: 'era_converter_showa', language: 'ja' });
 }
 
 // Era select — update label dynamically

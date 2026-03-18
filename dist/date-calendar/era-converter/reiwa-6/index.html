@@ -33,7 +33,7 @@
     "name": "Reiwa 6 in Western Calendar — 令和6年 西暦 2024",
     "url": "https://japancalc.com/en/date-calendar/era-converter/reiwa-6/",
     "description": "令和6年は2024年です in the Western Gregorian calendar.",
-    "inLanguage": "en",
+    "inLanguage": "ja",
     "isPartOf": {
       "@type": "WebSite",
       "name": "JapanCalc",
@@ -150,9 +150,9 @@
   </ul>
 
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <a id="lang-toggle" href="/en/date-calendar/era-converter/reiwa-6/" class="lang-toggle" lang="ja"
-       title="このページを日本語で表示"
-       aria-label="Switch to Japanese">
+    <a id="lang-toggle" href="/en/date-calendar/era-converter/reiwa-6/" class="lang-toggle" lang="en"
+       title="View this page in English"
+       aria-label="Switch to English">
       日本語
     </a>
     <button class="nav-hamburger"
@@ -174,9 +174,9 @@
     <li><span class="breadcrumb-sep">›</span></li>
     <li><a href="/date-calendar/">日付・カレンダー</a></li>
     <li><span class="breadcrumb-sep">›</span></li>
-    <li><a href="/date-calendar/era-converter/">Era Date Converter</a></li>
+    <li><a href="/date-calendar/era-converter/">和暦・西暦変換</a></li>
     <li><span class="breadcrumb-sep">›</span></li>
-    <li aria-current="page">Reiwa 6 (令和6年)</li>
+    <li aria-current="page">令和6年 (令和6年)</li>
   </ol>
 </nav>
 
@@ -195,18 +195,18 @@
   <main class="content" id="main-content">
 
     <!-- Page Header -->
-    <h1>Reiwa 6 in Western Calendar — 令和6年 西暦</h1>
-    <p class="tool-subtitle">令和6年は西暦何年？ — What year is 令和6年?</p>
+    <h1>令和6年 西暦変換 — 令和6年 西暦</h1>
+    <p class="tool-subtitle">令和6年は西暦何年？ — 令和6年は2024年です</p>
     <p class="tool-desc">
-      Reiwa 6 (令和6年) is <strong>2024</strong> in the Western Gregorian calendar.
-      Use the converter below to look up any date in Reiwa 6, or
-      <a href="/date-calendar/era-converter/">convert other era years</a>.
+      令和6年は西暦<strong>2024年</strong>です。
+      下の変換ツールで任意の日付を確認 in Reiwa 6, or
+      <a href="/date-calendar/era-converter/">他の元号も変換</a>.
     </p>
 
     <!-- TOOL INTERFACE -->
     <div class="tool-box" id="tool-main">
       <div class="form-group">
-        <label class="form-label" for="era-select">Era (元号)</label>
+        <label class="form-label" for="era-select">元号</label>
         <select class="form-select era-input" id="era-select">
           <option value="reiwa" selected>Reiwa (令和)</option>
           <option value="heisei">Heisei (平成)</option>
@@ -217,47 +217,47 @@
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="year-input">Era Year (年)</label>
-        <input type="text" class="form-input era-input" id="year-input" value="6" placeholder="e.g. 6 or 元" inputmode="numeric">
+        <label class="form-label" for="year-input">年</label>
+        <input type="text" class="form-input era-input" id="year-input" value="6" placeholder="例: 6 or 元" inputmode="numeric">
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="month-input">Month (optional)</label>
-        <input type="number" class="form-input era-input" id="month-input" min="1" max="12" placeholder="MM (optional)">
+        <label class="form-label" for="month-input">月（任意）</label>
+        <input type="number" class="form-input era-input" id="month-input" min="1" max="12" placeholder="MM">
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="day-input">Day (optional)</label>
-        <input type="number" class="form-input era-input" id="day-input" min="1" max="31" placeholder="DD (optional)">
+        <label class="form-label" for="day-input">日（任意）</label>
+        <input type="number" class="form-input era-input" id="day-input" min="1" max="31" placeholder="DD">
       </div>
 
       <div aria-live="polite" aria-atomic="true">
         <div class="result-box" id="result-box">
           <div class="result-primary" id="r-year"></div>
           <div class="result-grid">
-            <div><span class="result-item-label">Western Year</span><br><span class="result-item-value" id="r-year-val"></span></div>
-            <div><span class="result-item-label">Japanese</span><br><span class="result-item-value" id="r-jp"></span></div>
-            <div><span class="result-item-label">English</span><br><span class="result-item-value" id="r-en"></span></div>
-            <div><span class="result-item-label">Full Date</span><br><span class="result-item-value" id="r-date"></span></div>
+            <div><span class="result-item-label">西暦年</span><br><span class="result-item-value" id="r-year-val"></span></div>
+            <div><span class="result-item-label">和暦表記</span><br><span class="result-item-value" id="r-jp"></span></div>
+            <div><span class="result-item-label">英語表記</span><br><span class="result-item-value" id="r-en"></span></div>
+            <div><span class="result-item-label">日付</span><br><span class="result-item-value" id="r-date"></span></div>
             <div><span class="result-item-label">曜日</span><br><span class="result-item-value" id="r-dow"></span></div>
           </div>
           <div class="btn-row">
-            <button class="btn btn-secondary" id="copy-btn">Copy</button>
-            <button class="btn btn-secondary" id="share-btn">Share</button>
+            <button class="btn btn-secondary" id="copy-btn">コピー</button>
+            <button class="btn btn-secondary" id="share-btn">共有</button>
           </div>
         </div>
       </div>
     </div><!-- /tool-box -->
 
     <!-- Quick Reference Table -->
-    <h2>令和6年カレンダー Reference (令和6年 早見表)</h2>
+    <h2>令和6年カレンダー 西暦カレンダー早見表</h2>
     <div class="quick-ref">
       <table>
         <thead>
           <tr>
-            <th>Reiwa 6 (令和6年)</th>
-            <th>Western Date</th>
-            <th>Notes</th>
+            <th>令和6年</th>
+            <th>西暦</th>
+            <th>備考</th>
           </tr>
         </thead>
         <tbody>
@@ -289,7 +289,7 @@
 
     <!-- Editorial Content -->
     <article class="seo-content">
-      <h2>About Reiwa 6 (令和6年)</h2>
+      <h2>令和6年について (令和6年)</h2>
       <p>
         Reiwa 6 is the sixth year of the Reiwa era (令和), Japan's current
         imperial era. In the Western Gregorian calendar, Reiwa 6 corresponds
@@ -303,7 +303,7 @@
         6 + 2018 = 2024. This formula works for all years in the Reiwa era.
       </p>
 
-      <h2>How to Write Reiwa 6 in Japanese (令和6年の書き方)</h2>
+      <h2>令和6年の書き方 (令和6年の書き方)</h2>
       <p>
         In Japanese, Reiwa 6 is written as <strong>令和6年</strong> or
         <strong>令和六年</strong> using kanji numerals. On official documents,
@@ -320,16 +320,16 @@
         to convert any Japanese era date.
       </p>
       <p>
-        <small>Era date information sourced from the
+        <small>元号データ:
           <a href="https://www8.cao.go.jp/chosei/gengou/gaiyou.html"
-             target="_blank" rel="noopener">Japan Cabinet Office</a>.
+             target="_blank" rel="noopener">内閣府</a>.
         </small>
       </p>
     </article>
 
     <!-- FAQ Section -->
     <section class="faq" itemscope itemtype="https://schema.org/FAQPage">
-      <h2>Frequently Asked Questions — Reiwa 6</h2>
+      <h2>よくある質問 — 令和6年</h2>
       <ul class="faq-list">
 
         <li class="faq-item" itemscope itemprop="mainEntity"
@@ -384,7 +384,7 @@
 
     <!-- Related Tools -->
     <section class="related-tools">
-      <h2>Related Era Year Pages</h2>
+      <h2>関連ページ</h2>
       <div class="cards-grid">
         <a href="/date-calendar/era-converter/reiwa-7/" class="tool-card">
           <div class="tool-card-icon">&#x1F4C5;</div>
@@ -398,12 +398,12 @@
         </a>
         <a href="/date-calendar/era-converter/" class="tool-card">
           <div class="tool-card-icon">&#x1F504;</div>
-          <div class="tool-card-name">Era Date Converter</div>
+          <div class="tool-card-name">和暦・西暦変換</div>
           <div class="tool-card-jp">和暦 西暦 変換</div>
         </a>
         <a href="/date-calendar/age-calculator/" class="tool-card">
           <div class="tool-card-icon">&#x1F382;</div>
-          <div class="tool-card-name">Japanese Age Calculator</div>
+          <div class="tool-card-name">年齢計算</div>
           <div class="tool-card-jp">年齢計算</div>
         </a>
       </div>
@@ -436,10 +436,9 @@
       &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
     </p>
     <p class="footer-attribution">
-      Date data sourced from Japan Cabinet Office.
-      Tax rates from National Tax Agency Japan.
+      日付データ: 内閣府。税率: 国税庁。
     </p>
-    <p class="footer-attribution">Last updated: March 2025</p>
+    <p class="footer-attribution">最終更新: 2025年3月</p>
   </div>
 </footer>
 
@@ -492,7 +491,7 @@ function compute() {
   else url.searchParams.delete('day');
   document.getElementById('share-btn').dataset.url = url.toString();
   if (typeof gtag !== 'undefined')
-    gtag('event', 'tool_used', { tool_name: 'era_converter_reiwa6', language: 'en' });
+    gtag('event', 'tool_used', { tool_name: 'era_converter_reiwa6', language: 'ja' });
 }
 
 // Read inputs

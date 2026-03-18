@@ -252,9 +252,9 @@
     <li><a href="/language-tools/">言語ツール</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <a id="lang-toggle" href="/en/language-tools/measurement-converter/" class="lang-toggle" lang="ja"
-       title="このページを日本語で表示"
-       aria-label="Switch to Japanese">
+    <a id="lang-toggle" href="/en/language-tools/measurement-converter/" class="lang-toggle" lang="en"
+       title="View this page in English"
+       aria-label="Switch to English">
       日本語
     </a>
     <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
@@ -710,7 +710,7 @@
     <!-- FAQ Section -->
     <section class="faq" id="faq-section"
       itemscope itemtype="https://schema.org/FAQPage">
-      <h2>Frequently Asked Questions</h2>
+      <h2>よくある質問</h2>
       <ul class="faq-list">
 
         <li class="faq-item" itemscope itemprop="mainEntity"
@@ -811,12 +811,12 @@
       <div class="cards-grid">
         <a href="/language-tools/romaji-converter/" class="tool-card">
           <div class="tool-card-icon">&#x1F524;</div>
-          <div class="tool-card-name">Romaji Converter</div>
+          <div class="tool-card-name">ローマ字変換</div>
           <div class="tool-card-jp">&#x30ED;&#x30FC;&#x30DE;&#x5B57;&#x5909;&#x63DB;</div>
         </a>
         <a href="/language-tools/kanji-numbers/" class="tool-card">
           <div class="tool-card-icon">&#x1F522;</div>
-          <div class="tool-card-name">Kanji Number Converter</div>
+          <div class="tool-card-name">漢数字変換</div>
           <div class="tool-card-jp">&#x6F22;&#x6570;&#x5B57;&#x5909;&#x63DB;</div>
         </a>
         <a href="/tax-finance/salary-calculator/" class="tool-card">
@@ -858,7 +858,7 @@
     <p class="footer-copy">
       &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
     </p>
-    <p class="footer-attribution">Conversion factors per international standards. Size tables approximate. Last updated: March 2025</p>
+    <p class="footer-attribution">Conversion factors per international standards. Size tables approximate. 最終更新: 2025年3月</p>
   </div>
 </footer>
 
@@ -927,7 +927,7 @@ function computeHeight() {
   resultEl.classList.add('visible');
 
   if (typeof gtag !== 'undefined')
-    gtag('event', 'tool_used', { tool_name: 'measurement_converter', mode: 'height', language: 'en' });
+    gtag('event', 'tool_used', { tool_name: 'measurement_converter', mode: 'height', language: 'ja' });
 }
 
 document.querySelectorAll('input[name="height-dir"]').forEach(r => {

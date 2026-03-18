@@ -250,9 +250,9 @@
     <li><a href="/language-tools/">言語ツール</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <a id="lang-toggle" href="/en/language-tools/furigana-generator/" class="lang-toggle" lang="ja"
-       title="このページを日本語で表示"
-       aria-label="Switch to Japanese">
+    <a id="lang-toggle" href="/en/language-tools/furigana-generator/" class="lang-toggle" lang="en"
+       title="View this page in English"
+       aria-label="Switch to English">
       日本語
     </a>
     <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
@@ -459,7 +459,7 @@
     </article>
 
     <section class="faq-section">
-      <h2>Frequently Asked Questions</h2>
+      <h2>よくある質問</h2>
 
       <details class="faq-item">
         <summary>What is furigana?</summary>
@@ -483,7 +483,7 @@
 
       <details class="faq-item">
         <summary>What is the difference between furigana and romaji?</summary>
-        <p>Furigana uses hiragana characters (the Japanese phonetic script) to show how kanji are read, and is primarily used within Japanese text for Japanese readers who may not know certain kanji. Romaji uses the Latin alphabet to represent Japanese sounds and is used for non-Japanese readers or for romanizing Japanese text. For romaji conversion, use the JapanCalc <a href="/language-tools/romaji-converter/">Romaji Converter</a> tool.</p>
+        <p>Furigana uses hiragana characters (the Japanese phonetic script) to show how kanji are read, and is primarily used within Japanese text for Japanese readers who may not know certain kanji. Romaji uses the Latin alphabet to represent Japanese sounds and is used for non-Japanese readers or for romanizing Japanese text. For romaji conversion, use the JapanCalc <a href="/language-tools/romaji-converter/">ローマ字変換</a> tool.</p>
       </details>
     </section>
 
@@ -534,7 +534,7 @@
       <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
-    <p class="footer-attribution">Powered by kuromoji Japanese morphological analysis. Last updated: March 2025</p>
+    <p class="footer-attribution">Powered by kuromoji Japanese morphological analysis. 最終更新: 2025年3月</p>
   </div>
 </footer>
 
@@ -633,7 +633,7 @@ function run() {
   resultEl.classList.add('visible');
 
   if (typeof gtag !== 'undefined')
-    gtag('event', 'tool_used', { tool_name: 'furigana_generator', language: 'en' });
+    gtag('event', 'tool_used', { tool_name: 'furigana_generator', language: 'ja' });
 }
 
 // -- Event listeners

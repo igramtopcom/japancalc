@@ -201,9 +201,9 @@
   </ul>
 
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <a id="lang-toggle" href="/en/tax-finance/consumption-tax/" class="lang-toggle" lang="ja"
-       title="このページを日本語で表示"
-       aria-label="Switch to Japanese">
+    <a id="lang-toggle" href="/en/tax-finance/consumption-tax/" class="lang-toggle" lang="en"
+       title="View this page in English"
+       aria-label="Switch to English">
       日本語
     </a>
     <button class="nav-hamburger"
@@ -247,9 +247,7 @@
     <h1>消費税計算ツール</h1>
     <p class="tool-subtitle">消費税計算ツール — 税込・税抜・消費税額を計算</p>
     <p class="tool-desc">
-      Calculate Japanese consumption tax (消費税) instantly. Add 10% standard rate
-      or 8% reduced rate tax to any price, or extract the pre-tax price from a
-      tax-inclusive amount. 無料、ログイン不要。
+      消費税（10%標準税率・8%軽減税率）の税込・税抜価格を瞬時に計算。無料、ログイン不要。
     </p>
 
     <!-- TOOL INTERFACE -->
@@ -266,21 +264,21 @@
       <!-- Tab 1: 税抜 → 税込 -->
       <div class="tool-panel active" role="tabpanel" id="panel-add-tax" aria-labelledby="tab-add-tax">
         <div class="form-group">
-          <label class="form-label" for="tab1-amount">Pre-tax Amount (税抜金額) — &#x00A5;</label>
-          <input type="number" class="form-input" id="tab1-amount" min="0" placeholder="e.g. 1000">
+          <label class="form-label" for="tab1-amount">税抜金額 — &#x00A5;</label>
+          <input type="number" class="form-input" id="tab1-amount" min="0" placeholder="例: 1000">
           <p class="form-error" id="tab1-error"></p>
         </div>
 
         <div class="form-group">
-          <label class="form-label">Tax Rate</label>
+          <label class="form-label">税率</label>
           <div class="rate-toggle" role="group" aria-label="Tax rate">
             <label class="rate-option">
               <input type="radio" name="tab1-rate" value="standard" checked>
-              <span>10% Standard</span>
+              <span>10% 標準税率</span>
             </label>
             <label class="rate-option">
               <input type="radio" name="tab1-rate" value="reduced">
-              <span>8% Reduced</span>
+              <span>8% 軽減税率</span>
             </label>
           </div>
         </div>
@@ -289,14 +287,14 @@
           <div class="result-box" id="tab1-result">
             <div class="result-primary" id="tab1-r-inclusive"></div>
             <div class="result-grid">
-              <div><span class="result-item-label">Pre-tax Amount</span><br><span class="result-item-value" id="tab1-r-pretax"></span></div>
-              <div><span class="result-item-label" id="tab1-r-ratelabel">Tax Amount (10%)</span><br><span class="result-item-value" id="tab1-r-tax"></span></div>
-              <div><span class="result-item-label">Tax-inclusive</span><br><span class="result-item-value" id="tab1-r-total"></span></div>
+              <div><span class="result-item-label">税抜金額</span><br><span class="result-item-value" id="tab1-r-pretax"></span></div>
+              <div><span class="result-item-label" id="tab1-r-ratelabel">消費税額 (10%)</span><br><span class="result-item-value" id="tab1-r-tax"></span></div>
+              <div><span class="result-item-label">税込価格</span><br><span class="result-item-value" id="tab1-r-total"></span></div>
             </div>
-            <p class="result-formula"><strong>Formula:</strong> <code id="tab1-r-formula"></code></p>
+            <p class="result-formula"><strong>計算式:</strong> <code id="tab1-r-formula"></code></p>
             <div class="btn-row">
-              <button class="btn btn-secondary" id="tab1-copy-btn">Copy</button>
-              <button class="btn btn-secondary" id="tab1-share-btn">Share</button>
+              <button class="btn btn-secondary" id="tab1-copy-btn">コピー</button>
+              <button class="btn btn-secondary" id="tab1-share-btn">共有</button>
             </div>
           </div>
         </div>
@@ -305,21 +303,21 @@
       <!-- Tab 2: 税込 → 税抜 -->
       <div class="tool-panel" role="tabpanel" id="panel-remove-tax" aria-labelledby="tab-remove-tax">
         <div class="form-group">
-          <label class="form-label" for="tab2-amount">Tax-inclusive Amount (税込金額) — &#x00A5;</label>
-          <input type="number" class="form-input" id="tab2-amount" min="0" placeholder="e.g. 1100">
+          <label class="form-label" for="tab2-amount">税込金額 — &#x00A5;</label>
+          <input type="number" class="form-input" id="tab2-amount" min="0" placeholder="例: 1100">
           <p class="form-error" id="tab2-error"></p>
         </div>
 
         <div class="form-group">
-          <label class="form-label">Tax Rate</label>
+          <label class="form-label">税率</label>
           <div class="rate-toggle" role="group" aria-label="Tax rate">
             <label class="rate-option">
               <input type="radio" name="tab2-rate" value="standard" checked>
-              <span>10% Standard</span>
+              <span>10% 標準税率</span>
             </label>
             <label class="rate-option">
               <input type="radio" name="tab2-rate" value="reduced">
-              <span>8% Reduced</span>
+              <span>8% 軽減税率</span>
             </label>
           </div>
         </div>
@@ -328,34 +326,34 @@
           <div class="result-box" id="tab2-result">
             <div class="result-primary" id="tab2-r-pretax"></div>
             <div class="result-grid">
-              <div><span class="result-item-label">Tax-inclusive</span><br><span class="result-item-value" id="tab2-r-inclusive"></span></div>
-              <div><span class="result-item-label" id="tab2-r-ratelabel">Tax Amount (10%)</span><br><span class="result-item-value" id="tab2-r-tax"></span></div>
-              <div><span class="result-item-label">Pre-tax Amount</span><br><span class="result-item-value" id="tab2-r-total"></span></div>
+              <div><span class="result-item-label">税込価格</span><br><span class="result-item-value" id="tab2-r-inclusive"></span></div>
+              <div><span class="result-item-label" id="tab2-r-ratelabel">消費税額 (10%)</span><br><span class="result-item-value" id="tab2-r-tax"></span></div>
+              <div><span class="result-item-label">税抜金額</span><br><span class="result-item-value" id="tab2-r-total"></span></div>
             </div>
-            <p class="result-formula"><strong>Formula:</strong> <code id="tab2-r-formula"></code></p>
+            <p class="result-formula"><strong>計算式:</strong> <code id="tab2-r-formula"></code></p>
             <div class="btn-row">
-              <button class="btn btn-secondary" id="tab2-copy-btn">Copy</button>
-              <button class="btn btn-secondary" id="tab2-share-btn">Share</button>
+              <button class="btn btn-secondary" id="tab2-copy-btn">コピー</button>
+              <button class="btn btn-secondary" id="tab2-share-btn">共有</button>
             </div>
           </div>
         </div>
         <p class="text-muted" style="font-size:0.8rem; margin-top:0.5rem;">
-          <small>* Pre-tax amount rounded down (floor) per NTA guidelines.</small>
+          <small>※ 税抜金額は国税庁の基準に従い切り捨て。</small>
         </p>
       </div>
 
     </div><!-- /tool-box -->
 
     <!-- Quick Reference Table -->
-    <h2>Quick Reference: Common Prices with Tax (消費税 早見表)</h2>
+    <h2>消費税 早見表</h2>
     <div class="quick-ref">
       <table>
         <thead>
           <tr>
-            <th>Pre-tax (税抜)</th>
-            <th>+10% Tax</th>
-            <th>Total (税込)</th>
-            <th>+8% Tax</th>
+            <th>税抜</th>
+            <th>10%税</th>
+            <th>税込</th>
+            <th>8%税</th>
             <th>Total (税込)</th>
           </tr>
         </thead>
@@ -385,7 +383,7 @@
 
     <!-- SEO Content Placeholder -->
     <article class="seo-content" id="seo-content">
-      <h2>How to Use the Japan 消費税計算ツール</h2>
+      <h2>消費税計算ツールの使い方</h2>
       <p>
         This consumption tax calculator (消費税計算ツール) handles both directions of
         Japanese tax calculation. To add tax to a pre-tax price, use the
@@ -401,7 +399,7 @@
         to verify the breakdown of a price you have already paid.
       </p>
 
-      <h2>Japan Consumption Tax Rates Explained (消費税率)</h2>
+      <h2>日本の消費税率について</h2>
       <p>
         Japan currently has two consumption tax rates. The <strong>standard rate of
         10%</strong> applies to the vast majority of goods and services — clothing,
@@ -435,7 +433,7 @@
     <!-- FAQ Placeholder -->
     <section class="faq" id="faq-section"
       itemscope itemtype="https://schema.org/FAQPage">
-      <h2>Frequently Asked Questions</h2>
+      <h2>よくある質問</h2>
       <ul class="faq-list">
 
         <li class="faq-item" itemscope itemprop="mainEntity"
@@ -579,7 +577,7 @@
     <p class="footer-copy">
       &copy; <span id="footer-year"></span> JapanCalc. All rights reserved.
     </p>
-    <p class="footer-attribution">Tax rates from National Tax Agency Japan. Last updated: March 2025</p>
+    <p class="footer-attribution">Tax rates from National Tax Agency Japan. 最終更新: 2025年3月</p>
   </div>
 </footer>
 
@@ -657,7 +655,7 @@ function computeTab1() {
   document.getElementById('tab1-share-btn').dataset.url = url.toString();
 
   if (typeof gtag !== 'undefined')
-    gtag('event', 'tool_used', { tool_name: 'jct_calculator', mode: 'add_tax', language: 'en' });
+    gtag('event', 'tool_used', { tool_name: 'jct_calculator', mode: 'add_tax', language: 'ja' });
 }
 
 // ── Tab 2: 税込 → 税抜

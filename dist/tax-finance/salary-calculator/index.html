@@ -209,9 +209,9 @@
     <li><a href="/language-tools/">言語ツール</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.5rem;">
-    <a id="lang-toggle" href="/en/tax-finance/salary-calculator/" class="lang-toggle" lang="ja"
-       title="このページを日本語で表示"
-       aria-label="Switch to Japanese">
+    <a id="lang-toggle" href="/en/tax-finance/salary-calculator/" class="lang-toggle" lang="en"
+       title="View this page in English"
+       aria-label="Switch to English">
       日本語
     </a>
     <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
@@ -333,7 +333,7 @@
 
         <div class="btn-row" style="margin-top:1rem;">
           <button class="btn btn-secondary" id="copy-btn">Copy Breakdown</button>
-          <button class="btn btn-secondary" id="share-btn">Share</button>
+          <button class="btn btn-secondary" id="share-btn">共有</button>
         </div>
       </div>
     </div>
@@ -415,7 +415,7 @@
     </article>
 
     <section class="faq-section">
-      <h2>Frequently Asked Questions</h2>
+      <h2>よくある質問</h2>
 
       <details class="faq-item">
         <summary>What is &#x624B;&#x53D6;&#x308A; (tedori) in Japan?</summary>
@@ -448,7 +448,7 @@
       <div class="cards-grid">
         <a href="/tax-finance/consumption-tax/" class="tool-card">
           <div class="tool-card-icon">&#x1F9FE;</div>
-          <div class="tool-card-name">Consumption Tax Calculator</div>
+          <div class="tool-card-name">消費税計算</div>
           <div class="tool-card-jp">&#x6D88;&#x8CBB;&#x7A0E;&#x8A08;&#x7B97;</div>
         </a>
         <a href="/date-calendar/age-calculator/" class="tool-card">
@@ -458,7 +458,7 @@
         </a>
         <a href="/tax-finance/work-hours/" class="tool-card">
           <div class="tool-card-icon">&#x23F1;&#xFE0F;</div>
-          <div class="tool-card-name">Work Hours Calculator</div>
+          <div class="tool-card-name">残業代計算</div>
           <div class="tool-card-jp">&#x6B8B;&#x696D;&#x4EE3; &#x8A08;&#x7B97;</div>
         </a>
         <a href="/tax-finance/" class="tool-card">
@@ -490,7 +490,7 @@
       <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
     </ul>
     <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
-    <p class="footer-attribution">Tax rates sourced from National Tax Agency Japan (FY2025). Last updated: March 2025</p>
+    <p class="footer-attribution">Tax rates sourced from National Tax Agency Japan (FY2025). 最終更新: 2025年3月</p>
   </div>
 </footer>
 
@@ -574,7 +574,7 @@ function compute() {
   document.getElementById('share-btn').dataset.url = url.toString();
 
   if (typeof gtag !== 'undefined')
-    gtag('event', 'tool_used', { tool_name: 'salary_calculator', language: 'en' });
+    gtag('event', 'tool_used', { tool_name: 'salary_calculator', language: 'ja' });
 }
 
 // Event listeners
