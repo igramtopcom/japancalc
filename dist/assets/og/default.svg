@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1A3A5C"/>
+  <rect width="1200" height="8" fill="#0B6E5F"/>
+  <rect x="80" y="120" width="80" height="80" rx="16" fill="#0B6E5F"/>
+  <text x="120" y="178"
+        font-family="serif" font-size="48" font-weight="700"
+        fill="white" text-anchor="middle">計</text>
+  <text x="180" y="178"
+        font-family="sans-serif" font-size="56" font-weight="700"
+        fill="white">JapanCalc</text>
+  <text x="80" y="260"
+        font-family="sans-serif" font-size="32" fill="#5DCAA5">
+    無料日本語計算機・変換ツール
+  </text>
+  <text x="80" y="310"
+        font-family="sans-serif" font-size="24" fill="rgba(255,255,255,0.7)">
+    Free Japanese Calculators &amp; Converters
+  </text>
+  <rect x="80"  y="380" width="150" height="48" rx="8" fill="rgba(255,255,255,0.12)"/>
+  <text x="155" y="411" font-family="sans-serif" font-size="18" fill="white" text-anchor="middle">和暦変換</text>
+  <rect x="250" y="380" width="150" height="48" rx="8" fill="rgba(255,255,255,0.12)"/>
+  <text x="325" y="411" font-family="sans-serif" font-size="18" fill="white" text-anchor="middle">消費税計算</text>
+  <rect x="420" y="380" width="150" height="48" rx="8" fill="rgba(255,255,255,0.12)"/>
+  <text x="495" y="411" font-family="sans-serif" font-size="18" fill="white" text-anchor="middle">年齢計算</text>
+  <rect x="590" y="380" width="150" height="48" rx="8" fill="rgba(255,255,255,0.12)"/>
+  <text x="665" y="411" font-family="sans-serif" font-size="18" fill="white" text-anchor="middle">手取り計算</text>
+  <rect x="760" y="380" width="150" height="48" rx="8" fill="rgba(255,255,255,0.12)"/>
+  <text x="835" y="411" font-family="sans-serif" font-size="18" fill="white" text-anchor="middle">ローマ字</text>
+  <text x="1120" y="590"
+        font-family="sans-serif" font-size="20"
+        fill="rgba(255,255,255,0.4)" text-anchor="end">japancalc.com</text>
+</svg>
