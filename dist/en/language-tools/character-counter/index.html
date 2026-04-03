@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Counter: Japanese Text Word Count Tool | JapanCalc</title>
+  <meta name="description" content="Count characters in Japanese and English text instantly. Shows character count with/without spaces, lines, paragraphs, bytes, manuscript pages, and reading time. Free, no login.">
+  <link rel="canonical" href="https://japancalc.com/en/language-tools/character-counter/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/language-tools/character-counter/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/language-tools/character-counter/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/language-tools/character-counter/">
+  <meta property="og:title"       content="Character Counter: Japanese Text Word Count Tool | JapanCalc">
+  <meta property="og:description" content="Count characters in Japanese and English text instantly. Shows character count with/without spaces, lines, paragraphs, bytes, manuscript pages, and reading time. Free, no login.">
+  <meta property="og:url"         content="https://japancalc.com/en/language-tools/character-counter/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image" content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Character Counter &#x2014; Japanese Text Word Count Tool",
+    "url": "https://japancalc.com/en/language-tools/character-counter/",
+    "description": "Count characters in Japanese and English text instantly. Shows character count with/without spaces, lines, paragraphs, bytes, manuscript pages, and reading time.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",
+        "item": "https://japancalc.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Language Tools",
+        "item": "https://japancalc.com/en/language-tools/" },
+      { "@type": "ListItem", "position": 3, "name": "Character Counter",
+        "item": "https://japancalc.com/en/language-tools/character-counter/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does the character counter include spaces?",
+        "acceptedAnswer": { "@type": "Answer", "text": "This tool displays both 'Characters (with spaces)' and 'Characters (no whitespace)' simultaneously. Use the count that matches your requirement. For social media posts, spaces are typically included in the character count. For academic essays and job applications in Japan, check the specific instructions." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the character limit on X (Twitter)?",
+        "acceptedAnswer": { "@type": "Answer", "text": "X (formerly Twitter) has a 140-character limit for standard posts. Both full-width Japanese characters and half-width Latin characters count as 1 character each. URLs are shortened and counted as 23 characters. Premium subscribers can post up to 25,000 characters." }
+      },
+      {
+        "@type": "Question",
+        "name": "How is the manuscript page count calculated?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The manuscript page count (原稿用紙) is based on traditional Japanese writing paper with 400 characters per sheet (20 columns x 20 rows). The tool divides the character count (excluding whitespace) by 400 and rounds up. For example, 850 characters equals 3 manuscript pages (850 ÷ 400 = 2.125, rounded up to 3)." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between character count and byte count?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Character count measures the number of characters, while byte count measures the data size in UTF-8 encoding. In UTF-8, ASCII characters (Latin letters, numbers) use 1 byte each, while Japanese characters (hiragana, katakana, kanji) use 3 bytes each. Byte count is important for database field limits and API request limits." }
+      },
+      {
+        "@type": "Question",
+        "name": "How many characters should a Japanese job application be?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Japanese job application entry sheets (エントリーシート) typically require 200-600 characters per section. It is recommended to fill 90-100% of the specified character limit. For example, if the limit is 200 characters, aim for 180-200 characters. Use the target counter feature in this tool to track your progress." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  <style>
+    .ad-zone { min-height: 0 !important; margin: 0 !important; }
+
+    /* Character counter specific styles */
+    .char-textarea {
+      width: 100%;
+      min-height: 200px;
+      resize: vertical;
+      font-size: 16px;
+      font-family: var(--font-sans);
+      padding: 0.75rem;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius);
+      line-height: 1.6;
+      transition: border-color 0.15s;
+      box-sizing: border-box;
+    }
+    .char-textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    @media (min-width: 600px) {
+      .stats-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .stat-card {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 0.75rem;
+      text-align: center;
+    }
+    .stat-card.primary {
+      border-color: var(--color-accent);
+      background: rgba(11,110,95,0.05);
+    }
+    .stat-card-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      color: var(--color-primary);
+      display: block;
+    }
+    .stat-card.primary .stat-card-value { color: var(--color-accent); }
+    .stat-card-label {
+      font-size: 0.72rem;
+      color: var(--color-text-muted);
+      margin-top: 0.2rem;
+      display: block;
+      line-height: 1.3;
+    }
+    .target-section {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    .target-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .target-input {
+      width: 120px;
+      font-size: 16px;
+      padding: 0.4rem 0.6rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      font-family: var(--font-mono);
+    }
+    .progress-bar-wrap {
+      width: 100%;
+      height: 8px;
+      background: var(--color-border);
+      border-radius: 4px;
+      margin-top: 0.75rem;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      border-radius: 4px;
+      background: var(--color-accent);
+      transition: width 0.1s, background 0.1s;
+    }
+    .progress-bar.over { background: #dc2626; }
+    .target-status {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 0.4rem;
+    }
+    .target-status.ok   { color: var(--color-accent); }
+    .target-status.over { color: #dc2626; }
+    .char-types-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin: 0.5rem 0;
+      font-size: 0.82rem;
+    }
+    @media (min-width: 600px) {
+      .char-types-grid { grid-template-columns: repeat(6, 1fr); }
+    }
+    .char-type-item {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 0.4rem 0.5rem;
+      text-align: center;
+    }
+    .char-type-val {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      display: block;
+      color: var(--color-primary);
+    }
+    .char-type-lbl {
+      font-size: 0.68rem;
+      color: var(--color-text-muted);
+    }
+    .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.75rem;
+    }
+    .btn-clear {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      background: white;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      transition: all 0.15s;
+    }
+    .btn-clear:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .btn-copy-result {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: var(--radius);
+      background: var(--color-accent);
+      color: white;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: opacity 0.15s;
+    }
+    .btn-copy-result:hover { opacity: 0.85; }
+    .sns-table { font-size: 0.85rem; }
+    .sns-table td, .sns-table th { padding: 0.4rem 0.6rem; }
+    .bookmark-cta {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      margin-top: 1rem;
+      padding: 0.5rem;
+      border: 1px dashed var(--color-border);
+      border-radius: var(--radius);
+    }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/en/" class="nav-logo" aria-label="JapanCalc Home">
+  <img src="/assets/icons/logo-white.svg" alt="JapanCalc" width="160" height="40" loading="eager" fetchpriority="high">
+</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="lang-switcher" role="navigation" aria-label="Language switcher">
+      <a class="lang-option lang-inactive" id="lang-toggle"
+         href="/language-tools/character-counter/" lang="ja" title="このページを日本語で表示"
+         aria-label="日本語に切替">JP</a>
+      <span class="lang-sep">&middot;</span>
+      <span class="lang-option lang-active" aria-current="true">EN</span>
+    </div>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/en/">Home</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">Character Counter</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_CHARCOUNTER"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>Character Counter</h1>
+    <p class="tool-subtitle">Japanese Text Character Count Tool &#x2014; 文字数カウンター</p>
+    <p class="tool-desc">Count characters in Japanese and English text in real time. Shows character count with/without spaces, lines, paragraphs, bytes (UTF-8), manuscript pages, and estimated reading time. Free, no login required.</p>
+
+    <div class="tool-box" id="tool-main">
+
+      <!-- Textarea -->
+      <div class="form-group">
+        <label class="form-label" for="text-input">Enter or paste your text</label>
+        <textarea class="char-textarea" id="text-input"
+                  placeholder="Paste or type your text here..."
+                  aria-label="Text to count characters"
+                  aria-describedby="char-count-primary"></textarea>
+      </div>
+
+      <!-- Main stats grid -->
+      <div class="stats-grid" aria-live="polite" aria-label="Character count results">
+        <div class="stat-card primary">
+          <span class="stat-card-value" id="count-with-spaces">0</span>
+          <span class="stat-card-label">Characters<br>(with spaces)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-value" id="count-without-edge">0</span>
+          <span class="stat-card-label">Characters<br>(trimmed)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-value" id="count-without-all">0</span>
+          <span class="stat-card-label">Characters<br>(no whitespace)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-value" id="count-lines">0</span>
+          <span class="stat-card-label">Lines</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-value" id="count-paragraphs">0</span>
+          <span class="stat-card-label">Paragraphs</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-value" id="count-bytes">0</span>
+          <span class="stat-card-label">Bytes<br>(UTF-8)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-value" id="count-manuscript">0</span>
+          <span class="stat-card-label">Manuscript pages<br>(400 chars)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-value" id="count-reading">0s</span>
+          <span class="stat-card-label">Reading time<br>(500 chars/min)</span>
+        </div>
+      </div>
+
+      <!-- Target counter -->
+      <div class="target-section">
+        <p style="font-size:0.85rem; font-weight:600; margin-bottom:0.5rem;">Character Limit</p>
+        <div class="target-row">
+          <label for="target-input" style="font-size:0.85rem;">Limit:</label>
+          <input type="tel" class="target-input" id="target-input"
+                 placeholder="e.g. 2000" aria-label="Character limit">
+          <span style="font-size:0.82rem; color:var(--color-text-muted);">characters</span>
+          <span id="target-status" class="target-status"></span>
+        </div>
+        <div class="progress-bar-wrap" id="progress-wrap" style="display:none;">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+      </div>
+
+      <!-- Character type breakdown -->
+      <details style="margin-top:0.75rem;">
+        <summary style="cursor:pointer; font-size:0.85rem; font-weight:600; color:var(--color-accent); padding:0.4rem 0;">
+          ▶ Character breakdown
+        </summary>
+        <div class="char-types-grid" id="char-types" style="margin-top:0.5rem;">
+          <div class="char-type-item"><span class="char-type-val" id="type-kanji">0</span><span class="char-type-lbl">Kanji</span></div>
+          <div class="char-type-item"><span class="char-type-val" id="type-hiragana">0</span><span class="char-type-lbl">Hiragana</span></div>
+          <div class="char-type-item"><span class="char-type-val" id="type-katakana">0</span><span class="char-type-lbl">Katakana</span></div>
+          <div class="char-type-item"><span class="char-type-val" id="type-latin">0</span><span class="char-type-lbl">Latin</span></div>
+          <div class="char-type-item"><span class="char-type-val" id="type-numbers">0</span><span class="char-type-lbl">Numbers</span></div>
+          <div class="char-type-item"><span class="char-type-val" id="type-symbols">0</span><span class="char-type-lbl">Symbols</span></div>
+        </div>
+      </details>
+
+      <!-- Buttons -->
+      <div class="btn-row">
+        <button class="btn-clear" id="btn-clear" aria-label="Clear text">Clear</button>
+        <button class="btn-copy-result" id="btn-copy" aria-label="Copy result">Copy Result</button>
+      </div>
+
+      <div class="bookmark-cta">Bookmark this page for quick access anytime</div>
+
+    </div><!-- /.tool-box -->
+
+    <!-- Quick Reference Table -->
+    <div class="quick-ref">
+      <h2>Character Limits Quick Reference</h2>
+      <table class="sns-table">
+        <thead>
+          <tr>
+            <th>Platform / Use Case</th>
+            <th>Character Limit</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>X (formerly Twitter)</td><td>140 chars</td><td>URLs shortened to 23 chars</td></tr>
+          <tr><td>Instagram Caption</td><td>2,200 chars</td><td>Including hashtags</td></tr>
+          <tr><td>Instagram Bio</td><td>150 chars</td><td></td></tr>
+          <tr><td>LINE Message</td><td>No limit (500 recommended)</td><td></td></tr>
+          <tr><td>Email Subject</td><td>60-100 chars recommended</td><td>Mobile shows 25-35</td></tr>
+          <tr><td>SEO Title Tag</td><td>~60 chars (30 JP full-width)</td><td>Google display limit</td></tr>
+          <tr><td>SEO Meta Description</td><td>~160 chars (80 JP full-width)</td><td></td></tr>
+          <tr><td>University Report</td><td>2,000-4,000 chars</td><td>Varies by assignment</td></tr>
+          <tr><td>Job Application (ES)</td><td>200-600 chars</td><td>Per section</td></tr>
+          <tr><td>Manuscript Paper (原稿用紙)</td><td>400 chars</td><td>20 cols x 20 rows</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_CHARCOUNTER"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="seo-content">
+      <h2>How to Use the Character Counter</h2>
+      <p>Simply type or paste your text into the text area above, and the character count updates in real time. No button clicks needed. You can instantly see the character count with and without spaces, line count, paragraph count, byte count (UTF-8), manuscript page equivalent, and estimated reading time all at once.</p>
+      <p>Set a character limit to visualize your progress with a progress bar. This is especially useful when writing Japanese job application entry sheets (エントリーシート) or social media posts with strict character limits.</p>
+
+      <h2>Why Japanese Text Counting Is Different</h2>
+      <p>Counting characters in Japanese text presents unique challenges compared to English. Japanese uses three writing systems &#x2014; kanji (漢字), hiragana (ひらがな), and katakana (カタカナ) &#x2014; each with different byte sizes in UTF-8 encoding. While a Latin character takes 1 byte, each Japanese character takes 3 bytes. This distinction matters for database field limits, API request sizes, and SMS messages.</p>
+      <p>Japanese also uses full-width characters (全角) for numbers and punctuation alongside half-width (半角) equivalents. The manuscript page calculation (原稿用紙換算) is a uniquely Japanese metric based on traditional 400-character writing paper used in schools and publishing. Whether you are an expat writing a job application in Japan, a student working on an essay, or a social media manager crafting posts, this tool handles all these nuances automatically. All processing happens in your browser &#x2014; your text is never sent to any server.</p>
+    </article>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary>Does the character counter include spaces?</summary>
+        <p>This tool displays both "Characters (with spaces)" and "Characters (no whitespace)" simultaneously. Use the count that matches your requirement. For social media posts, spaces are typically included in the character count. For academic essays and job applications in Japan, check the specific instructions.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the character limit on X (Twitter)?</summary>
+        <p>X (formerly Twitter) has a 140-character limit for standard posts. Both full-width Japanese characters and half-width Latin characters count as 1 character each. URLs are shortened and counted as 23 characters. Premium subscribers can post up to 25,000 characters.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How is the manuscript page count calculated?</summary>
+        <p>The manuscript page count (原稿用紙) is based on traditional Japanese writing paper with 400 characters per sheet (20 columns x 20 rows). The tool divides the character count (excluding whitespace) by 400 and rounds up. For example, 850 characters equals 3 manuscript pages (850 ÷ 400 = 2.125, rounded up to 3).</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the difference between character count and byte count?</summary>
+        <p>Character count measures the number of characters, while byte count measures the data size in UTF-8 encoding. In UTF-8, ASCII characters (Latin letters, numbers) use 1 byte each, while Japanese characters (hiragana, katakana, kanji) use 3 bytes each. Byte count is important for database field limits and API request limits.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How many characters should a Japanese job application be?</summary>
+        <p>Japanese job application entry sheets (エントリーシート) typically require 200-600 characters per section. It is recommended to fill 90-100% of the specified character limit. For example, if the limit is 200 characters, aim for 180-200 characters. Use the target counter feature in this tool to track your progress.</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/en/language-tools/romaji-converter/" class="tool-card">
+          <div class="tool-card-icon">&#x1F524;</div>
+          <div class="tool-card-name">Romaji Converter</div>
+          <div class="tool-card-jp">ローマ字変換</div>
+        </a>
+        <a href="/en/language-tools/furigana-generator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4D6;</div>
+          <div class="tool-card-name">Furigana Generator</div>
+          <div class="tool-card-jp">ふりがな生成</div>
+        </a>
+        <a href="/en/language-tools/kanji-numbers/" class="tool-card">
+          <div class="tool-card-icon">&#x1F522;</div>
+          <div class="tool-card-name">Kanji Numbers</div>
+          <div class="tool-card-jp">漢数字変換</div>
+        </a>
+        <a href="/en/language-tools/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4D0;</div>
+          <div class="tool-card-name">All Language Tools</div>
+          <div class="tool-card-jp">言語ツール</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_CHARCOUNTER"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/en/about/">About</a></li>
+      <li><a href="/en/privacy/">Privacy Policy</a></li>
+      <li><a href="/en/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+    <p class="footer-attribution">Character Counter Tool. Last updated: April 2026</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import {
+  countWithSpaces, countWithoutEdgeSpaces, countWithoutAllSpaces,
+  countLines, countParagraphs, countBytes,
+  calcManuscriptPages, calcReadingTime, analyzeCharTypes
+} from '/assets/js/character-counter.js';
+
+const textarea    = document.getElementById('text-input');
+const targetInput = document.getElementById('target-input');
+const btnClear    = document.getElementById('btn-clear');
+const btnCopy     = document.getElementById('btn-copy');
+
+let debounceTimer;
+
+function updateStats() {
+  const text   = textarea.value;
+  const target = parseInt(targetInput.value) || 0;
+
+  const ws  = countWithSpaces(text);
+  const woe = countWithoutEdgeSpaces(text);
+  const woa = countWithoutAllSpaces(text);
+  const ln  = countLines(text);
+  const pa  = countParagraphs(text);
+  const by  = countBytes(text);
+  const ms  = calcManuscriptPages(text);
+  const rt  = calcReadingTime(text);
+  const types = analyzeCharTypes(text);
+
+  document.getElementById('count-with-spaces').textContent   = ws.toLocaleString('en-US');
+  document.getElementById('count-without-edge').textContent  = woe.toLocaleString('en-US');
+  document.getElementById('count-without-all').textContent   = woa.toLocaleString('en-US');
+  document.getElementById('count-lines').textContent         = ln.toLocaleString('en-US');
+  document.getElementById('count-paragraphs').textContent    = pa.toLocaleString('en-US');
+  document.getElementById('count-bytes').textContent         = by.toLocaleString('en-US');
+  document.getElementById('count-manuscript').textContent    = ms.toLocaleString('en-US');
+  document.getElementById('count-reading').textContent       =
+    rt.minutes > 0 ? `${rt.minutes}m ${rt.seconds}s` : `${rt.seconds}s`;
+
+  document.getElementById('type-kanji').textContent    = types.kanji.toLocaleString('en-US');
+  document.getElementById('type-hiragana').textContent = types.hiragana.toLocaleString('en-US');
+  document.getElementById('type-katakana').textContent = types.katakana.toLocaleString('en-US');
+  document.getElementById('type-latin').textContent    = types.latin.toLocaleString('en-US');
+  document.getElementById('type-numbers').textContent  = types.numbers.toLocaleString('en-US');
+  document.getElementById('type-symbols').textContent  = types.symbols.toLocaleString('en-US');
+
+  const progressWrap = document.getElementById('progress-wrap');
+  const progressBar  = document.getElementById('progress-bar');
+  const statusEl     = document.getElementById('target-status');
+
+  if (target > 0) {
+    const pct  = Math.min((ws / target) * 100, 100);
+    const over = ws > target;
+    progressWrap.style.display = 'block';
+    progressBar.style.width    = pct + '%';
+    progressBar.className      = 'progress-bar' + (over ? ' over' : '');
+    statusEl.className         = 'target-status' + (over ? ' over' : ' ok');
+    statusEl.textContent       = over
+      ? `${(ws - target).toLocaleString('en-US')} characters over limit`
+      : `${(target - ws).toLocaleString('en-US')} characters remaining`;
+  } else {
+    progressWrap.style.display = 'none';
+    statusEl.textContent = '';
+  }
+
+  if (text.length > 0 && typeof gtag !== 'undefined') {
+    gtag('event', 'tool_used', { tool_name: 'character_counter', language: 'en' });
+  }
+}
+
+textarea.addEventListener('input', () => {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(updateStats, 50);
+});
+
+targetInput.addEventListener('input', updateStats);
+
+btnClear.addEventListener('click', () => {
+  textarea.value = '';
+  targetInput.value = '';
+  updateStats();
+  textarea.focus();
+});
+
+btnCopy.addEventListener('click', () => {
+  const ws  = document.getElementById('count-with-spaces').textContent;
+  const woa = document.getElementById('count-without-all').textContent;
+  const ln  = document.getElementById('count-lines').textContent;
+  const ms  = document.getElementById('count-manuscript').textContent;
+  const rt  = document.getElementById('count-reading').textContent;
+
+  const result = `Characters (with spaces): ${ws}\nCharacters (no whitespace): ${woa}\nLines: ${ln}\nManuscript pages: ${ms}\nReading time: ${rt}`;
+
+  navigator.clipboard.writeText(result).then(() => {
+    btnCopy.textContent = 'Copied! \u2713';
+    if (typeof gtag !== 'undefined')
+      gtag('event', 'result_copied', { tool_name: 'character_counter' });
+    setTimeout(() => { btnCopy.textContent = 'Copy Result'; }, 2000);
+  });
+});
+
+updateStats();
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(function(zone) {
+    var ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(function(z) { observer.observe(z); });
+  }
+});
+</script>
+
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = 'JP';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'EN';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+  }
+})();
+</script>
+</body>
+</html>

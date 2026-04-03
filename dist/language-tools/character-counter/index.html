@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文字数カウント: 文字数カウンター・字数チェック | JapanCalc</title>
+  <meta name="description" content="文字数をリアルタイムでカウント。スペース含む・除く、行数、段落数、バイト数、原稿用紙換算、読了時間を同時表示。SNS・就活・レポートに対応。無料、ログイン不要。">
+  <link rel="canonical" href="https://japancalc.com/language-tools/character-counter/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/language-tools/character-counter/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/language-tools/character-counter/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/language-tools/character-counter/">
+  <meta property="og:title"       content="文字数カウント: 文字数カウンター | JapanCalc">
+  <meta property="og:description" content="文字数をリアルタイムでカウント。SNS・就活・レポートに対応。無料。">
+  <meta property="og:url"         content="https://japancalc.com/language-tools/character-counter/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image" content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "文字数カウンター | JapanCalc",
+    "url": "https://japancalc.com/language-tools/character-counter/",
+    "description": "文字数をリアルタイムでカウント。スペース含む・除く、行数、段落数、バイト数、原稿用紙換算、読了時間を同時表示。",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["ja", "en"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://japancalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "言語ツール", "item": "https://japancalc.com/language-tools/" },
+      { "@type": "ListItem", "position": 3, "name": "文字数カウンター", "item": "https://japancalc.com/language-tools/character-counter/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "スペースは文字数に含まれますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "このツールでは「文字数（スペース含む）」と「文字数（スペース除く）」の2種類を同時に表示します。用途に応じてどちらの数値もご確認いただけます。スペースを含む場合はテキスト全体の文字数、除く場合は実質的な文字数としてご利用ください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "Twitterの文字数制限は何文字ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "X（旧Twitter）の投稿文字数は140字です。ただし、URLは短縮されて23字扱いになります。また、日本語の全角文字も半角英数字も同様に1字としてカウントされます。画像を添付した場合や引用リツイートの場合は実際の入力可能文字数が変わります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "原稿用紙換算の計算方法は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "原稿用紙換算は、改行・空白を除いた文字数を400（1枚あたりの文字数）で割り、小数点以下を切り上げて計算します。例えば、実質文字数が850字の場合、850÷400＝2.125となり、切り上げて3枚となります。一般的な400字詰め原稿用紙の縦書き20字×20行を基準にしています。" }
+      },
+      {
+        "@type": "Question",
+        "name": "バイト数と文字数の違いは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "バイト数はUTF-8エンコードでのデータ量です。日本語の全角文字（ひらがな・カタカナ・漢字）は1文字あたり3バイト、半角英数字は1バイトとなります。データベースのフィールド制限やAPIのリクエスト制限はバイト数で管理されることが多いため、両方の確認が重要です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "就活のエントリーシートは何文字が適切ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "就活のエントリーシートは、指定文字数の90〜100%を目安にすることが推奨されます。例えば「200字以内」の設問であれば180〜200字が適切です。少なすぎると熱意が伝わらず、多すぎると読みにくくなります。このツールの目標文字数機能を使って、適切な文字数を管理しましょう。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <!-- GA4 -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  <style>
+    .ad-zone { min-height: 0 !important; margin: 0 !important; }
+
+    /* Character counter specific styles */
+    .char-textarea {
+      width: 100%;
+      min-height: 200px;
+      resize: vertical;
+      font-size: 16px;
+      font-family: var(--font-sans);
+      padding: 0.75rem;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius);
+      line-height: 1.6;
+      transition: border-color 0.15s;
+      box-sizing: border-box;
+    }
+    .char-textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    @media (min-width: 600px) {
+      .stats-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .stat-card {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 0.75rem;
+      text-align: center;
+    }
+    .stat-card.primary {
+      border-color: var(--color-accent);
+      background: rgba(11,110,95,0.05);
+    }
+    .stat-card-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      color: var(--color-primary);
+      display: block;
+    }
+    .stat-card.primary .stat-card-value { color: var(--color-accent); }
+    .stat-card-label {
+      font-size: 0.72rem;
+      color: var(--color-text-muted);
+      margin-top: 0.2rem;
+      display: block;
+      line-height: 1.3;
+    }
+    .target-section {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    .target-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .target-input {
+      width: 120px;
+      font-size: 16px;
+      padding: 0.4rem 0.6rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      font-family: var(--font-mono);
+    }
+    .progress-bar-wrap {
+      width: 100%;
+      height: 8px;
+      background: var(--color-border);
+      border-radius: 4px;
+      margin-top: 0.75rem;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      border-radius: 4px;
+      background: var(--color-accent);
+      transition: width 0.1s, background 0.1s;
+    }
+    .progress-bar.over { background: #dc2626; }
+    .target-status {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 0.4rem;
+    }
+    .target-status.ok   { color: var(--color-accent); }
+    .target-status.over { color: #dc2626; }
+    .char-types-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin: 0.5rem 0;
+      font-size: 0.82rem;
+    }
+    @media (min-width: 600px) {
+      .char-types-grid { grid-template-columns: repeat(6, 1fr); }
+    }
+    .char-type-item {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 0.4rem 0.5rem;
+      text-align: center;
+    }
+    .char-type-val {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      display: block;
+      color: var(--color-primary);
+    }
+    .char-type-lbl {
+      font-size: 0.68rem;
+      color: var(--color-text-muted);
+    }
+    .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.75rem;
+    }
+    .btn-clear {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      background: white;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      transition: all 0.15s;
+    }
+    .btn-clear:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .btn-copy-result {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: var(--radius);
+      background: var(--color-accent);
+      color: white;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: opacity 0.15s;
+    }
+    .btn-copy-result:hover { opacity: 0.85; }
+    .sns-table { font-size: 0.85rem; }
+    .sns-table td, .sns-table th { padding: 0.4rem 0.6rem; }
+    .bookmark-cta {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      margin-top: 1rem;
+      padding: 0.5rem;
+      border: 1px dashed var(--color-border);
+      border-radius: var(--radius);
+    }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <a href="/" class="nav-logo" aria-label="JapanCalc ホーム">
+  <img src="/assets/icons/logo-white.svg" alt="JapanCalc" width="160" height="40" loading="eager" fetchpriority="high">
+</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="lang-switcher" role="navigation" aria-label="言語切替">
+      <span class="lang-option lang-active" aria-current="true">JP</span>
+      <span class="lang-sep">&middot;</span>
+      <a class="lang-option lang-inactive" id="lang-toggle"
+         href="/en/language-tools/character-counter/" lang="en" title="View in English"
+         aria-label="Switch to English">EN</a>
+    </div>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="/">ホーム</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">文字数カウンター</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_CHARCOUNTER"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>文字数カウンター</h1>
+    <p class="tool-subtitle">文字数カウント・字数チェックツール &#x2014; Character Counter</p>
+    <p class="tool-desc">テキストの文字数をリアルタイムでカウント。スペース含む・除く、行数、段落数、バイト数、原稿用紙換算、読了時間を同時表示。SNS・就活・レポートに対応。無料、ログイン不要。</p>
+
+    <div class="tool-box" id="tool-main">
+
+      <!-- Textarea -->
+      <div class="form-group">
+        <label class="form-label" for="text-input">テキストを入力してください</label>
+        <textarea class="char-textarea" id="text-input"
+                  placeholder="ここにテキストを貼り付けるか、直接入力してください..."
+                  aria-label="文字数をカウントするテキスト"
+                  aria-describedby="char-count-primary"></textarea>
+      </div>
+
+      <!-- Main stats grid -->
+      <div class="stats-grid" aria-live="polite" aria-label="文字数カウント結果">
+        <div class="stat-card primary">
+          <span class="stat-card-value" id="count-with-spaces">0</span>
+          <span class="stat-card-label">文字数<br>（スペース含む）</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-value" id="count-without-edge">0</span>
+          <span class="stat-card-label">文字数<br>（前後スペース除く）</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-value" id="count-without-all">0</span>
+          <span class="stat-card-label">文字数<br>（改行・空白除く）</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-value" id="count-lines">0</span>
+          <span class="stat-card-label">行数</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-value" id="count-paragraphs">0</span>
+          <span class="stat-card-label">段落数</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-value" id="count-bytes">0</span>
+          <span class="stat-card-label">バイト数<br>（UTF-8）</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-value" id="count-manuscript">0</span>
+          <span class="stat-card-label">原稿用紙<br>（400字詰め）枚</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-value" id="count-reading">0分</span>
+          <span class="stat-card-label">読了時間<br>（500字/分）</span>
+        </div>
+      </div>
+
+      <!-- Target counter -->
+      <div class="target-section">
+        <p style="font-size:0.85rem; font-weight:600; margin-bottom:0.5rem;">目標文字数</p>
+        <div class="target-row">
+          <label for="target-input" style="font-size:0.85rem;">目標：</label>
+          <input type="tel" class="target-input" id="target-input"
+                 placeholder="例: 2000" aria-label="目標文字数">
+          <span style="font-size:0.82rem; color:var(--color-text-muted);">字以内</span>
+          <span id="target-status" class="target-status"></span>
+        </div>
+        <div class="progress-bar-wrap" id="progress-wrap" style="display:none;">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+      </div>
+
+      <!-- Character type breakdown -->
+      <details style="margin-top:0.75rem;">
+        <summary style="cursor:pointer; font-size:0.85rem; font-weight:600; color:var(--color-accent); padding:0.4rem 0;">
+          ▶ 文字種別の内訳
+        </summary>
+        <div class="char-types-grid" id="char-types" style="margin-top:0.5rem;">
+          <div class="char-type-item"><span class="char-type-val" id="type-kanji">0</span><span class="char-type-lbl">漢字</span></div>
+          <div class="char-type-item"><span class="char-type-val" id="type-hiragana">0</span><span class="char-type-lbl">ひらがな</span></div>
+          <div class="char-type-item"><span class="char-type-val" id="type-katakana">0</span><span class="char-type-lbl">カタカナ</span></div>
+          <div class="char-type-item"><span class="char-type-val" id="type-latin">0</span><span class="char-type-lbl">英字</span></div>
+          <div class="char-type-item"><span class="char-type-val" id="type-numbers">0</span><span class="char-type-lbl">数字</span></div>
+          <div class="char-type-item"><span class="char-type-val" id="type-symbols">0</span><span class="char-type-lbl">記号等</span></div>
+        </div>
+      </details>
+
+      <!-- Buttons -->
+      <div class="btn-row">
+        <button class="btn-clear" id="btn-clear" aria-label="テキストをクリア">クリア</button>
+        <button class="btn-copy-result" id="btn-copy" aria-label="結果をコピー">結果をコピー</button>
+      </div>
+
+      <div class="bookmark-cta">このページをブックマークして繰り返しご利用ください</div>
+
+    </div><!-- /.tool-box -->
+
+    <!-- Quick Reference Table -->
+    <div class="quick-ref">
+      <h2>SNS・各メディアの文字数制限 早見表</h2>
+      <table class="sns-table">
+        <thead>
+          <tr>
+            <th>メディア・用途</th>
+            <th>文字数制限</th>
+            <th>備考</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>X（旧Twitter）</td><td>140字</td><td>URL は短縮で23字扱い</td></tr>
+          <tr><td>Instagram キャプション</td><td>2,200字</td><td>ハッシュタグ込み</td></tr>
+          <tr><td>Instagram bio</td><td>150字</td><td></td></tr>
+          <tr><td>LINE メッセージ</td><td>制限なし（推奨500字以内）</td><td></td></tr>
+          <tr><td>メール件名</td><td>半角60〜100字推奨</td><td>スマホは25〜35字</td></tr>
+          <tr><td>SEO タイトルタグ</td><td>全角32字（半角64字）</td><td>Google の表示上限</td></tr>
+          <tr><td>SEO メタディスクリプション</td><td>全角80字（半角160字）</td><td></td></tr>
+          <tr><td>大学レポート（一般）</td><td>2,000〜4,000字</td><td>指定に従う</td></tr>
+          <tr><td>就活エントリーシート</td><td>200〜600字</td><td>設問による</td></tr>
+          <tr><td>400字詰め原稿用紙</td><td>400字</td><td>縦書き 20字×20行</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_CHARCOUNTER"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="seo-content">
+      <h2>文字数カウンターの使い方</h2>
+      <p>テキストエリアに文字を入力または貼り付けると、文字数がリアルタイムで自動カウントされます。ボタンを押す必要はありません。スペースを含む文字数・除く文字数、行数、段落数、バイト数（UTF-8）、原稿用紙枚数換算、読了時間を一度に確認できます。</p>
+      <p>目標文字数を入力すると、現在の文字数との差をプログレスバーで可視化します。就活のエントリーシートや各種レポートの文字数管理にご活用ください。</p>
+
+      <h2>文字数カウントが必要な場面</h2>
+      <p>日常生活やビジネスシーンで文字数を意識する場面は多くあります。SNSへの投稿ではX（旧Twitter）の140字制限、Instagramのキャプション2,200字制限などプラットフォームごとに上限が異なります。就職活動のエントリーシートでは「200字以内で」「400字程度で」といった指定があり、指定文字数の90〜100%を記入するのが一般的です。大学のレポートや論文、商品説明文、プレスリリースなど、文章を書く多くの場面で文字数管理が求められます。このツールはすべてブラウザ内で処理されるため、入力内容がサーバーに送信されることはなく、安心してご利用いただけます。</p>
+    </article>
+
+    <section class="faq-section">
+      <h2>よくある質問</h2>
+
+      <details class="faq-item">
+        <summary>スペースは文字数に含まれますか？</summary>
+        <p>このツールでは「文字数（スペース含む）」と「文字数（スペース除く）」の2種類を同時に表示します。用途に応じてどちらの数値もご確認いただけます。スペースを含む場合はテキスト全体の文字数、除く場合は実質的な文字数としてご利用ください。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Twitterの文字数制限は何文字ですか？</summary>
+        <p>X（旧Twitter）の投稿文字数は140字です。ただし、URLは短縮されて23字扱いになります。また、日本語の全角文字も半角英数字も同様に1字としてカウントされます。画像を添付した場合や引用リツイートの場合は実際の入力可能文字数が変わります。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>原稿用紙換算の計算方法は？</summary>
+        <p>原稿用紙換算は、改行・空白を除いた文字数を400（1枚あたりの文字数）で割り、小数点以下を切り上げて計算します。例えば、実質文字数が850字の場合、850÷400＝2.125となり、切り上げて3枚となります。一般的な400字詰め原稿用紙の縦書き20字×20行を基準にしています。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>バイト数と文字数の違いは何ですか？</summary>
+        <p>バイト数はUTF-8エンコードでのデータ量です。日本語の全角文字（ひらがな・カタカナ・漢字）は1文字あたり3バイト、半角英数字は1バイトとなります。データベースのフィールド制限やAPIのリクエスト制限はバイト数で管理されることが多いため、両方の確認が重要です。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>就活のエントリーシートは何文字が適切ですか？</summary>
+        <p>就活のエントリーシートは、指定文字数の90〜100%を目安にすることが推奨されます。例えば「200字以内」の設問であれば180〜200字が適切です。少なすぎると熱意が伝わらず、多すぎると読みにくくなります。このツールの目標文字数機能を使って、適切な文字数を管理しましょう。</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>関連ツール</h2>
+      <div class="cards-grid">
+        <a href="/language-tools/romaji-converter/" class="tool-card">
+          <div class="tool-card-icon">&#x1F524;</div>
+          <div class="tool-card-name">ローマ字変換</div>
+          <div class="tool-card-jp">Romaji Converter</div>
+        </a>
+        <a href="/language-tools/furigana-generator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4D6;</div>
+          <div class="tool-card-name">ふりがな生成</div>
+          <div class="tool-card-jp">Furigana Generator</div>
+        </a>
+        <a href="/language-tools/kanji-numbers/" class="tool-card">
+          <div class="tool-card-icon">&#x1F522;</div>
+          <div class="tool-card-name">漢数字変換</div>
+          <div class="tool-card-jp">Kanji Numbers</div>
+        </a>
+        <a href="/language-tools/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4D0;</div>
+          <div class="tool-card-name">言語ツール一覧</div>
+          <div class="tool-card-jp">All Language Tools</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_CHARCOUNTER"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. 無断転載禁止。</p>
+    <p class="footer-attribution">文字数カウントツール. 最終更新: 2026年4月</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+  });
+})();
+</script>
+
+<script type="module">
+import {
+  countWithSpaces, countWithoutEdgeSpaces, countWithoutAllSpaces,
+  countLines, countParagraphs, countBytes,
+  calcManuscriptPages, calcReadingTime, analyzeCharTypes
+} from '/assets/js/character-counter.js';
+
+const textarea    = document.getElementById('text-input');
+const targetInput = document.getElementById('target-input');
+const btnClear    = document.getElementById('btn-clear');
+const btnCopy     = document.getElementById('btn-copy');
+
+let debounceTimer;
+
+function updateStats() {
+  const text   = textarea.value;
+  const target = parseInt(targetInput.value) || 0;
+
+  // Main counts
+  const ws  = countWithSpaces(text);
+  const woe = countWithoutEdgeSpaces(text);
+  const woa = countWithoutAllSpaces(text);
+  const ln  = countLines(text);
+  const pa  = countParagraphs(text);
+  const by  = countBytes(text);
+  const ms  = calcManuscriptPages(text);
+  const rt  = calcReadingTime(text);
+  const types = analyzeCharTypes(text);
+
+  // Update DOM
+  document.getElementById('count-with-spaces').textContent   = ws.toLocaleString('ja-JP');
+  document.getElementById('count-without-edge').textContent  = woe.toLocaleString('ja-JP');
+  document.getElementById('count-without-all').textContent   = woa.toLocaleString('ja-JP');
+  document.getElementById('count-lines').textContent         = ln.toLocaleString('ja-JP');
+  document.getElementById('count-paragraphs').textContent    = pa.toLocaleString('ja-JP');
+  document.getElementById('count-bytes').textContent         = by.toLocaleString('ja-JP');
+  document.getElementById('count-manuscript').textContent    = ms.toLocaleString('ja-JP');
+  document.getElementById('count-reading').textContent       =
+    rt.minutes > 0 ? `${rt.minutes}分${rt.seconds}秒` : `${rt.seconds}秒`;
+
+  // Char types
+  document.getElementById('type-kanji').textContent    = types.kanji.toLocaleString('ja-JP');
+  document.getElementById('type-hiragana').textContent = types.hiragana.toLocaleString('ja-JP');
+  document.getElementById('type-katakana').textContent = types.katakana.toLocaleString('ja-JP');
+  document.getElementById('type-latin').textContent    = types.latin.toLocaleString('ja-JP');
+  document.getElementById('type-numbers').textContent  = types.numbers.toLocaleString('ja-JP');
+  document.getElementById('type-symbols').textContent  = types.symbols.toLocaleString('ja-JP');
+
+  // Target progress
+  const progressWrap = document.getElementById('progress-wrap');
+  const progressBar  = document.getElementById('progress-bar');
+  const statusEl     = document.getElementById('target-status');
+
+  if (target > 0) {
+    const pct  = Math.min((ws / target) * 100, 100);
+    const over = ws > target;
+    progressWrap.style.display = 'block';
+    progressBar.style.width    = pct + '%';
+    progressBar.className      = 'progress-bar' + (over ? ' over' : '');
+    statusEl.className         = 'target-status' + (over ? ' over' : ' ok');
+    statusEl.textContent       = over
+      ? `${(ws - target).toLocaleString('ja-JP')}字オーバー`
+      : `残り ${(target - ws).toLocaleString('ja-JP')}字`;
+  } else {
+    progressWrap.style.display = 'none';
+    statusEl.textContent = '';
+  }
+
+  // Fire GA4 only when text is non-empty
+  if (text.length > 0 && typeof gtag !== 'undefined') {
+    gtag('event', 'tool_used', { tool_name: 'character_counter', language: 'ja' });
+  }
+}
+
+// Debounced input handler (50ms)
+textarea.addEventListener('input', () => {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(updateStats, 50);
+});
+
+targetInput.addEventListener('input', updateStats);
+
+// Clear button
+btnClear.addEventListener('click', () => {
+  textarea.value = '';
+  targetInput.value = '';
+  updateStats();
+  textarea.focus();
+});
+
+// Copy result button
+btnCopy.addEventListener('click', () => {
+  const ws  = document.getElementById('count-with-spaces').textContent;
+  const woa = document.getElementById('count-without-all').textContent;
+  const ln  = document.getElementById('count-lines').textContent;
+  const ms  = document.getElementById('count-manuscript').textContent;
+  const rt  = document.getElementById('count-reading').textContent;
+
+  const result = `文字数（スペース含む）：${ws}字\n文字数（空白除く）：${woa}字\n行数：${ln}行\n原稿用紙：${ms}枚\n読了時間：${rt}`;
+
+  navigator.clipboard.writeText(result).then(() => {
+    btnCopy.textContent = 'コピーしました ✓';
+    if (typeof gtag !== 'undefined')
+      gtag('event', 'result_copied', { tool_name: 'character_counter' });
+    setTimeout(() => { btnCopy.textContent = '結果をコピー'; }, 2000);
+  });
+});
+
+// Init
+updateStats();
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(function(zone) {
+    var ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(function(z) { observer.observe(z); });
+  }
+});
+</script>
+
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+  }
+})();
+</script>
+</body>
+</html>
