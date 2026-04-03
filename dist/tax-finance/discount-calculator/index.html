@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>割引計算ツール: 割引後価格・割引率を瞬時に計算 | JapanCalc</title>
+  <meta name="description" content="割引後の価格・割引率・元の価格を瞬時に計算。10%OFF・20%OFF・半額など。消費税（10%・8%）との組み合わせも対応。無料、ログイン不要。">
+  <link rel="canonical" href="https://japancalc.com/tax-finance/discount-calculator/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/tax-finance/discount-calculator/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/tax-finance/discount-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/tax-finance/discount-calculator/">
+  <meta property="og:title"       content="割引計算ツール | JapanCalc">
+  <meta property="og:description" content="割引後価格・割引率を瞬時に計算。消費税対応。無料。">
+  <meta property="og:url"         content="https://japancalc.com/tax-finance/discount-calculator/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image"       content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "割引計算ツール | JapanCalc",
+    "url": "https://japancalc.com/tax-finance/discount-calculator/",
+    "description": "割引後の価格・割引率・元の価格を瞬時に計算。消費税（10%・8%）との組み合わせも対応。",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["ja", "en"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム",        "item": "https://japancalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "税金・財務",    "item": "https://japancalc.com/tax-finance/" },
+      { "@type": "ListItem", "position": 3, "name": "割引計算ツール", "item": "https://japancalc.com/tax-finance/discount-calculator/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "10%OFFの計算方法は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "10%OFFの計算は、元の価格に0.9を掛けるだけです。例えば¥1,000の商品が10%OFFの場合、¥1,000×0.9＝¥900が割引後価格です。または¥1,000×10%＝¥100が割引額で、¥1,000−¥100＝¥900となります。このツールに金額と割引率を入力すると瞬時に計算できます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "割引後の価格に消費税は含まれますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "日本の消費税は割引後の価格に対して課税されます。例えば¥1,000の商品が20%OFFになると割引後価格は¥800となり、その¥800に対して消費税10%（¥80）が加算されて税込¥880となります。このツールでは割引計算と消費税計算を同時に行うことができます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "割引率の計算方法は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "割引率（%）は「割引額÷元の価格×100」で求められます。例えば¥1,000の商品が¥800になった場合、割引額は¥200です。¥200÷¥1,000×100＝20%となり、20%OFFと分かります。このツールのモード2では元の価格と割引後価格を入力すると割引率を自動計算します。" }
+      },
+      {
+        "@type": "Question",
+        "name": "セール前の元の価格を逆算するには？",
+        "acceptedAnswer": { "@type": "Answer", "text": "割引後価格と割引率から元の価格を逆算するには「割引後価格÷（1−割引率）」で計算します。例えば20%OFFで¥800になっている商品の元の価格は¥800÷0.8＝¥1,000です。このツールのモード3では割引後価格と割引率を入力するだけで元の価格を自動計算します。" }
+      },
+      {
+        "@type": "Question",
+        "name": "半額（50%OFF）と消費税の関係は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "半額（50%OFF）になった商品にも消費税は課されます。例えば¥2,000の商品が半額の¥1,000になった場合、消費税10%が加算されて税込¥1,100が最終的な支払額となります。食料品など軽減税率8%が適用される商品は税込¥1,080となります。このツールで割引率と税率を組み合わせて正確な金額をご確認ください。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  <style>
+    .ad-zone { min-height: 0 !important; margin: 0 !important; }
+
+    /* Discount calculator styles */
+    .tool-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--color-border);
+      margin-bottom: 1rem;
+    }
+    .tool-tab {
+      padding: 0.6rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--color-text-muted);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .tool-tab.active {
+      color: var(--color-accent);
+      border-bottom-color: var(--color-accent);
+    }
+    .tool-tab:hover { color: var(--color-primary); }
+    .tool-panel { display: none; }
+    .tool-panel.active { display: block; }
+
+    .input-prefix-wrap, .input-suffix-wrap {
+      display: flex;
+      align-items: center;
+    }
+    .input-prefix {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-right: none;
+      border-radius: var(--radius) 0 0 var(--radius);
+      padding: 0.5rem 0.6rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+    }
+    .input-with-prefix {
+      border-radius: 0 var(--radius) var(--radius) 0 !important;
+      flex: 1;
+    }
+    .input-suffix {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-left: none;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 0.5rem 0.6rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+    }
+    .input-with-suffix {
+      border-radius: var(--radius) 0 0 var(--radius) !important;
+      flex: 1;
+    }
+
+    .quick-presets {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin: 0.5rem 0 1rem;
+    }
+    .preset-btn {
+      padding: 0.3rem 0.7rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      background: white;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: all 0.15s;
+      color: var(--color-text-muted);
+    }
+    .preset-btn:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: rgba(11,110,95,0.04);
+    }
+
+    .rate-toggle {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .rate-option {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .rate-option input[type="radio"] {
+      accent-color: var(--color-accent);
+    }
+
+    .result-box {
+      background: rgba(11,110,95,0.04);
+      border: 1px solid var(--color-accent);
+      border-radius: var(--radius);
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+    .result-primary {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      font-family: var(--font-mono);
+    }
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.85rem;
+    }
+    .result-item-label { color: var(--color-text-muted); }
+    .result-item-value { font-weight: 600; font-family: var(--font-mono); }
+    .result-formula {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      margin-top: 0.75rem;
+      font-family: var(--font-mono);
+    }
+    .result-actions { margin-top: 0.75rem; }
+    @media (max-width: 480px) {
+      .result-grid { grid-template-columns: 1fr; }
+      .tool-tabs { overflow-x: auto; }
+    }
+
+    .btn-copy-result {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: var(--radius);
+      background: var(--color-accent);
+      color: white;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: opacity 0.15s;
+    }
+    .btn-copy-result:hover { opacity: 0.85; }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <a href="/" class="nav-logo" aria-label="JapanCalc ホーム">
+  <img src="/assets/icons/logo-white.svg" alt="JapanCalc" width="160" height="40" loading="eager" fetchpriority="high">
+</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="lang-switcher" role="navigation" aria-label="言語切替">
+      <span class="lang-option lang-active" aria-current="true">JP</span>
+      <span class="lang-sep">&middot;</span>
+      <a class="lang-option lang-inactive" id="lang-toggle"
+         href="/en/tax-finance/discount-calculator/" lang="en" title="View in English"
+         aria-label="Switch to English">EN</a>
+    </div>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="/">ホーム</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">割引計算ツール</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_DISCOUNT"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>割引計算ツール</h1>
+    <p class="tool-subtitle">割引後価格・割引率を瞬時に計算 &#x2014; Discount Price Calculator</p>
+    <p class="tool-desc">割引後の価格・割引額・割引率・元の価格を瞬時に計算。10%OFF・20%OFF・半額など各種割引に対応。消費税（10%・8%）との組み合わせも計算できます。無料、ログイン不要。</p>
+
+    <div class="tool-box" id="tool-main">
+
+      <!-- Tabs -->
+      <div class="tool-tabs" role="tablist">
+        <button class="tool-tab active" data-panel="panel-mode1" role="tab" aria-selected="true">割引後を計算</button>
+        <button class="tool-tab" data-panel="panel-mode2" role="tab" aria-selected="false">割引率を計算</button>
+        <button class="tool-tab" data-panel="panel-mode3" role="tab" aria-selected="false">元の価格を計算</button>
+      </div>
+
+      <!-- Mode 1: Price + Rate → Result -->
+      <div class="tool-panel active" id="panel-mode1" role="tabpanel">
+        <div class="form-group">
+          <label class="form-label" for="m1-original">元の価格（税抜）</label>
+          <div class="input-prefix-wrap">
+            <span class="input-prefix">&#xA5;</span>
+            <input type="tel" class="form-input input-with-prefix"
+                   id="m1-original" placeholder="1000" aria-label="元の価格">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="m1-rate">割引率</label>
+          <div class="input-suffix-wrap">
+            <input type="tel" class="form-input input-with-suffix"
+                   id="m1-rate" placeholder="20" aria-label="割引率">
+            <span class="input-suffix">% OFF</span>
+          </div>
+        </div>
+
+        <div class="quick-presets">
+          <span style="font-size:0.8rem; color:var(--color-text-muted);">よく使う割引率：</span>
+          <button class="preset-btn" data-rate="10">10%</button>
+          <button class="preset-btn" data-rate="20">20%</button>
+          <button class="preset-btn" data-rate="30">30%</button>
+          <button class="preset-btn" data-rate="50">半額</button>
+          <button class="preset-btn" data-rate="70">70%</button>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">消費税を加算する</label>
+          <div class="rate-toggle" role="group">
+            <label class="rate-option">
+              <input type="radio" name="m1-tax" value="none" checked>
+              <span>加算しない</span>
+            </label>
+            <label class="rate-option">
+              <input type="radio" name="m1-tax" value="standard">
+              <span>10%（標準）</span>
+            </label>
+            <label class="rate-option">
+              <input type="radio" name="m1-tax" value="reduced">
+              <span>8%（軽減）</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="result-box" id="m1-result" style="display:none;" aria-live="polite">
+          <div class="result-primary" id="m1-final-price">&#xA5;0</div>
+          <p style="font-size:0.8rem; color:var(--color-text-muted); margin:0.25rem 0 0.75rem;">最終価格（税込）</p>
+          <div class="result-grid">
+            <div class="result-item">
+              <span class="result-item-label">元の価格</span>
+              <span class="result-item-value" id="m1-original-disp">&#xA5;0</span>
+            </div>
+            <div class="result-item">
+              <span class="result-item-label">割引額</span>
+              <span class="result-item-value" id="m1-discount-amt">&#xA5;0</span>
+            </div>
+            <div class="result-item">
+              <span class="result-item-label">割引後（税抜）</span>
+              <span class="result-item-value" id="m1-discounted">&#xA5;0</span>
+            </div>
+            <div class="result-item" id="m1-tax-row" style="display:none;">
+              <span class="result-item-label">消費税額</span>
+              <span class="result-item-value" id="m1-tax-amt">&#xA5;0</span>
+            </div>
+          </div>
+          <div class="result-formula" id="m1-formula"></div>
+          <div class="result-actions">
+            <button class="btn-copy-result" id="m1-copy">結果をコピー</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mode 2: Price + Amount → Rate -->
+      <div class="tool-panel" id="panel-mode2" role="tabpanel">
+        <div class="form-group">
+          <label class="form-label" for="m2-original">元の価格</label>
+          <div class="input-prefix-wrap">
+            <span class="input-prefix">&#xA5;</span>
+            <input type="tel" class="form-input input-with-prefix" id="m2-original" placeholder="1000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="m2-amount">割引額</label>
+          <div class="input-prefix-wrap">
+            <span class="input-prefix">&#xA5;</span>
+            <input type="tel" class="form-input input-with-prefix" id="m2-amount" placeholder="300">
+          </div>
+        </div>
+
+        <div class="result-box" id="m2-result" style="display:none;" aria-live="polite">
+          <div class="result-primary" id="m2-rate-disp">0%</div>
+          <p style="font-size:0.8rem; color:var(--color-text-muted); margin:0.25rem 0 0.75rem;">割引率</p>
+          <div class="result-grid">
+            <div class="result-item">
+              <span class="result-item-label">割引後価格</span>
+              <span class="result-item-value" id="m2-discounted">&#xA5;0</span>
+            </div>
+            <div class="result-item">
+              <span class="result-item-label">割引額</span>
+              <span class="result-item-value" id="m2-amount-disp">&#xA5;0</span>
+            </div>
+          </div>
+          <div class="result-actions">
+            <button class="btn-copy-result" id="m2-copy">結果をコピー</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mode 3: Discounted + Rate → Original -->
+      <div class="tool-panel" id="panel-mode3" role="tabpanel">
+        <div class="form-group">
+          <label class="form-label" for="m3-discounted">割引後価格</label>
+          <div class="input-prefix-wrap">
+            <span class="input-prefix">&#xA5;</span>
+            <input type="tel" class="form-input input-with-prefix" id="m3-discounted" placeholder="800">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="m3-rate">割引率</label>
+          <div class="input-suffix-wrap">
+            <input type="tel" class="form-input input-with-suffix" id="m3-rate" placeholder="20">
+            <span class="input-suffix">% OFF</span>
+          </div>
+        </div>
+
+        <div class="result-box" id="m3-result" style="display:none;" aria-live="polite">
+          <div class="result-primary" id="m3-original-disp">&#xA5;0</div>
+          <p style="font-size:0.8rem; color:var(--color-text-muted); margin:0.25rem 0 0.75rem;">元の価格（セール前）</p>
+          <div class="result-grid">
+            <div class="result-item">
+              <span class="result-item-label">割引額</span>
+              <span class="result-item-value" id="m3-discount-amt">&#xA5;0</span>
+            </div>
+            <div class="result-item">
+              <span class="result-item-label">割引後価格</span>
+              <span class="result-item-value" id="m3-discounted-disp">&#xA5;0</span>
+            </div>
+          </div>
+          <div class="result-actions">
+            <button class="btn-copy-result" id="m3-copy">結果をコピー</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.tool-box -->
+
+    <!-- Quick Reference Table -->
+    <div class="quick-ref">
+      <h2>割引早見表 &#x2014; よく使う割引率と価格一覧</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>元の価格</th>
+            <th>10%OFF</th>
+            <th>20%OFF</th>
+            <th>30%OFF</th>
+            <th>半額 (50%)</th>
+            <th>70%OFF</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>&#xA5;500</td><td>&#xA5;450</td><td>&#xA5;400</td><td>&#xA5;350</td><td>&#xA5;250</td><td>&#xA5;150</td></tr>
+          <tr><td>&#xA5;1,000</td><td>&#xA5;900</td><td>&#xA5;800</td><td>&#xA5;700</td><td>&#xA5;500</td><td>&#xA5;300</td></tr>
+          <tr><td>&#xA5;2,000</td><td>&#xA5;1,800</td><td>&#xA5;1,600</td><td>&#xA5;1,400</td><td>&#xA5;1,000</td><td>&#xA5;600</td></tr>
+          <tr><td>&#xA5;3,000</td><td>&#xA5;2,700</td><td>&#xA5;2,400</td><td>&#xA5;2,100</td><td>&#xA5;1,500</td><td>&#xA5;900</td></tr>
+          <tr><td>&#xA5;5,000</td><td>&#xA5;4,500</td><td>&#xA5;4,000</td><td>&#xA5;3,500</td><td>&#xA5;2,500</td><td>&#xA5;1,500</td></tr>
+          <tr><td>&#xA5;10,000</td><td>&#xA5;9,000</td><td>&#xA5;8,000</td><td>&#xA5;7,000</td><td>&#xA5;5,000</td><td>&#xA5;3,000</td></tr>
+          <tr><td>&#xA5;30,000</td><td>&#xA5;27,000</td><td>&#xA5;24,000</td><td>&#xA5;21,000</td><td>&#xA5;15,000</td><td>&#xA5;9,000</td></tr>
+          <tr><td>&#xA5;50,000</td><td>&#xA5;45,000</td><td>&#xA5;40,000</td><td>&#xA5;35,000</td><td>&#xA5;25,000</td><td>&#xA5;15,000</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.78rem; color:var(--color-text-muted); margin-top:0.5rem;">※ 上記は税抜価格です。税込価格は上のツールでご確認ください。</p>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_DISCOUNT"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="seo-content">
+      <h2>割引計算ツールの使い方</h2>
+      <p>このツールでは3つのモードで割引計算ができます。「割引後を計算」モードでは元の価格と割引率（%）を入力すると、割引額・割引後価格・消費税込み価格を自動計算します。「割引率を計算」モードでは元の価格と割引後価格から割引率を逆算します。「元の価格を計算」モードでは、セール中の商品の元値を計算できます。よく使う10%・20%・30%・半額・70%のプリセットボタンで素早く入力できます。</p>
+      <p>消費税との組み合わせも対応しています。日本の消費税は割引後の価格に課税されます。標準税率10%と軽減税率8%（食料品・新聞など）を選択できます。</p>
+
+      <h2>割引計算が役立つ場面</h2>
+      <p>セールやバーゲン時の買い物計算、ビジネスでの見積もり作成、EC サイトの商品価格設定など、割引計算が必要な場面は日常的にあります。特に日本では消費税10%が加算されるため、割引後に消費税を含めた最終的な支払金額を正確に把握することが重要です。このツールは割引計算と消費税計算を同時に処理するため、電卓で2段階計算する手間が省けます。また、バーゲン会場で「30%OFF で税込いくら？」をスマートフォンで瞬時に確認したい場合にも便利です。関連ツールの<a href="/tax-finance/consumption-tax/">消費税計算ツール</a>では税率の詳細な計算ができます。</p>
+    </article>
+
+    <section class="faq-section">
+      <h2>よくある質問</h2>
+
+      <details class="faq-item">
+        <summary>10%OFFの計算方法は？</summary>
+        <p>10%OFFの計算は、元の価格に0.9を掛けるだけです。例えば&#xA5;1,000の商品が10%OFFの場合、&#xA5;1,000×0.9＝&#xA5;900が割引後価格です。または&#xA5;1,000×10%＝&#xA5;100が割引額で、&#xA5;1,000−&#xA5;100＝&#xA5;900となります。このツールに金額と割引率を入力すると瞬時に計算できます。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>割引後の価格に消費税は含まれますか？</summary>
+        <p>日本の消費税は割引後の価格に対して課税されます。例えば&#xA5;1,000の商品が20%OFFになると割引後価格は&#xA5;800となり、その&#xA5;800に対して消費税10%（&#xA5;80）が加算されて税込&#xA5;880となります。このツールでは割引計算と消費税計算を同時に行うことができます。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>割引率の計算方法は？</summary>
+        <p>割引率（%）は「割引額÷元の価格×100」で求められます。例えば&#xA5;1,000の商品が&#xA5;800になった場合、割引額は&#xA5;200です。&#xA5;200÷&#xA5;1,000×100＝20%となり、20%OFFと分かります。このツールのモード2では元の価格と割引後価格を入力すると割引率を自動計算します。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>セール前の元の価格を逆算するには？</summary>
+        <p>割引後価格と割引率から元の価格を逆算するには「割引後価格÷（1−割引率）」で計算します。例えば20%OFFで&#xA5;800になっている商品の元の価格は&#xA5;800÷0.8＝&#xA5;1,000です。このツールのモード3では割引後価格と割引率を入力するだけで元の価格を自動計算します。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>半額（50%OFF）と消費税の関係は？</summary>
+        <p>半額（50%OFF）になった商品にも消費税は課されます。例えば&#xA5;2,000の商品が半額の&#xA5;1,000になった場合、消費税10%が加算されて税込&#xA5;1,100が最終的な支払額となります。食料品など軽減税率8%が適用される商品は税込&#xA5;1,080となります。このツールで割引率と税率を組み合わせて正確な金額をご確認ください。</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>関連ツール</h2>
+      <div class="cards-grid">
+        <a href="/tax-finance/consumption-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F9FE;</div>
+          <div class="tool-card-name">消費税計算</div>
+          <div class="tool-card-jp">Consumption Tax</div>
+        </a>
+        <a href="/tax-finance/salary-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4B4;</div>
+          <div class="tool-card-name">手取り計算</div>
+          <div class="tool-card-jp">Salary Calculator</div>
+        </a>
+        <a href="/tax-finance/withholding-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F9EE;</div>
+          <div class="tool-card-name">源泉徴収計算</div>
+          <div class="tool-card-jp">Withholding Tax</div>
+        </a>
+        <a href="/tax-finance/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4CA;</div>
+          <div class="tool-card-name">税金・財務ツール一覧</div>
+          <div class="tool-card-jp">All Tax &amp; Finance</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_DISCOUNT"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. 無断転載禁止。</p>
+    <p class="footer-attribution">割引計算ツール. 最終更新: 2026年4月</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+  });
+})();
+</script>
+
+<script type="module">
+import { calcDiscountedPrice, calcDiscountRate, calcOriginalPrice, formatJPY }
+  from '/assets/js/discount.js';
+
+// Tab switching
+document.querySelectorAll('.tool-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tool-tab, .tool-panel')
+      .forEach(el => el.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+  });
+});
+
+// Preset buttons (Mode 1)
+document.querySelectorAll('.preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('m1-rate').value = btn.dataset.rate;
+    computeMode1();
+  });
+});
+
+// Mode 1
+function computeMode1() {
+  const price = parseFloat(document.getElementById('m1-original').value);
+  const rate  = parseFloat(document.getElementById('m1-rate').value);
+  const tax   = document.querySelector('input[name="m1-tax"]:checked').value;
+  const res   = document.getElementById('m1-result');
+
+  if (isNaN(price) || isNaN(rate)) { res.style.display = 'none'; return; }
+
+  const r = calcDiscountedPrice(price, rate, tax);
+  if (r.error) { res.style.display = 'none'; return; }
+
+  document.getElementById('m1-final-price').textContent  = formatJPY(r.finalPrice);
+  document.getElementById('m1-original-disp').textContent = formatJPY(r.originalPrice);
+  document.getElementById('m1-discount-amt').textContent  = formatJPY(r.discountAmount);
+  document.getElementById('m1-discounted').textContent    = formatJPY(r.discountedPrice);
+
+  const taxRow = document.getElementById('m1-tax-row');
+  if (tax !== 'none') {
+    taxRow.style.display = '';
+    document.getElementById('m1-tax-amt').textContent = formatJPY(r.taxAmount);
+  } else {
+    taxRow.style.display = 'none';
+  }
+
+  const formula = `${formatJPY(price)} \u00D7 ${100 - rate}% = ${formatJPY(r.discountedPrice)}` +
+    (tax !== 'none' ? ` + 消費税${r.taxRate}% = ${formatJPY(r.finalPrice)}` : '');
+  document.getElementById('m1-formula').textContent = formula;
+
+  res.style.display = 'block';
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'discount_calculator', mode: 'mode1', language: 'ja' });
+}
+
+['m1-original','m1-rate'].forEach(id =>
+  document.getElementById(id).addEventListener('input', computeMode1));
+document.querySelectorAll('input[name="m1-tax"]').forEach(r =>
+  r.addEventListener('change', computeMode1));
+
+// Mode 2
+function computeMode2() {
+  const price  = parseFloat(document.getElementById('m2-original').value);
+  const amount = parseFloat(document.getElementById('m2-amount').value);
+  const res    = document.getElementById('m2-result');
+
+  if (isNaN(price) || isNaN(amount)) { res.style.display = 'none'; return; }
+
+  const r = calcDiscountRate(price, amount);
+  if (r.error) { res.style.display = 'none'; return; }
+
+  document.getElementById('m2-rate-disp').textContent   = r.discountRate + '%';
+  document.getElementById('m2-discounted').textContent  = formatJPY(r.discountedPrice);
+  document.getElementById('m2-amount-disp').textContent = formatJPY(r.discountAmount);
+
+  res.style.display = 'block';
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'discount_calculator', mode: 'mode2', language: 'ja' });
+}
+
+['m2-original','m2-amount'].forEach(id =>
+  document.getElementById(id).addEventListener('input', computeMode2));
+
+// Mode 3
+function computeMode3() {
+  const discounted = parseFloat(document.getElementById('m3-discounted').value);
+  const rate       = parseFloat(document.getElementById('m3-rate').value);
+  const res        = document.getElementById('m3-result');
+
+  if (isNaN(discounted) || isNaN(rate)) { res.style.display = 'none'; return; }
+
+  const r = calcOriginalPrice(discounted, rate);
+  if (r.error) { res.style.display = 'none'; return; }
+
+  document.getElementById('m3-original-disp').textContent   = formatJPY(r.originalPrice);
+  document.getElementById('m3-discount-amt').textContent     = formatJPY(r.discountAmount);
+  document.getElementById('m3-discounted-disp').textContent  = formatJPY(r.discountedPrice);
+
+  res.style.display = 'block';
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'discount_calculator', mode: 'mode3', language: 'ja' });
+}
+
+['m3-discounted','m3-rate'].forEach(id =>
+  document.getElementById(id).addEventListener('input', computeMode3));
+
+// Copy buttons
+function setupCopy(btnId, getResult) {
+  document.getElementById(btnId).addEventListener('click', () => {
+    const btn = document.getElementById(btnId);
+    navigator.clipboard.writeText(getResult()).then(() => {
+      btn.textContent = 'コピーしました \u2713';
+      if (typeof gtag !== 'undefined')
+        gtag('event', 'result_copied', { tool_name: 'discount_calculator' });
+      setTimeout(() => { btn.textContent = '結果をコピー'; }, 2000);
+    });
+  });
+}
+
+setupCopy('m1-copy', () => {
+  const price    = document.getElementById('m1-original-disp').textContent;
+  const discount = document.getElementById('m1-discount-amt').textContent;
+  const after    = document.getElementById('m1-discounted').textContent;
+  const final_   = document.getElementById('m1-final-price').textContent;
+  return `元の価格：${price}\n割引額：${discount}\n割引後（税抜）：${after}\n最終価格：${final_}`;
+});
+
+setupCopy('m2-copy', () => {
+  const rate  = document.getElementById('m2-rate-disp').textContent;
+  const after = document.getElementById('m2-discounted').textContent;
+  return `割引率：${rate}\n割引後価格：${after}`;
+});
+
+setupCopy('m3-copy', () => {
+  const orig = document.getElementById('m3-original-disp').textContent;
+  const disc = document.getElementById('m3-discount-amt').textContent;
+  return `元の価格：${orig}\n割引額：${disc}`;
+});
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(function(zone) {
+    var ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(function(z) { observer.observe(z); });
+  }
+});
+</script>
+
+<script>
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = 'JP';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'EN';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discount Calculator: % Off Price &amp; Rate | JapanCalc</title>
+  <meta name="description" content="Calculate discounted prices, discount rates, and original prices instantly. Includes Japan consumption tax (10%/8%). Free discount calculator, no login.">
+  <link rel="canonical" href="https://japancalc.com/en/tax-finance/discount-calculator/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/tax-finance/discount-calculator/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/tax-finance/discount-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/tax-finance/discount-calculator/">
+  <meta property="og:title"       content="Discount Calculator | JapanCalc">
+  <meta property="og:description" content="Calculate discounted prices, discount rates, and original prices. Japan consumption tax supported. Free.">
+  <meta property="og:url"         content="https://japancalc.com/en/tax-finance/discount-calculator/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image"       content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Discount Calculator | JapanCalc",
+    "url": "https://japancalc.com/en/tax-finance/discount-calculator/",
+    "description": "Calculate discounted prices, discount rates, and original prices instantly. Includes Japan consumption tax (10%/8%).",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",           "item": "https://japancalc.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Tax & Finance",  "item": "https://japancalc.com/en/tax-finance/" },
+      { "@type": "ListItem", "position": 3, "name": "Discount Calculator", "item": "https://japancalc.com/en/tax-finance/discount-calculator/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate 10% off?",
+        "acceptedAnswer": { "@type": "Answer", "text": "To calculate 10% off, multiply the original price by 0.9. For example, if an item costs ¥1,000 and is 10% off, then ¥1,000 × 0.9 = ¥900 is the discounted price. Alternatively, ¥1,000 × 10% = ¥100 is the discount amount, and ¥1,000 − ¥100 = ¥900. Enter the price and discount rate in this tool for instant calculation." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is consumption tax included in the discounted price?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In Japan, consumption tax is applied to the discounted price, not the original price. For example, a ¥1,000 item at 20% off becomes ¥800, and then 10% consumption tax (¥80) is added for a total of ¥880. This tool calculates both the discount and consumption tax together." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate the discount rate?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The discount rate (%) is calculated as: discount amount ÷ original price × 100. For example, if a ¥1,000 item is reduced to ¥800, the discount amount is ¥200. Then ¥200 ÷ ¥1,000 × 100 = 20%, meaning it's 20% off. Use Mode 2 of this tool to calculate the discount rate automatically." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I find the original price before a sale?",
+        "acceptedAnswer": { "@type": "Answer", "text": "To reverse-calculate the original price from a discounted price, use the formula: discounted price ÷ (1 − discount rate). For example, if an item is 20% off and now costs ¥800, the original price is ¥800 ÷ 0.8 = ¥1,000. Use Mode 3 of this tool to find the original price automatically." }
+      },
+      {
+        "@type": "Question",
+        "name": "How does half price (50% off) work with consumption tax?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Items at half price (50% off) are still subject to consumption tax in Japan. For example, a ¥2,000 item at half price becomes ¥1,000, and then 10% consumption tax is added for a final price of ¥1,100. For food and beverages with the reduced 8% rate, the final price would be ¥1,080. Use this tool to combine any discount rate with the appropriate tax rate." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  <style>
+    .ad-zone { min-height: 0 !important; margin: 0 !important; }
+
+    /* Discount calculator styles */
+    .tool-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--color-border);
+      margin-bottom: 1rem;
+    }
+    .tool-tab {
+      padding: 0.6rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--color-text-muted);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .tool-tab.active {
+      color: var(--color-accent);
+      border-bottom-color: var(--color-accent);
+    }
+    .tool-tab:hover { color: var(--color-primary); }
+    .tool-panel { display: none; }
+    .tool-panel.active { display: block; }
+
+    .input-prefix-wrap, .input-suffix-wrap {
+      display: flex;
+      align-items: center;
+    }
+    .input-prefix {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-right: none;
+      border-radius: var(--radius) 0 0 var(--radius);
+      padding: 0.5rem 0.6rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+    }
+    .input-with-prefix {
+      border-radius: 0 var(--radius) var(--radius) 0 !important;
+      flex: 1;
+    }
+    .input-suffix {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-left: none;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 0.5rem 0.6rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+    }
+    .input-with-suffix {
+      border-radius: var(--radius) 0 0 var(--radius) !important;
+      flex: 1;
+    }
+
+    .quick-presets {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin: 0.5rem 0 1rem;
+    }
+    .preset-btn {
+      padding: 0.3rem 0.7rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      background: white;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: all 0.15s;
+      color: var(--color-text-muted);
+    }
+    .preset-btn:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: rgba(11,110,95,0.04);
+    }
+
+    .rate-toggle {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .rate-option {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .rate-option input[type="radio"] {
+      accent-color: var(--color-accent);
+    }
+
+    .result-box {
+      background: rgba(11,110,95,0.04);
+      border: 1px solid var(--color-accent);
+      border-radius: var(--radius);
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+    .result-primary {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      font-family: var(--font-mono);
+    }
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.85rem;
+    }
+    .result-item-label { color: var(--color-text-muted); }
+    .result-item-value { font-weight: 600; font-family: var(--font-mono); }
+    .result-formula {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      margin-top: 0.75rem;
+      font-family: var(--font-mono);
+    }
+    .result-actions { margin-top: 0.75rem; }
+    @media (max-width: 480px) {
+      .result-grid { grid-template-columns: 1fr; }
+      .tool-tabs { overflow-x: auto; }
+    }
+
+    .btn-copy-result {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: var(--radius);
+      background: var(--color-accent);
+      color: white;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: opacity 0.15s;
+    }
+    .btn-copy-result:hover { opacity: 0.85; }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/en/" class="nav-logo" aria-label="JapanCalc Home">
+  <img src="/assets/icons/logo-white.svg" alt="JapanCalc" width="160" height="40" loading="eager" fetchpriority="high">
+</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="lang-switcher" role="navigation" aria-label="Language">
+      <a class="lang-option lang-inactive" id="lang-toggle"
+         href="/tax-finance/discount-calculator/" lang="ja" title="日本語で表示"
+         aria-label="日本語に切り替え">JP</a>
+      <span class="lang-sep">&middot;</span>
+      <span class="lang-option lang-active" aria-current="true">EN</span>
+    </div>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/en/">Home</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">Discount Calculator</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_DISCOUNT"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>Discount Calculator</h1>
+    <p class="tool-subtitle">Calculate discounted prices &amp; rates instantly &#x2014; 割引計算ツール</p>
+    <p class="tool-desc">Calculate discounted prices, discount amounts, discount rates, and original prices instantly. Supports 10% off, 20% off, half price, and more. Includes Japan consumption tax (10% standard / 8% reduced). Free, no login required.</p>
+
+    <div class="tool-box" id="tool-main">
+
+      <!-- Tabs -->
+      <div class="tool-tabs" role="tablist">
+        <button class="tool-tab active" data-panel="panel-mode1" role="tab" aria-selected="true">Calculate Discounted Price</button>
+        <button class="tool-tab" data-panel="panel-mode2" role="tab" aria-selected="false">Calculate Discount Rate</button>
+        <button class="tool-tab" data-panel="panel-mode3" role="tab" aria-selected="false">Find Original Price</button>
+      </div>
+
+      <!-- Mode 1: Price + Rate → Result -->
+      <div class="tool-panel active" id="panel-mode1" role="tabpanel">
+        <div class="form-group">
+          <label class="form-label" for="m1-original">Original price (before tax)</label>
+          <div class="input-prefix-wrap">
+            <span class="input-prefix">&#xA5;</span>
+            <input type="tel" class="form-input input-with-prefix"
+                   id="m1-original" placeholder="1000" aria-label="Original price">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="m1-rate">Discount rate</label>
+          <div class="input-suffix-wrap">
+            <input type="tel" class="form-input input-with-suffix"
+                   id="m1-rate" placeholder="20" aria-label="Discount rate">
+            <span class="input-suffix">% OFF</span>
+          </div>
+        </div>
+
+        <div class="quick-presets">
+          <span style="font-size:0.8rem; color:var(--color-text-muted);">Common rates:</span>
+          <button class="preset-btn" data-rate="10">10%</button>
+          <button class="preset-btn" data-rate="20">20%</button>
+          <button class="preset-btn" data-rate="30">30%</button>
+          <button class="preset-btn" data-rate="50">Half price</button>
+          <button class="preset-btn" data-rate="70">70%</button>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Add consumption tax</label>
+          <div class="rate-toggle" role="group">
+            <label class="rate-option">
+              <input type="radio" name="m1-tax" value="none" checked>
+              <span>No tax</span>
+            </label>
+            <label class="rate-option">
+              <input type="radio" name="m1-tax" value="standard">
+              <span>10% standard</span>
+            </label>
+            <label class="rate-option">
+              <input type="radio" name="m1-tax" value="reduced">
+              <span>8% reduced</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="result-box" id="m1-result" style="display:none;" aria-live="polite">
+          <div class="result-primary" id="m1-final-price">&#xA5;0</div>
+          <p style="font-size:0.8rem; color:var(--color-text-muted); margin:0.25rem 0 0.75rem;">Final price (tax included)</p>
+          <div class="result-grid">
+            <div class="result-item">
+              <span class="result-item-label">Original price</span>
+              <span class="result-item-value" id="m1-original-disp">&#xA5;0</span>
+            </div>
+            <div class="result-item">
+              <span class="result-item-label">Discount amount</span>
+              <span class="result-item-value" id="m1-discount-amt">&#xA5;0</span>
+            </div>
+            <div class="result-item">
+              <span class="result-item-label">After discount (before tax)</span>
+              <span class="result-item-value" id="m1-discounted">&#xA5;0</span>
+            </div>
+            <div class="result-item" id="m1-tax-row" style="display:none;">
+              <span class="result-item-label">Tax amount</span>
+              <span class="result-item-value" id="m1-tax-amt">&#xA5;0</span>
+            </div>
+          </div>
+          <div class="result-formula" id="m1-formula"></div>
+          <div class="result-actions">
+            <button class="btn-copy-result" id="m1-copy">Copy result</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mode 2: Price + Amount → Rate -->
+      <div class="tool-panel" id="panel-mode2" role="tabpanel">
+        <div class="form-group">
+          <label class="form-label" for="m2-original">Original price</label>
+          <div class="input-prefix-wrap">
+            <span class="input-prefix">&#xA5;</span>
+            <input type="tel" class="form-input input-with-prefix" id="m2-original" placeholder="1000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="m2-amount">Discount amount</label>
+          <div class="input-prefix-wrap">
+            <span class="input-prefix">&#xA5;</span>
+            <input type="tel" class="form-input input-with-prefix" id="m2-amount" placeholder="300">
+          </div>
+        </div>
+
+        <div class="result-box" id="m2-result" style="display:none;" aria-live="polite">
+          <div class="result-primary" id="m2-rate-disp">0%</div>
+          <p style="font-size:0.8rem; color:var(--color-text-muted); margin:0.25rem 0 0.75rem;">Discount rate</p>
+          <div class="result-grid">
+            <div class="result-item">
+              <span class="result-item-label">Discounted price</span>
+              <span class="result-item-value" id="m2-discounted">&#xA5;0</span>
+            </div>
+            <div class="result-item">
+              <span class="result-item-label">Discount amount</span>
+              <span class="result-item-value" id="m2-amount-disp">&#xA5;0</span>
+            </div>
+          </div>
+          <div class="result-actions">
+            <button class="btn-copy-result" id="m2-copy">Copy result</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mode 3: Discounted + Rate → Original -->
+      <div class="tool-panel" id="panel-mode3" role="tabpanel">
+        <div class="form-group">
+          <label class="form-label" for="m3-discounted">Discounted price</label>
+          <div class="input-prefix-wrap">
+            <span class="input-prefix">&#xA5;</span>
+            <input type="tel" class="form-input input-with-prefix" id="m3-discounted" placeholder="800">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="m3-rate">Discount rate</label>
+          <div class="input-suffix-wrap">
+            <input type="tel" class="form-input input-with-suffix" id="m3-rate" placeholder="20">
+            <span class="input-suffix">% OFF</span>
+          </div>
+        </div>
+
+        <div class="result-box" id="m3-result" style="display:none;" aria-live="polite">
+          <div class="result-primary" id="m3-original-disp">&#xA5;0</div>
+          <p style="font-size:0.8rem; color:var(--color-text-muted); margin:0.25rem 0 0.75rem;">Original price (before sale)</p>
+          <div class="result-grid">
+            <div class="result-item">
+              <span class="result-item-label">Discount amount</span>
+              <span class="result-item-value" id="m3-discount-amt">&#xA5;0</span>
+            </div>
+            <div class="result-item">
+              <span class="result-item-label">Discounted price</span>
+              <span class="result-item-value" id="m3-discounted-disp">&#xA5;0</span>
+            </div>
+          </div>
+          <div class="result-actions">
+            <button class="btn-copy-result" id="m3-copy">Copy result</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.tool-box -->
+
+    <!-- Quick Reference Table -->
+    <div class="quick-ref">
+      <h2>Discount Quick Reference Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Original Price</th>
+            <th>10% OFF</th>
+            <th>20% OFF</th>
+            <th>30% OFF</th>
+            <th>Half Price (50%)</th>
+            <th>70% OFF</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>&#xA5;500</td><td>&#xA5;450</td><td>&#xA5;400</td><td>&#xA5;350</td><td>&#xA5;250</td><td>&#xA5;150</td></tr>
+          <tr><td>&#xA5;1,000</td><td>&#xA5;900</td><td>&#xA5;800</td><td>&#xA5;700</td><td>&#xA5;500</td><td>&#xA5;300</td></tr>
+          <tr><td>&#xA5;2,000</td><td>&#xA5;1,800</td><td>&#xA5;1,600</td><td>&#xA5;1,400</td><td>&#xA5;1,000</td><td>&#xA5;600</td></tr>
+          <tr><td>&#xA5;3,000</td><td>&#xA5;2,700</td><td>&#xA5;2,400</td><td>&#xA5;2,100</td><td>&#xA5;1,500</td><td>&#xA5;900</td></tr>
+          <tr><td>&#xA5;5,000</td><td>&#xA5;4,500</td><td>&#xA5;4,000</td><td>&#xA5;3,500</td><td>&#xA5;2,500</td><td>&#xA5;1,500</td></tr>
+          <tr><td>&#xA5;10,000</td><td>&#xA5;9,000</td><td>&#xA5;8,000</td><td>&#xA5;7,000</td><td>&#xA5;5,000</td><td>&#xA5;3,000</td></tr>
+          <tr><td>&#xA5;30,000</td><td>&#xA5;27,000</td><td>&#xA5;24,000</td><td>&#xA5;21,000</td><td>&#xA5;15,000</td><td>&#xA5;9,000</td></tr>
+          <tr><td>&#xA5;50,000</td><td>&#xA5;45,000</td><td>&#xA5;40,000</td><td>&#xA5;35,000</td><td>&#xA5;25,000</td><td>&#xA5;15,000</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.78rem; color:var(--color-text-muted); margin-top:0.5rem;">* Prices shown are before tax. Use the calculator above for tax-inclusive prices.</p>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_DISCOUNT"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="seo-content">
+      <h2>How to Use the Discount Calculator</h2>
+      <p>This tool offers three calculation modes. In "Calculate Discounted Price" mode, enter the original price and discount rate (%) to instantly get the discount amount, discounted price, and tax-inclusive final price. "Calculate Discount Rate" mode works in reverse: enter the original and discounted prices to find the percentage off. "Find Original Price" mode lets you calculate what an item cost before the sale. Use the preset buttons (10%, 20%, 30%, half price, 70%) for quick input.</p>
+      <p>Japan consumption tax integration is built in. In Japan, consumption tax is applied to the price after the discount, not before. You can choose between the standard 10% rate and the reduced 8% rate (for food, non-alcoholic beverages, and qualifying newspapers).</p>
+
+      <h2>Understanding Discounts in Japan</h2>
+      <p>Shopping in Japan often means dealing with tax-exclusive pricing (税抜価格). Most price tags show the pre-tax price, and consumption tax is added at the register. When a sale advertises "20% OFF," the discount applies to the tax-exclusive price, and then tax is calculated on the reduced amount. This two-step process can make it tricky to know the final price at a glance. This calculator handles both steps together so you can see exactly what you'll pay. For detailed consumption tax calculations, try our <a href="/en/tax-finance/consumption-tax/">Consumption Tax Calculator</a>.</p>
+    </article>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary>How do I calculate 10% off?</summary>
+        <p>To calculate 10% off, multiply the original price by 0.9. For example, if an item costs &#xA5;1,000 and is 10% off, then &#xA5;1,000 &#xD7; 0.9 = &#xA5;900 is the discounted price. Alternatively, &#xA5;1,000 &#xD7; 10% = &#xA5;100 is the discount amount, and &#xA5;1,000 &#x2212; &#xA5;100 = &#xA5;900. Enter the price and discount rate in this tool for instant calculation.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is consumption tax included in the discounted price?</summary>
+        <p>In Japan, consumption tax is applied to the discounted price, not the original price. For example, a &#xA5;1,000 item at 20% off becomes &#xA5;800, and then 10% consumption tax (&#xA5;80) is added for a total of &#xA5;880. This tool calculates both the discount and consumption tax together.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I calculate the discount rate?</summary>
+        <p>The discount rate (%) is calculated as: discount amount &#xF7; original price &#xD7; 100. For example, if a &#xA5;1,000 item is reduced to &#xA5;800, the discount amount is &#xA5;200. Then &#xA5;200 &#xF7; &#xA5;1,000 &#xD7; 100 = 20%, meaning it's 20% off. Use Mode 2 of this tool to calculate the discount rate automatically.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I find the original price before a sale?</summary>
+        <p>To reverse-calculate the original price from a discounted price, use the formula: discounted price &#xF7; (1 &#x2212; discount rate). For example, if an item is 20% off and now costs &#xA5;800, the original price is &#xA5;800 &#xF7; 0.8 = &#xA5;1,000. Use Mode 3 of this tool to find the original price automatically.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How does half price (50% off) work with consumption tax?</summary>
+        <p>Items at half price (50% off) are still subject to consumption tax in Japan. For example, a &#xA5;2,000 item at half price becomes &#xA5;1,000, and then 10% consumption tax is added for a final price of &#xA5;1,100. For food and beverages with the reduced 8% rate, the final price would be &#xA5;1,080. Use this tool to combine any discount rate with the appropriate tax rate.</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/en/tax-finance/consumption-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F9FE;</div>
+          <div class="tool-card-name">Consumption Tax</div>
+          <div class="tool-card-jp">消費税計算</div>
+        </a>
+        <a href="/en/tax-finance/salary-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4B4;</div>
+          <div class="tool-card-name">Salary Calculator</div>
+          <div class="tool-card-jp">手取り計算</div>
+        </a>
+        <a href="/en/tax-finance/withholding-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F9EE;</div>
+          <div class="tool-card-name">Withholding Tax</div>
+          <div class="tool-card-jp">源泉徴収計算</div>
+        </a>
+        <a href="/en/tax-finance/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4CA;</div>
+          <div class="tool-card-name">All Tax &amp; Finance</div>
+          <div class="tool-card-jp">税金・財務ツール一覧</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_DISCOUNT"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/en/about/">About</a></li>
+      <li><a href="/en/privacy/">Privacy Policy</a></li>
+      <li><a href="/en/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+    <p class="footer-attribution">Discount Calculator. Last updated: April 2026</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import { calcDiscountedPrice, calcDiscountRate, calcOriginalPrice, formatJPY }
+  from '/assets/js/discount.js';
+
+// Tab switching
+document.querySelectorAll('.tool-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tool-tab, .tool-panel')
+      .forEach(el => el.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+  });
+});
+
+// Preset buttons (Mode 1)
+document.querySelectorAll('.preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('m1-rate').value = btn.dataset.rate;
+    computeMode1();
+  });
+});
+
+// Mode 1
+function computeMode1() {
+  const price = parseFloat(document.getElementById('m1-original').value);
+  const rate  = parseFloat(document.getElementById('m1-rate').value);
+  const tax   = document.querySelector('input[name="m1-tax"]:checked').value;
+  const res   = document.getElementById('m1-result');
+
+  if (isNaN(price) || isNaN(rate)) { res.style.display = 'none'; return; }
+
+  const r = calcDiscountedPrice(price, rate, tax);
+  if (r.error) { res.style.display = 'none'; return; }
+
+  document.getElementById('m1-final-price').textContent  = formatJPY(r.finalPrice);
+  document.getElementById('m1-original-disp').textContent = formatJPY(r.originalPrice);
+  document.getElementById('m1-discount-amt').textContent  = formatJPY(r.discountAmount);
+  document.getElementById('m1-discounted').textContent    = formatJPY(r.discountedPrice);
+
+  const taxRow = document.getElementById('m1-tax-row');
+  if (tax !== 'none') {
+    taxRow.style.display = '';
+    document.getElementById('m1-tax-amt').textContent = formatJPY(r.taxAmount);
+  } else {
+    taxRow.style.display = 'none';
+  }
+
+  const formula = `${formatJPY(price)} \u00D7 ${100 - rate}% = ${formatJPY(r.discountedPrice)}` +
+    (tax !== 'none' ? ` + tax ${r.taxRate}% = ${formatJPY(r.finalPrice)}` : '');
+  document.getElementById('m1-formula').textContent = formula;
+
+  res.style.display = 'block';
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'discount_calculator', mode: 'mode1', language: 'en' });
+}
+
+['m1-original','m1-rate'].forEach(id =>
+  document.getElementById(id).addEventListener('input', computeMode1));
+document.querySelectorAll('input[name="m1-tax"]').forEach(r =>
+  r.addEventListener('change', computeMode1));
+
+// Mode 2
+function computeMode2() {
+  const price  = parseFloat(document.getElementById('m2-original').value);
+  const amount = parseFloat(document.getElementById('m2-amount').value);
+  const res    = document.getElementById('m2-result');
+
+  if (isNaN(price) || isNaN(amount)) { res.style.display = 'none'; return; }
+
+  const r = calcDiscountRate(price, amount);
+  if (r.error) { res.style.display = 'none'; return; }
+
+  document.getElementById('m2-rate-disp').textContent   = r.discountRate + '%';
+  document.getElementById('m2-discounted').textContent  = formatJPY(r.discountedPrice);
+  document.getElementById('m2-amount-disp').textContent = formatJPY(r.discountAmount);
+
+  res.style.display = 'block';
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'discount_calculator', mode: 'mode2', language: 'en' });
+}
+
+['m2-original','m2-amount'].forEach(id =>
+  document.getElementById(id).addEventListener('input', computeMode2));
+
+// Mode 3
+function computeMode3() {
+  const discounted = parseFloat(document.getElementById('m3-discounted').value);
+  const rate       = parseFloat(document.getElementById('m3-rate').value);
+  const res        = document.getElementById('m3-result');
+
+  if (isNaN(discounted) || isNaN(rate)) { res.style.display = 'none'; return; }
+
+  const r = calcOriginalPrice(discounted, rate);
+  if (r.error) { res.style.display = 'none'; return; }
+
+  document.getElementById('m3-original-disp').textContent   = formatJPY(r.originalPrice);
+  document.getElementById('m3-discount-amt').textContent     = formatJPY(r.discountAmount);
+  document.getElementById('m3-discounted-disp').textContent  = formatJPY(r.discountedPrice);
+
+  res.style.display = 'block';
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'discount_calculator', mode: 'mode3', language: 'en' });
+}
+
+['m3-discounted','m3-rate'].forEach(id =>
+  document.getElementById(id).addEventListener('input', computeMode3));
+
+// Copy buttons
+function setupCopy(btnId, getResult) {
+  document.getElementById(btnId).addEventListener('click', () => {
+    const btn = document.getElementById(btnId);
+    navigator.clipboard.writeText(getResult()).then(() => {
+      btn.textContent = 'Copied \u2713';
+      if (typeof gtag !== 'undefined')
+        gtag('event', 'result_copied', { tool_name: 'discount_calculator' });
+      setTimeout(() => { btn.textContent = 'Copy result'; }, 2000);
+    });
+  });
+}
+
+setupCopy('m1-copy', () => {
+  const price    = document.getElementById('m1-original-disp').textContent;
+  const discount = document.getElementById('m1-discount-amt').textContent;
+  const after    = document.getElementById('m1-discounted').textContent;
+  const final_   = document.getElementById('m1-final-price').textContent;
+  return `Original price: ${price}\nDiscount: ${discount}\nAfter discount (before tax): ${after}\nFinal price: ${final_}`;
+});
+
+setupCopy('m2-copy', () => {
+  const rate  = document.getElementById('m2-rate-disp').textContent;
+  const after = document.getElementById('m2-discounted').textContent;
+  return `Discount rate: ${rate}\nDiscounted price: ${after}`;
+});
+
+setupCopy('m3-copy', () => {
+  const orig = document.getElementById('m3-original-disp').textContent;
+  const disc = document.getElementById('m3-discount-amt').textContent;
+  return `Original price: ${orig}\nDiscount amount: ${disc}`;
+});
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(function(zone) {
+    var ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(function(z) { observer.observe(z); });
+  }
+});
+</script>
+
+<script>
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = 'JP';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'EN';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+  }
+})();
+</script>
+</body>
+</html>
