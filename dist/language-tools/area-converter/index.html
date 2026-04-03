@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>坪・畳・平米変換ツール: 坪数計算・面積変換 | JapanCalc</title>
+  <meta name="description" content="坪・畳・平米（㎡）・平方フィートを瞬時に相互変換。江戸間・京間・中京間・団地間の4種類の畳サイズに対応。物件探しや不動産契約に役立つ面積計算ツール。無料、ログイン不要。">
+  <link rel="canonical" href="https://japancalc.com/language-tools/area-converter/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/language-tools/area-converter/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/language-tools/area-converter/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/language-tools/area-converter/">
+  <meta property="og:title"       content="坪・畳・平米変換ツール: 坪数計算・面積変換 | JapanCalc">
+  <meta property="og:description" content="坪・畳・平米（㎡）・平方フィートを瞬時に相互変換。不動産・物件探しに。無料。">
+  <meta property="og:url"         content="https://japancalc.com/language-tools/area-converter/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image" content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "坪・畳・平米変換ツール | JapanCalc",
+    "url": "https://japancalc.com/language-tools/area-converter/",
+    "description": "坪・畳・平米（㎡）・平方フィートを瞬時に相互変換。江戸間・京間・中京間・団地間の4種類の畳サイズに対応。",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["ja", "en"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://japancalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "言語ツール", "item": "https://japancalc.com/language-tools/" },
+      { "@type": "ListItem", "position": 3, "name": "坪・畳・平米変換ツール", "item": "https://japancalc.com/language-tools/area-converter/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "1坪は何平米ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "1坪は約3.31平米（正確には400/121㎡＝3.305785...㎡）です。坪は日本の伝統的な面積単位で、主に不動産・建築業界で使われています。1坪＝2畳（江戸間）を基準として計算されます。このツールで坪数を入力すると平米数・畳数・平方フィートに瞬時に変換できます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "1畳は何平米ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "畳の大きさは地域によって異なります。江戸間（関東）は約1.548㎡、京間（関西）は約1.824㎡、中京間は約1.656㎡、団地間は約1.445㎡です。不動産広告の「〇畳」は一般的に江戸間または団地間を基準にしていることが多く、実際のサイズは物件によって確認が必要です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "30坪は何平米ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "30坪は約99.17平米（㎡）です。計算式は30×3.305785＝99.17㎡となります。一般的な一戸建て住宅の建坪は30〜40坪（約99〜132㎡）程度が多く見られます。このツールで任意の坪数を入力すると平米数・畳数・平方フィートに即座に変換できます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "マンションの専有面積の坪数は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "マンションの専有面積の坪数は「平米数×0.3025」で求められます。例えば70㎡のマンションは約21.2坪になります。不動産広告では平米数（㎡）で表示されることが多いですが、坪単価で比較する際には坪数への変換が必要です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "平方フィートから平米への換算は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "1平方フィート（ft²）は約0.0929平米（㎡）です。例えば1,000平方フィートは約92.9㎡、約28.1坪になります。アメリカやイギリスでは面積を平方フィートで表すため、海外物件との比較や外国人が日本で物件を探す際に変換が必要になります。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  <style>
+    .area-inputs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 600px) {
+      .area-inputs-grid { grid-template-columns: 1fr; }
+    }
+    .area-input-group { display: flex; flex-direction: column; gap: 0.25rem; }
+    input.area-active { border-color: var(--color-accent) !important; background: rgba(11,110,95,0.04); }
+    .input-suffix-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .input-with-suffix {
+      width: 100%;
+      padding-right: 2.5rem;
+    }
+    .input-suffix {
+      position: absolute;
+      right: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      pointer-events: none;
+    }
+    .ref-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+    .ref-table th, .ref-table td { border: 1px solid var(--color-border); padding: 0.5rem 0.75rem; text-align: center; }
+    .ref-table th { background: var(--color-bg-alt); font-weight: 600; font-size: 0.82rem; }
+    .ref-table tr:nth-child(even) { background: rgba(0,0,0,0.02); }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <a href="/" class="nav-logo" aria-label="JapanCalc ホーム">
+  <img src="/assets/icons/logo-white.svg" alt="JapanCalc" width="160" height="40" loading="eager" fetchpriority="high">
+</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="lang-switcher" role="navigation" aria-label="言語切替">
+      <span class="lang-option lang-active" aria-current="true">JP</span>
+      <span class="lang-sep">&middot;</span>
+      <a class="lang-option lang-inactive" id="lang-toggle"
+         href="/en/language-tools/area-converter/" lang="en" title="View in English"
+         aria-label="Switch to English">EN</a>
+    </div>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="/">ホーム</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">坪・畳・平米変換ツール</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_AREA"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<main class="content page-wrapper" id="main-content">
+
+  <h1>坪・畳・平米変換ツール</h1>
+  <p class="tool-desc">
+    坪・畳・平米（㎡）・平方フィート（ft²）を瞬時に相互変換。いずれかの欄に数値を入力するだけで、残りの3単位を同時に計算します。江戸間・京間・中京間・団地間の4種類の畳サイズに対応。
+  </p>
+
+  <div class="tool-box" id="tool-main">
+
+    <!-- Tatami type selector -->
+    <div class="form-group">
+      <label class="form-label" for="tatami-type">畳のサイズ（地域）</label>
+      <select class="form-select" id="tatami-type" aria-label="畳のタイプ">
+        <option value="edo">江戸間（関東） — 1畳 = 1.548㎡</option>
+        <option value="kyo">京間（関西） — 1畳 = 1.824㎡</option>
+        <option value="chukyo">中京間 — 1畳 = 1.656㎡</option>
+        <option value="danchi">団地間 — 1畳 = 1.445㎡</option>
+      </select>
+    </div>
+
+    <p style="font-size:0.82rem; color:var(--color-text-muted); margin-bottom:1rem;">
+      いずれかの欄に数値を入力すると、他の単位に自動変換されます。
+    </p>
+
+    <!-- 4 input fields -->
+    <div class="area-inputs-grid">
+
+      <div class="area-input-group">
+        <label class="form-label" for="input-tsubo">坪（つぼ）</label>
+        <div class="input-suffix-wrap">
+          <input type="number" class="form-input input-with-suffix"
+                 id="input-tsubo" placeholder="例: 30" step="0.01" min="0"
+                 aria-label="坪を入力">
+          <span class="input-suffix">坪</span>
+        </div>
+      </div>
+
+      <div class="area-input-group">
+        <label class="form-label" for="input-tatami">畳（じょう）</label>
+        <div class="input-suffix-wrap">
+          <input type="number" class="form-input input-with-suffix"
+                 id="input-tatami" placeholder="例: 6" step="0.1" min="0"
+                 aria-label="畳数を入力">
+          <span class="input-suffix">畳</span>
+        </div>
+      </div>
+
+      <div class="area-input-group">
+        <label class="form-label" for="input-sqm">平米（m²）</label>
+        <div class="input-suffix-wrap">
+          <input type="number" class="form-input input-with-suffix"
+                 id="input-sqm" placeholder="例: 100" step="0.01" min="0"
+                 aria-label="平米を入力">
+          <span class="input-suffix">㎡</span>
+        </div>
+      </div>
+
+      <div class="area-input-group">
+        <label class="form-label" for="input-sqft">平方フィート（ft²）</label>
+        <div class="input-suffix-wrap">
+          <input type="number" class="form-input input-with-suffix"
+                 id="input-sqft" placeholder="例: 1000" step="1" min="0"
+                 aria-label="平方フィートを入力">
+          <span class="input-suffix">ft²</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Clear + Copy -->
+    <div style="margin-top:0.75rem;">
+      <button class="btn-clear" id="btn-clear">クリア</button>
+      <button class="btn-copy-result" id="btn-copy" style="margin-left:0.5rem;">結果をコピー</button>
+    </div>
+
+  </div>
+
+  <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="SLOT_BTF_AREA"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+
+  <!-- Quick Reference Table -->
+  <section>
+    <h2>部屋タイプ別 広さ早見表（坪・畳・㎡）</h2>
+    <table class="ref-table">
+      <thead><tr><th>部屋タイプ</th><th>一般的な広さ（㎡）</th><th>坪数</th><th>畳数（江戸間）</th></tr></thead>
+      <tbody>
+        <tr><td>1R（ワンルーム）</td><td>20〜25㎡</td><td>約6〜7.5坪</td><td>約13〜16畳</td></tr>
+        <tr><td>1K</td><td>25〜30㎡</td><td>約7.5〜9坪</td><td>約16〜19畳</td></tr>
+        <tr><td>1DK</td><td>30〜40㎡</td><td>約9〜12坪</td><td>約19〜26畳</td></tr>
+        <tr><td>1LDK</td><td>40〜55㎡</td><td>約12〜16.5坪</td><td>約26〜36畳</td></tr>
+        <tr><td>2LDK</td><td>55〜75㎡</td><td>約16.5〜22.5坪</td><td>約36〜48畳</td></tr>
+        <tr><td>3LDK</td><td>70〜90㎡</td><td>約21〜27坪</td><td>約45〜58畳</td></tr>
+        <tr><td>4LDK（一戸建て）</td><td>100〜130㎡</td><td>約30〜39坪</td><td>約65〜84畳</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Editorial -->
+  <article class="seo-content">
+    <h2>坪・畳・平米の違いと使い分け</h2>
+    <p>
+      日本の不動産業界では、面積を表す単位として「坪」「畳」「平米（㎡）」が混在しています。坪は主に土地や建物全体の広さを表す際に使われ、1坪は約3.31㎡です。畳は部屋の広さを表現するのに使われ、「6畳の部屋」「8畳のリビング」のように日常会話でも頻繁に登場します。平米（㎡）は国際標準単位であり、不動産登記や建築確認申請などの公式書類では平米が使用されます。
+    </p>
+    <p>
+      注意すべき点として、畳の実際のサイズは地域によって大きく異なります。関東で主流の江戸間（1畳＝約1.548㎡）と、関西で主流の京間（1畳＝約1.824㎡）では、同じ「6畳」でも約1.66㎡（約0.5坪）もの差があります。マンションやアパートでは団地間（1畳＝約1.445㎡）が採用されることも多く、不動産広告の「〇畳」表記だけでは正確な広さが分からないケースがあります。物件探しの際には、必ず平米数でも確認することをお勧めします。
+    </p>
+
+    <h2>海外からの方へ — 日本特有の面積単位</h2>
+    <p>
+      日本で物件を探す外国人にとって、「坪」や「畳」は馴染みのない単位です。アメリカやイギリスでは平方フィート（ft²）が一般的ですが、日本の不動産サイトでは坪や畳で表記されていることがほとんどです。このツールを使えば、坪・畳の数値を平方フィートや平米に瞬時に変換できるため、母国の物件と日本の物件の広さを直感的に比較できます。
+    </p>
+    <p>
+      また、日本の賃貸物件では「専有面積」と「壁芯面積」の違いにも注意が必要です。専有面積は実際に使用できる室内面積であり、壁芯面積は壁の中心線から測った面積のため、専有面積より数㎡大きくなります。マンションの広告では壁芯面積が記載されていることが多いため、実際の部屋は表示より少し狭く感じることがあります。
+    </p>
+  </article>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h2>よくある質問</h2>
+
+    <details class="faq-item">
+      <summary>1坪は何平米ですか？</summary>
+      <div class="faq-answer">
+        <p>1坪は約3.31平米（正確には400/121㎡＝3.305785...㎡）です。坪は日本の伝統的な面積単位で、主に不動産・建築業界で使われています。1坪＝2畳（江戸間）を基準として計算されます。このツールで坪数を入力すると平米数・畳数・平方フィートに瞬時に変換できます。</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>1畳は何平米ですか？</summary>
+      <div class="faq-answer">
+        <p>畳の大きさは地域によって異なります。江戸間（関東）は約1.548㎡、京間（関西）は約1.824㎡、中京間は約1.656㎡、団地間は約1.445㎡です。不動産広告の「〇畳」は一般的に江戸間または団地間を基準にしていることが多く、実際のサイズは物件によって確認が必要です。</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>30坪は何平米ですか？</summary>
+      <div class="faq-answer">
+        <p>30坪は約99.17平米（㎡）です。計算式は30×3.305785＝99.17㎡となります。一般的な一戸建て住宅の建坪は30〜40坪（約99〜132㎡）程度が多く見られます。このツールで任意の坪数を入力すると平米数・畳数・平方フィートに即座に変換できます。</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>マンションの専有面積の坪数は？</summary>
+      <div class="faq-answer">
+        <p>マンションの専有面積の坪数は「平米数×0.3025」で求められます。例えば70㎡のマンションは約21.2坪になります。不動産広告では平米数（㎡）で表示されることが多いですが、坪単価で比較する際には坪数への変換が必要です。</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>平方フィートから平米への換算は？</summary>
+      <div class="faq-answer">
+        <p>1平方フィート（ft²）は約0.0929平米（㎡）です。例えば1,000平方フィートは約92.9㎡、約28.1坪になります。アメリカやイギリスでは面積を平方フィートで表すため、海外物件との比較や外国人が日本で物件を探す際に変換が必要になります。</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- Related Tools -->
+  <section class="related-tools">
+    <h2>関連ツール</h2>
+    <div class="cards-grid">
+      <a href="/language-tools/measurement-converter/" class="tool-card">
+        <div class="tool-card-icon">&#x1F4CF;</div>
+        <div class="tool-card-name">単位変換</div>
+        <div class="tool-card-desc">身長・体重・サイズを日本の書類用に変換</div>
+      </a>
+      <a href="/language-tools/character-counter/" class="tool-card">
+        <div class="tool-card-icon">&#x1F4DD;</div>
+        <div class="tool-card-name">文字数カウンター</div>
+        <div class="tool-card-desc">文字数・行数・バイト数をリアルタイム計測</div>
+      </a>
+      <a href="/language-tools/" class="tool-card">
+        <div class="tool-card-icon">&#x1F524;</div>
+        <div class="tool-card-name">全ての言語ツール</div>
+        <div class="tool-card-desc">言語ツール一覧を見る</div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+  });
+})();
+</script>
+
+<script type="module">
+import { convertArea, TATAMI_TYPES } from '/assets/js/area-converter.js';
+
+const fields = {
+  tsubo:  document.getElementById('input-tsubo'),
+  tatami: document.getElementById('input-tatami'),
+  sqm:    document.getElementById('input-sqm'),
+  sqft:   document.getElementById('input-sqft'),
+};
+const tatamisSel = document.getElementById('tatami-type');
+let activeField  = null;
+
+function updateAll(sourceUnit, value) {
+  const tatamisType = tatamisSel.value;
+  const r = convertArea(parseFloat(value), sourceUnit, tatamisType);
+  if (r.error) return;
+
+  Object.entries(fields).forEach(([unit, el]) => {
+    if (unit !== sourceUnit) {
+      el.classList.remove('area-active');
+      el.value = r[unit];
+    }
+  });
+
+  gtag?.('event', 'tool_used', { tool_name: 'area_converter', from_unit: sourceUnit, language: 'ja' });
+}
+
+Object.entries(fields).forEach(([unit, el]) => {
+  el.addEventListener('input', () => {
+    activeField = unit;
+    el.classList.add('area-active');
+    Object.entries(fields).forEach(([u, e]) => { if (u !== unit) e.classList.remove('area-active'); });
+    if (el.value === '') {
+      Object.values(fields).forEach(e => { if (e !== el) e.value = ''; });
+      return;
+    }
+    updateAll(unit, el.value);
+  });
+});
+
+tatamisSel.addEventListener('change', () => {
+  if (activeField && fields[activeField].value)
+    updateAll(activeField, fields[activeField].value);
+});
+
+document.getElementById('btn-clear').addEventListener('click', () => {
+  Object.values(fields).forEach(el => { el.value = ''; el.classList.remove('area-active'); });
+  activeField = null;
+});
+
+document.getElementById('btn-copy').addEventListener('click', () => {
+  const labels = { tsubo: '坪', tatami: '畳', sqm: '平米', sqft: 'ft²' };
+  const lines = Object.entries(fields)
+    .map(([u, el]) => el.value ? `${labels[u]}：${el.value}` : null)
+    .filter(Boolean).join('\n');
+  if (!lines) return;
+  navigator.clipboard.writeText(lines).then(() => {
+    const btn = document.getElementById('btn-copy');
+    btn.textContent = 'コピーしました ✓';
+    setTimeout(() => { btn.textContent = '結果をコピー'; }, 2000);
+  });
+});
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(zone => {
+    const ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(z => observer.observe(z));
+  }
+});
+</script>
+
+<script>
+// T-52: Language toggle — dynamically set JP URL from current /en/ path
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+  }
+})();
+</script>
+</body>
+</html>
