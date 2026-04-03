@@ -109,9 +109,9 @@
     .preset-btn:hover { border-color: var(--color-accent); color: var(--color-accent); background: rgba(11,110,95,0.04); }
 
     .rate-toggle { display: flex; gap: 0; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden; }
-    .rate-option { flex: 1; text-align: center; }
+    .rate-option { flex: 1; display: flex; }
     .rate-option input { display: none; }
-    .rate-option span { display: block; padding: 0.5rem 1rem; cursor: pointer; font-size: 0.88rem; font-weight: 500; transition: background 0.15s, color 0.15s; }
+    .rate-option span { display: flex; align-items: center; justify-content: center; width: 100%; padding: 0.5rem 1rem; cursor: pointer; font-size: 0.88rem; font-weight: 500; transition: background 0.15s, color 0.15s; text-align: center; }
     .rate-option input:checked + span { background: var(--color-accent); color: #fff; }
 
     .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
@@ -258,7 +258,7 @@
           <label class="form-label" for="dependents">Dependents (age 16+)</label>
           <div class="input-suffix-wrap">
             <input type="tel" class="form-input input-with-suffix"
-                   id="dependents" placeholder="0" maxlength="1" value="0"
+                   id="dependents" placeholder="0" maxlength="2"
                    aria-label="Number of dependents age 16 and over">
             <span class="input-suffix">people</span>
           </div>
