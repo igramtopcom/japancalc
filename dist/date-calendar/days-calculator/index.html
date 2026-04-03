@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日数計算・何日後計算ツール: 期間・営業日を計算 | JapanCalc</title>
+  <meta name="description" content="2つの日付の間の日数・週数・営業日数を計算。○○日後・○○日前の日付も瞬時に確認。確定申告・引越し・プロジェクト管理に。無料、ログイン不要。">
+  <link rel="canonical" href="https://japancalc.com/date-calendar/days-calculator/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/date-calendar/days-calculator/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/date-calendar/days-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/date-calendar/days-calculator/">
+  <meta property="og:title"       content="日数計算・何日後計算ツール | JapanCalc">
+  <meta property="og:description" content="2つの日付の間の日数・週数・営業日数を計算。○○日後・○○日前の日付も瞬時に確認。">
+  <meta property="og:url"         content="https://japancalc.com/date-calendar/days-calculator/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image" content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "日数計算・何日後計算ツール | JapanCalc",
+    "url": "https://japancalc.com/date-calendar/days-calculator/",
+    "description": "2つの日付の間の日数・週数・営業日数を計算。○○日後・○○日前の日付も瞬時に確認。",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["ja", "en"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://japancalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "日付・カレンダー", "item": "https://japancalc.com/date-calendar/" },
+      { "@type": "ListItem", "position": 3, "name": "日数計算・何日後計算ツール", "item": "https://japancalc.com/date-calendar/days-calculator/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "今日から100日後は何日ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "今日から100日後の日付はこのツールのモード2（○日後を計算）で確認できます。基準日に今日の日付を入力し、日数欄に「100」と入力すると結果が表示されます。例えば2026年1月1日から100日後は2026年4月11日（土曜日）です。確定申告の締め切りや商品の有効期限確認などにご活用ください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "2つの日付の間の日数はどう計算しますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "2つの日付の日数計算は「終了日 − 開始日」で求められます。例えば2026年1月1日から2026年3月31日までの日数は89日間です。このツールのモード1（期間を計算）に2つの日付を入力すると、日数・週数・余り日数・営業日数を自動計算します。開始日を含むかどうかも選択できます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "営業日の計算方法は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "営業日数は土日と日本の祝日を除いた日数です。このツールでは日本の祝日データを使用して正確な営業日数を計算します。契約書の「10営業日以内」や請求書の支払い期限など、ビジネスシーンで営業日計算が必要な場面で活用できます。振替休日も祝日として処理されます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "赤ちゃんの100日祝いはいつですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "赤ちゃんの100日祝い（お食い初め）は生後100日目に行うのが一般的です。このツールのモード2で生まれた日を入力し、日数に「100」と入力すると100日目の日付が計算できます。ただし地域によっては110日目や120日目に行う場合もあります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "有効期限・保証期限の確認方法は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "有効期限や保証期限の日付確認には、このツールのモード2（○日後を計算）が便利です。購入日や開始日を基準日として入力し、保証期間の日数（例：1年＝365日）を入力すると期限日が確認できます。製品保証は「1年間」と記載されていても実際の日数が異なる場合があるため、正確な日付での確認をおすすめします。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  <style>
+    .tab-bar { display: flex; gap: 0; margin-bottom: 1.25rem; border-bottom: 2px solid var(--color-border); }
+    .tab-btn {
+      flex: 1; padding: 0.6rem 0.5rem; background: none; border: none; border-bottom: 3px solid transparent;
+      font-size: 0.88rem; font-weight: 600; cursor: pointer; color: var(--color-text-muted);
+      transition: color 0.15s, border-color 0.15s; margin-bottom: -2px; text-align: center;
+    }
+    .tab-btn.active { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+    .quick-presets { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+    .preset-btn {
+      font-size: 0.78rem; padding: 0.3rem 0.7rem; border: 1px solid var(--color-border);
+      border-radius: 99px; background: var(--color-bg-alt); cursor: pointer; color: var(--color-text);
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .preset-btn:hover { border-color: var(--color-accent); background: rgba(11,110,95,0.06); }
+    .result-box {
+      background: var(--color-bg-alt); border: 2px solid var(--color-accent);
+      border-radius: var(--radius); padding: 1.25rem; margin-top: 1rem;
+    }
+    .result-primary {
+      font-size: 1.6rem; font-weight: 700; color: var(--color-accent);
+      font-family: var(--font-mono); text-align: center; margin-bottom: 0.75rem;
+    }
+    .result-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    @media (max-width: 480px) { .result-grid { grid-template-columns: 1fr; } }
+    .result-item { text-align: center; }
+    .result-item-label { display: block; font-size: 0.72rem; color: var(--color-text-muted); margin-bottom: 0.15rem; }
+    .result-item-value { display: block; font-size: 1rem; font-weight: 600; font-family: var(--font-mono); }
+    .result-actions { margin-top: 0.75rem; text-align: center; }
+    .input-suffix-wrap { position: relative; display: flex; align-items: center; }
+    .input-with-suffix { width: 100%; padding-right: 2.5rem; }
+    .input-suffix { position: absolute; right: 0.75rem; font-size: 0.85rem; color: var(--color-text-muted); pointer-events: none; }
+    .ref-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+    .ref-table th, .ref-table td { border: 1px solid var(--color-border); padding: 0.5rem 0.75rem; text-align: left; }
+    .ref-table th { background: var(--color-bg-alt); font-weight: 600; font-size: 0.82rem; }
+    .ref-table tr:nth-child(even) { background: rgba(0,0,0,0.02); }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex; flex-direction: column; position: absolute;
+    top: 56px; left: 0; right: 0; background: var(--color-primary);
+    padding: 1rem; gap: 0.5rem; z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <a href="/" class="nav-logo" aria-label="JapanCalc ホーム">
+  <img src="/assets/icons/logo-white.svg" alt="JapanCalc" width="160" height="40" loading="eager" fetchpriority="high">
+</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="lang-switcher" role="navigation" aria-label="言語切替">
+      <span class="lang-option lang-active" aria-current="true">JP</span>
+      <span class="lang-sep">&middot;</span>
+      <a class="lang-option lang-inactive" id="lang-toggle"
+         href="/en/date-calendar/days-calculator/" lang="en" title="View in English"
+         aria-label="Switch to English">EN</a>
+    </div>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="/">ホーム</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">日数計算・何日後計算ツール</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_DAYS"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<main class="content page-wrapper" id="main-content">
+
+  <h1>日数計算・何日後計算ツール</h1>
+  <p class="tool-desc">
+    2つの日付の間の日数・週数・営業日数を自動計算。「○日後は何日？」もすぐに確認。日本の祝日データで営業日も正確に算出します。
+  </p>
+
+  <div class="tool-box" id="tool-main">
+
+    <!-- Tabs -->
+    <div class="tab-bar" role="tablist">
+      <button class="tab-btn active" role="tab" aria-selected="true" data-tab="between">期間を計算</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="later">○日後を計算</button>
+    </div>
+
+    <!-- Tab 1: Period -->
+    <div class="tab-panel active" id="panel-between" role="tabpanel">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="from-date">開始日</label>
+          <input type="date" class="form-input" id="from-date" aria-label="開始日">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="to-date">終了日</label>
+          <input type="date" class="form-input" id="to-date" aria-label="終了日">
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-top:0.5rem;">
+        <label style="font-size:0.82rem; display:flex; align-items:center; gap:0.5rem; cursor:pointer;">
+          <input type="checkbox" id="include-start"> 開始日を含む
+        </label>
+      </div>
+
+      <div class="quick-presets" style="margin:0.75rem 0;">
+        <span style="font-size:0.78rem; color:var(--color-text-muted);">よく使う計算：</span>
+        <button class="preset-btn" data-preset="today">今日を基準に</button>
+        <button class="preset-btn" data-preset="tax">確定申告まで</button>
+        <button class="preset-btn" data-preset="year">今年の残り日数</button>
+      </div>
+
+      <div class="result-box" id="result-between" style="display:none;" aria-live="polite">
+        <div class="result-primary" id="r-total-days">0日間</div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="result-item-label">週数 + 余り</span>
+            <span class="result-item-value" id="r-weeks">0週 0日</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">終了日の曜日</span>
+            <span class="result-item-value" id="r-dow">&mdash;</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">営業日数</span>
+            <span class="result-item-value" id="r-bizdays">&mdash; 日</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">休日数</span>
+            <span class="result-item-value" id="r-holidays">&mdash; 日</span>
+          </div>
+        </div>
+        <div class="result-actions">
+          <button class="btn-copy-result" id="copy-between">結果をコピー</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Days Later -->
+    <div class="tab-panel" id="panel-later" role="tabpanel">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="base-date">基準日</label>
+          <input type="date" class="form-input" id="base-date" aria-label="基準日">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="days-count">日数</label>
+          <div class="input-suffix-wrap">
+            <input type="tel" class="form-input input-with-suffix"
+                   id="days-count" placeholder="例: 100" aria-label="日数">
+            <span class="input-suffix">日後</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-presets" style="margin:0.75rem 0;">
+        <button class="preset-btn" data-days="7">1週間後</button>
+        <button class="preset-btn" data-days="30">30日後</button>
+        <button class="preset-btn" data-days="100">100日後</button>
+        <button class="preset-btn" data-days="365">1年後</button>
+        <button class="preset-btn" data-days="-30">30日前</button>
+      </div>
+
+      <div class="result-box" id="result-later" style="display:none;" aria-live="polite">
+        <div class="result-primary" id="r-result-date">&mdash;</div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="result-item-label">曜日</span>
+            <span class="result-item-value" id="r-result-dow">&mdash;</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">基準日</span>
+            <span class="result-item-value" id="r-base-date-disp">&mdash;</span>
+          </div>
+        </div>
+        <div class="result-actions">
+          <button class="btn-copy-result" id="copy-later">結果をコピー</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="SLOT_BTF_DAYS"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+
+  <!-- Quick Reference Table -->
+  <section>
+    <h2>よく使う日数計算 早見表</h2>
+    <table class="ref-table">
+      <thead><tr><th>用途</th><th>日数の目安</th><th>備考</th></tr></thead>
+      <tbody>
+        <tr><td>赤ちゃん100日祝い（お食い初め）</td><td>生後100日目</td><td>地域により110・120日の場合も</td></tr>
+        <tr><td>確定申告期間</td><td>2月16日〜3月15日（28日間）</td><td>毎年固定</td></tr>
+        <tr><td>産前産後休業（法定）</td><td>産前42日・産後56日</td><td>多胎の場合は産前98日</td></tr>
+        <tr><td>育児休業（最長）</td><td>子が2歳になるまで</td><td>労使合意で延長可</td></tr>
+        <tr><td>年次有給休暇の時効</td><td>付与日から2年間（730日）</td><td>労働基準法第115条</td></tr>
+        <tr><td>クレジットカード引き落とし目安</td><td>締め日から20〜35日後</td><td>カードにより異なる</td></tr>
+        <tr><td>不動産契約から引き渡しまで</td><td>1〜3ヶ月（30〜90日）</td><td>ローン審査期間含む</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Editorial -->
+  <article class="seo-content">
+    <h2>日数計算が必要になる場面</h2>
+    <p>
+      日数計算は日常生活やビジネスのさまざまな場面で必要になります。確定申告の期限確認、契約書の「○営業日以内」の算出、赤ちゃんの100日祝い（お食い初め）の日付決め、有効期限の計算など、正確な日数を知りたい場面は数多くあります。このツールでは、2つの日付間の日数だけでなく、週数・余り日数・営業日数も同時に表示し、さらに日本の祝日データを利用して正確な営業日計算を行います。
+    </p>
+    <p>
+      特にビジネスシーンでは「営業日」での期限管理が重要です。日本には年間16日の祝日があり、振替休日を含めると土日以外の休日が他国より多い傾向にあります。ゴールデンウィーク（4月末〜5月上旬）やお盆（8月中旬）、年末年始は連続した休暇となることが多く、営業日ベースでの納期計算では注意が必要です。
+    </p>
+
+    <h2>「○日後は何日？」を瞬時に計算</h2>
+    <p>
+      「今日から100日後は何日？」「30日前の日付は？」といった計算もこのツールで瞬時に確認できます。基準日と日数を入力するだけで、結果の日付と曜日が表示されます。マイナスの日数を入力すれば過去の日付も計算可能です。プロジェクトのマイルストーン管理、保証期限の確認、記念日の計算などにご活用ください。また、結果がたまたま日本の祝日に当たる場合はその祝日名も表示されるため、予定の調整にも便利です。
+    </p>
+  </article>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h2>よくある質問</h2>
+
+    <details class="faq-item">
+      <summary>今日から100日後は何日ですか？</summary>
+      <div class="faq-answer">
+        <p>今日から100日後の日付はこのツールのモード2（○日後を計算）で確認できます。基準日に今日の日付を入力し、日数欄に「100」と入力すると結果が表示されます。例えば2026年1月1日から100日後は2026年4月11日（土曜日）です。確定申告の締め切りや商品の有効期限確認などにご活用ください。</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>2つの日付の間の日数はどう計算しますか？</summary>
+      <div class="faq-answer">
+        <p>2つの日付の日数計算は「終了日 − 開始日」で求められます。例えば2026年1月1日から2026年3月31日までの日数は89日間です。このツールのモード1（期間を計算）に2つの日付を入力すると、日数・週数・余り日数・営業日数を自動計算します。開始日を含むかどうかも選択できます。</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>営業日の計算方法は？</summary>
+      <div class="faq-answer">
+        <p>営業日数は土日と日本の祝日を除いた日数です。このツールでは日本の祝日データを使用して正確な営業日数を計算します。契約書の「10営業日以内」や請求書の支払い期限など、ビジネスシーンで営業日計算が必要な場面で活用できます。振替休日も祝日として処理されます。</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>赤ちゃんの100日祝いはいつですか？</summary>
+      <div class="faq-answer">
+        <p>赤ちゃんの100日祝い（お食い初め）は生後100日目に行うのが一般的です。このツールのモード2で生まれた日を入力し、日数に「100」と入力すると100日目の日付が計算できます。ただし地域によっては110日目や120日目に行う場合もあります。</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>有効期限・保証期限の確認方法は？</summary>
+      <div class="faq-answer">
+        <p>有効期限や保証期限の日付確認には、このツールのモード2（○日後を計算）が便利です。購入日や開始日を基準日として入力し、保証期間の日数（例：1年＝365日）を入力すると期限日が確認できます。製品保証は「1年間」と記載されていても実際の日数が異なる場合があるため、正確な日付での確認をおすすめします。</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- Related Tools -->
+  <section class="related-tools">
+    <h2>関連ツール</h2>
+    <div class="cards-grid">
+      <a href="/date-calendar/holiday-checker/" class="tool-card">
+        <div class="tool-card-icon">&#x1F3EE;</div>
+        <div class="tool-card-name">祝日チェッカー</div>
+        <div class="tool-card-desc">日本の祝日かどうかを確認</div>
+      </a>
+      <a href="/date-calendar/age-calculator/" class="tool-card">
+        <div class="tool-card-icon">&#x1F382;</div>
+        <div class="tool-card-name">年齢計算</div>
+        <div class="tool-card-desc">満年齢・数え年を計算</div>
+      </a>
+      <a href="/date-calendar/" class="tool-card">
+        <div class="tool-card-icon">&#x1F4C5;</div>
+        <div class="tool-card-name">日付・カレンダーツール</div>
+        <div class="tool-card-desc">全ての日付ツールを見る</div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+  });
+})();
+</script>
+
+<script type="module">
+import { calcDaysBetween, calcDaysLater, calcBusinessDays, toDateStr }
+  from '/assets/js/days-calc.js';
+import { getHolidaysForYear } from '/assets/js/holiday.js';
+
+// Build holiday lookup { 'YYYY-MM-DD': 'name' }
+const holidays = {};
+for (let y = 2023; y <= 2030; y++) {
+  const arr = getHolidaysForYear(y);
+  if (arr) arr.forEach(h => { holidays[h.date] = h.nameJP; });
+}
+
+// Tab switching
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected','true');
+    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// Set default dates
+const today = toDateStr(new Date());
+document.getElementById('from-date').value = today;
+document.getElementById('to-date').value   = today;
+document.getElementById('base-date').value = today;
+
+// Tab 1 — period
+function computeBetween() {
+  const from = document.getElementById('from-date').value;
+  const to   = document.getElementById('to-date').value;
+  const inclStart = document.getElementById('include-start').checked;
+  const res  = document.getElementById('result-between');
+
+  if (!from || !to) { res.style.display = 'none'; return; }
+
+  const r = calcDaysBetween(from, to, inclStart, true);
+  if (r.error) { res.style.display = 'none'; return; }
+
+  const sign = r.isNegative ? '-' : '';
+  document.getElementById('r-total-days').textContent = `${sign}${r.absDays.toLocaleString('ja-JP')}日間`;
+  document.getElementById('r-weeks').textContent = `${r.weeks}週間 ${r.remainDays}日`;
+  document.getElementById('r-dow').textContent = `${r.toDayOfWeekJP}曜日`;
+
+  const bizDays  = calcBusinessDays(from, to, holidays);
+  const restDays = r.absDays - bizDays;
+  document.getElementById('r-bizdays').textContent  = `${bizDays} 日`;
+  document.getElementById('r-holidays').textContent = `${restDays} 日`;
+
+  res.style.display = 'block';
+  gtag?.('event', 'tool_used', { tool_name: 'days_calculator', mode: 'between', language: 'ja' });
+}
+
+['from-date','to-date'].forEach(id =>
+  document.getElementById(id).addEventListener('change', computeBetween));
+document.getElementById('include-start').addEventListener('change', computeBetween);
+
+// Tab 2 — days later
+function computeLater() {
+  const base = document.getElementById('base-date').value;
+  const days = parseInt(document.getElementById('days-count').value);
+  const res  = document.getElementById('result-later');
+
+  if (!base || isNaN(days)) { res.style.display = 'none'; return; }
+
+  const r = calcDaysLater(base, days);
+  if (r.error) { res.style.display = 'none'; return; }
+
+  document.getElementById('r-result-date').textContent    = r.resultDate;
+  document.getElementById('r-result-dow').textContent     = `${r.dayOfWeekJP}曜日`;
+  document.getElementById('r-base-date-disp').textContent = r.fromDate;
+
+  if (holidays[r.resultStr]) {
+    document.getElementById('r-result-dow').textContent += ` ※祝日（${holidays[r.resultStr]}）`;
+  }
+
+  res.style.display = 'block';
+  gtag?.('event', 'tool_used', { tool_name: 'days_calculator', mode: 'later', language: 'ja' });
+}
+
+document.getElementById('base-date').addEventListener('change', computeLater);
+document.getElementById('days-count').addEventListener('input', computeLater);
+
+// Presets — Tab 2
+document.querySelectorAll('.preset-btn[data-days]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('days-count').value = btn.dataset.days;
+    computeLater();
+  });
+});
+
+// Presets — Tab 1
+document.querySelectorAll('.preset-btn[data-preset]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const todayStr = toDateStr(new Date());
+    const y = new Date().getFullYear();
+    if (btn.dataset.preset === 'today') {
+      document.getElementById('from-date').value = todayStr;
+    } else if (btn.dataset.preset === 'tax') {
+      document.getElementById('from-date').value = todayStr;
+      document.getElementById('to-date').value   = `${y}-03-15`;
+    } else if (btn.dataset.preset === 'year') {
+      document.getElementById('from-date').value = todayStr;
+      document.getElementById('to-date').value   = `${y}-12-31`;
+    }
+    computeBetween();
+  });
+});
+
+// Copy — Tab 1
+document.getElementById('copy-between').addEventListener('click', () => {
+  const days  = document.getElementById('r-total-days').textContent;
+  const weeks = document.getElementById('r-weeks').textContent;
+  const biz   = document.getElementById('r-bizdays').textContent;
+  navigator.clipboard.writeText(`期間：${days}\n週数：${weeks}\n営業日：${biz}`).then(() => {
+    const btn = document.getElementById('copy-between');
+    btn.textContent = 'コピーしました ✓';
+    setTimeout(() => { btn.textContent = '結果をコピー'; }, 2000);
+  });
+});
+
+// Copy — Tab 2
+document.getElementById('copy-later').addEventListener('click', () => {
+  const date = document.getElementById('r-result-date').textContent;
+  const dow  = document.getElementById('r-result-dow').textContent;
+  navigator.clipboard.writeText(`${date}（${dow}）`).then(() => {
+    const btn = document.getElementById('copy-later');
+    btn.textContent = 'コピーしました ✓';
+    setTimeout(() => { btn.textContent = '結果をコピー'; }, 2000);
+  });
+});
+
+// Auto-compute on load
+computeBetween();
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(zone => {
+    const ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(z => observer.observe(z));
+  }
+});
+</script>
+
+<script>
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+  }
+})();
+</script>
+</body>
+</html>

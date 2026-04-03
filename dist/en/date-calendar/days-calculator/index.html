@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japan Days Calculator: Period & Business Days | JapanCalc</title>
+  <meta name="description" content="Calculate days between two dates or find a date N days from now. Includes Japan public holidays and business day calculation. Free, no login required.">
+  <link rel="canonical" href="https://japancalc.com/en/date-calendar/days-calculator/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/date-calendar/days-calculator/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/date-calendar/days-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/date-calendar/days-calculator/">
+  <meta property="og:title"       content="Japan Days Calculator: Period & Business Days | JapanCalc">
+  <meta property="og:description" content="Calculate days between dates or find a date N days from now. Includes Japan holidays.">
+  <meta property="og:url"         content="https://japancalc.com/en/date-calendar/days-calculator/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image" content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Japan Days Calculator | JapanCalc",
+    "url": "https://japancalc.com/en/date-calendar/days-calculator/",
+    "description": "Calculate days between two dates or find a date N days from now. Includes Japan public holidays and business day calculation.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["ja", "en"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://japancalc.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Date & Calendar", "item": "https://japancalc.com/en/date-calendar/" },
+      { "@type": "ListItem", "position": 3, "name": "Days Calculator", "item": "https://japancalc.com/en/date-calendar/days-calculator/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What date is 100 days from today?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Use the 'Calculate a Future Date' tab of this tool to find what date is 100 days from today. Enter today as the start date and type '100' in the days field. For example, 100 days after January 1, 2026 is April 11, 2026 (Saturday). This is useful for tracking deadlines, warranty expirations, and milestone dates." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate days between two dates?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The days between two dates is calculated as 'end date minus start date'. For example, from January 1, 2026 to March 31, 2026 is 89 days. Use the 'Calculate Period' tab and enter both dates to get the total days, weeks, remaining days, and business days automatically. You can also choose whether to include the start date in the count." }
+      },
+      {
+        "@type": "Question",
+        "name": "How are business days calculated in Japan?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Business days in Japan exclude weekends (Saturday and Sunday) and all national public holidays. Japan has 16 national holidays per year, including Golden Week (late April to early May) and New Year's holidays. This tool uses official Japanese holiday data to calculate accurate business day counts, including substitute holidays (furikae kyūjitsu)." }
+      },
+      {
+        "@type": "Question",
+        "name": "When is a baby's 100-day celebration in Japan?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In Japan, Okuizome (お食い初め) is a traditional ceremony held on the 100th day after a baby's birth. Use the 'Calculate a Future Date' tab, enter the birth date, and type '100' to find the celebration date. Note that some regions celebrate on the 110th or 120th day instead." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I check warranty or expiry dates?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Use the 'Calculate a Future Date' tab to check warranty or expiry dates. Enter the purchase or start date, then enter the warranty period in days (e.g., 365 for one year). The tool instantly shows the exact expiry date and day of the week. If the result falls on a Japanese public holiday, the holiday name is displayed too." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  <style>
+    .tab-bar { display: flex; gap: 0; margin-bottom: 1.25rem; border-bottom: 2px solid var(--color-border); }
+    .tab-btn {
+      flex: 1; padding: 0.6rem 0.5rem; background: none; border: none; border-bottom: 3px solid transparent;
+      font-size: 0.88rem; font-weight: 600; cursor: pointer; color: var(--color-text-muted);
+      transition: color 0.15s, border-color 0.15s; margin-bottom: -2px; text-align: center;
+    }
+    .tab-btn.active { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+    .quick-presets { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+    .preset-btn {
+      font-size: 0.78rem; padding: 0.3rem 0.7rem; border: 1px solid var(--color-border);
+      border-radius: 99px; background: var(--color-bg-alt); cursor: pointer; color: var(--color-text);
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .preset-btn:hover { border-color: var(--color-accent); background: rgba(11,110,95,0.06); }
+    .result-box {
+      background: var(--color-bg-alt); border: 2px solid var(--color-accent);
+      border-radius: var(--radius); padding: 1.25rem; margin-top: 1rem;
+    }
+    .result-primary {
+      font-size: 1.6rem; font-weight: 700; color: var(--color-accent);
+      font-family: var(--font-mono); text-align: center; margin-bottom: 0.75rem;
+    }
+    .result-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    @media (max-width: 480px) { .result-grid { grid-template-columns: 1fr; } }
+    .result-item { text-align: center; }
+    .result-item-label { display: block; font-size: 0.72rem; color: var(--color-text-muted); margin-bottom: 0.15rem; }
+    .result-item-value { display: block; font-size: 1rem; font-weight: 600; font-family: var(--font-mono); }
+    .result-actions { margin-top: 0.75rem; text-align: center; }
+    .input-suffix-wrap { position: relative; display: flex; align-items: center; }
+    .input-with-suffix { width: 100%; padding-right: 3rem; }
+    .input-suffix { position: absolute; right: 0.75rem; font-size: 0.85rem; color: var(--color-text-muted); pointer-events: none; }
+    .ref-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+    .ref-table th, .ref-table td { border: 1px solid var(--color-border); padding: 0.5rem 0.75rem; text-align: left; }
+    .ref-table th { background: var(--color-bg-alt); font-weight: 600; font-size: 0.82rem; }
+    .ref-table tr:nth-child(even) { background: rgba(0,0,0,0.02); }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex; flex-direction: column; position: absolute;
+    top: 56px; left: 0; right: 0; background: var(--color-primary);
+    padding: 1rem; gap: 0.5rem; z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/en/" class="nav-logo" aria-label="JapanCalc Home">
+  <img src="/assets/icons/logo-white.svg" alt="JapanCalc" width="160" height="40" loading="eager" fetchpriority="high">
+</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="lang-switcher" role="navigation" aria-label="Language">
+      <a class="lang-option lang-inactive" id="lang-toggle"
+         href="/date-calendar/days-calculator/" lang="ja" title="日本語で表示"
+         aria-label="日本語に切り替え">JP</a>
+      <span class="lang-sep">&middot;</span>
+      <span class="lang-option lang-active" aria-current="true">EN</span>
+    </div>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/en/">Home</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">Days Calculator</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_DAYS_EN"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<main class="content page-wrapper" id="main-content">
+
+  <h1>Days Between Dates &amp; Days Later Calculator</h1>
+  <p class="tool-desc">
+    Calculate the number of days, weeks, and business days between two dates. Or find what date is N days from now. Includes Japan public holidays for accurate business day counts.
+  </p>
+
+  <div class="tool-box" id="tool-main">
+
+    <!-- Tabs -->
+    <div class="tab-bar" role="tablist">
+      <button class="tab-btn active" role="tab" aria-selected="true" data-tab="between">Calculate Period</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="later">Calculate Future Date</button>
+    </div>
+
+    <!-- Tab 1: Period -->
+    <div class="tab-panel active" id="panel-between" role="tabpanel">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="from-date">Start Date</label>
+          <input type="date" class="form-input" id="from-date" aria-label="Start date">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="to-date">End Date</label>
+          <input type="date" class="form-input" id="to-date" aria-label="End date">
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-top:0.5rem;">
+        <label style="font-size:0.82rem; display:flex; align-items:center; gap:0.5rem; cursor:pointer;">
+          <input type="checkbox" id="include-start"> Include start date
+        </label>
+      </div>
+
+      <div class="quick-presets" style="margin:0.75rem 0;">
+        <span style="font-size:0.78rem; color:var(--color-text-muted);">Quick:</span>
+        <button class="preset-btn" data-preset="today">Set to today</button>
+        <button class="preset-btn" data-preset="tax">Until tax deadline</button>
+        <button class="preset-btn" data-preset="year">Days left in year</button>
+      </div>
+
+      <div class="result-box" id="result-between" style="display:none;" aria-live="polite">
+        <div class="result-primary" id="r-total-days">0 days</div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="result-item-label">Weeks + Days</span>
+            <span class="result-item-value" id="r-weeks">0 weeks 0 days</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">End Day of Week</span>
+            <span class="result-item-value" id="r-dow">&mdash;</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">Business Days</span>
+            <span class="result-item-value" id="r-bizdays">&mdash;</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">Weekend/Holiday Days</span>
+            <span class="result-item-value" id="r-holidays">&mdash;</span>
+          </div>
+        </div>
+        <div class="result-actions">
+          <button class="btn-copy-result" id="copy-between">Copy result</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Days Later -->
+    <div class="tab-panel" id="panel-later" role="tabpanel">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="base-date">Start Date</label>
+          <input type="date" class="form-input" id="base-date" aria-label="Start date">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="days-count">Number of Days</label>
+          <div class="input-suffix-wrap">
+            <input type="tel" class="form-input input-with-suffix"
+                   id="days-count" placeholder="e.g. 100" aria-label="Number of days">
+            <span class="input-suffix">days</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-presets" style="margin:0.75rem 0;">
+        <button class="preset-btn" data-days="7">1 week</button>
+        <button class="preset-btn" data-days="30">30 days</button>
+        <button class="preset-btn" data-days="100">100 days</button>
+        <button class="preset-btn" data-days="365">1 year</button>
+        <button class="preset-btn" data-days="-30">30 days ago</button>
+      </div>
+
+      <div class="result-box" id="result-later" style="display:none;" aria-live="polite">
+        <div class="result-primary" id="r-result-date">&mdash;</div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="result-item-label">Day of Week</span>
+            <span class="result-item-value" id="r-result-dow">&mdash;</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">Start Date</span>
+            <span class="result-item-value" id="r-base-date-disp">&mdash;</span>
+          </div>
+        </div>
+        <div class="result-actions">
+          <button class="btn-copy-result" id="copy-later">Copy result</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="SLOT_BTF_DAYS_EN"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+
+  <!-- Quick Reference Table -->
+  <section>
+    <h2>Common Day Calculations in Japan</h2>
+    <table class="ref-table">
+      <thead><tr><th>Purpose</th><th>Days</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Baby&rsquo;s 100-day celebration (Okuizome)</td><td>100 days after birth</td><td>Some regions: 110 or 120 days</td></tr>
+        <tr><td>Tax filing period (Kakutei Shinkoku)</td><td>Feb 16 &ndash; Mar 15 (28 days)</td><td>Annual deadline</td></tr>
+        <tr><td>Maternity leave (statutory)</td><td>42 days before + 56 days after birth</td><td>98 days before for multiple births</td></tr>
+        <tr><td>Childcare leave (maximum)</td><td>Until child turns 2</td><td>Extendable by agreement</td></tr>
+        <tr><td>Paid leave expiry</td><td>2 years (730 days) from grant date</td><td>Labor Standards Act Art. 115</td></tr>
+        <tr><td>Credit card payment cycle</td><td>20&ndash;35 days after closing date</td><td>Varies by issuer</td></tr>
+        <tr><td>Real estate closing</td><td>1&ndash;3 months (30&ndash;90 days)</td><td>Including mortgage approval</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Editorial -->
+  <article class="seo-content">
+    <h2>Why Day Counting Matters in Japan</h2>
+    <p>
+      Calculating the number of days between dates is essential in many everyday and business situations in Japan. From confirming tax filing deadlines (kakutei shinkoku runs from February 16 to March 15 every year) to planning baby milestone celebrations, accurate day counts help you stay organized. This tool goes beyond simple subtraction — it shows weeks, remaining days, and business days using official Japanese holiday data, making it ideal for contract deadlines, project management, and personal planning.
+    </p>
+    <p>
+      Japan has 16 national public holidays per year, more than most other countries. Combined with the tradition of taking extended leave during Golden Week (late April to early May), Obon (mid-August), and New Year (late December to early January), business day calculations in Japan require careful attention to the calendar. A "10 business days" deadline that spans Golden Week, for instance, may translate to nearly three calendar weeks.
+    </p>
+
+    <h2>Finding a Date N Days From Now</h2>
+    <p>
+      Need to know what date is 100 days from now, or 30 days ago? The "Calculate Future Date" tab handles this instantly. Enter any start date and a number of days (positive for future, negative for past) to get the result with the day of the week. If the resulting date happens to be a Japanese public holiday, the tool displays the holiday name as well — helpful for scheduling appointments or deliveries around official days off.
+    </p>
+    <p>
+      Common uses include calculating a baby's 100-day celebration (Okuizome), checking warranty expiry dates, counting down to important deadlines, and planning project milestones. The quick preset buttons let you instantly check common intervals like 1 week, 30 days, 100 days, and 1 year.
+    </p>
+  </article>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <details class="faq-item">
+      <summary>What date is 100 days from today?</summary>
+      <div class="faq-answer">
+        <p>Use the "Calculate a Future Date" tab of this tool to find what date is 100 days from today. Enter today as the start date and type "100" in the days field. For example, 100 days after January 1, 2026 is April 11, 2026 (Saturday). This is useful for tracking deadlines, warranty expirations, and milestone dates.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How do I calculate days between two dates?</summary>
+      <div class="faq-answer">
+        <p>The days between two dates is calculated as "end date minus start date". For example, from January 1, 2026 to March 31, 2026 is 89 days. Use the "Calculate Period" tab and enter both dates to get the total days, weeks, remaining days, and business days automatically. You can also choose whether to include the start date in the count.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How are business days calculated in Japan?</summary>
+      <div class="faq-answer">
+        <p>Business days in Japan exclude weekends (Saturday and Sunday) and all national public holidays. Japan has 16 national holidays per year, including Golden Week (late April to early May) and New Year's holidays. This tool uses official Japanese holiday data to calculate accurate business day counts, including substitute holidays (furikae kyūjitsu).</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>When is a baby's 100-day celebration in Japan?</summary>
+      <div class="faq-answer">
+        <p>In Japan, Okuizome (お食い初め) is a traditional ceremony held on the 100th day after a baby's birth. Use the "Calculate a Future Date" tab, enter the birth date, and type "100" to find the celebration date. Note that some regions celebrate on the 110th or 120th day instead.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How do I check warranty or expiry dates?</summary>
+      <div class="faq-answer">
+        <p>Use the "Calculate a Future Date" tab to check warranty or expiry dates. Enter the purchase or start date, then enter the warranty period in days (e.g., 365 for one year). The tool instantly shows the exact expiry date and day of the week. If the result falls on a Japanese public holiday, the holiday name is displayed too.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- Related Tools -->
+  <section class="related-tools">
+    <h2>Related Tools</h2>
+    <div class="cards-grid">
+      <a href="/en/date-calendar/holiday-checker/" class="tool-card">
+        <div class="tool-card-icon">&#x1F3EE;</div>
+        <div class="tool-card-name">Holiday Checker</div>
+        <div class="tool-card-desc">Check if a date is a Japan public holiday</div>
+      </a>
+      <a href="/en/date-calendar/age-calculator/" class="tool-card">
+        <div class="tool-card-icon">&#x1F382;</div>
+        <div class="tool-card-name">Age Calculator</div>
+        <div class="tool-card-desc">Calculate age in years, months and days</div>
+      </a>
+      <a href="/en/date-calendar/" class="tool-card">
+        <div class="tool-card-icon">&#x1F4C5;</div>
+        <div class="tool-card-name">Date &amp; Calendar Tools</div>
+        <div class="tool-card-desc">Browse all date tools</div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/en/about/">About</a></li>
+      <li><a href="/en/privacy/">Privacy Policy</a></li>
+      <li><a href="/en/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import { calcDaysBetween, calcDaysLater, calcBusinessDays, toDateStr, formatDateJP }
+  from '/assets/js/days-calc.js';
+import { getHolidaysForYear } from '/assets/js/holiday.js';
+
+const holidays = {};
+for (let y = 2023; y <= 2030; y++) {
+  const arr = getHolidaysForYear(y);
+  if (arr) arr.forEach(h => { holidays[h.date] = h.nameEN; });
+}
+
+// Tab switching
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected','true');
+    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+const today = toDateStr(new Date());
+document.getElementById('from-date').value = today;
+document.getElementById('to-date').value   = today;
+document.getElementById('base-date').value = today;
+
+function formatEN(dateStr) {
+  const d = new Date(dateStr + 'T00:00:00');
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+const DOW_EN = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+function computeBetween() {
+  const from = document.getElementById('from-date').value;
+  const to   = document.getElementById('to-date').value;
+  const inclStart = document.getElementById('include-start').checked;
+  const res  = document.getElementById('result-between');
+
+  if (!from || !to) { res.style.display = 'none'; return; }
+
+  const r = calcDaysBetween(from, to, inclStart, true);
+  if (r.error) { res.style.display = 'none'; return; }
+
+  const sign = r.isNegative ? '-' : '';
+  document.getElementById('r-total-days').textContent = `${sign}${r.absDays.toLocaleString('en-US')} days`;
+  document.getElementById('r-weeks').textContent = `${r.weeks} weeks ${r.remainDays} days`;
+  const toD = new Date(to + 'T00:00:00');
+  document.getElementById('r-dow').textContent = DOW_EN[toD.getDay()];
+
+  const bizDays  = calcBusinessDays(from, to, holidays);
+  const restDays = r.absDays - bizDays;
+  document.getElementById('r-bizdays').textContent  = String(bizDays);
+  document.getElementById('r-holidays').textContent = String(restDays);
+
+  res.style.display = 'block';
+  gtag?.('event', 'tool_used', { tool_name: 'days_calculator', mode: 'between', language: 'en' });
+}
+
+['from-date','to-date'].forEach(id =>
+  document.getElementById(id).addEventListener('change', computeBetween));
+document.getElementById('include-start').addEventListener('change', computeBetween);
+
+function computeLater() {
+  const base = document.getElementById('base-date').value;
+  const days = parseInt(document.getElementById('days-count').value);
+  const res  = document.getElementById('result-later');
+
+  if (!base || isNaN(days)) { res.style.display = 'none'; return; }
+
+  const r = calcDaysLater(base, days);
+  if (r.error) { res.style.display = 'none'; return; }
+
+  document.getElementById('r-result-date').textContent    = formatEN(r.resultStr);
+  const resultD = new Date(r.resultStr + 'T00:00:00');
+  document.getElementById('r-result-dow').textContent     = DOW_EN[resultD.getDay()];
+  document.getElementById('r-base-date-disp').textContent = formatEN(base);
+
+  if (holidays[r.resultStr]) {
+    document.getElementById('r-result-dow').textContent += ` (Holiday: ${holidays[r.resultStr]})`;
+  }
+
+  res.style.display = 'block';
+  gtag?.('event', 'tool_used', { tool_name: 'days_calculator', mode: 'later', language: 'en' });
+}
+
+document.getElementById('base-date').addEventListener('change', computeLater);
+document.getElementById('days-count').addEventListener('input', computeLater);
+
+document.querySelectorAll('.preset-btn[data-days]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('days-count').value = btn.dataset.days;
+    computeLater();
+  });
+});
+
+document.querySelectorAll('.preset-btn[data-preset]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const todayStr = toDateStr(new Date());
+    const y = new Date().getFullYear();
+    if (btn.dataset.preset === 'today') {
+      document.getElementById('from-date').value = todayStr;
+    } else if (btn.dataset.preset === 'tax') {
+      document.getElementById('from-date').value = todayStr;
+      document.getElementById('to-date').value   = `${y}-03-15`;
+    } else if (btn.dataset.preset === 'year') {
+      document.getElementById('from-date').value = todayStr;
+      document.getElementById('to-date').value   = `${y}-12-31`;
+    }
+    computeBetween();
+  });
+});
+
+document.getElementById('copy-between').addEventListener('click', () => {
+  const days  = document.getElementById('r-total-days').textContent;
+  const weeks = document.getElementById('r-weeks').textContent;
+  const biz   = document.getElementById('r-bizdays').textContent;
+  navigator.clipboard.writeText(`Period: ${days}\nWeeks: ${weeks}\nBusiness days: ${biz}`).then(() => {
+    const btn = document.getElementById('copy-between');
+    btn.textContent = 'Copied \u2713';
+    setTimeout(() => { btn.textContent = 'Copy result'; }, 2000);
+  });
+});
+
+document.getElementById('copy-later').addEventListener('click', () => {
+  const date = document.getElementById('r-result-date').textContent;
+  const dow  = document.getElementById('r-result-dow').textContent;
+  navigator.clipboard.writeText(`${date} (${dow})`).then(() => {
+    const btn = document.getElementById('copy-later');
+    btn.textContent = 'Copied \u2713';
+    setTimeout(() => { btn.textContent = 'Copy result'; }, 2000);
+  });
+});
+
+computeBetween();
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(zone => {
+    const ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(z => observer.observe(z));
+  }
+});
+</script>
+
+<script>
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = '日本語';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'English';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+  }
+})();
+</script>
+</body>
+</html>
