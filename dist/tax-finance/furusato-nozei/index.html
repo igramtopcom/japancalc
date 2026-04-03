@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ふるさと納税 計算ツール: 控除上限額シミュレーション | JapanCalc</title>
+  <meta name="description" content="年収・家族構成を入力するだけでふるさと納税の控除上限額を計算。所得税還付・住民税控除の内訳も表示。2026年度対応。無料シミュレーション、ログイン不要。">
+  <link rel="canonical" href="https://japancalc.com/tax-finance/furusato-nozei/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/tax-finance/furusato-nozei/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/tax-finance/furusato-nozei/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/tax-finance/furusato-nozei/">
+  <meta property="og:title"       content="ふるさと納税 計算ツール: 控除上限額シミュレーション | JapanCalc">
+  <meta property="og:description" content="年収・家族構成を入力してふるさと納税の控除上限額を計算。無料。">
+  <meta property="og:url"         content="https://japancalc.com/tax-finance/furusato-nozei/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image" content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ふるさと納税 控除額計算ツール | JapanCalc",
+    "url": "https://japancalc.com/tax-finance/furusato-nozei/",
+    "description": "年収・家族構成を入力してふるさと納税の控除上限額を計算。所得税還付・住民税控除の内訳も表示。",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["ja", "en"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://japancalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "税金・財務", "item": "https://japancalc.com/tax-finance/" },
+      { "@type": "ListItem", "position": 3, "name": "ふるさと納税計算", "item": "https://japancalc.com/tax-finance/furusato-nozei/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ふるさと納税の控除上限額とは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "ふるさと納税の控除上限額とは、実質負担額を2,000円に抑えながら寄付できる金額の上限です。この上限を超えて寄付しても控除されず、超えた分は全額自己負担となります。上限は年収・家族構成・その他の控除によって異なります。このシミュレーターでは年収と家族構成を入力することで目安の上限額を計算できます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "ふるさと納税は年収いくらから得ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "ふるさと納税は年収約200万円以上から控除の恩恵を受けられます。ただし実際には課税所得がある方（住民税・所得税を支払っている方）であれば年収に関わらず活用できます。年収が高いほど控除上限額が大きくなり、より多くの返礼品を受け取ることができます。目安として年収300万円で約28,000円、500万円で約61,000円、1,000万円で約176,000円が控除上限額です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "ワンストップ特例と確定申告の違いは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "ワンストップ特例制度は確定申告不要でふるさと納税の控除を受けられる制度で、寄付先が5自治体以内で給与所得者（確定申告不要）が対象です。確定申告を行う方や寄付先が6自治体以上の場合は確定申告で控除を受ける必要があります。医療費控除など他の確定申告が必要な控除がある場合はワンストップ特例は使えません。" }
+      },
+      {
+        "@type": "Question",
+        "name": "ふるさと納税の返礼品は何割まで受け取れますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "総務省のガイドラインにより、返礼品は寄付額の30%以内と定められています。例えば10,000円寄付すると最大3,000円相当の返礼品を受け取ることができます。実質2,000円の負担で3,000円相当の返礼品が受け取れるため、寄付額の多い方ほど恩恵が大きくなります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "ふるさと納税の申込期限はいつですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "ふるさと納税は毎年1月1日から12月31日の間に行った寄付が当年の税控除の対象となります。ワンストップ特例を利用する場合は翌年1月10日必着で申請書を自治体に送付する必要があります。確定申告の場合は翌年の確定申告期間（2月16日〜3月15日）に申告します。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <style>
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+    .input-suffix-wrap { position: relative; display: flex; align-items: center; }
+    .input-with-suffix { width: 100%; padding-right: 2.5rem; }
+    .input-suffix { position: absolute; right: 0.75rem; font-size: 0.85rem; color: var(--color-text-muted); pointer-events: none; }
+
+    .quick-presets { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; margin: 0.5rem 0 1rem; }
+    .preset-btn {
+      padding: 0.3rem 0.7rem; border: 1px solid var(--color-border); border-radius: var(--radius);
+      background: white; font-size: 0.78rem; cursor: pointer; transition: all 0.15s; color: var(--color-text-muted);
+    }
+    .preset-btn:hover { border-color: var(--color-accent); color: var(--color-accent); background: rgba(11,110,95,0.04); }
+
+    .rate-toggle { display: flex; gap: 0; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden; }
+    .rate-option { flex: 1; text-align: center; }
+    .rate-option input { display: none; }
+    .rate-option span { display: block; padding: 0.5rem 1rem; cursor: pointer; font-size: 0.88rem; font-weight: 500; transition: background 0.15s, color 0.15s; }
+    .rate-option input:checked + span { background: var(--color-accent); color: #fff; }
+
+    .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+    .result-item { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border); font-size: 0.85rem; }
+    .result-item-label { color: var(--color-text-muted); }
+    .result-item-value { font-weight: 600; font-family: var(--font-mono); }
+    @media (max-width: 480px) { .result-grid { grid-template-columns: 1fr; } }
+
+    .btn-copy-result {
+      padding: 0.5rem 1rem; border: none; border-radius: var(--radius);
+      background: var(--color-accent); color: white; cursor: pointer;
+      font-size: 0.85rem; font-weight: 600; transition: opacity 0.15s;
+    }
+    .btn-copy-result:hover { opacity: 0.85; }
+
+    .furusato-primary {
+      background: rgba(11,110,95,0.06); border: 1px solid rgba(11,110,95,0.25);
+      border-radius: var(--radius); padding: 1rem; text-align: center; margin-bottom: 0.5rem;
+    }
+    .furusato-label    { font-size:0.8rem; color:var(--color-text-muted); margin-bottom:0.25rem; }
+    .furusato-limit-value {
+      font-size: 2.8rem; font-weight: 700; color: var(--color-accent);
+      font-family: var(--font-mono);
+    }
+    .furusato-sublabel { font-size:0.78rem; color:var(--color-text-muted); margin-top:0.25rem; }
+    .furusato-example {
+      background: var(--color-bg-alt); border: 1px solid var(--color-border);
+      border-radius: var(--radius); padding: 0.75rem; margin-top: 0.75rem; font-size: 0.85rem;
+    }
+    .furusato-disclaimer {
+      font-size: 0.75rem; color: var(--color-text-muted); background: #fffbeb;
+      border: 1px solid #fcd34d; border-radius: var(--radius);
+      padding: 0.6rem 0.75rem; margin-top: 0.75rem; line-height: 1.5;
+    }
+
+    .ref-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
+    .ref-table th, .ref-table td { border: 1px solid var(--color-border); padding: 0.5rem 0.6rem; text-align: center; }
+    .ref-table th { background: var(--color-bg-alt); font-weight: 600; font-size: 0.8rem; }
+    .ref-table tr:nth-child(even) { background: rgba(0,0,0,0.02); }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex; flex-direction: column; position: absolute;
+    top: 56px; left: 0; right: 0; background: var(--color-primary);
+    padding: 1rem; gap: 0.5rem; z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <a href="/" class="nav-logo" aria-label="JapanCalc ホーム">
+  <img src="/assets/icons/logo-white.svg" alt="JapanCalc" width="160" height="40" loading="eager" fetchpriority="high">
+</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="lang-switcher" role="navigation" aria-label="言語切替">
+      <span class="lang-option lang-active" aria-current="true">JP</span>
+      <span class="lang-sep">&middot;</span>
+      <a class="lang-option lang-inactive" id="lang-toggle"
+         href="/en/tax-finance/furusato-nozei/" lang="en" title="View in English"
+         aria-label="Switch to English">EN</a>
+    </div>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="/">ホーム</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">ふるさと納税計算</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_FURUSATO"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>ふるさと納税 控除額計算ツール</h1>
+    <p class="tool-subtitle">控除上限額をシミュレーション &#x2014; Furusato Nozei Calculator</p>
+    <p class="tool-desc">年収・家族構成を入力するだけで、ふるさと納税の控除上限額（実質負担2,000円で寄付できる上限）を自動計算。所得税還付額・住民税控除額の内訳も表示。2026年度税制対応。無料、ログイン不要。</p>
+
+    <div class="tool-box" id="tool-main">
+
+      <div class="form-group">
+        <label class="form-label" for="gross-income">年収（給与収入・額面）</label>
+        <div class="input-suffix-wrap">
+          <input type="tel" class="form-input input-with-suffix"
+                 id="gross-income" placeholder="例: 5000000"
+                 aria-label="年収（円）">
+          <span class="input-suffix">円</span>
+        </div>
+        <p class="form-hint" id="income-hint" style="font-size:0.78rem; color:var(--color-text-muted);"></p>
+      </div>
+
+      <div class="quick-presets" style="margin-bottom:1rem;">
+        <span style="font-size:0.78rem; color:var(--color-text-muted);">よく使う年収：</span>
+        <button class="preset-btn" data-income="3000000">300万</button>
+        <button class="preset-btn" data-income="4000000">400万</button>
+        <button class="preset-btn" data-income="5000000">500万</button>
+        <button class="preset-btn" data-income="7000000">700万</button>
+        <button class="preset-btn" data-income="10000000">1000万</button>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">配偶者控除</label>
+          <div class="rate-toggle" role="group">
+            <label class="rate-option">
+              <input type="radio" name="spouse" value="false" checked>
+              <span>なし（独身・共働き）</span>
+            </label>
+            <label class="rate-option">
+              <input type="radio" name="spouse" value="true">
+              <span>あり</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="dependents">扶養家族（16歳以上）</label>
+          <div class="input-suffix-wrap">
+            <input type="tel" class="form-input input-with-suffix"
+                   id="dependents" placeholder="0" maxlength="1" value="0"
+                   aria-label="扶養家族人数（16歳以上）">
+            <span class="input-suffix">人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-box" id="result-box" style="display:none;" aria-live="polite">
+
+        <div class="furusato-primary">
+          <p class="furusato-label">ふるさと納税 控除上限額（目安）</p>
+          <div class="furusato-limit-value" id="r-limit">¥0</div>
+          <p class="furusato-sublabel">この金額まで寄付すると実質負担額は2,000円</p>
+        </div>
+
+        <div class="result-grid" style="margin-top:1rem;">
+          <div class="result-item">
+            <span class="result-item-label">所得税還付額（目安）</span>
+            <span class="result-item-value" id="r-income-tax">¥0</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">住民税控除額（目安）</span>
+            <span class="result-item-value" id="r-residence-tax">¥0</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">実質自己負担</span>
+            <span class="result-item-value" id="r-net-cost">¥2,000</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">課税所得（目安）</span>
+            <span class="result-item-value" id="r-taxable">¥0</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">所得税率</span>
+            <span class="result-item-value" id="r-tax-rate">0%</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">返礼品相当額（30%）</span>
+            <span class="result-item-value" id="r-return-gift">¥0</span>
+          </div>
+        </div>
+
+        <div class="furusato-example" id="furusato-example">
+          <p style="font-size:0.82rem; font-weight:600; margin-bottom:0.4rem;">
+            &#x1F4E6; もし上限いっぱい寄付した場合
+          </p>
+          <p style="font-size:0.82rem;" id="example-text"></p>
+        </div>
+
+        <div class="furusato-disclaimer">
+          &#x26A0;&#xFE0F; 本ツールの計算結果は目安です。医療費控除・住宅ローン控除など他の控除がある場合は上限額が変わります。
+          正確な控除上限額は確定申告または税理士にご確認ください。
+          データ出典: <a href="https://www.soumu.go.jp/" target="_blank" rel="noopener">総務省</a>（2026年度税制）
+        </div>
+
+        <div class="result-actions" style="margin-top:1rem;">
+          <button class="btn-copy-result" id="btn-copy">結果をコピー</button>
+        </div>
+      </div>
+
+      <p class="error-msg" id="error-msg" style="display:none; color:#dc2626; font-size:0.85rem; margin-top:0.5rem;"></p>
+
+    </div>
+
+    <div class="ref-section" style="margin-top:2rem;">
+      <h2>ふるさと納税 控除上限額 早見表（2026年度）</h2>
+      <p style="font-size:0.8rem; color:var(--color-text-muted); margin-bottom:0.5rem;">
+        ※ 給与収入のみ・社会保険料控除・基礎控除のみを考慮した目安です。
+      </p>
+      <table class="ref-table">
+        <thead>
+          <tr>
+            <th>年収（万円）</th>
+            <th>独身・共働き</th>
+            <th>夫婦（配偶者控除あり）</th>
+            <th>夫婦＋子1人</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>200万</td><td>~15,000円</td><td>~11,000円</td><td>~7,000円</td></tr>
+          <tr><td>300万</td><td>~28,000円</td><td>~19,000円</td><td>~15,000円</td></tr>
+          <tr><td>400万</td><td>~42,000円</td><td>~33,000円</td><td>~29,000円</td></tr>
+          <tr><td>500万</td><td>~61,000円</td><td>~49,000円</td><td>~44,000円</td></tr>
+          <tr><td>600万</td><td>~77,000円</td><td>~69,000円</td><td>~66,000円</td></tr>
+          <tr><td>700万</td><td>~108,000円</td><td>~86,000円</td><td>~82,000円</td></tr>
+          <tr><td>800万</td><td>~129,000円</td><td>~110,000円</td><td>~107,000円</td></tr>
+          <tr><td>900万</td><td>~152,000円</td><td>~132,000円</td><td>~128,000円</td></tr>
+          <tr><td>1,000万</td><td>~176,000円</td><td>~157,000円</td><td>~152,000円</td></tr>
+          <tr><td>1,500万</td><td>~379,000円</td><td>~358,000円</td><td>~353,000円</td></tr>
+          <tr><td>2,000万</td><td>~564,000円</td><td>~542,000円</td><td>~537,000円</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.75rem; color:var(--color-text-muted); margin-top:0.5rem;">
+        ～は目安額です。正確な上限は上のシミュレーターでご確認ください。
+        出典: 総務省ふるさと納税ポータルサイト
+      </p>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_FURUSATO"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="seo-content">
+      <h2>ふるさと納税の仕組みと控除のしくみ</h2>
+      <p>ふるさと納税とは、自分が応援したい自治体に寄付をする制度です。寄付金のうち2,000円を超える部分が所得税と住民税から控除され、実質的な自己負担額はわずか2,000円となります。さらに、寄付先の自治体から地域の特産品などの返礼品を受け取ることができるため、実質2,000円で各地の名産品を楽しめる仕組みとなっています。</p>
+      <p>控除上限額は年収・家族構成・その他の控除によって異なります。上限額を超えて寄付した分は控除されないため、事前にシミュレーションで確認することが重要です。控除は所得税からの還付と住民税からの控除の2段階で行われます。所得税は確定申告後に還付され、住民税は翌年6月以降の納付額から控除されます。詳しい仕組みは<a href="https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/furusato/mechanism/deduction.html" target="_blank" rel="noopener">総務省ふるさと納税ポータルサイト</a>をご参照ください。</p>
+
+      <h2>ワンストップ特例と確定申告の選び方</h2>
+      <p>ふるさと納税の控除を受ける方法には「ワンストップ特例制度」と「確定申告」の2つがあります。ワンストップ特例は寄付先が5自治体以内で、確定申告が不要な給与所得者が利用できる簡便な制度です。寄付ごとに自治体へ申請書を送るだけで、翌年の住民税から控除されます。一方、寄付先が6自治体以上の場合や、医療費控除・住宅ローン控除など他の理由で確定申告が必要な方は、確定申告でふるさと納税の控除を受けます。</p>
+      <p>ふるさと納税の申込期限は毎年12月31日です。特に10月〜12月は年末の駆け込み需要で人気の返礼品が品切れになることも多いため、早めの申し込みをおすすめします。ワンストップ特例の申請書は翌年1月10日までに自治体に届く必要があるため、余裕を持って手続きしましょう。</p>
+    </article>
+
+    <section class="faq-section">
+      <h2>よくある質問</h2>
+
+      <details class="faq-item">
+        <summary>ふるさと納税の控除上限額とは何ですか？</summary>
+        <p>ふるさと納税の控除上限額とは、実質負担額を2,000円に抑えながら寄付できる金額の上限です。この上限を超えて寄付しても控除されず、超えた分は全額自己負担となります。上限は年収・家族構成・その他の控除によって異なります。このシミュレーターでは年収と家族構成を入力することで目安の上限額を計算できます。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>ふるさと納税は年収いくらから得ですか？</summary>
+        <p>ふるさと納税は年収約200万円以上から控除の恩恵を受けられます。ただし実際には課税所得がある方（住民税・所得税を支払っている方）であれば年収に関わらず活用できます。年収が高いほど控除上限額が大きくなり、より多くの返礼品を受け取ることができます。目安として年収300万円で約28,000円、500万円で約61,000円、1,000万円で約176,000円が控除上限額です。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>ワンストップ特例と確定申告の違いは何ですか？</summary>
+        <p>ワンストップ特例制度は確定申告不要でふるさと納税の控除を受けられる制度で、寄付先が5自治体以内で給与所得者（確定申告不要）が対象です。確定申告を行う方や寄付先が6自治体以上の場合は確定申告で控除を受ける必要があります。医療費控除など他の確定申告が必要な控除がある場合はワンストップ特例は使えません。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>ふるさと納税の返礼品は何割まで受け取れますか？</summary>
+        <p>総務省のガイドラインにより、返礼品は寄付額の30%以内と定められています。例えば10,000円寄付すると最大3,000円相当の返礼品を受け取ることができます。実質2,000円の負担で3,000円相当の返礼品が受け取れるため、寄付額の多い方ほど恩恵が大きくなります。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>ふるさと納税の申込期限はいつですか？</summary>
+        <p>ふるさと納税は毎年1月1日から12月31日の間に行った寄付が当年の税控除の対象となります。ワンストップ特例を利用する場合は翌年1月10日必着で申請書を自治体に送付する必要があります。確定申告の場合は翌年の確定申告期間（2月16日〜3月15日）に申告します。</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>関連ツール</h2>
+      <div class="cards-grid">
+        <a href="/tax-finance/salary-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4B4;</div>
+          <div class="tool-card-name">手取り計算</div>
+          <div class="tool-card-jp">Salary Calculator</div>
+        </a>
+        <a href="/tax-finance/withholding-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F9EE;</div>
+          <div class="tool-card-name">源泉徴収計算</div>
+          <div class="tool-card-jp">Withholding Tax</div>
+        </a>
+        <a href="/tax-finance/consumption-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F9FE;</div>
+          <div class="tool-card-name">消費税計算</div>
+          <div class="tool-card-jp">Consumption Tax</div>
+        </a>
+        <a href="/tax-finance/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4CA;</div>
+          <div class="tool-card-name">税金・財務ツール一覧</div>
+          <div class="tool-card-jp">All Tax &amp; Finance</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_FURUSATO"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. 無断転載禁止。</p>
+    <p class="footer-attribution">ふるさと納税計算ツール. 最終更新: 2026年4月</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+  });
+})();
+</script>
+
+<script type="module">
+import { calcFurusatoLimit, formatJPY } from '/assets/js/furusato.js';
+
+const incomeInput = document.getElementById('gross-income');
+const resultEl    = document.getElementById('result-box');
+const errorEl     = document.getElementById('error-msg');
+
+function compute() {
+  const income   = parseInt(incomeInput.value.replace(/,/g, ''));
+  const spouse   = document.querySelector('input[name="spouse"]:checked').value === 'true';
+  const deps     = parseInt(document.getElementById('dependents').value) || 0;
+  const hintEl   = document.getElementById('income-hint');
+
+  if (!income) { resultEl.style.display = 'none'; errorEl.style.display = 'none'; hintEl.textContent = ''; return; }
+
+  hintEl.textContent = `年収 ${(income / 10000).toLocaleString('ja-JP')}万円`;
+
+  const r = calcFurusatoLimit(income, spouse, deps);
+
+  if (r.error) {
+    resultEl.style.display = 'none';
+    errorEl.textContent    = r.error;
+    errorEl.style.display  = 'block';
+    return;
+  }
+
+  errorEl.style.display = 'none';
+
+  document.getElementById('r-limit').textContent        = formatJPY(r.limit);
+  document.getElementById('r-income-tax').textContent   = formatJPY(r.incomeTaxRefund);
+  document.getElementById('r-residence-tax').textContent= formatJPY(r.residenceTaxDeduction);
+  document.getElementById('r-net-cost').textContent     = '¥2,000（固定）';
+  document.getElementById('r-taxable').textContent      = formatJPY(r.taxableIncome);
+  document.getElementById('r-tax-rate').textContent     = `${r.incomeTaxRate}%`;
+
+  const returnGift = Math.floor(r.limit * 0.30);
+  document.getElementById('r-return-gift').textContent  = formatJPY(returnGift);
+
+  document.getElementById('example-text').textContent =
+    `${formatJPY(r.limit)} 寄付 → 自己負担 ¥2,000 + 返礼品 ${formatJPY(returnGift)} 相当を受け取れます。` +
+    ` 実質 ${formatJPY(returnGift - 2000)} お得。`;
+
+  resultEl.style.display = 'block';
+  gtag?.('event', 'tool_used', { tool_name: 'furusato_nozei', language: 'ja' });
+}
+
+document.querySelectorAll('.preset-btn[data-income]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    incomeInput.value = btn.dataset.income;
+    compute();
+  });
+});
+
+incomeInput.addEventListener('input', compute);
+document.getElementById('dependents').addEventListener('input', compute);
+document.querySelectorAll('input[name="spouse"]').forEach(r =>
+  r.addEventListener('change', compute));
+
+document.getElementById('btn-copy').addEventListener('click', () => {
+  const limit   = document.getElementById('r-limit').textContent;
+  const incTax  = document.getElementById('r-income-tax').textContent;
+  const resTax  = document.getElementById('r-residence-tax').textContent;
+  const gift    = document.getElementById('r-return-gift').textContent;
+  const text    = `ふるさと納税 控除上限額（目安）：${limit}\n所得税還付：${incTax}\n住民税控除：${resTax}\n返礼品相当額（30%）：${gift}\n実質負担：¥2,000`;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('btn-copy');
+    btn.textContent = 'コピーしました \u2713';
+    setTimeout(() => { btn.textContent = '結果をコピー'; }, 2000);
+  });
+});
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(function(zone) {
+    var ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(function(z) { observer.observe(z); });
+  }
+});
+</script>
+
+<script>
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = 'JP';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'EN';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+  }
+})();
+</script>
+</body>
+</html>

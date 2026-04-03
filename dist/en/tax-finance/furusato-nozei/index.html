@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furusato Nozei Calculator: Tax Deduction Limit | JapanCalc</title>
+  <meta name="description" content="Calculate your furusato nozei deduction limit. Enter salary and family to find max donation amount. Japan hometown tax simulator. Free, no login.">
+  <link rel="canonical" href="https://japancalc.com/en/tax-finance/furusato-nozei/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/tax-finance/furusato-nozei/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/tax-finance/furusato-nozei/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/tax-finance/furusato-nozei/">
+  <meta property="og:title"       content="Furusato Nozei Calculator: Tax Deduction Limit | JapanCalc">
+  <meta property="og:description" content="Calculate your furusato nozei deduction limit based on income and family.">
+  <meta property="og:url"         content="https://japancalc.com/en/tax-finance/furusato-nozei/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image" content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Furusato Nozei Calculator | JapanCalc",
+    "url": "https://japancalc.com/en/tax-finance/furusato-nozei/",
+    "description": "Calculate your furusato nozei tax deduction limit based on annual income and family situation.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://japancalc.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Tax & Finance", "item": "https://japancalc.com/en/tax-finance/" },
+      { "@type": "ListItem", "position": 3, "name": "Furusato Nozei Calculator", "item": "https://japancalc.com/en/tax-finance/furusato-nozei/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the furusato nozei deduction limit?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The furusato nozei deduction limit is the maximum amount you can donate while keeping your net out-of-pocket cost at just 2,000 yen. Any donation above this limit will not be deducted from your taxes, meaning the excess is entirely at your own expense. The limit varies based on your income, family situation, and other deductions. Use this simulator to estimate your personal limit." }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is eligible for furusato nozei?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Anyone who pays income tax and residence tax in Japan is eligible for furusato nozei. This includes Japanese citizens and foreign residents with taxable income. If you are on a work visa and paying taxes in Japan, you can participate. However, if your income is below the taxable threshold or you are exempt from residence tax, the deduction benefit may be limited or zero." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between One-Stop Exception and tax filing?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The One-Stop Exception (ワンストップ特例) lets salaried employees who donate to 5 or fewer municipalities claim the deduction without filing a tax return. You simply submit a form to each municipality. If you donate to 6+ municipalities or need to file a tax return for other reasons (medical expense deduction, mortgage deduction, etc.), you must claim the furusato nozei deduction through your annual tax filing (確定申告)." }
+      },
+      {
+        "@type": "Question",
+        "name": "What are furusato nozei return gifts worth?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Under Ministry of Internal Affairs guidelines, return gifts (返礼品) are capped at 30% of the donation amount. For example, a 10,000 yen donation yields a return gift worth up to 3,000 yen. Since your net cost is only 2,000 yen regardless of donation amount, even a modest donation can provide return gifts worth more than your out-of-pocket cost." }
+      },
+      {
+        "@type": "Question",
+        "name": "When is the deadline for furusato nozei?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Donations made between January 1 and December 31 of a given year qualify for that year's tax deduction. If using the One-Stop Exception, the application form must arrive at the municipality by January 10 of the following year. If filing a tax return, you must declare during the filing period (February 16 to March 15). Popular return gifts often sell out in October-December, so early ordering is recommended." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <style>
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+    .input-suffix-wrap { position: relative; display: flex; align-items: center; }
+    .input-with-suffix { width: 100%; padding-right: 2.5rem; }
+    .input-suffix { position: absolute; right: 0.75rem; font-size: 0.85rem; color: var(--color-text-muted); pointer-events: none; }
+
+    .quick-presets { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; margin: 0.5rem 0 1rem; }
+    .preset-btn {
+      padding: 0.3rem 0.7rem; border: 1px solid var(--color-border); border-radius: var(--radius);
+      background: white; font-size: 0.78rem; cursor: pointer; transition: all 0.15s; color: var(--color-text-muted);
+    }
+    .preset-btn:hover { border-color: var(--color-accent); color: var(--color-accent); background: rgba(11,110,95,0.04); }
+
+    .rate-toggle { display: flex; gap: 0; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden; }
+    .rate-option { flex: 1; text-align: center; }
+    .rate-option input { display: none; }
+    .rate-option span { display: block; padding: 0.5rem 1rem; cursor: pointer; font-size: 0.88rem; font-weight: 500; transition: background 0.15s, color 0.15s; }
+    .rate-option input:checked + span { background: var(--color-accent); color: #fff; }
+
+    .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+    .result-item { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border); font-size: 0.85rem; }
+    .result-item-label { color: var(--color-text-muted); }
+    .result-item-value { font-weight: 600; font-family: var(--font-mono); }
+    @media (max-width: 480px) { .result-grid { grid-template-columns: 1fr; } }
+
+    .btn-copy-result {
+      padding: 0.5rem 1rem; border: none; border-radius: var(--radius);
+      background: var(--color-accent); color: white; cursor: pointer;
+      font-size: 0.85rem; font-weight: 600; transition: opacity 0.15s;
+    }
+    .btn-copy-result:hover { opacity: 0.85; }
+
+    .furusato-primary {
+      background: rgba(11,110,95,0.06); border: 1px solid rgba(11,110,95,0.25);
+      border-radius: var(--radius); padding: 1rem; text-align: center; margin-bottom: 0.5rem;
+    }
+    .furusato-label    { font-size:0.8rem; color:var(--color-text-muted); margin-bottom:0.25rem; }
+    .furusato-limit-value {
+      font-size: 2.8rem; font-weight: 700; color: var(--color-accent);
+      font-family: var(--font-mono);
+    }
+    .furusato-sublabel { font-size:0.78rem; color:var(--color-text-muted); margin-top:0.25rem; }
+    .furusato-example {
+      background: var(--color-bg-alt); border: 1px solid var(--color-border);
+      border-radius: var(--radius); padding: 0.75rem; margin-top: 0.75rem; font-size: 0.85rem;
+    }
+    .furusato-disclaimer {
+      font-size: 0.75rem; color: var(--color-text-muted); background: #fffbeb;
+      border: 1px solid #fcd34d; border-radius: var(--radius);
+      padding: 0.6rem 0.75rem; margin-top: 0.75rem; line-height: 1.5;
+    }
+
+    .ref-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
+    .ref-table th, .ref-table td { border: 1px solid var(--color-border); padding: 0.5rem 0.6rem; text-align: center; }
+    .ref-table th { background: var(--color-bg-alt); font-weight: 600; font-size: 0.8rem; }
+    .ref-table tr:nth-child(even) { background: rgba(0,0,0,0.02); }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex; flex-direction: column; position: absolute;
+    top: 56px; left: 0; right: 0; background: var(--color-primary);
+    padding: 1rem; gap: 0.5rem; z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/en/" class="nav-logo" aria-label="JapanCalc Home">
+  <img src="/assets/icons/logo-white.svg" alt="JapanCalc" width="160" height="40" loading="eager" fetchpriority="high">
+</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="lang-switcher" role="navigation" aria-label="Language switcher">
+      <a class="lang-option lang-inactive" id="lang-toggle"
+         href="/tax-finance/furusato-nozei/" lang="ja" title="日本語で表示"
+         aria-label="Switch to Japanese">JP</a>
+      <span class="lang-sep">&middot;</span>
+      <span class="lang-option lang-active" aria-current="true">EN</span>
+    </div>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/en/">Home</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">Furusato Nozei Calculator</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_FURUSATO_EN"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>Furusato Nozei Calculator &#x2014; Tax Deduction Limit</h1>
+    <p class="tool-subtitle">&#x3075;&#x308B;&#x3055;&#x3068;&#x7D0D;&#x7A0E; Hometown Tax Donation Simulator</p>
+    <p class="tool-desc">Enter your annual gross salary and family situation to estimate your furusato nozei (hometown tax donation) deduction limit. See the breakdown of income tax refund and residence tax deduction. Based on FY2025 tax rules. Free, no login required.</p>
+
+    <div class="tool-box" id="tool-main">
+
+      <div class="form-group">
+        <label class="form-label" for="gross-income">Annual Gross Income (salary)</label>
+        <div class="input-suffix-wrap">
+          <input type="tel" class="form-input input-with-suffix"
+                 id="gross-income" placeholder="e.g. 5000000"
+                 aria-label="Annual gross income in yen">
+          <span class="input-suffix">&#xA5;</span>
+        </div>
+        <p class="form-hint" id="income-hint" style="font-size:0.78rem; color:var(--color-text-muted);"></p>
+      </div>
+
+      <div class="quick-presets" style="margin-bottom:1rem;">
+        <span style="font-size:0.78rem; color:var(--color-text-muted);">Quick presets:</span>
+        <button class="preset-btn" data-income="3000000">&#xA5;3M</button>
+        <button class="preset-btn" data-income="4000000">&#xA5;4M</button>
+        <button class="preset-btn" data-income="5000000">&#xA5;5M</button>
+        <button class="preset-btn" data-income="7000000">&#xA5;7M</button>
+        <button class="preset-btn" data-income="10000000">&#xA5;10M</button>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Spousal Deduction</label>
+          <div class="rate-toggle" role="group">
+            <label class="rate-option">
+              <input type="radio" name="spouse" value="false" checked>
+              <span>No (single / dual income)</span>
+            </label>
+            <label class="rate-option">
+              <input type="radio" name="spouse" value="true">
+              <span>Yes</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="dependents">Dependents (age 16+)</label>
+          <div class="input-suffix-wrap">
+            <input type="tel" class="form-input input-with-suffix"
+                   id="dependents" placeholder="0" maxlength="1" value="0"
+                   aria-label="Number of dependents age 16 and over">
+            <span class="input-suffix">people</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-box" id="result-box" style="display:none;" aria-live="polite">
+
+        <div class="furusato-primary">
+          <p class="furusato-label">Furusato Nozei Deduction Limit (est.)</p>
+          <div class="furusato-limit-value" id="r-limit">&#xA5;0</div>
+          <p class="furusato-sublabel">Donate up to this amount and your net cost is just &#xA5;2,000</p>
+        </div>
+
+        <div class="result-grid" style="margin-top:1rem;">
+          <div class="result-item">
+            <span class="result-item-label">Income tax refund (est.)</span>
+            <span class="result-item-value" id="r-income-tax">&#xA5;0</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">Residence tax deduction (est.)</span>
+            <span class="result-item-value" id="r-residence-tax">&#xA5;0</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">Net cost to you</span>
+            <span class="result-item-value" id="r-net-cost">&#xA5;2,000</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">Taxable income (est.)</span>
+            <span class="result-item-value" id="r-taxable">&#xA5;0</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">Income tax rate</span>
+            <span class="result-item-value" id="r-tax-rate">0%</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">Return gift value (30%)</span>
+            <span class="result-item-value" id="r-return-gift">&#xA5;0</span>
+          </div>
+        </div>
+
+        <div class="furusato-example" id="furusato-example">
+          <p style="font-size:0.82rem; font-weight:600; margin-bottom:0.4rem;">
+            &#x1F4E6; If you donate the full limit
+          </p>
+          <p style="font-size:0.82rem;" id="example-text"></p>
+        </div>
+
+        <div class="furusato-disclaimer">
+          &#x26A0;&#xFE0F; This calculator provides estimates only. Actual deduction limits may differ based on other deductions (medical expenses, mortgage, etc.). Consult a tax accountant or the official NTA website for accurate figures.
+          Data: <a href="https://www.soumu.go.jp/" target="_blank" rel="noopener">Ministry of Internal Affairs</a>, FY2025 tax rules.
+        </div>
+
+        <div class="result-actions" style="margin-top:1rem;">
+          <button class="btn-copy-result" id="btn-copy">Copy result</button>
+        </div>
+      </div>
+
+      <p class="error-msg" id="error-msg" style="display:none; color:#dc2626; font-size:0.85rem; margin-top:0.5rem;"></p>
+
+    </div>
+
+    <div class="ref-section" style="margin-top:2rem;">
+      <h2>Furusato Nozei Deduction Limit Quick Reference (FY2025)</h2>
+      <p style="font-size:0.8rem; color:var(--color-text-muted); margin-bottom:0.5rem;">
+        Estimates for salary income only, with basic and social insurance deductions.
+      </p>
+      <table class="ref-table">
+        <thead>
+          <tr>
+            <th>Annual Income</th>
+            <th>Single / Dual Income</th>
+            <th>Married (spousal deduction)</th>
+            <th>Married + 1 child</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>&#xA5;2M</td><td>~&#xA5;15,000</td><td>~&#xA5;11,000</td><td>~&#xA5;7,000</td></tr>
+          <tr><td>&#xA5;3M</td><td>~&#xA5;28,000</td><td>~&#xA5;19,000</td><td>~&#xA5;15,000</td></tr>
+          <tr><td>&#xA5;4M</td><td>~&#xA5;42,000</td><td>~&#xA5;33,000</td><td>~&#xA5;29,000</td></tr>
+          <tr><td>&#xA5;5M</td><td>~&#xA5;61,000</td><td>~&#xA5;49,000</td><td>~&#xA5;44,000</td></tr>
+          <tr><td>&#xA5;6M</td><td>~&#xA5;77,000</td><td>~&#xA5;69,000</td><td>~&#xA5;66,000</td></tr>
+          <tr><td>&#xA5;7M</td><td>~&#xA5;108,000</td><td>~&#xA5;86,000</td><td>~&#xA5;82,000</td></tr>
+          <tr><td>&#xA5;8M</td><td>~&#xA5;129,000</td><td>~&#xA5;110,000</td><td>~&#xA5;107,000</td></tr>
+          <tr><td>&#xA5;9M</td><td>~&#xA5;152,000</td><td>~&#xA5;132,000</td><td>~&#xA5;128,000</td></tr>
+          <tr><td>&#xA5;10M</td><td>~&#xA5;176,000</td><td>~&#xA5;157,000</td><td>~&#xA5;152,000</td></tr>
+          <tr><td>&#xA5;15M</td><td>~&#xA5;379,000</td><td>~&#xA5;358,000</td><td>~&#xA5;353,000</td></tr>
+          <tr><td>&#xA5;20M</td><td>~&#xA5;564,000</td><td>~&#xA5;542,000</td><td>~&#xA5;537,000</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.75rem; color:var(--color-text-muted); margin-top:0.5rem;">
+        Amounts are estimates. Use the calculator above for a personalized figure.
+        Source: Ministry of Internal Affairs Furusato Nozei portal.
+      </p>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_FURUSATO_EN"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="seo-content">
+      <h2>What Is Furusato Nozei and How Does It Work?</h2>
+      <p>Furusato nozei (ふるさと納税), literally "hometown tax", is Japan's unique tax donation system that lets you donate to any municipality in exchange for local specialty goods (return gifts). The key benefit: your donation is deducted from your income tax and residence tax, so your actual out-of-pocket cost is just 2,000 yen regardless of how much you donate (up to your deduction limit). For example, if your limit is 61,000 yen and you donate that amount, you receive return gifts worth up to 18,300 yen (30% of donation) while only paying 2,000 yen net.</p>
+      <p>The deduction works in two parts: a portion is refunded via income tax (after filing), and the remainder reduces your residence tax for the following year (from June). The deduction limit depends on your annual income, family situation, and other tax deductions you claim. This calculator uses the official formula from the <a href="https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/furusato/mechanism/deduction.html" target="_blank" rel="noopener">Ministry of Internal Affairs</a> to estimate your personal limit.</p>
+
+      <h2>One-Stop Exception vs. Tax Filing</h2>
+      <p>There are two ways to claim your furusato nozei deduction. The One-Stop Exception (ワンストップ特例) is the simpler option: if you donate to 5 or fewer municipalities and don't need to file a tax return for other reasons, you simply send a form to each municipality. The full deduction is then applied to your residence tax. If you donate to 6 or more municipalities, or need to file taxes for other reasons (medical expenses, mortgage deduction, freelance income, etc.), you must claim the deduction through your annual tax return (確定申告). Foreign residents in Japan on work visas are eligible as long as they pay income and residence taxes.</p>
+      <p>The deadline for donations is December 31 each year. Popular return gifts (wagyu beef, seafood, rice, fruit) tend to sell out in October-December as people rush to donate before year-end. One-Stop Exception forms must reach the municipality by January 10 of the following year, so plan accordingly.</p>
+    </article>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary>What is the furusato nozei deduction limit?</summary>
+        <p>The deduction limit is the maximum amount you can donate while keeping your net out-of-pocket cost at just 2,000 yen. Any donation above this limit will not be deducted from your taxes, meaning the excess is entirely at your own expense. The limit varies based on your income, family situation, and other deductions.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Who is eligible for furusato nozei?</summary>
+        <p>Anyone who pays income tax and residence tax in Japan is eligible. This includes Japanese citizens and foreign residents with taxable income. If you are on a work visa and paying taxes in Japan, you can participate. However, if your income is below the taxable threshold, the deduction benefit may be limited.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the difference between One-Stop Exception and tax filing?</summary>
+        <p>The One-Stop Exception lets salaried employees who donate to 5 or fewer municipalities claim the deduction without filing a tax return. If you donate to 6+ municipalities or need to file for other reasons, you must claim through your annual tax filing.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What are furusato nozei return gifts worth?</summary>
+        <p>Under government guidelines, return gifts are capped at 30% of the donation amount. For example, a 10,000 yen donation yields a return gift worth up to 3,000 yen. Since your net cost is only 2,000 yen, even modest donations can provide gifts worth more than your out-of-pocket cost.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>When is the deadline for furusato nozei?</summary>
+        <p>Donations made between January 1 and December 31 qualify for that year's tax deduction. One-Stop Exception forms must reach the municipality by January 10 of the following year. For tax filing, declare during the filing period (February 16 to March 15).</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/en/tax-finance/salary-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4B4;</div>
+          <div class="tool-card-name">Salary Calculator</div>
+          <div class="tool-card-jp">手取り計算</div>
+        </a>
+        <a href="/en/tax-finance/withholding-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F9EE;</div>
+          <div class="tool-card-name">Withholding Tax</div>
+          <div class="tool-card-jp">源泉徴収計算</div>
+        </a>
+        <a href="/en/tax-finance/consumption-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F9FE;</div>
+          <div class="tool-card-name">Consumption Tax</div>
+          <div class="tool-card-jp">消費税計算</div>
+        </a>
+        <a href="/en/tax-finance/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4CA;</div>
+          <div class="tool-card-name">All Tax &amp; Finance</div>
+          <div class="tool-card-jp">税金・財務ツール一覧</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_FURUSATO_EN"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/en/about/">About JapanCalc</a></li>
+      <li><a href="/en/privacy/">Privacy Policy</a></li>
+      <li><a href="/en/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+    <p class="footer-attribution">Furusato Nozei Calculator. Last updated: April 2026</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import { calcFurusatoLimit, formatJPY } from '/assets/js/furusato.js';
+
+const incomeInput = document.getElementById('gross-income');
+const resultEl    = document.getElementById('result-box');
+const errorEl     = document.getElementById('error-msg');
+
+const ERROR_EN = {
+  '年収を入力してください': 'Please enter your annual income.',
+  '年収が低すぎます。ふるさと納税の控除を受けるには一定の所得が必要です。': 'Income is too low. A minimum taxable income is required for furusato nozei deductions.',
+  '計算できません（税率が高すぎます）': 'Cannot calculate (tax rate too high).',
+};
+
+function compute() {
+  const income   = parseInt(incomeInput.value.replace(/,/g, ''));
+  const spouse   = document.querySelector('input[name="spouse"]:checked').value === 'true';
+  const deps     = parseInt(document.getElementById('dependents').value) || 0;
+  const hintEl   = document.getElementById('income-hint');
+
+  if (!income) { resultEl.style.display = 'none'; errorEl.style.display = 'none'; hintEl.textContent = ''; return; }
+
+  const millions = (income / 1_000_000).toFixed(1);
+  hintEl.textContent = `\u00A5${Number(income).toLocaleString()} (${millions}M yen)`;
+
+  const r = calcFurusatoLimit(income, spouse, deps);
+
+  if (r.error) {
+    resultEl.style.display = 'none';
+    errorEl.textContent    = ERROR_EN[r.error] || r.error;
+    errorEl.style.display  = 'block';
+    return;
+  }
+
+  errorEl.style.display = 'none';
+
+  document.getElementById('r-limit').textContent        = formatJPY(r.limit);
+  document.getElementById('r-income-tax').textContent   = formatJPY(r.incomeTaxRefund);
+  document.getElementById('r-residence-tax').textContent= formatJPY(r.residenceTaxDeduction);
+  document.getElementById('r-net-cost').textContent     = '\u00A52,000 (fixed)';
+  document.getElementById('r-taxable').textContent      = formatJPY(r.taxableIncome);
+  document.getElementById('r-tax-rate').textContent     = `${r.incomeTaxRate}%`;
+
+  const returnGift = Math.floor(r.limit * 0.30);
+  document.getElementById('r-return-gift').textContent  = formatJPY(returnGift);
+
+  document.getElementById('example-text').textContent =
+    `Donate ${formatJPY(r.limit)} \u2192 pay \u00A52,000 net + receive return gifts worth ~${formatJPY(returnGift)}.` +
+    ` Net benefit: ~${formatJPY(returnGift - 2000)}.`;
+
+  resultEl.style.display = 'block';
+  gtag?.('event', 'tool_used', { tool_name: 'furusato_nozei', language: 'en' });
+}
+
+document.querySelectorAll('.preset-btn[data-income]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    incomeInput.value = btn.dataset.income;
+    compute();
+  });
+});
+
+incomeInput.addEventListener('input', compute);
+document.getElementById('dependents').addEventListener('input', compute);
+document.querySelectorAll('input[name="spouse"]').forEach(r =>
+  r.addEventListener('change', compute));
+
+document.getElementById('btn-copy').addEventListener('click', () => {
+  const limit   = document.getElementById('r-limit').textContent;
+  const incTax  = document.getElementById('r-income-tax').textContent;
+  const resTax  = document.getElementById('r-residence-tax').textContent;
+  const gift    = document.getElementById('r-return-gift').textContent;
+  const text    = `Furusato Nozei Deduction Limit (est.): ${limit}\nIncome Tax Refund: ${incTax}\nResidence Tax Deduction: ${resTax}\nReturn Gift Value (30%): ${gift}\nNet Cost: \u00A52,000`;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('btn-copy');
+    btn.textContent = 'Copied \u2713';
+    setTimeout(() => { btn.textContent = 'Copy result'; }, 2000);
+  });
+});
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(function(zone) {
+    var ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(function(z) { observer.observe(z); });
+  }
+});
+</script>
+
+<script>
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = 'JP';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'EN';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+  }
+})();
+</script>
+</body>
+</html>
