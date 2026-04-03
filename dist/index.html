@@ -202,6 +202,41 @@
     background: var(--color-border);
     text-decoration: none;
   }
+
+  /* New Tools section */
+  .new-tools-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+  }
+  .new-badge-heading {
+    display: inline-flex;
+    align-items: center;
+    background: var(--color-accent);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    line-height: 1;
+    vertical-align: middle;
+  }
+
+  /* Placeholder skeleton while loading */
+  .tool-card-placeholder {
+    min-height: 120px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.2s infinite;
+    pointer-events: none;
+  }
+  @keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
   </style>
 <!-- TODO: Remove this block when AdSense is approved — revert when ads go live -->
 <style>
@@ -292,7 +327,7 @@
     <!-- Stats bar -->
     <div class="stats-bar">
       <div class="stat-item">
-        <span class="stat-number">28</span>
+        <span class="stat-number" id="total-tool-count">28</span>
         <span class="stat-label">無料ツール</span>
       </div>
       <div class="stat-item">
@@ -322,6 +357,24 @@
 
 <!-- MAIN CONTENT -->
 <main class="content page-wrapper">
+
+  <!-- NEW TOOLS SECTION — driven by /assets/data/tools-config.json -->
+  <section class="tools-category" id="new-tools-section">
+    <div class="category-header">
+      <h2 class="new-tools-heading">
+        <span class="new-badge-heading">NEW</span>
+        新着ツール
+      </h2>
+    </div>
+    <div class="cards-grid" id="new-tools-grid">
+      <!-- Rendered by JS from tools-config.json -->
+      <!-- Fallback: 4 placeholder cards shown while loading -->
+      <div class="tool-card tool-card-placeholder"></div>
+      <div class="tool-card tool-card-placeholder"></div>
+      <div class="tool-card tool-card-placeholder"></div>
+      <div class="tool-card tool-card-placeholder"></div>
+    </div>
+  </section>
 
   <!-- Category 1 — Date & Calendar -->
   <section class="category-section" id="date-calendar">
@@ -670,6 +723,45 @@ document.addEventListener('DOMContentLoaded', function() {
     toggle.textContent = 'English';
     toggle.setAttribute('lang', 'en');
     toggle.setAttribute('title', 'View this page in English');
+  }
+})();
+</script>
+<script type="module">
+// ── Dynamic New Tools section
+(async function renderNewTools() {
+  try {
+    const isEN   = window.location.pathname.startsWith('/en');
+    const res    = await fetch('/assets/data/tools-config.json');
+    const config = await res.json();
+    const tools  = config.tools;
+
+    // Pick new tools: first 4 with isNew=true, fallback to first 4 overall
+    const newTools = tools.filter(t => t.isNew).slice(0, 4);
+    const display  = newTools.length >= 4 ? newTools : tools.slice(0, 4);
+
+    const container = document.getElementById('new-tools-grid');
+    if (!container) return;
+
+    container.innerHTML = display.map(t => {
+      const name = isEN ? t.nameEN : t.nameJP;
+      const desc = isEN ? t.descEN : t.descJP;
+      const url  = isEN ? t.urlEN  : t.urlJP;
+      return `
+        <a href="${url}" class="tool-card">
+          <div class="tool-card-icon">${t.icon}</div>
+          <div class="tool-card-name">${name}</div>
+          <div class="tool-card-jp">${isEN ? t.nameJP : t.nameEN}</div>
+          <div class="tool-card-desc">${desc}</div>
+        </a>`;
+    }).join('');
+
+    // Tool count is hardcoded in stats bar (includes reference pages)
+    // tools-config.json only lists unique tool types
+
+  } catch (e) {
+    // Silent fail — section stays hidden if fetch fails
+    const section = document.getElementById('new-tools-section');
+    if (section) section.style.display = 'none';
   }
 })();
 </script>
