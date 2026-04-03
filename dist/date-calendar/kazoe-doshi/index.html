@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数え年計算ツール: 数え年・満年齢を瞬時に計算 | JapanCalc</title>
+  <meta name="description" content="生年月日を入力するだけで数え年と満年齢を同時に計算。厄年・七五三・還暦などに必要な数え年を無料で確認。違いの解説付き。ログイン不要。">
+  <link rel="canonical" href="https://japancalc.com/date-calendar/kazoe-doshi/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/date-calendar/kazoe-doshi/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/date-calendar/kazoe-doshi/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/date-calendar/kazoe-doshi/">
+  <meta property="og:title"       content="数え年計算ツール | JapanCalc">
+  <meta property="og:description" content="数え年と満年齢を同時に計算。厄年・還暦に必要な数え年を無料で確認。">
+  <meta property="og:url"         content="https://japancalc.com/date-calendar/kazoe-doshi/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image"       content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "数え年計算ツール | JapanCalc",
+    "url": "https://japancalc.com/date-calendar/kazoe-doshi/",
+    "description": "生年月日から数え年と満年齢を同時に計算。厄年・七五三・還暦などに必要な数え年を無料で確認できます。",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["ja", "en"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム",           "item": "https://japancalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "日付・カレンダー", "item": "https://japancalc.com/date-calendar/" },
+      { "@type": "ListItem", "position": 3, "name": "数え年計算",       "item": "https://japancalc.com/date-calendar/kazoe-doshi/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "数え年とは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "数え年（かぞえどし）は日本の伝統的な年齢の数え方で、生まれた年を1歳とし、以降は誕生日ではなく毎年1月1日に1歳ずつ増えます。現代で広く使われる満年齢（生まれた日を0歳とし誕生日に増える）とは異なります。数え年は厄年・七五三・還暦などの伝統行事で今も使われています。" }
+      },
+      {
+        "@type": "Question",
+        "name": "数え年と満年齢の違いは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "満年齢は現代の法律上の年齢で、生まれた日を0歳として毎年誕生日に1歳増えます。数え年は伝統的な数え方で、生まれた瞬間を1歳とし毎年1月1日に増えます。そのため数え年は満年齢より1歳か2歳多くなります。誕生日前（元旦から誕生日前日まで）は2歳差、誕生日以降（誕生日当日から大晦日まで）は1歳差になります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "数え年はどのように計算しますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "数え年の計算式は「今年の西暦年 − 生まれた西暦年 + 1」です。例えば1990年生まれの方の2026年の数え年は「2026 − 1990 + 1 = 37歳」となります。誕生日がいつであっても同じ年に生まれた人は同じ数え年になります。上のツールに生年月日を入力すると自動で計算できます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "厄年は数え年で計算しますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "はい、厄年は数え年で計算します。男性の大厄は数え年42歳、女性の大厄は数え年33歳とされています。満年齢ではなく数え年で確認することが重要です。まずこのツールで数え年を調べ、その年が厄年にあたるかどうかをご確認ください。地域や神社によって異なる場合があるため、詳細はお近くの神社にご確認ください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "還暦は数え年と満年齢どちらで数えますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "還暦（かんれき）は本来、数え年61歳を迎える年に祝うものでしたが、現代では満年齢60歳（60歳の誕生日）に祝う慣習が一般的になっています。古希（こき・70歳）・喜寿（きじゅ・77歳）・傘寿（さんじゅ・80歳）なども同様に、現代では満年齢で祝う場合がほとんどですが、地域や家族の慣習によって異なります。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  <style>
+    .ad-zone { min-height: 0 !important; margin: 0 !important; }
+
+    .date-input-row {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .date-field {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .date-field .form-input { width: 80px; }
+    .date-field:first-child .form-input { width: 100px; }
+    .date-unit { font-size: 0.85rem; color: var(--color-text-muted); }
+
+    .kazoe-primary {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      padding: 1rem;
+      background: rgba(11,110,95,0.06);
+      border-radius: var(--radius);
+      border: 1px solid rgba(11,110,95,0.2);
+    }
+    .kazoe-value-wrap { display: flex; align-items: baseline; gap: 0.35rem; }
+    .kazoe-label  { font-size: 0.8rem; color: var(--color-text-muted); }
+    .kazoe-value  { font-size: 2.5rem; font-weight: 700; font-family: var(--font-mono); color: var(--color-accent); }
+    .kazoe-unit   { font-size: 1rem; color: var(--color-accent); font-weight: 600; }
+    .mannen-value-wrap { display: flex; align-items: baseline; gap: 0.35rem; }
+    .mannen-label { font-size: 0.8rem; color: var(--color-text-muted); }
+    .mannen-value { font-size: 1.8rem; font-weight: 700; font-family: var(--font-mono); color: var(--color-primary); }
+    .mannen-unit  { font-size: 0.9rem; color: var(--color-primary); font-weight: 600; }
+
+    .diff-explain {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.6rem;
+      background: var(--color-bg-alt);
+      border-radius: var(--radius);
+      border-left: 3px solid var(--color-accent);
+    }
+
+    .result-box {
+      background: rgba(11,110,95,0.04);
+      border: 1px solid var(--color-accent);
+      border-radius: var(--radius);
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.85rem;
+    }
+    .result-item-label { color: var(--color-text-muted); }
+    .result-item-value { font-weight: 600; font-family: var(--font-mono); }
+    .btn-copy-result {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: var(--radius);
+      background: var(--color-accent);
+      color: white;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: opacity 0.15s;
+    }
+    .btn-copy-result:hover { opacity: 0.85; }
+
+    /* Timeline */
+    .timeline-bar {
+      position: relative;
+      display: flex;
+      height: 36px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+    }
+    .timeline-segment {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      color: white;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .tl-past     { background: #94a3b8; flex: 1; }
+    .tl-birthday { background: var(--color-accent); width: 60px; flex-shrink: 0; }
+    .tl-future   { background: #cbd5e1; flex: 1; }
+    .timeline-marker {
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 3px;
+      background: #dc2626;
+      cursor: default;
+    }
+
+    @media (max-width: 480px) {
+      .result-grid { grid-template-columns: 1fr; }
+      .kazoe-primary { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <a href="/" class="nav-logo" aria-label="JapanCalc ホーム">
+  <img src="/assets/icons/logo-white.svg" alt="JapanCalc" width="160" height="40" loading="eager" fetchpriority="high">
+</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="lang-switcher" role="navigation" aria-label="言語切替">
+      <span class="lang-option lang-active" aria-current="true">JP</span>
+      <span class="lang-sep">&middot;</span>
+      <a class="lang-option lang-inactive" id="lang-toggle"
+         href="/en/date-calendar/kazoe-doshi/" lang="en" title="View in English"
+         aria-label="Switch to English">EN</a>
+    </div>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="/">ホーム</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">数え年計算</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_KAZOE"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>数え年計算ツール</h1>
+    <p class="tool-subtitle">数え年・満年齢を同時に計算 &#x2014; Traditional Japanese Age Calculator</p>
+    <p class="tool-desc">生年月日を入力するだけで、伝統的な数え年（かぞえどし）と現代の満年齢（まんねんれい）を同時に計算。厄年・七五三・還暦などの確認に。無料、ログイン不要。</p>
+
+    <div class="tool-box" id="tool-main">
+
+      <div class="form-group">
+        <label class="form-label" for="birth-year">生年月日</label>
+        <div class="date-input-row">
+          <div class="date-field">
+            <input type="tel" class="form-input" id="birth-year"
+                   placeholder="例: 1990" maxlength="4"
+                   aria-label="生まれた年（西暦）">
+            <span class="date-unit">年</span>
+          </div>
+          <div class="date-field">
+            <input type="tel" class="form-input" id="birth-month"
+                   placeholder="月" maxlength="2"
+                   aria-label="生まれた月">
+            <span class="date-unit">月</span>
+          </div>
+          <div class="date-field">
+            <input type="tel" class="form-input" id="birth-day"
+                   placeholder="日" maxlength="2"
+                   aria-label="生まれた日">
+            <span class="date-unit">日</span>
+          </div>
+        </div>
+        <p class="form-hint" id="era-hint" style="font-size:0.8rem; color:var(--color-text-muted); margin-top:0.25rem;"></p>
+      </div>
+
+      <!-- Result -->
+      <div class="result-box" id="result-box" style="display:none;" aria-live="polite">
+
+        <!-- Primary: 数え年 -->
+        <div class="kazoe-primary">
+          <div class="kazoe-value-wrap">
+            <span class="kazoe-label">数え年</span>
+            <span class="kazoe-value" id="r-kazoe">0</span>
+            <span class="kazoe-unit">歳</span>
+          </div>
+          <div class="mannen-value-wrap">
+            <span class="mannen-label">満年齢</span>
+            <span class="mannen-value" id="r-mannen">0</span>
+            <span class="mannen-unit">歳</span>
+          </div>
+        </div>
+
+        <!-- Explanation row -->
+        <div class="diff-explain" id="r-diff-explain"></div>
+
+        <!-- Details grid -->
+        <div class="result-grid" style="margin-top:1rem;">
+          <div class="result-item">
+            <span class="result-item-label">生まれた元号</span>
+            <span class="result-item-value" id="r-era">&#x2014;</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">今年（西暦）</span>
+            <span class="result-item-value" id="r-current-year">&#x2014;</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">誕生日</span>
+            <span class="result-item-value" id="r-birthday-status">&#x2014;</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">数え年との差</span>
+            <span class="result-item-value" id="r-diff">&#x2014;</span>
+          </div>
+        </div>
+
+        <!-- Timeline visual -->
+        <div class="timeline-wrap" id="timeline-wrap" style="margin-top:1rem;">
+          <p style="font-size:0.8rem; font-weight:600; color:var(--color-text-muted); margin-bottom:0.4rem;">今年のタイムライン</p>
+          <div class="timeline-bar">
+            <div class="timeline-segment tl-past">
+              <span class="tl-label">元旦<br>1/1</span>
+            </div>
+            <div class="timeline-segment tl-birthday" id="tl-birthday">
+              <span class="tl-label" id="tl-birthday-label">誕生日</span>
+            </div>
+            <div class="timeline-segment tl-future">
+              <span class="tl-label">大晦日<br>12/31</span>
+            </div>
+            <div class="timeline-marker" id="tl-marker" title="今日"></div>
+          </div>
+          <p style="font-size:0.75rem; color:var(--color-text-muted); margin-top:0.35rem;" id="tl-note"></p>
+        </div>
+
+        <!-- Copy button -->
+        <div class="result-actions" style="margin-top:1rem;">
+          <button class="btn-copy-result" id="btn-copy" aria-label="結果をコピー">結果をコピー</button>
+        </div>
+
+      </div><!-- /#result-box -->
+
+      <!-- Error -->
+      <p class="error-msg" id="error-msg" style="display:none; color:#dc2626; font-size:0.85rem; margin-top:0.5rem;"></p>
+
+    </div><!-- /.tool-box -->
+
+    <!-- Quick Reference Table -->
+    <div class="quick-ref">
+      <h2>数え年 早見表 &#x2014; <span id="ref-year-label">2026</span>年版</h2>
+      <p style="font-size:0.8rem; color:var(--color-text-muted); margin-bottom:0.75rem;">
+        ※ 誕生日前（1月1日&#x301C;誕生日前日）は満年齢より2歳多く、誕生日以降は1歳多くなります。
+      </p>
+      <table id="ref-table">
+        <thead>
+          <tr>
+            <th>生まれ年（西暦）</th>
+            <th>生まれ年（和暦）</th>
+            <th>数え年</th>
+            <th>満年齢（参考）</th>
+          </tr>
+        </thead>
+        <tbody id="ref-tbody">
+          <!-- JS generated -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_KAZOE"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="seo-content">
+      <h2>数え年と満年齢の違い</h2>
+      <p>
+        日本には年齢の数え方が2種類あります。現代の法律で使われる<strong>満年齢（まんねんれい）</strong>と、
+        伝統的な<strong>数え年（かぞえどし）</strong>です。
+      </p>
+      <p>
+        <strong>満年齢</strong>は、生まれた日を0歳として毎年誕生日に1歳ずつ増える数え方です。
+        1902年（明治35年）に制定された「年齢計算ニ関スル法律」によって定められ、現在は法律上の年齢として
+        公式書類・医療・行政手続きなどすべてに使われています。
+      </p>
+      <p>
+        <strong>数え年</strong>は、生まれた瞬間を1歳として毎年1月1日（元旦）に1歳ずつ増える伝統的な数え方です。
+        誕生日ではなく、新年を迎えるたびに全員が一斉に年をとるという考え方です。そのため、同じ年に生まれた
+        人は全員同じ数え年になります。計算式は「<strong>今年の西暦年 &#x2212; 生まれた西暦年 + 1</strong>」です。
+      </p>
+      <p>
+        数え年と満年齢の差は、通常1歳か2歳です。誕生日前（元旦から誕生日前日まで）は2歳差、
+        誕生日当日から大晦日までは1歳差となります。
+      </p>
+
+      <h2>数え年が使われる場面</h2>
+      <p>
+        現代の日本では日常生活で数え年を使う機会は少なくなりましたが、以下の伝統行事では今も数え年で
+        年齢を確認することが重要です。
+      </p>
+      <p>
+        <strong>厄年（やくどし）</strong>は数え年で数えます。男性の大厄は数え年42歳、
+        女性の大厄は数え年33歳です。自分が厄年かどうかを正確に確認するには、まず数え年を
+        把握することが必要です。
+      </p>
+      <p>
+        <strong>七五三（しちごさん）</strong>も数え年で行うのが本来の習わしです。
+        男の子は数え年3歳・5歳、女の子は数え年3歳・7歳に神社でお参りします。
+        ただし現代では満年齢で行う家庭も増えています。
+      </p>
+      <p>
+        <strong>還暦（かんれき）・古希（こき）・喜寿（きじゅ）</strong>などの長寿祝いも
+        もともとは数え年で行われていました。還暦は数え年61歳（十干十二支が一巡する年）を
+        指しますが、現代では満年齢60歳で祝う慣習が広まっています。
+      </p>
+      <p>
+        在日外国人の方にとって数え年は馴染みのない概念ですが、日本の行政書類や伝統行事への
+        参加時に知っておくと役立ちます。このツールでは数え年と満年齢を同時に表示するため、
+        どちらが必要な場面でも一度の計算で確認できます。関連ツールとして<a href="/date-calendar/age-calculator/">年齢計算ツール</a>や<a href="/date-calendar/zodiac/">干支計算ツール</a>もご活用ください。
+      </p>
+    </article>
+
+    <section class="faq-section">
+      <h2>よくある質問</h2>
+
+      <details class="faq-item">
+        <summary>数え年とは何ですか？</summary>
+        <p>数え年（かぞえどし）は日本の伝統的な年齢の数え方で、生まれた年を1歳とし、以降は誕生日ではなく毎年1月1日に1歳ずつ増えます。現代で広く使われる満年齢（生まれた日を0歳とし誕生日に増える）とは異なります。数え年は厄年・七五三・還暦などの伝統行事で今も使われています。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>数え年と満年齢の違いは何ですか？</summary>
+        <p>満年齢は現代の法律上の年齢で、生まれた日を0歳として毎年誕生日に1歳増えます。数え年は伝統的な数え方で、生まれた瞬間を1歳とし毎年1月1日に増えます。そのため数え年は満年齢より1歳か2歳多くなります。誕生日前（元旦から誕生日前日まで）は2歳差、誕生日以降（誕生日当日から大晦日まで）は1歳差になります。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>数え年はどのように計算しますか？</summary>
+        <p>数え年の計算式は「今年の西暦年 &#x2212; 生まれた西暦年 + 1」です。例えば1990年生まれの方の2026年の数え年は「2026 &#x2212; 1990 + 1 = 37歳」となります。誕生日がいつであっても同じ年に生まれた人は同じ数え年になります。上のツールに生年月日を入力すると自動で計算できます。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>厄年は数え年で計算しますか？</summary>
+        <p>はい、厄年は数え年で計算します。男性の大厄は数え年42歳、女性の大厄は数え年33歳とされています。満年齢ではなく数え年で確認することが重要です。まずこのツールで数え年を調べ、その年が厄年にあたるかどうかをご確認ください。地域や神社によって異なる場合があるため、詳細はお近くの神社にご確認ください。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>還暦は数え年と満年齢どちらで数えますか？</summary>
+        <p>還暦（かんれき）は本来、数え年61歳を迎える年に祝うものでしたが、現代では満年齢60歳（60歳の誕生日）に祝う慣習が一般的になっています。古希（こき・70歳）・喜寿（きじゅ・77歳）・傘寿（さんじゅ・80歳）なども同様に、現代では満年齢で祝う場合がほとんどですが、地域や家族の慣習によって異なります。</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>関連ツール</h2>
+      <div class="cards-grid">
+        <a href="/date-calendar/age-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F382;</div>
+          <div class="tool-card-name">年齢計算ツール</div>
+          <div class="tool-card-jp">Japanese Age Calculator</div>
+        </a>
+        <a href="/date-calendar/zodiac/" class="tool-card">
+          <div class="tool-card-icon">&#x1F409;</div>
+          <div class="tool-card-name">干支計算</div>
+          <div class="tool-card-jp">Zodiac Calculator</div>
+        </a>
+        <a href="/date-calendar/era-converter/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4C5;</div>
+          <div class="tool-card-name">和暦・西暦変換</div>
+          <div class="tool-card-jp">Era Date Converter</div>
+        </a>
+        <a href="/date-calendar/" class="tool-card">
+          <div class="tool-card-icon">&#x1F5D3;&#xFE0F;</div>
+          <div class="tool-card-name">日付・カレンダーツール一覧</div>
+          <div class="tool-card-jp">All Date &amp; Calendar Tools</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_KAZOE"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. 無断転載禁止。</p>
+    <p class="footer-attribution">数え年計算ツール. 最終更新: 2026年4月</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+  });
+})();
+</script>
+
+<script type="module">
+import { calcKazoe, getEraForYear, buildReferenceTable }
+  from '/assets/js/kazoe.js';
+
+const inputs   = ['birth-year','birth-month','birth-day'];
+const resultEl = document.getElementById('result-box');
+const errorEl  = document.getElementById('error-msg');
+
+function compute() {
+  const y = parseInt(document.getElementById('birth-year').value);
+  const m = parseInt(document.getElementById('birth-month').value);
+  const d = parseInt(document.getElementById('birth-day').value);
+
+  if (!y || !m || !d) { resultEl.style.display = 'none'; errorEl.style.display = 'none'; return; }
+
+  const r = calcKazoe(y, m, d);
+
+  if (r.error) {
+    resultEl.style.display = 'none';
+    errorEl.textContent    = r.error;
+    errorEl.style.display  = 'block';
+    return;
+  }
+
+  errorEl.style.display = 'none';
+
+  // Main results
+  document.getElementById('r-kazoe').textContent  = r.kazoe;
+  document.getElementById('r-mannen').textContent = r.mannen;
+
+  // Era hint
+  const era = getEraForYear(y);
+  const eraLabel = era.eraKanji ? `${era.eraKanji}${era.eraYear}年（${y}年）生まれ` : `${y}年生まれ`;
+  document.getElementById('era-hint').textContent      = eraLabel;
+  document.getElementById('r-era').textContent         = era.eraKanji ? `${era.eraKanji}${era.eraYear}年` : `${y}年`;
+  document.getElementById('r-current-year').textContent = `${r.currentYear}年`;
+  document.getElementById('r-birthday-status').textContent =
+    r.birthdayPassed ? `今年の誕生日は過ぎています` : `今年の誕生日はまだです`;
+  document.getElementById('r-diff').textContent = `数え年は満年齢より${r.diff}歳多い`;
+
+  // Diff explanation
+  document.getElementById('r-diff-explain').textContent =
+    r.birthdayPassed
+      ? `今年の誕生日（${m}月${d}日）は過ぎているため、数え年は満年齢より1歳多い ${r.kazoe}歳です。`
+      : `今年の誕生日（${m}月${d}日）はまだ来ていないため、数え年は満年齢より2歳多い ${r.kazoe}歳です。`;
+
+  // Timeline marker
+  const today    = new Date();
+  const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+  const pct       = ((dayOfYear - 1) / 365) * 100;
+  document.getElementById('tl-marker').style.left = pct + '%';
+  document.getElementById('tl-birthday-label').textContent = `誕生日\n${m}/${d}`;
+  const bdayOfYear = Math.floor((new Date(today.getFullYear(), m-1, d) - new Date(today.getFullYear(), 0, 0)) / 86400000);
+  const bdayPct    = ((bdayOfYear - 1) / 365) * 100;
+  document.getElementById('tl-birthday').style.marginLeft = Math.max(0, bdayPct - 4) + '%';
+  document.getElementById('tl-note').textContent =
+    `今日の位置（赤線）と誕生日（緑）の関係で数え年と満年齢の差が変わります。`;
+
+  resultEl.style.display = 'block';
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'kazoe_calculator', language: 'ja', birth_year: y });
+}
+
+inputs.forEach(id =>
+  document.getElementById(id).addEventListener('input', compute));
+
+// Copy
+document.getElementById('btn-copy').addEventListener('click', () => {
+  const btn    = document.getElementById('btn-copy');
+  const kazoe  = document.getElementById('r-kazoe').textContent;
+  const mannen = document.getElementById('r-mannen').textContent;
+  const era    = document.getElementById('r-era').textContent;
+  const text   = `数え年：${kazoe}歳\n満年齢：${mannen}歳\n生まれた元号：${era}`;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'コピーしました \u2713';
+    if (typeof gtag !== 'undefined')
+      gtag('event', 'result_copied', { tool_name: 'kazoe_calculator' });
+    setTimeout(() => { btn.textContent = '結果をコピー'; }, 2000);
+  });
+});
+
+// Quick reference table (JS-generated, current year)
+(function buildTable() {
+  const currentYear = new Date().getFullYear();
+  document.getElementById('ref-year-label').textContent = currentYear;
+  const rows  = buildReferenceTable(currentYear, 30);
+  const tbody = document.getElementById('ref-tbody');
+  tbody.innerHTML = rows.map(r => `
+    <tr>
+      <td>${r.birthYear}年</td>
+      <td>${r.eraLabel}</td>
+      <td><strong>${r.kazoe}歳</strong></td>
+      <td>${r.mannen}歳</td>
+    </tr>
+  `).join('');
+})();
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(function(zone) {
+    var ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(function(z) { observer.observe(z); });
+  }
+});
+</script>
+
+<script>
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = 'JP';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'EN';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+  }
+})();
+</script>
+</body>
+</html>

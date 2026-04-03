@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kazoe-doshi Calculator: Traditional Japanese Age | JapanCalc</title>
+  <meta name="description" content="Calculate kazoe-doshi (数え年), traditional Japanese age. Compare with man-nenrei. Essential for yakudoshi ceremonies. Free, no login required.">
+  <link rel="canonical" href="https://japancalc.com/en/date-calendar/kazoe-doshi/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/date-calendar/kazoe-doshi/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/date-calendar/kazoe-doshi/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/date-calendar/kazoe-doshi/">
+  <meta property="og:title"       content="Kazoe-doshi Calculator | JapanCalc">
+  <meta property="og:description" content="Calculate traditional Japanese age (kazoe-doshi) and compare with modern age (man-nenrei). Free.">
+  <meta property="og:url"         content="https://japancalc.com/en/date-calendar/kazoe-doshi/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image"       content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Kazoe-doshi Calculator | JapanCalc",
+    "url": "https://japancalc.com/en/date-calendar/kazoe-doshi/",
+    "description": "Calculate kazoe-doshi (traditional Japanese age) and man-nenrei (modern age) from date of birth. Essential for yakudoshi, shichi-go-san, and kanreki.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",              "item": "https://japancalc.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Date & Calendar",   "item": "https://japancalc.com/en/date-calendar/" },
+      { "@type": "ListItem", "position": 3, "name": "Kazoe-doshi Calculator", "item": "https://japancalc.com/en/date-calendar/kazoe-doshi/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is kazoe-doshi?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Kazoe-doshi (数え年) is the traditional Japanese age counting system. Under this system, a person is considered 1 year old at birth, and their age increases by one every January 1st (New Year's Day), regardless of their actual birthday. This differs from the modern system (man-nenrei) where you start at 0 and age on your birthday. Kazoe-doshi is still used for traditional ceremonies like yakudoshi, shichi-go-san, and kanreki." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between kazoe-doshi and man-nenrei?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Man-nenrei (満年齢) is the modern legal age in Japan: you start at 0 and gain one year on each birthday. Kazoe-doshi (数え年) is the traditional system: you start at 1 and gain one year every January 1st. As a result, kazoe-doshi is always 1 or 2 years more than man-nenrei. Before your birthday (Jan 1 to the day before your birthday), the difference is 2 years. After your birthday (birthday to Dec 31), the difference is 1 year." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you calculate kazoe-doshi?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The kazoe-doshi formula is: current year − birth year + 1. For example, someone born in 1990 has a kazoe-doshi of 2026 − 1990 + 1 = 37 in the year 2026. Unlike man-nenrei, the birthday doesn't matter — everyone born in the same year has the same kazoe-doshi. Enter your date of birth in the calculator above for instant results." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is yakudoshi calculated using kazoe-doshi?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, yakudoshi (厄年, unlucky years) is calculated using kazoe-doshi. The major yakudoshi for men is kazoe-doshi age 42, and for women it is kazoe-doshi age 33. It is important to use kazoe-doshi rather than man-nenrei when checking yakudoshi years. Use this tool to find your kazoe-doshi age, then check whether it falls on a yakudoshi year. Note that practices may vary by region and shrine." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is kanreki (60th birthday) calculated with kazoe-doshi or man-nenrei?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Kanreki (還暦) was originally celebrated at kazoe-doshi age 61, marking the completion of one full cycle of the Chinese zodiac. However, in modern Japan, kanreki is commonly celebrated at man-nenrei age 60 (on the 60th birthday). Similarly, koki (古希, 70), kiju (喜寿, 77), and sanju (傘寿, 80) are now mostly celebrated using man-nenrei, though practices vary by family and region." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  <style>
+    .ad-zone { min-height: 0 !important; margin: 0 !important; }
+
+    .date-input-row {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .date-field {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .date-field .form-input { width: 80px; }
+    .date-field:first-child .form-input { width: 100px; }
+    .date-unit { font-size: 0.85rem; color: var(--color-text-muted); }
+
+    .kazoe-primary {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      padding: 1rem;
+      background: rgba(11,110,95,0.06);
+      border-radius: var(--radius);
+      border: 1px solid rgba(11,110,95,0.2);
+    }
+    .kazoe-value-wrap { display: flex; align-items: baseline; gap: 0.35rem; }
+    .kazoe-label  { font-size: 0.8rem; color: var(--color-text-muted); }
+    .kazoe-value  { font-size: 2.5rem; font-weight: 700; font-family: var(--font-mono); color: var(--color-accent); }
+    .kazoe-unit   { font-size: 1rem; color: var(--color-accent); font-weight: 600; }
+    .mannen-value-wrap { display: flex; align-items: baseline; gap: 0.35rem; }
+    .mannen-label { font-size: 0.8rem; color: var(--color-text-muted); }
+    .mannen-value { font-size: 1.8rem; font-weight: 700; font-family: var(--font-mono); color: var(--color-primary); }
+    .mannen-unit  { font-size: 0.9rem; color: var(--color-primary); font-weight: 600; }
+
+    .diff-explain {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.6rem;
+      background: var(--color-bg-alt);
+      border-radius: var(--radius);
+      border-left: 3px solid var(--color-accent);
+    }
+
+    .result-box {
+      background: rgba(11,110,95,0.04);
+      border: 1px solid var(--color-accent);
+      border-radius: var(--radius);
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.85rem;
+    }
+    .result-item-label { color: var(--color-text-muted); }
+    .result-item-value { font-weight: 600; font-family: var(--font-mono); }
+    .btn-copy-result {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: var(--radius);
+      background: var(--color-accent);
+      color: white;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: opacity 0.15s;
+    }
+    .btn-copy-result:hover { opacity: 0.85; }
+
+    /* Timeline */
+    .timeline-bar {
+      position: relative;
+      display: flex;
+      height: 36px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+    }
+    .timeline-segment {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      color: white;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .tl-past     { background: #94a3b8; flex: 1; }
+    .tl-birthday { background: var(--color-accent); width: 60px; flex-shrink: 0; }
+    .tl-future   { background: #cbd5e1; flex: 1; }
+    .timeline-marker {
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 3px;
+      background: #dc2626;
+      cursor: default;
+    }
+
+    @media (max-width: 480px) {
+      .result-grid { grid-template-columns: 1fr; }
+      .kazoe-primary { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/en/" class="nav-logo" aria-label="JapanCalc Home">
+  <img src="/assets/icons/logo-white.svg" alt="JapanCalc" width="160" height="40" loading="eager" fetchpriority="high">
+</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="lang-switcher" role="navigation" aria-label="Language">
+      <a class="lang-option lang-inactive" id="lang-toggle"
+         href="/date-calendar/kazoe-doshi/" lang="ja" title="日本語で表示"
+         aria-label="日本語に切り替え">JP</a>
+      <span class="lang-sep">&middot;</span>
+      <span class="lang-option lang-active" aria-current="true">EN</span>
+    </div>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/en/">Home</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">Kazoe-doshi Calculator</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="SLOT_ATF_KAZOE"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>Kazoe-doshi Calculator &#x2014; Traditional Japanese Age</h1>
+    <p class="tool-subtitle">数え年・満年齢を同時に計算 &#x2014; Kazoe-doshi vs Man-nenrei</p>
+    <p class="tool-desc">Enter your date of birth to instantly calculate both kazoe-doshi (数え年, traditional Japanese age) and man-nenrei (満年齢, modern age). Essential for checking yakudoshi, shichi-go-san, and kanreki. Free, no login required.</p>
+
+    <div class="tool-box" id="tool-main">
+
+      <div class="form-group">
+        <label class="form-label" for="birth-year">Date of Birth</label>
+        <div class="date-input-row">
+          <div class="date-field">
+            <input type="tel" class="form-input" id="birth-year"
+                   placeholder="e.g. 1990" maxlength="4"
+                   aria-label="Birth year">
+            <span class="date-unit">Year</span>
+          </div>
+          <div class="date-field">
+            <input type="tel" class="form-input" id="birth-month"
+                   placeholder="MM" maxlength="2"
+                   aria-label="Birth month">
+            <span class="date-unit">Month</span>
+          </div>
+          <div class="date-field">
+            <input type="tel" class="form-input" id="birth-day"
+                   placeholder="DD" maxlength="2"
+                   aria-label="Birth day">
+            <span class="date-unit">Day</span>
+          </div>
+        </div>
+        <p class="form-hint" id="era-hint" style="font-size:0.8rem; color:var(--color-text-muted); margin-top:0.25rem;"></p>
+      </div>
+
+      <!-- Result -->
+      <div class="result-box" id="result-box" style="display:none;" aria-live="polite">
+
+        <div class="kazoe-primary">
+          <div class="kazoe-value-wrap">
+            <span class="kazoe-label">Kazoe-doshi</span>
+            <span class="kazoe-value" id="r-kazoe">0</span>
+            <span class="kazoe-unit">yrs</span>
+          </div>
+          <div class="mannen-value-wrap">
+            <span class="mannen-label">Man-nenrei</span>
+            <span class="mannen-value" id="r-mannen">0</span>
+            <span class="mannen-unit">yrs</span>
+          </div>
+        </div>
+
+        <div class="diff-explain" id="r-diff-explain"></div>
+
+        <div class="result-grid" style="margin-top:1rem;">
+          <div class="result-item">
+            <span class="result-item-label">Birth Era</span>
+            <span class="result-item-value" id="r-era">&#x2014;</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">Current Year</span>
+            <span class="result-item-value" id="r-current-year">&#x2014;</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">Birthday Status</span>
+            <span class="result-item-value" id="r-birthday-status">&#x2014;</span>
+          </div>
+          <div class="result-item">
+            <span class="result-item-label">Age Difference</span>
+            <span class="result-item-value" id="r-diff">&#x2014;</span>
+          </div>
+        </div>
+
+        <!-- Timeline visual -->
+        <div class="timeline-wrap" id="timeline-wrap" style="margin-top:1rem;">
+          <p style="font-size:0.8rem; font-weight:600; color:var(--color-text-muted); margin-bottom:0.4rem;">This Year's Timeline</p>
+          <div class="timeline-bar">
+            <div class="timeline-segment tl-past">
+              <span class="tl-label">New Year<br>1/1</span>
+            </div>
+            <div class="timeline-segment tl-birthday" id="tl-birthday">
+              <span class="tl-label" id="tl-birthday-label">Birthday</span>
+            </div>
+            <div class="timeline-segment tl-future">
+              <span class="tl-label">New Year's Eve<br>12/31</span>
+            </div>
+            <div class="timeline-marker" id="tl-marker" title="Today"></div>
+          </div>
+          <p style="font-size:0.75rem; color:var(--color-text-muted); margin-top:0.35rem;" id="tl-note"></p>
+        </div>
+
+        <div class="result-actions" style="margin-top:1rem;">
+          <button class="btn-copy-result" id="btn-copy" aria-label="Copy result">Copy Result</button>
+        </div>
+
+      </div>
+
+      <p class="error-msg" id="error-msg" style="display:none; color:#dc2626; font-size:0.85rem; margin-top:0.5rem;"></p>
+
+    </div>
+
+    <!-- Quick Reference Table -->
+    <div class="quick-ref">
+      <h2>Kazoe-doshi Quick Reference &#x2014; <span id="ref-year-label">2026</span></h2>
+      <p style="font-size:0.8rem; color:var(--color-text-muted); margin-bottom:0.75rem;">
+        * Before your birthday (Jan 1 to day before birthday), kazoe-doshi is 2 more than man-nenrei. After birthday, 1 more.
+      </p>
+      <table id="ref-table">
+        <thead>
+          <tr>
+            <th>Birth Year</th>
+            <th>Japanese Era</th>
+            <th>Kazoe-doshi</th>
+            <th>Man-nenrei (ref.)</th>
+          </tr>
+        </thead>
+        <tbody id="ref-tbody">
+          <!-- JS generated -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_KAZOE"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="seo-content">
+      <h2>What Is Kazoe-doshi? Understanding Japan's Two Age Systems</h2>
+      <p>
+        Japan has two age counting systems: <strong>man-nenrei (満年齢)</strong>, the modern legal age used in everyday life,
+        and <strong>kazoe-doshi (数え年)</strong>, the traditional system still used for certain ceremonies and customs.
+      </p>
+      <p>
+        <strong>Man-nenrei</strong> works the same way as Western age counting: you are 0 years old at birth and gain
+        one year on each birthday. This system was codified in 1902 by the "Law Regarding Age Calculation"
+        (年齢計算ニ関スル法律) and is used for all legal, medical, and administrative purposes in modern Japan.
+      </p>
+      <p>
+        <strong>Kazoe-doshi</strong> is the traditional system where you are considered 1 year old at birth, and your age
+        increases by one every January 1st (New Year's Day), not on your birthday. This means everyone born in the same
+        year shares the same kazoe-doshi age. The formula is simple: <strong>current year &#x2212; birth year + 1</strong>.
+      </p>
+      <p>
+        The difference between the two systems is always 1 or 2 years. Before your birthday (January 1 to the day
+        before your birthday), kazoe-doshi is 2 more than man-nenrei. From your birthday to December 31, the difference is 1.
+      </p>
+
+      <h2>When Is Kazoe-doshi Used in Modern Japan?</h2>
+      <p>
+        While kazoe-doshi has largely been replaced by man-nenrei in daily life, it remains important for several
+        traditional Japanese ceremonies and customs that expats and visitors may encounter.
+      </p>
+      <p>
+        <strong>Yakudoshi (厄年)</strong> &#x2014; unlucky years &#x2014; are always counted using kazoe-doshi. The major yakudoshi
+        for men is kazoe-doshi age 42 (considered especially unlucky because 四二 can be read as "shi-ni," meaning "death"),
+        and for women it is kazoe-doshi age 33. Many Japanese people visit shrines for yakubarai (厄払い) purification
+        ceremonies during these years.
+      </p>
+      <p>
+        <strong>Shichi-go-san (七五三)</strong> &#x2014; the celebration for children aged 3, 5, and 7 &#x2014; was traditionally
+        held at kazoe-doshi ages. Boys celebrate at kazoe-doshi ages 3 and 5, girls at ages 3 and 7. However, many
+        modern families now use man-nenrei instead.
+      </p>
+      <p>
+        <strong>Kanreki (還暦)</strong> and other longevity celebrations were originally based on kazoe-doshi.
+        Kanreki marks kazoe-doshi age 61, the completion of one full cycle of the Chinese zodiac. Today, it is
+        commonly celebrated at man-nenrei age 60. This tool shows both ages side by side so you can determine
+        which applies. For more age calculations, try our <a href="/en/date-calendar/age-calculator/">Age Calculator</a>
+        or <a href="/en/date-calendar/zodiac/">Zodiac Calculator</a>.
+      </p>
+    </article>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary>What is kazoe-doshi?</summary>
+        <p>Kazoe-doshi (数え年) is the traditional Japanese age counting system. Under this system, a person is considered 1 year old at birth, and their age increases by one every January 1st (New Year's Day), regardless of their actual birthday. This differs from the modern system (man-nenrei) where you start at 0 and age on your birthday. Kazoe-doshi is still used for traditional ceremonies like yakudoshi, shichi-go-san, and kanreki.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the difference between kazoe-doshi and man-nenrei?</summary>
+        <p>Man-nenrei (満年齢) is the modern legal age in Japan: you start at 0 and gain one year on each birthday. Kazoe-doshi (数え年) is the traditional system: you start at 1 and gain one year every January 1st. As a result, kazoe-doshi is always 1 or 2 years more than man-nenrei. Before your birthday (Jan 1 to the day before your birthday), the difference is 2 years. After your birthday (birthday to Dec 31), the difference is 1 year.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do you calculate kazoe-doshi?</summary>
+        <p>The kazoe-doshi formula is: current year &#x2212; birth year + 1. For example, someone born in 1990 has a kazoe-doshi of 2026 &#x2212; 1990 + 1 = 37 in the year 2026. Unlike man-nenrei, the birthday doesn't matter &#x2014; everyone born in the same year has the same kazoe-doshi. Enter your date of birth in the calculator above for instant results.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is yakudoshi calculated using kazoe-doshi?</summary>
+        <p>Yes, yakudoshi (厄年, unlucky years) is calculated using kazoe-doshi. The major yakudoshi for men is kazoe-doshi age 42, and for women it is kazoe-doshi age 33. It is important to use kazoe-doshi rather than man-nenrei when checking yakudoshi years. Use this tool to find your kazoe-doshi age, then check whether it falls on a yakudoshi year. Note that practices may vary by region and shrine.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is kanreki (60th birthday) calculated with kazoe-doshi or man-nenrei?</summary>
+        <p>Kanreki (還暦) was originally celebrated at kazoe-doshi age 61, marking the completion of one full cycle of the Chinese zodiac. However, in modern Japan, kanreki is commonly celebrated at man-nenrei age 60 (on the 60th birthday). Similarly, koki (古希, 70), kiju (喜寿, 77), and sanju (傘寿, 80) are now mostly celebrated using man-nenrei, though practices vary by family and region.</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/en/date-calendar/age-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F382;</div>
+          <div class="tool-card-name">Age Calculator</div>
+          <div class="tool-card-jp">年齢計算ツール</div>
+        </a>
+        <a href="/en/date-calendar/zodiac/" class="tool-card">
+          <div class="tool-card-icon">&#x1F409;</div>
+          <div class="tool-card-name">Zodiac Calculator</div>
+          <div class="tool-card-jp">干支計算</div>
+        </a>
+        <a href="/en/date-calendar/era-converter/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4C5;</div>
+          <div class="tool-card-name">Era Date Converter</div>
+          <div class="tool-card-jp">和暦・西暦変換</div>
+        </a>
+        <a href="/en/date-calendar/" class="tool-card">
+          <div class="tool-card-icon">&#x1F5D3;&#xFE0F;</div>
+          <div class="tool-card-name">All Date &amp; Calendar Tools</div>
+          <div class="tool-card-jp">日付・カレンダーツール一覧</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_SIDEBAR_KAZOE"
+           data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/en/about/">About</a></li>
+      <li><a href="/en/privacy/">Privacy Policy</a></li>
+      <li><a href="/en/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+    <p class="footer-attribution">Kazoe-doshi Calculator. Last updated: April 2026</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import { calcKazoe, getEraForYear, buildReferenceTable }
+  from '/assets/js/kazoe.js';
+
+const inputs   = ['birth-year','birth-month','birth-day'];
+const resultEl = document.getElementById('result-box');
+const errorEl  = document.getElementById('error-msg');
+
+function compute() {
+  const y = parseInt(document.getElementById('birth-year').value);
+  const m = parseInt(document.getElementById('birth-month').value);
+  const d = parseInt(document.getElementById('birth-day').value);
+
+  if (!y || !m || !d) { resultEl.style.display = 'none'; errorEl.style.display = 'none'; return; }
+
+  const r = calcKazoe(y, m, d);
+
+  if (r.error) {
+    resultEl.style.display = 'none';
+    errorEl.textContent    = r.error;
+    errorEl.style.display  = 'block';
+    return;
+  }
+
+  errorEl.style.display = 'none';
+
+  document.getElementById('r-kazoe').textContent  = r.kazoe;
+  document.getElementById('r-mannen').textContent = r.mannen;
+
+  const era = getEraForYear(y);
+  const eraLabel = era.eraName ? `${era.eraName} ${era.eraYear} (${y})` : `${y}`;
+  document.getElementById('era-hint').textContent      = `Born in ${eraLabel}`;
+  document.getElementById('r-era').textContent         = era.eraKanji ? `${era.eraKanji}${era.eraYear} (${era.eraName})` : `${y}`;
+  document.getElementById('r-current-year').textContent = `${r.currentYear}`;
+  document.getElementById('r-birthday-status').textContent =
+    r.birthdayPassed ? `Birthday has passed this year` : `Birthday hasn't come yet this year`;
+  document.getElementById('r-diff').textContent = `Kazoe is ${r.diff} more than man-nenrei`;
+
+  document.getElementById('r-diff-explain').textContent =
+    r.birthdayPassed
+      ? `Your birthday (${m}/${d}) has passed this year, so kazoe-doshi is 1 more than man-nenrei: ${r.kazoe} years old.`
+      : `Your birthday (${m}/${d}) hasn't come yet this year, so kazoe-doshi is 2 more than man-nenrei: ${r.kazoe} years old.`;
+
+  const today    = new Date();
+  const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+  const pct       = ((dayOfYear - 1) / 365) * 100;
+  document.getElementById('tl-marker').style.left = pct + '%';
+  document.getElementById('tl-birthday-label').textContent = `Birthday\n${m}/${d}`;
+  const bdayOfYear = Math.floor((new Date(today.getFullYear(), m-1, d) - new Date(today.getFullYear(), 0, 0)) / 86400000);
+  const bdayPct    = ((bdayOfYear - 1) / 365) * 100;
+  document.getElementById('tl-birthday').style.marginLeft = Math.max(0, bdayPct - 4) + '%';
+  document.getElementById('tl-note').textContent =
+    `The red line marks today. The difference between kazoe-doshi and man-nenrei depends on whether your birthday has passed.`;
+
+  resultEl.style.display = 'block';
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'kazoe_calculator', language: 'en', birth_year: y });
+}
+
+inputs.forEach(id =>
+  document.getElementById(id).addEventListener('input', compute));
+
+document.getElementById('btn-copy').addEventListener('click', () => {
+  const btn    = document.getElementById('btn-copy');
+  const kazoe  = document.getElementById('r-kazoe').textContent;
+  const mannen = document.getElementById('r-mannen').textContent;
+  const era    = document.getElementById('r-era').textContent;
+  const text   = `Kazoe-doshi: ${kazoe}\nMan-nenrei: ${mannen}\nBirth era: ${era}`;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied! \u2713';
+    if (typeof gtag !== 'undefined')
+      gtag('event', 'result_copied', { tool_name: 'kazoe_calculator' });
+    setTimeout(() => { btn.textContent = 'Copy Result'; }, 2000);
+  });
+});
+
+(function buildTable() {
+  const currentYear = new Date().getFullYear();
+  document.getElementById('ref-year-label').textContent = currentYear;
+  const rows  = buildReferenceTable(currentYear, 30);
+  const tbody = document.getElementById('ref-tbody');
+  tbody.innerHTML = rows.map(r => {
+    const era = getEraForYear(r.birthYear);
+    const eraEN = era.eraName ? `${era.eraName} ${era.eraYear}` : `${r.birthYear}`;
+    return `
+    <tr>
+      <td>${r.birthYear}</td>
+      <td>${eraEN}</td>
+      <td><strong>${r.kazoe}</strong></td>
+      <td>${r.mannen}</td>
+    </tr>`;
+  }).join('');
+})();
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(function(zone) {
+    var ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(function(z) { observer.observe(z); });
+  }
+});
+</script>
+
+<script>
+(function() {
+  var toggle = document.getElementById('lang-toggle');
+  if (!toggle) return;
+  var path = window.location.pathname;
+  if (path.indexOf('/en') === 0) {
+    var jpPath = path.replace(/^\/en/, '') || '/';
+    toggle.href = jpPath;
+    toggle.textContent = 'JP';
+    toggle.setAttribute('lang', 'ja');
+    toggle.setAttribute('title', 'このページを日本語で表示');
+  } else {
+    var enPath = '/en' + path;
+    toggle.href = enPath;
+    toggle.textContent = 'EN';
+    toggle.setAttribute('lang', 'en');
+    toggle.setAttribute('title', 'View this page in English');
+  }
+})();
+</script>
+</body>
+</html>
