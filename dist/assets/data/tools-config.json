@@ -3,6 +3,19 @@
   "_lastUpdated": "2026-04-04",
   "tools": [
     {
+      "id": "bmi-calculator",
+      "nameJP": "BMI計算",
+      "nameEN": "BMI Calculator",
+      "descJP": "BMI・標準体重を日本肥満学会基準で計算",
+      "descEN": "BMI & ideal weight, Japan standard",
+      "icon": "⚖️",
+      "urlJP": "/date-calendar/bmi-calculator/",
+      "urlEN": "/en/date-calendar/bmi-calculator/",
+      "category": "date-calendar",
+      "addedDate": "2026-04-04",
+      "isNew": true
+    },
+    {
       "id": "password-generator",
       "nameJP": "パスワード生成",
       "nameEN": "Password Generator",
@@ -26,7 +39,7 @@
       "urlEN": "/en/tax-finance/furusato-nozei/",
       "category": "tax-finance",
       "addedDate": "2026-04-01",
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "yakudoshi",
