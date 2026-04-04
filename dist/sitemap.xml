@@ -480,6 +480,20 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Password Generator (T-67) -->
+  <url>
+    <loc>https://japancalc.com/language-tools/password-generator/</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://japancalc.com/en/language-tools/password-generator/</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Salary Sub-pages (T-66) -->
   <url>
     <loc>https://japancalc.com/tax-finance/salary-calculator/2000000/</loc>

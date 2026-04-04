@@ -1,0 +1,924 @@
+/**
+ * T-67: Generate JP + EN password generator pages
+ * Run: node scripts/generate-password-pages.js
+ */
+const fs = require('fs');
+const path = require('path');
+
+const COMMON_HEAD = `<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>`;
+
+const COMMON_CSS = `
+  .pw-slider { width: 100%; accent-color: var(--color-accent); cursor: pointer; }
+  .slider-marks { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.2rem; }
+  .pw-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem; margin: 0.75rem 0; }
+  @media (max-width: 480px) { .pw-options { grid-template-columns: 1fr; } }
+  .pw-option-label { display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; cursor: pointer; padding: 0.3rem; border-radius: var(--radius); transition: background 0.1s; }
+  .pw-option-label:hover { background: var(--color-bg-alt); }
+  .privacy-notice { font-size: 0.78rem; color: var(--color-accent); background: rgba(11,110,95,0.06); border: 1px solid rgba(11,110,95,0.2); border-radius: var(--radius); padding: 0.5rem 0.75rem; margin: 0.75rem 0; }
+  .btn-generate { width: 100%; padding: 0.75rem; background: var(--color-accent); color: white; border: none; border-radius: var(--radius); font-size: 1rem; font-weight: 600; cursor: pointer; transition: opacity 0.15s; margin-top: 0.25rem; }
+  .btn-generate:hover { opacity: 0.88; }
+  .strength-section { margin: 1rem 0 0.75rem; }
+  .strength-bar-wrap { height: 8px; background: var(--color-border); border-radius: 4px; overflow: hidden; margin-bottom: 0.4rem; }
+  .strength-bar { height: 100%; border-radius: 4px; transition: width 0.3s, background 0.3s; }
+  .strength-bar.s1 { width: 25%; background: #dc2626; }
+  .strength-bar.s2 { width: 50%; background: #f59e0b; }
+  .strength-bar.s3 { width: 75%; background: #10b981; }
+  .strength-bar.s4 { width: 100%; background: #059669; }
+  .strength-meta { display: flex; gap: 1rem; font-size: 0.78rem; color: var(--color-text-muted); flex-wrap: wrap; }
+  .pw-list { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem; }
+  .pw-item { display: flex; align-items: center; gap: 0.5rem; background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.6rem 0.75rem; }
+  .pw-value { flex: 1; font-family: var(--font-mono); font-size: 0.95rem; letter-spacing: 0.05em; word-break: break-all; color: var(--color-primary); }
+  .pw-copy-btn { flex-shrink: 0; padding: 0.3rem 0.6rem; border: 1px solid var(--color-border); border-radius: var(--radius); background: white; font-size: 0.75rem; cursor: pointer; transition: all 0.15s; color: var(--color-text-muted); }
+  .pw-copy-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+  .pw-copy-btn.copied { background: var(--color-accent); color: white; border-color: var(--color-accent); }
+  .btn-copy-result { padding: 0.5rem 1rem; border: none; border-radius: var(--radius); background: var(--color-accent); color: white; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: opacity 0.15s; }
+  .btn-copy-result:hover { opacity: 0.85; }
+  .btn-clear { padding: 0.4rem 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius); background: white; font-size: 0.8rem; cursor: pointer; color: var(--color-text-muted); }
+  .btn-clear:hover { border-color: var(--color-accent); color: var(--color-accent); }`;
+
+const NAV_OPEN_CSS = `<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex; flex-direction: column; position: absolute;
+    top: 56px; left: 0; right: 0; background: var(--color-primary);
+    padding: 1rem; gap: 0.5rem; z-index: 100;
+  }
+</style>`;
+
+function generateJP() {
+  return `<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>パスワード生成ツール: 安全なパスワードを無料作成 | JapanCalc</title>
+  <meta name="description" content="安全なランダムパスワードを瞬時に生成。文字数・大文字小文字・数字・記号を自由に設定。最大10個を一括生成。ブラウザ内処理でサーバー送信なし。無料、ログイン不要。">
+  <link rel="canonical" href="https://japancalc.com/language-tools/password-generator/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/language-tools/password-generator/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/language-tools/password-generator/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/language-tools/password-generator/">
+  <meta property="og:title"       content="パスワード生成ツール | JapanCalc">
+  <meta property="og:description" content="安全なパスワードをブラウザ内で生成。サーバー送信なし。無料。">
+  <meta property="og:url"         content="https://japancalc.com/language-tools/password-generator/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image"       content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+${COMMON_HEAD}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "パスワード生成ツール | JapanCalc",
+    "url": "https://japancalc.com/language-tools/password-generator/",
+    "description": "安全なランダムパスワードをブラウザ内で生成。文字数・文字種を自由に設定。最大10個一括生成。",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["ja", "en"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://japancalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "言語ツール", "item": "https://japancalc.com/language-tools/" },
+      { "@type": "ListItem", "position": 3, "name": "パスワード生成ツール", "item": "https://japancalc.com/language-tools/password-generator/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "安全なパスワードの長さはどれくらいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "一般的に16文字以上が推奨されています。パスワードの強度はエントロピー（ビット数）で表され、16文字で大文字・小文字・数字を使った場合は約95ビットのエントロピーがあり、非常に強いパスワードとなります。銀行・メール・SNSなどの重要なアカウントには16文字以上、できれば20文字以上のパスワードを設定することをおすすめします。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "パスワードにどんな文字を使うべきですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "強いパスワードには大文字・小文字・数字・記号をすべて含めることが推奨されます。文字の種類が多いほどパスワードの解読が難しくなります。ただし記号が使えないサービスもあるため、そのような場合は文字数を増やすことで強度を補うことができます。このツールでは文字の種類を自由に選択してパスワードを生成できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "生成したパスワードはサーバーに保存されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "いいえ、生成したパスワードはすべてブラウザ内で処理され、サーバーには一切送信されません。このツールはJavaScriptのcrypto.getRandomValues()という暗号学的に安全な乱数生成器を使用しており、生成されたパスワードはあなたのブラウザの外に出ることはありません。完全にプライベートに安全なパスワードを作成できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "パスワードのエントロピーとは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "エントロピーはパスワードの予測困難さを示す指標で、ビット（bits）で表されます。計算式は「log2(文字種数 ^ 文字数)」です。エントロピーが高いほどパスワードは解読されにくくなります。一般的に40ビット未満は弱い、40-59ビットは普通、60-79ビットは強い、80ビット以上は非常に強いとされています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "パスワードを複数まとめて生成できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、このツールでは最大10個のパスワードを一括生成できます。複数のアカウント用に異なるパスワードが必要な場合や、候補から好みのものを選びたい場合に便利です。生成数を1〜10の間で設定し、生成するボタンを押すと指定した数のパスワードが一度に生成されます。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <style>${COMMON_CSS}
+  </style>
+</head>
+<body>
+
+${NAV_OPEN_CSS}
+
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <a href="/" class="nav-logo" aria-label="JapanCalc ホーム">
+  <img src="/assets/icons/logo-white.svg" alt="JapanCalc" width="160" height="40" loading="eager" fetchpriority="high">
+</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="lang-switcher" role="navigation" aria-label="言語切替">
+      <span class="lang-option lang-active" aria-current="true">JP</span>
+      <span class="lang-sep">&middot;</span>
+      <a class="lang-option lang-inactive" id="lang-toggle"
+         href="/en/language-tools/password-generator/" lang="en" title="View in English"
+         aria-label="Switch to English">EN</a>
+    </div>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="/">ホーム</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">パスワード生成ツール</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="SLOT_ATF_PW" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>パスワード生成ツール</h1>
+    <p class="tool-subtitle">安全なランダムパスワードを瞬時に生成 — Secure Password Generator</p>
+    <p class="tool-desc">
+      暗号学的に安全な乱数でパスワードを生成。文字数・大文字・小文字・数字・記号を自由に設定。
+      最大10個を一括生成。すべてブラウザ内で処理 — サーバーには送信されません。無料、ログイン不要。
+    </p>
+
+    <div class="tool-box" id="tool-main">
+      <div class="form-group">
+        <label class="form-label" for="pw-length">文字数: <strong id="length-display">16</strong>文字</label>
+        <input type="range" id="pw-length" min="4" max="64" value="16" step="1" class="pw-slider" aria-label="パスワードの文字数">
+        <div class="slider-marks"><span>4</span><span>16</span><span>32</span><span>48</span><span>64</span></div>
+      </div>
+
+      <div class="pw-options">
+        <label class="pw-option-label"><input type="checkbox" id="opt-uppercase" checked><span>大文字 (A-Z)</span></label>
+        <label class="pw-option-label"><input type="checkbox" id="opt-lowercase" checked><span>小文字 (a-z)</span></label>
+        <label class="pw-option-label"><input type="checkbox" id="opt-numbers" checked><span>数字 (0-9)</span></label>
+        <label class="pw-option-label"><input type="checkbox" id="opt-symbols"><span>記号 (!@#$...)</span></label>
+        <label class="pw-option-label"><input type="checkbox" id="opt-exclude-ambiguous" checked><span>紛らわしい文字を除外 (0,O,1,l,I)</span></label>
+      </div>
+
+      <div class="form-group" style="margin-top:0.75rem;">
+        <label class="form-label" for="pw-count">生成数</label>
+        <div class="input-suffix-wrap" style="max-width:120px;">
+          <input type="tel" class="form-input input-with-suffix" id="pw-count" value="1" min="1" max="10" maxlength="2" aria-label="一度に生成するパスワードの数">
+          <span class="input-suffix">個</span>
+        </div>
+        <p class="form-hint" style="font-size:0.75rem; color:var(--color-text-muted);">最大10個まで一括生成できます</p>
+      </div>
+
+      <div class="privacy-notice">&#x1F512; 生成はすべてブラウザ内で行われ、パスワードはサーバーに送信されません。</div>
+
+      <button class="btn-generate" id="btn-generate" aria-label="パスワードを生成する">パスワードを生成する</button>
+
+      <div id="pw-results" style="display:none;" aria-live="polite">
+        <div id="strength-section" class="strength-section">
+          <div class="strength-bar-wrap"><div class="strength-bar" id="strength-bar"></div></div>
+          <div class="strength-meta">
+            <span>強度: <strong id="strength-label">—</strong></span>
+            <span>エントロピー: <strong id="entropy-display">—</strong> bits</span>
+            <span>文字種数: <strong id="charset-display">—</strong></span>
+          </div>
+        </div>
+        <div id="pw-list" class="pw-list"></div>
+        <button id="btn-copy-all" class="btn-clear" style="display:none; margin-top:0.5rem;">全てコピー</button>
+      </div>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="SLOT_BTF_PW" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="quick-ref" style="overflow-x:auto;">
+      <h2>パスワード強度の目安</h2>
+      <table>
+        <thead><tr><th>エントロピー</th><th>強度</th><th>解読時間の目安</th><th>推奨用途</th></tr></thead>
+        <tbody>
+          <tr><td>&lt; 40 bits</td><td>&#x26A0;&#xFE0F; 弱い</td><td>数秒〜数時間</td><td>使用しないことを推奨</td></tr>
+          <tr><td>40-59 bits</td><td>&#x1F7E1; 普通</td><td>数日〜数ヶ月</td><td>低リスクのサービス</td></tr>
+          <tr><td>60-79 bits</td><td>&#x1F7E2; 強い</td><td>数年〜数十年</td><td>一般的なサービス</td></tr>
+          <tr><td>&#x2265; 80 bits</td><td>&#x1F4AA; 非常に強い</td><td>現実的に解読不可</td><td>銀行・メール・SNS</td></tr>
+        </tbody>
+      </table>
+
+      <h2 style="margin-top:1.5rem;">よく使われるパスワード設定例</h2>
+      <table>
+        <thead><tr><th>設定</th><th>文字数</th><th>エントロピー</th><th>強度</th></tr></thead>
+        <tbody>
+          <tr><td>数字のみ</td><td>8文字</td><td>~27 bits</td><td>&#x26A0;&#xFE0F; 弱い</td></tr>
+          <tr><td>英数字</td><td>8文字</td><td>~48 bits</td><td>&#x1F7E1; 普通</td></tr>
+          <tr><td>英数字+記号</td><td>12文字</td><td>~79 bits</td><td>&#x1F7E2; 強い</td></tr>
+          <tr><td>英数字+記号</td><td>16文字</td><td>~105 bits</td><td>&#x1F4AA; 非常に強い</td></tr>
+          <tr><td>英数字+記号</td><td>20文字</td><td>~131 bits</td><td>&#x1F4AA; 非常に強い</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <article class="seo-content">
+      <h2>安全なパスワードの作り方</h2>
+      <p>
+        インターネット上のアカウントを守る最も基本的な対策は、強力なパスワードを設定することです。日本では楽天、Amazon、LINE、Yahoo! JAPANなど多くのサービスを利用する方が多く、それぞれに異なる強力なパスワードを設定することが推奨されています。総務省の「国民のための情報セキュリティサイト」でも、10文字以上で英数字・記号を組み合わせたパスワードの使用が推奨されています。
+      </p>
+      <p>
+        パスワードの強度は「エントロピー」という指標で測定されます。エントロピーが高いほど、ブルートフォース攻撃（総当たり攻撃）に対する耐性が強くなります。一般的に80ビット以上のエントロピーがあれば、現在のコンピュータ技術では現実的に解読不可能とされています。このツールでは、生成したパスワードのエントロピーを自動計算して表示するため、強度を一目で確認できます。
+      </p>
+
+      <h2>なぜブラウザ内生成が安全なのか</h2>
+      <p>
+        このパスワード生成ツールはJavaScriptの<code>crypto.getRandomValues()</code>を使用しています。これはブラウザに組み込まれた暗号学的に安全な疑似乱数生成器（CSPRNG）で、<code>Math.random()</code>とは根本的に異なります。<code>Math.random()</code>は予測可能なパターンを持つため、セキュリティ目的には使用すべきではありません。
+      </p>
+      <p>
+        重要なのは、生成されたパスワードはあなたのブラウザの外に一切出ないという点です。サーバーへの通信は発生せず、ネットワーク経由でパスワードが漏洩するリスクはありません。ブラウザを閉じればメモリからも消去されます。パスワードマネージャー（1Password、Bitwarden、LastPassなど）と併用し、生成したパスワードを安全に保管することをおすすめします。同じパスワードを複数のサービスで使い回すことは避けてください。
+      </p>
+      <p>
+        <small>セキュリティに関する情報は<a href="https://www.soumu.go.jp/main_sosiki/joho_tsusin/security/" target="_blank" rel="noopener">総務省 情報セキュリティサイト</a>も参考にしてください。</small>
+      </p>
+    </article>
+
+    <section class="faq-section">
+      <h2>よくある質問</h2>
+      <details class="faq-item">
+        <summary>安全なパスワードの長さはどれくらいですか？</summary>
+        <p>一般的に16文字以上が推奨されています。16文字で大文字・小文字・数字を使った場合は約95ビットのエントロピーがあり、非常に強いパスワードです。銀行・メール・SNSなどの重要なアカウントには20文字以上を推奨します。</p>
+      </details>
+      <details class="faq-item">
+        <summary>パスワードにどんな文字を使うべきですか？</summary>
+        <p>大文字・小文字・数字・記号をすべて含めることが推奨されます。文字種が多いほど解読が困難になります。記号が使えないサービスでは、文字数を増やすことで強度を補えます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>生成したパスワードはサーバーに保存されますか？</summary>
+        <p>いいえ。すべてブラウザ内で処理され、サーバーには一切送信されません。暗号学的に安全な乱数生成器（crypto.getRandomValues()）を使用しており、パスワードはブラウザの外に出ません。</p>
+      </details>
+      <details class="faq-item">
+        <summary>パスワードのエントロピーとは何ですか？</summary>
+        <p>エントロピーはパスワードの予測困難さを示す指標で、ビットで表されます。計算式は「log2(文字種数 ^ 文字数)」です。40ビット未満は弱い、60-79ビットは強い、80ビット以上は非常に強いとされています。</p>
+      </details>
+      <details class="faq-item">
+        <summary>パスワードを複数まとめて生成できますか？</summary>
+        <p>はい、最大10個を一括生成できます。複数のアカウント用に異なるパスワードが必要な場合に便利です。生成数を設定して「生成する」ボタンを押すだけです。</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>関連ツール</h2>
+      <div class="cards-grid">
+        <a href="/language-tools/character-counter/" class="tool-card">
+          <div class="tool-card-icon">&#x1F521;</div>
+          <div class="tool-card-name">文字数カウンター</div>
+          <div class="tool-card-jp">Character Counter</div>
+        </a>
+        <a href="/language-tools/romaji-converter/" class="tool-card">
+          <div class="tool-card-icon">&#x1F524;</div>
+          <div class="tool-card-name">ローマ字変換</div>
+          <div class="tool-card-jp">Romaji Converter</div>
+        </a>
+        <a href="/tax-finance/salary-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4B0;</div>
+          <div class="tool-card-name">手取り計算</div>
+          <div class="tool-card-jp">Salary Calculator</div>
+        </a>
+        <a href="/language-tools/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4DA;</div>
+          <div class="tool-card-name">言語ツール一覧</div>
+          <div class="tool-card-jp">Language Tools</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="SLOT_SIDEBAR_PW" data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+    <p class="footer-attribution">最終更新: 2026年4月</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+  });
+})();
+</script>
+
+<script type="module">
+import { generatePassword, generateMultiple } from '/assets/js/password-generator.js';
+
+var lengthSlider   = document.getElementById('pw-length');
+var lengthDisplay  = document.getElementById('length-display');
+var btnGenerate    = document.getElementById('btn-generate');
+var pwResults      = document.getElementById('pw-results');
+var pwList         = document.getElementById('pw-list');
+var strengthBar    = document.getElementById('strength-bar');
+var strengthLabel  = document.getElementById('strength-label');
+var entropyDisplay = document.getElementById('entropy-display');
+var charsetDisplay = document.getElementById('charset-display');
+var btnCopyAll     = document.getElementById('btn-copy-all');
+var strengthSection= document.getElementById('strength-section');
+
+lengthSlider.addEventListener('input', function() {
+  lengthDisplay.textContent = lengthSlider.value;
+});
+
+function getOptions() {
+  return {
+    length:           parseInt(lengthSlider.value),
+    uppercase:        document.getElementById('opt-uppercase').checked,
+    lowercase:        document.getElementById('opt-lowercase').checked,
+    numbers:          document.getElementById('opt-numbers').checked,
+    symbols:          document.getElementById('opt-symbols').checked,
+    excludeAmbiguous: document.getElementById('opt-exclude-ambiguous').checked,
+  };
+}
+
+function renderPasswords(results) {
+  var first = results[0];
+  if (!first.error) {
+    strengthBar.className = 'strength-bar s' + first.strength;
+    strengthLabel.textContent  = first.strengthLabel;
+    entropyDisplay.textContent = first.entropy;
+    charsetDisplay.textContent = first.charsetSize;
+    strengthSection.style.display = results.length === 1 ? 'block' : 'none';
+  }
+
+  pwList.innerHTML = results.map(function(r, i) {
+    if (r.error) return '<p style="color:#dc2626; font-size:0.85rem;">' + r.error + '</p>';
+    return '<div class="pw-item">' +
+      '<span class="pw-value" id="pw-val-' + i + '">' + r.password + '</span>' +
+      '<button class="pw-copy-btn" data-index="' + i + '" aria-label="コピー">コピー</button>' +
+      '</div>';
+  }).join('');
+
+  btnCopyAll.style.display = results.length > 1 ? 'inline-block' : 'none';
+  pwResults.style.display = 'block';
+
+  document.querySelectorAll('.pw-copy-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var idx = parseInt(btn.dataset.index);
+      var val = document.getElementById('pw-val-' + idx).textContent;
+      navigator.clipboard.writeText(val).then(function() {
+        btn.textContent = 'コピー済 \\u2713';
+        btn.classList.add('copied');
+        setTimeout(function() { btn.textContent = 'コピー'; btn.classList.remove('copied'); }, 2000);
+      });
+    });
+  });
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'password_generator', length: first.length, count: results.length, language: 'ja' });
+}
+
+btnGenerate.addEventListener('click', function() {
+  var opts  = getOptions();
+  var count = Math.min(10, Math.max(1, parseInt(document.getElementById('pw-count').value) || 1));
+  var results = generateMultiple(count, opts);
+  renderPasswords(results);
+});
+
+btnCopyAll.addEventListener('click', function() {
+  var passwords = Array.from(document.querySelectorAll('.pw-value'))
+    .map(function(el) { return el.textContent; }).join('\\n');
+  navigator.clipboard.writeText(passwords).then(function() {
+    btnCopyAll.textContent = '全てコピー済 \\u2713';
+    setTimeout(function() { btnCopyAll.textContent = '全てコピー'; }, 2000);
+  });
+});
+
+// Auto-generate on load
+btnGenerate.click();
+</script>
+</body>
+</html>`;
+}
+
+function generateEN() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Password Generator: Strong Random Passwords | JapanCalc</title>
+  <meta name="description" content="Generate secure random passwords instantly. Set length, character types, and generate up to 10 at once. Browser-only — nothing sent to servers. Free.">
+  <link rel="canonical" href="https://japancalc.com/en/language-tools/password-generator/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/language-tools/password-generator/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/language-tools/password-generator/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/language-tools/password-generator/">
+  <meta property="og:title"       content="Secure Password Generator | JapanCalc">
+  <meta property="og:description" content="Generate secure random passwords in your browser. Nothing sent to servers. Free.">
+  <meta property="og:url"         content="https://japancalc.com/en/language-tools/password-generator/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image"       content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+${COMMON_HEAD}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Secure Password Generator | JapanCalc",
+    "url": "https://japancalc.com/en/language-tools/password-generator/",
+    "description": "Generate cryptographically secure random passwords in your browser. Customize length and character types. Up to 10 passwords at once.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://japancalc.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Language Tools", "item": "https://japancalc.com/en/language-tools/" },
+      { "@type": "ListItem", "position": 3, "name": "Password Generator", "item": "https://japancalc.com/en/language-tools/password-generator/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long should a secure password be?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A minimum of 16 characters is recommended. A 16-character password using uppercase, lowercase, and numbers has about 95 bits of entropy, making it very strong. For critical accounts like banking, email, and social media, aim for 20 characters or more."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What characters should I use in a password?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use a mix of uppercase letters, lowercase letters, numbers, and symbols for maximum strength. More character types means more possible combinations, making the password harder to crack. If a service does not allow symbols, compensate by increasing the password length."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are generated passwords stored on any server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. All passwords are generated entirely in your browser using the cryptographically secure crypto.getRandomValues() API. Nothing is ever sent to any server. Your passwords never leave your browser. Once you close the page, the passwords are cleared from memory."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is password entropy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Entropy measures how unpredictable a password is, expressed in bits. The formula is log2(charset_size ^ length). Higher entropy means a harder-to-crack password. Generally, under 40 bits is weak, 40-59 is fair, 60-79 is strong, and 80+ bits is very strong."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I generate multiple passwords at once?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, this tool can generate up to 10 passwords at once. Set the count between 1 and 10, then click Generate. Each password will be unique and independently generated using the cryptographic random number generator."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <style>${COMMON_CSS}
+  </style>
+</head>
+<body>
+
+${NAV_OPEN_CSS}
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/en/" class="nav-logo" aria-label="JapanCalc Home">
+  <img src="/assets/icons/logo-white.svg" alt="JapanCalc" width="160" height="40" loading="eager" fetchpriority="high">
+</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="lang-switcher" role="navigation" aria-label="Language">
+      <a class="lang-option lang-inactive" id="lang-toggle" href="/language-tools/password-generator/" lang="ja" title="日本語で表示" aria-label="日本語に切り替え">JP</a>
+      <span class="lang-sep">&middot;</span>
+      <span class="lang-option lang-active" aria-current="true">EN</span>
+    </div>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/en/">Home</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">Password Generator</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="SLOT_ATF_PW" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>Secure Password Generator</h1>
+    <p class="tool-subtitle">&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x751F;&#x6210;&#x30C4;&#x30FC;&#x30EB; — Generate strong random passwords instantly</p>
+    <p class="tool-desc">
+      Generate cryptographically secure random passwords using your browser's built-in CSPRNG.
+      Customize length, character types, and generate up to 10 at once.
+      Everything happens in your browser — nothing is ever sent to any server. Free, no login required.
+    </p>
+
+    <div class="tool-box" id="tool-main">
+      <div class="form-group">
+        <label class="form-label" for="pw-length">Length: <strong id="length-display">16</strong> characters</label>
+        <input type="range" id="pw-length" min="4" max="64" value="16" step="1" class="pw-slider" aria-label="Password length">
+        <div class="slider-marks"><span>4</span><span>16</span><span>32</span><span>48</span><span>64</span></div>
+      </div>
+
+      <div class="pw-options">
+        <label class="pw-option-label"><input type="checkbox" id="opt-uppercase" checked><span>Uppercase (A-Z)</span></label>
+        <label class="pw-option-label"><input type="checkbox" id="opt-lowercase" checked><span>Lowercase (a-z)</span></label>
+        <label class="pw-option-label"><input type="checkbox" id="opt-numbers" checked><span>Numbers (0-9)</span></label>
+        <label class="pw-option-label"><input type="checkbox" id="opt-symbols"><span>Symbols (!@#$...)</span></label>
+        <label class="pw-option-label"><input type="checkbox" id="opt-exclude-ambiguous" checked><span>Exclude ambiguous (0,O,1,l,I)</span></label>
+      </div>
+
+      <div class="form-group" style="margin-top:0.75rem;">
+        <label class="form-label" for="pw-count">Count</label>
+        <div class="input-suffix-wrap" style="max-width:120px;">
+          <input type="tel" class="form-input input-with-suffix" id="pw-count" value="1" min="1" max="10" maxlength="2" aria-label="Number of passwords to generate">
+          <span class="input-suffix">pcs</span>
+        </div>
+        <p class="form-hint" style="font-size:0.75rem; color:var(--color-text-muted);">Up to 10 at once</p>
+      </div>
+
+      <div class="privacy-notice">&#x1F512; Generated in your browser — never sent to any server.</div>
+
+      <button class="btn-generate" id="btn-generate" aria-label="Generate password">Generate Password</button>
+
+      <div id="pw-results" style="display:none;" aria-live="polite">
+        <div id="strength-section" class="strength-section">
+          <div class="strength-bar-wrap"><div class="strength-bar" id="strength-bar"></div></div>
+          <div class="strength-meta">
+            <span>Strength: <strong id="strength-label">—</strong></span>
+            <span>Entropy: <strong id="entropy-display">—</strong> bits</span>
+            <span>Charset size: <strong id="charset-display">—</strong></span>
+          </div>
+        </div>
+        <div id="pw-list" class="pw-list"></div>
+        <button id="btn-copy-all" class="btn-clear" style="display:none; margin-top:0.5rem;">Copy All</button>
+      </div>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="SLOT_BTF_PW" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="quick-ref" style="overflow-x:auto;">
+      <h2>Password Strength Guide</h2>
+      <table>
+        <thead><tr><th>Entropy</th><th>Strength</th><th>Crack Time (est.)</th><th>Recommended For</th></tr></thead>
+        <tbody>
+          <tr><td>&lt; 40 bits</td><td>&#x26A0;&#xFE0F; Weak</td><td>Seconds to hours</td><td>Not recommended</td></tr>
+          <tr><td>40-59 bits</td><td>&#x1F7E1; Fair</td><td>Days to months</td><td>Low-risk services</td></tr>
+          <tr><td>60-79 bits</td><td>&#x1F7E2; Strong</td><td>Years to decades</td><td>General services</td></tr>
+          <tr><td>&#x2265; 80 bits</td><td>&#x1F4AA; Very Strong</td><td>Practically uncrackable</td><td>Banking, email, social media</td></tr>
+        </tbody>
+      </table>
+
+      <h2 style="margin-top:1.5rem;">Common Password Configuration Examples</h2>
+      <table>
+        <thead><tr><th>Configuration</th><th>Length</th><th>Entropy</th><th>Strength</th></tr></thead>
+        <tbody>
+          <tr><td>Numbers only</td><td>8 chars</td><td>~27 bits</td><td>&#x26A0;&#xFE0F; Weak</td></tr>
+          <tr><td>Alphanumeric</td><td>8 chars</td><td>~48 bits</td><td>&#x1F7E1; Fair</td></tr>
+          <tr><td>Alphanumeric + symbols</td><td>12 chars</td><td>~79 bits</td><td>&#x1F7E2; Strong</td></tr>
+          <tr><td>Alphanumeric + symbols</td><td>16 chars</td><td>~105 bits</td><td>&#x1F4AA; Very Strong</td></tr>
+          <tr><td>Alphanumeric + symbols</td><td>20 chars</td><td>~131 bits</td><td>&#x1F4AA; Very Strong</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <article class="seo-content">
+      <h2>How to Create a Strong Password</h2>
+      <p>
+        A strong password is your first line of defense against unauthorized access to your online accounts. Whether you use Japanese services like Rakuten, Amazon Japan, LINE, or Yahoo! JAPAN, each account should have a unique, strong password. Japan's Ministry of Internal Affairs and Communications recommends passwords of at least 10 characters combining letters, numbers, and symbols.
+      </p>
+      <p>
+        Password strength is measured by "entropy" — the number of possible combinations expressed in bits. Higher entropy means more resistance to brute-force attacks. Generally, 80 bits or more of entropy is considered practically uncrackable with current computing technology. This tool automatically calculates and displays the entropy of every password it generates, so you can verify its strength at a glance.
+      </p>
+
+      <h2>Why Browser-Based Generation Is Secure</h2>
+      <p>
+        This password generator uses JavaScript's <code>crypto.getRandomValues()</code>, a cryptographically secure pseudo-random number generator (CSPRNG) built into every modern browser. Unlike <code>Math.random()</code>, which produces predictable patterns, CSPRNG output is suitable for security-critical applications.
+      </p>
+      <p>
+        Crucially, generated passwords never leave your browser. No server requests are made, eliminating the risk of network-based interception. When you close the page, passwords are cleared from memory. We recommend using a password manager (1Password, Bitwarden, LastPass, etc.) to securely store your generated passwords. Never reuse the same password across multiple services.
+      </p>
+    </article>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <details class="faq-item">
+        <summary>How long should a secure password be?</summary>
+        <p>At least 16 characters is recommended. A 16-character password with uppercase, lowercase, and numbers has about 95 bits of entropy, making it very strong. For critical accounts, aim for 20+ characters.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What characters should I include?</summary>
+        <p>Use a mix of uppercase, lowercase, numbers, and symbols for maximum strength. If a service doesn't allow symbols, increase the length to compensate.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are generated passwords stored on any server?</summary>
+        <p>No. Everything is processed in your browser using crypto.getRandomValues(). Nothing is sent to any server. Your passwords never leave your browser.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is password entropy?</summary>
+        <p>Entropy measures password unpredictability in bits. Formula: log2(charset_size ^ length). Under 40 bits is weak, 60-79 is strong, 80+ is very strong.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I generate multiple passwords at once?</summary>
+        <p>Yes — up to 10 at once. Set the count and click Generate. Each password is unique and independently generated.</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/en/language-tools/character-counter/" class="tool-card">
+          <div class="tool-card-icon">&#x1F521;</div>
+          <div class="tool-card-name">Character Counter</div>
+          <div class="tool-card-jp">文字数カウンター</div>
+        </a>
+        <a href="/en/language-tools/romaji-converter/" class="tool-card">
+          <div class="tool-card-icon">&#x1F524;</div>
+          <div class="tool-card-name">Romaji Converter</div>
+          <div class="tool-card-jp">ローマ字変換</div>
+        </a>
+        <a href="/en/tax-finance/salary-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4B0;</div>
+          <div class="tool-card-name">Salary Calculator</div>
+          <div class="tool-card-jp">手取り計算</div>
+        </a>
+        <a href="/en/language-tools/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4DA;</div>
+          <div class="tool-card-name">All Language Tools</div>
+          <div class="tool-card-jp">言語ツール一覧</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="SLOT_SIDEBAR_PW" data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/en/about/">About JapanCalc</a></li>
+      <li><a href="/en/privacy/">Privacy Policy</a></li>
+      <li><a href="/en/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+    <p class="footer-attribution">Last updated: April 2026</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import { generatePassword, generateMultiple } from '/assets/js/password-generator.js';
+
+var lengthSlider   = document.getElementById('pw-length');
+var lengthDisplay  = document.getElementById('length-display');
+var btnGenerate    = document.getElementById('btn-generate');
+var pwResults      = document.getElementById('pw-results');
+var pwList         = document.getElementById('pw-list');
+var strengthBar    = document.getElementById('strength-bar');
+var strengthLabel  = document.getElementById('strength-label');
+var entropyDisplay = document.getElementById('entropy-display');
+var charsetDisplay = document.getElementById('charset-display');
+var btnCopyAll     = document.getElementById('btn-copy-all');
+var strengthSection= document.getElementById('strength-section');
+
+lengthSlider.addEventListener('input', function() {
+  lengthDisplay.textContent = lengthSlider.value;
+});
+
+function getOptions() {
+  return {
+    length:           parseInt(lengthSlider.value),
+    uppercase:        document.getElementById('opt-uppercase').checked,
+    lowercase:        document.getElementById('opt-lowercase').checked,
+    numbers:          document.getElementById('opt-numbers').checked,
+    symbols:          document.getElementById('opt-symbols').checked,
+    excludeAmbiguous: document.getElementById('opt-exclude-ambiguous').checked,
+  };
+}
+
+function renderPasswords(results) {
+  var first = results[0];
+  if (!first.error) {
+    strengthBar.className = 'strength-bar s' + first.strength;
+    strengthLabel.textContent  = first.strengthLabelEN;
+    entropyDisplay.textContent = first.entropy;
+    charsetDisplay.textContent = first.charsetSize;
+    strengthSection.style.display = results.length === 1 ? 'block' : 'none';
+  }
+
+  pwList.innerHTML = results.map(function(r, i) {
+    if (r.error) return '<p style="color:#dc2626; font-size:0.85rem;">' + (r.errorEN || r.error) + '</p>';
+    return '<div class="pw-item">' +
+      '<span class="pw-value" id="pw-val-' + i + '">' + r.password + '</span>' +
+      '<button class="pw-copy-btn" data-index="' + i + '" aria-label="Copy">Copy</button>' +
+      '</div>';
+  }).join('');
+
+  btnCopyAll.style.display = results.length > 1 ? 'inline-block' : 'none';
+  pwResults.style.display = 'block';
+
+  document.querySelectorAll('.pw-copy-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var idx = parseInt(btn.dataset.index);
+      var val = document.getElementById('pw-val-' + idx).textContent;
+      navigator.clipboard.writeText(val).then(function() {
+        btn.textContent = 'Copied \\u2713';
+        btn.classList.add('copied');
+        setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+      });
+    });
+  });
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'password_generator', length: first.length, count: results.length, language: 'en' });
+}
+
+btnGenerate.addEventListener('click', function() {
+  var opts  = getOptions();
+  var count = Math.min(10, Math.max(1, parseInt(document.getElementById('pw-count').value) || 1));
+  var results = generateMultiple(count, opts);
+  renderPasswords(results);
+});
+
+btnCopyAll.addEventListener('click', function() {
+  var passwords = Array.from(document.querySelectorAll('.pw-value'))
+    .map(function(el) { return el.textContent; }).join('\\n');
+  navigator.clipboard.writeText(passwords).then(function() {
+    btnCopyAll.textContent = 'Copied All \\u2713';
+    setTimeout(function() { btnCopyAll.textContent = 'Copy All'; }, 2000);
+  });
+});
+
+// Auto-generate on load
+btnGenerate.click();
+</script>
+</body>
+</html>`;
+}
+
+// ===== MAIN =====
+const distDir = path.join(__dirname, '..', 'dist');
+
+const jpDir = path.join(distDir, 'language-tools', 'password-generator');
+fs.mkdirSync(jpDir, { recursive: true });
+fs.writeFileSync(path.join(jpDir, 'index.html'), generateJP(), 'utf8');
+console.log('  JP: /language-tools/password-generator/');
+
+const enDir = path.join(distDir, 'en', 'language-tools', 'password-generator');
+fs.mkdirSync(enDir, { recursive: true });
+fs.writeFileSync(path.join(enDir, 'index.html'), generateEN(), 'utf8');
+console.log('  EN: /en/language-tools/password-generator/');
+
+console.log('Done! Created 2 pages.');

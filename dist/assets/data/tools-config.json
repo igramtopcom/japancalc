@@ -1,7 +1,20 @@
 {
   "_comment": "JapanCalc tools config. Add new tools at TOP of array. Homepage reads first 4 as 'new tools'.",
-  "_lastUpdated": "2026-04-03",
+  "_lastUpdated": "2026-04-04",
   "tools": [
+    {
+      "id": "password-generator",
+      "nameJP": "パスワード生成",
+      "nameEN": "Password Generator",
+      "descJP": "安全なパスワードを即座に生成",
+      "descEN": "Generate secure passwords instantly",
+      "icon": "🔐",
+      "urlJP": "/language-tools/password-generator/",
+      "urlEN": "/en/language-tools/password-generator/",
+      "category": "language-tools",
+      "addedDate": "2026-04-04",
+      "isNew": true
+    },
     {
       "id": "furusato-nozei",
       "nameJP": "ふるさと納税計算",
@@ -52,7 +65,7 @@
       "urlEN": "/en/language-tools/area-converter/",
       "category": "language-tools",
       "addedDate": "2026-04-01",
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "kazoe-doshi",
