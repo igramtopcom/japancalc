@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>営業日計算ツール: 10営業日後の日付を計算 | JapanCalc</title>
+  <meta name="description" content="営業日数を指定して日付を計算。土日・日本の祝日を自動で除外。「10営業日後はいつ？」「この期間の稼働日数は？」を瞬時に確認。無料、ログイン不要。">
+  <link rel="canonical" href="https://japancalc.com/date-calendar/business-days/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/date-calendar/business-days/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/date-calendar/business-days/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/date-calendar/business-days/">
+  <meta property="og:title"       content="営業日計算ツール | JapanCalc">
+  <meta property="og:description" content="営業日数を指定して日付を計算。土日・祝日を自動除外。">
+  <meta property="og:url"         content="https://japancalc.com/date-calendar/business-days/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image"       content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "営業日計算ツール | JapanCalc",
+    "url": "https://japancalc.com/date-calendar/business-days/",
+    "description": "営業日数を指定して日付を計算。土日・日本の祝日を自動で除外。10営業日後の日付、期間内の営業日数を瞬時に確認。",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["ja", "en"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://japancalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "日付・カレンダー", "item": "https://japancalc.com/date-calendar/" },
+      { "@type": "ListItem", "position": 3, "name": "営業日計算", "item": "https://japancalc.com/date-calendar/business-days/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "営業日とは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "営業日とは、土曜日・日曜日・祝日を除いた平日のことです。ビジネスシーンでは一般的に月曜日から金曜日を指します。この計算ツールでは日本の国民の祝日・振替休日も自動的に除外して計算します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "10営業日は何日間ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "10営業日は通常、暦日で約14日間（2週間）です。ただし、間に祝日がある場合は15〜16日以上になることもあります。正確な日数はこのツールで簡単に計算できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "祝日は営業日に含まれますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "いいえ、日本の国民の祝日は営業日に含まれません。このツールでは内閣府が定める全ての国民の祝日を自動的に除外して計算します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "振替休日も除外されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、振替休日も除外されます。日曜日が祝日と重なった場合の翌月曜日（振替休日）も営業日から除外して正確に計算します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "「3営業日以内」の支払い期限の計算方法は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "「3営業日以内」とは、起算日の翌営業日から数えて3番目の営業日までを指します。このツールの「N営業日後」モードで基準日を入力し、3を指定すれば期限日を確認できます。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <style>
+  .form-group { margin-bottom: 1rem; }
+  .form-label { display: block; font-weight: 600; margin-bottom: 0.3rem; font-size: 0.9rem; }
+  .form-input { width: 100%; padding: 0.6rem 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius); font-size: 1rem; background: white; }
+  .form-select { width: 100%; padding: 0.6rem 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius); font-size: 1rem; background: white; cursor: pointer; }
+  .mode-tabs { display: flex; gap: 0; margin-bottom: 1.25rem; border: 2px solid var(--color-accent); border-radius: var(--radius); overflow: hidden; }
+  .mode-tab { flex: 1; padding: 0.65rem 0.5rem; text-align: center; cursor: pointer; font-weight: 600; font-size: 0.88rem; border: none; background: white; color: var(--color-text); transition: background 0.15s, color 0.15s; }
+  .mode-tab.active { background: var(--color-accent); color: white; }
+  .mode-panel { display: none; }
+  .mode-panel.active { display: block; }
+  .preset-btns { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.75rem 0 1rem; }
+  .preset-btn { padding: 0.4rem 0.75rem; border: 1px solid var(--color-accent); border-radius: 99px; background: white; color: var(--color-accent); cursor: pointer; font-size: 0.82rem; font-weight: 600; transition: all 0.15s; }
+  .preset-btn:hover, .preset-btn.active { background: var(--color-accent); color: white; }
+  .result-box { background: var(--color-bg-alt); border: 2px solid var(--color-accent); border-radius: var(--radius); padding: 1.25rem; margin-top: 1rem; display: none; }
+  .result-box.visible { display: block; }
+  .result-main { text-align: center; margin-bottom: 0.75rem; }
+  .result-main .result-label { font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 0.25rem; }
+  .result-main .result-value { font-size: 1.6rem; font-weight: 800; color: var(--color-accent); }
+  .result-detail { font-size: 0.85rem; color: var(--color-text-muted); text-align: center; margin: 0.5rem 0; }
+  .btn-copy-result { padding: 0.5rem 1rem; border: none; border-radius: var(--radius); background: var(--color-accent); color: white; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: opacity 0.15s; display: block; margin: 0.5rem auto 0; }
+  .btn-copy-result:hover { opacity: 0.85; }
+  .btn-calc { width: 100%; padding: 0.75rem; border: none; border-radius: var(--radius); background: var(--color-accent); color: white; font-size: 1rem; font-weight: 700; cursor: pointer; transition: opacity 0.15s; }
+  .btn-calc:hover { opacity: 0.85; }
+  .inline-row { display: flex; gap: 0.75rem; align-items: flex-end; }
+  .inline-row .form-group { flex: 1; }
+  @media (max-width: 480px) { .inline-row { flex-direction: column; gap: 0.5rem; } }
+  .faq-item { border: 1px solid var(--color-border); border-radius: var(--radius); margin-bottom: 0.5rem; }
+  .faq-item summary { padding: 0.75rem 1rem; cursor: pointer; font-weight: 600; font-size: 0.9rem; }
+  .faq-item p { padding: 0 1rem 0.75rem; font-size: 0.85rem; line-height: 1.65; color: var(--color-text-muted); }</style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex; flex-direction: column; position: absolute;
+    top: 56px; left: 0; right: 0; background: var(--color-primary);
+    padding: 1rem; gap: 0.5rem; z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="JapanCalc ホーム">
+      <img src="/assets/icons/favicon.svg" alt="JapanCalc" width="28" height="28">
+    </a>
+    <div class="nav-right">
+      <nav class="lang-switcher" aria-label="言語切替">
+        <span aria-current="true">JP</span>
+        <span aria-hidden="true">&middot;</span>
+        <a href="/en/date-calendar/business-days/" aria-label="Switch to English">English</a>
+      </nav>
+      <button class="nav-toggle" aria-expanded="false" aria-label="メニューを開く">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="/">ホーム</a>
+    <a href="/date-calendar/">日付・カレンダー</a>
+    <a href="/tax-finance/">税金・財務</a>
+    <a href="/language-tools/">言語・変換</a>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="/">ホーム</a></li>
+    <li aria-hidden="true">&rsaquo;</li>
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li aria-hidden="true">&rsaquo;</li>
+    <li>営業日計算</li>
+  </ol>
+</nav>
+
+<main id="main-content">
+  <div class="container tool-container">
+    <h1>営業日計算ツール</h1>
+    <p class="tool-intro">土日・祝日を除いた営業日を計算します。「10営業日後はいつ？」「この期間の営業日数は？」をすぐに確認できます。</p>
+
+    <div class="ad-zone" style="min-height:100px; margin:1rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_ATF_BIZDAYS"
+           data-ad-format="horizontal"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="mode-tabs" role="tablist">
+      <button class="mode-tab active" role="tab" data-mode="ndays" aria-selected="true">N営業日後を計算</button>
+      <button class="mode-tab" role="tab" data-mode="period" aria-selected="false">期間の営業日数</button>
+    </div>
+
+    <!-- Mode 1: N business days after -->
+    <div id="panel-ndays" class="mode-panel active">
+      <div class="form-group">
+        <label class="form-label" for="base-date">基準日</label>
+        <input class="form-input" type="date" id="base-date">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="n-days">営業日数</label>
+        <div class="inline-row">
+          <div class="form-group" style="margin-bottom:0;">
+            <input class="form-input" type="number" id="n-days" min="1" max="999" placeholder="10">
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <select class="form-select" id="direction" aria-label="方向を選択">
+              <option value="after">営業日後</option>
+              <option value="before">営業日前</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="preset-btns">
+        <button class="preset-btn" data-n="1" data-dir="before">1営業日前</button>
+        <button class="preset-btn" data-n="5" data-dir="after">5営業日後</button>
+        <button class="preset-btn" data-n="10" data-dir="after">10営業日後</button>
+        <button class="preset-btn" data-n="20" data-dir="after">20営業日後</button>
+      </div>
+
+      <button class="btn-calc" id="btn-calc-ndays">計算する</button>
+    </div>
+
+    <!-- Mode 2: Period -->
+    <div id="panel-period" class="mode-panel">
+      <div class="inline-row">
+        <div class="form-group">
+          <label class="form-label" for="from-date">開始日</label>
+          <input class="form-input" type="date" id="from-date">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="to-date">終了日</label>
+          <input class="form-input" type="date" id="to-date">
+        </div>
+      </div>
+
+      <button class="btn-calc" id="btn-calc-period" style="margin-top:0.75rem;">計算する</button>
+    </div>
+
+    <!-- Result -->
+    <div id="result-box" class="result-box">
+      <div class="result-main">
+        <div class="result-label" id="result-label">結果</div>
+        <div class="result-value" id="result-value">--</div>
+      </div>
+      <div class="result-detail" id="result-detail"></div>
+      <button class="btn-copy-result" id="btn-copy">結果をコピー</button>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="SLOT_BTF_BIZDAYS"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <section class="faq-section" aria-label="よくある質問">
+      <h2>よくある質問（FAQ）</h2>
+
+      <details class="faq-item">
+        <summary>営業日とは何ですか？</summary>
+        <p>営業日とは、土曜日・日曜日・祝日を除いた平日のことです。ビジネスシーンでは一般的に月曜日から金曜日を指します。この計算ツールでは日本の国民の祝日・振替休日も自動的に除外して計算します。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>10営業日は何日間ですか？</summary>
+        <p>10営業日は通常、暦日で約14日間（2週間）です。ただし、間に祝日がある場合は15〜16日以上になることもあります。正確な日数はこのツールで簡単に計算できます。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>祝日は営業日に含まれますか？</summary>
+        <p>いいえ、日本の国民の祝日は営業日に含まれません。このツールでは内閣府が定める全ての国民の祝日を自動的に除外して計算します。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>振替休日も除外されますか？</summary>
+        <p>はい、振替休日も除外されます。日曜日が祝日と重なった場合の翌月曜日（振替休日）も営業日から除外して正確に計算します。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>「3営業日以内」の支払い期限の計算方法は？</summary>
+        <p>「3営業日以内」とは、起算日の翌営業日から数えて3番目の営業日までを指します。このツールの「N営業日後」モードで基準日を入力し、3を指定すれば期限日を確認できます。</p>
+      </details>
+    </section>
+
+    <article class="seo-content">
+      <h2>営業日計算の使い方</h2>
+      <p>
+        ビジネスでは「5営業日以内にご連絡ください」「10営業日後にお届けします」など、営業日単位でのスケジュール管理が頻繁に必要です。このツールでは基準日から指定営業日数後（または前）の日付を瞬時に計算できます。土日だけでなく、日本の国民の祝日・振替休日も自動で除外します。
+      </p>
+      <h2>「期間の営業日数」モード</h2>
+      <p>
+        開始日と終了日を指定すると、その期間内の営業日数をカウントします。プロジェクトの稼働日数や、支払い期限の計算にご活用ください。祝日データは<a href="https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html" target="_blank" rel="noopener">内閣府</a>の公表データに基づいています。
+      </p>
+    </article>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-links" aria-label="フッターナビゲーション">
+      <a href="/">ホーム</a>
+      <a href="/date-calendar/">日付・カレンダー</a>
+      <a href="/tax-finance/">税金・財務</a>
+      <a href="/language-tools/">言語・変換</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 JapanCalc. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  var nav = document.querySelector('.site-nav');
+  var expanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !expanded);
+  nav.classList.toggle('nav-open');
+});
+</script>
+
+<script type="module">
+import { calcNBusinessDaysLater, calcBusinessDays, toDateStr, getHolidaysForYear } from '/assets/js/business-days.js';
+
+var modeTabs     = document.querySelectorAll('.mode-tab');
+var panelNdays   = document.getElementById('panel-ndays');
+var panelPeriod  = document.getElementById('panel-period');
+var baseDate     = document.getElementById('base-date');
+var nDays        = document.getElementById('n-days');
+var direction    = document.getElementById('direction');
+var fromDate     = document.getElementById('from-date');
+var toDate       = document.getElementById('to-date');
+var resultBox    = document.getElementById('result-box');
+var resultLabel  = document.getElementById('result-label');
+var resultValue  = document.getElementById('result-value');
+var resultDetail = document.getElementById('result-detail');
+var btnCalcN     = document.getElementById('btn-calc-ndays');
+var btnCalcP     = document.getElementById('btn-calc-period');
+var btnCopy      = document.getElementById('btn-copy');
+
+// Set today as default
+var today = toDateStr(new Date());
+baseDate.value = today;
+fromDate.value = today;
+
+// Mode tabs
+modeTabs.forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    modeTabs.forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected','true');
+    var mode = tab.getAttribute('data-mode');
+    panelNdays.classList.toggle('active', mode === 'ndays');
+    panelPeriod.classList.toggle('active', mode === 'period');
+    resultBox.classList.remove('visible');
+  });
+});
+
+// Presets
+document.querySelectorAll('.preset-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    nDays.value = btn.getAttribute('data-n');
+    direction.value = btn.getAttribute('data-dir');
+    document.querySelectorAll('.preset-btn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    calculateNDays();
+  });
+});
+
+function getHolidayLookup(yearStart, yearEnd) {
+  var lookup = {};
+  for (var y = yearStart; y <= yearEnd; y++) {
+    var holidays = getHolidaysForYear(y);
+    holidays.forEach(function(h) { lookup[h.date] = h.nameJP || h.nameEN || true; });
+  }
+  return lookup;
+}
+
+function calculateNDays() {
+  var dateStr = baseDate.value;
+  var n = parseInt(nDays.value);
+  var dir = direction.value;
+  if (!dateStr || !n || n <= 0) {
+    resultBox.classList.remove('visible');
+    return;
+  }
+  var bdays = dir === 'before' ? -n : n;
+  var baseYear = parseInt(dateStr.substring(0, 4));
+  var lookup = getHolidayLookup(baseYear - 1, baseYear + 2);
+  var result = calcNBusinessDaysLater(dateStr, bdays, lookup);
+  if (result.error) {
+    resultLabel.textContent = 'エラー';
+    resultValue.textContent = result.error;
+    resultDetail.textContent = '';
+    resultBox.classList.add('visible');
+    return;
+  }
+  var dirLabel = dir === 'before' ? '営業日前' : '営業日後';
+  resultLabel.textContent = n + dirLabel + 'の日付';
+  resultValue.textContent = result.resultDate;
+  resultDetail.textContent = '暦日数: ' + result.totalCalendarDays + '日間';
+  resultBox.classList.add('visible');
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'business_days', mode: 'ndays', n: n, language: 'ja' });
+}
+
+function calculatePeriod() {
+  var from = fromDate.value;
+  var to = toDate.value;
+  if (!from || !to) {
+    resultBox.classList.remove('visible');
+    return;
+  }
+  var y1 = parseInt(from.substring(0, 4));
+  var y2 = parseInt(to.substring(0, 4));
+  var lookup = getHolidayLookup(y1, y2 + 1);
+  var count = calcBusinessDays(from, to, lookup);
+  resultLabel.textContent = '期間内の営業日数';
+  resultValue.textContent = count + '日';
+  var d1 = new Date(from + 'T00:00:00');
+  var d2 = new Date(to + 'T00:00:00');
+  var totalDays = Math.round((d2 - d1) / 86400000) + 1;
+  resultDetail.textContent = '暦日数: ' + totalDays + '日間（うち営業日: ' + count + '日）';
+  resultBox.classList.add('visible');
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'business_days', mode: 'period', language: 'ja' });
+}
+
+btnCalcN.addEventListener('click', calculateNDays);
+btnCalcP.addEventListener('click', calculatePeriod);
+
+btnCopy.addEventListener('click', function() {
+  var text = resultLabel.textContent + ': ' + resultValue.textContent;
+  if (resultDetail.textContent) text += '\n' + resultDetail.textContent;
+  navigator.clipboard.writeText(text).then(function() {
+    btnCopy.textContent = 'コピーしました！';
+    setTimeout(function() { btnCopy.textContent = '結果をコピー'; }, 1500);
+  });
+});
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(zone => {
+    const ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(z => observer.observe(z));
+  }
+});
+</script>
+</body>
+</html>

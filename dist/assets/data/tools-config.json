@@ -3,6 +3,19 @@
   "_lastUpdated": "2026-04-04",
   "tools": [
     {
+      "id": "business-days",
+      "nameJP": "営業日計算",
+      "nameEN": "Business Days Calculator",
+      "descJP": "土日・祝日を除いた営業日を計算",
+      "descEN": "Calculate business days excluding holidays",
+      "icon": "📊",
+      "urlJP": "/date-calendar/business-days/",
+      "urlEN": "/en/date-calendar/business-days/",
+      "category": "date-calendar",
+      "addedDate": "2026-04-04",
+      "isNew": true
+    },
+    {
       "id": "postage-calculator",
       "nameJP": "郵便料金計算",
       "nameEN": "Postage Calculator",
@@ -52,7 +65,7 @@
       "urlEN": "/en/language-tools/password-generator/",
       "category": "language-tools",
       "addedDate": "2026-04-04",
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "furusato-nozei",
