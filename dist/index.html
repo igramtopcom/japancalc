@@ -141,11 +141,54 @@
   }
   .tool-search {
     max-width: 480px;
+    position: relative;
   }
   .tool-search .form-input {
     background: rgba(255,255,255,0.95);
     border: none;
     font-size: 1rem;
+  }
+  .search-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0; right: 0;
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    z-index: 100;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  .search-result-item {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.65rem 1rem; cursor: pointer; text-decoration: none;
+    color: var(--color-text); border-bottom: 1px solid var(--color-border);
+    transition: background 0.1s;
+  }
+  .search-result-item:last-child { border-bottom: none; }
+  .search-result-item:hover,
+  .search-result-item.active { background: var(--color-bg-alt); }
+  .search-result-icon { font-size: 1.25rem; flex-shrink: 0; }
+  .search-result-text { flex: 1; min-width: 0; }
+  .search-result-name {
+    font-weight: 600; font-size: 0.9rem; color: var(--color-primary);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .search-result-sub {
+    font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.1rem;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .search-result-category {
+    font-size: 0.65rem; padding: 0.15rem 0.4rem; border-radius: 4px;
+    background: var(--color-bg-alt); color: var(--color-text-muted); flex-shrink: 0;
+  }
+  .search-no-results {
+    padding: 1rem; text-align: center; color: var(--color-text-muted); font-size: 0.85rem;
+  }
+  .search-highlight {
+    background: rgba(11,110,95,0.15); border-radius: 2px;
+    font-weight: 600; color: var(--color-accent);
   }
   @media (max-width: 768px) {
     .hero h1 { font-size: 1.625rem; }
@@ -350,7 +393,12 @@
       <input type="search" id="tool-search-input" class="form-input"
              placeholder="ツールを検索… 例: 元号、消費税、年齢"
              aria-label="ツール検索"
-             autocomplete="off">
+             autocomplete="off"
+             role="combobox"
+             aria-expanded="false"
+             aria-controls="search-results"
+             aria-autocomplete="list">
+      <div id="search-results" class="search-dropdown" role="listbox" aria-label="検索結果" style="display:none;"></div>
     </div>
   </div>
 </section>
@@ -665,20 +713,116 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
 })();
 </script>
 
-<script>
-// Real-time tool search
-var searchInput = document.getElementById('tool-search-input');
-var allCards    = document.querySelectorAll('.tool-card');
+<script type="module">
+// ── Global Search — powered by tools-config.json
+(function initSearch() {
+  var IS_EN       = false;
+  var searchInput = document.getElementById('tool-search-input');
+  var dropdown    = document.getElementById('search-results');
+  if (!searchInput || !dropdown) return;
 
-searchInput.addEventListener('input', function() {
-  var q = searchInput.value.toLowerCase().trim();
-  allCards.forEach(function(card) {
-    var searchData = (card.dataset.search || '') + ' ' +
-                     (card.querySelector('.tool-card-name') ? card.querySelector('.tool-card-name').textContent : '') + ' ' +
-                     (card.querySelector('.tool-card-jp') ? card.querySelector('.tool-card-jp').textContent : '');
-    card.style.display = (!q || searchData.toLowerCase().indexOf(q) >= 0) ? '' : 'none';
+  var allTools = [], configLoaded = false, activeIndex = -1, debounceTimer;
+
+  var CATEGORY_LABELS = {
+    'date-calendar':  '日付・カレンダー',
+    'tax-finance':    '税金・財務',
+    'language-tools': '言語ツール'
+  };
+
+  function loadConfig() {
+    if (configLoaded) return Promise.resolve();
+    return fetch('/assets/data/tools-config.json')
+      .then(function(res) { return res.json(); })
+      .then(function(data) { allTools = data.tools || []; configLoaded = true; })
+      .catch(function() { console.warn('Search: could not load tools-config.json'); });
+  }
+
+  function highlight(text, query) {
+    if (!query) return text;
+    var escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return text.replace(new RegExp('(' + escaped + ')', 'gi'), '<span class="search-highlight">$1</span>');
+  }
+
+  function search(query) {
+    if (!query || query.length < 1) { closeDropdown(); return; }
+    var q = query.toLowerCase().trim();
+    var results = allTools.filter(function(tool) {
+      return tool.nameJP.toLowerCase().indexOf(q) >= 0 ||
+             tool.nameEN.toLowerCase().indexOf(q) >= 0 ||
+             tool.descJP.toLowerCase().indexOf(q) >= 0 ||
+             tool.descEN.toLowerCase().indexOf(q) >= 0 ||
+             (tool.id && tool.id.toLowerCase().indexOf(q) >= 0);
+    }).slice(0, 8);
+    renderResults(results, query);
+  }
+
+  function renderResults(results, query) {
+    activeIndex = -1;
+    searchInput.setAttribute('aria-expanded', 'true');
+    if (results.length === 0) {
+      dropdown.innerHTML = '<div class="search-no-results">「' + query + '」に一致するツールが見つかりませんでした</div>';
+      dropdown.style.display = 'block';
+      return;
+    }
+    dropdown.innerHTML = results.map(function(tool, i) {
+      var name = IS_EN ? tool.nameEN : tool.nameJP;
+      var desc = IS_EN ? tool.descEN : tool.descJP;
+      var url  = IS_EN ? tool.urlEN  : tool.urlJP;
+      var catLabel = CATEGORY_LABELS[tool.category] || tool.category;
+      return '<a href="' + url + '" class="search-result-item" role="option" data-index="' + i + '" aria-selected="false">' +
+        '<span class="search-result-icon">' + tool.icon + '</span>' +
+        '<span class="search-result-text">' +
+          '<span class="search-result-name">' + highlight(name, query) + '</span>' +
+          '<span class="search-result-sub">' + highlight(desc, query) + '</span>' +
+        '</span>' +
+        '<span class="search-result-category">' + catLabel + '</span></a>';
+    }).join('');
+    dropdown.style.display = 'block';
+  }
+
+  function closeDropdown() {
+    dropdown.style.display = 'none';
+    dropdown.innerHTML = '';
+    searchInput.setAttribute('aria-expanded', 'false');
+    activeIndex = -1;
+  }
+
+  function setActive(index) {
+    var items = dropdown.querySelectorAll('.search-result-item');
+    items.forEach(function(item, i) {
+      item.classList.toggle('active', i === index);
+      item.setAttribute('aria-selected', i === index ? 'true' : 'false');
+    });
+    activeIndex = index;
+  }
+
+  searchInput.addEventListener('input', function() {
+    loadConfig().then(function() {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(function() {
+        search(searchInput.value);
+        if (searchInput.value.length >= 2 && typeof gtag === 'function') {
+          gtag('event', 'tool_search', { search_term: searchInput.value, language: 'ja' });
+        }
+      }, 150);
+    });
   });
-});
+
+  searchInput.addEventListener('keydown', function(e) {
+    var items = dropdown.querySelectorAll('.search-result-item');
+    if (!items.length) return;
+    if (e.key === 'ArrowDown') { e.preventDefault(); setActive(Math.min(activeIndex + 1, items.length - 1)); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(Math.max(activeIndex - 1, 0)); }
+    else if (e.key === 'Enter' && activeIndex >= 0) { e.preventDefault(); items[activeIndex].click(); }
+    else if (e.key === 'Escape') { closeDropdown(); searchInput.blur(); }
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) closeDropdown();
+  });
+
+  searchInput.addEventListener('focus', loadConfig);
+})();
 </script>
 
 <!-- Lazy ad loader -->
