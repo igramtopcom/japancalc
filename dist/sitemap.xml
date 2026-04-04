@@ -480,6 +480,20 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Shichi-Go-San Calculator (T-70) -->
+  <url>
+    <loc>https://japancalc.com/date-calendar/shichigosan/</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://japancalc.com/en/date-calendar/shichigosan/</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- BMI Calculator (T-68) -->
   <url>
     <loc>https://japancalc.com/date-calendar/bmi-calculator/</loc>

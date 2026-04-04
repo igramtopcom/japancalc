@@ -3,6 +3,19 @@
   "_lastUpdated": "2026-04-04",
   "tools": [
     {
+      "id": "shichigosan",
+      "nameJP": "七五三計算",
+      "nameEN": "Shichi-Go-San Calculator",
+      "descJP": "お子様の七五三の年を計算",
+      "descEN": "Find your child's 753 ceremony years",
+      "icon": "🎎",
+      "urlJP": "/date-calendar/shichigosan/",
+      "urlEN": "/en/date-calendar/shichigosan/",
+      "category": "date-calendar",
+      "addedDate": "2026-04-04",
+      "isNew": true
+    },
+    {
       "id": "bmi-calculator",
       "nameJP": "BMI計算",
       "nameEN": "BMI Calculator",
@@ -52,7 +65,7 @@
       "urlEN": "/en/date-calendar/yakudoshi/",
       "category": "date-calendar",
       "addedDate": "2026-04-01",
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "days-calculator",
