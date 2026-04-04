@@ -3,6 +3,19 @@
   "_lastUpdated": "2026-04-04",
   "tools": [
     {
+      "id": "mortgage-calculator",
+      "nameJP": "住宅ローン計算",
+      "nameEN": "Mortgage Calculator",
+      "descJP": "月々返済額・総返済額をシミュレーション",
+      "descEN": "Calculate monthly mortgage payments",
+      "icon": "🏠",
+      "urlJP": "/tax-finance/mortgage-calculator/",
+      "urlEN": "/en/tax-finance/mortgage-calculator/",
+      "category": "tax-finance",
+      "addedDate": "2026-04-04",
+      "isNew": true
+    },
+    {
       "id": "warikan-calculator",
       "nameJP": "割り勘計算",
       "nameEN": "Bill Splitting Calculator",
@@ -52,7 +65,7 @@
       "urlEN": "/en/date-calendar/shichigosan/",
       "category": "date-calendar",
       "addedDate": "2026-04-04",
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "bmi-calculator",
