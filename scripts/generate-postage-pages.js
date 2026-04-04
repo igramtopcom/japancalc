@@ -1,0 +1,988 @@
+/**
+ * Generate JP + EN postage calculator pages
+ * Run: node scripts/generate-postage-pages.js
+ */
+const fs = require('fs');
+const path = require('path');
+
+const COMMON_HEAD = `<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>`;
+
+const COMMON_CSS = `
+  .input-suffix-wrap { position: relative; display: inline-flex; align-items: center; }
+  .input-with-suffix { padding-right: 2.5rem; }
+  .input-suffix { position: absolute; right: 0.75rem; color: var(--color-text-muted); font-size: 0.85rem; pointer-events: none; }
+  .form-group { margin-bottom: 1rem; }
+  .form-label { display: block; font-weight: 600; margin-bottom: 0.3rem; font-size: 0.9rem; }
+  .form-input { width: 100%; padding: 0.6rem 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius); font-size: 1rem; background: white; }
+  .form-select { width: 100%; padding: 0.6rem 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius); font-size: 1rem; background: white; cursor: pointer; }
+  .rate-toggle { display: flex; align-items: center; gap: 0.5rem; margin: 0.75rem 0; font-size: 0.9rem; cursor: pointer; }
+  .rate-toggle input[type="checkbox"] { accent-color: var(--color-accent); width: 18px; height: 18px; cursor: pointer; }
+  .result-box { background: var(--color-bg-alt); border: 2px solid var(--color-accent); border-radius: var(--radius); padding: 1.25rem; margin-top: 1rem; display: none; }
+  .result-box.visible { display: block; }
+  .result-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 0.75rem; }
+  @media (max-width: 480px) { .result-grid { grid-template-columns: 1fr; } }
+  .result-item { text-align: center; }
+  .result-item .result-label { font-size: 0.78rem; color: var(--color-text-muted); margin-bottom: 0.2rem; }
+  .result-item .result-value { font-size: 1.4rem; font-weight: 700; color: var(--color-primary); }
+  .result-total { text-align: center; margin: 0.75rem 0; padding: 0.75rem; background: rgba(11,110,95,0.06); border-radius: var(--radius); }
+  .result-total .result-value { font-size: 1.8rem; font-weight: 800; color: var(--color-accent); }
+  .result-type-name { text-align: center; font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 0.5rem; }
+  .btn-copy-result { padding: 0.5rem 1rem; border: none; border-radius: var(--radius); background: var(--color-accent); color: white; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: opacity 0.15s; display: block; margin: 0.5rem auto 0; }
+  .btn-copy-result:hover { opacity: 0.85; }
+  .ref-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 1rem 0; }
+  .ref-table th, .ref-table td { padding: 0.5rem 0.6rem; border: 1px solid var(--color-border); text-align: center; }
+  .ref-table th { background: var(--color-bg-alt); font-weight: 600; font-size: 0.8rem; }
+  .ref-table td { white-space: nowrap; }
+  .product-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin: 1rem 0; }
+  @media (max-width: 480px) { .product-cards { grid-template-columns: 1fr; } }
+  .product-card { background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1rem; text-align: center; }
+  .product-card .product-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem; color: var(--color-primary); }
+  .product-card .product-price { font-size: 1.3rem; font-weight: 800; color: var(--color-accent); }
+  .product-card .product-detail { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.3rem; }
+  .yaku-disclaimer { font-size: 0.78rem; color: var(--color-text-muted); background: rgba(220,38,38,0.04); border: 1px solid rgba(220,38,38,0.15); border-radius: var(--radius); padding: 0.6rem 0.85rem; margin: 1.25rem 0; }
+  .faq-item { border: 1px solid var(--color-border); border-radius: var(--radius); margin-bottom: 0.5rem; }
+  .faq-item summary { padding: 0.75rem 1rem; cursor: pointer; font-weight: 600; font-size: 0.9rem; }
+  .faq-item p { padding: 0 1rem 0.75rem; font-size: 0.85rem; line-height: 1.65; color: var(--color-text-muted); }`;
+
+const NAV_OPEN_CSS = `<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex; flex-direction: column; position: absolute;
+    top: 56px; left: 0; right: 0; background: var(--color-primary);
+    padding: 1rem; gap: 0.5rem; z-index: 100;
+  }
+</style>`;
+
+const AD_LAZY_SCRIPT = `<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(zone => {
+    const ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(z => observer.observe(z));
+  }
+});
+</script>`;
+
+// ===== JP PAGE =====
+function generateJP() {
+  return `<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>郵便料金計算ツール: 切手代・送料を瞬時に確認 | JapanCalc</title>
+  <meta name="description" content="郵便物の重量・種類を入力するだけで送料を計算。定形・定形外・レターパック・速達に対応。2024年10月改定の最新料金。無料、ログイン不要。">
+  <link rel="canonical" href="https://japancalc.com/tax-finance/postage-calculator/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/tax-finance/postage-calculator/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/tax-finance/postage-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/tax-finance/postage-calculator/">
+  <meta property="og:title"       content="郵便料金計算ツール | JapanCalc">
+  <meta property="og:description" content="郵便物の重量・種類を入力するだけで送料を計算。定形・定形外・速達に対応。無料。">
+  <meta property="og:url"         content="https://japancalc.com/tax-finance/postage-calculator/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image"       content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+${COMMON_HEAD}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "郵便料金計算ツール | JapanCalc",
+    "url": "https://japancalc.com/tax-finance/postage-calculator/",
+    "description": "郵便物の重量・種類を入力するだけで送料を計算。定形・定形外・レターパック・速達に対応。2024年10月改定の最新料金。",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["ja", "en"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://japancalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "税金・財務", "item": "https://japancalc.com/tax-finance/" },
+      { "@type": "ListItem", "position": 3, "name": "郵便料金計算", "item": "https://japancalc.com/tax-finance/postage-calculator/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "定形郵便と定形外郵便の違いは？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "サイズと重量の制限が異なります。定形郵便は23.5\\u00d712\\u00d71cm以内、50g以内。定形外は規格内（34\\u00d725\\u00d73cm、1kg以内）と規格外（それ以上、4kg以内）に分かれます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2024年10月の値上げ後の料金は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "定形郵便は25g以下・50g以下ともに110円に統一されました（旧84円/94円）。定形外郵便も全区分で値上げされています。このツールは改定後の最新料金で計算します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "レターパックライトとプラスの違いは？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ライト（430円）はポスト投函で配達、プラス（600円）は対面受取で配達されます。どちらも全国一律料金で追跡サービス付き、4kg以内。プラスは厚さ制限がないのが特徴です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "速達料金の計算方法は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "基本料金に速達加算料金が加わります。250g以下は+290円、250g超は+390円です。このツールでは速達チェックを入れると自動計算されます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "クリックポストはどこで使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "クリックポスト（185円）はYahoo!ウォレットまたはAmazon Payで支払い、自宅でラベルを印刷してポストに投函できるサービスです。34\\u00d725\\u00d73cm、1kg以内の荷物に対応。追跡サービスも付いています。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <style>${COMMON_CSS}
+  </style>
+</head>
+<body>
+
+${NAV_OPEN_CSS}
+
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <a href="/" class="nav-logo" aria-label="JapanCalc ホーム">
+  <img src="/assets/icons/logo-white.svg" alt="JapanCalc" width="160" height="40" loading="eager" fetchpriority="high">
+</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/date-calendar/">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><a href="/language-tools/">言語ツール</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="lang-switcher" role="navigation" aria-label="言語切替">
+      <span class="lang-option lang-active" aria-current="true">JP</span>
+      <span class="lang-sep">&middot;</span>
+      <a class="lang-option lang-inactive" id="lang-toggle"
+         href="/en/tax-finance/postage-calculator/" lang="en" title="View in English"
+         aria-label="Switch to English">EN</a>
+    </div>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="/">ホーム</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/tax-finance/">税金・財務</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">郵便料金計算</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="SLOT_ATF_POST" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>郵便料金計算ツール</h1>
+    <p class="tool-subtitle">切手代・送料を瞬時に確認 — Japan Post Postage Calculator</p>
+    <p class="tool-desc">
+      郵便物の重量と種類を入力するだけで送料を自動計算。定形・定形外（規格内/規格外）・速達に対応。
+      2024年10月改定後の最新料金で計算します。無料、ログイン不要。
+    </p>
+
+    <div class="tool-box" id="tool-main">
+      <div class="form-group">
+        <label class="form-label" for="postage-weight">重量</label>
+        <div class="input-suffix-wrap">
+          <input type="tel" class="form-input input-with-suffix" id="postage-weight"
+                 placeholder="例: 25" maxlength="5" aria-label="郵便物の重量（グラム）">
+          <span class="input-suffix">g</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="mail-type">郵便物の種類</label>
+        <select class="form-select" id="mail-type" aria-label="郵便物の種類を選択">
+          <option value="" disabled selected>選択してください</option>
+          <option value="teikei">定形郵便</option>
+          <option value="nai">定形外（規格内）</option>
+          <option value="gai">定形外（規格外）</option>
+        </select>
+      </div>
+
+      <label class="rate-toggle">
+        <input type="checkbox" id="sokutatsu-toggle">
+        <span>速達で送る</span>
+      </label>
+
+      <div class="result-box" id="result-box" aria-live="polite">
+        <div class="result-type-name" id="result-type-name"></div>
+        <div class="result-grid">
+          <div class="result-item">
+            <div class="result-label">基本料金</div>
+            <div class="result-value" id="result-base">--</div>
+          </div>
+          <div class="result-item" id="result-sokutatsu-wrap" style="display:none;">
+            <div class="result-label">速達加算</div>
+            <div class="result-value" id="result-sokutatsu">--</div>
+          </div>
+        </div>
+        <div class="result-total">
+          <div class="result-label">合計</div>
+          <div class="result-value" id="result-total">--</div>
+        </div>
+        <button class="btn-copy-result" id="btn-copy" aria-label="結果をコピー">結果をコピー</button>
+      </div>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="SLOT_BTF_POST" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <section class="quick-ref" style="overflow-x:auto;">
+      <h2>郵便料金早見表（2024年10月改定）</h2>
+      <table class="ref-table">
+        <thead>
+          <tr>
+            <th>重量</th><th>定形</th><th>規格内</th><th>規格外</th><th>レターパックL</th><th>レターパック+</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>25g</td><td>&yen;110</td><td>&yen;140</td><td>&yen;260</td><td>&yen;430</td><td>&yen;600</td></tr>
+          <tr><td>50g</td><td>&yen;110</td><td>&yen;140</td><td>&yen;260</td><td>&yen;430</td><td>&yen;600</td></tr>
+          <tr><td>100g</td><td>&mdash;</td><td>&yen;180</td><td>&yen;290</td><td>&yen;430</td><td>&yen;600</td></tr>
+          <tr><td>250g</td><td>&mdash;</td><td>&yen;320</td><td>&yen;450</td><td>&yen;430</td><td>&yen;600</td></tr>
+          <tr><td>500g</td><td>&mdash;</td><td>&yen;510</td><td>&yen;660</td><td>&yen;430</td><td>&yen;600</td></tr>
+          <tr><td>1kg</td><td>&mdash;</td><td>&yen;750</td><td>&yen;920</td><td>&yen;430</td><td>&yen;600</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>定額商品</h2>
+      <div class="product-cards">
+        <div class="product-card">
+          <div class="product-name">レターパックライト</div>
+          <div class="product-price">&yen;430</div>
+          <div class="product-detail">A4・4kg以内 / ポスト投函 / 追跡あり</div>
+        </div>
+        <div class="product-card">
+          <div class="product-name">レターパックプラス</div>
+          <div class="product-price">&yen;600</div>
+          <div class="product-detail">A4・4kg以内 / 対面受取 / 追跡あり</div>
+        </div>
+        <div class="product-card">
+          <div class="product-name">スマートレター</div>
+          <div class="product-price">&yen;180</div>
+          <div class="product-detail">A5・1kg以内 / 厚さ2cm以内</div>
+        </div>
+        <div class="product-card">
+          <div class="product-name">クリックポスト</div>
+          <div class="product-price">&yen;185</div>
+          <div class="product-detail">34&times;25&times;3cm・1kg以内 / 追跡あり</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="yaku-disclaimer">
+      料金は2024年10月1日改定後の日本郵便公式料金です。最新情報は<a href="https://www.post.japanpost.jp/index.html" target="_blank" rel="noopener">日本郵便公式サイト</a>をご確認ください。
+    </div>
+
+    <article class="seo-content">
+      <h2>郵便料金の仕組み &#x2014; 2024年10月改定の要点</h2>
+      <p>
+        2024年10月1日、日本郵便は約30年ぶりとなる大幅な料金改定を実施しました。最も影響が大きいのは定形郵便で、25g以下（旧84円）と50g以下（旧94円）がともに110円に統一されました。はがきも63円から85円に値上がりしています。定形外郵便も規格内・規格外ともに各重量区分で10円～50円程度の値上げが行われています。
+      </p>
+      <p>
+        この改定の背景には、郵便物の減少に伴う収益悪化や、人件費・燃料費の高騰があります。一方でレターパック（ライト430円・プラス600円）やクリックポスト（185円）は据え置きとなっており、これらの定額サービスはコストパフォーマンスがさらに高まったと言えます。このツールでは改定後の最新料金に基づいて自動計算を行います。
+      </p>
+
+      <h2>用途別おすすめの送り方</h2>
+      <p>
+        書類1～2枚程度なら定形郵便（110円）が最安です。A4サイズの書類や薄い商品を送るなら定形外（規格内）が適しており、50g以内なら140円で済みます。厚みのある商品やフリマアプリの発送には、追跡サービスが付いたレターパックライト（430円）やクリックポスト（185円）が便利です。急ぎの場合は速達オプション（250g以下+290円、250g超+390円）を利用できます。
+      </p>
+      <p>
+        なお、重量や厚さの上限を超えると受け付けられない場合がありますので、事前に確認することをおすすめします。定形郵便は23.5&times;12&times;1cm・50g以内、規格内は34&times;25&times;3cm・1kg以内です。レターパックプラスは厚さ制限がないため、衣類やぬいぐるみなどの厚みがある荷物に最適です。
+      </p>
+    </article>
+
+    <section class="faq-section">
+      <h2>よくある質問</h2>
+      <details class="faq-item">
+        <summary>定形郵便と定形外郵便の違いは？</summary>
+        <p>サイズと重量の制限が異なります。定形郵便は23.5&times;12&times;1cm以内、50g以内。定形外は規格内（34&times;25&times;3cm、1kg以内）と規格外（それ以上、4kg以内）に分かれます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>2024年10月の値上げ後の料金は？</summary>
+        <p>定形郵便は25g以下・50g以下ともに110円に統一されました（旧84円/94円）。定形外郵便も全区分で値上げされています。このツールは改定後の最新料金で計算します。</p>
+      </details>
+      <details class="faq-item">
+        <summary>レターパックライトとプラスの違いは？</summary>
+        <p>ライト（430円）はポスト投函で配達、プラス（600円）は対面受取で配達されます。どちらも全国一律料金で追跡サービス付き、4kg以内。プラスは厚さ制限がないのが特徴です。</p>
+      </details>
+      <details class="faq-item">
+        <summary>速達料金の計算方法は？</summary>
+        <p>基本料金に速達加算料金が加わります。250g以下は+290円、250g超は+390円です。このツールでは速達チェックを入れると自動計算されます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>クリックポストはどこで使えますか？</summary>
+        <p>クリックポスト（185円）はYahoo!ウォレットまたはAmazon Payで支払い、自宅でラベルを印刷してポストに投函できるサービスです。34&times;25&times;3cm、1kg以内の荷物に対応。追跡サービスも付いています。</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>関連ツール</h2>
+      <div class="cards-grid">
+        <a href="/tax-finance/consumption-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4B0;</div>
+          <div class="tool-card-name">消費税計算</div>
+          <div class="tool-card-jp">Consumption Tax</div>
+        </a>
+        <a href="/tax-finance/discount-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F3F7;&#xFE0F;</div>
+          <div class="tool-card-name">割引計算</div>
+          <div class="tool-card-jp">Discount Calculator</div>
+        </a>
+        <a href="/tax-finance/salary-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4B4;</div>
+          <div class="tool-card-name">手取り計算</div>
+          <div class="tool-card-jp">Salary Calculator</div>
+        </a>
+        <a href="/tax-finance/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4CA;</div>
+          <div class="tool-card-name">税金・財務ツール一覧</div>
+          <div class="tool-card-jp">Tax &amp; Finance Tools</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="SLOT_SIDEBAR_POST" data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/about/">JapanCalcについて</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/terms/">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+    <p class="footer-attribution">最終更新: 2026年4月</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+  });
+})();
+</script>
+
+<script type="module">
+import { calcPostage, FIXED_PRODUCTS, SOKUTATSU_SURCHARGE } from '/assets/js/postage.js';
+
+var weightInput     = document.getElementById('postage-weight');
+var typeSelect      = document.getElementById('mail-type');
+var sokutatsuToggle = document.getElementById('sokutatsu-toggle');
+var resultBox       = document.getElementById('result-box');
+var resultBase      = document.getElementById('result-base');
+var resultSokutatsu = document.getElementById('result-sokutatsu');
+var sokutatsuWrap   = document.getElementById('result-sokutatsu-wrap');
+var resultTotal     = document.getElementById('result-total');
+var resultTypeName  = document.getElementById('result-type-name');
+var btnCopy         = document.getElementById('btn-copy');
+
+function calculate() {
+  var weight = parseInt(weightInput.value);
+  var type   = typeSelect.value;
+  if (!weight || weight <= 0 || !type) {
+    resultBox.classList.remove('visible');
+    return;
+  }
+
+  var result = calcPostage(weight, type);
+  if (result.error) {
+    resultBase.textContent = result.error;
+    resultTotal.textContent = '--';
+    resultSokutatsu.textContent = '--';
+    sokutatsuWrap.style.display = 'none';
+    resultTypeName.textContent = '';
+    resultBox.classList.add('visible');
+    return;
+  }
+
+  var base = result.price;
+  var isSokutatsu = sokutatsuToggle.checked;
+  var surcharge = 0;
+  if (isSokutatsu) {
+    surcharge = weight <= 250 ? SOKUTATSU_SURCHARGE.under250g : SOKUTATSU_SURCHARGE.over250g;
+  }
+  var total = base + surcharge;
+
+  resultBase.textContent = '\\u00A5' + base.toLocaleString();
+  if (isSokutatsu) {
+    sokutatsuWrap.style.display = 'block';
+    resultSokutatsu.textContent = '+\\u00A5' + surcharge.toLocaleString();
+  } else {
+    sokutatsuWrap.style.display = 'none';
+  }
+  resultTotal.textContent = '\\u00A5' + total.toLocaleString();
+  resultTypeName.textContent = result.typeName || '';
+  resultBox.classList.add('visible');
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'postage_calculator', mail_type: type, weight: weight, language: 'ja' });
+}
+
+weightInput.addEventListener('input', calculate);
+typeSelect.addEventListener('change', calculate);
+sokutatsuToggle.addEventListener('change', calculate);
+
+btnCopy.addEventListener('click', function() {
+  var base = resultBase.textContent;
+  var total = resultTotal.textContent;
+  var typeName = resultTypeName.textContent;
+  var isSokutatsu = sokutatsuToggle.checked;
+  var text = typeName + '\\n基本料金: ' + base;
+  if (isSokutatsu) text += '\\n速達加算: ' + resultSokutatsu.textContent;
+  text += '\\n合計: ' + total;
+  navigator.clipboard.writeText(text).then(function() {
+    btnCopy.textContent = 'コピー済 \\u2713';
+    setTimeout(function() { btnCopy.textContent = '結果をコピー'; }, 2000);
+  });
+});
+</script>
+
+${AD_LAZY_SCRIPT}
+</body>
+</html>`;
+}
+
+// ===== EN PAGE =====
+function generateEN() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japan Post Postage Calculator: Stamp Cost | JapanCalc</title>
+  <meta name="description" content="Calculate Japan Post mailing costs by weight and type. Covers standard, non-standard, Letterpack and express. Updated Oct 2024 rates. Free.">
+  <link rel="canonical" href="https://japancalc.com/en/tax-finance/postage-calculator/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/tax-finance/postage-calculator/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/tax-finance/postage-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/tax-finance/postage-calculator/">
+  <meta property="og:title"       content="Japan Post Postage Calculator | JapanCalc">
+  <meta property="og:description" content="Calculate Japan Post mailing costs by weight and type. Updated Oct 2024 rates. Free.">
+  <meta property="og:url"         content="https://japancalc.com/en/tax-finance/postage-calculator/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image"       content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+${COMMON_HEAD}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Japan Post Postage Calculator | JapanCalc",
+    "url": "https://japancalc.com/en/tax-finance/postage-calculator/",
+    "description": "Calculate Japan Post mailing costs by weight and type. Covers standard, non-standard, Letterpack and express. Updated October 2024 rates.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["en", "ja"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://japancalc.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Tax & Finance", "item": "https://japancalc.com/en/tax-finance/" },
+      { "@type": "ListItem", "position": 3, "name": "Postage Calculator", "item": "https://japancalc.com/en/tax-finance/postage-calculator/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between standard and non-standard mail?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard mail (\\u5B9A\\u5F62) is limited to 23.5\\u00d712\\u00d71cm and 50g. Non-standard has two categories: \\u201Cwithin size\\u201D (\\u898F\\u683C\\u5185, up to 34\\u00d725\\u00d73cm, 1kg) and \\u201Coutside size\\u201D (\\u898F\\u683C\\u5916, up to 4kg)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What changed with the October 2024 price revision?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard mail was unified at \\u00A5110 for both \\u226425g and \\u226450g (previously \\u00A584/\\u00A594). All non-standard categories also increased. This tool uses the revised rates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Letterpack Light and Plus?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Letterpack Light (\\u00A5430) is delivered to your mailbox. Letterpack Plus (\\u00A5600) requires in-person signature. Both are flat-rate nationwide with tracking, up to 4kg. Plus has no thickness limit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is express (\\u901F\\u9054) surcharge calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Add \\u00A5290 for items \\u2264250g or \\u00A5390 for items over 250g to the base postage. This tool calculates it automatically when you check the express option."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Click Post?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Click Post (\\u00A5185) lets you pay online, print a label at home, and drop it in a mailbox. Covers items up to 34\\u00d725\\u00d73cm, 1kg with tracking."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <style>${COMMON_CSS}
+  </style>
+</head>
+<body>
+
+${NAV_OPEN_CSS}
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/en/" class="nav-logo" aria-label="JapanCalc Home">
+  <img src="/assets/icons/logo-white.svg" alt="JapanCalc" width="160" height="40" loading="eager" fetchpriority="high">
+</a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/en/date-calendar/">Date &amp; Calendar</a></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><a href="/en/language-tools/">Language Tools</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="lang-switcher" role="navigation" aria-label="Language">
+      <a class="lang-option lang-inactive" id="lang-toggle" href="/tax-finance/postage-calculator/" lang="ja" title="日本語で表示" aria-label="日本語に切り替え">JP</a>
+      <span class="lang-sep">&middot;</span>
+      <span class="lang-option lang-active" aria-current="true">EN</span>
+    </div>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/en/">Home</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li><a href="/en/tax-finance/">Tax &amp; Finance</a></li>
+    <li><span class="breadcrumb-sep">&#x203A;</span></li>
+    <li aria-current="page">Postage Calculator</li>
+  </ol>
+</nav>
+
+<div class="ad-zone ad-atf" style="min-height:90px; margin:0 auto 1rem;">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="SLOT_ATF_POST" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<div class="page-layout">
+  <main class="content" id="main-content">
+
+    <h1>Japan Post Postage Calculator &#x2014; Stamp &amp; Shipping Cost</h1>
+    <p class="tool-subtitle">&#x90F5;&#x4FBF;&#x6599;&#x91D1;&#x8A08;&#x7B97;&#x30C4;&#x30FC;&#x30EB; &#x2014; Calculate mailing costs instantly</p>
+    <p class="tool-desc">
+      Enter the weight and mail type to calculate Japan Post shipping costs.
+      Covers standard, non-standard (within/outside size), and express delivery.
+      Uses the latest rates from the October 2024 revision. Free, no login required.
+    </p>
+
+    <div class="tool-box" id="tool-main">
+      <div class="form-group">
+        <label class="form-label" for="postage-weight">Weight</label>
+        <div class="input-suffix-wrap">
+          <input type="tel" class="form-input input-with-suffix" id="postage-weight"
+                 placeholder="e.g. 25" maxlength="5" aria-label="Mail weight in grams">
+          <span class="input-suffix">g</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="mail-type">Mail Type</label>
+        <select class="form-select" id="mail-type" aria-label="Select mail type">
+          <option value="" disabled selected>Select type</option>
+          <option value="teikei">Standard (定形)</option>
+          <option value="nai">Non-standard within size (規格内)</option>
+          <option value="gai">Non-standard outside size (規格外)</option>
+        </select>
+      </div>
+
+      <label class="rate-toggle">
+        <input type="checkbox" id="sokutatsu-toggle">
+        <span>Express delivery (速達)</span>
+      </label>
+
+      <div class="result-box" id="result-box" aria-live="polite">
+        <div class="result-type-name" id="result-type-name"></div>
+        <div class="result-grid">
+          <div class="result-item">
+            <div class="result-label">Base Rate</div>
+            <div class="result-value" id="result-base">--</div>
+          </div>
+          <div class="result-item" id="result-sokutatsu-wrap" style="display:none;">
+            <div class="result-label">Express Surcharge</div>
+            <div class="result-value" id="result-sokutatsu">--</div>
+          </div>
+        </div>
+        <div class="result-total">
+          <div class="result-label">Total</div>
+          <div class="result-value" id="result-total">--</div>
+        </div>
+        <button class="btn-copy-result" id="btn-copy" aria-label="Copy result">Copy Result</button>
+      </div>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="SLOT_BTF_POST" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <section class="quick-ref" style="overflow-x:auto;">
+      <h2>Quick Reference Table (Oct 2024 Rates)</h2>
+      <table class="ref-table">
+        <thead>
+          <tr>
+            <th>Weight</th><th>Standard</th><th>Within Size</th><th>Outside Size</th><th>Letterpack L</th><th>Letterpack+</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>25g</td><td>&yen;110</td><td>&yen;140</td><td>&yen;260</td><td>&yen;430</td><td>&yen;600</td></tr>
+          <tr><td>50g</td><td>&yen;110</td><td>&yen;140</td><td>&yen;260</td><td>&yen;430</td><td>&yen;600</td></tr>
+          <tr><td>100g</td><td>&mdash;</td><td>&yen;180</td><td>&yen;290</td><td>&yen;430</td><td>&yen;600</td></tr>
+          <tr><td>250g</td><td>&mdash;</td><td>&yen;320</td><td>&yen;450</td><td>&yen;430</td><td>&yen;600</td></tr>
+          <tr><td>500g</td><td>&mdash;</td><td>&yen;510</td><td>&yen;660</td><td>&yen;430</td><td>&yen;600</td></tr>
+          <tr><td>1kg</td><td>&mdash;</td><td>&yen;750</td><td>&yen;920</td><td>&yen;430</td><td>&yen;600</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Flat-Rate Products</h2>
+      <div class="product-cards">
+        <div class="product-card">
+          <div class="product-name">Letterpack Light</div>
+          <div class="product-price">&yen;430</div>
+          <div class="product-detail">A4 / up to 4kg / mailbox delivery / tracking</div>
+        </div>
+        <div class="product-card">
+          <div class="product-name">Letterpack Plus</div>
+          <div class="product-price">&yen;600</div>
+          <div class="product-detail">A4 / up to 4kg / in-person / tracking</div>
+        </div>
+        <div class="product-card">
+          <div class="product-name">Smart Letter</div>
+          <div class="product-price">&yen;180</div>
+          <div class="product-detail">A5 / up to 1kg / max 2cm thick</div>
+        </div>
+        <div class="product-card">
+          <div class="product-name">Click Post</div>
+          <div class="product-price">&yen;185</div>
+          <div class="product-detail">34&times;25&times;3cm / up to 1kg / tracking</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="yaku-disclaimer">
+      Rates reflect Japan Post's October 2024 revision. Check the <a href="https://www.post.japanpost.jp/index.html" target="_blank" rel="noopener">official Japan Post website</a> for the latest information.
+    </div>
+
+    <article class="seo-content">
+      <h2>Understanding Japan Post Rates &#x2014; October 2024 Changes</h2>
+      <p>
+        On October 1, 2024, Japan Post implemented its first major rate revision in approximately 30 years. The most notable change affects standard mail: both the up-to-25g tier (previously &yen;84) and the up-to-50g tier (previously &yen;94) were unified at &yen;110. Postcards also rose from &yen;63 to &yen;85. Non-standard mail saw increases of &yen;10 to &yen;50 across all weight brackets for both within-size and outside-size categories.
+      </p>
+      <p>
+        The revision was driven by declining mail volumes and rising labor and fuel costs. Notably, flat-rate products such as Letterpack Light (&yen;430), Letterpack Plus (&yen;600), and Click Post (&yen;185) remained unchanged, making them even more cost-effective relative to weight-based options. This calculator uses the post-revision rates for all calculations.
+      </p>
+
+      <h2>Choosing the Right Mailing Option</h2>
+      <p>
+        For one or two sheets of paper, standard mail at &yen;110 is the cheapest option. A4 documents or thin items fit well in non-standard within-size mail, costing just &yen;140 for up to 50g. For thicker parcels or marketplace shipping, Letterpack Light (&yen;430) and Click Post (&yen;185) offer tracking at a flat rate. If speed matters, the express surcharge adds &yen;290 for items up to 250g or &yen;390 for heavier items.
+      </p>
+      <p>
+        Keep in mind that exceeding weight or size limits will result in rejection at the counter. Standard mail is capped at 23.5&times;12&times;1cm and 50g; within-size non-standard allows up to 34&times;25&times;3cm and 1kg. Letterpack Plus has no thickness limit, making it ideal for bulky items like clothing or plush toys. Always weigh and measure your item before choosing a mailing method.
+      </p>
+    </article>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <details class="faq-item">
+        <summary>What is the difference between standard and non-standard mail?</summary>
+        <p>Standard mail (定形) is limited to 23.5&times;12&times;1cm and 50g. Non-standard has two categories: "within size" (規格内, up to 34&times;25&times;3cm, 1kg) and "outside size" (規格外, up to 4kg).</p>
+      </details>
+      <details class="faq-item">
+        <summary>What changed with the October 2024 price revision?</summary>
+        <p>Standard mail was unified at &yen;110 for both &le;25g and &le;50g (previously &yen;84/&yen;94). All non-standard categories also increased. This tool uses the revised rates.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is the difference between Letterpack Light and Plus?</summary>
+        <p>Letterpack Light (&yen;430) is delivered to your mailbox. Letterpack Plus (&yen;600) requires in-person signature. Both are flat-rate nationwide with tracking, up to 4kg. Plus has no thickness limit.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How is express (速達) surcharge calculated?</summary>
+        <p>Add &yen;290 for items &le;250g or &yen;390 for items over 250g to the base postage. This tool calculates it automatically when you check the express option.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is Click Post?</summary>
+        <p>Click Post (&yen;185) lets you pay online, print a label at home, and drop it in a mailbox. Covers items up to 34&times;25&times;3cm, 1kg with tracking.</p>
+      </details>
+    </section>
+
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="cards-grid">
+        <a href="/en/tax-finance/consumption-tax/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4B0;</div>
+          <div class="tool-card-name">Consumption Tax</div>
+          <div class="tool-card-jp">消費税計算</div>
+        </a>
+        <a href="/en/tax-finance/discount-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F3F7;&#xFE0F;</div>
+          <div class="tool-card-name">Discount Calculator</div>
+          <div class="tool-card-jp">割引計算</div>
+        </a>
+        <a href="/en/tax-finance/salary-calculator/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4B4;</div>
+          <div class="tool-card-name">Salary Calculator</div>
+          <div class="tool-card-jp">手取り計算</div>
+        </a>
+        <a href="/en/tax-finance/" class="tool-card">
+          <div class="tool-card-icon">&#x1F4CA;</div>
+          <div class="tool-card-name">All Tax &amp; Finance Tools</div>
+          <div class="tool-card-jp">税金・財務ツール一覧</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="ad-zone ad-sidebar" style="min-height:600px; position:sticky; top:1rem;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="SLOT_SIDEBAR_POST" data-ad-format="auto"></ins>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/en/about/">About JapanCalc</a></li>
+      <li><a href="/en/privacy/">Privacy Policy</a></li>
+      <li><a href="/en/terms/">Terms of Use</a></li>
+      <li><a href="mailto:hello@japancalc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+    <p class="footer-attribution">Last updated: April 2026</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+})();
+</script>
+
+<script type="module">
+import { calcPostage, FIXED_PRODUCTS, SOKUTATSU_SURCHARGE } from '/assets/js/postage.js';
+
+var weightInput     = document.getElementById('postage-weight');
+var typeSelect      = document.getElementById('mail-type');
+var sokutatsuToggle = document.getElementById('sokutatsu-toggle');
+var resultBox       = document.getElementById('result-box');
+var resultBase      = document.getElementById('result-base');
+var resultSokutatsu = document.getElementById('result-sokutatsu');
+var sokutatsuWrap   = document.getElementById('result-sokutatsu-wrap');
+var resultTotal     = document.getElementById('result-total');
+var resultTypeName  = document.getElementById('result-type-name');
+var btnCopy         = document.getElementById('btn-copy');
+
+function calculate() {
+  var weight = parseInt(weightInput.value);
+  var type   = typeSelect.value;
+  if (!weight || weight <= 0 || !type) {
+    resultBox.classList.remove('visible');
+    return;
+  }
+
+  var result = calcPostage(weight, type);
+  if (result.error) {
+    resultBase.textContent = result.error;
+    resultTotal.textContent = '--';
+    resultSokutatsu.textContent = '--';
+    sokutatsuWrap.style.display = 'none';
+    resultTypeName.textContent = '';
+    resultBox.classList.add('visible');
+    return;
+  }
+
+  var base = result.price;
+  var isSokutatsu = sokutatsuToggle.checked;
+  var surcharge = 0;
+  if (isSokutatsu) {
+    surcharge = weight <= 250 ? SOKUTATSU_SURCHARGE.under250g : SOKUTATSU_SURCHARGE.over250g;
+  }
+  var total = base + surcharge;
+
+  resultBase.textContent = '\\u00A5' + base.toLocaleString();
+  if (isSokutatsu) {
+    sokutatsuWrap.style.display = 'block';
+    resultSokutatsu.textContent = '+\\u00A5' + surcharge.toLocaleString();
+  } else {
+    sokutatsuWrap.style.display = 'none';
+  }
+  resultTotal.textContent = '\\u00A5' + total.toLocaleString();
+  resultTypeName.textContent = result.typeNameEN || result.typeName || '';
+  resultBox.classList.add('visible');
+
+  if (typeof gtag !== 'undefined')
+    gtag('event', 'tool_used', { tool_name: 'postage_calculator', mail_type: type, weight: weight, language: 'en' });
+}
+
+weightInput.addEventListener('input', calculate);
+typeSelect.addEventListener('change', calculate);
+sokutatsuToggle.addEventListener('change', calculate);
+
+btnCopy.addEventListener('click', function() {
+  var base = resultBase.textContent;
+  var total = resultTotal.textContent;
+  var typeName = resultTypeName.textContent;
+  var isSokutatsu = sokutatsuToggle.checked;
+  var text = typeName + '\\nBase Rate: ' + base;
+  if (isSokutatsu) text += '\\nExpress Surcharge: ' + resultSokutatsu.textContent;
+  text += '\\nTotal: ' + total;
+  navigator.clipboard.writeText(text).then(function() {
+    btnCopy.textContent = 'Copied \\u2713';
+    setTimeout(function() { btnCopy.textContent = 'Copy Result'; }, 2000);
+  });
+});
+</script>
+
+${AD_LAZY_SCRIPT}
+</body>
+</html>`;
+}
+
+// ===== MAIN =====
+const distDir = path.join(__dirname, '..', 'dist');
+
+const jpDir = path.join(distDir, 'tax-finance', 'postage-calculator');
+fs.mkdirSync(jpDir, { recursive: true });
+fs.writeFileSync(path.join(jpDir, 'index.html'), generateJP(), 'utf8');
+console.log('  JP: /tax-finance/postage-calculator/');
+
+const enDir = path.join(distDir, 'en', 'tax-finance', 'postage-calculator');
+fs.mkdirSync(enDir, { recursive: true });
+fs.writeFileSync(path.join(enDir, 'index.html'), generateEN(), 'utf8');
+console.log('  EN: /en/tax-finance/postage-calculator/');
+
+console.log('Done! Created 2 pages.');

@@ -3,6 +3,19 @@
   "_lastUpdated": "2026-04-04",
   "tools": [
     {
+      "id": "postage-calculator",
+      "nameJP": "郵便料金計算",
+      "nameEN": "Postage Calculator",
+      "descJP": "定形・定形外・レターパックの送料を計算",
+      "descEN": "Japan Post mailing cost calculator",
+      "icon": "📮",
+      "urlJP": "/tax-finance/postage-calculator/",
+      "urlEN": "/en/tax-finance/postage-calculator/",
+      "category": "tax-finance",
+      "addedDate": "2026-04-04",
+      "isNew": true
+    },
+    {
       "id": "shichigosan",
       "nameJP": "七五三計算",
       "nameEN": "Shichi-Go-San Calculator",
@@ -78,7 +91,7 @@
       "urlEN": "/en/date-calendar/days-calculator/",
       "category": "date-calendar",
       "addedDate": "2026-04-01",
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "area-converter",
