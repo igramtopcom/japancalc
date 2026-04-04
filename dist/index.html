@@ -280,6 +280,92 @@
     0%   { background-position: 200% 0; }
     100% { background-position: -200% 0; }
   }
+  .tier-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  .card-hero {
+    grid-column: span 2;
+    min-height: 140px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(135deg, rgba(11,110,95,0.07), rgba(26,58,92,0.03));
+    border: 1px solid rgba(11,110,95,0.22);
+    position: relative;
+  }
+  .card-hero::after {
+    content: '\2192';
+    position: absolute;
+    bottom: 1rem; right: 1rem;
+    color: var(--color-accent);
+    opacity: 0.5;
+    font-size: 1.2rem;
+  }
+  .card-hero .tool-card-name { font-size: 1.1rem; font-weight: 700; }
+  .card-hero .tool-card-desc {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: 0.4rem;
+    line-height: 1.45;
+  }
+  .card-stat {
+    font-size: 0.68rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  .tool-card-recent { border-style: dashed; opacity: 0.9; }
+  .tool-card-recent:hover { opacity: 1; border-color: var(--color-accent); }
+  .btn-link-muted {
+    background: none; border: none; cursor: pointer;
+    font-size: 0.72rem; color: var(--color-text-muted);
+    padding: 0.2rem 0.4rem; border-radius: var(--radius);
+  }
+  .btn-link-muted:hover { color: var(--color-primary); }
+  .section-sub {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+    margin-left: 0.5rem;
+  }
+  .search-suggestions-box { padding: 0.75rem 1rem; }
+  .suggestion-label { font-size: 0.72rem; color: var(--color-text-muted); margin-bottom: 0.4rem; }
+  .suggestion-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .sugg-chip {
+    padding: 0.25rem 0.65rem;
+    border: 1px solid var(--color-border);
+    border-radius: 99px;
+    font-size: 0.78rem;
+    background: white;
+    cursor: pointer;
+    color: var(--color-text);
+    transition: all 0.12s;
+  }
+  .sugg-chip:hover { background: var(--color-accent); color: white; border-color: var(--color-accent); }
+  .seasonal-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.85rem;
+    background: rgba(11,110,95,0.08);
+    border: 1px solid rgba(11,110,95,0.25);
+    border-radius: 99px;
+    font-size: 0.82rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .seasonal-chip:hover { background: rgba(11,110,95,0.15); }
+  @media (max-width: 768px) {
+    .tier-grid { grid-template-columns: repeat(2, 1fr); }
+    .card-hero { grid-column: span 2; min-height: auto; }
+  }
+  @media (max-width: 480px) {
+    .tier-grid { grid-template-columns: 1fr; }
+    .card-hero { grid-column: span 1; }
+  }
   </style>
 <!-- TODO: Remove this block when AdSense is approved — revert when ads go live -->
 <style>
@@ -397,8 +483,20 @@
              role="combobox"
              aria-expanded="false"
              aria-controls="search-results"
+             data-ph-jp='["元号を変換する...","手取りを計算する...","厄年を確認する...","消費税を計算する...","BMIを計算する..."]'
              aria-autocomplete="list">
       <div id="search-results" class="search-dropdown" role="listbox" aria-label="検索結果" style="display:none;"></div>
+      <div id="search-suggestions" class="search-dropdown search-suggestions-box" style="display:none;">
+        <p class="suggestion-label">よく検索される</p>
+        <div class="suggestion-chips">
+          <button class="sugg-chip" data-query="令和">令和変換</button>
+          <button class="sugg-chip" data-query="消費税">消費税</button>
+          <button class="sugg-chip" data-query="手取り">手取り</button>
+          <button class="sugg-chip" data-query="厄年">厄年</button>
+          <button class="sugg-chip" data-query="BMI">BMI</button>
+          <button class="sugg-chip" data-query="ふるさと">ふるさと納税</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -421,6 +519,71 @@
       <div class="tool-card tool-card-placeholder"></div>
       <div class="tool-card tool-card-placeholder"></div>
       <div class="tool-card tool-card-placeholder"></div>
+    </div>
+  </section>
+
+  <!-- Recently Used Tools — hidden by default, rendered by JS -->
+  <section class="tools-category" id="recent-section" style="display:none;">
+    <div class="category-header">
+      <div style="display:flex;align-items:center;gap:0.5rem;">
+        <span>🕐</span>
+        <h2 style="margin:0;font-size:1.1rem;">最近使ったツール</h2>
+      </div>
+      <button id="btn-clear-recent" class="btn-link-muted">履歴をクリア</button>
+    </div>
+    <div class="cards-grid" id="recent-grid"></div>
+  </section>
+
+  <!-- Popular Tools -->
+  <section class="tools-category">
+    <div class="category-header">
+      <h2>⭐ よく使われるツール</h2>
+    </div>
+    <div class="tier-grid">
+      <a href="/tax-finance/consumption-tax/" class="tool-card card-hero">
+        <div>
+          <div class="tool-card-icon">🧾</div>
+          <div class="tool-card-name">消費税計算</div>
+          <div class="tool-card-jp">Consumption Tax Calculator</div>
+          <div class="tool-card-desc">
+            10%・8%の税込・税抜価格を瞬時に計算。
+            レジ前の確認から請求書作成まで対応。
+          </div>
+        </div>
+        <div class="card-stat">月間 41,000+ 検索</div>
+      </a>
+      <a href="/date-calendar/era-converter/" class="tool-card card-hero">
+        <div>
+          <div class="tool-card-icon">📅</div>
+          <div class="tool-card-name">和暦・西暦変換</div>
+          <div class="tool-card-jp">Era Date Converter</div>
+          <div class="tool-card-desc">
+            令和・平成・昭和などの元号を西暦に瞬時に変換。
+            公式書類・役所の手続きに。
+          </div>
+        </div>
+        <div class="card-stat">月間 22,000+ 検索</div>
+      </a>
+      <a href="/tax-finance/salary-calculator/" class="tool-card">
+        <div class="tool-card-icon">💴</div>
+        <div class="tool-card-name">手取り計算</div>
+        <div class="tool-card-jp">Salary Calculator</div>
+      </a>
+      <a href="/date-calendar/yakudoshi/" class="tool-card">
+        <div class="tool-card-icon">⛩️</div>
+        <div class="tool-card-name">厄年計算</div>
+        <div class="tool-card-jp">Yakudoshi Calculator</div>
+      </a>
+      <a href="/tax-finance/furusato-nozei/" class="tool-card">
+        <div class="tool-card-icon">🏡</div>
+        <div class="tool-card-name">ふるさと納税計算</div>
+        <div class="tool-card-jp">Hometown Tax Deduction</div>
+      </a>
+      <a href="/date-calendar/days-calculator/" class="tool-card">
+        <div class="tool-card-icon">📆</div>
+        <div class="tool-card-name">日数・何日後計算</div>
+        <div class="tool-card-jp">Days Calculator</div>
+      </a>
     </div>
   </section>
 
@@ -581,16 +744,17 @@
   <!-- Popular Lookups -->
   <section class="popular-lookups">
     <h2>よく検索されるキーワード</h2>
+    <div id="seasonal-banner" style="display:none; margin-bottom:0.75rem;"></div>
     <div class="lookup-grid">
-      <a href="/date-calendar/era-converter/reiwa-8/" class="lookup-item">令和8年 &#x2192; 2026</a>
-      <a href="/date-calendar/era-converter/reiwa-7/" class="lookup-item">令和7年 &#x2192; 2025</a>
-      <a href="/date-calendar/era-converter/reiwa-6/" class="lookup-item">令和6年 &#x2192; 2024</a>
-      <a href="/date-calendar/era-converter/reiwa-5/" class="lookup-item">令和5年 &#x2192; 2023</a>
-      <a href="/date-calendar/era-converter/reiwa-4/" class="lookup-item">令和4年 &#x2192; 2022</a>
-      <a href="/date-calendar/era-converter/reiwa-3/" class="lookup-item">令和3年 &#x2192; 2021</a>
-      <a href="/date-calendar/era-converter/showa/"   class="lookup-item">昭和 &#x2192; 西暦変換</a>
-      <a href="/date-calendar/era-converter/heisei/"  class="lookup-item">平成 &#x2192; 西暦変換</a>
-      <a href="/tax-finance/consumption-tax/"          class="lookup-item">消費税 10% 計算</a>
+      <a href="/date-calendar/era-converter/reiwa-8/"   class="lookup-item">令和8年 → 2026 🔥</a>
+      <a href="/date-calendar/era-converter/reiwa-7/"   class="lookup-item">令和7年 → 2025</a>
+      <a href="/date-calendar/era-converter/reiwa-6/"   class="lookup-item">令和6年 → 2024</a>
+      <a href="/date-calendar/era-converter/showa/"     class="lookup-item">昭和 → 西暦変換</a>
+      <a href="/date-calendar/era-converter/heisei/"    class="lookup-item">平成 → 西暦変換</a>
+      <a href="/tax-finance/consumption-tax/"            class="lookup-item">消費税 10% 計算</a>
+      <a href="/tax-finance/furusato-nozei/"             class="lookup-item">ふるさと納税 上限額</a>
+      <a href="/date-calendar/yakudoshi/"                class="lookup-item">2026年 厄年</a>
+      <a href="/tax-finance/salary-calculator/5000000/"  class="lookup-item">年収500万 手取り</a>
     </div>
   </section>
 
@@ -847,6 +1011,105 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('[data-lazy-ad]').forEach(function(z) { observer.observe(z); });
   }
 });
+</script>
+
+<script>
+// Placeholder rotation
+(function() {
+  var input = document.getElementById('tool-search-input');
+  if (!input) return;
+  var phrases = JSON.parse(input.getAttribute('data-ph-jp') || '[]');
+  if (!phrases.length) return;
+  var i = 0;
+  setInterval(function() {
+    if (document.activeElement !== input && !input.value) {
+      i = (i + 1) % phrases.length;
+      input.placeholder = phrases[i];
+    }
+  }, 3000);
+})();
+</script>
+
+<script>
+// Suggestion chips
+(function() {
+  var searchInput = document.getElementById('tool-search-input');
+  var suggestions = document.getElementById('search-suggestions');
+  var searchResults = document.getElementById('search-results');
+  if (!searchInput || !suggestions) return;
+
+  searchInput.addEventListener('focus', function() {
+    if (!searchInput.value) {
+      suggestions.style.display = 'block';
+      if (searchResults) searchResults.style.display = 'none';
+    }
+  });
+  searchInput.addEventListener('input', function() {
+    suggestions.style.display = searchInput.value ? 'none' : 'block';
+  });
+  document.querySelectorAll('.sugg-chip').forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      searchInput.value = chip.dataset.query;
+      suggestions.style.display = 'none';
+      searchInput.dispatchEvent(new Event('input'));
+      searchInput.focus();
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!searchInput.contains(e.target) && !suggestions.contains(e.target))
+      suggestions.style.display = 'none';
+  });
+})();
+</script>
+
+<script>
+// Seasonal banner
+(function() {
+  var month = new Date().getMonth() + 1;
+  var banner = document.getElementById('seasonal-banner');
+  if (!banner) return;
+  var data = {
+    2:  { text: '\uD83D\uDCCB 確定申告期間（2/16〜3/15）→ 源泉徴収計算', url: '/tax-finance/withholding-tax/' },
+    3:  { text: '\uD83D\uDCCB 確定申告期間（〜3/15）→ 源泉徴収計算', url: '/tax-finance/withholding-tax/' },
+    9:  { text: '\uD83C\uDF8E 七五三シーズン → お子様の七五三の年を確認', url: '/date-calendar/shichigosan/' },
+    10: { text: '\uD83C\uDFE1 ふるさと納税 年末締切まであと3ヶ月', url: '/tax-finance/furusato-nozei/' },
+    11: { text: '\uD83C\uDF8E 七五三は11月15日 → 七五三計算ツール', url: '/date-calendar/shichigosan/' },
+    12: { text: '\uD83C\uDFE1 ふるさと納税 今年の締切は12月31日！急いで！', url: '/tax-finance/furusato-nozei/' }
+  };
+  var item = data[month];
+  if (!item) return;
+  banner.innerHTML = '<a href="' + item.url + '" class="seasonal-chip">' + item.text + ' \u2192</a>';
+  banner.style.display = 'block';
+})();
+</script>
+
+<script>
+// Recently Used
+(function() {
+  var key = 'recentJP';
+  var section = document.getElementById('recent-section');
+  var grid = document.getElementById('recent-grid');
+  var clearBtn = document.getElementById('btn-clear-recent');
+  if (!section || !grid) return;
+
+  function render() {
+    var arr = [];
+    try { arr = JSON.parse(localStorage.getItem(key) || '[]'); } catch(e){}
+    if (arr.length < 2) { section.style.display = 'none'; return; }
+    grid.innerHTML = arr.slice(0,4).map(function(t) {
+      return '<a href="' + t.url + '" class="tool-card tool-card-recent">' +
+        '<div class="tool-card-icon">\uD83D\uDD50</div>' +
+        '<div class="tool-card-name">' + t.name + '</div></a>';
+    }).join('');
+    section.style.display = 'block';
+  }
+
+  render();
+  if (clearBtn) clearBtn.addEventListener('click', function() {
+    localStorage.removeItem(key);
+    section.style.display = 'none';
+  });
+})();
 </script>
 
 <script>

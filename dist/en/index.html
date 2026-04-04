@@ -54,42 +54,42 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What year is Reiwa 7?",
+        "name": "How do I fill in my birth date on a Japanese government form?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Reiwa 7 is 2025 in the Western calendar. The Reiwa era began on May 1, 2019, so to convert any Reiwa year to Western year, add 2018. Use the free Japanese era date converter on JapanCalc to convert any era year instantly."
+          "text": "Japanese official forms (\u4f4f\u6c11\u7968, visa applications, medical records) often require dates in era format \u2014 for example, Reiwa 7 rather than 2025. Use the Era Date Converter to translate any Western date to its Japanese era equivalent instantly. The current era is Reiwa (\u4ee4\u548c), which began May 1, 2019."
         }
       },
       {
         "@type": "Question",
-        "name": "What is Japan's consumption tax rate?",
+        "name": "Does the price tag in Japan include consumption tax?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Japan's standard consumption tax rate is 10%. A reduced rate of 8% applies to food and non-alcoholic beverages for takeout or delivery, and certain newspaper subscriptions. Use the free consumption tax calculator on JapanCalc to add or remove tax from any price instantly."
+          "text": "Since April 2021, Japanese law requires all displayed prices to be tax-inclusive (\u7a0e\u8fbc). Japan's standard consumption tax is 10%, with a reduced 8% rate for food, non-alcoholic takeout beverages, and certain newspapers."
         }
       },
       {
         "@type": "Question",
-        "name": "What is \u6e80\u5e74\u9f62 (man-nenrei) in Japan?",
+        "name": "How much take-home pay does a foreigner earn in Japan?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "\u6e80\u5e74\u9f62 (man-nenrei) is the official Japanese age system, equivalent to the Western method. Age is 0 at birth and increases by 1 on each birthday. It is used on all Japanese official documents and forms. Use the Japanese age calculator on JapanCalc to calculate your \u6e80\u5e74\u9f62 instantly."
+          "text": "Foreign residents pay the same taxes as Japanese nationals: income tax, resident tax, and social insurance. At \u00a55,000,000 annual salary, take-home is approximately \u00a5320,000 per month \u2014 around 77% of gross."
         }
       },
       {
         "@type": "Question",
-        "name": "What zodiac sign is 2025 in Japan?",
+        "name": "Are Japanese shops closed on public holidays?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "2025 is the Year of the Snake (\u5df3\u5e74) in the Japanese zodiac. The Japanese zodiac uses a 12-year cycle with animals including Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, and Pig. Use the Japanese zodiac calculator on JapanCalc to find any year's sign."
+          "text": "Convenience stores and major shopping malls typically stay open 365 days. Government offices, post offices, and banks close on Japan's 16 national public holidays. Golden Week (late April\u2013early May) and New Year (Jan 1\u20133) are particularly disruptive."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the current Japanese era?",
+        "name": "What clothing size am I in Japan?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The current Japanese era is Reiwa (\u4ee4\u548c), which began on May 1, 2019, when Emperor Naruhito ascended to the Chrysanthemum Throne. As of 2025, Japan is in Reiwa 7 (\u4ee4\u548c7\u5e74). Use the free era date converter on JapanCalc to convert any Japanese era date to Western calendar."
+          "text": "Japan uses its own sizing system. Women\u2019s sizes run roughly 2 sizes smaller than US (US 8 \u2248 Japanese 13). Men\u2019s clothing uses numeric sizing based on measurements. Shoe sizes generally use EU/cm measurements."
         }
       }
     ]
@@ -297,6 +297,92 @@
     0%   { background-position: 200% 0; }
     100% { background-position: -200% 0; }
   }
+  .tier-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  .card-hero {
+    grid-column: span 2;
+    min-height: 140px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(135deg, rgba(11,110,95,0.07), rgba(26,58,92,0.03));
+    border: 1px solid rgba(11,110,95,0.22);
+    position: relative;
+  }
+  .card-hero::after {
+    content: '\2192';
+    position: absolute;
+    bottom: 1rem; right: 1rem;
+    color: var(--color-accent);
+    opacity: 0.5;
+    font-size: 1.2rem;
+  }
+  .card-hero .tool-card-name { font-size: 1.1rem; font-weight: 700; }
+  .card-hero .tool-card-desc {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: 0.4rem;
+    line-height: 1.45;
+  }
+  .card-stat {
+    font-size: 0.68rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  .tool-card-recent { border-style: dashed; opacity: 0.9; }
+  .tool-card-recent:hover { opacity: 1; border-color: var(--color-accent); }
+  .btn-link-muted {
+    background: none; border: none; cursor: pointer;
+    font-size: 0.72rem; color: var(--color-text-muted);
+    padding: 0.2rem 0.4rem; border-radius: var(--radius);
+  }
+  .btn-link-muted:hover { color: var(--color-primary); }
+  .section-sub {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+    margin-left: 0.5rem;
+  }
+  .search-suggestions-box { padding: 0.75rem 1rem; }
+  .suggestion-label { font-size: 0.72rem; color: var(--color-text-muted); margin-bottom: 0.4rem; }
+  .suggestion-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .sugg-chip {
+    padding: 0.25rem 0.65rem;
+    border: 1px solid var(--color-border);
+    border-radius: 99px;
+    font-size: 0.78rem;
+    background: white;
+    cursor: pointer;
+    color: var(--color-text);
+    transition: all 0.12s;
+  }
+  .sugg-chip:hover { background: var(--color-accent); color: white; border-color: var(--color-accent); }
+  .seasonal-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.85rem;
+    background: rgba(11,110,95,0.08);
+    border: 1px solid rgba(11,110,95,0.25);
+    border-radius: 99px;
+    font-size: 0.82rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .seasonal-chip:hover { background: rgba(11,110,95,0.15); }
+  @media (max-width: 768px) {
+    .tier-grid { grid-template-columns: repeat(2, 1fr); }
+    .card-hero { grid-column: span 2; min-height: auto; }
+  }
+  @media (max-width: 480px) {
+    .tier-grid { grid-template-columns: 1fr; }
+    .card-hero { grid-column: span 1; }
+  }
   </style>
 <!-- TODO: Remove this block when AdSense is approved — revert when ads go live -->
 <style>
@@ -380,9 +466,10 @@
   <div class="page-wrapper">
     <h1>Free Japanese Calculators &amp; Converters</h1>
     <p class="hero-subtitle">
-      無料日本語計算機・変換ツール &#x2014; Instantly convert era dates, calculate
-      consumption tax, find your Japanese age and zodiac sign.
-      100% free, no login required.
+      For <strong>expats</strong> filling Japanese forms &middot;
+      <strong>tourists</strong> visiting Japan &middot;
+      <strong>learners</strong> studying the language.
+      100% free, browser-based, no login.
     </p>
 
     <!-- Stats bar -->
@@ -410,6 +497,7 @@
       <label for="tool-search-input" class="sr-only">Search tools</label>
       <input type="search" id="tool-search-input" class="form-input"
              placeholder="Search tools... e.g. era, tax, age, zodiac"
+             data-ph-en='["Convert era dates...","Calculate take-home pay...","Japan public holidays...","Check BMI Japan standard...","Convert measurements..."]'
              aria-label="Search calculator tools"
              autocomplete="off"
              role="combobox"
@@ -417,6 +505,17 @@
              aria-controls="search-results"
              aria-autocomplete="list">
       <div id="search-results" class="search-dropdown" role="listbox" aria-label="Search results" style="display:none;"></div>
+      <div id="search-suggestions" class="search-dropdown search-suggestions-box" style="display:none;">
+        <p class="suggestion-label">Popular searches</p>
+        <div class="suggestion-chips">
+          <button class="sugg-chip" data-query="era">Era dates</button>
+          <button class="sugg-chip" data-query="tax">Tax calc</button>
+          <button class="sugg-chip" data-query="salary">Salary</button>
+          <button class="sugg-chip" data-query="measurement">Measurements</button>
+          <button class="sugg-chip" data-query="holiday">Holidays</button>
+          <button class="sugg-chip" data-query="bmi">BMI</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -437,6 +536,158 @@
       <div class="tool-card tool-card-placeholder"></div>
       <div class="tool-card tool-card-placeholder"></div>
       <div class="tool-card tool-card-placeholder"></div>
+    </div>
+  </section>
+
+  <!-- Recently Used -->
+  <section class="tools-category" id="recent-section" style="display:none;">
+    <div class="category-header">
+      <div style="display:flex;align-items:center;gap:0.5rem;">
+        <span>🕐</span>
+        <h2 style="margin:0;font-size:1.1rem;">Recently Used</h2>
+      </div>
+      <button id="btn-clear-recent" class="btn-link-muted">Clear history</button>
+    </div>
+    <div class="cards-grid" id="recent-grid"></div>
+  </section>
+
+  <!-- Essential for Life in Japan (Expat) -->
+  <section class="tools-category">
+    <div class="category-header">
+      <h2>🏠 Essential for Life in Japan</h2>
+      <span class="section-sub">For residents &amp; expats</span>
+    </div>
+    <div class="tier-grid">
+      <a href="/en/date-calendar/era-converter/" class="tool-card card-hero">
+        <div>
+          <div class="tool-card-icon">📅</div>
+          <div class="tool-card-name">Era Date Converter</div>
+          <div class="tool-card-jp">和暦 ↔ Western Year</div>
+          <div class="tool-card-desc">
+            Japanese government forms use era years (令和, 平成, 昭和).
+            Convert any date instantly — no more confusion on official documents,
+            leases, or medical records.
+          </div>
+        </div>
+      </a>
+      <a href="/en/language-tools/measurement-converter/" class="tool-card card-hero">
+        <div>
+          <div class="tool-card-icon">📐</div>
+          <div class="tool-card-name">Measurement Converter</div>
+          <div class="tool-card-jp">Height, Weight &amp; Clothing Sizes</div>
+          <div class="tool-card-desc">
+            Convert height (ft→cm), weight (lbs→kg) and clothing sizes for
+            Japanese medical forms, visa applications, and shopping.
+          </div>
+        </div>
+      </a>
+      <a href="/en/tax-finance/salary-calculator/" class="tool-card">
+        <div class="tool-card-icon">💴</div>
+        <div class="tool-card-name">Salary Calculator</div>
+        <div class="tool-card-jp">手取り計算 — Take-home after tax</div>
+      </a>
+      <a href="/en/tax-finance/consumption-tax/" class="tool-card">
+        <div class="tool-card-icon">🧾</div>
+        <div class="tool-card-name">Consumption Tax</div>
+        <div class="tool-card-jp">消費税 — 10% &amp; 8%</div>
+      </a>
+      <a href="/en/date-calendar/holiday-checker/" class="tool-card">
+        <div class="tool-card-icon">🏮</div>
+        <div class="tool-card-name">Holiday Checker</div>
+        <div class="tool-card-jp">祝日 — Is the office closed?</div>
+      </a>
+      <a href="/en/tax-finance/furusato-nozei/" class="tool-card">
+        <div class="tool-card-icon">🏡</div>
+        <div class="tool-card-name">Furusato Nozei</div>
+        <div class="tool-card-jp">ふるさと納税 — Tax deduction</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- For Japan Travelers -->
+  <section class="tools-category">
+    <div class="category-header">
+      <h2>✈️ For Japan Travelers</h2>
+      <span class="section-sub">Plan your trip &middot; navigate daily</span>
+    </div>
+    <div class="tier-grid">
+      <a href="/en/date-calendar/travel-budget/" class="tool-card card-hero">
+        <div>
+          <div class="tool-card-icon">✈️</div>
+          <div class="tool-card-name">Japan Travel Budget</div>
+          <div class="tool-card-jp">旅行予算計算</div>
+          <div class="tool-card-desc">
+            Estimate your daily costs in Japan — food, transport,
+            accommodation, activities. Choose budget, mid-range, or luxury
+            travel style.
+          </div>
+        </div>
+      </a>
+      <a href="/en/tax-finance/consumption-tax/" class="tool-card card-hero">
+        <div>
+          <div class="tool-card-icon">🧾</div>
+          <div class="tool-card-name">Consumption Tax Calculator</div>
+          <div class="tool-card-jp">消費税 — 10% &amp; 8%</div>
+          <div class="tool-card-desc">
+            Is the price tag tax-inclusive? Instantly add or remove Japan's
+            10% consumption tax (8% for food) from any amount.
+          </div>
+        </div>
+      </a>
+      <a href="/en/date-calendar/holiday-checker/" class="tool-card">
+        <div class="tool-card-icon">🏮</div>
+        <div class="tool-card-name">Holiday Checker</div>
+        <div class="tool-card-jp">Is this shop open today?</div>
+      </a>
+      <a href="/en/tax-finance/discount-calculator/" class="tool-card">
+        <div class="tool-card-icon">🏷️</div>
+        <div class="tool-card-name">Discount Calculator</div>
+        <div class="tool-card-jp">Sale prices in yen</div>
+      </a>
+      <a href="/en/language-tools/measurement-converter/" class="tool-card">
+        <div class="tool-card-icon">📐</div>
+        <div class="tool-card-name">Clothing Sizes</div>
+        <div class="tool-card-jp">Japanese size chart</div>
+      </a>
+      <a href="/en/date-calendar/era-converter/" class="tool-card">
+        <div class="tool-card-icon">📅</div>
+        <div class="tool-card-name">Era Date Converter</div>
+        <div class="tool-card-jp">Reiwa, Heisei, Showa</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- For Japanese Learners -->
+  <section class="tools-category">
+    <div class="category-header">
+      <h2>📚 For Japanese Learners</h2>
+      <span class="section-sub">Study tools &middot; any level</span>
+    </div>
+    <div class="cards-grid">
+      <a href="/en/language-tools/romaji-converter/" class="tool-card">
+        <div class="tool-card-icon">🔤</div>
+        <div class="tool-card-name">Romaji Converter</div>
+        <div class="tool-card-jp">ひらがな・カタカナ → Romaji</div>
+        <div class="tool-card-desc">Convert Japanese scripts to romaji for reading practice</div>
+      </a>
+      <a href="/en/language-tools/furigana-generator/" class="tool-card">
+        <div class="tool-card-icon">📖</div>
+        <div class="tool-card-name">Furigana Generator</div>
+        <div class="tool-card-jp">漢字 → よみがな</div>
+        <div class="tool-card-desc">Add furigana readings above any kanji text</div>
+      </a>
+      <a href="/en/language-tools/kanji-numbers/" class="tool-card">
+        <div class="tool-card-icon">🔢</div>
+        <div class="tool-card-name">Kanji Number Converter</div>
+        <div class="tool-card-jp">123 ↔ 一二三・漢数字</div>
+        <div class="tool-card-desc">Convert Arabic numbers to kanji and vice versa</div>
+      </a>
+      <a href="/en/language-tools/character-counter/" class="tool-card">
+        <div class="tool-card-icon">📝</div>
+        <div class="tool-card-name">Character Counter</div>
+        <div class="tool-card-jp">文字数カウンター</div>
+        <div class="tool-card-desc">Count Japanese characters, lines, and bytes</div>
+      </a>
     </div>
   </section>
 
@@ -599,16 +850,16 @@
   <!-- Popular Lookups -->
   <section class="popular-lookups">
     <h2>Popular Lookups</h2>
+    <div id="seasonal-banner" style="display:none; margin-bottom:0.75rem;"></div>
     <div class="lookup-grid">
-      <a href="/en/date-calendar/era-converter/reiwa-8/" class="lookup-item">Reiwa 8 &#x2192; 2026</a>
-      <a href="/en/date-calendar/era-converter/reiwa-7/" class="lookup-item">令和7年 &#x2192; 2025</a>
-      <a href="/en/date-calendar/era-converter/reiwa-6/" class="lookup-item">令和6年 &#x2192; 2024</a>
-      <a href="/en/date-calendar/era-converter/reiwa-5/" class="lookup-item">令和5年 &#x2192; 2023</a>
-      <a href="/en/date-calendar/era-converter/reiwa-4/" class="lookup-item">令和4年 &#x2192; 2022</a>
-      <a href="/en/date-calendar/era-converter/reiwa-3/" class="lookup-item">令和3年 &#x2192; 2021</a>
-      <a href="/en/date-calendar/era-converter/showa/"   class="lookup-item">昭和 &#x2192; 西暦変換</a>
-      <a href="/en/date-calendar/era-converter/heisei/"  class="lookup-item">平成 &#x2192; 西暦変換</a>
-      <a href="/en/tax-finance/consumption-tax/"          class="lookup-item">消費税 10% 計算</a>
+      <a href="/en/date-calendar/era-converter/reiwa-8/" class="lookup-item">Reiwa 8 = 2026 🔥</a>
+      <a href="/en/date-calendar/era-converter/reiwa-7/" class="lookup-item">Reiwa 7 = 2025</a>
+      <a href="/en/date-calendar/holiday-checker/"        class="lookup-item">Japan holidays 2026</a>
+      <a href="/en/tax-finance/consumption-tax/"          class="lookup-item">Japan 10% tax</a>
+      <a href="/en/language-tools/measurement-converter/" class="lookup-item">cm ↔ feet Japan forms</a>
+      <a href="/en/date-calendar/era-converter/showa/"    class="lookup-item">Showa to western year</a>
+      <a href="/en/tax-finance/salary-calculator/"        class="lookup-item">Japan take-home pay</a>
+      <a href="/en/date-calendar/bmi-calculator/"         class="lookup-item">BMI Japan standard</a>
     </div>
   </section>
 
@@ -616,75 +867,26 @@
   <section class="faq">
     <h2>Frequently Asked Questions</h2>
     <ul class="faq-list">
-
       <li class="faq-item">
-        <div class="faq-question">
-          What year is Reiwa 7?
-        </div>
-        <div class="faq-answer">
-          <span>
-            Reiwa 7 is 2025 in the Western calendar. The Reiwa era began on
-            May 1, 2019, so to convert any Reiwa year to Western year, add
-            2018. Use the free Japanese era date converter on JapanCalc to
-            convert any era year instantly.
-          </span>
-        </div>
+        <div class="faq-question">How do I fill in my birth date on a Japanese government form?</div>
+        <div class="faq-answer"><span>Japanese official forms (住民票, visa applications, medical records) often require dates in era format — for example, Reiwa 7 rather than 2025. Use the <a href="/en/date-calendar/era-converter/">Era Date Converter</a> to translate any Western date to its Japanese era equivalent instantly. The current era is Reiwa (令和), which began May 1, 2019.</span></div>
       </li>
-
       <li class="faq-item">
-        <div class="faq-question">
-          What is Japan's consumption tax rate?
-        </div>
-        <div class="faq-answer">
-          <span>
-            Japan's standard consumption tax rate is 10%. A reduced rate of
-            8% applies to food and non-alcoholic beverages for takeout or
-            delivery, and certain newspaper subscriptions. Use the free
-            consumption tax calculator on JapanCalc to add or remove tax
-            from any price instantly.
-          </span>
-        </div>
+        <div class="faq-question">Does the price tag in Japan include consumption tax?</div>
+        <div class="faq-answer"><span>Since April 2021, Japanese law requires all displayed prices to be tax-inclusive (税込). Japan's standard consumption tax is 10%, with a reduced 8% rate for food, non-alcoholic takeout beverages, and certain newspapers. If unsure, use the <a href="/en/tax-finance/consumption-tax/">consumption tax calculator</a> to quickly check any price.</span></div>
       </li>
-
       <li class="faq-item">
-        <div class="faq-question">
-          What is 満年齢 (man-nenrei) in Japan?
-        </div>
-        <div class="faq-answer">
-          <span>
-            満年齢 (man-nenrei) is the official Japanese age system,
-            equivalent to the Western method. Age is 0 at birth and
-            increases by 1 on each birthday. It is used on all Japanese
-            official documents and forms. Use the Japanese age calculator
-            on JapanCalc to calculate your 満年齢 instantly.
-          </span>
-        </div>
+        <div class="faq-question">How much take-home pay does a foreigner earn in Japan?</div>
+        <div class="faq-answer"><span>Foreign residents pay the same taxes as Japanese nationals: income tax, resident tax, and social insurance. At ¥5,000,000 annual salary, take-home is approximately ¥320,000 per month — around 77% of gross. Use the <a href="/en/tax-finance/salary-calculator/">salary calculator</a> to estimate take-home at any income level.</span></div>
       </li>
-
       <li class="faq-item">
-        <div class="faq-question">
-          <span id="faq-zodiac-question">What zodiac sign is 2025 in Japan?</span>
-        </div>
-        <div class="faq-answer">
-          <p id="faq-zodiac-answer"></p>
-        </div>
+        <div class="faq-question">Are Japanese shops closed on public holidays?</div>
+        <div class="faq-answer"><span>Convenience stores and major shopping malls typically stay open 365 days. Government offices, post offices, and banks close on Japan's 16 national public holidays. Golden Week (late April–early May) and New Year (Jan 1–3) are particularly disruptive. Use the <a href="/en/date-calendar/holiday-checker/">holiday checker</a> to verify any specific date.</span></div>
       </li>
-
       <li class="faq-item">
-        <div class="faq-question">
-          What is the current Japanese era?
-        </div>
-        <div class="faq-answer">
-          <span>
-            The current Japanese era is Reiwa (令和), which began on May 1,
-            2019, when Emperor Naruhito ascended to the Chrysanthemum
-            Throne. <span id="faq-era-current"></span> Use the free
-            era date converter on JapanCalc to convert any Japanese era
-            date to Western calendar.
-          </span>
-        </div>
+        <div class="faq-question">What clothing size am I in Japan?</div>
+        <div class="faq-answer"><span>Japan uses its own sizing system. Women's sizes run roughly 2 sizes smaller than US (US 8 ≈ Japanese 13). Men's clothing uses numeric sizing based on measurements. Shoe sizes generally use EU/cm measurements. Use the <a href="/en/language-tools/measurement-converter/">measurement converter</a> to find your Japanese size instantly.</span></div>
       </li>
-
     </ul>
   </section>
 
@@ -711,36 +913,99 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
 </script>
 
 <script>
-// Fix 2: Dynamic zodiac FAQ answer
-(function updateZodiacFAQ() {
-  var ZODIAC = [
-    { en: 'Monkey',  kanji: '申' }, { en: 'Rooster', kanji: '酉' },
-    { en: 'Dog',     kanji: '戌' }, { en: 'Pig',     kanji: '亥' },
-    { en: 'Rat',     kanji: '子' }, { en: 'Ox',      kanji: '丑' },
-    { en: 'Tiger',   kanji: '寅' }, { en: 'Rabbit',  kanji: '卯' },
-    { en: 'Dragon',  kanji: '辰' }, { en: 'Snake',   kanji: '巳' },
-    { en: 'Horse',   kanji: '午' }, { en: 'Goat',    kanji: '未' }
-  ];
-  var el = document.getElementById('faq-zodiac-answer');
-  if (!el) return;
-  var year   = new Date().getFullYear();
-  var qEl = document.getElementById('faq-zodiac-question');
-  if (qEl) qEl.textContent = 'What zodiac sign is ' + year + ' in Japan?';
-  var animal = ZODIAC[year % 12];
-  el.textContent =
-    year + ' is the Year of the ' + animal.en + ' (' + animal.kanji + '\u5E74) in the Japanese zodiac. ' +
-    'The Japanese zodiac uses a 12-year cycle with animals including Rat, Ox, Tiger, Rabbit, ' +
-    'Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, and Pig. ' +
-    'Use the Japanese zodiac calculator on JapanCalc to find any year\'s sign.';
+// Placeholder rotation
+(function() {
+  var input = document.getElementById('tool-search-input');
+  if (!input) return;
+  var phrases = JSON.parse(input.getAttribute('data-ph-en') || '[]');
+  if (!phrases.length) return;
+  var i = 0;
+  setInterval(function() {
+    if (document.activeElement !== input && !input.value) {
+      i = (i + 1) % phrases.length;
+      input.placeholder = phrases[i];
+    }
+  }, 3000);
 })();
+</script>
 
-// Fix 3: Dynamic current era FAQ answer
-(function updateEraFAQ() {
-  var el = document.getElementById('faq-era-current');
-  if (!el) return;
-  var year    = new Date().getFullYear();
-  var reiwaYr = year - 2018;
-  el.textContent = 'As of ' + year + ', Japan is in Reiwa ' + reiwaYr + ' (\u4EE4\u548C' + reiwaYr + '\u5E74).';
+<script>
+// Suggestion chips
+(function() {
+  var searchInput = document.getElementById('tool-search-input');
+  var suggestions = document.getElementById('search-suggestions');
+  var searchResults = document.getElementById('search-results');
+  if (!searchInput || !suggestions) return;
+
+  searchInput.addEventListener('focus', function() {
+    if (!searchInput.value) {
+      suggestions.style.display = 'block';
+      if (searchResults) searchResults.style.display = 'none';
+    }
+  });
+  searchInput.addEventListener('input', function() {
+    suggestions.style.display = searchInput.value ? 'none' : 'block';
+  });
+  document.querySelectorAll('.sugg-chip').forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      searchInput.value = chip.dataset.query;
+      suggestions.style.display = 'none';
+      searchInput.dispatchEvent(new Event('input'));
+      searchInput.focus();
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!searchInput.contains(e.target) && !suggestions.contains(e.target))
+      suggestions.style.display = 'none';
+  });
+})();
+</script>
+
+<script>
+// Seasonal banner
+(function() {
+  var month = new Date().getMonth() + 1;
+  var banner = document.getElementById('seasonal-banner');
+  if (!banner) return;
+  var data = {
+    3:  { text: '🌸 Cherry blossom season — check Japan public holidays', url: '/en/date-calendar/holiday-checker/' },
+    7:  { text: '🎆 Summer travel season — Japan trip budget calculator', url: '/en/date-calendar/travel-budget/' },
+    8:  { text: '🎆 Summer holidays — estimate your Japan travel budget', url: '/en/date-calendar/travel-budget/' },
+    12: { text: '🎌 New Year in Japan — check holiday dates', url: '/en/date-calendar/holiday-checker/' }
+  };
+  var item = data[month];
+  if (!item) return;
+  banner.innerHTML = '<a href="' + item.url + '" class="seasonal-chip">' + item.text + ' →</a>';
+  banner.style.display = 'block';
+})();
+</script>
+
+<script>
+// Recently Used
+(function() {
+  var key = 'recentEN';
+  var section = document.getElementById('recent-section');
+  var grid = document.getElementById('recent-grid');
+  var clearBtn = document.getElementById('btn-clear-recent');
+  if (!section || !grid) return;
+
+  function render() {
+    var arr = [];
+    try { arr = JSON.parse(localStorage.getItem(key) || '[]'); } catch(e){}
+    if (arr.length < 2) { section.style.display = 'none'; return; }
+    grid.innerHTML = arr.slice(0,4).map(function(t) {
+      return '<a href="' + t.url + '" class="tool-card tool-card-recent">' +
+        '<div class="tool-card-icon">🕐</div>' +
+        '<div class="tool-card-name">' + t.name + '</div></a>';
+    }).join('');
+    section.style.display = 'block';
+  }
+
+  render();
+  if (clearBtn) clearBtn.addEventListener('click', function() {
+    localStorage.removeItem(key);
+    section.style.display = 'none';
+  });
 })();
 </script>
 
