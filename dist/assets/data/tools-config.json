@@ -3,6 +3,19 @@
   "_lastUpdated": "2026-04-04",
   "tools": [
     {
+      "id": "warikan-calculator",
+      "nameJP": "割り勘計算",
+      "nameEN": "Bill Splitting Calculator",
+      "descJP": "飲み会・食事の割り勘を簡単計算",
+      "descEN": "Split bills Japanese warikan style",
+      "icon": "🍻",
+      "urlJP": "/tax-finance/warikan-calculator/",
+      "urlEN": "/en/tax-finance/warikan-calculator/",
+      "category": "tax-finance",
+      "addedDate": "2026-04-04",
+      "isNew": true
+    },
+    {
       "id": "business-days",
       "nameJP": "営業日計算",
       "nameEN": "Business Days Calculator",
@@ -52,7 +65,7 @@
       "urlEN": "/en/date-calendar/bmi-calculator/",
       "category": "date-calendar",
       "addedDate": "2026-04-04",
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "password-generator",

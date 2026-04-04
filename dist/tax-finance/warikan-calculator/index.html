@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>割り勘計算ツール: 飲み会・食事の割り勘を簡単計算 | JapanCalc</title>
+  <meta name="description" content="合計金額と人数を入力するだけで割り勘金額を計算。幹事モードでは各自の支払い額から精算方法も自動計算。LINE送信ボタン付き。無料。">
+  <link rel="canonical" href="https://japancalc.com/tax-finance/warikan-calculator/">
+  <link rel="alternate" hreflang="ja"        href="https://japancalc.com/tax-finance/warikan-calculator/">
+  <link rel="alternate" hreflang="en"        href="https://japancalc.com/en/tax-finance/warikan-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://japancalc.com/tax-finance/warikan-calculator/">
+  <meta property="og:title"       content="割り勘計算ツール | JapanCalc">
+  <meta property="og:description" content="合計金額と人数を入力するだけで割り勘金額を計算。LINE送信ボタン付き。">
+  <meta property="og:url"         content="https://japancalc.com/tax-finance/warikan-calculator/">
+  <meta property="og:type"        content="website">
+  <meta property="og:image"       content="https://japancalc.com/assets/og/default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9TH5C7P9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P9TH5C7P9H');
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "割り勘計算ツール | JapanCalc",
+    "url": "https://japancalc.com/tax-finance/warikan-calculator/",
+    "description": "合計金額と人数を入力するだけで割り勘金額を計算。幹事モードでは各自の支払い額から精算方法も自動計算。",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "inLanguage": ["ja", "en"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "publisher": { "@type": "Organization", "name": "JapanCalc", "url": "https://japancalc.com" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "\u30DB\u30FC\u30E0", "item": "https://japancalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "\u7A0E\u91D1\u30FB\u8CA1\u52D9", "item": "https://japancalc.com/tax-finance/" },
+      { "@type": "ListItem", "position": 3, "name": "\u5272\u308A\u52D8\u5B9A\u8A08\u7B97", "item": "https://japancalc.com/tax-finance/warikan-calculator/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "割り勘の計算方法は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "合計金額を人数で割るだけです。このツールでは端数の切り上げ・切り捨て・四捨五入を選べます。幹事モードでは各自の支払い済み金額から精算額を自動計算します。" }
+      },
+      {
+        "@type": "Question",
+        "name": "端数（1円単位）はどう処理するのが一般的？",
+        "acceptedAnswer": { "@type": "Answer", "text": "日本では一般的に切り上げ（多く集めて幹事が端数を返す）が主流です。切り捨ての場合は幹事が不足分を負担します。このツールではどちらも選択できます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "幹事が立て替えた場合の精算方法は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "幹事モードで各自の支払い額を入力すると、誰が誰にいくら支払えばよいかの精算表を自動生成します。複数人の立て替えにも対応しています。" }
+      },
+      {
+        "@type": "Question",
+        "name": "割り勘アプリより良い点は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "インストール不要でブラウザからすぐ使えます。ログインも不要で、計算結果はLINEでそのまま共有可能。個人情報の入力も一切ありません。" }
+      },
+      {
+        "@type": "Question",
+        "name": "LINEで割り勘結果を送る方法は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "計算結果の下に表示される「LINEで共有」ボタンをタップするだけ。金額・人数・一人あたりの金額がフォーマット済みのメッセージとしてLINEに送信できます。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <style>
+  .form-group { margin-bottom: 1rem; }
+  .form-label { display: block; font-weight: 600; margin-bottom: 0.3rem; font-size: 0.9rem; }
+  .form-input { width: 100%; padding: 0.6rem 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius); font-size: 1rem; background: white; }
+  .form-select { width: 100%; padding: 0.6rem 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius); font-size: 1rem; background: white; cursor: pointer; }
+  .mode-tabs { display: flex; gap: 0; margin-bottom: 1.25rem; border: 2px solid var(--color-accent); border-radius: var(--radius); overflow: hidden; }
+  .mode-tab { flex: 1; padding: 0.65rem 0.5rem; text-align: center; cursor: pointer; font-weight: 600; font-size: 0.88rem; border: none; background: white; color: var(--color-text); transition: background 0.15s, color 0.15s; }
+  .mode-tab.active { background: var(--color-accent); color: white; }
+  .mode-panel { display: none; }
+  .mode-panel.active { display: block; }
+  .input-suffix-wrap { position: relative; display: inline-flex; align-items: center; width: 100%; }
+  .input-with-suffix { padding-right: 2.5rem; }
+  .input-suffix { position: absolute; right: 0.75rem; color: var(--color-text-muted); font-size: 0.85rem; pointer-events: none; }
+  .result-box { background: var(--color-bg-alt); border: 2px solid var(--color-accent); border-radius: var(--radius); padding: 1.25rem; margin-top: 1rem; display: none; }
+  .result-box.visible { display: block; }
+  .result-main { text-align: center; margin-bottom: 0.75rem; }
+  .result-main .result-label { font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 0.25rem; }
+  .result-main .result-value { font-size: 1.8rem; font-weight: 800; color: var(--color-accent); }
+  .result-detail { font-size: 0.85rem; color: var(--color-text-muted); text-align: center; margin: 0.5rem 0; }
+  .btn-copy-result { padding: 0.5rem 1rem; border: none; border-radius: var(--radius); background: var(--color-accent); color: white; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: opacity 0.15s; display: inline-block; margin: 0.5rem 0.25rem 0; }
+  .btn-copy-result:hover { opacity: 0.85; }
+  .btn-calc { width: 100%; padding: 0.75rem; border: none; border-radius: var(--radius); background: var(--color-accent); color: white; font-size: 1rem; font-weight: 700; cursor: pointer; transition: opacity 0.15s; }
+  .btn-calc:hover { opacity: 0.85; }
+  .btn-line { padding: 0.5rem 1rem; border: none; border-radius: var(--radius); background: #06C755; color: white; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: opacity 0.15s; display: inline-block; margin: 0.5rem 0.25rem 0; text-decoration: none; }
+  .btn-line:hover { opacity: 0.85; }
+  .action-btns { text-align: center; margin-top: 0.5rem; }
+  .person-row { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; }
+  .person-row input { flex: 1; }
+  .person-row .person-name { flex: 1.2; }
+  .person-row .person-paid { flex: 0.8; }
+  .btn-remove-person { background: none; border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.4rem 0.6rem; cursor: pointer; color: var(--color-text-muted); font-size: 0.85rem; }
+  .btn-remove-person:hover { border-color: #e74c3c; color: #e74c3c; }
+  .btn-add-person { padding: 0.5rem 1rem; border: 1px dashed var(--color-accent); border-radius: var(--radius); background: white; color: var(--color-accent); cursor: pointer; font-size: 0.85rem; font-weight: 600; margin: 0.5rem 0 1rem; }
+  .btn-add-person:hover { background: rgba(11,110,95,0.04); }
+  .settlement-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 0.75rem 0; }
+  .settlement-table th, .settlement-table td { padding: 0.5rem 0.6rem; border: 1px solid var(--color-border); text-align: center; }
+  .settlement-table th { background: var(--color-bg-alt); font-weight: 600; font-size: 0.82rem; }
+  .settlement-arrow { color: var(--color-accent); font-weight: 700; }
+  .faq-item { border: 1px solid var(--color-border); border-radius: var(--radius); margin-bottom: 0.5rem; }
+  .faq-item summary { padding: 0.75rem 1rem; cursor: pointer; font-weight: 600; font-size: 0.9rem; }
+  .faq-item p { padding: 0 1rem 0.75rem; font-size: 0.85rem; line-height: 1.65; color: var(--color-text-muted); }</style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex; flex-direction: column; position: absolute;
+    top: 56px; left: 0; right: 0; background: var(--color-primary);
+    padding: 1rem; gap: 0.5rem; z-index: 100;
+  }
+</style>
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="JapanCalc ホーム"><img src="/assets/icons/favicon.svg" alt="JapanCalc" width="28" height="28"></a>
+    <div class="nav-right">
+      <nav class="lang-switcher" aria-label="言語切替"><span aria-current="true">JP</span><span aria-hidden="true">&middot;</span><a href="/en/tax-finance/warikan-calculator/" aria-label="Switch to English">English</a></nav>
+      <button class="nav-toggle" aria-expanded="false" aria-label="メニューを開く"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+  <div class="nav-links"><a href="/">ホーム</a><a href="/date-calendar/">日付・カレンダー</a><a href="/tax-finance/">税金・財務</a><a href="/language-tools/">言語・変換</a></div>
+</nav>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol><li><a href="/">ホーム</a></li><li aria-hidden="true">&rsaquo;</li><li><a href="/tax-finance/">税金・財務</a></li><li aria-hidden="true">&rsaquo;</li><li>割り勘計算</li></ol>
+</nav>
+
+<main id="main-content">
+  <div class="container tool-container">
+    <h1>割り勘計算ツール</h1>
+    <p class="tool-intro">合計金額と人数を入力するだけで一人あたりの金額を計算。幹事モードでは誰が誰にいくら払えばよいかも自動計算。</p>
+
+    <div class="ad-zone" style="min-height:100px; margin:1rem 0;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="SLOT_ATF_WARIKAN" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="mode-tabs" role="tablist">
+      <button class="mode-tab active" role="tab" data-mode="simple" aria-selected="true">シンプル割り勘</button>
+      <button class="mode-tab" role="tab" data-mode="advanced" aria-selected="false">幹事モード</button>
+    </div>
+
+    <!-- Simple Mode -->
+    <div id="panel-simple" class="mode-panel active">
+      <div class="form-group">
+        <label class="form-label" for="total-amount">合計金額</label>
+        <div class="input-suffix-wrap">
+          <input class="form-input input-with-suffix" type="number" id="total-amount" min="1" placeholder="10000">
+          <span class="input-suffix">円</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="num-people">人数</label>
+        <div class="input-suffix-wrap">
+          <input class="form-input input-with-suffix" type="number" id="num-people" min="2" max="100" placeholder="3">
+          <span class="input-suffix">人</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="rounding">端数処理</label>
+        <select class="form-select" id="rounding">
+          <option value="ceil">切り上げ（多めに集める）</option>
+          <option value="floor">切り捨て（少なく集める）</option>
+          <option value="round">四捨五入</option>
+        </select>
+      </div>
+      <button class="btn-calc" id="btn-calc-simple">計算する</button>
+    </div>
+
+    <!-- Advanced Mode -->
+    <div id="panel-advanced" class="mode-panel">
+      <p style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:0.75rem;">各自の名前と支払い済み金額を入力してください。</p>
+      <div id="person-list">
+        <div class="person-row">
+          <input class="form-input person-name" type="text" placeholder="名前" value="Aさん">
+          <input class="form-input person-paid" type="number" min="0" placeholder="支払額">
+          <button class="btn-remove-person" title="削除">&times;</button>
+        </div>
+        <div class="person-row">
+          <input class="form-input person-name" type="text" placeholder="名前" value="Bさん">
+          <input class="form-input person-paid" type="number" min="0" placeholder="支払額">
+          <button class="btn-remove-person" title="削除">&times;</button>
+        </div>
+        <div class="person-row">
+          <input class="form-input person-name" type="text" placeholder="名前" value="Cさん">
+          <input class="form-input person-paid" type="number" min="0" placeholder="支払額">
+          <button class="btn-remove-person" title="削除">&times;</button>
+        </div>
+      </div>
+      <button class="btn-add-person" id="btn-add-person">+ メンバーを追加</button>
+      <button class="btn-calc" id="btn-calc-advanced">精算を計算する</button>
+    </div>
+
+    <!-- Result -->
+    <div id="result-box" class="result-box">
+      <div class="result-main">
+        <div class="result-label" id="result-label">一人あたり</div>
+        <div class="result-value" id="result-value">--</div>
+      </div>
+      <div class="result-detail" id="result-detail"></div>
+      <div id="settlement-area"></div>
+      <div class="action-btns" id="action-btns">
+        <button class="btn-copy-result" id="btn-copy">結果をコピー</button>
+        <a class="btn-line" id="btn-line" href="#" target="_blank" rel="noopener">LINEで共有</a>
+      </div>
+    </div>
+
+    <div class="ad-zone ad-btf" data-lazy-ad="true" style="min-height:250px; margin:2rem 0;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="SLOT_BTF_WARIKAN" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <section class="faq-section" aria-label="よくある質問">
+      <h2>よくある質問（FAQ）</h2>
+      <details class="faq-item"><summary>割り勘の計算方法は？</summary><p>合計金額を人数で割るだけです。このツールでは端数の切り上げ・切り捨て・四捨五入を選べます。幹事モードでは各自の支払い済み金額から精算額を自動計算します。</p></details>
+      <details class="faq-item"><summary>端数（1円単位）はどう処理するのが一般的？</summary><p>日本では一般的に切り上げ（多めに集めて幹事が端数を返す）が主流です。切り捨ての場合は幹事が不足分を負担します。このツールではどちらも選択できます。</p></details>
+      <details class="faq-item"><summary>幹事が立て替えた場合の精算方法は？</summary><p>幹事モードで各自の支払い額を入力すると、誰が誰にいくら支払えばよいかの精算表を自動生成します。複数人の立て替えにも対応しています。</p></details>
+      <details class="faq-item"><summary>割り勘アプリより良い点は？</summary><p>インストール不要でブラウザからすぐ使えます。ログインも不要で、計算結果はLINEでそのまま共有可能。個人情報の入力も一切ありません。</p></details>
+      <details class="faq-item"><summary>LINEで割り勘結果を送る方法は？</summary><p>計算結果の下に表示される「LINEで共有」ボタンをタップするだけ。金額・人数・一人あたりの金額がフォーマット済みのメッセージとしてLINEに送信できます。</p></details>
+    </section>
+
+    <article class="seo-content">
+      <h2>割り勘計算の使い方</h2>
+      <p>飲み会や食事会の会計で「割り勘でいくら？」をすぐに計算できます。合計金額と人数を入れるだけのシンプルモードと、各自の支払い済み金額を入力して精算額を計算する幹事モードの2つを用意。結果はLINEで直接共有できるので、参加者への連絡もスムーズです。</p>
+      <h2>幹事モードの精算計算</h2>
+      <p>幹事が全額立て替えた場合や、複数人が別々に支払った場合に「誰が誰にいくら払えばよいか」を自動で計算します。精算回数を最小限に抑えるアルゴリズムで、面倒な計算を一瞬で解決します。</p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-links" aria-label="フッターナビゲーション"><a href="/">ホーム</a><a href="/date-calendar/">日付・カレンダー</a><a href="/tax-finance/">税金・財務</a><a href="/language-tools/">言語・変換</a></nav>
+    <p class="footer-copy">&copy; 2025 JapanCalc. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  var nav = document.querySelector('.site-nav');
+  var expanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !expanded);
+  nav.classList.toggle('nav-open');
+});
+</script>
+
+<script type="module">
+import { calcSimpleSplit, calcAdvancedSplit, generateShareText } from '/assets/js/warikan.js';
+
+var modeTabs      = document.querySelectorAll('.mode-tab');
+var panelSimple   = document.getElementById('panel-simple');
+var panelAdvanced = document.getElementById('panel-advanced');
+var totalInput    = document.getElementById('total-amount');
+var peopleInput   = document.getElementById('num-people');
+var roundingInput = document.getElementById('rounding');
+var resultBox     = document.getElementById('result-box');
+var resultLabel   = document.getElementById('result-label');
+var resultValue   = document.getElementById('result-value');
+var resultDetail  = document.getElementById('result-detail');
+var settlementArea = document.getElementById('settlement-area');
+var btnCalcSimple = document.getElementById('btn-calc-simple');
+var btnCalcAdv    = document.getElementById('btn-calc-advanced');
+var btnCopy       = document.getElementById('btn-copy');
+var btnLine       = document.getElementById('btn-line');
+var btnAddPerson  = document.getElementById('btn-add-person');
+var personList    = document.getElementById('person-list');
+
+var currentMode = 'simple';
+var lastResult = null;
+
+modeTabs.forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    modeTabs.forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected','true');
+    currentMode = tab.getAttribute('data-mode');
+    panelSimple.classList.toggle('active', currentMode === 'simple');
+    panelAdvanced.classList.toggle('active', currentMode === 'advanced');
+    resultBox.classList.remove('visible');
+  });
+});
+
+function calculateSimple() {
+  var total = parseInt(totalInput.value);
+  var people = parseInt(peopleInput.value);
+  var rounding = roundingInput.value;
+  var result = calcSimpleSplit(total, people, rounding);
+  if (result.error) {
+    resultLabel.textContent = 'エラー';
+    resultValue.textContent = result.error;
+    resultDetail.textContent = '';
+    settlementArea.innerHTML = '';
+    btnLine.style.display = 'none';
+    resultBox.classList.add('visible');
+    return;
+  }
+  lastResult = result;
+  resultLabel.textContent = '一人あたり';
+  resultValue.textContent = '\u00A5' + result.perPerson.toLocaleString('ja-JP');
+  var remainText = '';
+  if (result.remainder !== 0) {
+    remainText = '（端数: ' + (result.remainder > 0 ? '+' : '') + result.remainder + '円）';
+  }
+  resultDetail.textContent = '合計 \u00A5' + total.toLocaleString('ja-JP') + ' \u00F7 ' + people + '人 ' + remainText;
+  settlementArea.innerHTML = '';
+  btnLine.style.display = 'inline-block';
+  var shareText = generateShareText(result.perPerson, total, people);
+  btnLine.href = 'https://line.me/R/share?text=' + encodeURIComponent(shareText);
+  resultBox.classList.add('visible');
+  if (typeof gtag !== 'undefined') gtag('event', 'tool_used', { tool_name: 'warikan', mode: 'simple', language: 'ja' });
+}
+
+function calculateAdvanced() {
+  var rows = personList.querySelectorAll('.person-row');
+  var payments = [];
+  rows.forEach(function(row) {
+    var name = row.querySelector('.person-name').value.trim();
+    var paid = parseInt(row.querySelector('.person-paid').value) || 0;
+    payments.push({ name: name || '名前なし', paid: paid });
+  });
+  var result = calcAdvancedSplit(payments);
+  if (result.error) {
+    resultLabel.textContent = 'エラー';
+    resultValue.textContent = result.error;
+    resultDetail.textContent = '';
+    settlementArea.innerHTML = '';
+    btnLine.style.display = 'none';
+    resultBox.classList.add('visible');
+    return;
+  }
+  lastResult = result;
+  resultLabel.textContent = '一人あたり（均等割り）';
+  resultValue.textContent = '\u00A5' + result.perPerson.toLocaleString('ja-JP');
+  resultDetail.textContent = '合計 \u00A5' + result.total.toLocaleString('ja-JP') + ' \u00F7 ' + result.people + '人';
+
+  if (result.settlements.length > 0) {
+    var html = '<table class="settlement-table"><thead><tr><th>支払う人</th><th></th><th>受け取る人</th><th>金額</th></tr></thead><tbody>';
+    result.settlements.forEach(function(s) {
+      html += '<tr><td>' + s.from + '</td><td class="settlement-arrow">\u2192</td><td>' + s.to + '</td><td>\u00A5' + s.amount.toLocaleString('ja-JP') + '</td></tr>';
+    });
+    html += '</tbody></table>';
+    settlementArea.innerHTML = html;
+  } else {
+    settlementArea.innerHTML = '<p class="result-detail">精算は不要です。</p>';
+  }
+  btnLine.style.display = 'inline-block';
+  var shareText = generateShareText(result.perPerson, result.total, result.people);
+  btnLine.href = 'https://line.me/R/share?text=' + encodeURIComponent(shareText);
+  resultBox.classList.add('visible');
+  if (typeof gtag !== 'undefined') gtag('event', 'tool_used', { tool_name: 'warikan', mode: 'advanced', language: 'ja' });
+}
+
+btnCalcSimple.addEventListener('click', calculateSimple);
+btnCalcAdv.addEventListener('click', calculateAdvanced);
+
+var personCount = 3;
+btnAddPerson.addEventListener('click', function() {
+  personCount++;
+  var row = document.createElement('div');
+  row.className = 'person-row';
+  row.innerHTML = '<input class="form-input person-name" type="text" placeholder="名前" value="' + String.fromCharCode(64 + personCount) + 'さん"><input class="form-input person-paid" type="number" min="0" placeholder="支払額"><button class="btn-remove-person" title="削除">&times;</button>';
+  personList.appendChild(row);
+  row.querySelector('.btn-remove-person').addEventListener('click', function() { row.remove(); });
+});
+
+personList.querySelectorAll('.btn-remove-person').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    if (personList.querySelectorAll('.person-row').length > 2) btn.parentElement.remove();
+  });
+});
+
+btnCopy.addEventListener('click', function() {
+  var text = resultLabel.textContent + ': ' + resultValue.textContent + '\n' + resultDetail.textContent;
+  if (lastResult && lastResult.settlements) {
+    lastResult.settlements.forEach(function(s) {
+      text += '\n' + s.from + ' \u2192 ' + s.to + ': \u00A5' + s.amount.toLocaleString('ja-JP');
+    });
+  }
+  navigator.clipboard.writeText(text).then(function() {
+    btnCopy.textContent = 'コピーしました！';
+    setTimeout(function() { btnCopy.textContent = '結果をコピー'; }, 1500);
+  });
+});
+</script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.ad-zone:not([data-lazy-ad])').forEach(zone => {
+    const ins = zone.querySelector('.adsbygoogle');
+    if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const ins = entry.target.querySelector('.adsbygoogle');
+          if (ins && !ins.getAttribute('data-adsbygoogle-status'))
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    document.querySelectorAll('[data-lazy-ad]').forEach(z => observer.observe(z));
+  }
+});
+</script>
+</body>
+</html>
