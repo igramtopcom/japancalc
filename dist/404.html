@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | JapanCalc</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    .error-page {
+      text-align: center;
+      padding: 4rem 1rem;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .error-code {
+      font-size: 5rem;
+      font-weight: 800;
+      color: var(--color-accent, #0B6E5F);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .error-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .error-desc {
+      color: var(--color-text-muted, #666);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .error-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .error-links a {
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .btn-home {
+      background: var(--color-accent, #0B6E5F);
+      color: #fff;
+    }
+    .btn-home:hover { opacity: 0.9; }
+    .btn-secondary {
+      background: var(--color-bg-alt, #f0f0f0);
+      color: var(--color-text, #333);
+      border: 1px solid var(--color-border, #ddd);
+    }
+    .btn-secondary:hover { background: var(--color-border, #ddd); }
+  </style>
+</head>
+<body>
+
+<style>
+  nav.site-nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 100;
+  }
+</style>
+
+<a href="#main-content" class="skip-link" id="skip-link">メインコンテンツへスキップ</a>
+
+<nav class="site-nav" aria-label="メインナビゲーション" id="site-nav-label">
+  <a href="/" class="nav-logo" aria-label="JapanCalc ホーム" id="nav-logo-link">
+    <img src="/assets/icons/logo-white.svg" alt="JapanCalc" width="160" height="40" loading="eager" fetchpriority="high">
+  </a>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="/date-calendar/" id="nav-date">日付・カレンダー</a></li>
+    <li><a href="/tax-finance/" id="nav-tax">税金・財務</a></li>
+    <li><a href="/language-tools/" id="nav-lang">言語ツール</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="lang-switcher" role="navigation" aria-label="言語切替">
+      <span class="lang-option lang-active" aria-current="true" id="lang-jp">JP</span>
+      <span class="lang-sep">&middot;</span>
+      <a class="lang-option lang-inactive" id="lang-toggle"
+         href="/en/" lang="en" title="View in English"
+         aria-label="Switch to English">EN</a>
+    </div>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<main class="content page-wrapper" id="main-content">
+  <div class="error-page">
+    <div class="error-code">404</div>
+    <h1 class="error-title" id="error-title">ページが見つかりません</h1>
+    <p class="error-desc" id="error-desc">
+      お探しのページは移動または削除された可能性があります。<br>
+      URLをご確認ください。
+    </p>
+    <div class="error-links">
+      <a href="/" class="btn-home" id="btn-home">ホームへ戻る</a>
+      <a href="/date-calendar/" class="btn-secondary" id="btn-cat1">日付・カレンダー</a>
+      <a href="/tax-finance/" class="btn-secondary" id="btn-cat2">税金・財務</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/about/" id="ft-about">JapanCalcについて</a></li>
+      <li><a href="/privacy/" id="ft-privacy">プライバシーポリシー</a></li>
+      <li><a href="/terms/" id="ft-terms">利用規約</a></li>
+      <li><a href="mailto:hello@japancalc.com">お問い合わせ</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> JapanCalc. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = document.querySelector('.site-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+  });
+})();
+</script>
+
+<script>
+// Auto-detect language from URL path and switch to EN if needed
+(function() {
+  var path = window.location.pathname;
+  var isEN = path.indexOf('/en') === 0;
+
+  if (isEN) {
+    document.documentElement.lang = 'en';
+    document.title = '404 — Page Not Found | JapanCalc';
+    document.getElementById('skip-link').textContent = 'Skip to main content';
+    document.getElementById('site-nav-label').setAttribute('aria-label', 'Main navigation');
+    document.getElementById('nav-logo-link').href = '/en/';
+    document.getElementById('nav-logo-link').setAttribute('aria-label', 'JapanCalc Home');
+    document.getElementById('nav-date').href = '/en/date-calendar/';
+    document.getElementById('nav-date').textContent = 'Date & Calendar';
+    document.getElementById('nav-tax').href = '/en/tax-finance/';
+    document.getElementById('nav-tax').textContent = 'Tax & Finance';
+    document.getElementById('nav-lang').href = '/en/language-tools/';
+    document.getElementById('nav-lang').textContent = 'Language Tools';
+
+    // lang switcher
+    document.getElementById('lang-jp').outerHTML =
+      '<a class="lang-option lang-inactive" href="/" lang="ja" title="日本語で表示" aria-label="日本語に切り替え">JP</a>';
+    document.getElementById('lang-toggle').outerHTML =
+      '<span class="lang-option lang-active" aria-current="true">EN</span>';
+
+    // hamburger
+    var hbtn = document.querySelector('.nav-hamburger');
+    if (hbtn) {
+      hbtn.setAttribute('aria-label', 'Open menu');
+      hbtn.addEventListener('click', function() {
+        var open = document.querySelector('.site-nav').classList.contains('nav-open');
+        hbtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    }
+
+    // main content
+    document.getElementById('error-title').textContent = 'Page Not Found';
+    document.getElementById('error-desc').innerHTML =
+      'The page you are looking for may have been moved or deleted.<br>Please check the URL.';
+    document.getElementById('btn-home').textContent = 'Back to Home';
+    document.getElementById('btn-home').href = '/en/';
+    document.getElementById('btn-cat1').textContent = 'Date & Calendar';
+    document.getElementById('btn-cat1').href = '/en/date-calendar/';
+    document.getElementById('btn-cat2').textContent = 'Tax & Finance';
+    document.getElementById('btn-cat2').href = '/en/tax-finance/';
+
+    // footer
+    document.getElementById('ft-about').href = '/en/about/';
+    document.getElementById('ft-about').textContent = 'About';
+    document.getElementById('ft-privacy').href = '/en/privacy/';
+    document.getElementById('ft-privacy').textContent = 'Privacy Policy';
+    document.getElementById('ft-terms').href = '/en/terms/';
+    document.getElementById('ft-terms').textContent = 'Terms of Use';
+  }
+})();
+</script>
+</body>
+</html>
