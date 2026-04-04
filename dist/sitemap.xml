@@ -494,6 +494,20 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Compound Interest Calculator (T-75) -->
+  <url>
+    <loc>https://japancalc.com/tax-finance/compound-interest/</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://japancalc.com/en/tax-finance/compound-interest/</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Mortgage Calculator (T-74) -->
   <url>
     <loc>https://japancalc.com/tax-finance/mortgage-calculator/</loc>

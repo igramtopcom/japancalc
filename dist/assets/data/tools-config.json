@@ -3,6 +3,19 @@
   "_lastUpdated": "2026-04-04",
   "tools": [
     {
+      "id": "compound-interest",
+      "nameJP": "積立・複利計算",
+      "nameEN": "Compound Interest Calculator",
+      "descJP": "NISAの運用シミュレーション・複利計算",
+      "descEN": "Savings & compound interest simulator",
+      "icon": "📈",
+      "urlJP": "/tax-finance/compound-interest/",
+      "urlEN": "/en/tax-finance/compound-interest/",
+      "category": "tax-finance",
+      "addedDate": "2026-04-04",
+      "isNew": true
+    },
+    {
       "id": "mortgage-calculator",
       "nameJP": "住宅ローン計算",
       "nameEN": "Mortgage Calculator",
@@ -52,7 +65,7 @@
       "urlEN": "/en/tax-finance/postage-calculator/",
       "category": "tax-finance",
       "addedDate": "2026-04-04",
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "shichigosan",
